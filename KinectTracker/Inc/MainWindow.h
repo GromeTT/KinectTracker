@@ -40,8 +40,7 @@ public:
     ~MainWindow();
 
 private:
-    void initializeScene();
-    void initializeKinect();
+    void showKinectDialog();
     void openKinectStream();
     void selectObject( const QString& text );
     void constructOpenGLRenderWidget();

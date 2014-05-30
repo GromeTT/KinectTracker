@@ -66,7 +66,7 @@ signals:
 private:
     void prepareShaderProgram();
     void prepareTextures();
-    void updateShaderProgramms(const QString& path);
+    void updateShaderPrograms(const QString& path);
 
     bool                        m_takeSnapshot;
     QOpenGLShaderProgram        m_shaderProgram;

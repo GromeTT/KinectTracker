@@ -32,7 +32,7 @@ public:
 
     void setVertices( const Vertices& vertices );
     void setIndices( const Indices& indices );
-    void setShaderProgramm ( QOpenGLShaderProgram* program );
+    void setShaderProgram ( QOpenGLShaderProgram* program );
     void setPosition( const QVector3D& position );
     void setPosition( const float x, const float y, const float z );
     void setRotation( const QVector3D& rotation );
@@ -112,6 +112,7 @@ signals:
     void yScaleChanged();
     void zScaleChanged();
     void useWireFrameModeChanged();
+    void visibleChanged();
 
 private:
     Q_PROPERTY( float x MEMBER m_x
@@ -163,6 +164,11 @@ private:
                 READ isWireFrameModeOn
                 WRITE setWireFrameMode
                 NOTIFY useWireFrameModeChanged )
+
+    Q_PROPERTY( bool visible MEMBER m_visible
+                READ isVisible
+                WRITE setVisible
+                NOTIFY visibleChanged )
 };
 
 #endif // RENDEROBJECT_H

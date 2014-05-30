@@ -89,11 +89,11 @@ void OpenGLWindow::keyPressEvent(QKeyEvent* event)
 
     if ( event->key() == Qt::Key_Right )
     {
-        m_scene->moveCamera( stepSize, 0, 0 );
+        m_scene->moveCamera( -stepSize, 0, 0 );
     }
     if ( event->key() == Qt::Key_Left)
     {
-        m_scene->moveCamera( -stepSize, 0, 0 );
+        m_scene->moveCamera( stepSize, 0, 0 );
     }
     if ( event->key() == Qt::Key_Up )
     {

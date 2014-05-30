@@ -51,7 +51,7 @@ Skeleton::Skeleton()
 Skeleton::Skeleton( const NUI_SKELETON_DATA& skeletonData )
     : m_vertices( 20 )
 {
-    setSkeletonFromSkeletonData( skeletonData );
+    setSkeletonBySkeletonData( skeletonData );
 }
 
 /**
@@ -96,7 +96,7 @@ void Skeleton::setSkeletonBySkeletonData( const NUI_SKELETON_DATA& skeletonData 
  */
 const Vertex Skeleton::getJoint( const Skeleton::Joints joint ) const
 {
-    return m_vertices.at( i );
+    return m_vertices.at( joint );
 }
 
 /**

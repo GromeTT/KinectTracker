@@ -116,7 +116,7 @@ void RenderObject::setIndices( const Indices& indices )
     m_vao.release();
 }
 
-void RenderObject::setShaderProgramm( QOpenGLShaderProgram* program )
+void RenderObject::setShaderProgram( QOpenGLShaderProgram* program )
 {
     Q_ASSERT( program );
 

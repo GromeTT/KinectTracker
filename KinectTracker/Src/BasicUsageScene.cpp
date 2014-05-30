@@ -27,7 +27,7 @@ BasicUsageScene::BasicUsageScene( OpenGLWindow* parent )
     m_projectionMatrix.perspective( 45.0f, 4.0f/3.0f, 0.1f, 100.0f );
     m_camera.moveToPosition( 0.0f, 0.0f, -0.1f );
 
-    connect( &m_fileSystemWatcher, &QFileSystemWatcher::fileChanged, this, &BasicUsageScene::updateShaderProgramms );
+    connect( &m_fileSystemWatcher, &QFileSystemWatcher::fileChanged, this, &BasicUsageScene::updateShaderPrograms );
 }
 
 /**
@@ -150,7 +150,7 @@ void BasicUsageScene::yawCamera( const float angle )
  */
 void BasicUsageScene::addRenderObject( RenderObject* object )
 {
-    object->setShaderProgramm( &m_shaderProgram );
+    object->setShaderProgram( &m_shaderProgram );
     m_renderObjects.append( object );
     emit objectHasBeenAdded( *object );
 }
@@ -187,7 +187,7 @@ RenderObject* BasicUsageScene::createPlane()
     object->setVertices( vertices );
     object->setIndices( indices );
     object->setRenderMode( GL_QUADS );
-    object->setShaderProgramm( &m_shaderProgram );
+    object->setShaderProgram( &m_shaderProgram );
     object->setTexture( mp_texture );
     object->setTexture1( mp_texture1 );
     object->setUseTexture( true );
@@ -233,7 +233,7 @@ RenderObject* BasicUsageScene::createCube()
     object->setVertices( vertices );
     object->setIndices( indices );
     object->setRenderMode( GL_QUADS );
-    object->setShaderProgramm( &m_shaderProgram );
+    object->setShaderProgram( &m_shaderProgram );
 
     m_renderObjects << object;
 
@@ -269,7 +269,7 @@ RenderObject* BasicUsageScene::createAxis()
     object->setVertices( vertices );
     object->setIndices( indices );
     object->setRenderMode( GL_LINES );
-    object->setShaderProgramm( &m_shaderProgram );
+    object->setShaderProgram( &m_shaderProgram );
 
     m_renderObjects << object;
 
@@ -281,6 +281,7 @@ void BasicUsageScene::createFloor()
     mp_window->makeContextCurrent();
 
     Floor* floor = new Floor( mp_window->getOpenGLContext() );
+    floor->setShaderProgram( &m_shaderProgram );
     m_renderObjects << floor;
 }
 
@@ -337,7 +338,7 @@ QObject* BasicUsageScene::getCamera()
 
 void BasicUsageScene::prepareShaderProgram()
 {
-    updateShaderProgramms( QString() );
+    updateShaderPrograms( QString() );
 
     m_fileSystemWatcher.addPath( "../KinectTracker/Shader/VertexShader.vert" );
     m_fileSystemWatcher.addPath( "../KinectTracker/Shader/FragmentShader.frag" );
@@ -365,7 +366,7 @@ void BasicUsageScene::prepareTextures()
 
 }
 
-void BasicUsageScene::updateShaderProgramms( const QString& path )
+void BasicUsageScene::updateShaderPrograms( const QString& path )
 {
     Q_UNUSED( path );
 
