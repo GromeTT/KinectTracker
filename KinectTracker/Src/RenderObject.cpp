@@ -12,7 +12,7 @@ RenderObject::RenderObject( OpenGLContext& context,
     : QObject( parent )
     , mp_parent( parent )
     , mp_shaderProgram( nullptr )
-    , m_xRotation( 0.0 ), m_yRotation( 0.0f ), m_zRotation( 0.0f )
+    , m_roll( 0.0 ), m_pitch( 0.0f ), m_yaw( 0.0f )
     , m_x( 0.0f ), m_y( 0.0f ), m_z( 0.0f )
     , m_xScale( 1.0f ), m_yScale( 1.0f ), m_zScale( 1.0f )
     , m_recalculateMatrix( true )
@@ -152,20 +152,21 @@ void RenderObject::setPosition( const float x, const float y, const float z )
     m_recalculateMatrix = true;
 }
 
-void RenderObject::setRotation( const QVector3D& rotation )
+
+void RenderObject::setRollPitchYaw( const QVector3D& rotation )
 {
     m_recalculateMatrix = true;
-    m_xRotation = rotation.x();
-    m_yRotation = rotation.y();
-    m_zRotation = rotation.z();
+    m_roll  = rotation.x();
+    m_pitch = rotation.y();
+    m_yaw   = rotation.z();
 }
 
-void RenderObject::rotate( const QVector3D& rotation )
+void RenderObject::rollPitchYaw( const QVector3D& rotation )
 {
     m_recalculateMatrix = true;
-    m_xRotation += rotation.x();
-    m_yRotation += rotation.y();
-    m_zRotation += rotation.z();
+    m_roll  += rotation.x();
+    m_pitch += rotation.y();
+    m_yaw   += rotation.z();
 }
 
 void RenderObject::setScale( const QVector3D& scale )
@@ -228,22 +229,22 @@ void RenderObject::setZ( const float z )
     m_z = z;
 }
 
-void RenderObject::setRotationX (const float xRotation )
+void RenderObject::setRoll( const float roll )
 {
     m_recalculateMatrix = true;
-    m_xRotation = xRotation;
+    m_roll = roll;
 }
 
-void RenderObject::setRotationY( const float yRotation )
+void RenderObject::setPitch( const float pitch )
 {
     m_recalculateMatrix = true;
-    m_yRotation = yRotation;
+    m_pitch += pitch;
 }
 
-void RenderObject::setRotationZ( const float zRotation )
+void RenderObject::setYaw( const float yaw )
 {
     m_recalculateMatrix = true;
-    m_zRotation = zRotation;
+    m_yaw = yaw;
 }
 
 void RenderObject::setScaleX( const float xScale )
@@ -294,19 +295,19 @@ float RenderObject::getZ() const
     return m_z;
 }
 
-float RenderObject::getRotationX() const
+float RenderObject::roll() const
 {
-    return m_xRotation;
+    return m_roll;
 }
 
-float RenderObject::getRotationY() const
+float RenderObject::pitch() const
 {
-    return m_yRotation;
+    return m_pitch;
 }
 
-float RenderObject::getRotationZ() const
+float RenderObject::yaw() const
 {
-    return m_zRotation;
+    return m_yaw;
 }
 
 float RenderObject::getScaleX() const
@@ -347,9 +348,9 @@ const QMatrix4x4& RenderObject::getModelMatrix() const
     {
         m_modelMatrix.setToIdentity();
         m_modelMatrix.translate( m_x, m_y, m_z );
-        m_modelMatrix.rotate( m_xRotation, 1.0f, 0.0f, 0.0f );
-        m_modelMatrix.rotate( m_yRotation, 0.0f, 1.0f, 0.0f );
-        m_modelMatrix.rotate( m_zRotation, 0.0f, 0.0f, 1.0f );
+        m_modelMatrix.rotate( m_roll, 0.0f, 0.0f, 1.0f );      // Rotation arround local z-axis
+        m_modelMatrix.rotate( m_pitch, 1.0f, 0.0f, 0.0f );     // Rotation arround local x-axis
+        m_modelMatrix.rotate( m_yaw, 0.0f, 1.0f, 0.0f ); // Rotation arround local y-axis
         m_modelMatrix.scale( m_xScale, m_yScale, m_zScale );
         m_recalculateMatrix = false;
     }

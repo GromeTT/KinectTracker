@@ -314,13 +314,13 @@ void MainWindow::processSkeletonData( const unsigned int timestamp )
          m_analysisResults.setValuesByVetcor( m_skeletonAnalyzer.getVelocity( timestamp, 10 ) );
          if ( m_analysisResults.directionY() == 0 )
          {
-            mp_arrowObject->setRotationY( 0 );
-            mp_arrowObject->setRotationZ( 90 );
+            mp_arrowObject->setYaw( 0 );
+            mp_arrowObject->setRoll( 90 );
          }
          else
          {
-             mp_arrowObject->setRotationY( m_analysisResults.directionY() );
-             mp_arrowObject->setRotationZ( 0 );
+             mp_arrowObject->setYaw( m_analysisResults.directionY() );
+             mp_arrowObject->setRoll( 0 );
          }
     }
     else
@@ -328,8 +328,8 @@ void MainWindow::processSkeletonData( const unsigned int timestamp )
         mp_skeletonObject->setVisible( false );
         mp_boundingBox->setVisible( false );
 
-        mp_arrowObject->setRotationY( m_analysisResults.directionY() );
-        mp_arrowObject->setRotationZ( 0 );
+        mp_arrowObject->setYaw( m_analysisResults.directionY() );
+        mp_arrowObject->setRoll( 0 );
     }
 }
 

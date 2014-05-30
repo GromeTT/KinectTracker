@@ -35,8 +35,8 @@ public:
     void setShaderProgram ( QOpenGLShaderProgram* program );
     void setPosition( const QVector3D& position );
     void setPosition( const float x, const float y, const float z );
-    void setRotation( const QVector3D& rotation );
-    void rotate( const QVector3D& rotation );
+    void setRollPitchYaw( const QVector3D& rotation );
+    void rollPitchYaw( const QVector3D& rotation );
     void setScale( const QVector3D& scale );
     void setRenderMode( const GLenum renderMode );
     void setTexture( QOpenGLTexture* texture );
@@ -48,9 +48,9 @@ public:
     void setX( const float x );
     void setY( const float y );
     void setZ( const float z );
-    void setRotationX( const float xRotation );
-    void setRotationY( const float yRotation );
-    void setRotationZ( const float zRotation );
+    void setRoll( const float roll );
+    void setPitch( const float pitch );
+    void setYaw( const float yaw );
     void setScaleX( const float xScale );
     void setScaleY( const float yScale );
     void setScaleZ( const float zScale );
@@ -60,9 +60,9 @@ public:
     float getX() const;
     float getY() const;
     float getZ() const;
-    float getRotationX() const;
-    float getRotationY() const;
-    float getRotationZ() const;
+    float roll() const;
+    float pitch() const;
+    float yaw() const;
     float getScaleX() const;
     float getScaleY() const;
     float getScaleZ() const;
@@ -98,16 +98,16 @@ public:
     OpenGLContext               m_context;
 
     float m_x, m_y, m_z;
-    float m_xRotation, m_yRotation, m_zRotation;
+    float m_roll, m_pitch, m_yaw;
     float m_xScale, m_yScale, m_zScale;
 
 signals:
     void xChanged();
     void yChanged();
     void zChanged();
-    void xRotationChanged();
-    void yRotationChanged();
-    void zRotationChanged();
+    void rollChanged();
+    void pitchChanged();
+    void yawChanged();
     void xScaleChanged();
     void yScaleChanged();
     void zScaleChanged();
@@ -130,20 +130,20 @@ private:
                 WRITE setZ
                 NOTIFY zChanged)
 
-    Q_PROPERTY( float xRotation MEMBER m_xRotation
-                READ getRotationX
-                WRITE setRotationX
-                NOTIFY xRotationChanged )
+    Q_PROPERTY( float roll MEMBER m_roll
+                READ roll
+                WRITE setRoll
+                NOTIFY rollChanged )
 
-    Q_PROPERTY( float yRotation MEMBER m_yRotation
-                READ getRotationY
-                WRITE setRotationY
-                NOTIFY yRotationChanged )
+    Q_PROPERTY( float yaw MEMBER m_yaw
+                READ yaw
+                WRITE setYaw
+                NOTIFY yawChanged )
 
-    Q_PROPERTY( float zRotation MEMBER m_zRotation
-                READ getRotationZ
-                WRITE setRotationZ
-                NOTIFY zRotationChanged )
+    Q_PROPERTY( float pitch MEMBER m_pitch
+                READ pitch
+                WRITE setPitch
+                NOTIFY pitchChanged )
 
     Q_PROPERTY( float xScale MEMBER m_xScale
                 READ getScaleX
