@@ -20,4 +20,5 @@ public:
 };
 
 typedef QVector<Vertex>Vertices;
+
 #endif // VERTEX_H

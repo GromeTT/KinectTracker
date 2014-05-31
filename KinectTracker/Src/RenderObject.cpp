@@ -9,20 +9,15 @@
 
 RenderObject::RenderObject( OpenGLContext& context,
                             RenderObject* parent )
-    : QObject( parent )
+    : TransformationObject( parent )
     , mp_parent( parent )
     , mp_shaderProgram( nullptr )
-    , m_roll( 0.0 ), m_pitch( 0.0f ), m_yaw( 0.0f )
-    , m_x( 0.0f ), m_y( 0.0f ), m_z( 0.0f )
-    , m_xScale( 1.0f ), m_yScale( 1.0f ), m_zScale( 1.0f )
-    , m_recalculateMatrix( true )
     , m_renderMode( GL_TRIANGLES )
     , m_vertexBuffer( QOpenGLBuffer::VertexBuffer )
     , m_indexBuffer( QOpenGLBuffer::IndexBuffer )
     , m_useTexture( false )
     , m_wireFrameMode( false )
     , m_context( context )
-    , m_visible( true )
 {
     m_vao.create();
 
@@ -44,7 +39,7 @@ RenderObject::~RenderObject()
 void RenderObject::render( const QMatrix4x4& projection,
                            const QMatrix4x4& view )
 {
-    if ( !m_visible )
+    if ( !visible() )
     {
         return;
     }
@@ -149,47 +144,6 @@ void RenderObject::setShaderProgram( QOpenGLShaderProgram* program )
     m_vao.release();
 }
 
-void RenderObject::setPosition( const QVector3D& position )
-{
-    m_x = position.x();
-    m_y = position.y();
-    m_z = position.z();
-    m_recalculateMatrix = true;
-}
-
-void RenderObject::setPosition( const float x, const float y, const float z )
-{
-    m_x = x;
-    m_y = y;
-    m_z = z;
-    m_recalculateMatrix = true;
-}
-
-
-void RenderObject::setRollPitchYaw( const QVector3D& rotation )
-{
-    m_recalculateMatrix = true;
-    m_roll  = rotation.x();
-    m_pitch = rotation.y();
-    m_yaw   = rotation.z();
-}
-
-void RenderObject::rollPitchYaw( const QVector3D& rotation )
-{
-    m_recalculateMatrix = true;
-    m_roll  += rotation.x();
-    m_pitch += rotation.y();
-    m_yaw   += rotation.z();
-}
-
-void RenderObject::setScale( const QVector3D& scale )
-{
-    m_recalculateMatrix = true;
-    m_xScale = scale.x();
-    m_yScale = scale.y();
-    m_zScale = scale.z();
-}
-
 void RenderObject::setRenderMode( const GLenum renderMode )
 {
     m_renderMode = renderMode;
@@ -271,151 +225,11 @@ void RenderObject::setTextureActive( const int i, const bool active )
     m_activeTextures.replace( i, active );
 }
 
-void RenderObject::setX( const float x )
-{
-    m_recalculateMatrix = true;
-    m_x = x;
-}
-
-void RenderObject::setY( const float y )
-{
-    m_recalculateMatrix = true;
-    m_y = y;
-}
-
-void RenderObject::setZ( const float z )
-{
-    m_recalculateMatrix = true;
-    m_z = z;
-}
-
-void RenderObject::setRoll( const float roll )
-{
-    m_recalculateMatrix = true;
-    m_roll = roll;
-}
-
-void RenderObject::setPitch( const float pitch )
-{
-    m_recalculateMatrix = true;
-    m_pitch += pitch;
-}
-
-void RenderObject::setYaw( const float yaw )
-{
-    m_recalculateMatrix = true;
-    m_yaw = yaw;
-}
-
-void RenderObject::setScaleX( const float xScale )
-{
-    m_recalculateMatrix = true;
-    m_xScale = xScale;
-}
-
-void RenderObject::setScaleY( const float yScale )
-{
-    m_recalculateMatrix = true;
-    m_yScale = yScale;
-}
-
-void RenderObject::setScaleZ( const float zScale )
-{
-    m_recalculateMatrix = true;
-    m_zScale = zScale;
-}
-
-void RenderObject::setScale( const float x,
-                             const float y,
-                             const float z )
-{
-    m_recalculateMatrix = true;
-    m_xScale = x;
-    m_yScale = y;
-    m_zScale = z;
-}
-
-void RenderObject::setVisible( const bool visible )
-{
-    m_visible = visible;
-}
-
-float RenderObject::getX() const
-{
-    return m_x;
-}
-
-float RenderObject::getY() const
-{
-    return m_y;
-}
-
-float RenderObject::getZ() const
-{
-    return m_z;
-}
-
-float RenderObject::roll() const
-{
-    return m_roll;
-}
-
-float RenderObject::pitch() const
-{
-    return m_pitch;
-}
-
-float RenderObject::yaw() const
-{
-    return m_yaw;
-}
-
-float RenderObject::getScaleX() const
-{
-    return m_xScale;
-}
-
-float RenderObject::getScaleY() const
-{
-    return m_yScale;
-}
-
-float RenderObject::getScaleZ() const
-{
-    return m_zScale;
-}
-
-bool RenderObject::isVisible() const
-{
-    return m_visible;
-}
-
 const Vertices& RenderObject::getVertices() const
 {
     return m_vertices;
 }
 
-
-/**
- * @brief RenderObject::getModelMatrix
- * Constructs a column major model model matrix.
- * @return
- * Column major model matrix.
- */
-const QMatrix4x4& RenderObject::getModelMatrix() const
-{
-    if ( m_recalculateMatrix )
-    {
-        m_modelMatrix.setToIdentity();
-        m_modelMatrix.translate( m_x, m_y, m_z );
-        m_modelMatrix.rotate( m_roll, 0.0f, 0.0f, 1.0f );      // Rotation arround local z-axis
-        m_modelMatrix.rotate( m_pitch, 1.0f, 0.0f, 0.0f );     // Rotation arround local x-axis
-        m_modelMatrix.rotate( m_yaw, 0.0f, 1.0f, 0.0f ); // Rotation arround local y-axis
-        m_modelMatrix.scale( m_xScale, m_yScale, m_zScale );
-        m_recalculateMatrix = false;
-    }
-    return m_modelMatrix;
-}
 
 GLenum RenderObject::getRenderMode() const
 {
