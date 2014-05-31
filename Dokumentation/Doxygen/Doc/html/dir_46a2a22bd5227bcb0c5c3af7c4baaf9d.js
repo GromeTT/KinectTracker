@@ -29,10 +29,7 @@ var dir_46a2a22bd5227bcb0c5c3af7c4baaf9d =
     ] ],
     [ "Macros.h", "_macros_8h.html", "_macros_8h" ],
     [ "MainWindow.h", "_main_window_8h.html", "_main_window_8h" ],
-    [ "ObjectLoader.h", "_object_loader_8h.html", [
-      [ "LoaderObject", "class_loader_object.html", "class_loader_object" ],
-      [ "ObjectLoader", "class_object_loader.html", "class_object_loader" ]
-    ] ],
+    [ "ObjectLoader.h", "_object_loader_8h.html", "_object_loader_8h" ],
     [ "OpenGLWindow.h", "_open_g_l_window_8h.html", "_open_g_l_window_8h" ],
     [ "ProcessingPipeline.h", "_processing_pipeline_8h.html", "_processing_pipeline_8h" ],
     [ "RenderObject.h", "_render_object_8h.html", "_render_object_8h" ],

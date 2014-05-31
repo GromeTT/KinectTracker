@@ -1,9 +1,17 @@
 var searchData=
 [
-  ['kernelcolumncount',['kernelColumnCount',['../class_dilate.html#a0c41a0539dcdbdd12798ddd030f40be5',1,'Dilate::kernelColumnCount()'],['../class_erode.html#ac5562ec4fc9a3afb948ae7b4afda0076',1,'Erode::kernelColumnCount()']]],
-  ['kernelcolumncountchanged',['kernelColumnCountChanged',['../class_dilate.html#a3f8b51fe661048d28fb9c82083a06d06',1,'Dilate::kernelColumnCountChanged()'],['../class_erode.html#a24b129d7df7c89922eb925c2b9a6e692',1,'Erode::kernelColumnCountChanged()']]],
-  ['kernelrowcount',['kernelRowCount',['../class_dilate.html#a8346ac2797103fbb55f6fe982e2e57c7',1,'Dilate::kernelRowCount()'],['../class_erode.html#ad7debf00a079d5301ca74618ef2ee14e',1,'Erode::kernelRowCount()']]],
-  ['kernelrowcountchanged',['kernelRowCountChanged',['../class_dilate.html#a9e5473db17502c23703febb170d8034a',1,'Dilate::kernelRowCountChanged()'],['../class_erode.html#a7444c3c7326ea08e7f5150babb6c2778',1,'Erode::kernelRowCountChanged()']]],
-  ['kinect',['Kinect',['../class_kinect.html#ab05389f710b912abff1d001edd77d847',1,'Kinect']]],
-  ['kinectinitializedialog',['KinectInitializeDialog',['../class_kinect_initialize_dialog.html#a5b562f825b336c713b878740963778ba',1,'KinectInitializeDialog']]]
+  ['if',['if',['../jquery_8js_a9db6d45a025ad692282fe23e69eeba43.html#a9db6d45a025ad692282fe23e69eeba43',1,'if(!b.support.opacity):&#160;jquery.js'],['../jquery_8js_a30d3d2cd5b567c9f31b2aa30b9cb3bb8.html#a30d3d2cd5b567c9f31b2aa30b9cb3bb8',1,'if(av.defaultView &amp;&amp;av.defaultView.getComputedStyle):&#160;jquery.js'],['../jquery_8js_a2c54bd8ed7482e89d19331ba61fe221c.html#a2c54bd8ed7482e89d19331ba61fe221c',1,'if(av.documentElement.currentStyle):&#160;jquery.js'],['../jquery_8js_a42cbfadee2b4749e8f699ea8d745a0e4.html#a42cbfadee2b4749e8f699ea8d745a0e4',1,'if(b.expr &amp;&amp;b.expr.filters):&#160;jquery.js'],['../jquery_8js_ad9fda9e3432e66926c2578b06f13525f.html#ad9fda9e3432e66926c2578b06f13525f',1,'if(&quot;getBoundingClientRect&quot;in av.documentElement):&#160;jquery.js'],['../jquery_8js_ab5582cce20b35070b73869356a852365.html#ab5582cce20b35070b73869356a852365',1,'if(typeof define===&quot;function&quot;&amp;&amp;define.amd &amp;&amp;define.amd.jQuery):&#160;jquery.js'],['../jquery_8js_a20b87efb5990c4ac1b55f46683843e47.html#a20b87efb5990c4ac1b55f46683843e47',1,'if(a.ui.version):&#160;jquery.js']]],
+  ['imageanalyzer',['ImageAnalyzer',['../class_image_analyzer_ab4c5bd6ffe5cf87ffee97bc533cc24f9.html#ab4c5bd6ffe5cf87ffee97bc533cc24f9',1,'ImageAnalyzer']]],
+  ['init',['init',['../class_open_g_l_window_ad5f75b29b792f0d4a3ce32bd2dd3fad8.html#ad5f75b29b792f0d4a3ce32bd2dd3fad8',1,'OpenGLWindow']]],
+  ['initialize',['initialize',['../class_basic_usage_scene_aec0e427d90f7508db10798dcb6ffd60f.html#aec0e427d90f7508db10798dcb6ffd60f',1,'BasicUsageScene::initialize()'],['../class_kinect_aa141d262b4b5777eae142dae55f15dc2.html#aa141d262b4b5777eae142dae55f15dc2',1,'Kinect::initialize()']]],
+  ['initnavtree',['initNavTree',['../navtree_8js_aa7b3067e7ef0044572ba86240b1e58ce.html#aa7b3067e7ef0044572ba86240b1e58ce',1,'navtree.js']]],
+  ['initresizable',['initResizable',['../resize_8js_a4d56aa7aa73d0ddf385565075fdfe271.html#a4d56aa7aa73d0ddf385565075fdfe271',1,'resize.js']]],
+  ['isdepthstreamopen',['isDepthStreamOpen',['../class_kinect_a693565751dc489be7b7aa351ebdaa6e0.html#a693565751dc489be7b7aa351ebdaa6e0',1,'Kinect']]],
+  ['isinitialized',['isInitialized',['../class_kinect_a82e6d6e1b8e034ebc9a816e170718d16.html#a82e6d6e1b8e034ebc9a816e170718d16',1,'Kinect']]],
+  ['ispointinboundingbox',['isPointInBoundingBox',['../struct_bounding_box_a9bb5b1883b981fd181cdfebf64b7aaf6.html#a9bb5b1883b981fd181cdfebf64b7aaf6',1,'BoundingBox']]],
+  ['isrgbstreamopen',['isRGBStreamOpen',['../class_kinect_a1900c431b5dd5fff70529842dda23110.html#a1900c431b5dd5fff70529842dda23110',1,'Kinect']]],
+  ['isvisible',['isVisible',['../class_render_object_a0c9a71248e1d5c629fff88be778242fc.html#a0c9a71248e1d5c629fff88be778242fc',1,'RenderObject']]],
+  ['iswireframemodeon',['isWireFrameModeOn',['../class_render_object_ac9896726bb77f3a9bb8ef0cd3a59e44f.html#ac9896726bb77f3a9bb8ef0cd3a59e44f',1,'RenderObject']]],
+  ['iterations',['iterations',['../class_dilate_af6d5221f35ba90ac38d5be86f1ba3932.html#af6d5221f35ba90ac38d5be86f1ba3932',1,'Dilate::iterations()'],['../class_erode_acdb17c92a7311445ec74000721d7b3e6.html#acdb17c92a7311445ec74000721d7b3e6',1,'Erode::iterations()']]],
+  ['iterationschanged',['iterationsChanged',['../class_dilate_a4831a99c8dcc9d9b9134aa166703482e.html#a4831a99c8dcc9d9b9134aa166703482e',1,'Dilate::iterationsChanged()'],['../class_erode_a94bbcccd4a3fb28763f2cd20ead0bb81.html#a94bbcccd4a3fb28763f2cd20ead0bb81',1,'Erode::iterationsChanged()']]]
 ];

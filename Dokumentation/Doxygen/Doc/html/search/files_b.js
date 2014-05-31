@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['renderobject_2ecpp',['RenderObject.cpp',['../_render_object_8cpp.html',1,'']]],
-  ['renderobject_2eh',['RenderObject.h',['../_render_object_8h.html',1,'']]],
-  ['rgbwidget_2ecpp',['RGBWidget.cpp',['../_r_g_b_widget_8cpp.html',1,'']]],
-  ['rgbwidget_2eh',['RGBWidget.h',['../_r_g_b_widget_8h.html',1,'']]]
+  ['macros_2eh',['Macros.h',['../_macros_8h.html',1,'']]],
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['main_5f8cpp_2ejs',['main_8cpp.js',['../main__8cpp_8js.html',1,'']]],
+  ['mainwindow_2ecpp',['MainWindow.cpp',['../_main_window_8cpp.html',1,'']]],
+  ['mainwindow_2eh',['MainWindow.h',['../_main_window_8h.html',1,'']]]
 ];

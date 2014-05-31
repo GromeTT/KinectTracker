@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['openglcontext',['OpenGLContext',['../_basic_usage_scene_8h.html#a9c6c46b152fbf088399207c75fc07902',1,'OpenGLContext():&#160;BasicUsageScene.h'],['../_open_g_l_window_8h.html#a9c6c46b152fbf088399207c75fc07902',1,'OpenGLContext():&#160;OpenGLWindow.h'],['../_render_object_8h.html#a9c6c46b152fbf088399207c75fc07902',1,'OpenGLContext():&#160;RenderObject.h']]]
+  ['loaderobjectptr',['LoaderObjectPtr',['../_object_loader_8h_af2d2d934df351d4e2b38aab9daaf0e94.html#af2d2d934df351d4e2b38aab9daaf0e94',1,'ObjectLoader.h']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['renderobjects',['RenderObjects',['../_basic_usage_scene_8h.html#a59c01f2bddc67140fb63d46015ed905b',1,'RenderObjects():&#160;BasicUsageScene.h'],['../_scene_graph_widget_8h.html#a59c01f2bddc67140fb63d46015ed905b',1,'RenderObjects():&#160;SceneGraphWidget.h']]]
+  ['processingpipelineptr',['ProcessingPipelinePtr',['../_processing_pipeline_8h_a075f0fdffe851c8f611423ed149b747c.html#a075f0fdffe851c8f611423ed149b747c',1,'ProcessingPipeline.h']]]
 ];

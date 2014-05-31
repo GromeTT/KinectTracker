@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['y',['y',['../class_vertex.html#a448817068556fe43e81dc0a3e7d1fa43',1,'Vertex']]]
+  ['indexsectionnames',['indexSectionNames',['../search_8js_a77149ceed055c6c6ce40973b5bdc19ad.html#a77149ceed055c6c6ce40973b5bdc19ad',1,'search.js']]],
+  ['indexsectionswithcontent',['indexSectionsWithContent',['../search_8js_a6250af3c9b54dee6efc5f55f40c78126.html#a6250af3c9b54dee6efc5f55f40c78126',1,'search.js']]]
 ];

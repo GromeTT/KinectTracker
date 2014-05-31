@@ -1,16 +1,15 @@
 var searchData=
 [
-  ['paintgl',['paintGL',['../class_open_g_l_window.html#a7ae488627e37254bbe1863c928781d83',1,'OpenGLWindow']]],
-  ['pi',['PI',['../_analysis_results_8cpp.html#a598a3330b3c21701223ee0ca14316eca',1,'AnalysisResults.cpp']]],
-  ['pitch',['pitch',['../class_camera.html#ab56fcb39f580e8d2159cf2c9c6d9a65a',1,'Camera::pitch()'],['../class_camera.html#a0bcbb567ac04d7a092d0c83634706bdb',1,'Camera::pitch(const float angle)'],['../class_camera.html#a466885878a075ab8bdfb346b91fce624',1,'Camera::pitch() const ']]],
-  ['pitchcamera',['pitchCamera',['../class_basic_usage_scene.html#a933d0a38e9dfc3a9f67a3c2234de06d1',1,'BasicUsageScene']]],
-  ['pitchchanged',['pitchChanged',['../class_camera.html#aaf98a368756099c37816eac824fee737',1,'Camera']]],
-  ['pointer',['POINTER',['../class_kinect.html#ac28179a7275189d8f33d4c562f3cfacda5639c3eef90d1eb8cc1c6159853fee5e',1,'Kinect']]],
-  ['pointincube',['pointInCube',['../_intersection_8h.html#a15d309989b99341fa895624b77b7caac',1,'pointInCube(const float x, const float y, const float z, const float cubeX, const float cubeY, const float cubeZ, const float width, const float height, const float depth):&#160;Intersection.cpp'],['../_intersection_8cpp.html#a15d309989b99341fa895624b77b7caac',1,'pointInCube(const float x, const float y, const float z, const float cubeX, const float cubeY, const float cubeZ, const float width, const float height, const float depth):&#160;Intersection.cpp']]],
-  ['pointsize',['pointSize',['../class_vertex.html#a088ea2f6ac59b1a5bee2d02da11ea50f',1,'Vertex']]],
-  ['process',['process',['../class_processing_pipeline.html#aac43bf94ad3e70b41b87f6016c4f0f7d',1,'ProcessingPipeline::process()'],['../class_backgroud_subtraction_pipeline.html#a63f510e00cfe29acd36a86733d30c282',1,'BackgroudSubtractionPipeline::process()'],['../class_b_s_pipeline.html#a3fbdaca91842edbb77ac057317ef425e',1,'BSPipeline::process()']]],
-  ['processingpipeline',['ProcessingPipeline',['../class_processing_pipeline.html',1,'ProcessingPipeline'],['../class_processing_pipeline.html#a74a34db3a84f6582a913d54096bada3b',1,'ProcessingPipeline::ProcessingPipeline()']]],
-  ['processingpipeline_2ecpp',['ProcessingPipeline.cpp',['../_processing_pipeline_8cpp.html',1,'']]],
-  ['processingpipeline_2eh',['ProcessingPipeline.h',['../_processing_pipeline_8h.html',1,'']]],
-  ['processingpipelineptr',['ProcessingPipelinePtr',['../_processing_pipeline_8h.html#a075f0fdffe851c8f611423ed149b747c',1,'ProcessingPipeline.h']]]
+  ['objecthasbeenadded',['objectHasBeenAdded',['../class_basic_usage_scene_a3c913057e8c078943f70136df1d326e8.html#a3c913057e8c078943f70136df1d326e8',1,'BasicUsageScene']]],
+  ['objectloader',['ObjectLoader',['../class_object_loader.html',1,'ObjectLoader'],['../class_object_loader_af9ecb6be20590e95539db718aaa74096.html#af9ecb6be20590e95539db718aaa74096',1,'ObjectLoader::ObjectLoader()'],['../class_object_loader_a060ab333dd50dea5ae6eb3833062d4a7.html#a060ab333dd50dea5ae6eb3833062d4a7',1,'ObjectLoader::ObjectLoader(const QString &amp;filename)']]],
+  ['objectloader_2ecpp',['ObjectLoader.cpp',['../_object_loader_8cpp.html',1,'']]],
+  ['objectloader_2eh',['ObjectLoader.h',['../_object_loader_8h.html',1,'']]],
+  ['ok',['OK',['../class_kinect_ac28179a7275189d8f33d4c562f3cfacd.html#ac28179a7275189d8f33d4c562f3cfacda71905f7f617133ae9dcc5a7f60fe5e3a',1,'Kinect']]],
+  ['opendepthstream',['openDepthStream',['../class_kinect_a30d60fbfe183e9e55eb2fc3fbc97185c.html#a30d60fbfe183e9e55eb2fc3fbc97185c',1,'Kinect']]],
+  ['openglcontext',['OpenGLContext',['../_basic_usage_scene_8h_a9c6c46b152fbf088399207c75fc07902.html#a9c6c46b152fbf088399207c75fc07902',1,'OpenGLContext():&#160;BasicUsageScene.h'],['../_open_g_l_window_8h_a9c6c46b152fbf088399207c75fc07902.html#a9c6c46b152fbf088399207c75fc07902',1,'OpenGLContext():&#160;OpenGLWindow.h'],['../_render_object_8h_a9c6c46b152fbf088399207c75fc07902.html#a9c6c46b152fbf088399207c75fc07902',1,'OpenGLContext():&#160;RenderObject.h']]],
+  ['openglwindow',['OpenGLWindow',['../class_open_g_l_window.html',1,'OpenGLWindow'],['../class_open_g_l_window_a81b042bc42f2e3057c5eb30edf8029c6.html#a81b042bc42f2e3057c5eb30edf8029c6',1,'OpenGLWindow::OpenGLWindow()']]],
+  ['openglwindow_2ecpp',['OpenGLWindow.cpp',['../_open_g_l_window_8cpp.html',1,'']]],
+  ['openglwindow_2eh',['OpenGLWindow.h',['../_open_g_l_window_8h.html',1,'']]],
+  ['openrgbstream',['openRGBStream',['../class_kinect_ae30aa93a19d11719a392faaee29bf5af.html#ae30aa93a19d11719a392faaee29bf5af',1,'Kinect']]],
+  ['out_5fof_5fmemory',['OUT_OF_MEMORY',['../class_kinect_ac28179a7275189d8f33d4c562f3cfacd.html#ac28179a7275189d8f33d4c562f3cfacdab34743ee923b6c4e3562d180cabcae7e',1,'Kinect']]]
 ];
