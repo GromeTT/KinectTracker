@@ -1,0 +1,26 @@
+var class_analysis_results =
+[
+    [ "AnalysisResults", "class_analysis_results.html#a020b2b07912eef18bb5ae9615118192f", null ],
+    [ "~AnalysisResults", "class_analysis_results.html#a6f232a238c51a88fe302dd6874f85922", null ],
+    [ "directionX", "class_analysis_results.html#aa7b63d04c5848c57b1fb3198f8fb48f5", null ],
+    [ "directionXChanged", "class_analysis_results.html#a995f32a7b01dc305682db58c82a0c0f4", null ],
+    [ "directionY", "class_analysis_results.html#a612d1b553456b25b7f588f5ca5310e0e", null ],
+    [ "directionYChanged", "class_analysis_results.html#ab2dc7f3b695965b41a8967bfadc6d71e", null ],
+    [ "directionZ", "class_analysis_results.html#a78f5b7db860b5ccaa0fd1a54bcc815e2", null ],
+    [ "directionZChanged", "class_analysis_results.html#af5a3263ab582cab9531bcaadd6267c93", null ],
+    [ "setDirectionX", "class_analysis_results.html#a6be9f9ff0b1993e9779fd059c8e91de2", null ],
+    [ "setDirectionY", "class_analysis_results.html#a05906a40b1a8ec7ed8d8333564990b0b", null ],
+    [ "setDirectionZ", "class_analysis_results.html#a568bed59e2b3f02ae313c8a99b0e2f5c", null ],
+    [ "setValuesByVetcor", "class_analysis_results.html#aff447783e8be37a00c9db9942f32d4a4", null ],
+    [ "setVelocity", "class_analysis_results.html#a7f0310a7b661d2454e1772575ff6faee", null ],
+    [ "setWorkerStatus", "class_analysis_results.html#a529f8458a0574509660edcc8c02b7776", null ],
+    [ "velocity", "class_analysis_results.html#a32b25bcab79516a64fde78cb3f870f05", null ],
+    [ "velocityChanged", "class_analysis_results.html#ab311c230ce884301bc73697993e4a704", null ],
+    [ "workerStatus", "class_analysis_results.html#a185f9f0da8d0092b65c64743f8c0105f", null ],
+    [ "workerStatusChanged", "class_analysis_results.html#a7f320567dbbef79795e32a3739e6ca68", null ],
+    [ "directionX", "class_analysis_results.html#a1ed376bbef1dba248f6a214410398aa3", null ],
+    [ "directionY", "class_analysis_results.html#abe259e537c6b9f09871ee34be4f26be1", null ],
+    [ "directionZ", "class_analysis_results.html#abbcc333b13510aa1c52c2f146bc85581", null ],
+    [ "velocity", "class_analysis_results.html#a1e9fb51cf1b09e5070b124ff9e3848df", null ],
+    [ "workerStatus", "class_analysis_results.html#a3fd453bc84350dc8cc9a67aabada0761", null ]
+];

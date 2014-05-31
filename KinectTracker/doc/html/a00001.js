@@ -1,0 +1,26 @@
+var a00001 =
+[
+    [ "AnalysisResults", "a00001.html#a020b2b07912eef18bb5ae9615118192f", null ],
+    [ "~AnalysisResults", "a00001.html#a6f232a238c51a88fe302dd6874f85922", null ],
+    [ "directionX", "a00001.html#aa7b63d04c5848c57b1fb3198f8fb48f5", null ],
+    [ "directionXChanged", "a00001.html#a995f32a7b01dc305682db58c82a0c0f4", null ],
+    [ "directionY", "a00001.html#a612d1b553456b25b7f588f5ca5310e0e", null ],
+    [ "directionYChanged", "a00001.html#ab2dc7f3b695965b41a8967bfadc6d71e", null ],
+    [ "directionZ", "a00001.html#a78f5b7db860b5ccaa0fd1a54bcc815e2", null ],
+    [ "directionZChanged", "a00001.html#af5a3263ab582cab9531bcaadd6267c93", null ],
+    [ "setDirectionX", "a00001.html#a6be9f9ff0b1993e9779fd059c8e91de2", null ],
+    [ "setDirectionY", "a00001.html#a05906a40b1a8ec7ed8d8333564990b0b", null ],
+    [ "setDirectionZ", "a00001.html#a568bed59e2b3f02ae313c8a99b0e2f5c", null ],
+    [ "setValuesByVetcor", "a00001.html#aff447783e8be37a00c9db9942f32d4a4", null ],
+    [ "setVelocity", "a00001.html#a7f0310a7b661d2454e1772575ff6faee", null ],
+    [ "setWorkerStatus", "a00001.html#a529f8458a0574509660edcc8c02b7776", null ],
+    [ "velocity", "a00001.html#a32b25bcab79516a64fde78cb3f870f05", null ],
+    [ "velocityChanged", "a00001.html#ab311c230ce884301bc73697993e4a704", null ],
+    [ "workerStatus", "a00001.html#a185f9f0da8d0092b65c64743f8c0105f", null ],
+    [ "workerStatusChanged", "a00001.html#a7f320567dbbef79795e32a3739e6ca68", null ],
+    [ "directionX", "a00001.html#a1ed376bbef1dba248f6a214410398aa3", null ],
+    [ "directionY", "a00001.html#abe259e537c6b9f09871ee34be4f26be1", null ],
+    [ "directionZ", "a00001.html#abbcc333b13510aa1c52c2f146bc85581", null ],
+    [ "velocity", "a00001.html#a1e9fb51cf1b09e5070b124ff9e3848df", null ],
+    [ "workerStatus", "a00001.html#a3fd453bc84350dc8cc9a67aabada0761", null ]
+];
