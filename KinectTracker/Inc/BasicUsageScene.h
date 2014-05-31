@@ -8,7 +8,6 @@
 #include <QVector3D>
 #include <QMatrix4x4>
 #include <QFileSystemWatcher>
-#include <QOpenGLContext>
 #include "Camera.h"
 #include "Kinect.h"
 
@@ -17,8 +16,11 @@ class QOpenGLTexture;
 class OpenGLWindow;
 class QOpenGLContext;
 
-typedef QVector<RenderObject*> RenderObjects;
+
 typedef QSharedPointer<QOpenGLContext> OpenGLContext;
+typedef QVector<QOpenGLShaderProgram*> ShaderPrograms;
+typedef QVector<RenderObject*> RenderObjects;
+typedef QVector<QOpenGLTexture*> OpenGLTextures;
 
 class BasicUsageScene : public QObject
 {
@@ -46,7 +48,9 @@ public:
     void pitchCamera( const float angle );
     void setCameraYaw( const float angle );
     void yawCamera( const float angle );
-    void addRenderObject( RenderObject* object );
+
+    QOpenGLShaderProgram* getShaderProgram( const unsigned short i ) const;
+    RenderObject* loadObjectFromFile( const QString filename );
     RenderObject* createPlane();
     RenderObject* createCube();
     RenderObject* createAxis();
@@ -66,18 +70,19 @@ signals:
 private:
     void prepareShaderProgram();
     void prepareTextures();
-    void updateShaderProgramms(const QString& path);
 
-    bool                        m_takeSnapshot;
-    QOpenGLShaderProgram        m_shaderProgram;
+    QOpenGLShaderProgram* createShaderProgram ( const QString vertexShader,
+                                                const QString fragmentShader );
+
+    ShaderPrograms              m_shaderPrograms;
     QMatrix4x4                  m_projectionMatrix;
     RenderObjects               m_renderObjects;
-    QOpenGLTexture*             mp_texture;
-    QOpenGLTexture*             mp_texture1;
+    OpenGLTextures              m_textures;
     QImage*                     mp_snapshot;
     QFileSystemWatcher          m_fileSystemWatcher;
     OpenGLWindow*               mp_window;
     Camera                      m_camera;
+    bool                        m_takeSnapshot;
 
     static const QString pathToVertexShader;
     static const QString pathToFragmentShader;

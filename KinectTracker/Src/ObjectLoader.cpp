@@ -11,7 +11,7 @@ LoaderObject::LoaderObject()
 
 LoaderObject::~LoaderObject()
 {
-
+    qDebug() << "LoaderObject destroyed.";
 }
 
 void LoaderObject::addVertex( const Vertex vertex )
@@ -68,15 +68,16 @@ void ObjectLoader::setFilename( const QString& filename )
     m_filename = filename;
 }
 
-LoaderObject* ObjectLoader::load()
+LoaderObjectPtr ObjectLoader::load()
 {
     QFile file ( m_filename );
     if ( !file.open( QFile::ReadOnly ) )
     {
         qWarning() << QString("Could not open file : %1").arg( m_filename );
+        return LoaderObjectPtr();
     }
     QTextStream streamer( &file );
-    LoaderObject* obj = new LoaderObject();
+    LoaderObjectPtr obj ( new LoaderObject() );
     while ( !streamer.atEnd() )
     {
         QString line = streamer.readLine();

@@ -3,6 +3,7 @@
 
 #include <QVector>
 #include <QString>
+#include <QSharedPointer>
 #include "Vertex.h"
 
 class LoaderObject
@@ -21,6 +22,8 @@ private:
     QVector<unsigned int> m_indices;
 };
 
+typedef QSharedPointer<LoaderObject> LoaderObjectPtr;
+
 class ObjectLoader
 {
 public:
@@ -29,7 +32,7 @@ public:
     ~ObjectLoader();
 
     void setFilename( const QString& filename );
-    LoaderObject* load();
+    LoaderObjectPtr load();
     QString      getFilename( ) const;
 
 private:

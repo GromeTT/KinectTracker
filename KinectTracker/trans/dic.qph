@@ -1,0 +1,27 @@
+<!DOCTYPE QPH>
+<QPH sourcelanguage="en" language="de">
+<phrase>
+    <source>Datei</source>
+    <target>Datei</target>
+</phrase>
+<phrase>
+    <source>Edit</source>
+    <target>Bearbeiten</target>
+</phrase>
+<phrase>
+    <source>Quit</source>
+    <target>Beenden</target>
+</phrase>
+<phrase>
+    <source>Establish connection to kinect...</source>
+    <target>Verbindung mit Kinect herstellen...</target>
+</phrase>
+<phrase>
+    <source>Form</source>
+    <target>Form</target>
+</phrase>
+<phrase>
+    <source>Dialog</source>
+    <target>Dialog</target>
+</phrase>
+</QPH>

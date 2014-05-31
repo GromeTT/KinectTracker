@@ -2,14 +2,14 @@
 #include "../Inc/Vertex.h"
 
 /**
- * @class
+ * \class Skeleton
  * Skeleton encapsulates twenty characteristic points of the human body.
  * The positions of these points is extracted from the NUI_SKELETON_DATA structure and
  * is given in meters.
  */
 
 /**
-  * \enum
+  * \enum Joints
   * This enum defines the different joints of the skeleton.
   *
   * \value Hip
@@ -51,7 +51,7 @@ Skeleton::Skeleton()
 Skeleton::Skeleton( const NUI_SKELETON_DATA& skeletonData )
     : m_vertices( 20 )
 {
-    setSkeletonFromSkeletonData( skeletonData );
+    setSkeletonBySkeletonData( skeletonData );
 }
 
 /**
@@ -68,26 +68,26 @@ Skeleton::~Skeleton()
  */
 void Skeleton::setSkeletonBySkeletonData( const NUI_SKELETON_DATA& skeletonData )
 {
-    fillVertex( m_vertices[Joints::Hip], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HIP_CENTER ] );
-    fillVertex( m_vertices[Joints::Spine], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_SPINE ] );
-    fillVertex( m_vertices[Joints::ShoulderCenter], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_SHOULDER_CENTER ] );
-    fillVertex( m_vertices[Joints::Head], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HEAD ] );
-    fillVertex( m_vertices[Joints::ShoulderLeft], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_SHOULDER_LEFT ] );
-    fillVertex( m_vertices[Joints::ElbowLeft], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_ELBOW_LEFT ] );
-    fillVertex( m_vertices[Joints::WristLeft], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_WRIST_LEFT ] );
-    fillVertex( m_vertices[Joints::HandLeft], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HAND_LEFT ] );
-    fillVertex( m_vertices[Joints::ShoulderRight], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_SHOULDER_RIGHT ] );
-    fillVertex( m_vertices[Joints::ElbowRight], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_ELBOW_RIGHT ] );
-    fillVertex( m_vertices[Joints::WristRight], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_WRIST_RIGHT ] );
-    fillVertex( m_vertices[Joints::HandRight], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HAND_RIGHT ] );
-    fillVertex( m_vertices[Joints::HipLeft], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HIP_LEFT ] );
-    fillVertex( m_vertices[Joints::KneeLeft], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_KNEE_LEFT ] );
-    fillVertex( m_vertices[Joints::AnkleLeft], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_ANKLE_LEFT ] );
-    fillVertex( m_vertices[Joints::FootLeft], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_FOOT_LEFT ] );
-    fillVertex( m_vertices[Joints::HipRight], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HIP_RIGHT ] );
-    fillVertex( m_vertices[Joints::KneeRight], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_KNEE_RIGHT ] );
-    fillVertex( m_vertices[Joints::AnkleRight], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_ANKLE_RIGHT ] );
-    fillVertex( m_vertices[Joints::FootRight], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_FOOT_RIGHT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::Hip )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HIP_CENTER ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::Spine )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_SPINE ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::ShoulderCenter )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_SHOULDER_CENTER ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::Head )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HEAD ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::ShoulderLeft )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_SHOULDER_LEFT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::ElbowLeft )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_ELBOW_LEFT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::WristLeft )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_WRIST_LEFT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::HandLeft )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HAND_LEFT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::ShoulderRight )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_SHOULDER_RIGHT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::ElbowRight )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_ELBOW_RIGHT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::WristRight )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_WRIST_RIGHT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::HandRight )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HAND_RIGHT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::HipLeft )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HIP_LEFT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::KneeLeft )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_KNEE_LEFT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::AnkleLeft )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_ANKLE_LEFT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::FootLeft )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_FOOT_LEFT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::HipRight )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_HIP_RIGHT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::KneeRight )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_KNEE_RIGHT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::AnkleRight )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_ANKLE_RIGHT ] );
+    fillVertex( m_vertices[static_cast<int>( Joints::FootRight )], skeletonData.SkeletonPositions[ NUI_SKELETON_POSITION_FOOT_RIGHT ] );
 }
 
 /**
@@ -96,7 +96,7 @@ void Skeleton::setSkeletonBySkeletonData( const NUI_SKELETON_DATA& skeletonData 
  */
 const Vertex Skeleton::getJoint( const Skeleton::Joints joint ) const
 {
-    return m_vertices.at( i );
+    return m_vertices.at( static_cast<int>( joint ) );
 }
 
 /**

@@ -178,7 +178,9 @@ const QMatrix4x4& Camera::cameraMatrix() const
         m_cameraMatrix.rotate( m_roll, 0.0f, 0.0f, 1.0f );
         m_cameraMatrix.rotate( m_yaw, 0.0f, 1.0f, 0.0f );
         m_cameraMatrix.rotate( m_pitch, 1.0f, 0.0f, 0.0f );
-        m_cameraMatrix.translate( m_x, m_y, m_z );
+        QMatrix4x4 translation;
+        translation.translate( m_x, m_y, m_z );
+        m_cameraMatrix = m_cameraMatrix * translation;
         m_recalculateMatrix = false;
     }
     return m_cameraMatrix;

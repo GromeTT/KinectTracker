@@ -42,7 +42,6 @@ float Floor::getLineCount() const
 
 void Floor::calculateFloor()
 {
-    bool b = ( m_context == QOpenGLContext::currentContext() );
     Vertices vertices;
     Indices indices;
     float offset = m_size / m_lineCount;
