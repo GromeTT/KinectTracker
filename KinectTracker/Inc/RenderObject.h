@@ -14,9 +14,10 @@ class Vertex;
 class QOpenGLShaderProgram;
 class QOpenGLContext;
 
+typedef QSharedPointer<QOpenGLContext> OpenGLContext;
 typedef QVector<Vertex> Vertices;
 typedef QVector<unsigned int> Indices;
-typedef QSharedPointer<QOpenGLContext> OpenGLContext;
+typedef QVector<QOpenGLTexture*> OpenGLTextures;
 
 class RenderObject : public QObject
 {
@@ -27,8 +28,8 @@ public:
                   RenderObject* parent = nullptr );
     ~RenderObject();
 
-    virtual void render( const QMatrix4x4& projection,
-                         const QMatrix4x4& view );
+    void render( const QMatrix4x4& projection,
+                 const QMatrix4x4& view );
 
     void setVertices( const Vertices& vertices );
     void setIndices( const Indices& indices );
@@ -39,11 +40,19 @@ public:
     void rollPitchYaw( const QVector3D& rotation );
     void setScale( const QVector3D& scale );
     void setRenderMode( const GLenum renderMode );
-    void setTexture( QOpenGLTexture* texture );
-    void setTexture1( QOpenGLTexture* texture );
-    void setUseTexture( const bool useTexture );
-    void setUseTexutre1( const bool useTexture );
+    void setTexture( QOpenGLTexture* texture, const int i );
+    void updateTexture( const QOpenGLTexture::TextureFormat textureFormat,
+                        const int width,
+                        const int height,
+                        const QOpenGLTexture::PixelFormat pixelFormat,
+                        const QOpenGLTexture::PixelType pixelType,
+                        const int texture,
+                        void* data,
+                        const QOpenGLTexture::Filter minificationFilter = QOpenGLTexture::Linear,
+                        const QOpenGLTexture::Filter magnificationFilter = QOpenGLTexture::Linear );
     void setWireFrameMode( const bool wireFrameMode );
+    void setUseTexture( const bool useTexture );
+    void setTextureActive( const int i , const bool active );
 
     void setX( const float x );
     void setY( const float y );
@@ -67,24 +76,17 @@ public:
     float getScaleY() const;
     float getScaleZ() const;
     bool  isVisible() const;
+    bool  useTexture() const;
+    bool  textureActive( const int i ) const;
 
-    // TODO: QVector3D durch float x, y, z ersetzen.
-    //       Gedanken über eine generische Lösung machen,
-    //       damit float durch double etc. ersetzt werden kann.
     const Vertices&     getVertices() const;
     const QMatrix4x4&   getModelMatrix() const;
     GLenum              getRenderMode() const;
-    bool                getUseTexture() const;
     bool                isWireFrameModeOn() const;
-    QOpenGLTexture*     getTexture();
+    QOpenGLTexture*     getTexture( const unsigned short i );
 
-public:
+private:
     RenderObject*               mp_parent;
-    mutable bool                m_recalculateMatrix;
-    bool                        m_useTexture;
-    bool                        m_useTexture1;
-    bool                        m_wireFrameMode;
-    bool                        m_visible;
     QOpenGLVertexArrayObject    m_vao;
     QOpenGLShaderProgram*       mp_shaderProgram;
     QOpenGLBuffer               m_vertexBuffer;
@@ -92,11 +94,15 @@ public:
     Vertices                    m_vertices;
     Indices                     m_indices;
     mutable QMatrix4x4          m_modelMatrix;
-    GLenum                      m_renderMode;
-    QOpenGLTexture*             mp_texture;
-    QOpenGLTexture*             mp_texture1;
     OpenGLContext               m_context;
-
+    OpenGLTextures              m_textures;
+    QVector<bool>               m_activeTextures;
+    GLenum                      m_renderMode;
+    mutable bool                m_recalculateMatrix;
+    bool                        m_useTexture;
+    bool                        m_wireFrameMode;
+    bool                        m_visible;
+    static const int            m_maxTexturesCount = 3;
     float m_x, m_y, m_z;
     float m_roll, m_pitch, m_yaw;
     float m_xScale, m_yScale, m_zScale;
@@ -113,6 +119,7 @@ signals:
     void zScaleChanged();
     void useWireFrameModeChanged();
     void visibleChanged();
+    void useTextureChanged();
 
 private:
     Q_PROPERTY( float x MEMBER m_x
@@ -169,6 +176,13 @@ private:
                 READ isVisible
                 WRITE setVisible
                 NOTIFY visibleChanged )
+
+    Q_PROPERTY( bool useTexture MEMBER m_useTexture
+                READ useTexture
+                WRITE setUseTexture
+                NOTIFY useTextureChanged )
 };
+
+typedef QVector<RenderObject*> RenderObjects;
 
 #endif // RENDEROBJECT_H

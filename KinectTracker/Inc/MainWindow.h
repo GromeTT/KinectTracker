@@ -53,11 +53,9 @@ private:
     void actionOpenGLRenderWidgetChecked( bool checked );
     void actionBackgroundSubtractionToggled( );
     void takeSnapshot();
-
     void setUpdateSkeltonData( const bool on );
     void setUpdateRGBData( const bool on );
     void setUpdateDepthData( const bool on );
-
     void subWindowActivated( QMdiSubWindow* subWindow );
 
 signals:
@@ -102,7 +100,6 @@ private:
     cv::CascadeClassifier faceClassifier;
     // Modes
     bool m_backGroundSubtraction;
-    long long int m_rgbImgCount;
     QTime time;
     // RGB/Depth-data
     uchar* mp_rgbData;

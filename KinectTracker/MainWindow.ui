@@ -37,16 +37,16 @@
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
-   <widget class="QMenu" name="menuFenster">
+   <widget class="QMenu" name="windowMenu">
     <property name="title">
-     <string>Fenster</string>
+     <string>Window</string>
     </property>
     <addaction name="actionRGBViewer"/>
     <addaction name="actionOpenGLRender"/>
    </widget>
-   <widget class="QMenu" name="menuBearbeiten">
+   <widget class="QMenu" name="editMenu">
     <property name="title">
-     <string>Bearbeiten</string>
+     <string>Edit</string>
     </property>
     <addaction name="actionBackground_Subtraction"/>
     <addaction name="separator"/>
@@ -57,8 +57,8 @@
     <addaction name="actionKeep_depth_up_to_date"/>
    </widget>
    <addaction name="menuDatei"/>
-   <addaction name="menuBearbeiten"/>
-   <addaction name="menuFenster"/>
+   <addaction name="editMenu"/>
+   <addaction name="windowMenu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -71,12 +71,12 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionQuit">
    <property name="text">
-    <string>Beenden</string>
+    <string>Quit</string>
    </property>
   </action>
   <action name="actionOpenKinectStream">
    <property name="text">
-    <string>Öffne Kinect Stream</string>
+    <string>Establish connection to kinect...</string>
    </property>
   </action>
   <action name="actionRGBViewer">

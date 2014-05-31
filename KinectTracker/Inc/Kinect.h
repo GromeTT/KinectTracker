@@ -9,6 +9,7 @@
 #include <QVector>
 #include <QSize>
 #include <QSharedPointer>
+#include <QOpenGLTexture>
 
 class QImage;
 class Skeleton;
@@ -16,10 +17,11 @@ class Skeleton;
 class Kinect
 {
 public:
-    enum {
-        OK = S_OK,
-        FAIL = E_FAIL,
-        DEVICE_NOT_READY = E_NUI_DEVICE_NOT_READY,
+    enum Error
+    {
+        OK = S_OK, /*!< OK  <br> basdasa*/
+        FAIL = E_FAIL, /*!< OK  */
+        DEVICE_NOT_READY = E_NUI_DEVICE_NOT_READY, /*!< OK  */
         OUT_OF_MEMORY = E_OUTOFMEMORY,
         POINTER = E_POINTER,
         INVALIDARG = E_INVALIDARG,

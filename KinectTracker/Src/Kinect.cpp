@@ -6,6 +6,15 @@
 #include <QDebug>
 #include <iostream>
 
+/*!
+    \class Kinect
+    \b Kinect is a wrapper for the Microsoft kinect sensor.
+*/
+
+/*!
+   \fn Kinect::Kinect
+   Constructs an uninitialized Kinect object.
+ */
 Kinect::Kinect()
     : m_initialized( false )
     , m_rgbStreamOpen( false )
@@ -13,15 +22,20 @@ Kinect::Kinect()
 {
 }
 
+
+/*!
+   \fn Kinect::~Kinect
+ */
 Kinect::~Kinect()
 {
     // Destory the sensor
 }
 
-/**
- * @brief Kinect::initialize
- * @param flag
- * @return
+/*!
+    \fn HRESULT Kinect::initialize( const DWORD flag )
+    Initializes the Kinect with \a flag.
+    \param flag
+    \return
  */
 HRESULT Kinect::initialize( const DWORD flag )
 {
@@ -58,9 +72,10 @@ HRESULT Kinect::initialize( const DWORD flag )
     return S_OK;
 }
 
-/**
- * @brief Kinect::getSensorCount
- * Returns the count of active Kinect sensor.
+/*!
+   \fn int Kinect::getSensorCount() const
+
+    Returns how many kinect sensors are plugged in.
  */
 int Kinect::getSensorCount() const
 {
@@ -73,14 +88,15 @@ int Kinect::getSensorCount() const
     return numSensors;
 }
 
-/**
- * @brief Kinect::openRGBStream
- * @param imageType
- * @param resolution
- * @param frameFlag
- * @param frameLimit
- * @param nextFrame
- * @return
+
+/*!
+   \brief Kinect::openRGBStream
+   Das ist ein Test und soll da bitte nicht erscheinen.
+   \param resolution
+   \param frameFlag
+   \param frameLimit
+   \param nextFrame
+   \return
  */
 HRESULT Kinect::openRGBStream( NUI_IMAGE_RESOLUTION resolution,
                                DWORD frameFlag,
@@ -109,6 +125,14 @@ HRESULT Kinect::openRGBStream( NUI_IMAGE_RESOLUTION resolution,
     }
 }
 
+/*!
+   \fn Kinect::openDepthStream
+   \param resolution
+   \param frameFlag
+   \param frameLimit
+   \param nextFrame
+   \return
+ */
 HRESULT Kinect::openDepthStream( NUI_IMAGE_RESOLUTION resolution,
                                  DWORD frameFlag,
                                  DWORD frameLimit,
@@ -136,11 +160,7 @@ HRESULT Kinect::openDepthStream( NUI_IMAGE_RESOLUTION resolution,
     }
 }
 
-/**
- * @brief Kinect::getRGBImage
- * @param img
- * @return
- */
+
 HRESULT Kinect::getRGBImage( QImage*& img )
 {
     Q_ASSERT( m_initialized );

@@ -3,6 +3,7 @@
 #include "../Inc/Vertex.h"
 #include "../Inc/OpenGLWindow.h"
 #include "../Inc/Floor.h"
+#include "../Inc/ObjectLoader.h"
 #include <QOpenGLContext>
 #include <QOpenGLFunctions>
 #include <QOpenGLTexture>
@@ -17,17 +18,12 @@ const QString BasicUsageScene::pathToFragmentShader =  "../KinectTracker/Shader/
  */
 BasicUsageScene::BasicUsageScene( OpenGLWindow* parent )
     : QObject( parent )
-    , m_shaderProgram()
-    , mp_texture( nullptr )
-    , mp_texture1( nullptr )
     , mp_snapshot( nullptr )
     , m_takeSnapshot( false )
     , mp_window( parent )
 {
     m_projectionMatrix.perspective( 45.0f, 4.0f/3.0f, 0.1f, 100.0f );
     m_camera.moveToPosition( 0.0f, 0.0f, -0.1f );
-
-    connect( &m_fileSystemWatcher, &QFileSystemWatcher::fileChanged, this, &BasicUsageScene::updateShaderPrograms );
 }
 
 /**
@@ -39,23 +35,23 @@ BasicUsageScene::~BasicUsageScene()
     qDeleteAll( m_renderObjects );
 }
 
-
+/*!
+   \brief BasicUsageScene::initialize
+   Initializes a basic shaderprogram and a texture.
+ */
 void BasicUsageScene::initialize()
 {
     prepareShaderProgram();
     prepareTextures();
 }
 
-void BasicUsageScene::update(float t)
+void BasicUsageScene::update( float t )
 {
     Q_UNUSED( t );
 }
 
 /**
  * @brief BasicUsageScene::render
- *
- * @param w
- * @param h
  */
 void BasicUsageScene::render()
 {
@@ -143,16 +139,72 @@ void BasicUsageScene::yawCamera( const float angle )
     m_camera.yaw( angle );
 }
 
-/**
- * @brief BasicUsageScene::addRenderObject
- * Adds \a object to the scene.
- * @param object
+/*!
+   \brief BasicUsageScene::createShaderProgram
+   Creates a QOpenGLVertexShaderProgram with a vertex sahder and a fragment shader.
+   \param vertexShader
+   Path to vertex shader.
+   \param fragmentShader
+   Path to framgent shader.
  */
-void BasicUsageScene::addRenderObject( RenderObject* object )
+QOpenGLShaderProgram* BasicUsageScene::createShaderProgram( const QString vertexShader,
+                                                            const QString fragmentShader )
 {
-    object->setShaderProgram( &m_shaderProgram );
-    m_renderObjects.append( object );
-    emit objectHasBeenAdded( *object );
+    bool result;
+    QOpenGLShaderProgram* shaderProgram  = new QOpenGLShaderProgram();
+    result = shaderProgram->addShaderFromSourceFile( QOpenGLShader::Vertex,
+                                                      vertexShader );
+    if ( !result )
+    {
+        qWarning() << "Can't compile vertex shader. \n" << shaderProgram->log();
+    }
+    result = shaderProgram->addShaderFromSourceFile( QOpenGLShader::Fragment,
+                                                     fragmentShader );
+    if ( !result )
+    {
+        qWarning() << "Can't compile fragment shader. \n" << shaderProgram->log();
+    }
+
+    result = shaderProgram->link();
+    if ( !result )
+    {
+        qWarning() << "Can't link shader program. \n" << shaderProgram->log();
+    }
+    m_shaderPrograms.append( shaderProgram );
+    return shaderProgram;
+}
+
+/*!
+   \brief BasicUsageScene::getShaderProgram
+   \param i
+   \return
+ */
+QOpenGLShaderProgram* BasicUsageScene::getShaderProgram( const unsigned short i ) const
+{
+    return m_shaderPrograms.at( i );
+}
+
+/**
+ * @brief BasicUsageScene::loadObjectFromFile
+ * Constructs an RenderObject from the file specified by \a filename.
+ * If the procedure went wrong because of an invalid file or filename,
+ * nullptr will be returned.
+ */
+RenderObject* BasicUsageScene::loadObjectFromFile( const QString filename )
+{
+    ObjectLoader objectLoader( filename );
+    LoaderObjectPtr tmp ( objectLoader.load() );
+    if ( tmp.isNull() )
+    {
+        return nullptr;
+    }
+    mp_window->makeContextCurrent();
+    RenderObject* object = new RenderObject( mp_window->getOpenGLContext() );
+    object->setVertices( tmp->getVertices() );
+    object->setIndices( tmp->getIndices() );
+    object->setRenderMode( GL_TRIANGLES );
+    object->setVisible( true );
+    return object;
 }
 
 
@@ -187,10 +239,10 @@ RenderObject* BasicUsageScene::createPlane()
     object->setVertices( vertices );
     object->setIndices( indices );
     object->setRenderMode( GL_QUADS );
-    object->setShaderProgram( &m_shaderProgram );
-    object->setTexture( mp_texture );
-    object->setTexture1( mp_texture1 );
-    object->setUseTexture( true );
+    object->setShaderProgram( m_shaderPrograms.at( 0 ) );
+    object->setTexture( m_textures.at( 0 ), 0 );
+//    object->setTexture( m_textures.at( 1 ), 1 );
+//    object->setUseTexture( true );
 
     m_renderObjects << object;
 
@@ -233,7 +285,7 @@ RenderObject* BasicUsageScene::createCube()
     object->setVertices( vertices );
     object->setIndices( indices );
     object->setRenderMode( GL_QUADS );
-    object->setShaderProgram( &m_shaderProgram );
+    object->setShaderProgram( m_shaderPrograms.at( 0 ) );
 
     m_renderObjects << object;
 
@@ -269,7 +321,7 @@ RenderObject* BasicUsageScene::createAxis()
     object->setVertices( vertices );
     object->setIndices( indices );
     object->setRenderMode( GL_LINES );
-    object->setShaderProgram( &m_shaderProgram );
+    object->setShaderProgram( m_shaderPrograms.at( 0 ) );
 
     m_renderObjects << object;
 
@@ -281,7 +333,7 @@ void BasicUsageScene::createFloor()
     mp_window->makeContextCurrent();
 
     Floor* floor = new Floor( mp_window->getOpenGLContext() );
-    floor->setShaderProgram( &m_shaderProgram );
+    floor->setShaderProgram( m_shaderPrograms.at( 0 ) );
     m_renderObjects << floor;
 }
 
@@ -338,59 +390,34 @@ QObject* BasicUsageScene::getCamera()
 
 void BasicUsageScene::prepareShaderProgram()
 {
-    updateShaderPrograms( QString() );
+    createShaderProgram( pathToVertexShader,
+                         pathToFragmentShader );
 
     m_fileSystemWatcher.addPath( "../KinectTracker/Shader/VertexShader.vert" );
     m_fileSystemWatcher.addPath( "../KinectTracker/Shader/FragmentShader.frag" );
 }
 
+/*!
+   \brief BasicUsageScene::prepareTextures
+   Constructs all textures that are going to be used in the scene.
+ */
 void BasicUsageScene::prepareTextures()
 {
     bool result;
-    QOpenGLContext::currentContext()->functions()->glActiveTexture( GL_TEXTURE0 );
-    mp_texture  = new QOpenGLTexture( QImage( "C:/Users/c3p0/Desktop/Rockbell.jpg" ) );
-    mp_texture->setMinMagFilters( QOpenGLTexture::Linear, QOpenGLTexture::Linear );
-    result = mp_texture->create();
+    QOpenGLTexture* texture  = new QOpenGLTexture( QImage( "C:/Users/c3p0/Desktop/Rockbell.jpg" ) );
+    texture->setMinMagFilters( QOpenGLTexture::Linear, QOpenGLTexture::Linear );
+    result = texture->create();
     if ( !result )
     {
-        qDebug() << "Couldn't create texture";
+        qWarning() << "Couldn't create texture";
     }
-    QOpenGLContext::currentContext()->functions()->glActiveTexture( GL_TEXTURE1 );
-    mp_texture1 = new QOpenGLTexture( QImage( "C:/Users/c3p0/Desktop/mask.jpg" ) );
-    mp_texture1->setMinMagFilters( QOpenGLTexture::Linear, QOpenGLTexture::Linear );
-    result = mp_texture1->create();
+    m_textures.append( texture );
+    texture = new QOpenGLTexture( QImage( "C:/Users/c3p0/Desktop/mask.jpg" ) );
+    texture->setMinMagFilters( QOpenGLTexture::Linear, QOpenGLTexture::Linear );
+    result = texture->create();
     if ( !result )
     {
-        qDebug() << "Couldn't create texture";
+        qWarning() << "Couldn't create texture";
     }
-
+    m_textures.append( texture );
 }
-
-void BasicUsageScene::updateShaderPrograms( const QString& path )
-{
-    Q_UNUSED( path );
-
-    m_shaderProgram.removeAllShaders();
-    bool result;
-    result = m_shaderProgram.addShaderFromSourceFile( QOpenGLShader::Vertex,
-                                                      pathToVertexShader );
-    if ( !result )
-    {
-        qDebug() << "Can't compile vertex shader. \n" << m_shaderProgram.log();
-    }
-    result = m_shaderProgram.addShaderFromSourceFile( QOpenGLShader::Fragment,
-                                                      pathToFragmentShader );
-    if ( !result )
-    {
-        qDebug() << "Can't compile fragment shader. \n" << m_shaderProgram.log();
-    }
-
-    result = m_shaderProgram.link();
-    if ( !result )
-    {
-        qDebug() << "Can't link shader program. \n" << m_shaderProgram.log();
-    }
-    m_fileSystemWatcher.addPath( "../KinectTracker/Shader/VertexShader.vert" );
-    m_fileSystemWatcher.addPath( "../KinectTracker/Shader/FragmentShader.frag" );
-}
-

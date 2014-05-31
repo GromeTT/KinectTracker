@@ -100,7 +100,7 @@ void BSPipeline::process( cv::Mat& input )
     }
     else
     {
-        qDebug() << "No snapshot available.";
+        qWarning() << QObject::tr( "No screenshot available." );
     }
 
     mp_threshold->threshold( input );

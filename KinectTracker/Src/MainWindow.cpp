@@ -36,10 +36,15 @@
 using namespace cv;
 
 /*!
- * \brief MainWindow::MainWindow
- * \param parent
- */
-MainWindow::MainWindow(QWidget *parent)
+  \class MainWindow
+   MainWindow derives from QMainWindow.
+*/
+
+/*!
+    \fn MainWindow::MainWindow( QWidget *parent )
+    Creates a MainWindow.
+*/
+MainWindow::MainWindow( QWidget *parent )
     : QMainWindow( parent )
     , ui( new Ui::MainWindow )
     , mp_openGLWindow( nullptr )
@@ -57,19 +62,18 @@ MainWindow::MainWindow(QWidget *parent)
     , m_backgroundSubtractor( new BackgroundSubtractorMOG )
     , m_lastTiming( 0 )
     , m_backGroundSubtraction( false )
-    , m_rgbImgCount( 0 )
     , mp_rgbData( nullptr )
     , mp_depthData( nullptr )
-    , m_updateSkeletonData( false )
-    , m_updateRGBData( false )
-    , m_updateDepthData( false )
-    , m_takeSnapshot( false )
+    , m_updateSkeletonData( true )
+    , m_updateRGBData( true )
+    , m_updateDepthData( true )
+    , m_takeSnapshot( true )
 {
     ui->setupUi(this);
 
     if( ! faceClassifier.load( "../KinectTracker/Resources/haarcascade_frontalface_alt.xml" ) )
     {
-        qDebug() << "Couldn't find classifier file. ";
+        qDebug() << tr( "Couldn't find classifier file. " );
     }
 
     // Construct explorer and it's dockWidget.
@@ -101,8 +105,6 @@ MainWindow::MainWindow(QWidget *parent)
     // Setup mdiArea.
     ui->mdiArea->tileSubWindows();
 
-
-
     mp_rgbData   = new uchar [ m_kinect->getRGBStreamResoultion().width() * m_kinect->getRGBStreamResoultion().height() * 3 ];
     mp_depthData = new uchar [ m_kinect->getDepthStreamResolution().width() * m_kinect->getDepthStreamResolution().height() * 3 ];
 
@@ -117,7 +119,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect ( ui->actionKeep_Skeleton_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateSkeltonData );
     connect ( ui->actionKeep_rgb_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateRGBData );
-    connect ( ui->actionKeep_depth_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateSkeltonData );
+    connect ( ui->actionKeep_depth_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateDepthData );
 
     connect ( ui->mdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::subWindowActivated );
 
@@ -130,9 +132,11 @@ MainWindow::MainWindow(QWidget *parent)
     m_elpasedTimer.start();
 }
 
-/**
- * @brief MainWindow::~MainWindow
- */
+/*!
+    \fn MainWindow::~MainWindow
+
+    Standarddestructor.
+*/
 MainWindow::~MainWindow()
 {
     delete [] mp_rgbData;
@@ -140,9 +144,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-/**
- * @brief MainWindow::updateScenes
- */
+/*!
+    \fn MainWindow::updateScenes
+
+    Updates the scenes.
+*/
 void MainWindow::updateScenes()
 {
     float dt_ns = ( m_elpasedTimer.nsecsElapsed() - m_lastTiming );
@@ -168,8 +174,8 @@ void MainWindow::updateScenes()
     }
 
     mp_openGLWindow->paintGL();
-//    mp_rgbViewerWindow->paintGL();
-//    mp_depthViewerWindow->paintGL();
+    mp_rgbViewerWindow->paintGL();
+    mp_depthViewerWindow->paintGL();
 
     QString status = "Nothing detected.";
     ui->statusBar->showMessage( QString("Status: %4 Update Time: %1 ms Framerat: %2")
@@ -178,6 +184,10 @@ void MainWindow::updateScenes()
                                 .arg (status ) );
 }
 
+/*!
+   \brief MainWindow::processRGBData
+   Processes the RGB data provided by the kinect sensor.
+ */
 void MainWindow::processRGBData()
 {
     HRESULT res;
@@ -223,37 +233,35 @@ void MainWindow::processRGBData()
 //                cv::drawContours( curr, contours, i, cv::Scalar( 255, 0, 0 ) );
 //            }
             mp_rgbViewerWindow->makeContextCurrent();
-            mp_rgbViewObject->getTexture()->destroy();
-            mp_rgbViewObject->getTexture()->setFormat( QOpenGLTexture::RGB8_UNorm );
-            mp_rgbViewObject->getTexture()->setSize( m_kinect->getRGBStreamResoultion().width(),
-                                                     m_kinect->getDepthStreamResolution().height(),
-                                                     1 );
-            mp_rgbViewObject->getTexture()->allocateStorage();
-            mp_rgbViewObject->getTexture()->setData( QOpenGLTexture::PixelFormat::BGR,
-                                                     QOpenGLTexture::PixelType::UInt8,
-                                                     curr.data );
-            mp_rgbViewObject->getTexture()->setMinMagFilters( QOpenGLTexture::Linear, QOpenGLTexture::Linear );
-            mp_rgbViewObject->getTexture()->create();
+            mp_rgbViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
+                                             m_kinect->getRGBStreamResoultion().width(),
+                                             m_kinect->getRGBStreamResoultion().height(),
+                                             QOpenGLTexture::PixelFormat::BGR,
+                                             QOpenGLTexture::PixelType::UInt8,
+                                             0,
+                                             curr.data,
+                                             QOpenGLTexture::Linear,
+                                             QOpenGLTexture::Linear );
         }
         else
         {
             mp_rgbViewerWindow->makeContextCurrent();
-            mp_rgbViewObject->getTexture()->destroy();
-            mp_rgbViewObject->getTexture()->setFormat( QOpenGLTexture::RGB8_UNorm );
-            mp_rgbViewObject->getTexture()->setSize( m_kinect->getRGBStreamResoultion().width(),
-                                                     m_kinect->getDepthStreamResolution().height(),
-                                                     1 );
-            mp_rgbViewObject->getTexture()->allocateStorage();
-            mp_rgbViewObject->getTexture()->setData( QOpenGLTexture::PixelFormat::BGR,
-                                                     QOpenGLTexture::PixelType::UInt8,
-                                                     mp_rgbData );
-            mp_rgbViewObject->getTexture()->setMinMagFilters( QOpenGLTexture::Linear, QOpenGLTexture::Linear );
-            mp_rgbViewObject->getTexture()->create();
+            mp_rgbViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
+                                             m_kinect->getRGBStreamResoultion().width(),
+                                             m_kinect->getRGBStreamResoultion().height(),
+                                             QOpenGLTexture::PixelFormat::BGR,
+                                             QOpenGLTexture::PixelType::UInt8,
+                                             0,
+                                             mp_rgbData,
+                                             QOpenGLTexture::Linear,
+                                             QOpenGLTexture::Linear );
         }
-        ++m_rgbImgCount;
     }
 }
 
+/*!
+   \brief MainWindow::processDepthData
+ */
 void MainWindow::processDepthData()
 {
     HRESULT res;
@@ -261,17 +269,15 @@ void MainWindow::processDepthData()
     if ( res == S_OK )
     {
         mp_depthViewerWindow->makeContextCurrent();
-        mp_depthViewObject->getTexture()->destroy();
-        mp_depthViewObject->getTexture()->setFormat( QOpenGLTexture::RGB8_UNorm );
-        mp_depthViewObject->getTexture()->setSize( m_kinect->getDepthStreamResolution().width(),
-                                                   m_kinect->getDepthStreamResolution().height(),
-                                                   1 );
-        mp_depthViewObject->getTexture()->allocateStorage();
-        mp_depthViewObject->getTexture()->setData( QOpenGLTexture::PixelFormat::BGR,
-                                                   QOpenGLTexture::PixelType::UInt8,
-                                                   mp_depthData );
-        mp_depthViewObject->getTexture()->setMinMagFilters( QOpenGLTexture::Linear, QOpenGLTexture::Linear );
-        mp_depthViewObject->getTexture()->create();
+        mp_depthViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
+                                           m_kinect->getDepthStreamResolution().width(),
+                                           m_kinect->getDepthStreamResolution().height(),
+                                           QOpenGLTexture::PixelFormat::BGR,
+                                           QOpenGLTexture::PixelType::UInt8,
+                                           0,
+                                           mp_depthData,
+                                           QOpenGLTexture::Linear,
+                                           QOpenGLTexture::Linear );
     }
 }
 
@@ -543,27 +549,13 @@ void MainWindow::constructOpenGLRenderWidget()
     mp_openGLWindow->setVisible( true );
 
     // Initialize scene.
-//    mp_skeletonObject  = mp_openGLWindow->getScene()->createCube();
-//    mp_skeletonObject->setObjectName( "Skeleton" );
-//    mp_boundingBox     = mp_openGLWindow->getScene()->createCube();
-//    mp_boundingBox->setObjectName( "BoundingBox" );
+    mp_skeletonObject  = mp_openGLWindow->getScene()->createCube();
+    mp_skeletonObject->setObjectName( "Skeleton" );
+    mp_boundingBox     = mp_openGLWindow->getScene()->createCube();
+    mp_boundingBox->setObjectName( "BoundingBox" );
     mp_openGLWindow->getScene()->createFloor();
 
-//    mp_arrowObject     = mp_openGLWindow->getScene()->createCube();
-//    mp_arrowObject->setVisible( false );
-
-//    ObjectLoader objectLoader( "../KinectTracker/Resources/Arrow/arrow.obj" );
-//    LoaderObject* o = objectLoader.load();      // Als SharedPointer zurückgeben
-//    mp_openGLWindow->makeContextCurrent();
-//    mp_arrowObject->setVertices( o->getVertices() );
-//    mp_arrowObject->setIndices( o->getIndices() );
-//    mp_arrowObject->setRenderMode( GL_TRIANGLES );
-//    mp_arrowObject->setScale( 0.2f, 0.2f, 0.2f );
-//    mp_arrowObject->setY( 1.5 );
-//    mp_arrowObject->setObjectName( "Arrow" );
-//    mp_arrowObject->setVisible( true );
-//    delete o;
-//    o = nullptr;
+    mp_arrowObject     = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/Resources/Arrow/arrow.obj" );
 }
 
 void MainWindow::constructRGBViewer()
@@ -576,6 +568,8 @@ void MainWindow::constructRGBViewer()
     mp_rgbViewerWindow->setVisible( true );
 
     mp_rgbViewObject   = mp_rgbViewerWindow->getScene()->createPlane();
+    mp_rgbViewObject->setUseTexture( true );
+    mp_rgbViewObject->setTextureActive( 0, true );
 }
 
 void MainWindow::constructDepthViewer()
@@ -588,6 +582,8 @@ void MainWindow::constructDepthViewer()
     mp_depthViewerWindow->setVisible( true );
 
     mp_depthViewObject = mp_depthViewerWindow->getScene()->createPlane();
+    mp_depthViewObject->setUseTexture( true );
+    mp_depthViewObject->setTextureActive( 0, true );
 }
 
 void detect_blobs(Mat& current)
@@ -597,3 +593,17 @@ void detect_blobs(Mat& current)
     cv::SimpleBlobDetector detector;
     //    detector.create( )
 }
+
+/*!
+ *  \fn MainWindow::updateDepthDataChanged()
+ *
+ */
+
+/*!
+    \fn MainWindow::updateRGBDataChanged()
+    */
+
+/*!
+    \fn MainWindow::updateSkeletonDataChanged()
+    */
+
