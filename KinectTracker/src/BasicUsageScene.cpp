@@ -393,8 +393,8 @@ void BasicUsageScene::prepareShaderProgram()
     createShaderProgram( pathToVertexShader,
                          pathToFragmentShader );
 
-    m_fileSystemWatcher.addPath( "../KinectTracker/Shader/VertexShader.vert" );
-    m_fileSystemWatcher.addPath( "../KinectTracker/Shader/FragmentShader.frag" );
+    m_fileSystemWatcher.addPath( "../KinectTracker/shader/VertexShader.vert" );
+    m_fileSystemWatcher.addPath( "../KinectTracker/shader/FragmentShader.frag" );
 }
 
 /*!

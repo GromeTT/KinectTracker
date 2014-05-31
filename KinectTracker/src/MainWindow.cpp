@@ -71,10 +71,10 @@ MainWindow::MainWindow( QWidget *parent )
 {
     ui->setupUi(this);
 
-    if( ! faceClassifier.load( "../KinectTracker/Resources/haarcascade_frontalface_alt.xml" ) )
-    {
-        qDebug() << tr( "Couldn't find classifier file. " );
-    }
+//    if( ! faceClassifier.load( "../KinectTracker/Resources/haarcascade_frontalface_alt.xml" ) )
+//    {
+//        qDebug() << tr( "Couldn't find classifier file. " );
+//    }
 
     // Construct explorer and it's dockWidget.
     mp_explorerDockWidget = new QDockWidget( "Explorer", this );
@@ -555,7 +555,7 @@ void MainWindow::constructOpenGLRenderWidget()
     mp_boundingBox->setObjectName( "BoundingBox" );
     mp_openGLWindow->getScene()->createFloor();
 
-    mp_arrowObject     = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/Resources/Arrow/arrow.obj" );
+    mp_arrowObject = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
 }
 
 void MainWindow::constructRGBViewer()

@@ -15,10 +15,11 @@ public:
     void addVertex( const Vertex vertex );
     void addIndice( const unsigned int indice );
 
-    const Vertices& getVertices() const;
+    const Vertices&              getVertices() const;
     const QVector<unsigned int>& getIndices() const;
+
 private:
-    Vertices m_vertices;
+    Vertices              m_vertices;
     QVector<unsigned int> m_indices;
 };
 
@@ -32,8 +33,9 @@ public:
     ~ObjectLoader();
 
     void setFilename( const QString& filename );
+
     LoaderObjectPtr load();
-    QString      getFilename( ) const;
+    QString         getFilename( ) const;
 
 private:
     QString m_filename;

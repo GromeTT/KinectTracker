@@ -35,7 +35,6 @@ public:
     void render();
     void resize( const int width,
                  const int height );
-
     void moveCameraToPosition( const float x,
                                const float y,
                                const float z );
