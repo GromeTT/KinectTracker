@@ -294,43 +294,42 @@ void MainWindow::processSkeletonData( const unsigned int timestamp )
     {
         mp_openGLWindow->makeContextCurrent();
         mp_skeletonRenderObject->updateData( *skeletons.at( 0 ) );
-        //mp_boundingBox->setVisible( true );
+        mp_boundingBox->setVisible( true );
 
          m_skeletonAnalyzer.update( skeletons.at( 0 ),
                                     timestamp );
          const BoundingBox* boundingBox = m_skeletonAnalyzer.getLastBoundingBox();
          if ( boundingBox )
          {
-            /* mp_boundingBox->setPosition( QVector3D( boundingBox->getX(),
+             mp_boundingBox->setPosition( QVector3D( boundingBox->getX(),
                                                      boundingBox->getY(),
                                                      boundingBox->getZ() ) );
              mp_boundingBox->setScale( QVector3D( boundingBox->getWidth(),
                                                   boundingBox->getHeight(),
                                                   boundingBox->getDepth() ) );
-             mp_boundingBox->setWireFrameMode( true );*/
-//             mp_arrowObject->setPosition( boundingBox->getX(),
-//                                          boundingBox->getY() + 1.5f,
-//                                          boundingBox->getZ() );
+             mp_boundingBox->setWireFrameMode( true );
+             mp_arrowObject->setPosition( boundingBox->getX(),
+                                          boundingBox->getY() + 1.5f,
+                                          boundingBox->getZ() );
          }
          m_analysisResults.setValuesByVetcor( m_skeletonAnalyzer.getVelocity( timestamp, 10 ) );
          if ( m_analysisResults.directionY() == 0 )
          {
-//            mp_arrowObject->setYaw( 0 );
-//            mp_arrowObject->setRoll( 90 );
+            mp_arrowObject->setYaw( 0 );
+            mp_arrowObject->setRoll( 90 );
          }
          else
          {
-//             mp_arrowObject->setYaw( m_analysisResults.directionY() );
-//             mp_arrowObject->setRoll( 0 );
+             mp_arrowObject->setYaw( m_analysisResults.directionY() );
+             mp_arrowObject->setRoll( 0 );
          }
     }
     else
     {
-//        mp_skeletonRenderObject->setVisible( false );
-//        mp_boundingBox->setVisible( false );
+        mp_boundingBox->setVisible( false );
 
-//        mp_arrowObject->setYaw( m_analysisResults.directionY() );
-//        mp_arrowObject->setRoll( 0 );
+        mp_arrowObject->setYaw( m_analysisResults.directionY() );
+        mp_arrowObject->setRoll( 0 );
     }
 }
 
@@ -537,6 +536,7 @@ void MainWindow::constructOpenGLRenderWidget()
 {
     // Construct OpenGLRenderWidget.
     mp_openGLWindow = new OpenGLWindow();
+    mp_openGLWindow->setObjectName( "OpenGLView" );
     mp_openGLRenderWidget = QWidget::createWindowContainer( mp_openGLWindow, this );
     mp_openGLRenderWidget->setWindowTitle( "OpenGLRender" );
     mp_openGLWindow->getScene()->moveCamera( 0, 0, -8 );
@@ -545,23 +545,24 @@ void MainWindow::constructOpenGLRenderWidget()
 
     // Initialize scene.
     mp_skeletonRenderObject = mp_openGLWindow->getScene()->createSkeletonRenderObject();
-    //mp_boundingBox = mp_openGLWindow->getScene()->createCube();
-//    mp_boundingBox->setObjectName( "BoundingBox" );
+    mp_boundingBox = mp_openGLWindow->getScene()->createCube();
+    mp_boundingBox->setObjectName( "BoundingBox" );
     mp_openGLWindow->getScene()->createFloor();
 
-    //mp_arrowObject = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
+    mp_arrowObject = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
 }
 
 void MainWindow::constructRGBViewer()
 {
     mp_rgbViewerWindow  = new OpenGLWindow();
+    mp_rgbViewerWindow->setObjectName( "RGBView" );
     mp_rgbViewerWidget = QWidget::createWindowContainer( mp_rgbViewerWindow, this );
     mp_rgbViewerWidget->setWindowTitle( "RGBViewer" );
     mp_rgbViewerWindow->getScene()->moveCamera( 0, 0, -4 );
     ui->mdiArea->addSubWindow( mp_rgbViewerWidget );
     mp_rgbViewerWindow->setVisible( true );
 
-    mp_rgbViewObject   = mp_rgbViewerWindow->getScene()->createPlane();
+    mp_rgbViewObject = mp_rgbViewerWindow->getScene()->createPlane();
     mp_rgbViewObject->setUseTexture( true );
     mp_rgbViewObject->setTextureActive( 0, true );
 }
@@ -569,6 +570,7 @@ void MainWindow::constructRGBViewer()
 void MainWindow::constructDepthViewer()
 {
     mp_depthViewerWindow = new OpenGLWindow();
+    mp_depthViewerWindow->setObjectName( "DeptViewer");
     mp_depthViewerWidget = QWidget::createWindowContainer( mp_depthViewerWindow, this );
     mp_depthViewerWidget->setWindowTitle( "DepthViewer" );
     mp_depthViewerWindow->getScene()->moveCamera( 0, 0, -4 );

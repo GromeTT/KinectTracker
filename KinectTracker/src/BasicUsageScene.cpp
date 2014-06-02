@@ -200,7 +200,7 @@ RenderObject* BasicUsageScene::loadObjectFromFile( const QString filename )
         return nullptr;
     }
     mp_window->makeContextCurrent();
-    RenderObject* object = new RenderObject( mp_window->getOpenGLContext() );
+    RenderObject* object = new RenderObject();
     object->setVertices( tmp->getVertices() );
     object->setIndices( tmp->getIndices() );
     object->setRenderMode( GL_TRIANGLES );
@@ -235,15 +235,13 @@ RenderObject* BasicUsageScene::createPlane()
     Indices indices;
     indices << 0 << 1 << 2 << 3;
 
-    RenderObject* object = new RenderObject( mp_window->getOpenGLContext() );
+    RenderObject* object = new RenderObject();
     object->setObjectName( "Plane" );
     object->setVertices( vertices );
     object->setIndices( indices );
     object->setRenderMode( GL_QUADS );
     object->setShaderProgram( m_shaderPrograms.at( 0 ) );
     object->setTexture( m_textures.at( 0 ), 0 );
-//    object->setTexture( m_textures.at( 1 ), 1 );
-//    object->setUseTexture( true );
 
     m_renderObjects << object;
 
@@ -281,7 +279,7 @@ RenderObject* BasicUsageScene::createCube()
     indices << 0 << 4 << 7 << 3; // Right
     indices << 1 << 2 << 6 << 5; // Left
 
-    RenderObject* object = new RenderObject( mp_window->getOpenGLContext() );
+    RenderObject* object = new RenderObject();
     object->setObjectName( "Cube" );
     object->setVertices( vertices );
     object->setIndices( indices );
@@ -317,7 +315,7 @@ RenderObject* BasicUsageScene::createAxis()
     Indices indices;
     indices << 0 << 1 << 2 << 3 << 4 << 5;
 
-    RenderObject* object = new RenderObject( mp_window->getOpenGLContext() );
+    RenderObject* object = new RenderObject();
     object->setObjectName( "Axis" );
     object->setVertices( vertices );
     object->setIndices( indices );
@@ -345,7 +343,7 @@ void BasicUsageScene::createFloor()
 {
     mp_window->makeContextCurrent();
 
-    Floor* floor = new Floor( mp_window->getOpenGLContext() );
+    Floor* floor = new Floor();
     floor->setShaderProgram( m_shaderPrograms.at( 0 ) );
     m_renderObjects << floor;
 }

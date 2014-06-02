@@ -7,8 +7,7 @@
 #include <QThread>
 #include <QDebug>
 
-RenderObject::RenderObject( OpenGLContext& context,
-                            RenderObject* parent )
+RenderObject::RenderObject( RenderObject* parent )
     : RenderObjectInterface( parent )
     , mp_parent( parent )
     , mp_shaderProgram( nullptr )
@@ -17,7 +16,6 @@ RenderObject::RenderObject( OpenGLContext& context,
     , m_indexBuffer( QOpenGLBuffer::IndexBuffer )
     , m_useTexture( false )
     , m_wireFrameMode( false )
-    , m_context( context )
 {
     m_vao.create();
 
@@ -28,6 +26,7 @@ RenderObject::RenderObject( OpenGLContext& context,
 
 RenderObject::~RenderObject()
 {
+    qDebug() << QString( "RenderObject deleted: %1." ).arg( objectName() );
 }
 
 void RenderObject::setVertices( const Vertices& vertices )
@@ -221,12 +220,12 @@ void RenderObject::renderV( const QMatrix4x4& projection,
     {
         if ( m_activeTextures.at( 0 ) )
         {
-            m_context->functions()->glActiveTexture( GL_TEXTURE0 );
+            QOpenGLContext::currentContext()->functions()->glActiveTexture( GL_TEXTURE0 );
             m_textures.at( 0 )->bind();
         }
         if ( m_activeTextures.at( 1 ) )
         {
-            m_context->functions()->glActiveTexture( GL_TEXTURE1 );
+            QOpenGLContext::currentContext()->functions()->glActiveTexture( GL_TEXTURE1 );
             m_textures.at( 1 )->bind();
         }
     }

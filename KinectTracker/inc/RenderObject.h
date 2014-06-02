@@ -14,7 +14,6 @@ class Vertex;
 class QOpenGLShaderProgram;
 class QOpenGLContext;
 
-typedef QSharedPointer<QOpenGLContext> OpenGLContext;
 typedef QVector<Vertex> Vertices;
 typedef QVector<unsigned int> Indices;
 typedef QVector<QOpenGLTexture*> OpenGLTextures;
@@ -24,8 +23,7 @@ class RenderObject : public RenderObjectInterface
     Q_OBJECT
 
 public:
-    RenderObject( OpenGLContext& context,
-                  RenderObject* parent = nullptr );
+    RenderObject( RenderObject* parent = nullptr );
     virtual ~RenderObject();
 
     void setVertices( const Vertices& vertices );
@@ -64,7 +62,6 @@ private:
     QOpenGLBuffer               m_indexBuffer;
     Vertices                    m_vertices;
     Indices                     m_indices;
-    OpenGLContext               m_context;
     OpenGLTextures              m_textures;
     QVector<bool>               m_activeTextures;
     GLenum                      m_renderMode;

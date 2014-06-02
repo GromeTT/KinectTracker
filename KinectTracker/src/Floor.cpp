@@ -2,9 +2,8 @@
 #include "../Inc/Vertex.h"
 #include <QOpenGLContext>
 
-Floor::Floor( OpenGLContext& context,
-              RenderObject* parent )
-    : RenderObject( context, parent )
+Floor::Floor( RenderObject* parent )
+    : RenderObject( parent )
     , m_size( 10 )
     , m_lineCount( 9 )
 {

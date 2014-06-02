@@ -132,7 +132,10 @@ void TransformationObject::setScale( const float x,
 
 void TransformationObject::setVisible( const bool visible )
 {
-    m_visible = visible;
+    if ( m_visible != visible )
+    {
+        m_visible = visible;
+    }
 }
 
 float TransformationObject::x() const

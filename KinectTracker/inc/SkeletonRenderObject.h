@@ -4,7 +4,6 @@
 #include "RenderObjectInterface.h"
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLBuffer>
-#include "Vertex.h"
 
 typedef QVector<unsigned int> Indices;
 

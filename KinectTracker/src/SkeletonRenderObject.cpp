@@ -2,7 +2,6 @@
 #include "../inc/SkeletonData.h"
 #include <QVector>
 #include <QOpenGLShaderProgram>
-#include "../inc/Vertex.h"
 
 /*!
    \brief SkeletonRenderObject::SkeletonRenderObject
@@ -78,7 +77,7 @@ SkeletonRenderObject::SkeletonRenderObject()
  */
 SkeletonRenderObject::~SkeletonRenderObject()
 {
-
+    qDebug() << "Skeleton deleted";
 }
 
 /*!
@@ -124,6 +123,7 @@ void SkeletonRenderObject::renderV( const QMatrix4x4& projection,
     {
         return;
     }
+
     glPolygonMode( GL_FRONT, GL_FILL );
     glPolygonMode( GL_BACK, GL_FILL );
 

@@ -8,8 +8,7 @@ class Floor : public RenderObject
     Q_OBJECT
 
 public:
-    Floor( OpenGLContext& context,
-           RenderObject* parent = nullptr );
+    Floor( RenderObject* parent = nullptr );
     virtual ~Floor();
 
     void setSize( const float size );

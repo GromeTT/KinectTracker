@@ -41,7 +41,7 @@ OpenGLWindow::OpenGLWindow( QScreen* screen )
 
 OpenGLWindow::~OpenGLWindow()
 {
-    qDebug() << "RenderWidget deleted";
+    qDebug() << QString( "RenderWidget deleted: %1" ).arg( objectName() );
 }
 
 void OpenGLWindow::resizeGL()
