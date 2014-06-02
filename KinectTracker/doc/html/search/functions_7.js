@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['opendepthstream',['openDepthStream',['../a00013.html#a30d60fbfe183e9e55eb2fc3fbc97185c',1,'Kinect']]],
-  ['openrgbstream',['openRGBStream',['../a00013.html#ae30aa93a19d11719a392faaee29bf5af',1,'Kinect']]]
+  ['render',['render',['../a00003.html#a1cf271f29902fdc8614dd56d7170ee9f',1,'BasicUsageScene']]],
+  ['resize',['resize',['../a00003.html#a61d63f3b4e7cba1f4ff2dd43c12b194e',1,'BasicUsageScene']]]
 ];

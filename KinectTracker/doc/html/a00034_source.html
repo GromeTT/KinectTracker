@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/Inc/Dilate.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/BasicUsageScene.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,84 +100,123 @@ $(document).ready(function(){initNavTree('a00034_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Dilate.h</div>  </div>
+<div class="title">BasicUsageScene.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DIALTE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DIALTE_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BASICUSAGESCENE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BASICUSAGESCENE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="a00008.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00008.html">Dilate</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="a00008.html">Dilate</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="a00008.html">Dilate</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> dilate( cv::Mat&amp; input );</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> dilate( cv::Mat&amp; input, cv::Mat&amp; output );</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">float</span> anchorPointX() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">float</span> anchorPointY() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span>   iterations() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span>   kernelRowCount() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span>   kernelColumnCount() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> setAnchorPointX( <span class="keyword">const</span> <span class="keywordtype">float</span> x );</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> setAnchorPointY( <span class="keyword">const</span> <span class="keywordtype">float</span> y );</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> setIterations( <span class="keyword">const</span> <span class="keywordtype">float</span> iterations );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> setKernelRowCount( <span class="keyword">const</span> <span class="keywordtype">int</span> rowCount );</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> setKernelColumnCount ( <span class="keyword">const</span> <span class="keywordtype">int</span> columnCount );</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QOpenGLShaderProgram&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QSharedPointer&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QOpenGLVersionFunctions&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QVector3D&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QMatrix4x4&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QFileSystemWatcher&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;Camera.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;Kinect.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="a00021.html">RenderObjectInterface</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="a00020.html">RenderObject</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="a00028.html">SkeletonRenderObject</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span>QOpenGLTexture;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span><a class="code" href="a00018.html">OpenGLWindow</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span>QOpenGLContext;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;QOpenGLContext&gt; OpenGLContext;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">typedef</span> QVector&lt;QOpenGLShaderProgram*&gt; ShaderPrograms;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">typedef</span> QVector&lt;RenderObjectInterface*&gt; RenderObjects;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">typedef</span> QVector&lt;QOpenGLTexture*&gt; OpenGLTextures;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00003.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00003.html">BasicUsageScene</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;signals:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> anchorPointXChanged();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> anchorPointYChanged();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> iterationsChanged();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> kernelRowCountChanged();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> kernelColumnCountChanged();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">float</span> m_anchorPointX;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> m_anchorPointY;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span>   m_iterations;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span>   m_kernelRowCount;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span>   m_kernelColumnCount;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> anchorPointX MEMBER m_anchorPointX</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                READ anchorPointX</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                WRITE setAnchorPointX</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                NOTIFY anchorPointXChanged )</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> anchorPointY MEMBER m_anchorPointY</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                READ anchorPointY</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                WRITE setAnchorPointY</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                NOTIFY anchorPointYChanged )</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Q_PROPERTY( <span class="keywordtype">int</span> iterations MEMBER m_iterations</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                READ iterations</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                WRITE setIterations</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                NOTIFY iterationsChanged )</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Q_PROPERTY( <span class="keywordtype">int</span> kernelRowCount MEMBER m_kernelRowCount</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                READ kernelRowCount</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                WRITE setKernelRowCount</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                NOTIFY kernelRowCountChanged )</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Q_PROPERTY( <span class="keywordtype">int</span> kernelColumnCount MEMBER m_kernelColumnCount</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                READ kernelColumnCount</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                WRITE setKernelColumnCount</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                NOTIFY kernelColumnCountChanged )</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;Dilate&gt; DilatePtr;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif // DIALTE_H</span></div>
-<div class="ttc" id="a00008_html"><div class="ttname"><a href="a00008.html">Dilate</a></div><div class="ttdef"><b>Definition:</b> Dilate.h:7</div></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="a00003.html#a300f47ec0959f76ca3a4404c10034f7c">BasicUsageScene</a>( <a class="code" href="a00018.html">OpenGLWindow</a>* parent );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="a00003.html#a835697831ddd29d5021b1ae157707f6d">~BasicUsageScene</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00003.html#aec0e427d90f7508db10798dcb6ffd60f">initialize</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> update( <span class="keywordtype">float</span> t );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00003.html#a1cf271f29902fdc8614dd56d7170ee9f">render</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00003.html#a61d63f3b4e7cba1f4ff2dd43c12b194e">resize</a>( <span class="keyword">const</span> <span class="keywordtype">int</span> width,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">int</span> height );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> moveCameraToPosition( <span class="keyword">const</span> <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">float</span> z );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00003.html#ad1b92d6bce5ac18f3d83b5bd91f214b5">moveCamera</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                     <span class="keyword">const</span> <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                     <span class="keyword">const</span> <span class="keywordtype">float</span> z );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> setCameraRoll( <span class="keyword">const</span> <span class="keywordtype">float</span> angle );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> rollCamera( <span class="keyword">const</span> <span class="keywordtype">float</span> angle );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> setCameraPitch( <span class="keyword">const</span> <span class="keywordtype">float</span> angle );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> pitchCamera( <span class="keyword">const</span> <span class="keywordtype">float</span> angle );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> setCameraYaw( <span class="keyword">const</span> <span class="keywordtype">float</span> angle );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> yawCamera( <span class="keyword">const</span> <span class="keywordtype">float</span> angle );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> createFloor();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> takeSnapshot();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    QOpenGLShaderProgram*        <a class="code" href="a00003.html#a6575aba75042930f7aaa38a99b0eab01">getShaderProgram</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> i ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="a00020.html">RenderObject</a>*                <a class="code" href="a00003.html#a612feeca46de656e12e66f03d9c4f5bf">loadObjectFromFile</a>( <span class="keyword">const</span> QString filename );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="a00020.html">RenderObject</a>*                createPlane();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="a00020.html">RenderObject</a>*                createCube();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="a00020.html">RenderObject</a>*                createAxis();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="a00028.html">SkeletonRenderObject</a>*        createSkeletonRenderObject();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="a00021.html">RenderObjectInterface</a>*       getRenderObject( <span class="keyword">const</span> <span class="keywordtype">int</span> index );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00021.html">RenderObjectInterface</a>* getRenderObject( <span class="keyword">const</span> <span class="keywordtype">int</span> index ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="a00021.html">RenderObjectInterface</a>*       getRenderObjectByName( <span class="keyword">const</span> QString&amp; name );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> RenderObjects&amp;         getRenderObjects() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    QObject*                     getObjectByName( <span class="keyword">const</span> QString&amp; name );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    QObject*                     getCamera();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;signals:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> objectHasBeenAdded( <span class="keyword">const</span> <a class="code" href="a00020.html">RenderObject</a>&amp; <span class="keywordtype">object</span> );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> prepareShaderProgram();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> prepareTextures();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    QOpenGLShaderProgram* createShaderProgram ( <span class="keyword">const</span> QString vertexShader,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                <span class="keyword">const</span> QString fragmentShader );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ShaderPrograms              m_shaderPrograms;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    QMatrix4x4                  m_projectionMatrix;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    RenderObjects               m_renderObjects;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    OpenGLTextures              m_textures;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    QImage*                     mp_snapshot;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    QFileSystemWatcher          m_fileSystemWatcher;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="a00018.html">OpenGLWindow</a>*               mp_window;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="a00006.html">Camera</a>                      m_camera;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span>                        m_takeSnapshot;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> QString pathToVertexShader;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> QString pathToFragmentShader;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;BasicUsageScene&gt; Scene;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif // BASICUSAGESCENE_H</span></div>
+<div class="ttc" id="a00003_html"><div class="ttname"><a href="a00003.html">BasicUsageScene</a></div><div class="ttdef"><b>Definition:</b> BasicUsageScene.h:26</div></div>
+<div class="ttc" id="a00003_html_a61d63f3b4e7cba1f4ff2dd43c12b194e"><div class="ttname"><a href="a00003.html#a61d63f3b4e7cba1f4ff2dd43c12b194e">BasicUsageScene::resize</a></div><div class="ttdeci">void resize(const int width, const int height)</div><div class="ttdoc">BasicUsageScene::resize Refreshes the viewport dimensions. </div><div class="ttdef"><b>Definition:</b> BasicUsageScene.cpp:84</div></div>
+<div class="ttc" id="a00003_html_ad1b92d6bce5ac18f3d83b5bd91f214b5"><div class="ttname"><a href="a00003.html#ad1b92d6bce5ac18f3d83b5bd91f214b5">BasicUsageScene::moveCamera</a></div><div class="ttdeci">void moveCamera(const float x, const float y, const float z)</div><div class="ttdoc">BasicUsageScene::moveCamera Moves the camera by x, y, z units. </div><div class="ttdef"><b>Definition:</b> BasicUsageScene.cpp:104</div></div>
+<div class="ttc" id="a00003_html_a612feeca46de656e12e66f03d9c4f5bf"><div class="ttname"><a href="a00003.html#a612feeca46de656e12e66f03d9c4f5bf">BasicUsageScene::loadObjectFromFile</a></div><div class="ttdeci">RenderObject * loadObjectFromFile(const QString filename)</div><div class="ttdoc">BasicUsageScene::loadObjectFromFile Constructs an RenderObject from the file specified by filename...</div><div class="ttdef"><b>Definition:</b> BasicUsageScene.cpp:194</div></div>
+<div class="ttc" id="a00021_html"><div class="ttname"><a href="a00021.html">RenderObjectInterface</a></div><div class="ttdef"><b>Definition:</b> RenderObjectInterface.h:8</div></div>
+<div class="ttc" id="a00003_html_a835697831ddd29d5021b1ae157707f6d"><div class="ttname"><a href="a00003.html#a835697831ddd29d5021b1ae157707f6d">BasicUsageScene::~BasicUsageScene</a></div><div class="ttdeci">~BasicUsageScene()</div><div class="ttdoc">BasicUsageScene::~BasicUsageScene Destruktor. </div><div class="ttdef"><b>Definition:</b> BasicUsageScene.cpp:34</div></div>
+<div class="ttc" id="a00018_html"><div class="ttname"><a href="a00018.html">OpenGLWindow</a></div><div class="ttdef"><b>Definition:</b> OpenGLWindow.h:11</div></div>
+<div class="ttc" id="a00006_html"><div class="ttname"><a href="a00006.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.h:7</div></div>
+<div class="ttc" id="a00003_html_a1cf271f29902fdc8614dd56d7170ee9f"><div class="ttname"><a href="a00003.html#a1cf271f29902fdc8614dd56d7170ee9f">BasicUsageScene::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">BasicUsageScene::render. </div><div class="ttdef"><b>Definition:</b> BasicUsageScene.cpp:57</div></div>
+<div class="ttc" id="a00003_html_aec0e427d90f7508db10798dcb6ffd60f"><div class="ttname"><a href="a00003.html#aec0e427d90f7508db10798dcb6ffd60f">BasicUsageScene::initialize</a></div><div class="ttdeci">void initialize()</div><div class="ttdoc">BasicUsageScene::initialize Initializes a basic shaderprogram and a texture. </div><div class="ttdef"><b>Definition:</b> BasicUsageScene.cpp:43</div></div>
+<div class="ttc" id="a00020_html"><div class="ttname"><a href="a00020.html">RenderObject</a></div><div class="ttdef"><b>Definition:</b> RenderObject.h:22</div></div>
+<div class="ttc" id="a00003_html_a6575aba75042930f7aaa38a99b0eab01"><div class="ttname"><a href="a00003.html#a6575aba75042930f7aaa38a99b0eab01">BasicUsageScene::getShaderProgram</a></div><div class="ttdeci">QOpenGLShaderProgram * getShaderProgram(const unsigned short i) const </div><div class="ttdoc">BasicUsageScene::getShaderProgram. </div><div class="ttdef"><b>Definition:</b> BasicUsageScene.cpp:183</div></div>
+<div class="ttc" id="a00028_html"><div class="ttname"><a href="a00028.html">SkeletonRenderObject</a></div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.h:15</div></div>
+<div class="ttc" id="a00003_html_a300f47ec0959f76ca3a4404c10034f7c"><div class="ttname"><a href="a00003.html#a300f47ec0959f76ca3a4404c10034f7c">BasicUsageScene::BasicUsageScene</a></div><div class="ttdeci">BasicUsageScene(OpenGLWindow *parent)</div><div class="ttdoc">BasicUsageScene::BasicUsageScene Standardkonstruktor. </div><div class="ttdef"><b>Definition:</b> BasicUsageScene.cpp:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_f93dfce691d792349f1c14ede440e2e6.html">Inc</a></li><li class="navelem"><b>Dilate.h</b></li>
-    <li class="footer">Generated on Sat May 31 2014 04:53:52 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><b>BasicUsageScene.h</b></li>
+    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

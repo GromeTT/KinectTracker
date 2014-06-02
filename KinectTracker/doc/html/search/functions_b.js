@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['objecthasbeenadded',['objectHasBeenAdded',['../class_basic_usage_scene.html#a3c913057e8c078943f70136df1d326e8',1,'BasicUsageScene']]],
-  ['objectloader',['ObjectLoader',['../class_object_loader.html#af9ecb6be20590e95539db718aaa74096',1,'ObjectLoader::ObjectLoader()'],['../class_object_loader.html#a060ab333dd50dea5ae6eb3833062d4a7',1,'ObjectLoader::ObjectLoader(const QString &amp;filename)']]],
-  ['opendepthstream',['openDepthStream',['../class_kinect.html#a30d60fbfe183e9e55eb2fc3fbc97185c',1,'Kinect']]],
-  ['openglwindow',['OpenGLWindow',['../class_open_g_l_window.html#a81b042bc42f2e3057c5eb30edf8029c6',1,'OpenGLWindow']]],
-  ['openrgbstream',['openRGBStream',['../class_kinect.html#ae30aa93a19d11719a392faaee29bf5af',1,'Kinect']]]
+  ['_7ebasicusagescene',['~BasicUsageScene',['../a00003.html#a835697831ddd29d5021b1ae157707f6d',1,'BasicUsageScene']]],
+  ['_7emainwindow',['~MainWindow',['../a00016.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
+  ['_7eskeleton',['~Skeleton',['../a00025.html#aeece886a4e2f039128144f94f25efd10',1,'Skeleton']]],
+  ['_7eskeletonrenderobject',['~SkeletonRenderObject',['../a00028.html#a2cd26bc06a703c4eea4c7d805c799903',1,'SkeletonRenderObject']]]
 ];

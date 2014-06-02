@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: SkeletonAnalyzer Class Reference</title>
+<title>KinectTracker: Skeleton Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,80 +103,77 @@ $(document).ready(function(){initNavTree('a00025.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#properties">Properties</a> &#124;
-<a href="a00107.html">List of all members</a>  </div>
+<a href="a00119.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SkeletonAnalyzer Class Reference</div>  </div>
+<div class="title">Skeleton Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for SkeletonAnalyzer:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00025.png" usemap="#SkeletonAnalyzer_map" alt=""/>
-  <map id="SkeletonAnalyzer_map" name="SkeletonAnalyzer_map">
-</map>
- </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
-Signals</h2></td></tr>
-<tr class="memitem:a964a665e921f88a135556bd522c1c9b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a964a665e921f88a135556bd522c1c9b1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deltaXChanged</b> ()</td></tr>
-<tr class="separator:a964a665e921f88a135556bd522c1c9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a372449eca8d03378f0ffc75f25d8fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a372449eca8d03378f0ffc75f25d8fc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (const <a class="el" href="a00024.html">Skeleton</a> *skeleton, const unsigned int timestamp)</td></tr>
-<tr class="separator:a8a372449eca8d03378f0ffc75f25d8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c8e0a10526c82d573ce1a1f51944630"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c8e0a10526c82d573ce1a1f51944630"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDeltaX</b> (const float deltaX)</td></tr>
-<tr class="separator:a0c8e0a10526c82d573ce1a1f51944630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b1218340d534a770c90b2834dd911bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b1218340d534a770c90b2834dd911bd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDeltaY</b> (const float deltaY)</td></tr>
-<tr class="separator:a6b1218340d534a770c90b2834dd911bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeb422921c205cbd3a61a60cc0eb3bb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afeb422921c205cbd3a61a60cc0eb3bb8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDeltaZ</b> (const float deltaZ)</td></tr>
-<tr class="separator:afeb422921c205cbd3a61a60cc0eb3bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f14288e08050feda7af19c031bf9a6d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f14288e08050feda7af19c031bf9a6d"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>deltaX</b> () const </td></tr>
-<tr class="separator:a5f14288e08050feda7af19c031bf9a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a664de7da0bfbde0f502a6e27844e727c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a664de7da0bfbde0f502a6e27844e727c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>deltaY</b> () const </td></tr>
-<tr class="separator:a664de7da0bfbde0f502a6e27844e727c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef4793bb834898e3801b76937c0e36e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef4793bb834898e3801b76937c0e36e6"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>deltaZ</b> () const </td></tr>
-<tr class="separator:aef4793bb834898e3801b76937c0e36e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6bfa617defd8d74bbdc14a5622208d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6bfa617defd8d74bbdc14a5622208d7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>arePointsInLastBoundingBox</b> (const Vertices &amp;vertices)</td></tr>
-<tr class="separator:aa6bfa617defd8d74bbdc14a5622208d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4e9253219f96d5e351535e3c1a9c29b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4e9253219f96d5e351535e3c1a9c29b"></a>
-QVector3D&#160;</td><td class="memItemRight" valign="bottom"><b>getVelocity</b> (const unsigned int timestamp, const unsigned int ms)</td></tr>
-<tr class="separator:ac4e9253219f96d5e351535e3c1a9c29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a110125588617a3ddfdd1020d5ba41574"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a110125588617a3ddfdd1020d5ba41574"></a>
-const <a class="el" href="a00004.html">BoundingBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getLastBoundingBox</b> () const </td></tr>
-<tr class="separator:a110125588617a3ddfdd1020d5ba41574"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:ad1e4e5c1d9296692dadcd6e616f118e7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1e4e5c1d9296692dadcd6e616f118e7"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>deltaX</b></td></tr>
-<tr class="separator:ad1e4e5c1d9296692dadcd6e616f118e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01a02f1ce9ae4c801cd6e66ccf7407f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#af01a02f1ce9ae4c801cd6e66ccf7407f">Skeleton</a> ()</td></tr>
+<tr class="separator:af01a02f1ce9ae4c801cd6e66ccf7407f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c980674b2baebf3de32e87668c213f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26c980674b2baebf3de32e87668c213f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Skeleton</b> (const NUI_SKELETON_DATA &amp;skeletonData)</td></tr>
+<tr class="separator:a26c980674b2baebf3de32e87668c213f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeece886a4e2f039128144f94f25efd10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#aeece886a4e2f039128144f94f25efd10">~Skeleton</a> ()</td></tr>
+<tr class="separator:aeece886a4e2f039128144f94f25efd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af01a02f1ce9ae4c801cd6e66ccf7407f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Skeleton::Skeleton </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00025.html#af01a02f1ce9ae4c801cd6e66ccf7407f" title="Skeleton::Skeleton Creates an skeleton with random coordinates. ">Skeleton::Skeleton</a> Creates an skeleton with random coordinates. </p>
+
+</div>
+</div>
+<a class="anchor" id="aeece886a4e2f039128144f94f25efd10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Skeleton::~Skeleton </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00025.html#aeece886a4e2f039128144f94f25efd10" title="Skeleton::~Skeleton Destructor. ">Skeleton::~Skeleton</a> Destructor. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/Inc/<a class="el" href="a00052_source.html">SkeletonAnalyzer.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/Src/SkeletonAnalyzer.cpp</li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00056_source.html">Skeleton.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/Skeleton.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00025.html">SkeletonAnalyzer</a></li>
-    <li class="footer">Generated on Sat May 31 2014 04:53:52 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00025.html">Skeleton</a></li>
+    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

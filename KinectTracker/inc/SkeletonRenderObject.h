@@ -20,8 +20,6 @@ public:
 
     void updateData( const SkeletonData& data );
     void setShaderProgramm( QOpenGLShaderProgram* program );
-    void setVertices( QVector<QVector3D> vertices );
-    void setIndices(const Indices& indices);
 
 private:
     virtual void renderV( const QMatrix4x4 &projection,
@@ -31,9 +29,7 @@ private:
     QOpenGLShaderProgram*    mp_shaderProgram;
     QOpenGLBuffer            m_vertexBuffer;
     QOpenGLBuffer            m_lineIndexBuffer;
-    bool                     m_verticesSet;
-    QVector<QVector3D> m_vertices;
-    Indices  m_indices;
+    QOpenGLBuffer            m_pointIndexBuffer;
 };
 
 #endif // SKELETONRENDEROBJECT_H

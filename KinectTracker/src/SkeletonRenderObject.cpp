@@ -4,35 +4,39 @@
 #include <QOpenGLShaderProgram>
 #include "../inc/Vertex.h"
 
-
+/*!
+   \brief SkeletonRenderObject::SkeletonRenderObject
+   Constructs an SkeletonRenderObject with no vertex data.
+   All indices will be created for a point and line representation of the skeleton.
+   To set vertex data use updateData().
+ */
 SkeletonRenderObject::SkeletonRenderObject()
     : mp_shaderProgram( nullptr )
     , m_vertexBuffer( QOpenGLBuffer::VertexBuffer )
     , m_lineIndexBuffer( QOpenGLBuffer::IndexBuffer )
-//    , m_lineIndexBuffer( QOpenGLBuffer::IndexBuffer )
-    , m_verticesSet( false )
+    , m_pointIndexBuffer( QOpenGLBuffer::IndexBuffer )
 {
     m_vao.create();
     setPosition( QVector3D( 0, 0, 0 ) );
     setVisible( true );
-//    m_vertexBuffer.setUsagePattern( QOpenGLBuffer::StreamDraw );
-//    m_pointIndexBuffer.setUsagePattern( QOpenGLBuffer::StaticDraw );
-//    m_lineIndexBuffer.setUsagePattern( QOpenGLBuffer::StaticDraw );
 
+    // Set the buffer's usage patter.
+    m_vertexBuffer.setUsagePattern( QOpenGLBuffer::StreamDraw );
+    m_lineIndexBuffer.setUsagePattern( QOpenGLBuffer::StaticDraw );
+    m_pointIndexBuffer.setUsagePattern( QOpenGLBuffer::StaticDraw );
 
+    // Prepare index buffer to draw points.
+    Indices pointIndex;
+    pointIndex << 0 << 1 << 2 << 3 << 4 << 5 << 6 << 7 << 8 << 9 << 10;
+    pointIndex << 11 << 12 << 13 << 14 << 15 << 16 << 17 << 18 << 19;
 
-//    QVector<int> pointIndex;
-//    pointIndex << 0 << 1 << 2 << 3 << 4 << 5 << 6 << 7 << 8 << 9 << 10;
-//    pointIndex << 11 << 12 << 13 << 14 << 15 << 16 << 17 << 18 << 19;
-//    qDebug() << pointIndex.count();
-//    m_vao.bind();
+    m_vao.bind();
+    m_pointIndexBuffer.create();
+    m_pointIndexBuffer.bind();
+    m_pointIndexBuffer.allocate( pointIndex.data(), pointIndex.count() * sizeof( unsigned int ) );
 
-//    m_pointIndexBuffer.create();
-//	m_pointIndexBuffer.bind();
-//    m_pointIndexBuffer.allocate( pointIndex.data(), pointIndex.count() * sizeof( int ) );
-
+    // Prepare index buffer to draw lines.
     Indices lineIndex;
-
     // Right leg
     lineIndex << 19 << 18; // foot - ankle
     lineIndex << 18 << 17; // ankle - knee
@@ -58,48 +62,41 @@ SkeletonRenderObject::SkeletonRenderObject()
     lineIndex << 1  << 2;  // spine - shoulder
     lineIndex << 2  << 3;  // shoulder - head
 
-    QVector<QVector3D> vertices;
-    vertices << QVector3D( -1,  2, 0 );
-    vertices << QVector3D(  1,  2, 0 );
-    vertices << QVector3D(  1, -2, 0 );
-    vertices << QVector3D( -1, -2, 0 );
-
     m_vao.bind();
     m_lineIndexBuffer.create();
     m_lineIndexBuffer.bind();
     m_lineIndexBuffer.allocate( lineIndex.data(), lineIndex.count() * sizeof( unsigned int ) );
-    m_vao.release();
 
-    setVertices( vertices );
+    m_vertexBuffer.create();
 
     m_vao.release();
 }
 
+/*!
+   \brief SkeletonRenderObject::~SkeletonRenderObject
+   Destroyes the object.
+ */
 SkeletonRenderObject::~SkeletonRenderObject()
 {
 
 }
 
+/*!
+   \brief SkeletonRenderObject::updateData
+   Updates the vertex buffer with \a data.
+ */
 void SkeletonRenderObject::updateData( const SkeletonData& data )
 {
     m_vao.bind();
-    if ( !m_vertexBuffer.isCreated() )
-    {
-        m_vertexBuffer.create();
-    }
-//    for ( int i = 0; i < data.getJoints().count(); ++i )
-//    {
-//        m_data[ i ].x = data.getJoints().at( i ).x();
-//        m_data[ i ].y = data.getJoints().at( i ).y();
-//        m_data[ i ].z = data.getJoints().at( i ).z();
-//    }
     m_vertexBuffer.bind();
-    m_vertexBuffer.allocate( data.getJoints().data(), 20 * sizeof( QVector3D ) );
+    m_vertexBuffer.allocate( data.getJoints().data(), data.getJoints().count() * sizeof( QVector3D ) );
     m_vao.release();
-
-    m_verticesSet = true;
 }
 
+/*!
+   \brief SkeletonRenderObject::setShaderProgramm
+   Set the shaderprogram to \a program.
+ */
 void SkeletonRenderObject::setShaderProgramm( QOpenGLShaderProgram* program )
 {
     m_vao.bind();
@@ -112,50 +109,21 @@ void SkeletonRenderObject::setShaderProgramm( QOpenGLShaderProgram* program )
     m_vao.release();
 }
 
-void SkeletonRenderObject::setVertices( QVector<QVector3D> vertices )
-{
-    m_vertices.clear();
-    for ( int i = 0; i < vertices.count(); ++i )
-    {
-        m_vertices.append( vertices.at( i ) );
-    }
-    if ( !m_vertexBuffer.isCreated() )
-    {
-        m_vertexBuffer.create();
-    }
-    m_vao.bind();
-    m_vertexBuffer.bind();
-    m_vertexBuffer.allocate( m_vertices.data(), m_vertices.count() * sizeof( QVector3D ) );
-    m_vao.release();
-}
-
-void SkeletonRenderObject::setIndices(const Indices& indices)
-{
-    m_indices.clear();
-    for ( int i = 0; i < indices.count(); ++i )
-    {
-        m_indices.append( indices.at( i ) );
-    }
-    if ( !m_lineIndexBuffer.isCreated() )
-    {
-        m_lineIndexBuffer.create();
-    }
-
-    m_vao.bind();;
-    m_lineIndexBuffer.bind();
-    m_lineIndexBuffer.allocate( m_indices.data(), m_indices.count() * sizeof( unsigned int ) );
-    m_vao.release();
-}
-
+/*!
+   \brief SkeletonRenderObject::renderV
+   Renders the object, if visible is set to \b true.
+   \param projection
+   \param view
+ */
 void SkeletonRenderObject::renderV( const QMatrix4x4& projection,
                                     const QMatrix4x4& view )
 {
     Q_ASSERT( mp_shaderProgram );
-//    if ( !m_verticesSet )
-//    {
-//        return;
-//    }
 
+    if ( !visible() )
+    {
+        return;
+    }
     glPolygonMode( GL_FRONT, GL_FILL );
     glPolygonMode( GL_BACK, GL_FILL );
 
@@ -168,10 +136,11 @@ void SkeletonRenderObject::renderV( const QMatrix4x4& projection,
     mp_shaderProgram->setUniformValue( "useTexture", false  );
     mp_shaderProgram->setUniformValue( "useSecondTexture", false );
 
-    glDrawElements( GL_POINTS, 20, GL_UNSIGNED_INT, 0 );
+    m_lineIndexBuffer.bind();
+    glDrawElements( GL_LINES, 38, GL_UNSIGNED_INT, 0 );
 
-//    m_lineIndexBuffer.bind();
-//    glDrawElements( GL_LINE, 38, GL_UNSIGNED_INT, 0 );
+    m_pointIndexBuffer.bind();
+    glDrawElements( GL_POINTS, 20, GL_UNSIGNED_INT, 0 );
 
     m_vao.release();
 }

@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('a00004.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00086.html">List of all members</a>  </div>
+<a href="a00098.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">BoundingBox Struct Reference</div>  </div>
 </div><!--header-->
@@ -112,9 +112,9 @@ $(document).ready(function(){initNavTree('a00004.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a20fb4703ae125a0743eea1d7b07d72b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20fb4703ae125a0743eea1d7b07d72b0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BoundingBox</b> (const Vertices &amp;vertices, const float deltaW=0, const float deltaD=0, const float deltaH=0)</td></tr>
-<tr class="separator:a20fb4703ae125a0743eea1d7b07d72b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f9e1c84026874480e343ce0d359d513"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f9e1c84026874480e343ce0d359d513"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>BoundingBox</b> (const QVector&lt; QVector3D &gt; &amp;points, const float deltaW=0, const float deltaD=0, const float deltaH=0)</td></tr>
+<tr class="separator:a9f9e1c84026874480e343ce0d359d513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dca1095bfeb6edff5723824af1407c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8dca1095bfeb6edff5723824af1407c0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>BoundingBox</b> (const <a class="el" href="a00004.html">BoundingBox</a> &amp;other)</td></tr>
 <tr class="separator:a8dca1095bfeb6edff5723824af1407c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,16 +154,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setY</b> (const float
 <tr class="memitem:adb9be71a078e9def441780f83162e6ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb9be71a078e9def441780f83162e6ae"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setZ</b> (const float z)</td></tr>
 <tr class="separator:adb9be71a078e9def441780f83162e6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bb5b1883b981fd181cdfebf64b7aaf6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bb5b1883b981fd181cdfebf64b7aaf6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPointInBoundingBox</b> (const <a class="el" href="a00027.html">Vertex</a> &amp;vertex)</td></tr>
-<tr class="separator:a9bb5b1883b981fd181cdfebf64b7aaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c52962b6304b157e50f12967fa5178c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c52962b6304b157e50f12967fa5178c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>arePointsInBoundingBox</b> (const Vertices &amp;vertices)</td></tr>
-<tr class="separator:a7c52962b6304b157e50f12967fa5178c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1789c34de7eceeeac565ed2fbf558fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1789c34de7eceeeac565ed2fbf558fb"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPointInBoundingBox</b> (const QVector3D &amp;point)</td></tr>
+<tr class="separator:ab1789c34de7eceeeac565ed2fbf558fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0ee56ca1450e0c02138d4310a9cbaf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e0ee56ca1450e0c02138d4310a9cbaf"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>arePointsInBoundingBox</b> (const QVector&lt; QVector3D &gt; points, const int count)</td></tr>
+<tr class="separator:a0e0ee56ca1450e0c02138d4310a9cbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/Inc/<a class="el" href="a00031_source.html">BoundingBox.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/Src/BoundingBox.cpp</li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00035_source.html">BoundingBox.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/BoundingBox.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -171,7 +171,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>arePointsInBoundingBo
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="a00004.html">BoundingBox</a></li>
-    <li class="footer">Generated on Sat May 31 2014 04:53:52 for KinectTracker by
+    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('a00003.html','');});
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00085.html">List of all members</a>  </div>
+<a href="a00097.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">BasicUsageScene Class Reference</div>  </div>
 </div><!--header-->
@@ -131,8 +131,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a300f47ec0959f76ca3a4404c10034f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a835697831ddd29d5021b1ae157707f6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html#a835697831ddd29d5021b1ae157707f6d">~BasicUsageScene</a> ()</td></tr>
 <tr class="separator:a835697831ddd29d5021b1ae157707f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec0e427d90f7508db10798dcb6ffd60f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec0e427d90f7508db10798dcb6ffd60f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()</td></tr>
+<tr class="memitem:aec0e427d90f7508db10798dcb6ffd60f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html#aec0e427d90f7508db10798dcb6ffd60f">initialize</a> ()</td></tr>
 <tr class="separator:aec0e427d90f7508db10798dcb6ffd60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9925a27c44aaa51ccb727a5260141a2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9925a27c44aaa51ccb727a5260141a2d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (float t)</td></tr>
@@ -164,8 +163,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setCameraYaw</b> (con
 <tr class="memitem:a65081212907d0ea2a9b89f242c82cacd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65081212907d0ea2a9b89f242c82cacd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>yawCamera</b> (const float angle)</td></tr>
 <tr class="separator:a65081212907d0ea2a9b89f242c82cacd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a182b86f07c1f44f2b3c7c2d14cc64c98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html#a182b86f07c1f44f2b3c7c2d14cc64c98">addRenderObject</a> (<a class="el" href="a00020.html">RenderObject</a> *object)</td></tr>
-<tr class="separator:a182b86f07c1f44f2b3c7c2d14cc64c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0949caccb01a66d84eadcf96ca962ead"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0949caccb01a66d84eadcf96ca962ead"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>createFloor</b> ()</td></tr>
+<tr class="separator:a0949caccb01a66d84eadcf96ca962ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3912dedfe221ce60216b814610b9cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a3912dedfe221ce60216b814610b9cd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>takeSnapshot</b> ()</td></tr>
+<tr class="separator:a1a3912dedfe221ce60216b814610b9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6575aba75042930f7aaa38a99b0eab01"><td class="memItemLeft" align="right" valign="top">QOpenGLShaderProgram *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html#a6575aba75042930f7aaa38a99b0eab01">getShaderProgram</a> (const unsigned short i) const </td></tr>
+<tr class="separator:a6575aba75042930f7aaa38a99b0eab01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a612feeca46de656e12e66f03d9c4f5bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00020.html">RenderObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html#a612feeca46de656e12e66f03d9c4f5bf">loadObjectFromFile</a> (const QString filename)</td></tr>
 <tr class="separator:a612feeca46de656e12e66f03d9c4f5bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aa8b9ad7272137934e4ed30cf3a7143"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0aa8b9ad7272137934e4ed30cf3a7143"></a>
@@ -177,21 +182,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>yawCamera</b> (const 
 <tr class="memitem:a602c81674ffc49c24ec4a34892d794c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a602c81674ffc49c24ec4a34892d794c2"></a>
 <a class="el" href="a00020.html">RenderObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createAxis</b> ()</td></tr>
 <tr class="separator:a602c81674ffc49c24ec4a34892d794c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0949caccb01a66d84eadcf96ca962ead"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0949caccb01a66d84eadcf96ca962ead"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>createFloor</b> ()</td></tr>
-<tr class="separator:a0949caccb01a66d84eadcf96ca962ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a3912dedfe221ce60216b814610b9cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a3912dedfe221ce60216b814610b9cd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>takeSnapshot</b> ()</td></tr>
-<tr class="separator:a1a3912dedfe221ce60216b814610b9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f0473505d21f8b7add4d93519c4d2da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f0473505d21f8b7add4d93519c4d2da"></a>
-<a class="el" href="a00020.html">RenderObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRenderObject</b> (const int index)</td></tr>
-<tr class="separator:a8f0473505d21f8b7add4d93519c4d2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a621511c263a7932eda58e2a8cfa2fb28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a621511c263a7932eda58e2a8cfa2fb28"></a>
-const <a class="el" href="a00020.html">RenderObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRenderObject</b> (const int index) const </td></tr>
-<tr class="separator:a621511c263a7932eda58e2a8cfa2fb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4662511e728ddf484bdb872655b52a24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4662511e728ddf484bdb872655b52a24"></a>
-<a class="el" href="a00020.html">RenderObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRenderObjectByName</b> (const QString &amp;name)</td></tr>
-<tr class="separator:a4662511e728ddf484bdb872655b52a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eed90fb66630b5a2490ca4c2220f532"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1eed90fb66630b5a2490ca4c2220f532"></a>
+<a class="el" href="a00028.html">SkeletonRenderObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createSkeletonRenderObject</b> ()</td></tr>
+<tr class="separator:a1eed90fb66630b5a2490ca4c2220f532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3a27f5b9ce297adbc99c16c0de80246"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3a27f5b9ce297adbc99c16c0de80246"></a>
+<a class="el" href="a00021.html">RenderObjectInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRenderObject</b> (const int index)</td></tr>
+<tr class="separator:ac3a27f5b9ce297adbc99c16c0de80246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0694549db0f87e5d2c6fff4be2b193ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0694549db0f87e5d2c6fff4be2b193ed"></a>
+const <a class="el" href="a00021.html">RenderObjectInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRenderObject</b> (const int index) const </td></tr>
+<tr class="separator:a0694549db0f87e5d2c6fff4be2b193ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d15b2d28785abbc9d48903dcc639de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36d15b2d28785abbc9d48903dcc639de"></a>
+<a class="el" href="a00021.html">RenderObjectInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRenderObjectByName</b> (const QString &amp;name)</td></tr>
+<tr class="separator:a36d15b2d28785abbc9d48903dcc639de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4add46c60fe60dd5adee8962378fef88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4add46c60fe60dd5adee8962378fef88"></a>
 const RenderObjects &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getRenderObjects</b> () const </td></tr>
 <tr class="separator:a4add46c60fe60dd5adee8962378fef88"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,27 +241,45 @@ QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>getCamera</b> ()
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a182b86f07c1f44f2b3c7c2d14cc64c98"></a>
+<a class="anchor" id="a6575aba75042930f7aaa38a99b0eab01"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void BasicUsageScene::addRenderObject </td>
+          <td class="memname">QOpenGLShaderProgram * BasicUsageScene::getShaderProgram </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00020.html">RenderObject</a> *&#160;</td>
-          <td class="paramname"><em>object</em></td><td>)</td>
+          <td class="paramtype">const unsigned short&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00003.html#a6575aba75042930f7aaa38a99b0eab01" title="BasicUsageScene::getShaderProgram. ">BasicUsageScene::getShaderProgram</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aec0e427d90f7508db10798dcb6ffd60f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BasicUsageScene::initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00003.html#a182b86f07c1f44f2b3c7c2d14cc64c98" title="BasicUsageScene::addRenderObject Adds object to the scene. ">BasicUsageScene::addRenderObject</a> Adds <em>object</em> to the scene. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">object</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p><a class="el" href="a00003.html#aec0e427d90f7508db10798dcb6ffd60f" title="BasicUsageScene::initialize Initializes a basic shaderprogram and a texture. ">BasicUsageScene::initialize</a> Initializes a basic shaderprogram and a texture. </p>
 
 </div>
 </div>
@@ -376,8 +396,8 @@ QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>getCamera</b> ()
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/Inc/<a class="el" href="a00030_source.html">BasicUsageScene.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/Src/BasicUsageScene.cpp</li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00034_source.html">BasicUsageScene.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/BasicUsageScene.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -385,7 +405,7 @@ QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>getCamera</b> ()
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="a00003.html">BasicUsageScene</a></li>
-    <li class="footer">Generated on Sat May 31 2014 04:53:52 for KinectTracker by
+    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

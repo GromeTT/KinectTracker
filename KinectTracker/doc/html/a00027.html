@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Vertex Class Reference</title>
+<title>KinectTracker: SkeletonData Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,67 +103,68 @@ $(document).ready(function(){initNavTree('a00027.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="a00109.html">List of all members</a>  </div>
+<a href="a00121.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Vertex Class Reference</div>  </div>
+<div class="title">SkeletonData Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ade909294e270cd0b16d248d90129401c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade909294e270cd0b16d248d90129401c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Joints</b> { <br />
+&#160;&#160;<b>Hip</b> = 0, 
+<b>Spine</b> = 1, 
+<b>ShoulderCenter</b> = 2, 
+<b>Head</b> = 3, 
+<br />
+&#160;&#160;<b>ShoulderLeft</b> = 4, 
+<b>ElbowLeft</b> = 5, 
+<b>WristLeft</b> = 6, 
+<b>HandLeft</b> = 7, 
+<br />
+&#160;&#160;<b>ShoulderRight</b> = 8, 
+<b>ElbowRight</b> = 9, 
+<b>WristRight</b> = 10, 
+<b>HandRight</b> = 11, 
+<br />
+&#160;&#160;<b>HipLeft</b> = 12, 
+<b>KneeLeft</b> = 13, 
+<b>AnkleLeft</b> = 14, 
+<b>FootLeft</b> = 15, 
+<br />
+&#160;&#160;<b>HipRight</b> = 16, 
+<b>KneeRight</b> = 17, 
+<b>AnkleRight</b> = 18, 
+<b>FootRight</b> = 19
+<br />
+ }</td></tr>
+<tr class="separator:ade909294e270cd0b16d248d90129401c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae1c8f2ab8b7fd1d70b575134fb900979"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1c8f2ab8b7fd1d70b575134fb900979"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Vertex</b> (const float x, const float y, const float z)</td></tr>
-<tr class="separator:ae1c8f2ab8b7fd1d70b575134fb900979"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5240b12afe350c85527f71fcc364064e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5240b12afe350c85527f71fcc364064e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Vertex</b> (const float x, const float y, const float z, const float r, const float g, const float b, const float a=1.0f, const float u=0, const float v=0)</td></tr>
-<tr class="separator:a5240b12afe350c85527f71fcc364064e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aa592e1564aa3b226ff629b824b240310"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa592e1564aa3b226ff629b824b240310"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
-<tr class="separator:aa592e1564aa3b226ff629b824b240310"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a448817068556fe43e81dc0a3e7d1fa43"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a448817068556fe43e81dc0a3e7d1fa43"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
-<tr class="separator:a448817068556fe43e81dc0a3e7d1fa43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5d14cd74cd842c01f9a8a8d92325339"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af5d14cd74cd842c01f9a8a8d92325339"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>z</b></td></tr>
-<tr class="separator:af5d14cd74cd842c01f9a8a8d92325339"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c22b31da489e22d5d58ea667eda65b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c22b31da489e22d5d58ea667eda65b9"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>r</b></td></tr>
-<tr class="separator:a8c22b31da489e22d5d58ea667eda65b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4da5050c518fc2657e34f51bf61ae0e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4da5050c518fc2657e34f51bf61ae0e4"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>g</b></td></tr>
-<tr class="separator:a4da5050c518fc2657e34f51bf61ae0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a270be8167fe744b56cae25215c7d52be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a270be8167fe744b56cae25215c7d52be"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>b</b></td></tr>
-<tr class="separator:a270be8167fe744b56cae25215c7d52be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91493b1de792faae6bf96329bed6d06a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91493b1de792faae6bf96329bed6d06a"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>a</b></td></tr>
-<tr class="separator:a91493b1de792faae6bf96329bed6d06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa8e01935fde5cb9702075d25346e135"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa8e01935fde5cb9702075d25346e135"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>u</b></td></tr>
-<tr class="separator:afa8e01935fde5cb9702075d25346e135"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ef8693374fd8c435715b32fbbdc4e41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ef8693374fd8c435715b32fbbdc4e41"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>v</b></td></tr>
-<tr class="separator:a6ef8693374fd8c435715b32fbbdc4e41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a088ea2f6ac59b1a5bee2d02da11ea50f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a088ea2f6ac59b1a5bee2d02da11ea50f"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>pointSize</b></td></tr>
-<tr class="separator:a088ea2f6ac59b1a5bee2d02da11ea50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659d3330f476cc21018fbc6f6aa93049"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a659d3330f476cc21018fbc6f6aa93049"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SkeletonData</b> (const NUI_SKELETON_DATA &amp;skeletonData)</td></tr>
+<tr class="separator:a659d3330f476cc21018fbc6f6aa93049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5175c73455967387c371d35e3a0a7e3f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5175c73455967387c371d35e3a0a7e3f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSkeletonBySkeletonData</b> (const NUI_SKELETON_DATA &amp;skeletonData)</td></tr>
+<tr class="separator:a5175c73455967387c371d35e3a0a7e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a124c9ba2b33946263a263e8d55db8047"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a124c9ba2b33946263a263e8d55db8047"></a>
+const QVector&lt; QVector3D &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getJoints</b> () const </td></tr>
+<tr class="separator:a124c9ba2b33946263a263e8d55db8047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/Inc/<a class="el" href="a00054_source.html">Vertex.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/Src/Vertex.cpp</li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00058_source.html">SkeletonData.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/SkeletonData.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00027.html">Vertex</a></li>
-    <li class="footer">Generated on Sat May 31 2014 04:53:52 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00027.html">SkeletonData</a></li>
+    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/Inc/Vertex.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SceneGraphWidget.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,40 +100,63 @@ $(document).ready(function(){initNavTree('a00054_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Vertex.h</div>  </div>
+<div class="title">SceneGraphWidget.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VERTEX_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VERTEX_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SCENEGRAPHWIDGET_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SCENEGRAPHWIDGET_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="a00027.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00027.html">Vertex</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="a00027.html">Vertex</a>();</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="a00027.html">Vertex</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> x, <span class="keyword">const</span> <span class="keywordtype">float</span> y, <span class="keyword">const</span> <span class="keywordtype">float</span> z );</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="a00027.html">Vertex</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> x, <span class="keyword">const</span> <span class="keywordtype">float</span> y, <span class="keyword">const</span> <span class="keywordtype">float</span> z,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">float</span> r, <span class="keyword">const</span> <span class="keywordtype">float</span> g, <span class="keyword">const</span> <span class="keywordtype">float</span> b, <span class="keyword">const</span> <span class="keywordtype">float</span> a = 1.0f,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">float</span> u = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> v = 0);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ~<a class="code" href="a00027.html">Vertex</a>();</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="a00020.html">RenderObject</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span>QTreeWidgetItem;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="a00021.html">RenderObjectInterface</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">typedef</span> QVector&lt;RenderObjectInterface*&gt; RenderObjects;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>Ui {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="a00023.html">SceneGraphWidget</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">float</span> x, y, z;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">float</span> r, g, b, a;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">float</span> u, v;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">float</span> pointSize;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">typedef</span> QVector&lt;Vertex&gt;Vertices;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif // VERTEX_H</span></div>
-<div class="ttc" id="a00027_html"><div class="ttname"><a href="a00027.html">Vertex</a></div><div class="ttdef"><b>Definition:</b> Vertex.h:6</div></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00023.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00023.html">SceneGraphWidget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00023.html">SceneGraphWidget</a>( QWidget *parent = 0 );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    ~<a class="code" href="a00023.html">SceneGraphWidget</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> addObject( <span class="keyword">const</span> QObject&amp; <span class="keywordtype">object</span> );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> addObject( <span class="keyword">const</span> <a class="code" href="a00020.html">RenderObject</a>&amp; <span class="keywordtype">object</span> );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> addObjects( <span class="keyword">const</span> QList&lt;QObject*&gt;&amp; objects );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> addObjects( <span class="keyword">const</span> RenderObjects&amp; objects );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> addObjects( <span class="keyword">const</span> QVector&lt;QObject*&gt;&amp; objects );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> clearTreeWidget();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> selectionHasChanged( QTreeWidgetItem* curr,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                              QTreeWidgetItem* prev );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;signals:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> selectionChanged( <span class="keyword">const</span> QString&amp; text );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    Ui::SceneGraphWidget *ui;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // SCENEGRAPHWIDGET_H</span></div>
+<div class="ttc" id="a00023_html"><div class="ttname"><a href="a00023.html">SceneGraphWidget</a></div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.h:16</div></div>
+<div class="ttc" id="a00021_html"><div class="ttname"><a href="a00021.html">RenderObjectInterface</a></div><div class="ttdef"><b>Definition:</b> RenderObjectInterface.h:8</div></div>
+<div class="ttc" id="a00020_html"><div class="ttname"><a href="a00020.html">RenderObject</a></div><div class="ttdef"><b>Definition:</b> RenderObject.h:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_f93dfce691d792349f1c14ede440e2e6.html">Inc</a></li><li class="navelem"><b>Vertex.h</b></li>
-    <li class="footer">Generated on Sat May 31 2014 04:53:52 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><b>SceneGraphWidget.h</b></li>
+    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

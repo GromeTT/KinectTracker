@@ -20,11 +20,15 @@ var annotated =
     [ "OpenGLWindow", "a00018.html", "a00018" ],
     [ "ProcessingPipeline", "a00019.html", "a00019" ],
     [ "RenderObject", "a00020.html", "a00020" ],
-    [ "RGBWidget", "a00021.html", "a00021" ],
-    [ "SceneGraphWidget", "a00022.html", "a00022" ],
-    [ "SignalBlocker", "a00023.html", "a00023" ],
-    [ "Skeleton", "a00024.html", "a00024" ],
-    [ "SkeletonAnalyzer", "a00025.html", "a00025" ],
-    [ "Threshold", "a00026.html", "a00026" ],
-    [ "Vertex", "a00027.html", "a00027" ]
+    [ "RenderObjectInterface", "a00021.html", "a00021" ],
+    [ "RGBWidget", "a00022.html", "a00022" ],
+    [ "SceneGraphWidget", "a00023.html", "a00023" ],
+    [ "SignalBlocker", "a00024.html", "a00024" ],
+    [ "Skeleton", "a00025.html", "a00025" ],
+    [ "SkeletonAnalyzer", "a00026.html", "a00026" ],
+    [ "SkeletonData", "a00027.html", "a00027" ],
+    [ "SkeletonRenderObject", "a00028.html", "a00028" ],
+    [ "Threshold", "a00029.html", "a00029" ],
+    [ "TransformationObject", "a00030.html", "a00030" ],
+    [ "Vertex", "a00031.html", "a00031" ]
 ];

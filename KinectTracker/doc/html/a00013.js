@@ -23,7 +23,7 @@ var a00013 =
     [ "getRGBImage", "a00013.html#a3bb80028edfb709d23e39ca96c00f4e6", null ],
     [ "getRGBStreamResoultion", "a00013.html#aec6ba066df0df5d5021a5370d8569e04", null ],
     [ "getSensorCount", "a00013.html#ad964c079f06425da51dffb6c0ae86599", null ],
-    [ "getSkeleton", "a00013.html#a5cd6764189899439740418e26fe0f413", null ],
+    [ "getSkeleton", "a00013.html#a9098a86d08e4ba63d802b511fc40fe25", null ],
     [ "initialize", "a00013.html#aa141d262b4b5777eae142dae55f15dc2", null ],
     [ "isDepthStreamOpen", "a00013.html#a693565751dc489be7b7aa351ebdaa6e0", null ],
     [ "isInitialized", "a00013.html#a82e6d6e1b8e034ebc9a816e170718d16", null ],
