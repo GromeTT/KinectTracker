@@ -5,8 +5,9 @@
 
 class RenderObject;
 class QTreeWidgetItem;
+class RenderObjectInterface;
 
-typedef QVector<RenderObject*> RenderObjects;
+typedef QVector<RenderObjectInterface*> RenderObjects;
 
 namespace Ui {
 class SceneGraphWidget;

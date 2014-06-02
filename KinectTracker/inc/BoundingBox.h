@@ -4,6 +4,7 @@
 #include <QVector>
 #include <QSharedPointer>
 #include "Vertex.h"
+#include "../inc/SkeletonData.h"
 
 class QMatrix4x4;
 
@@ -13,7 +14,7 @@ struct BoundingBox
 {
 public:
     BoundingBox();
-    BoundingBox( const Vertices& vertices,
+    BoundingBox( const QVector<QVector3D>& points,
                  const float deltaW = 0,
                  const float deltaD = 0,
                  const float deltaH = 0 );
@@ -34,8 +35,8 @@ public:
     void setY( const float y );
     void setZ( const float z );
 
-    bool isPointInBoundingBox( const Vertex& vertex );
-    bool arePointsInBoundingBox( const Vertices& vertices );
+    bool isPointInBoundingBox( const QVector3D& point );
+    bool arePointsInBoundingBox( const QVector<QVector3D> points, const int count );
 
 private:
     float m_width;

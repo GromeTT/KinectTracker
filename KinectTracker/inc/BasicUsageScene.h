@@ -11,15 +11,16 @@
 #include "Camera.h"
 #include "Kinect.h"
 
+class RenderObjectInterface;
 class RenderObject;
+class SkeletonRenderObject;
 class QOpenGLTexture;
 class OpenGLWindow;
 class QOpenGLContext;
 
-
 typedef QSharedPointer<QOpenGLContext> OpenGLContext;
 typedef QVector<QOpenGLShaderProgram*> ShaderPrograms;
-typedef QVector<RenderObject*> RenderObjects;
+typedef QVector<RenderObjectInterface*> RenderObjects;
 typedef QVector<QOpenGLTexture*> OpenGLTextures;
 
 class BasicUsageScene : public QObject
@@ -47,21 +48,21 @@ public:
     void pitchCamera( const float angle );
     void setCameraYaw( const float angle );
     void yawCamera( const float angle );
-
-    QOpenGLShaderProgram* getShaderProgram( const unsigned short i ) const;
-    RenderObject* loadObjectFromFile( const QString filename );
-    RenderObject* createPlane();
-    RenderObject* createCube();
-    RenderObject* createAxis();
     void createFloor();
     void takeSnapshot();
 
-    RenderObject*        getRenderObject( const int index );
-    const RenderObject*  getRenderObject( const int index ) const;
-    RenderObject*        getRenderObjectByName( const QString& name );
-    const RenderObjects& getRenderObjects() const;
-    QObject*             getObjectByName( const QString& name );
-    QObject*             getCamera();
+    QOpenGLShaderProgram*        getShaderProgram( const unsigned short i ) const;
+    RenderObject*                loadObjectFromFile( const QString filename );
+    RenderObject*                createPlane();
+    RenderObject*                createCube();
+    RenderObject*                createAxis();
+    SkeletonRenderObject*        createSkeletonRenderObject();
+    RenderObjectInterface*       getRenderObject( const int index );
+    const RenderObjectInterface* getRenderObject( const int index ) const;
+    RenderObjectInterface*       getRenderObjectByName( const QString& name );
+    const RenderObjects&         getRenderObjects() const;
+    QObject*                     getObjectByName( const QString& name );
+    QObject*                     getCamera();
 
 signals:
     void objectHasBeenAdded( const RenderObject& object );

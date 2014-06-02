@@ -1,5 +1,6 @@
 #include "../inc/SkeletonAnalyzer.h"
 #include "../inc/Skeleton.h"
+#include "../inc/SkeletonData.h"
 #include <QVector3D>
 
 SkeletonAnalyzer::SkeletonAnalyzer()
@@ -15,12 +16,12 @@ SkeletonAnalyzer::~SkeletonAnalyzer()
     qDeleteAll( m_boxes );
 }
 
-void SkeletonAnalyzer::update( const Skeleton* skeleton,
+void SkeletonAnalyzer::update( const SkeletonData* skeleton,
                                const unsigned int timestamp )
 {
     if ( m_boxes.first() )
     {
-        if ( !m_boxes.first()->mp_box->arePointsInBoundingBox( skeleton->getJoints() ) )
+        if ( !m_boxes.first()->mp_box->arePointsInBoundingBox( skeleton->getJoints(), 20 ) )
         {
             BoundingBoxPtr bb ( new BoundingBox ( skeleton->getJoints(),
                                                   m_deltaX,
@@ -75,7 +76,7 @@ float SkeletonAnalyzer::deltaZ() const
     return m_deltaZ;
 }
 
-bool SkeletonAnalyzer::arePointsInLastBoundingBox(const Vertices& vertices)
+bool SkeletonAnalyzer::arePointsInLastBoundingBox( const SkeletonData& skeletonData )
 {
     if ( !m_boxes.first() )
     {
@@ -83,7 +84,7 @@ bool SkeletonAnalyzer::arePointsInLastBoundingBox(const Vertices& vertices)
     }
     else
     {
-        return m_boxes.first()->mp_box->arePointsInBoundingBox( vertices );
+        return m_boxes.first()->mp_box->arePointsInBoundingBox( skeletonData.getJoints(), 20 );
     }
 }
 

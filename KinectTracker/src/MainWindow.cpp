@@ -11,9 +11,10 @@
 #include "../Inc/Explorer.h"
 #include "../Inc/SceneGraphWidget.h"
 #include "../Inc/Floor.h"
-#include "../Inc/SignalBlocker.h"
-#include "../Inc/DepthViewerWidget.h"
-#include "../Inc/ObjectLoader.h"
+#include "../inc/SignalBlocker.h"
+#include "../inc/DepthViewerWidget.h"
+#include "../inc/ObjectLoader.h"
+#include "../inc/SkeletonRenderObject.h"
 #include <QMdiSubWindow>
 #include <QKeyEvent>
 #include <QMetaObject>
@@ -56,7 +57,7 @@ MainWindow::MainWindow( QWidget *parent )
     , m_kinect( new Kinect() )
     , mp_rgbViewObject( nullptr )
     , mp_depthViewObject( nullptr )
-    , mp_skeletonObject( nullptr )
+    , mp_skeletonRenderObject( nullptr )
     , mp_boundingBox( nullptr )
     , mp_arrowObject( nullptr )
     , m_backgroundSubtractor( new BackgroundSubtractorMOG )
@@ -283,7 +284,7 @@ void MainWindow::processDepthData()
 
 void MainWindow::processSkeletonData( const unsigned int timestamp )
 {
-    QList<Skeleton*> skeletons;
+    QList<SkeletonData*> skeletons;
     HRESULT res = m_kinect->getSkeleton( skeletons );
     if ( res != S_OK )
     {
@@ -291,51 +292,45 @@ void MainWindow::processSkeletonData( const unsigned int timestamp )
     }
     if ( skeletons.count() > 0 )
     {
-        Indices indices;
-        indices << 0 << 1 << 2 << 3 << 4 << 5 << 6 << 7 << 8 << 9 << 10 << 11
-                << 12 << 13 << 14 << 15 << 16 << 17 << 18 << 19;
         mp_openGLWindow->makeContextCurrent();
-        mp_skeletonObject->setVertices( skeletons.at(0)->getJoints() );
-        mp_skeletonObject->setIndices( indices );
-        mp_skeletonObject->setRenderMode( GL_POINTS );
-        mp_skeletonObject->setVisible( true );
-        mp_boundingBox->setVisible( true );
+        mp_skeletonRenderObject->updateData( *skeletons.at( 0 ) );
+        //mp_boundingBox->setVisible( true );
 
          m_skeletonAnalyzer.update( skeletons.at( 0 ),
                                     timestamp );
          const BoundingBox* boundingBox = m_skeletonAnalyzer.getLastBoundingBox();
          if ( boundingBox )
          {
-             mp_boundingBox->setPosition( QVector3D( boundingBox->getX(),
+            /* mp_boundingBox->setPosition( QVector3D( boundingBox->getX(),
                                                      boundingBox->getY(),
                                                      boundingBox->getZ() ) );
              mp_boundingBox->setScale( QVector3D( boundingBox->getWidth(),
                                                   boundingBox->getHeight(),
                                                   boundingBox->getDepth() ) );
-             mp_boundingBox->setWireFrameMode( true );
-             mp_arrowObject->setPosition( boundingBox->getX(),
-                                          boundingBox->getY() + 1.5f,
-                                          boundingBox->getZ() );
+             mp_boundingBox->setWireFrameMode( true );*/
+//             mp_arrowObject->setPosition( boundingBox->getX(),
+//                                          boundingBox->getY() + 1.5f,
+//                                          boundingBox->getZ() );
          }
          m_analysisResults.setValuesByVetcor( m_skeletonAnalyzer.getVelocity( timestamp, 10 ) );
          if ( m_analysisResults.directionY() == 0 )
          {
-            mp_arrowObject->setYaw( 0 );
-            mp_arrowObject->setRoll( 90 );
+//            mp_arrowObject->setYaw( 0 );
+//            mp_arrowObject->setRoll( 90 );
          }
          else
          {
-             mp_arrowObject->setYaw( m_analysisResults.directionY() );
-             mp_arrowObject->setRoll( 0 );
+//             mp_arrowObject->setYaw( m_analysisResults.directionY() );
+//             mp_arrowObject->setRoll( 0 );
          }
     }
     else
     {
-        mp_skeletonObject->setVisible( false );
-        mp_boundingBox->setVisible( false );
+//        mp_skeletonRenderObject->setVisible( false );
+//        mp_boundingBox->setVisible( false );
 
-        mp_arrowObject->setYaw( m_analysisResults.directionY() );
-        mp_arrowObject->setRoll( 0 );
+//        mp_arrowObject->setYaw( m_analysisResults.directionY() );
+//        mp_arrowObject->setRoll( 0 );
     }
 }
 
@@ -549,13 +544,12 @@ void MainWindow::constructOpenGLRenderWidget()
     mp_openGLWindow->setVisible( true );
 
     // Initialize scene.
-    mp_skeletonObject  = mp_openGLWindow->getScene()->createCube();
-    mp_skeletonObject->setObjectName( "Skeleton" );
-    mp_boundingBox     = mp_openGLWindow->getScene()->createCube();
-    mp_boundingBox->setObjectName( "BoundingBox" );
+    mp_skeletonRenderObject = mp_openGLWindow->getScene()->createSkeletonRenderObject();
+    //mp_boundingBox = mp_openGLWindow->getScene()->createCube();
+//    mp_boundingBox->setObjectName( "BoundingBox" );
     mp_openGLWindow->getScene()->createFloor();
 
-    mp_arrowObject = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
+    //mp_arrowObject = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
 }
 
 void MainWindow::constructRGBViewer()
@@ -593,17 +587,4 @@ void detect_blobs(Mat& current)
     cv::SimpleBlobDetector detector;
     //    detector.create( )
 }
-
-/*!
- *  \fn MainWindow::updateDepthDataChanged()
- *
- */
-
-/*!
-    \fn MainWindow::updateRGBDataChanged()
-    */
-
-/*!
-    \fn MainWindow::updateSkeletonDataChanged()
-    */
 

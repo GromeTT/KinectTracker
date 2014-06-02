@@ -1,5 +1,5 @@
-#include "../Inc/Kinect.h"
-#include "../Inc/Skeleton.h"
+#include "../inc/Kinect.h"
+#include "../inc/SkeletonData.h"
 #include <QSize>
 #include <QImage>
 #include <QColor>
@@ -376,7 +376,7 @@ HRESULT Kinect::getDepthImage(uchar* img)
  * @param skeletons
  * @return
  */
-HRESULT Kinect::getSkeleton( QList<Skeleton*>& skeletons )
+HRESULT Kinect::getSkeleton( QList<SkeletonData*>& skeletons )
 {
     // Resize vector for storing skeletons
     qDeleteAll( skeletons );
@@ -396,7 +396,7 @@ HRESULT Kinect::getSkeleton( QList<Skeleton*>& skeletons )
         {
             case NUI_SKELETON_TRACKED:
             {
-                Skeleton* skeleton = new Skeleton( skeletonFrame.SkeletonData[i] );
+                SkeletonData* skeleton = new SkeletonData( skeletonFrame.SkeletonData[i] );
                 skeletons.append( skeleton );
             }
         }

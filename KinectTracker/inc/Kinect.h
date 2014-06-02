@@ -12,7 +12,7 @@
 #include <QOpenGLTexture>
 
 class QImage;
-class Skeleton;
+class SkeletonData;
 
 class Kinect
 {
@@ -51,7 +51,7 @@ public:
     HRESULT getRGBImage( uchar* img );
     HRESULT getDepthImage( QImage*& img );
     HRESULT getDepthImage( uchar* img );
-    HRESULT getSkeleton( QList<Skeleton*>& skeletons );
+    HRESULT getSkeleton( QList<SkeletonData*>& skeletons );
     QSize getRGBStreamResoultion() const;
     QSize getDepthStreamResolution() const;
     bool isInitialized() const;

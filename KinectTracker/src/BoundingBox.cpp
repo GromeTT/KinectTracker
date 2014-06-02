@@ -15,12 +15,12 @@ BoundingBox::BoundingBox()
 {
 }
 
-BoundingBox::BoundingBox( const Vertices& vertices,
+BoundingBox::BoundingBox( const QVector<QVector3D>& points,
                           const float deltaW,
                           const float deltaD,
                           const float deltaH )
 {
-    if ( vertices.count() == 0 )
+    if ( points.count() == 0 )
     {
         m_x = 0;
         m_y = 0;
@@ -34,44 +34,42 @@ BoundingBox::BoundingBox( const Vertices& vertices,
     float maxD, minD;
     float maxH, minH;
 
-    // Initialize values with first vertex
-    maxW = minW = vertices.at( 0 ).x;
-    maxD = minD = vertices.at( 0 ).z;
-    maxH = minH = vertices.at( 0 ).y;
+    // Initialize values with first point
+    maxW = minW = points.at( 0 ).x();
+    maxD = minD = points.at( 0 ).z();
+    maxH = minH = points.at( 0 ).y();
 
-    for ( int i = 1; i < vertices.count(); ++i )
+    for ( int i = 1; i < points.count(); ++i )
     {
-        QVector3D v ( vertices.at(i).x,
-                      vertices.at(i).y,
-                      vertices.at(i).z );
+        const QVector3D* v = &points.at( i );
         // Update width
-        if ( v.x() > maxW )
+        if ( v->x() > maxW )
         {
-            maxW = v.x();
+            maxW = v->x();
         }
-        else if ( v.x() < minW )
+        else if ( v->x() < minW )
         {
-            minW = v.x();
+            minW = v->x();
         }
 
         // Update depth
-        if ( v.z() > maxD )
+        if ( v->z() > maxD )
         {
-            maxD = v.z();
+            maxD = v->z();
         }
-        else if ( v.z() < minD )
+        else if ( v->z() < minD )
         {
-            minD = v.z();
+            minD = v->z();
         }
 
         // Update height
-        if ( v.y() > maxH )
+        if ( v->y() > maxH )
         {
-            maxH = v.y();
+            maxH = v->y();
         }
-        else if ( v.y() < minH )
+        else if ( v->y() < minH )
         {
-            minH = v.y();
+            minH = v->y();
         }
     }
     maxW += deltaW;
@@ -92,7 +90,7 @@ BoundingBox::BoundingBox( const Vertices& vertices,
     m_z =  maxD - ( 0.5f * m_depth );
 }
 
-BoundingBox::BoundingBox(const BoundingBox& other)
+BoundingBox::BoundingBox( const BoundingBox& other )
     : m_width ( other.m_width )
     , m_height( other.m_height )
     , m_depth( other.m_depth )
@@ -137,41 +135,41 @@ float BoundingBox::getZ() const
     return m_z;
 }
 
-void BoundingBox::setDepth(const float depth)
+void BoundingBox::setDepth( const float depth )
 {
     m_depth = depth;
 }
 
-void BoundingBox::setWidth(const float width)
+void BoundingBox::setWidth( const float width )
 {
     m_width = width;
 }
 
-void BoundingBox::setHeight(const float height)
+void BoundingBox::setHeight( const float height )
 {
     m_height = height;
 }
 
-void BoundingBox::setX(const float x)
+void BoundingBox::setX( const float x )
 {
     m_x = x;
 }
 
-void BoundingBox::setY(const float y)
+void BoundingBox::setY( const float y )
 {
     m_y = y;
 }
 
-void BoundingBox::setZ(const float z)
+void BoundingBox::setZ( const float z )
 {
     m_z = z;
 }
 
-bool BoundingBox::isPointInBoundingBox( const Vertex& vertex )
+bool BoundingBox::isPointInBoundingBox( const QVector3D& point )
 {
-    return pointInCube( vertex.x,
-                        vertex.y,
-                        vertex.z,
+    return pointInCube( point.x(),
+                        point.y(),
+                        point.z(),
                         m_x,
                         m_y,
                         m_z,
@@ -180,11 +178,11 @@ bool BoundingBox::isPointInBoundingBox( const Vertex& vertex )
                         m_depth );
 }
 
-bool BoundingBox::arePointsInBoundingBox( const Vertices& vertices )
+bool BoundingBox::arePointsInBoundingBox( const QVector<QVector3D> points, const int count )
 {
-    for ( int i = 0; i < vertices.count(); ++i )
+    for ( int i = 0; i < count; ++i )
     {
-        if ( !isPointInBoundingBox( vertices.at( i ) ) )
+        if ( !isPointInBoundingBox( points[i] ) )
         {
             return false;
         }

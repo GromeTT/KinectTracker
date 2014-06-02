@@ -8,7 +8,7 @@
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLTexture>
 #include <QSharedPointer>
-#include "TransformationObject.h"
+#include "RenderObjectInterface.h"
 
 class Vertex;
 class QOpenGLShaderProgram;
@@ -19,17 +19,15 @@ typedef QVector<Vertex> Vertices;
 typedef QVector<unsigned int> Indices;
 typedef QVector<QOpenGLTexture*> OpenGLTextures;
 
-class RenderObject : public TransformationObject
+class RenderObject : public RenderObjectInterface
 {
     Q_OBJECT
 
 public:
     RenderObject( OpenGLContext& context,
                   RenderObject* parent = nullptr );
-    ~RenderObject();
+    virtual ~RenderObject();
 
-    void render( const QMatrix4x4& projection,
-                 const QMatrix4x4& view );
     void setVertices( const Vertices& vertices );
     void setIndices( const Indices& indices );
     void setShaderProgram ( QOpenGLShaderProgram* program );
@@ -56,6 +54,9 @@ public:
     QOpenGLTexture*     getTexture( const unsigned short i );
 
 private:
+    virtual void                renderV( const QMatrix4x4& projection,
+                                         const QMatrix4x4& view );
+
     RenderObject*               mp_parent;
     QOpenGLVertexArrayObject    m_vao;
     QOpenGLShaderProgram*       mp_shaderProgram;
@@ -87,6 +88,5 @@ private:
                 NOTIFY useTextureChanged )
 };
 
-typedef QVector<RenderObject*> RenderObjects;
 
 #endif // RENDEROBJECT_H

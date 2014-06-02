@@ -13,16 +13,15 @@ greaterThan(QT_MAJOR_VERSION, 5):
 TARGET = KinectTracker\
 TEMPLATE = app
 
-SOURCES += src\main.cpp\
-           src\MainWindow.cpp \
-           src\OpenGLWindow.cpp \
-           src\BasicUsageScene.cpp \
-           src\RenderObject.cpp \
-           src\Vertex.cpp \
-           src\RGBWidget.cpp \
-           src\Kinect.cpp \
-           src\Skeleton.cpp \
-           src\KinectInitializeDialog.cpp \
+SOURCES += src/main.cpp\
+           src/MainWindow.cpp \
+           src/OpenGLWindow.cpp \
+           src/BasicUsageScene.cpp \
+           src/RenderObject.cpp \
+           src/Vertex.cpp \
+           src/RGBWidget.cpp \
+           src/Kinect.cpp \
+           src/KinectInitializeDialog.cpp \
            src/Floor.cpp \
            src/Explorer.cpp \
            src/SceneGraphWidget.cpp \
@@ -39,17 +38,19 @@ SOURCES += src\main.cpp\
            src/ProcessingPipeline.cpp \
            src/Dilate.cpp \
            src/Threshold.cpp \
-           src/TransformationObject.cpp
+           src/TransformationObject.cpp \
+           src/SkeletonData.cpp \
+    src/SkeletonRenderObject.cpp \
+    src/RenderObjectInterface.cpp
 
-HEADERS  += inc\MainWindow.h \
-            inc\OpenGLWindow.h \
-            inc\BasicUsageScene.h \
-            inc\RenderObject.h \
-            inc\Vertex.h \
-            inc\RGBWidget.h \
-            inc\Kinect.h \
-            inc\Skeleton.h \
-            inc\KinectInitializeDialog.h \
+HEADERS  += inc/MainWindow.h \
+            inc/OpenGLWindow.h \
+            inc/BasicUsageScene.h \
+            inc/RenderObject.h \
+            inc/Vertex.h \
+            inc/RGBWidget.h \
+            inc/Kinect.h \
+            inc/KinectInitializeDialog.h \
             inc/Floor.h \
             inc/Explorer.h \
             inc/SceneGraphWidget.h \
@@ -67,7 +68,10 @@ HEADERS  += inc\MainWindow.h \
             inc/ProcessingPipeline.h \
             inc/Dilate.h \
             inc/Threshold.h \
-            inc/TransformationObject.h
+            inc/TransformationObject.h \
+            inc/SkeletonData.h \
+    inc/SkeletonRenderObject.h \
+    inc/RenderObjectInterface.h
 
 FORMS    += MainWindow.ui \
             KinectInitializeDialog.ui \
@@ -84,7 +88,9 @@ OTHER_FILES += \
     shader/FragmentShader.frag \
     Notes.txt \
     config.qdocconf \
-    doc/collection.qhcp
+    doc/collection.qhcp \
+    shader/SkeletonVertexShader.vert \
+    shader/SkeletonFragmentShader.frag
 
 
 INCLUDEPATH += "../ThirdParty/Kinect/inc"

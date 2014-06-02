@@ -12,8 +12,6 @@ public:
            RenderObject* parent = nullptr );
     virtual ~Floor();
 
-//    virtual void render( QMatrix4x4& projection,
-//                         QMatrix4x4& view );
     void setSize( const float size );
     void setLineCount( const float lineCount );
 

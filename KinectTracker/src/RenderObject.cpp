@@ -9,7 +9,7 @@
 
 RenderObject::RenderObject( OpenGLContext& context,
                             RenderObject* parent )
-    : TransformationObject( parent )
+    : RenderObjectInterface( parent )
     , mp_parent( parent )
     , mp_shaderProgram( nullptr )
     , m_renderMode( GL_TRIANGLES )
@@ -28,63 +28,6 @@ RenderObject::RenderObject( OpenGLContext& context,
 
 RenderObject::~RenderObject()
 {
-}
-
-/*!
-   \brief RenderObject::render
-   Renders the object.
-   \param projection
-   \param view
- */
-void RenderObject::render( const QMatrix4x4& projection,
-                           const QMatrix4x4& view )
-{
-    if ( !visible() )
-    {
-        return;
-    }
-    if ( !mp_shaderProgram )
-    {
-        return;
-    }
-    m_vao.bind();
-    mp_shaderProgram->bind();
-
-    if ( m_useTexture )
-    {
-        if ( m_activeTextures.at( 0 ) )
-        {
-            m_context->functions()->glActiveTexture( GL_TEXTURE0 );
-            m_textures.at( 0 )->bind();
-        }
-        if ( m_activeTextures.at( 1 ) )
-        {
-            m_context->functions()->glActiveTexture( GL_TEXTURE1 );
-            m_textures.at( 1 )->bind();
-        }
-    }
-
-    if ( m_wireFrameMode )
-    {
-        // Wireframe mode
-        glPolygonMode( GL_FRONT, GL_LINE );
-        glPolygonMode( GL_BACK, GL_LINE );
-    }
-    else
-    {
-        glPolygonMode( GL_FRONT, GL_FILL );
-        glPolygonMode( GL_BACK, GL_FILL );
-    }
-
-    mp_shaderProgram->setUniformValue( "viewMatrix", view );
-    mp_shaderProgram->setUniformValue( "projectionMatrix", projection );
-    mp_shaderProgram->setUniformValue( "modelMatrix", getModelMatrix() );
-    mp_shaderProgram->setUniformValue( "useTexture", m_activeTextures.at( 0 ) );
-    mp_shaderProgram->setUniformValue( "useSecondTexture", m_activeTextures.at( 1 ) );
-
-    glDrawElements( m_renderMode, m_indices.size(), GL_UNSIGNED_INT, 0 );
-
-    m_vao.release();
 }
 
 void RenderObject::setVertices( const Vertices& vertices )
@@ -258,4 +201,55 @@ bool RenderObject::isWireFrameModeOn() const
 QOpenGLTexture* RenderObject::getTexture( const unsigned short i )
 {
     return m_textures.at( i );
+}
+
+void RenderObject::renderV( const QMatrix4x4& projection,
+                            const QMatrix4x4& view )
+{
+    if ( !visible() )
+    {
+        return;
+    }
+    if ( !mp_shaderProgram )
+    {
+        return;
+    }
+    m_vao.bind();
+    mp_shaderProgram->bind();
+
+    if ( m_useTexture )
+    {
+        if ( m_activeTextures.at( 0 ) )
+        {
+            m_context->functions()->glActiveTexture( GL_TEXTURE0 );
+            m_textures.at( 0 )->bind();
+        }
+        if ( m_activeTextures.at( 1 ) )
+        {
+            m_context->functions()->glActiveTexture( GL_TEXTURE1 );
+            m_textures.at( 1 )->bind();
+        }
+    }
+
+    if ( m_wireFrameMode )
+    {
+        // Wireframe mode
+        glPolygonMode( GL_FRONT, GL_LINE );
+        glPolygonMode( GL_BACK, GL_LINE );
+    }
+    else
+    {
+        glPolygonMode( GL_FRONT, GL_FILL );
+        glPolygonMode( GL_BACK, GL_FILL );
+    }
+
+    mp_shaderProgram->setUniformValue( "viewMatrix", view );
+    mp_shaderProgram->setUniformValue( "projectionMatrix", projection );
+    mp_shaderProgram->setUniformValue( "modelMatrix", getModelMatrix() );
+    mp_shaderProgram->setUniformValue( "useTexture", m_activeTextures.at( 0 ) );
+    mp_shaderProgram->setUniformValue( "useSecondTexture", m_activeTextures.at( 1 ) );
+
+    glDrawElements( m_renderMode, m_indices.size(), GL_UNSIGNED_INT, 0 );
+
+    m_vao.release();
 }

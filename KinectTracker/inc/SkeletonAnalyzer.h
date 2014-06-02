@@ -7,7 +7,7 @@
 #include "BoundingBox.h"
 
 class QVector3D;
-class Skeleton;
+class SkeletonData;
 class BoundingBoxWithTimeStamp;
 
 class SkeletonAnalyzer : public QObject
@@ -18,32 +18,33 @@ public:
     SkeletonAnalyzer();
     ~SkeletonAnalyzer();
 
-    void update( const Skeleton* skeleton,
+    void update( const SkeletonData* skeleton,
                  const unsigned int timestamp );
     void setDeltaX( const float deltaX );
     void setDeltaY( const float deltaY );
     void setDeltaZ( const float deltaZ );
 
-    float deltaX() const;
-    float deltaY() const;
-    float deltaZ() const;
-    bool arePointsInLastBoundingBox( const Vertices& vertices );
-    QVector3D getVelocity( const unsigned int timestamp,
-                           const unsigned int ms );
-    const BoundingBox* getLastBoundingBox() const;
+    float               deltaX() const;
+    float               deltaY() const;
+    float               deltaZ() const;
+    bool                arePointsInLastBoundingBox( const SkeletonData& skeletonData );
+    QVector3D           getVelocity( const unsigned int timestamp,
+                                     const unsigned int ms );
+    const BoundingBox*  getLastBoundingBox() const;
 
 private:
     void addBoundingBox( BoundingBoxPtr& boundingBox,
                          const unsigned int timestamp );
 
 
-    // Members
     float m_deltaX;
     float m_deltaY;
     float m_deltaZ;
 
 signals:
     void deltaXChanged();
+    void deltaYChanged();
+    void deltaZChanged();
 
 private:
     // Nested class
@@ -63,6 +64,16 @@ private:
                 READ deltaX
                 WRITE setDeltaX
                 NOTIFY deltaXChanged )
+
+    Q_PROPERTY( float deltaY MEMBER m_deltaY
+                READ deltaY
+                WRITE setDeltaY
+                NOTIFY deltaYChanged )
+
+    Q_PROPERTY( float deltaZ MEMBER m_deltaZ
+                READ deltaZ
+                WRITE setDeltaZ
+                NOTIFY deltaZChanged )
 };
 
 #endif // SKELETONANALYZER_H

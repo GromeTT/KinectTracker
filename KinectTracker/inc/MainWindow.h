@@ -25,11 +25,11 @@ class SceneGraphWidget;
 class QKeyPressEvent;
 class DepthViewerWidget;
 class QMdiSubWindow;
+class SkeletonRenderObject;
 
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
-
 
 class MainWindow : public QMainWindow
 {
@@ -92,9 +92,9 @@ private:
     // Importent render objects
     RenderObject*           mp_rgbViewObject;
     RenderObject*           mp_depthViewObject;
-    RenderObject*           mp_skeletonObject;
     RenderObject*           mp_boundingBox;
     RenderObject*           mp_arrowObject;
+    SkeletonRenderObject*   mp_skeletonRenderObject;
     // OpenCV stuff
     cv::Ptr<cv::BackgroundSubtractor> m_backgroundSubtractor;
     cv::CascadeClassifier faceClassifier;

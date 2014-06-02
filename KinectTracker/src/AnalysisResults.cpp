@@ -68,7 +68,7 @@ void AnalysisResults::setValuesByVetcor( const QVector3D& vec )
     setVelocity( vec.length() );
     // http://de.wikipedia.org/wiki/Polarkoordinaten
     setDirectionY( radToDeg( atan2( vec.x(), vec.z() ) ) );
-    qDebug () << m_directionZ;
+//    qDebug () << m_directionZ;
 }
 
 QString AnalysisResults::workerStatus() const

@@ -1,9 +1,10 @@
-#include "../Inc/BasicUsageScene.h"
-#include "../Inc/RenderObject.h"
-#include "../Inc/Vertex.h"
-#include "../Inc/OpenGLWindow.h"
-#include "../Inc/Floor.h"
-#include "../Inc/ObjectLoader.h"
+#include "../inc/BasicUsageScene.h"
+#include "../inc/RenderObject.h"
+#include "../inc/Vertex.h"
+#include "../inc/OpenGLWindow.h"
+#include "../inc/Floor.h"
+#include "../inc/ObjectLoader.h"
+#include "../inc/SkeletonRenderObject.h"
 #include <QOpenGLContext>
 #include <QOpenGLFunctions>
 #include <QOpenGLTexture>
@@ -66,7 +67,7 @@ void BasicUsageScene::render()
     const QMatrix4x4 m = m_camera.cameraMatrix();
     for ( int i = 0; i < m_renderObjects.count(); ++i )
     {
-        RenderObject* object = m_renderObjects.at( i );
+        RenderObjectInterface* object = m_renderObjects.at( i );
         object->render( m_projectionMatrix,
                         m_camera.cameraMatrix() );
     }
@@ -328,6 +329,18 @@ RenderObject* BasicUsageScene::createAxis()
     return object;
 }
 
+SkeletonRenderObject* BasicUsageScene::createSkeletonRenderObject()
+{
+    mp_window->makeContextCurrent();
+
+    SkeletonRenderObject* object = new SkeletonRenderObject();
+    object->setShaderProgramm( m_shaderPrograms.at( 1 ) );
+    object->setObjectName( "Skeleton" );
+
+    m_renderObjects << object;
+    return object;
+}
+
 void BasicUsageScene::createFloor()
 {
     mp_window->makeContextCurrent();
@@ -343,21 +356,21 @@ void BasicUsageScene::takeSnapshot()
 }
 
 
-RenderObject*BasicUsageScene::getRenderObject( const int index )
+RenderObjectInterface* BasicUsageScene::getRenderObject( const int index )
 {
     return m_renderObjects.at( index );
 }
 
-const RenderObject* BasicUsageScene::getRenderObject( const int index ) const
+const RenderObjectInterface* BasicUsageScene::getRenderObject( const int index ) const
 {
     return m_renderObjects.at( index );
 }
 
-RenderObject*BasicUsageScene::getRenderObjectByName( const QString& name )
+RenderObjectInterface* BasicUsageScene::getRenderObjectByName( const QString& name )
 {
     for ( int i = 0; i < m_renderObjects.count(); ++i )
     {
-        RenderObject* o = m_renderObjects.at( i );
+        RenderObjectInterface* o = m_renderObjects.at( i );
         if ( o->objectName() == name )
         {
             return o;
@@ -392,6 +405,8 @@ void BasicUsageScene::prepareShaderProgram()
 {
     createShaderProgram( pathToVertexShader,
                          pathToFragmentShader );
+    createShaderProgram( "../KinectTracker/shader/SkeletonVertexShader.vert",
+                         "../KinectTracker/shader/SkeletonFragmentShader.frag" );
 
     m_fileSystemWatcher.addPath( "../KinectTracker/shader/VertexShader.vert" );
     m_fileSystemWatcher.addPath( "../KinectTracker/shader/FragmentShader.frag" );

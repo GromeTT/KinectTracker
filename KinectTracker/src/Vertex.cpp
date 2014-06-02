@@ -2,7 +2,7 @@
 
 Vertex::Vertex()
     : x ( 0.0f ), y( 0.0f ), z( 0.0f )
-    , r ( 0.0f ), g( 0.0f ), b( 0.0f ), a( 1.0f )
+    , r ( 1.0f ), g( 0.0f ), b( 0.0f ), a( 1.0f )
     , u ( 0.0f ), v( 0.0f )
     , pointSize( 5.0f )
 {
