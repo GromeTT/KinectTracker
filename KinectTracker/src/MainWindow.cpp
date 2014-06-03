@@ -58,7 +58,8 @@ MainWindow::MainWindow( QWidget *parent )
     , mp_rgbViewObject( nullptr )
     , mp_depthViewObject( nullptr )
     , mp_skeletonRenderObject( nullptr )
-    , mp_boundingBox( nullptr )
+    , mp_boundingBoxWholeBody( nullptr )
+    , mp_boundingBoxLowerBody( nullptr )
     , mp_arrowObject( nullptr )
     , m_backgroundSubtractor( new BackgroundSubtractorMOG )
     , m_lastTiming( 0 )
@@ -79,9 +80,16 @@ MainWindow::MainWindow( QWidget *parent )
 
     // Construct explorer and it's dockWidget.
     mp_explorerDockWidget = new QDockWidget( "Explorer", this );
+    mp_explorerDockWidget->setMinimumWidth( 350 );
     addDockWidget( Qt::LeftDockWidgetArea, mp_explorerDockWidget );
     mp_explorer = new Explorer( mp_explorerDockWidget );
     mp_explorerDockWidget->setWidget( mp_explorer );
+
+    mp_skeletonAnalyserDockWidget = new QDockWidget( "SkeletonAnlyser" );
+    addDockWidget(Qt::LeftDockWidgetArea, mp_skeletonAnalyserDockWidget );
+    mp_skeletonAnalyserExplorer = new Explorer( mp_skeletonAnalyserDockWidget );
+    mp_skeletonAnalyserDockWidget->setWidget( mp_skeletonAnalyserExplorer );
+    mp_skeletonAnalyserExplorer->setObject( &m_skeletonAnalyzer );
 
     // Construct result explorer and it's dockWidget.
     mp_resultExpDockWidget = new QDockWidget( "Anlysis", this );
@@ -205,7 +213,7 @@ void MainWindow::processRGBData()
             m_imageAnalyzer.setSnapshot( curr );
             m_takeSnapshot = false;
         }
-        imshow( "BS Window", curr );
+//        imshow( "BS Window", curr );
         if ( m_backGroundSubtraction )
         {
 
@@ -282,32 +290,47 @@ void MainWindow::processDepthData()
     }
 }
 
+/*!
+   \fn MainWindow::processSkeletonData
+   Gets skeleton data from the kinect sensor and perfoms it's analysis.
+ */
 void MainWindow::processSkeletonData( const unsigned int timestamp )
 {
     QList<SkeletonData*> skeletons;
     HRESULT res = m_kinect->getSkeleton( skeletons );
+
     if ( res != S_OK )
     {
         return;
     }
+
     if ( skeletons.count() > 0 )
     {
+        // Skeleton detected.
         mp_openGLWindow->makeContextCurrent();
-        mp_skeletonRenderObject->updateData( *skeletons.at( 0 ) );
-        mp_boundingBox->setVisible( true );
 
+        mp_arrowObject->setVisible( true );
+
+        // Update the skeleton render.
+        mp_skeletonRenderObject->setVisible( true );
+        mp_skeletonRenderObject->updateData( *skeletons.at( 0 ) );
+
+        // Perfomr analysis
          m_skeletonAnalyzer.update( skeletons.at( 0 ),
                                     timestamp );
+
+         // Update BoundingBox for the lower body.
+         mp_boundingBoxLowerBody->setVisible( true );
          const BoundingBox* boundingBox = m_skeletonAnalyzer.getLastBoundingBox();
          if ( boundingBox )
          {
-             mp_boundingBox->setPosition( QVector3D( boundingBox->getX(),
-                                                     boundingBox->getY(),
-                                                     boundingBox->getZ() ) );
-             mp_boundingBox->setScale( QVector3D( boundingBox->getWidth(),
-                                                  boundingBox->getHeight(),
-                                                  boundingBox->getDepth() ) );
-             mp_boundingBox->setWireFrameMode( true );
+             mp_boundingBoxLowerBody->setPosition( QVector3D( boundingBox->getX(),
+                                                              boundingBox->getY(),
+                                                              boundingBox->getZ() ) );
+             mp_boundingBoxLowerBody->setScale( QVector3D( boundingBox->getWidth(),
+                                                           boundingBox->getHeight(),
+                                                           boundingBox->getDepth() ) );
+
              mp_arrowObject->setPosition( boundingBox->getX(),
                                           boundingBox->getY() + 1.5f,
                                           boundingBox->getZ() );
@@ -315,21 +338,43 @@ void MainWindow::processSkeletonData( const unsigned int timestamp )
          m_analysisResults.setValuesByVetcor( m_skeletonAnalyzer.getVelocity( timestamp, 10 ) );
          if ( m_analysisResults.directionY() == 0 )
          {
+            // Case: Person is not moving.
+
+            // Indicates standing person by making the arrow pointing up.
             mp_arrowObject->setYaw( 0 );
             mp_arrowObject->setRoll( 90 );
          }
          else
          {
+             // Case: Person is moving.
+
+             // Let the arrow point in the direction of the movement.
              mp_arrowObject->setYaw( m_analysisResults.directionY() );
              mp_arrowObject->setRoll( 0 );
+         }
+
+         // Update BoundingBox for the whole body.
+         mp_boundingBoxWholeBody->setVisible( true );
+         boundingBox = m_skeletonAnalyzer.getBoundingBoxWholeBody();
+         if ( boundingBox )
+         {
+             mp_boundingBoxWholeBody->setPosition( QVector3D( boundingBox->getX(),
+                                                              boundingBox->getY(),
+                                                              boundingBox->getZ() ) );
+             mp_boundingBoxWholeBody->setScale( QVector3D( boundingBox->getWidth(),
+                                                           boundingBox->getHeight(),
+                                                           boundingBox->getDepth() ) );
          }
     }
     else
     {
-        mp_boundingBox->setVisible( false );
+        // Case: Recived Skeletonframe, but no skeleton detected.
 
-        mp_arrowObject->setYaw( m_analysisResults.directionY() );
-        mp_arrowObject->setRoll( 0 );
+        // Turn all objects invisible.
+        mp_skeletonRenderObject->setVisible( false );
+        mp_boundingBoxLowerBody->setVisible( false );
+        mp_boundingBoxWholeBody->setVisible( false );
+        mp_arrowObject->setVisible( false );
     }
 }
 
@@ -406,8 +451,9 @@ void MainWindow::subWindowActivated( QMdiSubWindow* subWindow )
     }
 }
 
-/**
- * @brief MainWindow::initializeKinect
+/*!
+   \fn MainWindow::showKinectDialog
+   Opeens a dialog to configure connections to usb devices.
  */
 void MainWindow::showKinectDialog()
 {
@@ -415,8 +461,9 @@ void MainWindow::showKinectDialog()
     dial.exec();
 }
 
-/**
- * @brief MainWindow::openKinectStream
+/*!
+   \fn MainWindow::openKinectStream
+   Initializes the kinect and opens a rgb stream and a depth stream.
  */
 void MainWindow::openKinectStream()
 {
@@ -544,12 +591,22 @@ void MainWindow::constructOpenGLRenderWidget()
     mp_openGLWindow->setVisible( true );
 
     // Initialize scene.
-    mp_skeletonRenderObject = mp_openGLWindow->getScene()->createSkeletonRenderObject();
-    mp_boundingBox = mp_openGLWindow->getScene()->createCube();
-    mp_boundingBox->setObjectName( "BoundingBox" );
-    mp_openGLWindow->getScene()->createFloor();
 
+    // Skeleton
+    mp_skeletonRenderObject = mp_openGLWindow->getScene()->createSkeletonRenderObject();
+    // BoundingBoxLowerBody
+    mp_boundingBoxLowerBody = mp_openGLWindow->getScene()->createCube();
+    mp_boundingBoxLowerBody->setObjectName( "BoundingBoxLowerBody" );
+    mp_boundingBoxLowerBody->setWireFrameMode( true );
+    // BoundingBoxWholeBody
+    mp_boundingBoxWholeBody = mp_openGLWindow->getScene()->createCube();
+    mp_boundingBoxWholeBody->setObjectName( "BoundingBoxWholeBody" );
+    mp_boundingBoxWholeBody->setWireFrameMode( true );
+    // Arrow
     mp_arrowObject = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
+    mp_arrowObject->setObjectName( "Arrow" );
+    mp_arrowObject->setVisible( true );
+    mp_arrowObject->setScale( QVector3D( 0.2, 0.2, 0.2 ) );
 }
 
 void MainWindow::constructRGBViewer()

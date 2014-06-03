@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/DepthViewerWidget.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/BoundingBox.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,6 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -89,7 +91,7 @@ $(document).ready(function(){initNavTree('a00037_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,41 +102,120 @@ $(document).ready(function(){initNavTree('a00037_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">DepthViewerWidget.h</div>  </div>
+<div class="title">BoundingBox.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DEPTHVIEWERWIDGETO_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DEPTHVIEWERWIDGETO_H</span></div>
+<a href="a00037.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BOUNDINGBOX_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BOUNDINGBOX_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>Ui{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">class </span><a class="code" href="a00007.html">DepthViewerWidget</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="a00007.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00007.html">DepthViewerWidget</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QSharedPointer&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00065.html">Vertex.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../inc/SkeletonData.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00037.html#a259f4df67df3fce159eb227839d3c425">    9</a></span>&#160;<span class="keyword">class </span>QMatrix4x4;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">typedef</span> QVector&lt;Vertex&gt; <a class="code" href="a00037.html#a259f4df67df3fce159eb227839d3c425">Vertices</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="a00007.html">DepthViewerWidget</a>( QWidget* parent = 0 );</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    ~<a class="code" href="a00007.html">DepthViewerWidget</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> update( QImage* image );</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Ui::DepthViewerWidget* ui;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00004.html">   13</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a00004.html">BoundingBox</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="a00004.html#a6e401c4da5839950f1f30c8b8c4d1208">BoundingBox</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="a00004.html#a6e401c4da5839950f1f30c8b8c4d1208">BoundingBox</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">float</span> deltaW = 0,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">float</span> deltaD = 0,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">float</span> deltaH = 0 );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="a00004.html#a6e401c4da5839950f1f30c8b8c4d1208">BoundingBox</a>( <span class="keyword">const</span> <a class="code" href="a00004.html">BoundingBox</a>&amp; other );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="a00004.html#a587de78331711c6eb6d15de867b73991">~BoundingBox</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // DEPTHVIEWERWIDGETO_H</span></div>
-<div class="ttc" id="a00007_html"><div class="ttname"><a href="a00007.html">DepthViewerWidget</a></div><div class="ttdef"><b>Definition:</b> DepthViewerWidget.h:10</div></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#a2765d599894e1ce70a71cc143f603601">getDepth</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#acd3378928b8a9996790b22ad9f8b6404">getWidth</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#aeb0038310316513e738f712548394d45">getHeight</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#a61b21b1965b2b476b3209f70a6142c5f">getX</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#a9d90e3ff56eef1cd7b410389695b2899">getY</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#a5341e4fa5385d4c621c74aa350d6720f">getZ</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00004.html#a4671e29075fba2ed829f2838a850994c">setDepth</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> depth );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00004.html#ad9bc903c2a3c01d220969db034b9c4d4">setWidth</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> width );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00004.html#aff2f3e191249d0aa811b22e791fe3d9e">setHeight</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> height );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00004.html#adc26582db90273fb86431937f6189251">setX</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> x );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00004.html#a99dba1c9c15c61b0b1e06abe16699bc2">setY</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> y );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00004.html#adb9be71a078e9def441780f83162e6ae">setZ</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> z );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00004.html#abb20c845b8a47726b08b832f1547b63a">calculateBoundingBox</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">float</span> deltaW = 0,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">float</span> deltaD = 0,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">float</span> deltaH = 0 );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00004.html#a5e59937134e983e6b544077dcfb7c2d7">arePointsInsideBoundingBox</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00004.html#a5fda8917e2a6f75c04aba2adaff6ec4a">   45</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#a5fda8917e2a6f75c04aba2adaff6ec4a">m_width</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a00004.html#a8ef7d989f217a73fcd3c256eead9a960">   46</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#a8ef7d989f217a73fcd3c256eead9a960">m_height</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00004.html#aa2a6700181e92cb7ba0e7d6fde3c15dc">   47</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#aa2a6700181e92cb7ba0e7d6fde3c15dc">m_depth</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00004.html#aa6656a033f30a21da358da1f1b29bf2e">   48</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#aa6656a033f30a21da358da1f1b29bf2e">m_x</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a00004.html#ac2bb8379e9bf1b52c4ced7bbd9a824a2">   49</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#ac2bb8379e9bf1b52c4ced7bbd9a824a2">m_y</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a00004.html#af309964a535f7e37dde54cd35733bfb2">   50</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00004.html#af309964a535f7e37dde54cd35733bfb2">m_z</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00037.html#a63be8cb12104dd2612c80c1defebd264">   53</a></span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;BoundingBox&gt; <a class="code" href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/**************************************************************************************************************************</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> **************************************************************************************************************************/</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a00005.html">   64</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00005.html">BoundingBoxWithTimeStamp</a></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="a00005.html#a0a51ca8c0bb5cc595057c33c09e4367f">BoundingBoxWithTimeStamp</a>( );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="a00005.html#a0a51ca8c0bb5cc595057c33c09e4367f">BoundingBoxWithTimeStamp</a>( <a class="code" href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a>&amp; boudingBox,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                              <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp );</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a00005.html#a4151071370fe19509afa015b48027c99">   70</a></span>&#160;    <a class="code" href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a> <a class="code" href="a00005.html#a4151071370fe19509afa015b48027c99">m_box</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00005.html#a92eebf716011ccef42859420f4b738e4">   71</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="a00005.html#a92eebf716011ccef42859420f4b738e4">m_timestamp</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif // BOUNDINGBOX_H</span></div>
+<div class="ttc" id="a00004_html_aeb0038310316513e738f712548394d45"><div class="ttname"><a href="a00004.html#aeb0038310316513e738f712548394d45">BoundingBox::getHeight</a></div><div class="ttdeci">float getHeight() const </div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:54</div></div>
+<div class="ttc" id="a00004_html_aa6656a033f30a21da358da1f1b29bf2e"><div class="ttname"><a href="a00004.html#aa6656a033f30a21da358da1f1b29bf2e">BoundingBox::m_x</a></div><div class="ttdeci">float m_x</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:48</div></div>
+<div class="ttc" id="a00004_html_a4671e29075fba2ed829f2838a850994c"><div class="ttname"><a href="a00004.html#a4671e29075fba2ed829f2838a850994c">BoundingBox::setDepth</a></div><div class="ttdeci">void setDepth(const float depth)</div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:74</div></div>
+<div class="ttc" id="a00004_html_acd3378928b8a9996790b22ad9f8b6404"><div class="ttname"><a href="a00004.html#acd3378928b8a9996790b22ad9f8b6404">BoundingBox::getWidth</a></div><div class="ttdeci">float getWidth() const </div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:49</div></div>
+<div class="ttc" id="a00004_html_adc26582db90273fb86431937f6189251"><div class="ttname"><a href="a00004.html#adc26582db90273fb86431937f6189251">BoundingBox::setX</a></div><div class="ttdeci">void setX(const float x)</div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:89</div></div>
+<div class="ttc" id="a00005_html_a4151071370fe19509afa015b48027c99"><div class="ttname"><a href="a00005.html#a4151071370fe19509afa015b48027c99">BoundingBoxWithTimeStamp::m_box</a></div><div class="ttdeci">BoundingBoxPtr m_box</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:70</div></div>
+<div class="ttc" id="a00004_html_ad9bc903c2a3c01d220969db034b9c4d4"><div class="ttname"><a href="a00004.html#ad9bc903c2a3c01d220969db034b9c4d4">BoundingBox::setWidth</a></div><div class="ttdeci">void setWidth(const float width)</div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:79</div></div>
+<div class="ttc" id="a00004_html_adb9be71a078e9def441780f83162e6ae"><div class="ttname"><a href="a00004.html#adb9be71a078e9def441780f83162e6ae">BoundingBox::setZ</a></div><div class="ttdeci">void setZ(const float z)</div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:99</div></div>
+<div class="ttc" id="a00004_html_a5fda8917e2a6f75c04aba2adaff6ec4a"><div class="ttname"><a href="a00004.html#a5fda8917e2a6f75c04aba2adaff6ec4a">BoundingBox::m_width</a></div><div class="ttdeci">float m_width</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:45</div></div>
+<div class="ttc" id="a00004_html_a587de78331711c6eb6d15de867b73991"><div class="ttname"><a href="a00004.html#a587de78331711c6eb6d15de867b73991">BoundingBox::~BoundingBox</a></div><div class="ttdeci">~BoundingBox()</div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:40</div></div>
+<div class="ttc" id="a00004_html_a99dba1c9c15c61b0b1e06abe16699bc2"><div class="ttname"><a href="a00004.html#a99dba1c9c15c61b0b1e06abe16699bc2">BoundingBox::setY</a></div><div class="ttdeci">void setY(const float y)</div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:94</div></div>
+<div class="ttc" id="a00004_html_abb20c845b8a47726b08b832f1547b63a"><div class="ttname"><a href="a00004.html#abb20c845b8a47726b08b832f1547b63a">BoundingBox::calculateBoundingBox</a></div><div class="ttdeci">void calculateBoundingBox(const QVector&lt; QVector3D &gt; &amp;points, const float deltaW=0, const float deltaD=0, const float deltaH=0)</div><div class="ttdoc">/fn void BoundingBox::calculateBoundingBox( const QVector<QVector3D>& poinst, const float deltaW...</div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:109</div></div>
+<div class="ttc" id="a00004_html_a8ef7d989f217a73fcd3c256eead9a960"><div class="ttname"><a href="a00004.html#a8ef7d989f217a73fcd3c256eead9a960">BoundingBox::m_height</a></div><div class="ttdeci">float m_height</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:46</div></div>
+<div class="ttc" id="a00004_html_a5e59937134e983e6b544077dcfb7c2d7"><div class="ttname"><a href="a00004.html#a5e59937134e983e6b544077dcfb7c2d7">BoundingBox::arePointsInsideBoundingBox</a></div><div class="ttdeci">bool arePointsInsideBoundingBox(const QVector&lt; QVector3D &gt; &amp;points)</div><div class="ttdoc">Returns true, if all points of points is inside this BoundingBox. </div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:188</div></div>
+<div class="ttc" id="a00004_html_aa2a6700181e92cb7ba0e7d6fde3c15dc"><div class="ttname"><a href="a00004.html#aa2a6700181e92cb7ba0e7d6fde3c15dc">BoundingBox::m_depth</a></div><div class="ttdeci">float m_depth</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:47</div></div>
+<div class="ttc" id="a00005_html_a92eebf716011ccef42859420f4b738e4"><div class="ttname"><a href="a00005.html#a92eebf716011ccef42859420f4b738e4">BoundingBoxWithTimeStamp::m_timestamp</a></div><div class="ttdeci">unsigned int m_timestamp</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:71</div></div>
+<div class="ttc" id="a00037_html_a63be8cb12104dd2612c80c1defebd264"><div class="ttname"><a href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a></div><div class="ttdeci">QSharedPointer&lt; BoundingBox &gt; BoundingBoxPtr</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:53</div></div>
+<div class="ttc" id="a00004_html_a6e401c4da5839950f1f30c8b8c4d1208"><div class="ttname"><a href="a00004.html#a6e401c4da5839950f1f30c8b8c4d1208">BoundingBox::BoundingBox</a></div><div class="ttdeci">BoundingBox()</div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:8</div></div>
+<div class="ttc" id="a00005_html"><div class="ttname"><a href="a00005.html">BoundingBoxWithTimeStamp</a></div><div class="ttdef"><b>Definition:</b> BoundingBox.h:64</div></div>
+<div class="ttc" id="a00005_html_a0a51ca8c0bb5cc595057c33c09e4367f"><div class="ttname"><a href="a00005.html#a0a51ca8c0bb5cc595057c33c09e4367f">BoundingBoxWithTimeStamp::BoundingBoxWithTimeStamp</a></div><div class="ttdeci">BoundingBoxWithTimeStamp()</div><div class="ttdoc">Constructs a QSharedPointer with an empty BoundingBox. </div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:226</div></div>
+<div class="ttc" id="a00004_html_a2765d599894e1ce70a71cc143f603601"><div class="ttname"><a href="a00004.html#a2765d599894e1ce70a71cc143f603601">BoundingBox::getDepth</a></div><div class="ttdeci">float getDepth() const </div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:44</div></div>
+<div class="ttc" id="a00004_html_af309964a535f7e37dde54cd35733bfb2"><div class="ttname"><a href="a00004.html#af309964a535f7e37dde54cd35733bfb2">BoundingBox::m_z</a></div><div class="ttdeci">float m_z</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:50</div></div>
+<div class="ttc" id="a00004_html_aff2f3e191249d0aa811b22e791fe3d9e"><div class="ttname"><a href="a00004.html#aff2f3e191249d0aa811b22e791fe3d9e">BoundingBox::setHeight</a></div><div class="ttdeci">void setHeight(const float height)</div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:84</div></div>
+<div class="ttc" id="a00004_html_a9d90e3ff56eef1cd7b410389695b2899"><div class="ttname"><a href="a00004.html#a9d90e3ff56eef1cd7b410389695b2899">BoundingBox::getY</a></div><div class="ttdeci">float getY() const </div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:64</div></div>
+<div class="ttc" id="a00065_html"><div class="ttname"><a href="a00065.html">Vertex.h</a></div></div>
+<div class="ttc" id="a00004_html_a61b21b1965b2b476b3209f70a6142c5f"><div class="ttname"><a href="a00004.html#a61b21b1965b2b476b3209f70a6142c5f">BoundingBox::getX</a></div><div class="ttdeci">float getX() const </div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:59</div></div>
+<div class="ttc" id="a00004_html_ac2bb8379e9bf1b52c4ced7bbd9a824a2"><div class="ttname"><a href="a00004.html#ac2bb8379e9bf1b52c4ced7bbd9a824a2">BoundingBox::m_y</a></div><div class="ttdeci">float m_y</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:49</div></div>
+<div class="ttc" id="a00037_html_a259f4df67df3fce159eb227839d3c425"><div class="ttname"><a href="a00037.html#a259f4df67df3fce159eb227839d3c425">Vertices</a></div><div class="ttdeci">QVector&lt; Vertex &gt; Vertices</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:9</div></div>
+<div class="ttc" id="a00004_html"><div class="ttname"><a href="a00004.html">BoundingBox</a></div><div class="ttdef"><b>Definition:</b> BoundingBox.h:13</div></div>
+<div class="ttc" id="a00004_html_a5341e4fa5385d4c621c74aa350d6720f"><div class="ttname"><a href="a00004.html#a5341e4fa5385d4c621c74aa350d6720f">BoundingBox::getZ</a></div><div class="ttdeci">float getZ() const </div><div class="ttdef"><b>Definition:</b> BoundingBox.cpp:69</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><b>DepthViewerWidget.h</b></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00037.html">BoundingBox.h</a></li>
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

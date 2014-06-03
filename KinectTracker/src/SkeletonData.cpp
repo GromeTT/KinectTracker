@@ -1,21 +1,39 @@
 #include "../inc/SkeletonData.h"
+#include <math.h>
 
+
+/*!
+   \fn SkeletonData::SkeletonData
+   Constructs a SkeletonData object with all joints set to (0, 0, 0).
+ */
 SkeletonData::SkeletonData()
 {
     m_joints.resize( 20 );
 }
 
+/*!
+   \fn SkeletonData::SkeletonData( const NUI_SKELETON_DATA& skeletonData )
+   Constructs a new SkeletonData object from the data provided by \a skeletonData.
+ */
 SkeletonData::SkeletonData( const NUI_SKELETON_DATA& skeletonData )
 {
     m_joints.resize( 20 );
     setSkeletonBySkeletonData( skeletonData );
 }
 
+/*!
+   \fn SkeletonData::~SkeletonData
+   Destroyes this object.
+ */
 SkeletonData::~SkeletonData()
 {
 
 }
 
+/*!
+   \fn SkeletonData::setSkeletonBySkeletonData
+   Stores the data provided by \a skeleton data in this object.
+ */
 void SkeletonData::setSkeletonBySkeletonData( const NUI_SKELETON_DATA& skeletonData )
 {
     copy( skeletonData.SkeletonPositions[NUI_SKELETON_POSITION_HIP_CENTER], m_joints[static_cast<int>( Joints::Hip )] );
@@ -40,16 +58,29 @@ void SkeletonData::setSkeletonBySkeletonData( const NUI_SKELETON_DATA& skeletonD
     copy( skeletonData.SkeletonPositions[NUI_SKELETON_POSITION_FOOT_RIGHT], m_joints[static_cast<int>( Joints::FootRight )] );
 }
 
-//SkeletonData SkeletonData::getDummy()
-//{
-//    return SkeletonData();
-//}
-
+/*!
+   \fn SkeletonData::getJoints
+   Returns a vector with all joints.
+ */
 const QVector<QVector3D>& SkeletonData::getJoints() const
 {
     return m_joints;
 }
 
+/*!
+   \fn SkeletonData::getJoint
+   Returns the joint specified by \a joint.
+   \see Skeleton::Joints
+ */
+const QVector3D& SkeletonData::getJoint( const SkeletonData::Joints joint ) const
+{
+    return m_joints.at( static_cast<int>( joint ) );
+}
+
+/*!
+   \fn copy
+   Copies the data from \a source to \a target.
+ */
 void copy( const Vector4& source, QVector3D& target )
 {
     target.setX( source.x );

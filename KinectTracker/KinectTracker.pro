@@ -71,7 +71,8 @@ HEADERS  += inc/MainWindow.h \
             inc/TransformationObject.h \
             inc/SkeletonData.h \
     inc/SkeletonRenderObject.h \
-    inc/RenderObjectInterface.h
+    inc/RenderObjectInterface.h \
+    inc/Defines.h
 
 FORMS    += MainWindow.ui \
             KinectInitializeDialog.ui \

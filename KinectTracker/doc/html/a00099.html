@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -84,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00005.html','');});
+$(document).ready(function(){initNavTree('a00001.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('a00005.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,29 +104,47 @@ $(document).ready(function(){initNavTree('a00005.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">BSPipeline Member List</div>  </div>
+<div class="title">AnalysisResults Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00005.html">BSPipeline</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00001.html">AnalysisResults</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>BSPipeline</b>(ImageAnalyzer *parent) (defined in <a class="el" href="a00005.html">BSPipeline</a>)</td><td class="entry"><a class="el" href="a00005.html">BSPipeline</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getComponents</b>() const  (defined in <a class="el" href="a00019.html">ProcessingPipeline</a>)</td><td class="entry"><a class="el" href="a00019.html">ProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getObjectByName</b>(const QString &amp;name) (defined in <a class="el" href="a00019.html">ProcessingPipeline</a>)</td><td class="entry"><a class="el" href="a00019.html">ProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>m_parent</b> (defined in <a class="el" href="a00019.html">ProcessingPipeline</a>)</td><td class="entry"><a class="el" href="a00019.html">ProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>m_processingComponents</b> (defined in <a class="el" href="a00019.html">ProcessingPipeline</a>)</td><td class="entry"><a class="el" href="a00019.html">ProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>mp_snapshot</b> (defined in <a class="el" href="a00019.html">ProcessingPipeline</a>)</td><td class="entry"><a class="el" href="a00019.html">ProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>process</b>(cv::Mat &amp;input) (defined in <a class="el" href="a00005.html">BSPipeline</a>)</td><td class="entry"><a class="el" href="a00005.html">BSPipeline</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>ProcessingPipeline</b>(ImageAnalyzer *parent) (defined in <a class="el" href="a00019.html">ProcessingPipeline</a>)</td><td class="entry"><a class="el" href="a00019.html">ProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>setSnapshot</b>(cv::Mat *snapshot) (defined in <a class="el" href="a00019.html">ProcessingPipeline</a>)</td><td class="entry"><a class="el" href="a00019.html">ProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>~BSPipeline</b>() (defined in <a class="el" href="a00005.html">BSPipeline</a>)</td><td class="entry"><a class="el" href="a00005.html">BSPipeline</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~ProcessingPipeline</b>() (defined in <a class="el" href="a00019.html">ProcessingPipeline</a>)</td><td class="entry"><a class="el" href="a00019.html">ProcessingPipeline</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a020b2b07912eef18bb5ae9615118192f">AnalysisResults</a>()</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#a1ed376bbef1dba248f6a214410398aa3">directionX</a></td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#aa7b63d04c5848c57b1fb3198f8fb48f5">directionX</a>() const </td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#a995f32a7b01dc305682db58c82a0c0f4">directionXChanged</a>()</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#abe259e537c6b9f09871ee34be4f26be1">directionY</a></td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#a612d1b553456b25b7f588f5ca5310e0e">directionY</a>() const </td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#ab2dc7f3b695965b41a8967bfadc6d71e">directionYChanged</a>()</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#abbcc333b13510aa1c52c2f146bc85581">directionZ</a></td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a78f5b7db860b5ccaa0fd1a54bcc815e2">directionZ</a>() const </td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#af5a3263ab582cab9531bcaadd6267c93">directionZChanged</a>()</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#acec095f4faa08b2b42597c26c8ac818d">m_directionX</a></td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#ac35e9f8104f69d24884f53499388b172">m_directionY</a></td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a5999e0a117058c89c92b8b62565d1b73">m_directionZ</a></td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#a472f2de78be8a038d6a33c4b6f07d34b">m_velocity</a></td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a3b302d4031cf51e214535a631aafa7d1">m_workerStatus</a></td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#a0302887c10a36abf97f7d27f600db409">radToDeg</a>(const float rad)</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a6be9f9ff0b1993e9779fd059c8e91de2">setDirectionX</a>(const float directionX)</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#a05906a40b1a8ec7ed8d8333564990b0b">setDirectionY</a>(const float directionY)</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a568bed59e2b3f02ae313c8a99b0e2f5c">setDirectionZ</a>(const float directionZ)</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#aff447783e8be37a00c9db9942f32d4a4">setValuesByVetcor</a>(const QVector3D &amp;vec)</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a7f0310a7b661d2454e1772575ff6faee">setVelocity</a>(const float velocity)</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#a529f8458a0574509660edcc8c02b7776">setWorkerStatus</a>(const QString &amp;status)</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a1e9fb51cf1b09e5070b124ff9e3848df">velocity</a></td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#a32b25bcab79516a64fde78cb3f870f05">velocity</a>() const </td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#ab311c230ce884301bc73697993e4a704">velocityChanged</a>()</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#a3fd453bc84350dc8cc9a67aabada0761">workerStatus</a></td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a185f9f0da8d0092b65c64743f8c0105f">workerStatus</a>() const </td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00001.html#a7f320567dbbef79795e32a3739e6ca68">workerStatusChanged</a>()</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a6f232a238c51a88fe302dd6874f85922">~AnalysisResults</a>()</td><td class="entry"><a class="el" href="a00001.html">AnalysisResults</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

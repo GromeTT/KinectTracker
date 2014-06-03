@@ -9,6 +9,7 @@
 
 class SkeletonData
 {
+
 public:
     enum class Joints
        {
@@ -41,10 +42,11 @@ public:
 
     void setSkeletonBySkeletonData( const NUI_SKELETON_DATA& skeletonData );
 
-
     const QVector<QVector3D>& getJoints() const;
+    const QVector3D&          getJoint( const Joints joint ) const;
 
 private:
+
     QVector<QVector3D> m_joints;
 };
 

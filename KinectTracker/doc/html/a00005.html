@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: BSPipeline Class Reference</title>
+<title>KinectTracker: BoundingBoxWithTimeStamp Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('a00005.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,67 +105,105 @@ $(document).ready(function(){initNavTree('a00005.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00099.html">List of all members</a>  </div>
+<a href="a00103.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">BSPipeline Class Reference</div>  </div>
+<div class="title">BoundingBoxWithTimeStamp Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for BSPipeline:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00005.png" usemap="#BSPipeline_map" alt=""/>
-  <map id="BSPipeline_map" name="BSPipeline_map">
-<area href="a00019.html" alt="ProcessingPipeline" shape="rect" coords="0,0,120,24"/>
-</map>
- </div></div>
+
+<p><code>#include &lt;<a class="el" href="a00037_source.html">BoundingBox.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5fdbf170f55b0f38b67a49928a3aace5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fdbf170f55b0f38b67a49928a3aace5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BSPipeline</b> (<a class="el" href="a00012.html">ImageAnalyzer</a> *parent)</td></tr>
-<tr class="separator:a5fdbf170f55b0f38b67a49928a3aace5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fbdaca91842edbb77ac057317ef425e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fbdaca91842edbb77ac057317ef425e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>process</b> (cv::Mat &amp;input)</td></tr>
-<tr class="separator:a3fbdaca91842edbb77ac057317ef425e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00019"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00019')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00019.html">ProcessingPipeline</a></td></tr>
-<tr class="memitem:a74a34db3a84f6582a913d54096bada3b inherit pub_methods_a00019"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74a34db3a84f6582a913d54096bada3b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ProcessingPipeline</b> (<a class="el" href="a00012.html">ImageAnalyzer</a> *parent)</td></tr>
-<tr class="separator:a74a34db3a84f6582a913d54096bada3b inherit pub_methods_a00019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99a051f5228b7c5a9081c8eb9c2a93ad inherit pub_methods_a00019"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99a051f5228b7c5a9081c8eb9c2a93ad"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSnapshot</b> (cv::Mat *snapshot)</td></tr>
-<tr class="separator:a99a051f5228b7c5a9081c8eb9c2a93ad inherit pub_methods_a00019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83b758aec4bce1cc453e8e32c72791ac inherit pub_methods_a00019"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83b758aec4bce1cc453e8e32c72791ac"></a>
-const QVector&lt; QObject * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getComponents</b> () const </td></tr>
-<tr class="separator:a83b758aec4bce1cc453e8e32c72791ac inherit pub_methods_a00019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa144235383e86765ca78fa3c8a2ac8bc inherit pub_methods_a00019"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa144235383e86765ca78fa3c8a2ac8bc"></a>
-QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>getObjectByName</b> (const QString &amp;name)</td></tr>
-<tr class="separator:aa144235383e86765ca78fa3c8a2ac8bc inherit pub_methods_a00019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_a00019"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00019')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a00019.html">ProcessingPipeline</a></td></tr>
-<tr class="memitem:aeb2b75d84512ae7187b253da9db1915b inherit pro_attribs_a00019"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb2b75d84512ae7187b253da9db1915b"></a>
-QVector&lt; QObject * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_processingComponents</b></td></tr>
-<tr class="separator:aeb2b75d84512ae7187b253da9db1915b inherit pro_attribs_a00019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e194253fd9b5eb15397cebf66f8d91e inherit pro_attribs_a00019"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e194253fd9b5eb15397cebf66f8d91e"></a>
-cv::Mat *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_snapshot</b></td></tr>
-<tr class="separator:a2e194253fd9b5eb15397cebf66f8d91e inherit pro_attribs_a00019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5199b891bbaa75fce697241ab6a70ea5 inherit pro_attribs_a00019"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5199b891bbaa75fce697241ab6a70ea5"></a>
-<a class="el" href="a00012.html">ImageAnalyzer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_parent</b></td></tr>
-<tr class="separator:a5199b891bbaa75fce697241ab6a70ea5 inherit pro_attribs_a00019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a51ca8c0bb5cc595057c33c09e4367f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a0a51ca8c0bb5cc595057c33c09e4367f">BoundingBoxWithTimeStamp</a> ()</td></tr>
+<tr class="separator:a0a51ca8c0bb5cc595057c33c09e4367f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb99b2127fb71728c839f1c881b2b2d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#afb99b2127fb71728c839f1c881b2b2d0">BoundingBoxWithTimeStamp</a> (<a class="el" href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a> &amp;boudingBox, unsigned int timestamp)</td></tr>
+<tr class="separator:afb99b2127fb71728c839f1c881b2b2d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a0a51ca8c0bb5cc595057c33c09e4367f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoundingBoxWithTimeStamp::BoundingBoxWithTimeStamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a QSharedPointer with an empty <a class="el" href="a00004.html">BoundingBox</a>. </p>
+<p>The timestemp is set to <b>zero</b>. </p>
+
+</div>
+</div>
+<a class="anchor" id="afb99b2127fb71728c839f1c881b2b2d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoundingBoxWithTimeStamp::BoundingBoxWithTimeStamp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>boudingBox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="a00005.html">BoundingBoxWithTimeStamp</a> object. </p>
+<p>The <a class="el" href="a00004.html">BoundingBox</a> is set to <em>boundingBox</em> and the timestamp to <em>timestamp</em>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a4151071370fe19509afa015b48027c99"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a> BoundingBoxWithTimeStamp::m_box</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a92eebf716011ccef42859420f4b738e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int BoundingBoxWithTimeStamp::m_timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00050_source.html">ProcessingPipeline.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/ProcessingPipeline.cpp</li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00037_source.html">BoundingBox.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00068.html">BoundingBox.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00005.html">BSPipeline</a></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00005.html">BoundingBoxWithTimeStamp</a></li>
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

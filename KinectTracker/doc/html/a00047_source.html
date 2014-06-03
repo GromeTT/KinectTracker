@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/MainWindow.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Kinect.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,6 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -89,7 +91,7 @@ $(document).ready(function(){initNavTree('a00047_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,150 +102,133 @@ $(document).ready(function(){initNavTree('a00047_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">MainWindow.h</div>  </div>
+<div class="title">Kinect.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MAINWINDOW_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MAINWINDOW_H</span></div>
+<a href="a00047.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef KINECT_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define KINECT_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QTimer&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QTime&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QElapsedTimer&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;opencv2/core/core.hpp&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;opencv2/highgui/highgui.hpp&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;Kinect.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;BoundingBox.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;SkeletonAnalyzer.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;AnalysisResults.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;ImageAnalyzer.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="a00047.html#a9f918755b601cf4bffca775992e6fb90">    4</a></span>&#160;<span class="preprocessor">#define NOMINMAX</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Windows.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;NuiApi.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;NuiImageCamera.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QSize&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QSharedPointer&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QOpenGLTexture&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span>QImage;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="a00028.html">SkeletonData</a>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span>OpenGLWidget;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span><a class="code" href="a00018.html">OpenGLWindow</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span>QLabel;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">class </span><a class="code" href="a00022.html">RGBWidget</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span><a class="code" href="a00020.html">RenderObject</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">class </span>QOpenGLTexture;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">class </span><a class="code" href="a00010.html">Explorer</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">class </span><a class="code" href="a00023.html">SceneGraphWidget</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">class </span>QKeyPressEvent;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">class </span><a class="code" href="a00007.html">DepthViewerWidget</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class </span>QMdiSubWindow;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">class </span><a class="code" href="a00028.html">SkeletonRenderObject</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>Ui {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">class </span><a class="code" href="a00016.html">MainWindow</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00016.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00016.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00016.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a>( QWidget *parent = 0 );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="a00016.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> showKinectDialog();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> openKinectStream();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> selectObject( <span class="keyword">const</span> QString&amp; text );</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> constructOpenGLRenderWidget();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> constructRGBViewer();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> constructDepthViewer();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> updateScenes();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> processRGBData();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> processDepthData();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> processSkeletonData( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp) ;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> actionOpenGLRenderWidgetChecked( <span class="keywordtype">bool</span> checked );</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> actionBackgroundSubtractionToggled( );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> takeSnapshot();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> setUpdateSkeltonData( <span class="keyword">const</span> <span class="keywordtype">bool</span> on );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> setUpdateRGBData( <span class="keyword">const</span> <span class="keywordtype">bool</span> on );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> setUpdateDepthData( <span class="keyword">const</span> <span class="keywordtype">bool</span> on );</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> subWindowActivated( QMdiSubWindow* subWindow );</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00014.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00014.html">Kinect</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390">   20</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390">Error</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390a71905f7f617133ae9dcc5a7f60fe5e3a">   22</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390a71905f7f617133ae9dcc5a7f60fe5e3a">OK</a> = S_OK, </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390a2416cb754692f4d74e8fa2ec14116c0b">   23</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390a2416cb754692f4d74e8fa2ec14116c0b">FAIL</a> = E_FAIL, </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e">   24</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e">DEVICE_NOT_READY</a> = E_NUI_DEVICE_NOT_READY, </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390ab34743ee923b6c4e3562d180cabcae7e">   25</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390ab34743ee923b6c4e3562d180cabcae7e">OUT_OF_MEMORY</a> = E_OUTOFMEMORY,</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390a5639c3eef90d1eb8cc1c6159853fee5e">   26</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390a5639c3eef90d1eb8cc1c6159853fee5e">POINTER</a> = E_POINTER,</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390a6733a7127f4734ab4c774e11f7fc0db9">   27</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390a6733a7127f4734ab4c774e11f7fc0db9">INVALIDARG</a> = E_INVALIDARG,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390aaf317b58295141b7e9b5204516f96617">   28</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390aaf317b58295141b7e9b5204516f96617">INVALID_OPERATION</a> = ERROR_INVALID_OPERATION,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390ae2312652bd828deeb1330c3e14759f12">   29</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390ae2312652bd828deeb1330c3e14759f12">NO_SENSOR</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390a5c8a6b1f5525ab61a3ec081c40c0e69a">   30</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390a5c8a6b1f5525ab61a3ec081c40c0e69a">NO_FRAME_AVAILABLE</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390a5ee6222883adcc743ebfee91f3a96473">   31</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390a5ee6222883adcc743ebfee91f3a96473">INTERNAL_ERROR</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390a2933fb7dbf002b59c3b1162c899051dc">   32</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390a2933fb7dbf002b59c3b1162c899051dc">NO_INTERFACE</a> = E_NOINTERFACE,</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00014.html#a260ceef1571ff51ff8571b1951782390af5e00d094d8888abd87b80afdf1ab6b9">   33</a></span>&#160;        <a class="code" href="a00014.html#a260ceef1571ff51ff8571b1951782390af5e00d094d8888abd87b80afdf1ab6b9">WRONG_VECTOR_SIZE</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="a00014.html#ab05389f710b912abff1d001edd77d847">Kinect</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="a00014.html#a3f417dc4deed8106a97f217c26326e12">~Kinect</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    HRESULT <a class="code" href="a00014.html#aa141d262b4b5777eae142dae55f15dc2">initialize</a>( <span class="keyword">const</span> DWORD flag );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00014.html#ad964c079f06425da51dffb6c0ae86599">getSensorCount</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    HRESULT <a class="code" href="a00014.html#ae30aa93a19d11719a392faaee29bf5af">openRGBStream</a>( NUI_IMAGE_RESOLUTION resolution,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                           DWORD frameFlag,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                           DWORD frameLimit,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                           HANDLE nextFrame );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    HRESULT <a class="code" href="a00014.html#a30d60fbfe183e9e55eb2fc3fbc97185c">openDepthStream</a>( NUI_IMAGE_RESOLUTION resolution,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                             DWORD frameFlag,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                             DWORD frameLimit,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                             HANDLE nextFrame );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    HRESULT <a class="code" href="a00014.html#af87d93505eeb457ec5ba7d899cded170">getRGBImage</a>( QImage*&amp; img );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    HRESULT <a class="code" href="a00014.html#af87d93505eeb457ec5ba7d899cded170">getRGBImage</a>( uchar* img );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    HRESULT <a class="code" href="a00014.html#a62020a3c4dfebb9b47bec71e3a184d66">getDepthImage</a>( QImage*&amp; img );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    HRESULT <a class="code" href="a00014.html#a62020a3c4dfebb9b47bec71e3a184d66">getDepthImage</a>( uchar* img );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    HRESULT <a class="code" href="a00014.html#a9098a86d08e4ba63d802b511fc40fe25">getSkeleton</a>( QList&lt;SkeletonData*&gt;&amp; skeletons );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    QSize <a class="code" href="a00014.html#aec6ba066df0df5d5021a5370d8569e04">getRGBStreamResoultion</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    QSize <a class="code" href="a00014.html#a6bb634414f5ea8c1b8da8754f6ec6e5b">getDepthStreamResolution</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00014.html#a82e6d6e1b8e034ebc9a816e170718d16">isInitialized</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00014.html#a1900c431b5dd5fff70529842dda23110">isRGBStreamOpen</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00014.html#a693565751dc489be7b7aa351ebdaa6e0">isDepthStreamOpen</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;signals:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> updateSkeletonDataChanged();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> updateRGBDataChanged();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> updateDepthDataChanged();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Ui::MainWindow*         ui;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Explorer</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    QDockWidget*            mp_explorerDockWidget;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="a00010.html">Explorer</a>*               mp_explorer;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// ResultExplorer</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    QDockWidget*            mp_resultExpDockWidget;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="a00010.html">Explorer</a>*               mp_resultExp;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Scenegraph</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    QDockWidget*            mp_sceneDockWidget;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="a00023.html">SceneGraphWidget</a>*       mp_sceneGraph;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Kinect</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    KinectPtr               m_kinect;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Timer</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    QTimer                  m_timer;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    QElapsedTimer           m_elpasedTimer;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    qint64                  m_lastTiming;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// OpenGLRenderWidget</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="a00018.html">OpenGLWindow</a>*           mp_openGLWindow;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    QWidget*                mp_openGLRenderWidget;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// RGBViewer</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="a00018.html">OpenGLWindow</a>*           mp_rgbViewerWindow;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    QWidget*                mp_rgbViewerWidget;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// DepthViewer</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="a00018.html">OpenGLWindow</a>*           mp_depthViewerWindow;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    QWidget*                mp_depthViewerWidget;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Importent render objects</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="a00020.html">RenderObject</a>*           mp_rgbViewObject;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="a00020.html">RenderObject</a>*           mp_depthViewObject;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="a00020.html">RenderObject</a>*           mp_boundingBox;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="a00020.html">RenderObject</a>*           mp_arrowObject;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="a00028.html">SkeletonRenderObject</a>*   mp_skeletonRenderObject;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// OpenCV stuff</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    cv::Ptr&lt;cv::BackgroundSubtractor&gt; m_backgroundSubtractor;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    cv::CascadeClassifier faceClassifier;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Modes</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">bool</span> m_backGroundSubtraction;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    QTime time;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// RGB/Depth-data</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    uchar* mp_rgbData;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    uchar* mp_depthData;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// Analysis</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="a00026.html">SkeletonAnalyzer</a> m_skeletonAnalyzer;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="a00012.html">ImageAnalyzer</a>    m_imageAnalyzer;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="a00001.html">AnalysisResults</a>  m_analysisResults;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">bool</span> m_updateSkeletonData;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">bool</span> m_updateRGBData;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">bool</span> m_updateDepthData;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">bool</span> m_takeSnapshot;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">void</span> detect_blobs( cv::Mat&amp; current );</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif // MAINWINDOW_H</span></div>
-<div class="ttc" id="a00022_html"><div class="ttname"><a href="a00022.html">RGBWidget</a></div><div class="ttdef"><b>Definition:</b> RGBWidget.h:11</div></div>
-<div class="ttc" id="a00010_html"><div class="ttname"><a href="a00010.html">Explorer</a></div><div class="ttdef"><b>Definition:</b> Explorer.h:15</div></div>
-<div class="ttc" id="a00016_html_a8b244be8b7b7db1b08de2a2acb9409db"><div class="ttname"><a href="a00016.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(QWidget *parent=0)</div><div class="ttdoc">Creates a MainWindow. </div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:48</div></div>
-<div class="ttc" id="a00001_html"><div class="ttname"><a href="a00001.html">AnalysisResults</a></div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:6</div></div>
-<div class="ttc" id="a00023_html"><div class="ttname"><a href="a00023.html">SceneGraphWidget</a></div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.h:16</div></div>
-<div class="ttc" id="a00018_html"><div class="ttname"><a href="a00018.html">OpenGLWindow</a></div><div class="ttdef"><b>Definition:</b> OpenGLWindow.h:11</div></div>
-<div class="ttc" id="a00026_html"><div class="ttname"><a href="a00026.html">SkeletonAnalyzer</a></div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:13</div></div>
-<div class="ttc" id="a00012_html"><div class="ttname"><a href="a00012.html">ImageAnalyzer</a></div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.h:9</div></div>
-<div class="ttc" id="a00020_html"><div class="ttname"><a href="a00020.html">RenderObject</a></div><div class="ttdef"><b>Definition:</b> RenderObject.h:22</div></div>
-<div class="ttc" id="a00028_html"><div class="ttname"><a href="a00028.html">SkeletonRenderObject</a></div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.h:15</div></div>
-<div class="ttc" id="a00016_html_ae98d00a93bc118200eeef9f9bba1dba7"><div class="ttname"><a href="a00016.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow()</div><div class="ttdoc">Standarddestructor. </div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:141</div></div>
-<div class="ttc" id="a00016_html"><div class="ttname"><a href="a00016.html">MainWindow</a></div><div class="ttdoc">MainWindow derives from QMainWindow. </div><div class="ttdef"><b>Definition:</b> MainWindow.h:34</div></div>
-<div class="ttc" id="a00007_html"><div class="ttname"><a href="a00007.html">DepthViewerWidget</a></div><div class="ttdef"><b>Definition:</b> DepthViewerWidget.h:10</div></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span>        <a class="code" href="a00014.html#ab28e82e1656f4a570c5c42782fa12602">setSize</a>( QSize&amp; size, NUI_IMAGE_RESOLUTION resolution );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a00014.html#af1ba3f64fa8e801b769ba8be8e50ae4d">   64</a></span>&#160;    INuiSensor* <a class="code" href="a00014.html#af1ba3f64fa8e801b769ba8be8e50ae4d">mp_sensor</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a00014.html#a9c832a9139b215b8b0cba8de4c2984e0">   65</a></span>&#160;    HANDLE      <a class="code" href="a00014.html#a9c832a9139b215b8b0cba8de4c2984e0">m_depthHandle</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="a00014.html#a08ea043a506761fc779b37bade79befe">   66</a></span>&#160;    HANDLE      <a class="code" href="a00014.html#a08ea043a506761fc779b37bade79befe">m_rgbHandle</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00014.html#a89345cee1b4aac5d3fb80149aa73e3a8">   67</a></span>&#160;    HANDLE      <a class="code" href="a00014.html#a89345cee1b4aac5d3fb80149aa73e3a8">m_skeletonHandle</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="a00014.html#ae1f39c5fbac1c56388d9793b0acbff55">   68</a></span>&#160;    QSize       <a class="code" href="a00014.html#ae1f39c5fbac1c56388d9793b0acbff55">m_rgbStreamResolution</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="a00014.html#adb04c032923d36d7b3bdd49519287237">   69</a></span>&#160;    QSize       <a class="code" href="a00014.html#adb04c032923d36d7b3bdd49519287237">m_depthStreamResolution</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a00014.html#a34a99c1886de3bffb4ee624d2ddeabe1">   70</a></span>&#160;    <span class="keywordtype">bool</span>        <a class="code" href="a00014.html#a34a99c1886de3bffb4ee624d2ddeabe1">m_initialized</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00014.html#a5d28ad4c6fd530d2e0d3e984d883e0cd">   71</a></span>&#160;    <span class="keywordtype">bool</span>        <a class="code" href="a00014.html#a5d28ad4c6fd530d2e0d3e984d883e0cd">m_rgbStreamOpen</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="a00014.html#a07d0fdf96ed5594dd649feb94bd5dea5">   72</a></span>&#160;    <span class="keywordtype">bool</span>        <a class="code" href="a00014.html#a07d0fdf96ed5594dd649feb94bd5dea5">m_deptStreamOpen</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a00047.html#affc3611a0f4ad546175a9cca2cfc53f1">   75</a></span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;Kinect&gt; <a class="code" href="a00047.html#affc3611a0f4ad546175a9cca2cfc53f1">KinectPtr</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif // KINECT_H</span></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390a5639c3eef90d1eb8cc1c6159853fee5e"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390a5639c3eef90d1eb8cc1c6159853fee5e">Kinect::POINTER</a></div><div class="ttdef"><b>Definition:</b> Kinect.h:26</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390a5c8a6b1f5525ab61a3ec081c40c0e69a"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390a5c8a6b1f5525ab61a3ec081c40c0e69a">Kinect::NO_FRAME_AVAILABLE</a></div><div class="ttdef"><b>Definition:</b> Kinect.h:30</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390a71905f7f617133ae9dcc5a7f60fe5e3a"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390a71905f7f617133ae9dcc5a7f60fe5e3a">Kinect::OK</a></div><div class="ttdoc">OK   basdasa. </div><div class="ttdef"><b>Definition:</b> Kinect.h:22</div></div>
+<div class="ttc" id="a00014_html_a3f417dc4deed8106a97f217c26326e12"><div class="ttname"><a href="a00014.html#a3f417dc4deed8106a97f217c26326e12">Kinect::~Kinect</a></div><div class="ttdeci">~Kinect()</div><div class="ttdef"><b>Definition:</b> Kinect.cpp:29</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390a5ee6222883adcc743ebfee91f3a96473"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390a5ee6222883adcc743ebfee91f3a96473">Kinect::INTERNAL_ERROR</a></div><div class="ttdef"><b>Definition:</b> Kinect.h:31</div></div>
+<div class="ttc" id="a00014_html_ad964c079f06425da51dffb6c0ae86599"><div class="ttname"><a href="a00014.html#ad964c079f06425da51dffb6c0ae86599">Kinect::getSensorCount</a></div><div class="ttdeci">int getSensorCount() const </div><div class="ttdoc">Returns how many kinect sensors are plugged in. </div><div class="ttdef"><b>Definition:</b> Kinect.cpp:80</div></div>
+<div class="ttc" id="a00014_html_af87d93505eeb457ec5ba7d899cded170"><div class="ttname"><a href="a00014.html#af87d93505eeb457ec5ba7d899cded170">Kinect::getRGBImage</a></div><div class="ttdeci">HRESULT getRGBImage(QImage *&amp;img)</div><div class="ttdef"><b>Definition:</b> Kinect.cpp:164</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390">Kinect::Error</a></div><div class="ttdeci">Error</div><div class="ttdef"><b>Definition:</b> Kinect.h:20</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390ab34743ee923b6c4e3562d180cabcae7e"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390ab34743ee923b6c4e3562d180cabcae7e">Kinect::OUT_OF_MEMORY</a></div><div class="ttdef"><b>Definition:</b> Kinect.h:25</div></div>
+<div class="ttc" id="a00014_html_ae1f39c5fbac1c56388d9793b0acbff55"><div class="ttname"><a href="a00014.html#ae1f39c5fbac1c56388d9793b0acbff55">Kinect::m_rgbStreamResolution</a></div><div class="ttdeci">QSize m_rgbStreamResolution</div><div class="ttdef"><b>Definition:</b> Kinect.h:68</div></div>
+<div class="ttc" id="a00014_html_ab28e82e1656f4a570c5c42782fa12602"><div class="ttname"><a href="a00014.html#ab28e82e1656f4a570c5c42782fa12602">Kinect::setSize</a></div><div class="ttdeci">void setSize(QSize &amp;size, NUI_IMAGE_RESOLUTION resolution)</div><div class="ttdef"><b>Definition:</b> Kinect.cpp:432</div></div>
+<div class="ttc" id="a00014_html_ab05389f710b912abff1d001edd77d847"><div class="ttname"><a href="a00014.html#ab05389f710b912abff1d001edd77d847">Kinect::Kinect</a></div><div class="ttdeci">Kinect()</div><div class="ttdoc">Constructs an uninitialized Kinect object. </div><div class="ttdef"><b>Definition:</b> Kinect.cpp:18</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390a2416cb754692f4d74e8fa2ec14116c0b"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390a2416cb754692f4d74e8fa2ec14116c0b">Kinect::FAIL</a></div><div class="ttdoc">OK. </div><div class="ttdef"><b>Definition:</b> Kinect.h:23</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390aaf317b58295141b7e9b5204516f96617"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390aaf317b58295141b7e9b5204516f96617">Kinect::INVALID_OPERATION</a></div><div class="ttdef"><b>Definition:</b> Kinect.h:28</div></div>
+<div class="ttc" id="a00014_html_a9c832a9139b215b8b0cba8de4c2984e0"><div class="ttname"><a href="a00014.html#a9c832a9139b215b8b0cba8de4c2984e0">Kinect::m_depthHandle</a></div><div class="ttdeci">HANDLE m_depthHandle</div><div class="ttdef"><b>Definition:</b> Kinect.h:65</div></div>
+<div class="ttc" id="a00014_html_aec6ba066df0df5d5021a5370d8569e04"><div class="ttname"><a href="a00014.html#aec6ba066df0df5d5021a5370d8569e04">Kinect::getRGBStreamResoultion</a></div><div class="ttdeci">QSize getRGBStreamResoultion() const </div><div class="ttdef"><b>Definition:</b> Kinect.cpp:407</div></div>
+<div class="ttc" id="a00014_html_a89345cee1b4aac5d3fb80149aa73e3a8"><div class="ttname"><a href="a00014.html#a89345cee1b4aac5d3fb80149aa73e3a8">Kinect::m_skeletonHandle</a></div><div class="ttdeci">HANDLE m_skeletonHandle</div><div class="ttdef"><b>Definition:</b> Kinect.h:67</div></div>
+<div class="ttc" id="a00014_html_a07d0fdf96ed5594dd649feb94bd5dea5"><div class="ttname"><a href="a00014.html#a07d0fdf96ed5594dd649feb94bd5dea5">Kinect::m_deptStreamOpen</a></div><div class="ttdeci">bool m_deptStreamOpen</div><div class="ttdef"><b>Definition:</b> Kinect.h:72</div></div>
+<div class="ttc" id="a00014_html"><div class="ttname"><a href="a00014.html">Kinect</a></div><div class="ttdoc">Kinect is a wrapper for the Microsoft kinect sensor. </div><div class="ttdef"><b>Definition:</b> Kinect.h:17</div></div>
+<div class="ttc" id="a00014_html_a62020a3c4dfebb9b47bec71e3a184d66"><div class="ttname"><a href="a00014.html#a62020a3c4dfebb9b47bec71e3a184d66">Kinect::getDepthImage</a></div><div class="ttdeci">HRESULT getDepthImage(QImage *&amp;img)</div><div class="ttdef"><b>Definition:</b> Kinect.cpp:252</div></div>
+<div class="ttc" id="a00014_html_adb04c032923d36d7b3bdd49519287237"><div class="ttname"><a href="a00014.html#adb04c032923d36d7b3bdd49519287237">Kinect::m_depthStreamResolution</a></div><div class="ttdeci">QSize m_depthStreamResolution</div><div class="ttdef"><b>Definition:</b> Kinect.h:69</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390a6733a7127f4734ab4c774e11f7fc0db9"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390a6733a7127f4734ab4c774e11f7fc0db9">Kinect::INVALIDARG</a></div><div class="ttdef"><b>Definition:</b> Kinect.h:27</div></div>
+<div class="ttc" id="a00014_html_ae30aa93a19d11719a392faaee29bf5af"><div class="ttname"><a href="a00014.html#ae30aa93a19d11719a392faaee29bf5af">Kinect::openRGBStream</a></div><div class="ttdeci">HRESULT openRGBStream(NUI_IMAGE_RESOLUTION resolution, DWORD frameFlag, DWORD frameLimit, HANDLE nextFrame)</div><div class="ttdoc">Kinect::openRGBStream Das ist ein Test und soll da bitte nicht erscheinen. </div><div class="ttdef"><b>Definition:</b> Kinect.cpp:101</div></div>
+<div class="ttc" id="a00014_html_a693565751dc489be7b7aa351ebdaa6e0"><div class="ttname"><a href="a00014.html#a693565751dc489be7b7aa351ebdaa6e0">Kinect::isDepthStreamOpen</a></div><div class="ttdeci">bool isDepthStreamOpen() const </div><div class="ttdef"><b>Definition:</b> Kinect.cpp:427</div></div>
+<div class="ttc" id="a00014_html_a9098a86d08e4ba63d802b511fc40fe25"><div class="ttname"><a href="a00014.html#a9098a86d08e4ba63d802b511fc40fe25">Kinect::getSkeleton</a></div><div class="ttdeci">HRESULT getSkeleton(QList&lt; SkeletonData * &gt; &amp;skeletons)</div><div class="ttdoc">Kinect::getSkeleton. </div><div class="ttdef"><b>Definition:</b> Kinect.cpp:379</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390af5e00d094d8888abd87b80afdf1ab6b9"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390af5e00d094d8888abd87b80afdf1ab6b9">Kinect::WRONG_VECTOR_SIZE</a></div><div class="ttdef"><b>Definition:</b> Kinect.h:33</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390ae2312652bd828deeb1330c3e14759f12"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390ae2312652bd828deeb1330c3e14759f12">Kinect::NO_SENSOR</a></div><div class="ttdef"><b>Definition:</b> Kinect.h:29</div></div>
+<div class="ttc" id="a00014_html_a08ea043a506761fc779b37bade79befe"><div class="ttname"><a href="a00014.html#a08ea043a506761fc779b37bade79befe">Kinect::m_rgbHandle</a></div><div class="ttdeci">HANDLE m_rgbHandle</div><div class="ttdef"><b>Definition:</b> Kinect.h:66</div></div>
+<div class="ttc" id="a00014_html_a1900c431b5dd5fff70529842dda23110"><div class="ttname"><a href="a00014.html#a1900c431b5dd5fff70529842dda23110">Kinect::isRGBStreamOpen</a></div><div class="ttdeci">bool isRGBStreamOpen() const </div><div class="ttdef"><b>Definition:</b> Kinect.cpp:422</div></div>
+<div class="ttc" id="a00047_html_affc3611a0f4ad546175a9cca2cfc53f1"><div class="ttname"><a href="a00047.html#affc3611a0f4ad546175a9cca2cfc53f1">KinectPtr</a></div><div class="ttdeci">QSharedPointer&lt; Kinect &gt; KinectPtr</div><div class="ttdef"><b>Definition:</b> Kinect.h:75</div></div>
+<div class="ttc" id="a00014_html_a6bb634414f5ea8c1b8da8754f6ec6e5b"><div class="ttname"><a href="a00014.html#a6bb634414f5ea8c1b8da8754f6ec6e5b">Kinect::getDepthStreamResolution</a></div><div class="ttdeci">QSize getDepthStreamResolution() const </div><div class="ttdef"><b>Definition:</b> Kinect.cpp:412</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390a2933fb7dbf002b59c3b1162c899051dc"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390a2933fb7dbf002b59c3b1162c899051dc">Kinect::NO_INTERFACE</a></div><div class="ttdef"><b>Definition:</b> Kinect.h:32</div></div>
+<div class="ttc" id="a00014_html_af1ba3f64fa8e801b769ba8be8e50ae4d"><div class="ttname"><a href="a00014.html#af1ba3f64fa8e801b769ba8be8e50ae4d">Kinect::mp_sensor</a></div><div class="ttdeci">INuiSensor * mp_sensor</div><div class="ttdef"><b>Definition:</b> Kinect.h:64</div></div>
+<div class="ttc" id="a00014_html_a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e"><div class="ttname"><a href="a00014.html#a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e">Kinect::DEVICE_NOT_READY</a></div><div class="ttdoc">OK. </div><div class="ttdef"><b>Definition:</b> Kinect.h:24</div></div>
+<div class="ttc" id="a00014_html_a34a99c1886de3bffb4ee624d2ddeabe1"><div class="ttname"><a href="a00014.html#a34a99c1886de3bffb4ee624d2ddeabe1">Kinect::m_initialized</a></div><div class="ttdeci">bool m_initialized</div><div class="ttdef"><b>Definition:</b> Kinect.h:70</div></div>
+<div class="ttc" id="a00014_html_aa141d262b4b5777eae142dae55f15dc2"><div class="ttname"><a href="a00014.html#aa141d262b4b5777eae142dae55f15dc2">Kinect::initialize</a></div><div class="ttdeci">HRESULT initialize(const DWORD flag)</div><div class="ttdoc">Initializes the Kinect with flag. </div><div class="ttdef"><b>Definition:</b> Kinect.cpp:40</div></div>
+<div class="ttc" id="a00014_html_a5d28ad4c6fd530d2e0d3e984d883e0cd"><div class="ttname"><a href="a00014.html#a5d28ad4c6fd530d2e0d3e984d883e0cd">Kinect::m_rgbStreamOpen</a></div><div class="ttdeci">bool m_rgbStreamOpen</div><div class="ttdef"><b>Definition:</b> Kinect.h:71</div></div>
+<div class="ttc" id="a00028_html"><div class="ttname"><a href="a00028.html">SkeletonData</a></div><div class="ttdef"><b>Definition:</b> SkeletonData.h:10</div></div>
+<div class="ttc" id="a00014_html_a30d60fbfe183e9e55eb2fc3fbc97185c"><div class="ttname"><a href="a00014.html#a30d60fbfe183e9e55eb2fc3fbc97185c">Kinect::openDepthStream</a></div><div class="ttdeci">HRESULT openDepthStream(NUI_IMAGE_RESOLUTION resolution, DWORD frameFlag, DWORD frameLimit, HANDLE nextFrame)</div><div class="ttdef"><b>Definition:</b> Kinect.cpp:136</div></div>
+<div class="ttc" id="a00014_html_a82e6d6e1b8e034ebc9a816e170718d16"><div class="ttname"><a href="a00014.html#a82e6d6e1b8e034ebc9a816e170718d16">Kinect::isInitialized</a></div><div class="ttdeci">bool isInitialized() const </div><div class="ttdef"><b>Definition:</b> Kinect.cpp:417</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><b>MainWindow.h</b></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00047.html">Kinect.h</a></li>
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

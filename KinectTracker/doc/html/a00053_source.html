@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/RGBWidget.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/ProcessingPipeline.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,6 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -89,7 +91,7 @@ $(document).ready(function(){initNavTree('a00053_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,41 +102,128 @@ $(document).ready(function(){initNavTree('a00053_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">RGBWidget.h</div>  </div>
+<div class="title">ProcessingPipeline.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RGBWIDGET_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RGBWIDGET_H</span></div>
+<a href="a00053.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROCESSINGPIPELINE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PROCESSINGPIPELINE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>Ui</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">class </span>RGBViewerWidget;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="a00022.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00022.html">RGBWidget</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00022.html">RGBWidget</a>(QWidget *parent = 0);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    ~<a class="code" href="a00022.html">RGBWidget</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> update( QImage* image );</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00042.html">Erode.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00041.html">Dilate.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00063.html">Threshold.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="a00013.html">ImageAnalyzer</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span>QObject;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00020.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00020.html">ProcessingPipeline</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="a00020.html#a74a34db3a84f6582a913d54096bada3b">ProcessingPipeline</a>( <a class="code" href="a00013.html">ImageAnalyzer</a>* parent );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00020.html#ae81c183fb5d32d3e611be54d6ebd64b4">~ProcessingPipeline</a>();</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Ui::RGBViewerWidget* ui;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // RGBWIDGET_H</span></div>
-<div class="ttc" id="a00022_html"><div class="ttname"><a href="a00022.html">RGBWidget</a></div><div class="ttdef"><b>Definition:</b> RGBWidget.h:11</div></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00020.html#aac43bf94ad3e70b41b87f6016c4f0f7d">process</a>( cv::Mat&amp; input ) = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00020.html#a99a051f5228b7c5a9081c8eb9c2a93ad">setSnapshot</a>( cv::Mat* snapshot );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> QVector&lt;QObject*&gt;&amp; <a class="code" href="a00020.html#a83b758aec4bce1cc453e8e32c72791ac">getComponents</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    QObject*                 <a class="code" href="a00020.html#aa144235383e86765ca78fa3c8a2ac8bc">getObjectByName</a>( <span class="keyword">const</span> QString&amp; name );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a00020.html#aeb2b75d84512ae7187b253da9db1915b">   27</a></span>&#160;    QVector&lt;QObject*&gt; <a class="code" href="a00020.html#aeb2b75d84512ae7187b253da9db1915b">m_processingComponents</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00020.html#a2e194253fd9b5eb15397cebf66f8d91e">   28</a></span>&#160;    cv::Mat*          <a class="code" href="a00020.html#a2e194253fd9b5eb15397cebf66f8d91e">mp_snapshot</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00020.html#a5199b891bbaa75fce697241ab6a70ea5">   29</a></span>&#160;    <a class="code" href="a00013.html">ImageAnalyzer</a>*    <a class="code" href="a00020.html#a5199b891bbaa75fce697241ab6a70ea5">m_parent</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/**************************************************************************************************************************</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **************************************************************************************************************************/</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00002.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00002.html">BackgroudSubtractionPipeline</a> : <span class="keyword">public</span> <a class="code" href="a00020.html">ProcessingPipeline</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="a00002.html#ab98cb7180f8dda889e395df9a8f98eea">BackgroudSubtractionPipeline</a>( <a class="code" href="a00013.html">ImageAnalyzer</a>* parent );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00002.html#a7eeb0863dfc4b9cdcf8002d4887fa75e">~BackgroudSubtractionPipeline</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00002.html#a63f510e00cfe29acd36a86733d30c282">process</a>( cv::Mat&amp; input );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00002.html#a2decba6aec1268b8482e567f0b2e88cb">   51</a></span>&#160;    cv::BackgroundSubtractorMOG <a class="code" href="a00002.html#a2decba6aec1268b8482e567f0b2e88cb">m_backgroundSubtractor</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a00002.html#a5ad3989b90ddae691c6136ee95f98f4f">   52</a></span>&#160;    <a class="code" href="a00042.html#ac5e9e35e34113deab9a06fcfdd46a7fc">ErodePtr</a>                    <a class="code" href="a00002.html#a5ad3989b90ddae691c6136ee95f98f4f">mp_erode</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/**************************************************************************************************************************</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> **************************************************************************************************************************/</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a00006.html">   64</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00006.html">BSPipeline</a> : <span class="keyword">public</span> <a class="code" href="a00020.html">ProcessingPipeline</a></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="a00006.html#a5fdbf170f55b0f38b67a49928a3aace5">BSPipeline</a>( <a class="code" href="a00013.html">ImageAnalyzer</a>* parent );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00006.html#ac91da21850dd2ae090420f3f961916f0">~BSPipeline</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00006.html#a3fbdaca91842edbb77ac057317ef425e">process</a>( cv::Mat&amp; input );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="a00006.html#a321d0a02a737ab0eb4b2d4f56b914935">   73</a></span>&#160;    <a class="code" href="a00042.html#ac5e9e35e34113deab9a06fcfdd46a7fc">ErodePtr</a>     <a class="code" href="a00006.html#a321d0a02a737ab0eb4b2d4f56b914935">mp_erode</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="a00006.html#ad34691d3cef04688dfbcd32d783bb2c3">   74</a></span>&#160;    <a class="code" href="a00041.html#aa68996a9540ac9392c7b51f46cfb6357">DilatePtr</a>    <a class="code" href="a00006.html#ad34691d3cef04688dfbcd32d783bb2c3">mp_dilate</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a00006.html#a90edcead15c60213e658f20833290594">   75</a></span>&#160;    <a class="code" href="a00063.html#a3c8e90f8e3d2c03c67c9c037fd083cde">ThresholdPtr</a> <a class="code" href="a00006.html#a90edcead15c60213e658f20833290594">mp_threshold</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="a00053.html#a075f0fdffe851c8f611423ed149b747c">   79</a></span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;ProcessingPipeline&gt; <a class="code" href="a00053.html#a075f0fdffe851c8f611423ed149b747c">ProcessingPipelinePtr</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif // PROCESSINGPIPELINE_H</span></div>
+<div class="ttc" id="a00053_html_a075f0fdffe851c8f611423ed149b747c"><div class="ttname"><a href="a00053.html#a075f0fdffe851c8f611423ed149b747c">ProcessingPipelinePtr</a></div><div class="ttdeci">QSharedPointer&lt; ProcessingPipeline &gt; ProcessingPipelinePtr</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:79</div></div>
+<div class="ttc" id="a00041_html_aa68996a9540ac9392c7b51f46cfb6357"><div class="ttname"><a href="a00041.html#aa68996a9540ac9392c7b51f46cfb6357">DilatePtr</a></div><div class="ttdeci">QSharedPointer&lt; Dilate &gt; DilatePtr</div><div class="ttdef"><b>Definition:</b> Dilate.h:66</div></div>
+<div class="ttc" id="a00006_html_ac91da21850dd2ae090420f3f961916f0"><div class="ttname"><a href="a00006.html#ac91da21850dd2ae090420f3f961916f0">BSPipeline::~BSPipeline</a></div><div class="ttdeci">virtual ~BSPipeline()</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:87</div></div>
+<div class="ttc" id="a00006_html_a321d0a02a737ab0eb4b2d4f56b914935"><div class="ttname"><a href="a00006.html#a321d0a02a737ab0eb4b2d4f56b914935">BSPipeline::mp_erode</a></div><div class="ttdeci">ErodePtr mp_erode</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:73</div></div>
+<div class="ttc" id="a00020_html_a2e194253fd9b5eb15397cebf66f8d91e"><div class="ttname"><a href="a00020.html#a2e194253fd9b5eb15397cebf66f8d91e">ProcessingPipeline::mp_snapshot</a></div><div class="ttdeci">cv::Mat * mp_snapshot</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:28</div></div>
+<div class="ttc" id="a00042_html"><div class="ttname"><a href="a00042.html">Erode.h</a></div></div>
+<div class="ttc" id="a00002_html_a5ad3989b90ddae691c6136ee95f98f4f"><div class="ttname"><a href="a00002.html#a5ad3989b90ddae691c6136ee95f98f4f">BackgroudSubtractionPipeline::mp_erode</a></div><div class="ttdeci">ErodePtr mp_erode</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:52</div></div>
+<div class="ttc" id="a00002_html_a7eeb0863dfc4b9cdcf8002d4887fa75e"><div class="ttname"><a href="a00002.html#a7eeb0863dfc4b9cdcf8002d4887fa75e">BackgroudSubtractionPipeline::~BackgroudSubtractionPipeline</a></div><div class="ttdeci">virtual ~BackgroudSubtractionPipeline()</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:55</div></div>
+<div class="ttc" id="a00020_html_a5199b891bbaa75fce697241ab6a70ea5"><div class="ttname"><a href="a00020.html#a5199b891bbaa75fce697241ab6a70ea5">ProcessingPipeline::m_parent</a></div><div class="ttdeci">ImageAnalyzer * m_parent</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:29</div></div>
+<div class="ttc" id="a00020_html_aeb2b75d84512ae7187b253da9db1915b"><div class="ttname"><a href="a00020.html#aeb2b75d84512ae7187b253da9db1915b">ProcessingPipeline::m_processingComponents</a></div><div class="ttdeci">QVector&lt; QObject * &gt; m_processingComponents</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:27</div></div>
+<div class="ttc" id="a00020_html_aa144235383e86765ca78fa3c8a2ac8bc"><div class="ttname"><a href="a00020.html#aa144235383e86765ca78fa3c8a2ac8bc">ProcessingPipeline::getObjectByName</a></div><div class="ttdeci">QObject * getObjectByName(const QString &amp;name)</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:26</div></div>
+<div class="ttc" id="a00020_html_aac43bf94ad3e70b41b87f6016c4f0f7d"><div class="ttname"><a href="a00020.html#aac43bf94ad3e70b41b87f6016c4f0f7d">ProcessingPipeline::process</a></div><div class="ttdeci">virtual void process(cv::Mat &amp;input)=0</div></div>
+<div class="ttc" id="a00041_html"><div class="ttname"><a href="a00041.html">Dilate.h</a></div></div>
+<div class="ttc" id="a00006_html"><div class="ttname"><a href="a00006.html">BSPipeline</a></div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:64</div></div>
+<div class="ttc" id="a00006_html_a90edcead15c60213e658f20833290594"><div class="ttname"><a href="a00006.html#a90edcead15c60213e658f20833290594">BSPipeline::mp_threshold</a></div><div class="ttdeci">ThresholdPtr mp_threshold</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:75</div></div>
+<div class="ttc" id="a00020_html_ae81c183fb5d32d3e611be54d6ebd64b4"><div class="ttname"><a href="a00020.html#ae81c183fb5d32d3e611be54d6ebd64b4">ProcessingPipeline::~ProcessingPipeline</a></div><div class="ttdeci">virtual ~ProcessingPipeline()</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:12</div></div>
+<div class="ttc" id="a00063_html"><div class="ttname"><a href="a00063.html">Threshold.h</a></div></div>
+<div class="ttc" id="a00042_html_ac5e9e35e34113deab9a06fcfdd46a7fc"><div class="ttname"><a href="a00042.html#ac5e9e35e34113deab9a06fcfdd46a7fc">ErodePtr</a></div><div class="ttdeci">QSharedPointer&lt; Erode &gt; ErodePtr</div><div class="ttdef"><b>Definition:</b> Erode.h:66</div></div>
+<div class="ttc" id="a00020_html"><div class="ttname"><a href="a00020.html">ProcessingPipeline</a></div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:14</div></div>
+<div class="ttc" id="a00002_html_ab98cb7180f8dda889e395df9a8f98eea"><div class="ttname"><a href="a00002.html#ab98cb7180f8dda889e395df9a8f98eea">BackgroudSubtractionPipeline::BackgroudSubtractionPipeline</a></div><div class="ttdeci">BackgroudSubtractionPipeline(ImageAnalyzer *parent)</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:48</div></div>
+<div class="ttc" id="a00020_html_a99a051f5228b7c5a9081c8eb9c2a93ad"><div class="ttname"><a href="a00020.html#a99a051f5228b7c5a9081c8eb9c2a93ad">ProcessingPipeline::setSnapshot</a></div><div class="ttdeci">void setSnapshot(cv::Mat *snapshot)</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:16</div></div>
+<div class="ttc" id="a00013_html"><div class="ttname"><a href="a00013.html">ImageAnalyzer</a></div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.h:9</div></div>
+<div class="ttc" id="a00006_html_a3fbdaca91842edbb77ac057317ef425e"><div class="ttname"><a href="a00006.html#a3fbdaca91842edbb77ac057317ef425e">BSPipeline::process</a></div><div class="ttdeci">virtual void process(cv::Mat &amp;input)</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:92</div></div>
+<div class="ttc" id="a00020_html_a83b758aec4bce1cc453e8e32c72791ac"><div class="ttname"><a href="a00020.html#a83b758aec4bce1cc453e8e32c72791ac">ProcessingPipeline::getComponents</a></div><div class="ttdeci">const QVector&lt; QObject * &gt; &amp; getComponents() const </div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:21</div></div>
+<div class="ttc" id="a00063_html_a3c8e90f8e3d2c03c67c9c037fd083cde"><div class="ttname"><a href="a00063.html#a3c8e90f8e3d2c03c67c9c037fd083cde">ThresholdPtr</a></div><div class="ttdeci">QSharedPointer&lt; Threshold &gt; ThresholdPtr</div><div class="ttdef"><b>Definition:</b> Threshold.h:87</div></div>
+<div class="ttc" id="a00006_html_ad34691d3cef04688dfbcd32d783bb2c3"><div class="ttname"><a href="a00006.html#ad34691d3cef04688dfbcd32d783bb2c3">BSPipeline::mp_dilate</a></div><div class="ttdeci">DilatePtr mp_dilate</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:74</div></div>
+<div class="ttc" id="a00002_html_a63f510e00cfe29acd36a86733d30c282"><div class="ttname"><a href="a00002.html#a63f510e00cfe29acd36a86733d30c282">BackgroudSubtractionPipeline::process</a></div><div class="ttdeci">virtual void process(cv::Mat &amp;input)</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:60</div></div>
+<div class="ttc" id="a00002_html"><div class="ttname"><a href="a00002.html">BackgroudSubtractionPipeline</a></div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:43</div></div>
+<div class="ttc" id="a00002_html_a2decba6aec1268b8482e567f0b2e88cb"><div class="ttname"><a href="a00002.html#a2decba6aec1268b8482e567f0b2e88cb">BackgroudSubtractionPipeline::m_backgroundSubtractor</a></div><div class="ttdeci">cv::BackgroundSubtractorMOG m_backgroundSubtractor</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:51</div></div>
+<div class="ttc" id="a00006_html_a5fdbf170f55b0f38b67a49928a3aace5"><div class="ttname"><a href="a00006.html#a5fdbf170f55b0f38b67a49928a3aace5">BSPipeline::BSPipeline</a></div><div class="ttdeci">BSPipeline(ImageAnalyzer *parent)</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:76</div></div>
+<div class="ttc" id="a00020_html_a74a34db3a84f6582a913d54096bada3b"><div class="ttname"><a href="a00020.html#a74a34db3a84f6582a913d54096bada3b">ProcessingPipeline::ProcessingPipeline</a></div><div class="ttdeci">ProcessingPipeline(ImageAnalyzer *parent)</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.cpp:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><b>RGBWidget.h</b></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00053.html">ProcessingPipeline.h</a></li>
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -1,12 +1,7 @@
 var a00023 =
 [
-    [ "SceneGraphWidget", "a00023.html#a98d3fbaea1309c64ef9bbdb33d4ce293", null ],
-    [ "~SceneGraphWidget", "a00023.html#aabbd06a608f50171d1341c3779bd198a", null ],
-    [ "addObject", "a00023.html#aac96bbbf0d61e65372de0544f50e7de8", null ],
-    [ "addObject", "a00023.html#ab8aab640c61d2c25ae2a59b99f3ca5da", null ],
-    [ "addObjects", "a00023.html#ac99579ae7333e3a448f2a8caeab2e524", null ],
-    [ "addObjects", "a00023.html#afd1a126ec40eee7da2a15db96c2c0972", null ],
-    [ "addObjects", "a00023.html#a6e3e5e6ba8436fe99be2e02daa9c7d9f", null ],
-    [ "clearTreeWidget", "a00023.html#ad1930663b6bca13cecdb405decf64a45", null ],
-    [ "selectionChanged", "a00023.html#aabc2f7df1ed84720e9e5128bfb85de5c", null ]
+    [ "RGBWidget", "a00023.html#a71b0775bb1e7f8d21cbca138276b5411", null ],
+    [ "~RGBWidget", "a00023.html#a3036a1e1d9854436a54b6504ff0d0ef9", null ],
+    [ "update", "a00023.html#a2b5e055d1afaf6b855934b4f78a4c33f", null ],
+    [ "ui", "a00023.html#a5d0229327ac7728cd72e2c43119bbb05", null ]
 ];

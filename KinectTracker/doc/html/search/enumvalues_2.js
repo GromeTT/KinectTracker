@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ok',['OK',['../a00013.html#a260ceef1571ff51ff8571b1951782390a71905f7f617133ae9dcc5a7f60fe5e3a',1,'Kinect']]]
+  ['elbowleft',['ElbowLeft',['../a00028.html#ade909294e270cd0b16d248d90129401ca62d7fd05a5c965ae80e4d59a5434f383',1,'SkeletonData']]],
+  ['elbowright',['ElbowRight',['../a00028.html#ade909294e270cd0b16d248d90129401ca43b4a26b475222d959bb0f57d788387c',1,'SkeletonData']]]
 ];

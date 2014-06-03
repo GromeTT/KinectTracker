@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: ProcessingPipeline Class Reference</title>
+<title>KinectTracker: OpenGLWindow Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('a00019.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,65 +104,318 @@ $(document).ready(function(){initNavTree('a00019.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="a00113.html">List of all members</a>  </div>
+<a href="a00117.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ProcessingPipeline Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">OpenGLWindow Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="a00052_source.html">OpenGLWindow.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for ProcessingPipeline:</div>
+Inheritance diagram for OpenGLWindow:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00019.png" usemap="#ProcessingPipeline_map" alt=""/>
-  <map id="ProcessingPipeline_map" name="ProcessingPipeline_map">
-<area href="a00002.html" alt="BackgroudSubtractionPipeline" shape="rect" coords="0,56,182,80"/>
-<area href="a00005.html" alt="BSPipeline" shape="rect" coords="192,56,374,80"/>
+  <img src="a00019.png" usemap="#OpenGLWindow_map" alt=""/>
+  <map id="OpenGLWindow_map" name="OpenGLWindow_map">
 </map>
  </div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a74a34db3a84f6582a913d54096bada3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74a34db3a84f6582a913d54096bada3b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ProcessingPipeline</b> (<a class="el" href="a00012.html">ImageAnalyzer</a> *parent)</td></tr>
-<tr class="separator:a74a34db3a84f6582a913d54096bada3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac43bf94ad3e70b41b87f6016c4f0f7d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac43bf94ad3e70b41b87f6016c4f0f7d"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>process</b> (cv::Mat &amp;input)=0</td></tr>
-<tr class="separator:aac43bf94ad3e70b41b87f6016c4f0f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99a051f5228b7c5a9081c8eb9c2a93ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99a051f5228b7c5a9081c8eb9c2a93ad"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSnapshot</b> (cv::Mat *snapshot)</td></tr>
-<tr class="separator:a99a051f5228b7c5a9081c8eb9c2a93ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83b758aec4bce1cc453e8e32c72791ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83b758aec4bce1cc453e8e32c72791ac"></a>
-const QVector&lt; QObject * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getComponents</b> () const </td></tr>
-<tr class="separator:a83b758aec4bce1cc453e8e32c72791ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa144235383e86765ca78fa3c8a2ac8bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa144235383e86765ca78fa3c8a2ac8bc"></a>
-QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>getObjectByName</b> (const QString &amp;name)</td></tr>
-<tr class="separator:aa144235383e86765ca78fa3c8a2ac8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:aeb2b75d84512ae7187b253da9db1915b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb2b75d84512ae7187b253da9db1915b"></a>
-QVector&lt; QObject * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_processingComponents</b></td></tr>
-<tr class="separator:aeb2b75d84512ae7187b253da9db1915b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e194253fd9b5eb15397cebf66f8d91e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e194253fd9b5eb15397cebf66f8d91e"></a>
-cv::Mat *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_snapshot</b></td></tr>
-<tr class="separator:a2e194253fd9b5eb15397cebf66f8d91e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5199b891bbaa75fce697241ab6a70ea5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5199b891bbaa75fce697241ab6a70ea5"></a>
-<a class="el" href="a00012.html">ImageAnalyzer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_parent</b></td></tr>
-<tr class="separator:a5199b891bbaa75fce697241ab6a70ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a81b042bc42f2e3057c5eb30edf8029c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OpenGLWindow::OpenGLWindow </td>
+          <td>(</td>
+          <td class="paramtype">QScreen *&#160;</td>
+          <td class="paramname"><em>screen</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa220b192c71871aab9100f4058a8d62d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OpenGLWindow::~OpenGLWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0798f49b14a35aa4d2ea5bc1d82a1bd7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00036.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a> &amp; OpenGLWindow::getOpenGLContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a685f81679ed40d2a072e6da696b0e160"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00036.html#ab47e41722c2931c8063642b53ff6c04f">Scene</a> OpenGLWindow::getScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad5f75b29b792f0d4a3ce32bd2dd3fad8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a69f3cfa0a95ca91f57d90d9484bd6c54"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::initializeGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aafa1fdd10232a09b77db2395519e9882"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab7514c6f73755094d5670765ec47a71c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::keyReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a03229f68dac57be079e18b6ef135ab46"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::makeContextCurrent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7ae488627e37254bbe1863c928781d83"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::paintGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a09f27a6f1628dadbd3c7ca3c1651ec59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::resizeGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae42079d2df46e3aa913e0ddfce3de023"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::updateScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ab402508e5d28e6d005872fa6731507ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00036.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a> OpenGLWindow::m_context</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a47480af9b80b37f9a8f0eead84eb90be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00036.html#ab47e41722c2931c8063642b53ff6c04f">Scene</a> OpenGLWindow::m_scene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad88460862bd55a441456b958a9563397"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OpenGLWindow::m_strgPressed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00050_source.html">ProcessingPipeline.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/ProcessingPipeline.cpp</li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00052_source.html">OpenGLWindow.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00082.html">OpenGLWindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00019.html">ProcessingPipeline</a></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00019.html">OpenGLWindow</a></li>
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

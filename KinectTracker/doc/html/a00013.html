@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Kinect Class Reference</title>
+<title>KinectTracker: ImageAnalyzer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('a00013.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,109 +104,28 @@ $(document).ready(function(){initNavTree('a00013.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00107.html">List of all members</a>  </div>
+<a href="a00111.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Kinect Class Reference</div>  </div>
+<div class="title">ImageAnalyzer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a260ceef1571ff51ff8571b1951782390"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a260ceef1571ff51ff8571b1951782390">Error</a> { <br />
-&#160;&#160;<a class="el" href="a00013.html#a260ceef1571ff51ff8571b1951782390a71905f7f617133ae9dcc5a7f60fe5e3a">OK</a> = S_OK, 
-<a class="el" href="a00013.html#a260ceef1571ff51ff8571b1951782390a2416cb754692f4d74e8fa2ec14116c0b">FAIL</a> = E_FAIL, 
-<a class="el" href="a00013.html#a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e">DEVICE_NOT_READY</a> = E_NUI_DEVICE_NOT_READY, 
-<b>OUT_OF_MEMORY</b> = E_OUTOFMEMORY, 
-<br />
-&#160;&#160;<b>POINTER</b> = E_POINTER, 
-<b>INVALIDARG</b> = E_INVALIDARG, 
-<b>INVALID_OPERATION</b> = ERROR_INVALID_OPERATION, 
-<b>NO_SENSOR</b>, 
-<br />
-&#160;&#160;<b>NO_FRAME_AVAILABLE</b>, 
-<b>INTERNAL_ERROR</b>, 
-<b>NO_INTERFACE</b> = E_NOINTERFACE, 
-<b>WRONG_VECTOR_SIZE</b>
-<br />
- }</td></tr>
-<tr class="separator:a260ceef1571ff51ff8571b1951782390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ab05389f710b912abff1d001edd77d847"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#ab05389f710b912abff1d001edd77d847">Kinect</a> ()</td></tr>
-<tr class="separator:ab05389f710b912abff1d001edd77d847"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa141d262b4b5777eae142dae55f15dc2"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#aa141d262b4b5777eae142dae55f15dc2">initialize</a> (const DWORD flag)</td></tr>
-<tr class="separator:aa141d262b4b5777eae142dae55f15dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad964c079f06425da51dffb6c0ae86599"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#ad964c079f06425da51dffb6c0ae86599">getSensorCount</a> () const </td></tr>
-<tr class="separator:ad964c079f06425da51dffb6c0ae86599"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae30aa93a19d11719a392faaee29bf5af"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#ae30aa93a19d11719a392faaee29bf5af">openRGBStream</a> (NUI_IMAGE_RESOLUTION resolution, DWORD frameFlag, DWORD frameLimit, HANDLE nextFrame)</td></tr>
-<tr class="separator:ae30aa93a19d11719a392faaee29bf5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30d60fbfe183e9e55eb2fc3fbc97185c"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a30d60fbfe183e9e55eb2fc3fbc97185c">openDepthStream</a> (NUI_IMAGE_RESOLUTION resolution, DWORD frameFlag, DWORD frameLimit, HANDLE nextFrame)</td></tr>
-<tr class="separator:a30d60fbfe183e9e55eb2fc3fbc97185c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af87d93505eeb457ec5ba7d899cded170"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af87d93505eeb457ec5ba7d899cded170"></a>
-HRESULT&#160;</td><td class="memItemRight" valign="bottom"><b>getRGBImage</b> (QImage *&amp;img)</td></tr>
-<tr class="separator:af87d93505eeb457ec5ba7d899cded170"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bb80028edfb709d23e39ca96c00f4e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3bb80028edfb709d23e39ca96c00f4e6"></a>
-HRESULT&#160;</td><td class="memItemRight" valign="bottom"><b>getRGBImage</b> (uchar *img)</td></tr>
-<tr class="separator:a3bb80028edfb709d23e39ca96c00f4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62020a3c4dfebb9b47bec71e3a184d66"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62020a3c4dfebb9b47bec71e3a184d66"></a>
-HRESULT&#160;</td><td class="memItemRight" valign="bottom"><b>getDepthImage</b> (QImage *&amp;img)</td></tr>
-<tr class="separator:a62020a3c4dfebb9b47bec71e3a184d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9763941429329cdc1b0cf873a9931ad1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9763941429329cdc1b0cf873a9931ad1"></a>
-HRESULT&#160;</td><td class="memItemRight" valign="bottom"><b>getDepthImage</b> (uchar *img)</td></tr>
-<tr class="separator:a9763941429329cdc1b0cf873a9931ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9098a86d08e4ba63d802b511fc40fe25"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a9098a86d08e4ba63d802b511fc40fe25">getSkeleton</a> (QList&lt; <a class="el" href="a00027.html">SkeletonData</a> * &gt; &amp;skeletons)</td></tr>
-<tr class="separator:a9098a86d08e4ba63d802b511fc40fe25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec6ba066df0df5d5021a5370d8569e04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec6ba066df0df5d5021a5370d8569e04"></a>
-QSize&#160;</td><td class="memItemRight" valign="bottom"><b>getRGBStreamResoultion</b> () const </td></tr>
-<tr class="separator:aec6ba066df0df5d5021a5370d8569e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bb634414f5ea8c1b8da8754f6ec6e5b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bb634414f5ea8c1b8da8754f6ec6e5b"></a>
-QSize&#160;</td><td class="memItemRight" valign="bottom"><b>getDepthStreamResolution</b> () const </td></tr>
-<tr class="separator:a6bb634414f5ea8c1b8da8754f6ec6e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82e6d6e1b8e034ebc9a816e170718d16"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82e6d6e1b8e034ebc9a816e170718d16"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isInitialized</b> () const </td></tr>
-<tr class="separator:a82e6d6e1b8e034ebc9a816e170718d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1900c431b5dd5fff70529842dda23110"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1900c431b5dd5fff70529842dda23110"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isRGBStreamOpen</b> () const </td></tr>
-<tr class="separator:a1900c431b5dd5fff70529842dda23110"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a693565751dc489be7b7aa351ebdaa6e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a693565751dc489be7b7aa351ebdaa6e0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDepthStreamOpen</b> () const </td></tr>
-<tr class="separator:a693565751dc489be7b7aa351ebdaa6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
-<a class="anchor" id="a260ceef1571ff51ff8571b1951782390"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00013.html#a260ceef1571ff51ff8571b1951782390">Kinect::Error</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a71905f7f617133ae9dcc5a7f60fe5e3a"></a>OK&#160;</td><td class="fielddoc">
-<p>OK <br />
- basdasa. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a2416cb754692f4d74e8fa2ec14116c0b"></a>FAIL&#160;</td><td class="fielddoc">
-<p>OK. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e"></a>DEVICE_NOT_READY&#160;</td><td class="fielddoc">
-<p>OK. </p>
-</td></tr>
-</table>
 
-</div>
-</div>
+<p><code>#include &lt;<a class="el" href="a00045_source.html">ImageAnalyzer.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ImageAnalyzer:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00013.png" usemap="#ImageAnalyzer_map" alt=""/>
+  <map id="ImageAnalyzer_map" name="ImageAnalyzer_map">
+</map>
+ </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab05389f710b912abff1d001edd77d847"></a>
+<a class="anchor" id="ab4c5bd6ffe5cf87ffee97bc533cc24f9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Kinect::Kinect </td>
+          <td class="memname">ImageAnalyzer::ImageAnalyzer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -213,17 +133,70 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDepthStreamOpen</b>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs an uninitialized <a class="el" href="a00013.html" title="Kinect is a wrapper for the Microsoft kinect sensor. ">Kinect</a> object. </p>
+</div>
+</div>
+<a class="anchor" id="a55d69408e1ca725d957c3e8780d435ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImageAnalyzer::~ImageAnalyzer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ad964c079f06425da51dffb6c0ae86599"></a>
+<a class="anchor" id="aecc29b66bd7551825e94f02987174750"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Kinect::getSensorCount </td>
+          <td class="memname">void ImageAnalyzer::analyze </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5d6e87f2e55923dcf0d22ea2aa5204f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QObject * ImageAnalyzer::getObjectByName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae6eccb1b03694fb4433e61e7d2485236"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QVector&lt; QObject * &gt; &amp; ImageAnalyzer::getPiplineComponents </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -231,169 +204,76 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDepthStreamOpen</b>
       </table>
 </div><div class="memdoc">
 
-<p>Returns how many kinect sensors are plugged in. </p>
-
 </div>
 </div>
-<a class="anchor" id="a9098a86d08e4ba63d802b511fc40fe25"></a>
+<a class="anchor" id="a7f29e4d2ad84be571f490d5c7fa6c7ed"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">HRESULT Kinect::getSkeleton </td>
+          <td class="memname">void ImageAnalyzer::setSnapshot </td>
           <td>(</td>
-          <td class="paramtype">QList&lt; <a class="el" href="a00027.html">SkeletonData</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>skeletons</em></td><td>)</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>snapshot</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00013.html#a9098a86d08e4ba63d802b511fc40fe25" title="Kinect::getSkeleton. ">Kinect::getSkeleton</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">skeletons</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
 </div>
 </div>
-<a class="anchor" id="aa141d262b4b5777eae142dae55f15dc2"></a>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a657d5688019994853fae2639a72a954b"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">HRESULT Kinect::initialize </td>
-          <td>(</td>
-          <td class="paramtype">const DWORD&#160;</td>
-          <td class="paramname"><em>flag</em></td><td>)</td>
-          <td></td>
+          <td class="memname">cv::Mat ImageAnalyzer::m_snapshot</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Initializes the <a class="el" href="a00013.html" title="Kinect is a wrapper for the Microsoft kinect sensor. ">Kinect</a> with <em>flag</em>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">flag</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
 </div>
 </div>
-<a class="anchor" id="a30d60fbfe183e9e55eb2fc3fbc97185c"></a>
+<a class="anchor" id="aea03d52a9ff62b3c0b7a5e3021f13112"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">HRESULT Kinect::openDepthStream </td>
-          <td>(</td>
-          <td class="paramtype">NUI_IMAGE_RESOLUTION&#160;</td>
-          <td class="paramname"><em>resolution</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">DWORD&#160;</td>
-          <td class="paramname"><em>frameFlag</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">DWORD&#160;</td>
-          <td class="paramname"><em>frameLimit</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HANDLE&#160;</td>
-          <td class="paramname"><em>nextFrame</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname"><a class="el" href="a00053.html#a075f0fdffe851c8f611423ed149b747c">ProcessingPipelinePtr</a> ImageAnalyzer::mp_processingPipeline</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resolution</td><td></td></tr>
-    <tr><td class="paramname">frameFlag</td><td></td></tr>
-    <tr><td class="paramname">frameLimit</td><td></td></tr>
-    <tr><td class="paramname">nextFrame</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ae30aa93a19d11719a392faaee29bf5af"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">HRESULT Kinect::openRGBStream </td>
-          <td>(</td>
-          <td class="paramtype">NUI_IMAGE_RESOLUTION&#160;</td>
-          <td class="paramname"><em>resolution</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">DWORD&#160;</td>
-          <td class="paramname"><em>frameFlag</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">DWORD&#160;</td>
-          <td class="paramname"><em>frameLimit</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HANDLE&#160;</td>
-          <td class="paramname"><em>nextFrame</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00013.html#ae30aa93a19d11719a392faaee29bf5af" title="Kinect::openRGBStream Das ist ein Test und soll da bitte nicht erscheinen. ">Kinect::openRGBStream</a> Das ist ein Test und soll da bitte nicht erscheinen. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resolution</td><td></td></tr>
-    <tr><td class="paramname">frameFlag</td><td></td></tr>
-    <tr><td class="paramname">frameLimit</td><td></td></tr>
-    <tr><td class="paramname">nextFrame</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00044_source.html">Kinect.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/Kinect.cpp</li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00045_source.html">ImageAnalyzer.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00075.html">ImageAnalyzer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00013.html">Kinect</a></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00013.html">ImageAnalyzer</a></li>
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -71,6 +71,9 @@ private:
     // ResultExplorer
     QDockWidget*            mp_resultExpDockWidget;
     Explorer*               mp_resultExp;
+    // ResultExplorer
+    QDockWidget*            mp_skeletonAnalyserDockWidget;
+    Explorer*               mp_skeletonAnalyserExplorer;
     // Scenegraph
     QDockWidget*            mp_sceneDockWidget;
     SceneGraphWidget*       mp_sceneGraph;
@@ -92,7 +95,8 @@ private:
     // Importent render objects
     RenderObject*           mp_rgbViewObject;
     RenderObject*           mp_depthViewObject;
-    RenderObject*           mp_boundingBox;
+    RenderObject*           mp_boundingBoxWholeBody;
+    RenderObject*           mp_boundingBoxLowerBody;
     RenderObject*           mp_arrowObject;
     SkeletonRenderObject*   mp_skeletonRenderObject;
     // OpenCV stuff

@@ -1,17 +1,29 @@
 var a00031 =
 [
-    [ "Vertex", "a00031.html#a97488994a2482d70da74e1b91d40e169", null ],
-    [ "Vertex", "a00031.html#ae1c8f2ab8b7fd1d70b575134fb900979", null ],
-    [ "Vertex", "a00031.html#a5240b12afe350c85527f71fcc364064e", null ],
-    [ "~Vertex", "a00031.html#ad7a0ce588b7f688dc4488a0f567d9155", null ],
-    [ "a", "a00031.html#a91493b1de792faae6bf96329bed6d06a", null ],
-    [ "b", "a00031.html#a270be8167fe744b56cae25215c7d52be", null ],
-    [ "g", "a00031.html#a4da5050c518fc2657e34f51bf61ae0e4", null ],
-    [ "pointSize", "a00031.html#a088ea2f6ac59b1a5bee2d02da11ea50f", null ],
-    [ "r", "a00031.html#a8c22b31da489e22d5d58ea667eda65b9", null ],
-    [ "u", "a00031.html#afa8e01935fde5cb9702075d25346e135", null ],
-    [ "v", "a00031.html#a6ef8693374fd8c435715b32fbbdc4e41", null ],
-    [ "x", "a00031.html#aa592e1564aa3b226ff629b824b240310", null ],
-    [ "y", "a00031.html#a448817068556fe43e81dc0a3e7d1fa43", null ],
-    [ "z", "a00031.html#af5d14cd74cd842c01f9a8a8d92325339", null ]
+    [ "ThresholdType", "a00031.html#ac6ab383d590ac973fe513219334d561f", [
+      [ "Thresh_Binary", "a00031.html#ac6ab383d590ac973fe513219334d561fa8948c833b6fc66bcff50479b88281cb3", null ],
+      [ "Thresh_Binary_Inv", "a00031.html#ac6ab383d590ac973fe513219334d561fa62a8f48e1511dace93562cc70c5f9b23", null ],
+      [ "Thresh_Trunc", "a00031.html#ac6ab383d590ac973fe513219334d561fadfb3f3a4b2c053ccfe6e1f436666b90b", null ],
+      [ "Thresh_ToZero", "a00031.html#ac6ab383d590ac973fe513219334d561fae6d119e2634d6968445f85b5b2a3ec98", null ],
+      [ "Thresh_ToZero_Inv", "a00031.html#ac6ab383d590ac973fe513219334d561fac86486a6eb7621b1bc221aa08bb8d23b", null ]
+    ] ],
+    [ "Threshold", "a00031.html#a0d93fca2833487c8978c3bd1fdfbb3cd", null ],
+    [ "~Threshold", "a00031.html#a43d1b8d6c21fb49a16ba90a3526a052c", null ],
+    [ "maxValue", "a00031.html#a5367a49945393b0f1367310f677c88ce", null ],
+    [ "maxValueChanged", "a00031.html#a559a43ae2c6f94a9f348d74e0c93f426", null ],
+    [ "setMaxValue", "a00031.html#a7afb07c346eef63aef445b049718ec46", null ],
+    [ "setThreshold", "a00031.html#a747ecbd752a29d1f2158e05ed568d78a", null ],
+    [ "setThresholdType", "a00031.html#a7f98dba2c45fb8f04e88bb4efe057d67", null ],
+    [ "threshold", "a00031.html#a513c2d2da1df062b8879163fa89221b2", null ],
+    [ "threshold", "a00031.html#a4bb277fbeb7b1486efd0366503e85621", null ],
+    [ "threshold", "a00031.html#ac0e492803006dc4f32f3f113cf1bec3d", null ],
+    [ "thresholdChanged", "a00031.html#a95e78d77660f0dabdb0ed073e83753c9", null ],
+    [ "thresholdType", "a00031.html#a2d23416e7525ec0223ebb8a65530ce73", null ],
+    [ "thresholdTypeChanged", "a00031.html#a84f2d972a1347fbb406b2eea1273f5a9", null ],
+    [ "m_maxValue", "a00031.html#a9789b9923bce9710752324cc47c5320f", null ],
+    [ "m_threshold", "a00031.html#a46cfc35879992bf0cb3e5742c3f673fa", null ],
+    [ "m_thresholdType", "a00031.html#ac3573bcd8d9a70d9b6e5c40da545ee2d", null ],
+    [ "maxValue", "a00031.html#a6e9aec8892a8b8c16c8c0ffb8d293299", null ],
+    [ "threshold", "a00031.html#a4553c33cf0267aa206970186f29534a1", null ],
+    [ "thresholdType", "a00031.html#a1dd6b42c58c35809ba3664ad43b9f2a1", null ]
 ];

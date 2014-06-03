@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['g',['g',['../class_vertex.html#a4da5050c518fc2657e34f51bf61ae0e4',1,'Vertex']]]
+  ['faceclassifier',['faceClassifier',['../a00017.html#a9f84e5b655f386aeda69f3a8fbe4b05c',1,'MainWindow']]],
+  ['factorradiantodegree',['factorRadianToDegree',['../a00039.html#a06bcd4055a1710817731bdfad688c4e5',1,'Defines.h']]]
 ];

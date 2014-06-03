@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['x',['x',['../class_camera.html#ae270fbd3b09b36f240a2d55b3b5b9cec',1,'Camera::x()'],['../class_render_object.html#abbf75a212aa51d59e0f6cd74a5c1ecc3',1,'RenderObject::x()'],['../class_vertex.html#aa592e1564aa3b226ff629b824b240310',1,'Vertex::x()'],['../class_camera.html#af37053e0dffc52966b1a4422b78aa23a',1,'Camera::x()']]],
-  ['xchanged',['xChanged',['../class_camera.html#ac7fd18825b63f7f553d841266344e264',1,'Camera::xChanged()'],['../class_render_object.html#a8938ffeecc4019bfd705a0ed1038a4ba',1,'RenderObject::xChanged()']]],
-  ['xscale',['xScale',['../class_render_object.html#a6746723bba55ff68221a8f27d82602db',1,'RenderObject']]],
-  ['xscalechanged',['xScaleChanged',['../class_render_object.html#ab4d47e2dcdb609467e14e1efc51988eb',1,'RenderObject']]]
+  ['x',['x',['../a00007.html#ae270fbd3b09b36f240a2d55b3b5b9cec',1,'Camera::x()'],['../a00032.html#ab7aed15fcdba46d5a7e7f711b7288b74',1,'TransformationObject::x()'],['../a00033.html#aa592e1564aa3b226ff629b824b240310',1,'Vertex::x()'],['../a00007.html#af37053e0dffc52966b1a4422b78aa23a',1,'Camera::x()'],['../a00032.html#abdedd6467cbdc76b3945289a2c6b9f61',1,'TransformationObject::x()']]],
+  ['xchanged',['xChanged',['../a00007.html#ac7fd18825b63f7f553d841266344e264',1,'Camera::xChanged()'],['../a00032.html#a39271adfc808e8adb18e06156fae5b99',1,'TransformationObject::xChanged()']]],
+  ['xscale',['xScale',['../a00032.html#a5e68ba8694ee8d10329bd7798c66ccf5',1,'TransformationObject']]],
+  ['xscalechanged',['xScaleChanged',['../a00032.html#aafbe35229f4d11ae4280932f5d1e0ec1',1,'TransformationObject']]]
 ];

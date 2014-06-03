@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pi',['PI',['../_analysis_results_8cpp.html#a598a3330b3c21701223ee0ca14316eca',1,'AnalysisResults.cpp']]]
+  ['safe_5fdelete',['SAFE_DELETE',['../a00049.html#a4b8b2bed986c06c207ebac140ba65a7a',1,'Macros.h']]]
 ];

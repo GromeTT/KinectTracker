@@ -1,19 +1,31 @@
 var NAVTREE =
 [
   [ "KinectTracker", "index.html", [
+    [ "Namespaces", null, [
+      [ "Namespace List", "namespaces.html", "namespaces" ]
+    ] ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ]
+        [ "Enumerator", "functions_eval.html", null ],
+        [ "Properties", "functions_prop.html", null ]
       ] ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.html", "files" ]
+      [ "File List", "files.html", "files" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
@@ -21,7 +33,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "a00001.html",
-"a00018.html#a7ae488627e37254bbe1863c928781d83"
+"a00013.html#a5d6e87f2e55923dcf0d22ea2aa5204f8",
+"a00028.html#a5175c73455967387c371d35e3a0a7e3f",
+"a00082.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

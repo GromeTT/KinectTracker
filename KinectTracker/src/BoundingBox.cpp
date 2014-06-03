@@ -20,74 +20,10 @@ BoundingBox::BoundingBox( const QVector<QVector3D>& points,
                           const float deltaD,
                           const float deltaH )
 {
-    if ( points.count() == 0 )
-    {
-        m_x = 0;
-        m_y = 0;
-        m_z = 0;
-        m_width = 0;
-        m_height = 0;
-        m_depth = 0;
-    }
-
-    float maxW, minW;
-    float maxD, minD;
-    float maxH, minH;
-
-    // Initialize values with first point
-    maxW = minW = points.at( 0 ).x();
-    maxD = minD = points.at( 0 ).z();
-    maxH = minH = points.at( 0 ).y();
-
-    for ( int i = 1; i < points.count(); ++i )
-    {
-        const QVector3D* v = &points.at( i );
-        // Update width
-        if ( v->x() > maxW )
-        {
-            maxW = v->x();
-        }
-        else if ( v->x() < minW )
-        {
-            minW = v->x();
-        }
-
-        // Update depth
-        if ( v->z() > maxD )
-        {
-            maxD = v->z();
-        }
-        else if ( v->z() < minD )
-        {
-            minD = v->z();
-        }
-
-        // Update height
-        if ( v->y() > maxH )
-        {
-            maxH = v->y();
-        }
-        else if ( v->y() < minH )
-        {
-            minH = v->y();
-        }
-    }
-    maxW += deltaW;
-    minW -= deltaW;
-    maxH += deltaH;
-    minH -= deltaH;
-    maxD += deltaD;
-    minD -= deltaD;
-
-    // Calculate dimensions
-    m_width =  maxW - minW;
-    m_depth = maxD - minD;
-    m_height = maxH - minH;
-
-    // Calculate position
-    m_x =  maxW - ( 0.5f * m_width );
-    m_y =  maxH - ( 0.5f * m_height );
-    m_z =  maxD - ( 0.5f * m_depth );
+    calculateBoundingBox( points,
+                          deltaW,
+                          deltaD,
+                          deltaH );
 }
 
 BoundingBox::BoundingBox( const BoundingBox& other )
@@ -165,27 +101,146 @@ void BoundingBox::setZ( const float z )
     m_z = z;
 }
 
-bool BoundingBox::isPointInBoundingBox( const QVector3D& point )
+/*!
+    /fn void BoundingBox::calculateBoundingBox( const QVector<QVector3D>& poinst, const float deltaW, const float deltaD, const float deltaH )
+    Computes this BoundingBox so that it encloses the data provided by \a points.
+    The remaning parameters can be used to enlarge the dimensions of the BoundingBox.
+ */
+void BoundingBox::calculateBoundingBox( const QVector<QVector3D>& points,
+                                        const float deltaW,
+                                        const float deltaD,
+                                        const float deltaH )
 {
-    return pointInCube( point.x(),
-                        point.y(),
-                        point.z(),
-                        m_x,
-                        m_y,
-                        m_z,
-                        m_width,
-                        m_height,
-                        m_depth );
+    if ( points.count() == 0 )
+    {
+        m_x = 0;
+        m_y = 0;
+        m_z = 0;
+        m_width = 0;
+        m_height = 0;
+        m_depth = 0;
+    }
+
+    float maxW, minW;
+    float maxD, minD;
+    float maxH, minH;
+
+    // Initialize values with first point
+    maxW = minW = points.at( 0 ).x();
+    maxD = minD = points.at( 0 ).z();
+    maxH = minH = points.at( 0 ).y();
+
+    for ( int i = 1; i < points.count(); ++i )
+    {
+        const QVector3D* v = &points.at( i );
+        // Update width
+        if ( v->x() > maxW )
+        {
+            maxW = v->x();
+        }
+        else if ( v->x() < minW )
+        {
+            minW = v->x();
+        }
+
+        // Update depth
+        if ( v->z() > maxD )
+        {
+            maxD = v->z();
+        }
+        else if ( v->z() < minD )
+        {
+            minD = v->z();
+        }
+
+        // Update height
+        if ( v->y() > maxH )
+        {
+            maxH = v->y();
+        }
+        else if ( v->y() < minH )
+        {
+            minH = v->y();
+        }
+    }
+    maxW += deltaW;
+    minW -= deltaW;
+    maxH += deltaH;
+    minH -= deltaH;
+    maxD += deltaD;
+    minD -= deltaD;
+
+    // Calculate dimensions
+    m_width =  maxW - minW;
+    m_depth = maxD - minD;
+    m_height = maxH - minH;
+
+    // Calculate position
+    m_x =  maxW - ( 0.5f * m_width );
+    m_y =  maxH - ( 0.5f * m_height );
+    m_z =  maxD - ( 0.5f * m_depth );
 }
 
-bool BoundingBox::arePointsInBoundingBox( const QVector<QVector3D> points, const int count )
+/*!
+    \fn BoundingBox::arePointsInsideBoundingBox( const QVector<QVector3D>& points )
+    Returns true, if all points of \a points is inside this BoundingBox.
+ */
+bool BoundingBox::arePointsInsideBoundingBox( const QVector<QVector3D>& points )
 {
-    for ( int i = 0; i < count; ++i )
+    for ( int i = 0; i < points.count(); ++i )
     {
-        if ( !isPointInBoundingBox( points[i] ) )
+        if ( !pointInCube( points[i].x(),
+                           points[i].y(),
+                           points[i].z(),
+                           m_x,
+                           m_y,
+                           m_z,
+                           m_width,
+                           m_height,
+                           m_depth ) )
         {
             return false;
         }
     }
     return true;
 }
+
+/**************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************/
+/*!
+   \class This class encapsulates a BoundingBox object and an unsigned int to hold
+          the timestemp.
+*/
+
+/*!
+   \fn BoundingBoxWithTimeStamp::BoundingBoxWithTimeStamp
+   Constructs a QSharedPointer with an empty BoundingBox.
+   The timestemp is set to \b zero.
+ */
+BoundingBoxWithTimeStamp::BoundingBoxWithTimeStamp()
+    : m_box( QSharedPointer<BoundingBox>( nullptr ) )
+    , m_timestamp( 0 )
+{
+
+}
+
+/*!
+  \fn BoundingBoxWithTimeStamp::BoundingBoxWithTimeStamp( BoundingBoxPtr& boudingBox, unsigned int timestamp )
+   Constructs a new BoundingBoxWithTimeStamp object.
+   The BoundingBox is set to \a boundingBox and the timestamp to \a timestamp.
+ */
+BoundingBoxWithTimeStamp::BoundingBoxWithTimeStamp( BoundingBoxPtr& boudingBox,
+                                                    unsigned int timestamp )
+    : m_box( boudingBox )
+    , m_timestamp( timestamp)
+{
+}
+
+
+
