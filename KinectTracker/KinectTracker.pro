@@ -13,59 +13,65 @@ greaterThan(QT_MAJOR_VERSION, 5):
 TARGET = KinectTracker\
 TEMPLATE = app
 
-SOURCES += Src\main.cpp\
-           Src\MainWindow.cpp \
-           Src\OpenGLWindow.cpp \
-           Src\BasicUsageScene.cpp \
-           Src\RenderObject.cpp \
-           Src\Vertex.cpp \
-           Src\RGBWidget.cpp \
-           Src\Kinect.cpp \
-           Src\Skeleton.cpp \
-           Src\KinectInitializeDialog.cpp \
-           Src/Floor.cpp \
-           Src/Explorer.cpp \
-           Src/SceneGraphWidget.cpp \
-           Src/SignalBlocker.cpp \
-           Src/DepthViewerWidget.cpp \
-           Src/SkeletonAnalyzer.cpp \
-           Src/BoundingBox.cpp \
-           Src/Intersection.cpp \
-           Src/ObjectLoader.cpp \
-           Src/AnalysisResults.cpp \
-           Src/Camera.cpp \
-           Src/ImageAnalyzer.cpp \
-           Src/Erode.cpp \
-           Src/ProcessingPipeline.cpp \
-           Src/Dilate.cpp \
-           Src/Threshold.cpp
+SOURCES += src/main.cpp\
+           src/MainWindow.cpp \
+           src/OpenGLWindow.cpp \
+           src/BasicUsageScene.cpp \
+           src/RenderObject.cpp \
+           src/Vertex.cpp \
+           src/RGBWidget.cpp \
+           src/Kinect.cpp \
+           src/KinectInitializeDialog.cpp \
+           src/Floor.cpp \
+           src/Explorer.cpp \
+           src/SceneGraphWidget.cpp \
+           src/SignalBlocker.cpp \
+           src/DepthViewerWidget.cpp \
+           src/SkeletonAnalyzer.cpp \
+           src/BoundingBox.cpp \
+           src/Intersection.cpp \
+           src/ObjectLoader.cpp \
+           src/AnalysisResults.cpp \
+           src/Camera.cpp \
+           src/ImageAnalyzer.cpp \
+           src/Erode.cpp \
+           src/ProcessingPipeline.cpp \
+           src/Dilate.cpp \
+           src/Threshold.cpp \
+           src/TransformationObject.cpp \
+           src/SkeletonData.cpp \
+    src/SkeletonRenderObject.cpp \
+    src/RenderObjectInterface.cpp
 
-HEADERS  += Inc\MainWindow.h \
-            Inc\OpenGLWindow.h \
-            Inc\BasicUsageScene.h \
-            Inc\RenderObject.h \
-            Inc\Vertex.h \
-            Inc\RGBWidget.h \
-            Inc\Kinect.h \
-            Inc\Skeleton.h \
-            Inc\KinectInitializeDialog.h \
-            Inc/Floor.h \
-            Inc/Explorer.h \
-            Inc/SceneGraphWidget.h \
-            Inc/SignalBlocker.h \
-            Inc/DepthViewerWidget.h \
-            Inc/Macros.h \
-            Inc/SkeletonAnalyzer.h \
-            Inc/BoundingBox.h \
-            Inc/Intersection.h \
-            Inc/ObjectLoader.h \
-            Inc/AnalysisResults.h \
-            Inc/Camera.h \
-            Inc/ImageAnalyzer.h \
-            Inc/Erode.h \
-            Inc/ProcessingPipeline.h \
-            Inc/Dilate.h \
-            Inc/Threshold.h
+HEADERS  += inc/MainWindow.h \
+            inc/OpenGLWindow.h \
+            inc/BasicUsageScene.h \
+            inc/RenderObject.h \
+            inc/Vertex.h \
+            inc/RGBWidget.h \
+            inc/Kinect.h \
+            inc/KinectInitializeDialog.h \
+            inc/Floor.h \
+            inc/Explorer.h \
+            inc/SceneGraphWidget.h \
+            inc/SignalBlocker.h \
+            inc/DepthViewerWidget.h \
+            inc/Macros.h \
+            inc/SkeletonAnalyzer.h \
+            inc/BoundingBox.h \
+            inc/Intersection.h \
+            inc/ObjectLoader.h \
+            inc/AnalysisResults.h \
+            inc/Camera.h \
+            inc/ImageAnalyzer.h \
+            inc/Erode.h \
+            inc/ProcessingPipeline.h \
+            inc/Dilate.h \
+            inc/Threshold.h \
+            inc/TransformationObject.h \
+            inc/SkeletonData.h \
+    inc/SkeletonRenderObject.h \
+    inc/RenderObjectInterface.h
 
 FORMS    += MainWindow.ui \
             KinectInitializeDialog.ui \
@@ -78,11 +84,13 @@ FORMS    += MainWindow.ui \
 TRANSLATIONS = trans/trans_de.ts
 
 OTHER_FILES += \
-    Shader/VertexShader.vert \
-    Shader/FragmentShader.frag \
+    shader/VertexShader.vert \
+    shader/FragmentShader.frag \
     Notes.txt \
     config.qdocconf \
-    doc/collection.qhcp
+    doc/collection.qhcp \
+    shader/SkeletonVertexShader.vert \
+    shader/SkeletonFragmentShader.frag
 
 
 INCLUDEPATH += "../ThirdParty/Kinect/inc"

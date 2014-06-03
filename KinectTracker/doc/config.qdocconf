@@ -1,0 +1,12 @@
+project = KinectTracker
+description = KinectTracker Documentation
+
+headerdirs  += ..
+sourcedirs  += ..
+language = Cpp
+
+sources.fileextensions = "*.cpp *.doc"
+headers.fileextensions = "*.h *.hpp"
+
+outputformats = HTML
+outputdir     = html

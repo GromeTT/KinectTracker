@@ -1,0 +1,27 @@
+var a00008 =
+[
+    [ "Dilate", "a00008.html#a143338f60f249dbb26d4c13be2d80e58", null ],
+    [ "~Dilate", "a00008.html#aa535fdb487aa7332688ee80fbc3f0a5c", null ],
+    [ "anchorPointX", "a00008.html#a56123ceafd06c614134fb4c9070c109e", null ],
+    [ "anchorPointXChanged", "a00008.html#a16c927abe4898af85a8156563811a4b8", null ],
+    [ "anchorPointY", "a00008.html#af873065e862614fe144046999fbe926c", null ],
+    [ "anchorPointYChanged", "a00008.html#ad89054c8dbb90ef407b4ed56e34450e1", null ],
+    [ "dilate", "a00008.html#a74109510cd06dc2d3bcaeaca810d8d57", null ],
+    [ "dilate", "a00008.html#a02fc33c7602809bf7bf5803713d56121", null ],
+    [ "iterations", "a00008.html#af6d5221f35ba90ac38d5be86f1ba3932", null ],
+    [ "iterationsChanged", "a00008.html#a4831a99c8dcc9d9b9134aa166703482e", null ],
+    [ "kernelColumnCount", "a00008.html#a0c41a0539dcdbdd12798ddd030f40be5", null ],
+    [ "kernelColumnCountChanged", "a00008.html#a3f8b51fe661048d28fb9c82083a06d06", null ],
+    [ "kernelRowCount", "a00008.html#a8346ac2797103fbb55f6fe982e2e57c7", null ],
+    [ "kernelRowCountChanged", "a00008.html#a9e5473db17502c23703febb170d8034a", null ],
+    [ "setAnchorPointX", "a00008.html#af31246e27d73531fb50904b3c683e6fe", null ],
+    [ "setAnchorPointY", "a00008.html#a58e84f9e582243372f9fac30e4393a1c", null ],
+    [ "setIterations", "a00008.html#a2b7e8a47fff048208e0a85fa356a93f7", null ],
+    [ "setKernelColumnCount", "a00008.html#aef022a638832611b7001348c5e45e8f0", null ],
+    [ "setKernelRowCount", "a00008.html#a33eeea3c9c40e5acc76d91bbfe669c2c", null ],
+    [ "anchorPointX", "a00008.html#a2e3935152d3bc8990439cad0b5cc33b9", null ],
+    [ "anchorPointY", "a00008.html#abe56318dce971985dfaced39c64ab4e0", null ],
+    [ "iterations", "a00008.html#a1db765de20ce9fd3c957e551fc93d254", null ],
+    [ "kernelColumnCount", "a00008.html#ae0222fa088331077fdedfa5a8c563f35", null ],
+    [ "kernelRowCount", "a00008.html#a3a8271aa22bbe839a3552624c1f22e18", null ]
+];
