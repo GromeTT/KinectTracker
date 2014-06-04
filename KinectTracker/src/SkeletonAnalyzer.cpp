@@ -11,13 +11,12 @@
  */
 SkeletonAnalyzer::SkeletonAnalyzer()
     : m_boxes( QVector<BoundingBoxWithTimeStamp*>( 200 ) )
+    , m_estimatedHeight( 0.0f )
     , m_deltaX( 0.1f )
     , m_deltaY( 0.1f )
     , m_deltaZ( 0.1f )
-    , m_estimatedHight( 0.0f )
     , m_phi1( 0.0f )
     , m_phi2( 0.0f )
-
 {
 }
 
@@ -77,6 +76,41 @@ void SkeletonAnalyzer::update( const SkeletonData* skeleton,
     // extra space.
     m_boundingBox.calculateBoundingBox( skeleton->getJoints() );
 
+    // Analyse the pose of the person on the basis of the BoundingBox height.
+    if ( m_boundingBox.getHeight() > m_estimatedHeight &&
+         m_boundingBox.getHeight() < 2.30f )
+    {
+        if ( m_estimatedHeight == 0 )
+        {
+            m_estimatedHeight = m_boundingBox.getHeight();
+        }
+        else
+        {
+            m_estimatedHeight += m_boundingBox.getHeight();
+            m_estimatedHeight /= 2;
+        }
+        emit estimatedHeightChanged();
+    }
+    m_currentHeight = m_boundingBox.getHeight();
+    emit currentHeightChanged();
+    if ( m_currentHeight >= 0.55 * m_estimatedHeight )
+    {
+        m_workerStatus = tr( "standing" );
+    }
+    else
+    {
+        if ( m_currentHeight < 0.4 * m_estimatedHeight )
+        {
+            m_workerStatus = tr( "lying" );
+        }
+        else
+        {
+            m_workerStatus = tr( "kneeling" );
+        }
+    }
+
+    emit workerStatusChanged();
+
     // Compute feature vector.
     calculateFeatureVector( skeleton );
 }
@@ -114,6 +148,16 @@ void SkeletonAnalyzer::setPhi2(const float phi2)
     }
 }
 
+float SkeletonAnalyzer::estimatedHeight() const
+{
+    return m_estimatedHeight;
+}
+
+float SkeletonAnalyzer::currentHeight() const
+{
+    return m_currentHeight;
+}
+
 float SkeletonAnalyzer::deltaX() const
 {
     return m_deltaX;
@@ -137,6 +181,11 @@ float SkeletonAnalyzer::phi1() const
 float SkeletonAnalyzer::phi2() const
 {
     return m_phi2;
+}
+
+QString SkeletonAnalyzer::workerStatus() const
+{
+    return m_workerStatus;
 }
 
 /*!
@@ -249,5 +298,40 @@ void SkeletonAnalyzer::addBoundingBox( BoundingBoxPtr& boundingBox,
         delete bbw;
         bbw = nullptr;
     }
+}
+
+bool SkeletonAnalyzer::calculateHeight( const SkeletonData* skeletonData, float& height )
+{
+    // http://www.codeproject.com/Tips/380152/Kinect-for-Windows-Find-User-Height-Accurately
+
+    if ( skeletonData->jointTrackState( SkeletonData::Joints::Head ) == SkeletonData::TrackState::Tracked &&
+         skeletonData->jointTrackState( SkeletonData::Joints::ShoulderCenter ) == SkeletonData::TrackState::Tracked  &&
+         skeletonData->jointTrackState( SkeletonData::Joints::Spine ) == SkeletonData::TrackState::Tracked  &&
+         skeletonData->jointTrackState( SkeletonData::Joints::Hip ) == SkeletonData::TrackState::Tracked )
+    {
+        if ( skeletonData->jointTrackState( SkeletonData::Joints::AnkleLeft) == SkeletonData::TrackState::Tracked &&
+             skeletonData->jointTrackState( SkeletonData::Joints::KneeLeft ) == SkeletonData::TrackState::Tracked )
+        {
+            height    = skeletonData->getJoint( SkeletonData::Joints::Head ).length();
+            height   += skeletonData->getJoint( SkeletonData::Joints::ShoulderCenter ).length();
+            height   += skeletonData->getJoint( SkeletonData::Joints::Spine ).length();
+            height   += skeletonData->getJoint( SkeletonData::Joints::Hip ).length();
+            height   += skeletonData->getJoint( SkeletonData::Joints::AnkleLeft ).length();
+            height   += skeletonData->getJoint( SkeletonData::Joints::KneeLeft ).length();
+            return true;
+        }
+        else if ( skeletonData->jointTrackState( SkeletonData::Joints::AnkleLeft) == SkeletonData::TrackState::Tracked &&
+                  skeletonData->jointTrackState( SkeletonData::Joints::KneeLeft ) == SkeletonData::TrackState::Tracked )
+        {
+            height    = skeletonData->getJoint( SkeletonData::Joints::Head ).length();
+            height   += skeletonData->getJoint( SkeletonData::Joints::ShoulderCenter ).length();
+            height   += skeletonData->getJoint( SkeletonData::Joints::Spine ).length();
+            height   += skeletonData->getJoint( SkeletonData::Joints::Hip ).length();
+            height   += skeletonData->getJoint( SkeletonData::Joints::AnkleLeft ).length();
+            height   += skeletonData->getJoint( SkeletonData::Joints::KneeLeft ).length();
+            return true;
+        }
+    }
+    return false;
 }
 

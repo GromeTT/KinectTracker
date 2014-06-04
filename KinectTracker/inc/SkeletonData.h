@@ -11,7 +11,7 @@ class SkeletonData
 {
 
 public:
-    enum class Joints
+    enum class Joints : char
        {
            Hip = 0,
            Spine = 1,
@@ -35,6 +35,21 @@ public:
            FootRight = 19
        };
 
+    enum class TrackState : char
+        {
+           Not_Tracked = NUI_SKELETON_NOT_TRACKED,
+           Infered = NUI_SKELETON_POSITION_INFERRED,
+           Tracked = NUI_SKELETON_POSITION_TRACKED
+        };
+
+    enum class Quality : char
+        {
+            Clipped_Right  = NUI_SKELETON_QUALITY_CLIPPED_RIGHT,
+            Clipped_Left   = NUI_SKELETON_QUALITY_CLIPPED_LEFT,
+            Clipped_Top    = NUI_SKELETON_QUALITY_CLIPPED_TOP,
+            Clipped_Bottom = NUI_SKELETON_QUALITY_CLIPPED_BOTTOM
+        };
+
 public:
     SkeletonData();
     SkeletonData( const NUI_SKELETON_DATA& skeletonData );
@@ -44,10 +59,15 @@ public:
 
     const QVector<QVector3D>& getJoints() const;
     const QVector3D&          getJoint( const Joints joint ) const;
+    const TrackState          jointTrackState( const Joints joint ) const;
+    const Quality             quality() const;
 
 private:
+    void initialize();
 
-    QVector<QVector3D> m_joints;
+    QVector<QVector3D>  m_joints;
+    QVector<TrackState> m_jointTrackState;
+    Quality             m_quality;
 };
 
 void copy( const Vector4& source, QVector3D& target );

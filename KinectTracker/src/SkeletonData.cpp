@@ -9,6 +9,7 @@
 SkeletonData::SkeletonData()
 {
     m_joints.resize( 20 );
+    m_jointTrackState.resize( 20 );
 }
 
 /*!
@@ -18,6 +19,7 @@ SkeletonData::SkeletonData()
 SkeletonData::SkeletonData( const NUI_SKELETON_DATA& skeletonData )
 {
     m_joints.resize( 20 );
+    m_jointTrackState.resize( 20 );
     setSkeletonBySkeletonData( skeletonData );
 }
 
@@ -56,6 +58,27 @@ void SkeletonData::setSkeletonBySkeletonData( const NUI_SKELETON_DATA& skeletonD
     copy( skeletonData.SkeletonPositions[NUI_SKELETON_POSITION_KNEE_RIGHT], m_joints[static_cast<int>( Joints::KneeRight )] );
     copy( skeletonData.SkeletonPositions[NUI_SKELETON_POSITION_ANKLE_RIGHT], m_joints[static_cast<int>( Joints::AnkleRight )] );
     copy( skeletonData.SkeletonPositions[NUI_SKELETON_POSITION_FOOT_RIGHT], m_joints[static_cast<int>( Joints::FootRight )] );
+
+    m_jointTrackState[static_cast<int>( Joints::Hip )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_HIP_CENTER] );
+    m_jointTrackState[static_cast<int>( Joints::Spine )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_SPINE] );
+    m_jointTrackState[static_cast<int>( Joints::ShoulderCenter )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_SHOULDER_CENTER] );
+    m_jointTrackState[static_cast<int>( Joints::Head )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_HEAD] );
+    m_jointTrackState[static_cast<int>( Joints::ShoulderLeft )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_SHOULDER_LEFT] );
+    m_jointTrackState[static_cast<int>( Joints::ElbowLeft )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_ELBOW_LEFT] );
+    m_jointTrackState[static_cast<int>( Joints::WristLeft )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_WRIST_LEFT] );
+    m_jointTrackState[static_cast<int>( Joints::HandLeft )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_HAND_LEFT] );
+    m_jointTrackState[static_cast<int>( Joints::ShoulderRight )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_SHOULDER_RIGHT] );
+    m_jointTrackState[static_cast<int>( Joints::ElbowRight )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_ELBOW_RIGHT] );
+    m_jointTrackState[static_cast<int>( Joints::WristRight )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_WRIST_RIGHT] );
+    m_jointTrackState[static_cast<int>( Joints::HandRight )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_HAND_RIGHT] );
+    m_jointTrackState[static_cast<int>( Joints::HipLeft )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_HIP_LEFT] );
+    m_jointTrackState[static_cast<int>( Joints::KneeLeft )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_KNEE_LEFT] );
+    m_jointTrackState[static_cast<int>( Joints::AnkleLeft )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_ANKLE_LEFT] );
+    m_jointTrackState[static_cast<int>( Joints::FootLeft )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_FOOT_LEFT] );
+    m_jointTrackState[static_cast<int>( Joints::HipRight )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_HIP_RIGHT] );
+    m_jointTrackState[static_cast<int>( Joints::KneeRight )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_KNEE_RIGHT] );
+    m_jointTrackState[static_cast<int>( Joints::AnkleRight )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_ANKLE_RIGHT] );
+    m_jointTrackState[static_cast<int>( Joints::FootRight )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_FOOT_RIGHT] );
 }
 
 /*!
@@ -75,6 +98,24 @@ const QVector<QVector3D>& SkeletonData::getJoints() const
 const QVector3D& SkeletonData::getJoint( const SkeletonData::Joints joint ) const
 {
     return m_joints.at( static_cast<int>( joint ) );
+}
+
+const SkeletonData::TrackState SkeletonData::jointTrackState( const SkeletonData::Joints joint ) const
+{
+    return m_jointTrackState.at( static_cast<int>( joint ) );
+}
+
+const SkeletonData::Quality SkeletonData::quality() const
+{
+    return m_quality;
+}
+
+void SkeletonData::initialize()
+{
+    for ( int i = 0; i < 20; ++i )
+    {
+        m_jointTrackState[i] = TrackState::Not_Tracked;
+    }
 }
 
 /*!

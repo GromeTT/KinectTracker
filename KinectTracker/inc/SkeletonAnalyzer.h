@@ -26,11 +26,14 @@ public:
     void setPhi1( const float phi1 );
     void setPhi2( const float phi2 );
 
+    float               estimatedHeight() const;
+    float               currentHeight() const;
     float               deltaX() const;
     float               deltaY() const;
     float               deltaZ() const;
     float               phi1() const;
     float               phi2() const;
+    QString             workerStatus() const;
     bool                arePointsInLastBoundingBox( const SkeletonData& skeletonData );
     QVector3D           getVelocity( const unsigned int timestamp,
                                      const unsigned int ms );
@@ -41,20 +44,26 @@ private:
     void calculateFeatureVector( const SkeletonData* skeletonData );
     void addBoundingBox( BoundingBoxPtr& boundingBox,
                          const unsigned int timestamp );
+    bool calculateHeight( const SkeletonData* skeletonData, float& height );
 
-    float m_estimatedHight;
-    float m_deltaX;
-    float m_deltaY;
-    float m_deltaZ;
-    float m_phi1;
-    float m_phi2;
+    float   m_estimatedHeight;
+    float   m_currentHeight;
+    float   m_deltaX;
+    float   m_deltaY;
+    float   m_deltaZ;
+    float   m_phi1;
+    float   m_phi2;
+    QString m_workerStatus;
 
 signals:
+    void estimatedHeightChanged();
+    void currentHeightChanged();
     void deltaXChanged();
     void deltaYChanged();
     void deltaZChanged();
     void phi1Changed();
     void phi2Changed();
+    void workerStatusChanged();
 
 private:
     QVector<BoundingBoxWithTimeStamp*> m_boxes;
@@ -62,6 +71,14 @@ private:
 
     // PROPERTIES
 private:
+    Q_PROPERTY( float estimatedHeight MEMBER m_estimatedHeight
+                READ estimatedHeight
+                NOTIFY estimatedHeightChanged )
+
+    Q_PROPERTY( float currentHeight MEMBER m_currentHeight
+                READ currentHeight
+                NOTIFY currentHeightChanged )
+
     Q_PROPERTY( float deltaX MEMBER m_deltaX
                 READ deltaX
                 WRITE setDeltaX
@@ -86,6 +103,10 @@ private:
                 READ phi2
                 WRITE setPhi2
                 NOTIFY phi1Changed )
+
+    Q_PROPERTY ( QString workerStatus MEMBER m_workerStatus
+                 READ workerStatus
+                 NOTIFY workerStatusChanged )
 };
 
 #endif // SKELETONANALYZER_H

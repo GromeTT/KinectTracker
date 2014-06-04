@@ -332,7 +332,7 @@ void MainWindow::processSkeletonData( const unsigned int timestamp )
                                                            boundingBox->getDepth() ) );
 
              mp_arrowObject->setPosition( boundingBox->getX(),
-                                          boundingBox->getY() + 1.5f,
+                                          boundingBox->getY() + 2.0f,
                                           boundingBox->getZ() );
          }
          m_analysisResults.setValuesByVetcor( m_skeletonAnalyzer.getVelocity( timestamp, 10 ) );
