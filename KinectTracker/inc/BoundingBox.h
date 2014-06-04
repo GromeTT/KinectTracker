@@ -35,8 +35,11 @@ public:
     void setY( const float y );
     void setZ( const float z );
 
-    bool isPointInBoundingBox( const QVector3D& point );
-    bool arePointsInBoundingBox( const QVector<QVector3D> points, const int count );
+    void calculateBoundingBox( const QVector<QVector3D>& points,
+                               const float deltaW = 0,
+                               const float deltaD = 0,
+                               const float deltaH = 0 );
+    bool arePointsInsideBoundingBox( const QVector<QVector3D>& points );
 
 private:
     float m_width;
@@ -48,4 +51,24 @@ private:
 };
 
 typedef QSharedPointer<BoundingBox> BoundingBoxPtr;
+
+/**************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************/
+
+class BoundingBoxWithTimeStamp
+{
+public:
+    BoundingBoxWithTimeStamp( );
+    BoundingBoxWithTimeStamp( BoundingBoxPtr& boudingBox,
+                              unsigned int timestamp );
+    BoundingBoxPtr m_box;
+    unsigned int   m_timestamp;
+};
+
 #endif // BOUNDINGBOX_H

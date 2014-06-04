@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wristleft',['WristLeft',['../class_skeleton.html#afc182823998e4151f0d7692d4beae8d9a71cd90f1f0db6b9b853389b22da1adfd',1,'Skeleton']]],
-  ['wristright',['WristRight',['../class_skeleton.html#afc182823998e4151f0d7692d4beae8d9ae298edefe167afeb7521b54f17b0c3e4',1,'Skeleton']]],
-  ['wrong_5fvector_5fsize',['WRONG_VECTOR_SIZE',['../class_kinect.html#a260ceef1571ff51ff8571b1951782390a4ce6b8f1411daa2f3874c986556739da',1,'Kinect']]]
+  ['wristleft',['WristLeft',['../a00028.html#ade909294e270cd0b16d248d90129401ca588e9efafd75b6a1fe22a9960c44181e',1,'SkeletonData']]],
+  ['wristright',['WristRight',['../a00028.html#ade909294e270cd0b16d248d90129401caa06437c22d077beaecbbe4508d9e41c8',1,'SkeletonData']]],
+  ['wrong_5fvector_5fsize',['WRONG_VECTOR_SIZE',['../a00014.html#a260ceef1571ff51ff8571b1951782390af5e00d094d8888abd87b80afdf1ab6b9',1,'Kinect']]]
 ];

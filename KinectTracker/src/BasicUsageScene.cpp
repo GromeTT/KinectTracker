@@ -205,6 +205,9 @@ RenderObject* BasicUsageScene::loadObjectFromFile( const QString filename )
     object->setIndices( tmp->getIndices() );
     object->setRenderMode( GL_TRIANGLES );
     object->setVisible( true );
+    object->setShaderProgram( m_shaderPrograms.at( 0 ) );
+
+    m_renderObjects << object;
     return object;
 }
 

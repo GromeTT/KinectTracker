@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SkeletonAnalyzer.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SceneGraphWidget.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,6 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -89,7 +91,7 @@ $(document).ready(function(){initNavTree('a00057_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,98 +102,73 @@ $(document).ready(function(){initNavTree('a00057_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">SkeletonAnalyzer.h</div>  </div>
+<div class="title">SceneGraphWidget.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SKELETONANALYZER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SKELETONANALYZER_H</span></div>
+<a href="a00057.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SCENEGRAPHWIDGET_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SCENEGRAPHWIDGET_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QPair&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;BoundingBox.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span>QVector3D;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="a00027.html">SkeletonData</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span>BoundingBoxWithTimeStamp;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00026.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00026.html">SkeletonAnalyzer</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="a00026.html">SkeletonAnalyzer</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ~<a class="code" href="a00026.html">SkeletonAnalyzer</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> update( <span class="keyword">const</span> <a class="code" href="a00027.html">SkeletonData</a>* skeleton,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp );</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> setDeltaX( <span class="keyword">const</span> <span class="keywordtype">float</span> deltaX );</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> setDeltaY( <span class="keyword">const</span> <span class="keywordtype">float</span> deltaY );</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> setDeltaZ( <span class="keyword">const</span> <span class="keywordtype">float</span> deltaZ );</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">float</span>               deltaX() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">float</span>               deltaY() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">float</span>               deltaZ() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span>                arePointsInLastBoundingBox( <span class="keyword">const</span> <a class="code" href="a00027.html">SkeletonData</a>&amp; skeletonData );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    QVector3D           getVelocity( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ms );</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00004.html">BoundingBox</a>*  getLastBoundingBox() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> addBoundingBox( BoundingBoxPtr&amp; boundingBox,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="a00021.html">RenderObject</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span>QTreeWidgetItem;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="a00057.html#aa55256830fe9d68749225fa8387ceb47">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00022.html">RenderObjectInterface</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">typedef</span> QVector&lt;RenderObjectInterface*&gt; <a class="code" href="a00057.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>Ui {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="a00024.html">SceneGraphWidget</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00024.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00024.html">SceneGraphWidget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00024.html#a98d3fbaea1309c64ef9bbdb33d4ce293">SceneGraphWidget</a>( QWidget *parent = 0 );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="a00024.html#aabbd06a608f50171d1341c3779bd198a">~SceneGraphWidget</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00024.html#aac96bbbf0d61e65372de0544f50e7de8">addObject</a>( <span class="keyword">const</span> QObject&amp; <span class="keywordtype">object</span> );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00024.html#aac96bbbf0d61e65372de0544f50e7de8">addObject</a>( <span class="keyword">const</span> <a class="code" href="a00021.html">RenderObject</a>&amp; <span class="keywordtype">object</span> );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00024.html#ac99579ae7333e3a448f2a8caeab2e524">addObjects</a>( <span class="keyword">const</span> QList&lt;QObject*&gt;&amp; objects );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00024.html#ac99579ae7333e3a448f2a8caeab2e524">addObjects</a>( <span class="keyword">const</span> <a class="code" href="a00036.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a>&amp; objects );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00024.html#ac99579ae7333e3a448f2a8caeab2e524">addObjects</a>( <span class="keyword">const</span> QVector&lt;QObject*&gt;&amp; objects );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00024.html#ad1930663b6bca13cecdb405decf64a45">clearTreeWidget</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00024.html#adc38275224167b31c3839fed3fc56532">selectionHasChanged</a>( QTreeWidgetItem* curr,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                              QTreeWidgetItem* prev );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;signals:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00024.html#aabc2f7df1ed84720e9e5128bfb85de5c">selectionChanged</a>( <span class="keyword">const</span> QString&amp; text );</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">float</span> m_deltaX;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">float</span> m_deltaY;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">float</span> m_deltaZ;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a00024.html#a66da606d103d5f31f14cb1cc66af8c9d">   41</a></span>&#160;    Ui::SceneGraphWidget *<a class="code" href="a00024.html#a66da606d103d5f31f14cb1cc66af8c9d">ui</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;signals:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> deltaXChanged();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> deltaYChanged();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> deltaZChanged();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Nested class</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">class </span>BoundingBoxWidthTimeStamp</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        BoundingBoxWidthTimeStamp( BoundingBoxPtr&amp; boudingBox,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp );</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        BoundingBoxPtr mp_box;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_timestamp;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    QVector&lt;BoundingBoxWidthTimeStamp*&gt; m_boxes;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// PROPERTIES</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> deltaX MEMBER m_deltaX</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                READ deltaX</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                WRITE setDeltaX</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                NOTIFY deltaXChanged )</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> deltaY MEMBER m_deltaY</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                READ deltaY</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                WRITE setDeltaY</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                NOTIFY deltaYChanged )</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> deltaZ MEMBER m_deltaZ</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                READ deltaZ</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                WRITE setDeltaZ</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                NOTIFY deltaZChanged )</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif // SKELETONANALYZER_H</span></div>
-<div class="ttc" id="a00027_html"><div class="ttname"><a href="a00027.html">SkeletonData</a></div><div class="ttdef"><b>Definition:</b> SkeletonData.h:10</div></div>
-<div class="ttc" id="a00026_html"><div class="ttname"><a href="a00026.html">SkeletonAnalyzer</a></div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:13</div></div>
-<div class="ttc" id="a00004_html"><div class="ttname"><a href="a00004.html">BoundingBox</a></div><div class="ttdef"><b>Definition:</b> BoundingBox.h:13</div></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // SCENEGRAPHWIDGET_H</span></div>
+<div class="ttc" id="a00024_html"><div class="ttname"><a href="a00024.html">SceneGraphWidget</a></div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.h:16</div></div>
+<div class="ttc" id="a00022_html"><div class="ttname"><a href="a00022.html">RenderObjectInterface</a></div><div class="ttdef"><b>Definition:</b> RenderObjectInterface.h:8</div></div>
+<div class="ttc" id="a00036_html_aa55256830fe9d68749225fa8387ceb47"><div class="ttname"><a href="a00036.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a></div><div class="ttdeci">QVector&lt; RenderObjectInterface * &gt; RenderObjects</div><div class="ttdef"><b>Definition:</b> BasicUsageScene.h:23</div></div>
+<div class="ttc" id="a00024_html_ad1930663b6bca13cecdb405decf64a45"><div class="ttname"><a href="a00024.html#ad1930663b6bca13cecdb405decf64a45">SceneGraphWidget::clearTreeWidget</a></div><div class="ttdeci">void clearTreeWidget()</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:58</div></div>
+<div class="ttc" id="a00021_html"><div class="ttname"><a href="a00021.html">RenderObject</a></div><div class="ttdef"><b>Definition:</b> RenderObject.h:21</div></div>
+<div class="ttc" id="a00057_html_aa55256830fe9d68749225fa8387ceb47"><div class="ttname"><a href="a00057.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a></div><div class="ttdeci">QVector&lt; RenderObjectInterface * &gt; RenderObjects</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.h:8</div></div>
+<div class="ttc" id="a00024_html_aabc2f7df1ed84720e9e5128bfb85de5c"><div class="ttname"><a href="a00024.html#aabc2f7df1ed84720e9e5128bfb85de5c">SceneGraphWidget::selectionChanged</a></div><div class="ttdeci">void selectionChanged(const QString &amp;text)</div></div>
+<div class="ttc" id="a00024_html_aabbd06a608f50171d1341c3779bd198a"><div class="ttname"><a href="a00024.html#aabbd06a608f50171d1341c3779bd198a">SceneGraphWidget::~SceneGraphWidget</a></div><div class="ttdeci">~SceneGraphWidget()</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:15</div></div>
+<div class="ttc" id="a00024_html_adc38275224167b31c3839fed3fc56532"><div class="ttname"><a href="a00024.html#adc38275224167b31c3839fed3fc56532">SceneGraphWidget::selectionHasChanged</a></div><div class="ttdeci">void selectionHasChanged(QTreeWidgetItem *curr, QTreeWidgetItem *prev)</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:70</div></div>
+<div class="ttc" id="a00024_html_aac96bbbf0d61e65372de0544f50e7de8"><div class="ttname"><a href="a00024.html#aac96bbbf0d61e65372de0544f50e7de8">SceneGraphWidget::addObject</a></div><div class="ttdeci">void addObject(const QObject &amp;object)</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:20</div></div>
+<div class="ttc" id="a00024_html_a66da606d103d5f31f14cb1cc66af8c9d"><div class="ttname"><a href="a00024.html#a66da606d103d5f31f14cb1cc66af8c9d">SceneGraphWidget::ui</a></div><div class="ttdeci">Ui::SceneGraphWidget * ui</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.h:41</div></div>
+<div class="ttc" id="a00024_html_a98d3fbaea1309c64ef9bbdb33d4ce293"><div class="ttname"><a href="a00024.html#a98d3fbaea1309c64ef9bbdb33d4ce293">SceneGraphWidget::SceneGraphWidget</a></div><div class="ttdeci">SceneGraphWidget(QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:5</div></div>
+<div class="ttc" id="a00024_html_ac99579ae7333e3a448f2a8caeab2e524"><div class="ttname"><a href="a00024.html#ac99579ae7333e3a448f2a8caeab2e524">SceneGraphWidget::addObjects</a></div><div class="ttdeci">void addObjects(const QList&lt; QObject * &gt; &amp;objects)</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><b>SkeletonAnalyzer.h</b></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00057.html">SceneGraphWidget.h</a></li>
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

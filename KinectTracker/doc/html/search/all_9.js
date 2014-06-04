@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['loaderobject',['LoaderObject',['../a00015.html',1,'']]],
-  ['loadobjectfromfile',['loadObjectFromFile',['../a00003.html#a612feeca46de656e12e66f03d9c4f5bf',1,'BasicUsageScene']]]
+  ['joints',['Joints',['../a00028.html#ade909294e270cd0b16d248d90129401c',1,'SkeletonData']]]
 ];

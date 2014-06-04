@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/KinectInitializeDialog.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/ImageAnalyzer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,6 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -89,7 +91,7 @@ $(document).ready(function(){initNavTree('a00045_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,43 +102,53 @@ $(document).ready(function(){initNavTree('a00045_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">KinectInitializeDialog.h</div>  </div>
+<div class="title">ImageAnalyzer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef KINECTINITIALIZEDIALOG_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define KINECTINITIALIZEDIALOG_H</span></div>
+<a href="a00045.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IMAGEANALYZER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IMAGEANALYZER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QDialog&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="a00013.html">Kinect</a>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00053.html">ProcessingPipeline.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>Ui {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="a00014.html">KinectInitializeDialog</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="a00014.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00014.html">KinectInitializeDialog</a> : <span class="keyword">public</span> QDialog</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00013.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00013.html">ImageAnalyzer</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="a00013.html#ab4c5bd6ffe5cf87ffee97bc533cc24f9">ImageAnalyzer</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00013.html#a55d69408e1ca725d957c3e8780d435ff">~ImageAnalyzer</a>();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00014.html">KinectInitializeDialog</a>( QSharedPointer&lt;Kinect&gt; kinect,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                     QWidget *parent = 0 );</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ~<a class="code" href="a00014.html">KinectInitializeDialog</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Ui::KinectInitializeDialog*     ui;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    QSharedPointer&lt;Kinect&gt;          m_kinect;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif // KINECTINITIALIZEDIALOG_H</span></div>
-<div class="ttc" id="a00014_html"><div class="ttname"><a href="a00014.html">KinectInitializeDialog</a></div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.h:12</div></div>
-<div class="ttc" id="a00013_html"><div class="ttname"><a href="a00013.html">Kinect</a></div><div class="ttdoc">Kinect is a wrapper for the Microsoft kinect sensor. </div><div class="ttdef"><b>Definition:</b> Kinect.h:17</div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00013.html#aecc29b66bd7551825e94f02987174750">analyze</a>( cv::Mat&amp; input );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00013.html#a7f29e4d2ad84be571f490d5c7fa6c7ed">setSnapshot</a>( cv::Mat&amp; snapshot );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> QVector&lt;QObject*&gt;&amp; <a class="code" href="a00013.html#ae6eccb1b03694fb4433e61e7d2485236">getPiplineComponents</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    QObject*                 <a class="code" href="a00013.html#a5d6e87f2e55923dcf0d22ea2aa5204f8">getObjectByName</a>( <span class="keyword">const</span> QString&amp; name );</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00013.html#aea03d52a9ff62b3c0b7a5e3021f13112">   22</a></span>&#160;    <a class="code" href="a00053.html#a075f0fdffe851c8f611423ed149b747c">ProcessingPipelinePtr</a> <a class="code" href="a00013.html#aea03d52a9ff62b3c0b7a5e3021f13112">mp_processingPipeline</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a00013.html#a657d5688019994853fae2639a72a954b">   23</a></span>&#160;    cv::Mat               <a class="code" href="a00013.html#a657d5688019994853fae2639a72a954b">m_snapshot</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif // IMAGEANALYZER_H</span></div>
+<div class="ttc" id="a00013_html_ab4c5bd6ffe5cf87ffee97bc533cc24f9"><div class="ttname"><a href="a00013.html#ab4c5bd6ffe5cf87ffee97bc533cc24f9">ImageAnalyzer::ImageAnalyzer</a></div><div class="ttdeci">ImageAnalyzer()</div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.cpp:3</div></div>
+<div class="ttc" id="a00053_html_a075f0fdffe851c8f611423ed149b747c"><div class="ttname"><a href="a00053.html#a075f0fdffe851c8f611423ed149b747c">ProcessingPipelinePtr</a></div><div class="ttdeci">QSharedPointer&lt; ProcessingPipeline &gt; ProcessingPipelinePtr</div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:79</div></div>
+<div class="ttc" id="a00013_html_aecc29b66bd7551825e94f02987174750"><div class="ttname"><a href="a00013.html#aecc29b66bd7551825e94f02987174750">ImageAnalyzer::analyze</a></div><div class="ttdeci">void analyze(cv::Mat &amp;input)</div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.cpp:13</div></div>
+<div class="ttc" id="a00013_html_ae6eccb1b03694fb4433e61e7d2485236"><div class="ttname"><a href="a00013.html#ae6eccb1b03694fb4433e61e7d2485236">ImageAnalyzer::getPiplineComponents</a></div><div class="ttdeci">const QVector&lt; QObject * &gt; &amp; getPiplineComponents() const </div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.cpp:27</div></div>
+<div class="ttc" id="a00013_html_aea03d52a9ff62b3c0b7a5e3021f13112"><div class="ttname"><a href="a00013.html#aea03d52a9ff62b3c0b7a5e3021f13112">ImageAnalyzer::mp_processingPipeline</a></div><div class="ttdeci">ProcessingPipelinePtr mp_processingPipeline</div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.h:22</div></div>
+<div class="ttc" id="a00013_html_a55d69408e1ca725d957c3e8780d435ff"><div class="ttname"><a href="a00013.html#a55d69408e1ca725d957c3e8780d435ff">ImageAnalyzer::~ImageAnalyzer</a></div><div class="ttdeci">virtual ~ImageAnalyzer()</div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.cpp:9</div></div>
+<div class="ttc" id="a00013_html_a657d5688019994853fae2639a72a954b"><div class="ttname"><a href="a00013.html#a657d5688019994853fae2639a72a954b">ImageAnalyzer::m_snapshot</a></div><div class="ttdeci">cv::Mat m_snapshot</div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.h:23</div></div>
+<div class="ttc" id="a00013_html_a5d6e87f2e55923dcf0d22ea2aa5204f8"><div class="ttname"><a href="a00013.html#a5d6e87f2e55923dcf0d22ea2aa5204f8">ImageAnalyzer::getObjectByName</a></div><div class="ttdeci">QObject * getObjectByName(const QString &amp;name)</div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.cpp:33</div></div>
+<div class="ttc" id="a00013_html_a7f29e4d2ad84be571f490d5c7fa6c7ed"><div class="ttname"><a href="a00013.html#a7f29e4d2ad84be571f490d5c7fa6c7ed">ImageAnalyzer::setSnapshot</a></div><div class="ttdeci">void setSnapshot(cv::Mat &amp;snapshot)</div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.cpp:18</div></div>
+<div class="ttc" id="a00013_html"><div class="ttname"><a href="a00013.html">ImageAnalyzer</a></div><div class="ttdef"><b>Definition:</b> ImageAnalyzer.h:9</div></div>
+<div class="ttc" id="a00053_html"><div class="ttname"><a href="a00053.html">ProcessingPipeline.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><b>KinectInitializeDialog.h</b></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00045.html">ImageAnalyzer.h</a></li>
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

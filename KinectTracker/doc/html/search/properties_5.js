@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pitch',['pitch',['../class_camera.html#ab56fcb39f580e8d2159cf2c9c6d9a65a',1,'Camera::pitch()'],['../class_render_object.html#a557f7a3b09a30841e793ac377bb6e38b',1,'RenderObject::pitch()']]]
+  ['pitch',['pitch',['../a00007.html#ab56fcb39f580e8d2159cf2c9c6d9a65a',1,'Camera::pitch()'],['../a00032.html#a78a9190843631a93b4af995a55964469',1,'TransformationObject::pitch()']]]
 ];

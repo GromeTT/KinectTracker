@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['internal_5ferror',['INTERNAL_ERROR',['../class_kinect.html#a260ceef1571ff51ff8571b1951782390ae8c0c70879b5895c615677261d64a1ee',1,'Kinect']]],
-  ['invalid_5foperation',['INVALID_OPERATION',['../class_kinect.html#a260ceef1571ff51ff8571b1951782390ade918d7abaea4c856c3c64720f3cbb7c',1,'Kinect']]],
-  ['invalidarg',['INVALIDARG',['../class_kinect.html#a260ceef1571ff51ff8571b1951782390a441fa38900c1d5dd18554dd819925771',1,'Kinect']]]
+  ['internal_5ferror',['INTERNAL_ERROR',['../a00014.html#a260ceef1571ff51ff8571b1951782390a5ee6222883adcc743ebfee91f3a96473',1,'Kinect']]],
+  ['invalid_5foperation',['INVALID_OPERATION',['../a00014.html#a260ceef1571ff51ff8571b1951782390aaf317b58295141b7e9b5204516f96617',1,'Kinect']]],
+  ['invalidarg',['INVALIDARG',['../a00014.html#a260ceef1571ff51ff8571b1951782390a6733a7127f4734ab4c774e11f7fc0db9',1,'Kinect']]]
 ];

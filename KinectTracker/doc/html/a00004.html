@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('a00004.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,66 +105,474 @@ $(document).ready(function(){initNavTree('a00004.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00098.html">List of all members</a>  </div>
+<a href="a00102.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">BoundingBox Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="a00037_source.html">BoundingBox.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9f9e1c84026874480e343ce0d359d513"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f9e1c84026874480e343ce0d359d513"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BoundingBox</b> (const QVector&lt; QVector3D &gt; &amp;points, const float deltaW=0, const float deltaD=0, const float deltaH=0)</td></tr>
-<tr class="separator:a9f9e1c84026874480e343ce0d359d513"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dca1095bfeb6edff5723824af1407c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8dca1095bfeb6edff5723824af1407c0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BoundingBox</b> (const <a class="el" href="a00004.html">BoundingBox</a> &amp;other)</td></tr>
-<tr class="separator:a8dca1095bfeb6edff5723824af1407c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2765d599894e1ce70a71cc143f603601"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2765d599894e1ce70a71cc143f603601"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getDepth</b> () const </td></tr>
-<tr class="separator:a2765d599894e1ce70a71cc143f603601"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd3378928b8a9996790b22ad9f8b6404"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd3378928b8a9996790b22ad9f8b6404"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> () const </td></tr>
-<tr class="separator:acd3378928b8a9996790b22ad9f8b6404"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb0038310316513e738f712548394d45"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb0038310316513e738f712548394d45"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getHeight</b> () const </td></tr>
-<tr class="separator:aeb0038310316513e738f712548394d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61b21b1965b2b476b3209f70a6142c5f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61b21b1965b2b476b3209f70a6142c5f"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getX</b> () const </td></tr>
-<tr class="separator:a61b21b1965b2b476b3209f70a6142c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d90e3ff56eef1cd7b410389695b2899"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d90e3ff56eef1cd7b410389695b2899"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getY</b> () const </td></tr>
-<tr class="separator:a9d90e3ff56eef1cd7b410389695b2899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5341e4fa5385d4c621c74aa350d6720f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5341e4fa5385d4c621c74aa350d6720f"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getZ</b> () const </td></tr>
-<tr class="separator:a5341e4fa5385d4c621c74aa350d6720f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4671e29075fba2ed829f2838a850994c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4671e29075fba2ed829f2838a850994c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDepth</b> (const float depth)</td></tr>
-<tr class="separator:a4671e29075fba2ed829f2838a850994c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9bc903c2a3c01d220969db034b9c4d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9bc903c2a3c01d220969db034b9c4d4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setWidth</b> (const float width)</td></tr>
-<tr class="separator:ad9bc903c2a3c01d220969db034b9c4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff2f3e191249d0aa811b22e791fe3d9e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff2f3e191249d0aa811b22e791fe3d9e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHeight</b> (const float height)</td></tr>
-<tr class="separator:aff2f3e191249d0aa811b22e791fe3d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc26582db90273fb86431937f6189251"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc26582db90273fb86431937f6189251"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setX</b> (const float x)</td></tr>
-<tr class="separator:adc26582db90273fb86431937f6189251"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99dba1c9c15c61b0b1e06abe16699bc2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99dba1c9c15c61b0b1e06abe16699bc2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setY</b> (const float y)</td></tr>
-<tr class="separator:a99dba1c9c15c61b0b1e06abe16699bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb9be71a078e9def441780f83162e6ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb9be71a078e9def441780f83162e6ae"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setZ</b> (const float z)</td></tr>
-<tr class="separator:adb9be71a078e9def441780f83162e6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1789c34de7eceeeac565ed2fbf558fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1789c34de7eceeeac565ed2fbf558fb"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPointInBoundingBox</b> (const QVector3D &amp;point)</td></tr>
-<tr class="separator:ab1789c34de7eceeeac565ed2fbf558fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e0ee56ca1450e0c02138d4310a9cbaf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e0ee56ca1450e0c02138d4310a9cbaf"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>arePointsInBoundingBox</b> (const QVector&lt; QVector3D &gt; points, const int count)</td></tr>
-<tr class="separator:a0e0ee56ca1450e0c02138d4310a9cbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb20c845b8a47726b08b832f1547b63a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#abb20c845b8a47726b08b832f1547b63a">calculateBoundingBox</a> (const QVector&lt; QVector3D &gt; &amp;points, const float deltaW=0, const float deltaD=0, const float deltaH=0)</td></tr>
+<tr class="separator:abb20c845b8a47726b08b832f1547b63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a6e401c4da5839950f1f30c8b8c4d1208"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoundingBox::BoundingBox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9f9e1c84026874480e343ce0d359d513"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoundingBox::BoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; QVector3D &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaW</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaD</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaH</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8dca1095bfeb6edff5723824af1407c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoundingBox::BoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00004.html">BoundingBox</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a587de78331711c6eb6d15de867b73991"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoundingBox::~BoundingBox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a5e59937134e983e6b544077dcfb7c2d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BoundingBox::arePointsInsideBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; QVector3D &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true, if all points of <em>points</em> is inside this <a class="el" href="a00004.html">BoundingBox</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="abb20c845b8a47726b08b832f1547b63a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::calculateBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; QVector3D &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaW</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaD</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaH</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>/fn void <a class="el" href="a00004.html#abb20c845b8a47726b08b832f1547b63a" title="/fn void BoundingBox::calculateBoundingBox( const QVector<QVector3D>& poinst, const float deltaW...">BoundingBox::calculateBoundingBox( const QVector&lt;QVector3D&gt;&amp; poinst, const float deltaW, const float deltaD, const float deltaH )</a> Computes this <a class="el" href="a00004.html">BoundingBox</a> so that it encloses the data provided by <em>points</em>. </p>
+<p>The remaning parameters can be used to enlarge the dimensions of the <a class="el" href="a00004.html">BoundingBox</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2765d599894e1ce70a71cc143f603601"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::getDepth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeb0038310316513e738f712548394d45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::getHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acd3378928b8a9996790b22ad9f8b6404"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::getWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a61b21b1965b2b476b3209f70a6142c5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::getX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9d90e3ff56eef1cd7b410389695b2899"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::getY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5341e4fa5385d4c621c74aa350d6720f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::getZ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4671e29075fba2ed829f2838a850994c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::setDepth </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>depth</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aff2f3e191249d0aa811b22e791fe3d9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::setHeight </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>height</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad9bc903c2a3c01d220969db034b9c4d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::setWidth </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>width</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc26582db90273fb86431937f6189251"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::setX </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a99dba1c9c15c61b0b1e06abe16699bc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::setY </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adb9be71a078e9def441780f83162e6ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::setZ </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>z</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa2a6700181e92cb7ba0e7d6fde3c15dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::m_depth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8ef7d989f217a73fcd3c256eead9a960"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::m_height</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5fda8917e2a6f75c04aba2adaff6ec4a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::m_width</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa6656a033f30a21da358da1f1b29bf2e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::m_x</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac2bb8379e9bf1b52c4ced7bbd9a824a2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::m_y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af309964a535f7e37dde54cd35733bfb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::m_z</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00035_source.html">BoundingBox.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/BoundingBox.cpp</li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00037_source.html">BoundingBox.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00068.html">BoundingBox.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -171,7 +580,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>arePointsInBoundingBo
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="a00004.html">BoundingBox</a></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

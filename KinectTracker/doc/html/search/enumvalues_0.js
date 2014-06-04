@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['device_5fnot_5fready',['DEVICE_NOT_READY',['../a00013.html#a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e',1,'Kinect']]]
+  ['ankleleft',['AnkleLeft',['../a00028.html#ade909294e270cd0b16d248d90129401caf5893586463424ab0c18d2fc7871b191',1,'SkeletonData']]],
+  ['ankleright',['AnkleRight',['../a00028.html#ade909294e270cd0b16d248d90129401ca8ec71e2ee0963607d88fa7fa9605dd78',1,'SkeletonData']]]
 ];

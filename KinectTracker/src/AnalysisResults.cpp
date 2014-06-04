@@ -1,8 +1,7 @@
 #include "../inc/AnalysisResults.h"
+#include "../inc/Defines.h"
 #include <QVector3D>
 #include <QDebug>
-
-#define PI 3.14159265359
 
 AnalysisResults::AnalysisResults()
     : m_directionX( 0 )
@@ -54,7 +53,7 @@ void AnalysisResults::setDirectionZ( const float directionZ )
     }
 }
 
-void AnalysisResults::setVelocity(const float velocity)
+void AnalysisResults::setVelocity( const float velocity )
 {
     if ( m_velocity != velocity )
     {
@@ -67,8 +66,7 @@ void AnalysisResults::setValuesByVetcor( const QVector3D& vec )
 {
     setVelocity( vec.length() );
     // http://de.wikipedia.org/wiki/Polarkoordinaten
-    setDirectionY( radToDeg( atan2( vec.x(), vec.z() ) ) );
-//    qDebug () << m_directionZ;
+    setDirectionY( radToDeg( atan2( vec.z(), vec.x() ) ) );
 }
 
 QString AnalysisResults::workerStatus() const
@@ -98,6 +96,6 @@ float AnalysisResults::velocity() const
 
 float AnalysisResults::radToDeg(const float rad)
 {
-    return rad * 180 / PI;
+    return rad * factorRadianToDegree;
 }
 

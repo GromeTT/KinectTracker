@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: SkeletonData Class Reference</title>
+<title>KinectTracker: SkeletonAnalyzer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('a00027.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,68 +104,555 @@ $(document).ready(function(){initNavTree('a00027.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00121.html">List of all members</a>  </div>
+<a href="a00125.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SkeletonData Class Reference</div>  </div>
+<div class="title">SkeletonAnalyzer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="a00060_source.html">SkeletonAnalyzer.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SkeletonAnalyzer:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00027.png" usemap="#SkeletonAnalyzer_map" alt=""/>
+  <map id="SkeletonAnalyzer_map" name="SkeletonAnalyzer_map">
+</map>
+ </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:ade909294e270cd0b16d248d90129401c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade909294e270cd0b16d248d90129401c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Joints</b> { <br />
-&#160;&#160;<b>Hip</b> = 0, 
-<b>Spine</b> = 1, 
-<b>ShoulderCenter</b> = 2, 
-<b>Head</b> = 3, 
-<br />
-&#160;&#160;<b>ShoulderLeft</b> = 4, 
-<b>ElbowLeft</b> = 5, 
-<b>WristLeft</b> = 6, 
-<b>HandLeft</b> = 7, 
-<br />
-&#160;&#160;<b>ShoulderRight</b> = 8, 
-<b>ElbowRight</b> = 9, 
-<b>WristRight</b> = 10, 
-<b>HandRight</b> = 11, 
-<br />
-&#160;&#160;<b>HipLeft</b> = 12, 
-<b>KneeLeft</b> = 13, 
-<b>AnkleLeft</b> = 14, 
-<b>FootLeft</b> = 15, 
-<br />
-&#160;&#160;<b>HipRight</b> = 16, 
-<b>KneeRight</b> = 17, 
-<b>AnkleRight</b> = 18, 
-<b>FootRight</b> = 19
-<br />
- }</td></tr>
-<tr class="separator:ade909294e270cd0b16d248d90129401c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a659d3330f476cc21018fbc6f6aa93049"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a659d3330f476cc21018fbc6f6aa93049"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SkeletonData</b> (const NUI_SKELETON_DATA &amp;skeletonData)</td></tr>
-<tr class="separator:a659d3330f476cc21018fbc6f6aa93049"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5175c73455967387c371d35e3a0a7e3f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5175c73455967387c371d35e3a0a7e3f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSkeletonBySkeletonData</b> (const NUI_SKELETON_DATA &amp;skeletonData)</td></tr>
-<tr class="separator:a5175c73455967387c371d35e3a0a7e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a124c9ba2b33946263a263e8d55db8047"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a124c9ba2b33946263a263e8d55db8047"></a>
-const QVector&lt; QVector3D &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getJoints</b> () const </td></tr>
-<tr class="separator:a124c9ba2b33946263a263e8d55db8047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1aac491d6946153021413f6e8ab71af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#af1aac491d6946153021413f6e8ab71af">SkeletonAnalyzer</a> ()</td></tr>
+<tr class="separator:af1aac491d6946153021413f6e8ab71af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b00320eced2c517c11fe596bef576a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a1b00320eced2c517c11fe596bef576a2">update</a> (const <a class="el" href="a00028.html">SkeletonData</a> *skeleton, const unsigned int timestamp)</td></tr>
+<tr class="separator:a1b00320eced2c517c11fe596bef576a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cca10be2d08150de0917fecab94ab55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a8cca10be2d08150de0917fecab94ab55">arePointsInLastBoundingBox</a> (const <a class="el" href="a00028.html">SkeletonData</a> &amp;skeletonData)</td></tr>
+<tr class="separator:a8cca10be2d08150de0917fecab94ab55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110125588617a3ddfdd1020d5ba41574"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00004.html">BoundingBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a110125588617a3ddfdd1020d5ba41574">getLastBoundingBox</a> () const </td></tr>
+<tr class="separator:a110125588617a3ddfdd1020d5ba41574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af1aac491d6946153021413f6e8ab71af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SkeletonAnalyzer::SkeletonAnalyzer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00027.html#af1aac491d6946153021413f6e8ab71af" title="SkeletonAnalyzer::SkeletonAnalyzer Constructs a new SkeletonAnalzer. ">SkeletonAnalyzer::SkeletonAnalyzer</a> Constructs a new SkeletonAnalzer. </p>
+<p>Extra space in each dimension is set to 0.1.r </p>
+
+</div>
+</div>
+<a class="anchor" id="a95aabf8cd26e09da89749e574ed0a627"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SkeletonAnalyzer::~SkeletonAnalyzer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroys this object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0d54408d03bf4318f84173e41a0d161d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonAnalyzer::addBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>boundingBox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enqueues <em>boundingBox</em> in the list of BoundingBoxes with <em>timestamp</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8cca10be2d08150de0917fecab94ab55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SkeletonAnalyzer::arePointsInLastBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00028.html">SkeletonData</a> &amp;&#160;</td>
+          <td class="paramname"><em>skeletonData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true, if all points from <em>skeletonData</em> are lying within the <a class="el" href="a00004.html">BoundingBox</a>, that has been calculated at last. </p>
+<p>Otherwise false. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5f14288e08050feda7af19c031bf9a6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SkeletonAnalyzer::deltaX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a964a665e921f88a135556bd522c1c9b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonAnalyzer::deltaXChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a664de7da0bfbde0f502a6e27844e727c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SkeletonAnalyzer::deltaY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7ceffdc6c032afa9847e95e3b0ec0593"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonAnalyzer::deltaYChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aef4793bb834898e3801b76937c0e36e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SkeletonAnalyzer::deltaZ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaacef61698fcb109998e8a78494b60cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonAnalyzer::deltaZChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a170fb6255f6d31599c88fe671a8d5812"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="a00004.html">BoundingBox</a> * SkeletonAnalyzer::getBoundingBoxWholeBody </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the <a class="el" href="a00004.html">BoundingBox</a> enclosing the whole body from the last <a class="el" href="a00027.html#a1b00320eced2c517c11fe596bef576a2" title="This function updates the tracking results. ">update()</a> call. </p>
+
+</div>
+</div>
+<a class="anchor" id="a110125588617a3ddfdd1020d5ba41574"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="a00004.html">BoundingBox</a> * SkeletonAnalyzer::getLastBoundingBox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the <a class="el" href="a00004.html">BoundingBox</a>, that has been calculated at last. </p>
+<p>If no <a class="el" href="a00004.html">BoundingBox</a> is available <b>nullptr</b> will be returned. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac4e9253219f96d5e351535e3c1a9c29b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector3D SkeletonAnalyzer::getVelocity </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>ms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uses <em>timestamp</em> and <em>ms</em> to calculate the avarage movement in the intervall from <b></b>[ timestamp - ms , timestamp ]. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0c8e0a10526c82d573ce1a1f51944630"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonAnalyzer::setDeltaX </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaX</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6b1218340d534a770c90b2834dd911bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonAnalyzer::setDeltaY </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaY</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afeb422921c205cbd3a61a60cc0eb3bb8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonAnalyzer::setDeltaZ </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaZ</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1b00320eced2c517c11fe596bef576a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonAnalyzer::update </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00028.html">SkeletonData</a> *&#160;</td>
+          <td class="paramname"><em>skeleton</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00030.html#a00098" title="a BoundingBox object and an unsigned int to hold the timestemp. ">This</a> function updates the tracking results. </p>
+<p>For this purpose two bounding boxes will be constructed from <em>skeleton</em>. <br />
+ The first one surrounds the lower body that is the parts from the feets to the knees. <a class="el" href="a00030.html#a00098" title="a BoundingBox object and an unsigned int to hold the timestemp. ">This</a> <a class="el" href="a00004.html">BoundingBox</a> is used to derive the human movement pace and direction. <br />
+ The second <a class="el" href="a00004.html">BoundingBox</a> surrounds the whole body, so that one can determine the basic pose of the tracked person. Furthermore the <a class="el" href="a00004.html">BoundingBox</a> can be used to find out in which area of the image data the person is standing. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a899d33993277e90e799bc54ba51a2296"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00004.html">BoundingBox</a> SkeletonAnalyzer::m_boundingBox</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a074f88485799e725550d6c587b7b500f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;<a class="el" href="a00005.html">BoundingBoxWithTimeStamp</a>*&gt; SkeletonAnalyzer::m_boxes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a01568e1587df0c36ed3b4add8facbc05"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SkeletonAnalyzer::m_deltaX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab1288993dc79e5e8e364f28164fd9af5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SkeletonAnalyzer::m_deltaY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8af61d2419d52836c67dfae8880fcb9c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SkeletonAnalyzer::m_deltaZ</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="ad1e4e5c1d9296692dadcd6e616f118e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SkeletonAnalyzer::deltaX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad07b391fd2a3ce7f03b492b80f368a2f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SkeletonAnalyzer::deltaY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adcee4f111bb40a5fc446c30c2c5d2a57"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SkeletonAnalyzer::deltaZ</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00058_source.html">SkeletonData.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/SkeletonData.cpp</li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00060_source.html">SkeletonAnalyzer.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00090.html">SkeletonAnalyzer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00027.html">SkeletonData</a></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00027.html">SkeletonAnalyzer</a></li>
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

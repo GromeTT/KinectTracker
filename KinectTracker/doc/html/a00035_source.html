@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/BoundingBox.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/AnalysisResults.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,6 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -89,7 +91,7 @@ $(document).ready(function(){initNavTree('a00035_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,68 +102,106 @@ $(document).ready(function(){initNavTree('a00035_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">BoundingBox.h</div>  </div>
+<div class="title">AnalysisResults.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BOUNDINGBOX_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BOUNDINGBOX_H</span></div>
+<a href="a00035.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ANALYSISRESULTS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ANALYSISRESULTS_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QSharedPointer&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Vertex.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../inc/SkeletonData.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span>QMatrix4x4;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">typedef</span> QVector&lt;Vertex&gt; Vertices;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00004.html">   13</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a00004.html">BoundingBox</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="a00004.html">BoundingBox</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="a00004.html">BoundingBox</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">float</span> deltaW = 0,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">float</span> deltaD = 0,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">float</span> deltaH = 0 );</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="a00004.html">BoundingBox</a>( <span class="keyword">const</span> <a class="code" href="a00004.html">BoundingBox</a>&amp; other );</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    ~<a class="code" href="a00004.html">BoundingBox</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">float</span> getDepth() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">float</span> getWidth() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">float</span> getHeight() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">float</span> getX() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">float</span> getY() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">float</span> getZ() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> setDepth( <span class="keyword">const</span> <span class="keywordtype">float</span> depth );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> setWidth( <span class="keyword">const</span> <span class="keywordtype">float</span> width );</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> setHeight( <span class="keyword">const</span> <span class="keywordtype">float</span> height );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> setX( <span class="keyword">const</span> <span class="keywordtype">float</span> x );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> setY( <span class="keyword">const</span> <span class="keywordtype">float</span> y );</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> setZ( <span class="keyword">const</span> <span class="keywordtype">float</span> z );</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> isPointInBoundingBox( <span class="keyword">const</span> QVector3D&amp; point );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> arePointsInBoundingBox( <span class="keyword">const</span> QVector&lt;QVector3D&gt; points, <span class="keyword">const</span> <span class="keywordtype">int</span> count );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">float</span> m_width;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">float</span> m_height;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">float</span> m_depth;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">float</span> m_x;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">float</span> m_y;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">float</span> m_z;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;BoundingBox&gt; BoundingBoxPtr;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif // BOUNDINGBOX_H</span></div>
-<div class="ttc" id="a00004_html"><div class="ttname"><a href="a00004.html">BoundingBox</a></div><div class="ttdef"><b>Definition:</b> BoundingBox.h:13</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="a00001.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00001.html">AnalysisResults</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="a00001.html#a020b2b07912eef18bb5ae9615118192f">AnalysisResults</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="a00001.html#a6f232a238c51a88fe302dd6874f85922">~AnalysisResults</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a529f8458a0574509660edcc8c02b7776">setWorkerStatus</a>( <span class="keyword">const</span> QString&amp; status );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a6be9f9ff0b1993e9779fd059c8e91de2">setDirectionX</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00001.html#aa7b63d04c5848c57b1fb3198f8fb48f5">directionX</a> );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a05906a40b1a8ec7ed8d8333564990b0b">setDirectionY</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00001.html#a612d1b553456b25b7f588f5ca5310e0e">directionY</a> );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a568bed59e2b3f02ae313c8a99b0e2f5c">setDirectionZ</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00001.html#a78f5b7db860b5ccaa0fd1a54bcc815e2">directionZ</a> );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a7f0310a7b661d2454e1772575ff6faee">setVelocity</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00001.html#a32b25bcab79516a64fde78cb3f870f05">velocity</a> );</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#aff447783e8be37a00c9db9942f32d4a4">setValuesByVetcor</a>( <span class="keyword">const</span> QVector3D&amp; vec );</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    QString <a class="code" href="a00001.html#a185f9f0da8d0092b65c64743f8c0105f">workerStatus</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00001.html#aa7b63d04c5848c57b1fb3198f8fb48f5">directionX</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00001.html#a612d1b553456b25b7f588f5ca5310e0e">directionY</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00001.html#a78f5b7db860b5ccaa0fd1a54bcc815e2">directionZ</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00001.html#a32b25bcab79516a64fde78cb3f870f05">velocity</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;signals:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a7f320567dbbef79795e32a3739e6ca68">workerStatusChanged</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a995f32a7b01dc305682db58c82a0c0f4">directionXChanged</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#ab2dc7f3b695965b41a8967bfadc6d71e">directionYChanged</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#af5a3263ab582cab9531bcaadd6267c93">directionZChanged</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#ab311c230ce884301bc73697993e4a704">velocityChanged</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00001.html#a0302887c10a36abf97f7d27f600db409">radToDeg</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> rad );</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a00001.html#a3b302d4031cf51e214535a631aafa7d1">   36</a></span>&#160;    QString <a class="code" href="a00001.html#a3b302d4031cf51e214535a631aafa7d1">m_workerStatus</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a00001.html#acec095f4faa08b2b42597c26c8ac818d">   37</a></span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00001.html#acec095f4faa08b2b42597c26c8ac818d">m_directionX</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00001.html#ac35e9f8104f69d24884f53499388b172">   38</a></span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00001.html#ac35e9f8104f69d24884f53499388b172">m_directionY</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a00001.html#a5999e0a117058c89c92b8b62565d1b73">   39</a></span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00001.html#a5999e0a117058c89c92b8b62565d1b73">m_directionZ</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00001.html#a472f2de78be8a038d6a33c4b6f07d34b">   40</a></span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00001.html#a472f2de78be8a038d6a33c4b6f07d34b">m_velocity</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    Q_PROPERTY( QString workerStatus MEMBER <a class="code" href="a00001.html#a3b302d4031cf51e214535a631aafa7d1">m_workerStatus</a></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                READ workerStatus</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                WRITE setWorkerStatus</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00001.html#a3fd453bc84350dc8cc9a67aabada0761">   45</a></span>&#160;                NOTIFY workerStatusChanged )</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> directionX MEMBER <a class="code" href="a00001.html#acec095f4faa08b2b42597c26c8ac818d">m_directionX</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                READ directionX</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                WRITE setDirectionX</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a00001.html#a1ed376bbef1dba248f6a214410398aa3">   49</a></span>&#160;                NOTIFY directionXChanged )</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> directionY MEMBER <a class="code" href="a00001.html#ac35e9f8104f69d24884f53499388b172">m_directionY</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                READ directionY</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                WRITE setDirectionY</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00001.html#abe259e537c6b9f09871ee34be4f26be1">   53</a></span>&#160;                NOTIFY directionYChanged )</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> directionZ MEMBER <a class="code" href="a00001.html#a5999e0a117058c89c92b8b62565d1b73">m_directionZ</a></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                READ directionZ</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                WRITE setDirectionZ</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a00001.html#abbcc333b13510aa1c52c2f146bc85581">   57</a></span>&#160;                NOTIFY directionZChanged )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> velocity MEMBER <a class="code" href="a00001.html#a472f2de78be8a038d6a33c4b6f07d34b">m_velocity</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                READ velocity</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                WRITE setVelocity</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a00001.html#a1e9fb51cf1b09e5070b124ff9e3848df">   61</a></span>&#160;                NOTIFY velocityChanged )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif // ANALYSISRESULTS_H</span></div>
+<div class="ttc" id="a00001_html_aa7b63d04c5848c57b1fb3198f8fb48f5"><div class="ttname"><a href="a00001.html#aa7b63d04c5848c57b1fb3198f8fb48f5">AnalysisResults::directionX</a></div><div class="ttdeci">float directionX() const </div></div>
+<div class="ttc" id="a00001_html_a612d1b553456b25b7f588f5ca5310e0e"><div class="ttname"><a href="a00001.html#a612d1b553456b25b7f588f5ca5310e0e">AnalysisResults::directionY</a></div><div class="ttdeci">float directionY() const </div></div>
+<div class="ttc" id="a00001_html_a529f8458a0574509660edcc8c02b7776"><div class="ttname"><a href="a00001.html#a529f8458a0574509660edcc8c02b7776">AnalysisResults::setWorkerStatus</a></div><div class="ttdeci">void setWorkerStatus(const QString &amp;status)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:20</div></div>
+<div class="ttc" id="a00001_html_ac35e9f8104f69d24884f53499388b172"><div class="ttname"><a href="a00001.html#ac35e9f8104f69d24884f53499388b172">AnalysisResults::m_directionY</a></div><div class="ttdeci">float m_directionY</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:38</div></div>
+<div class="ttc" id="a00001_html_ab311c230ce884301bc73697993e4a704"><div class="ttname"><a href="a00001.html#ab311c230ce884301bc73697993e4a704">AnalysisResults::velocityChanged</a></div><div class="ttdeci">void velocityChanged()</div></div>
+<div class="ttc" id="a00001_html_a0302887c10a36abf97f7d27f600db409"><div class="ttname"><a href="a00001.html#a0302887c10a36abf97f7d27f600db409">AnalysisResults::radToDeg</a></div><div class="ttdeci">float radToDeg(const float rad)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:98</div></div>
+<div class="ttc" id="a00001_html"><div class="ttname"><a href="a00001.html">AnalysisResults</a></div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:6</div></div>
+<div class="ttc" id="a00001_html_a020b2b07912eef18bb5ae9615118192f"><div class="ttname"><a href="a00001.html#a020b2b07912eef18bb5ae9615118192f">AnalysisResults::AnalysisResults</a></div><div class="ttdeci">AnalysisResults()</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:6</div></div>
+<div class="ttc" id="a00001_html_a6f232a238c51a88fe302dd6874f85922"><div class="ttname"><a href="a00001.html#a6f232a238c51a88fe302dd6874f85922">AnalysisResults::~AnalysisResults</a></div><div class="ttdeci">~AnalysisResults()</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:15</div></div>
+<div class="ttc" id="a00001_html_a78f5b7db860b5ccaa0fd1a54bcc815e2"><div class="ttname"><a href="a00001.html#a78f5b7db860b5ccaa0fd1a54bcc815e2">AnalysisResults::directionZ</a></div><div class="ttdeci">float directionZ() const </div></div>
+<div class="ttc" id="a00001_html_aff447783e8be37a00c9db9942f32d4a4"><div class="ttname"><a href="a00001.html#aff447783e8be37a00c9db9942f32d4a4">AnalysisResults::setValuesByVetcor</a></div><div class="ttdeci">void setValuesByVetcor(const QVector3D &amp;vec)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:65</div></div>
+<div class="ttc" id="a00001_html_a568bed59e2b3f02ae313c8a99b0e2f5c"><div class="ttname"><a href="a00001.html#a568bed59e2b3f02ae313c8a99b0e2f5c">AnalysisResults::setDirectionZ</a></div><div class="ttdeci">void setDirectionZ(const float directionZ)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:47</div></div>
+<div class="ttc" id="a00001_html_a7f320567dbbef79795e32a3739e6ca68"><div class="ttname"><a href="a00001.html#a7f320567dbbef79795e32a3739e6ca68">AnalysisResults::workerStatusChanged</a></div><div class="ttdeci">void workerStatusChanged()</div></div>
+<div class="ttc" id="a00001_html_a7f0310a7b661d2454e1772575ff6faee"><div class="ttname"><a href="a00001.html#a7f0310a7b661d2454e1772575ff6faee">AnalysisResults::setVelocity</a></div><div class="ttdeci">void setVelocity(const float velocity)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:56</div></div>
+<div class="ttc" id="a00001_html_a05906a40b1a8ec7ed8d8333564990b0b"><div class="ttname"><a href="a00001.html#a05906a40b1a8ec7ed8d8333564990b0b">AnalysisResults::setDirectionY</a></div><div class="ttdeci">void setDirectionY(const float directionY)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:38</div></div>
+<div class="ttc" id="a00001_html_a995f32a7b01dc305682db58c82a0c0f4"><div class="ttname"><a href="a00001.html#a995f32a7b01dc305682db58c82a0c0f4">AnalysisResults::directionXChanged</a></div><div class="ttdeci">void directionXChanged()</div></div>
+<div class="ttc" id="a00001_html_a32b25bcab79516a64fde78cb3f870f05"><div class="ttname"><a href="a00001.html#a32b25bcab79516a64fde78cb3f870f05">AnalysisResults::velocity</a></div><div class="ttdeci">float velocity() const </div></div>
+<div class="ttc" id="a00001_html_ab2dc7f3b695965b41a8967bfadc6d71e"><div class="ttname"><a href="a00001.html#ab2dc7f3b695965b41a8967bfadc6d71e">AnalysisResults::directionYChanged</a></div><div class="ttdeci">void directionYChanged()</div></div>
+<div class="ttc" id="a00001_html_a185f9f0da8d0092b65c64743f8c0105f"><div class="ttname"><a href="a00001.html#a185f9f0da8d0092b65c64743f8c0105f">AnalysisResults::workerStatus</a></div><div class="ttdeci">QString workerStatus() const </div></div>
+<div class="ttc" id="a00001_html_a472f2de78be8a038d6a33c4b6f07d34b"><div class="ttname"><a href="a00001.html#a472f2de78be8a038d6a33c4b6f07d34b">AnalysisResults::m_velocity</a></div><div class="ttdeci">float m_velocity</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:40</div></div>
+<div class="ttc" id="a00001_html_acec095f4faa08b2b42597c26c8ac818d"><div class="ttname"><a href="a00001.html#acec095f4faa08b2b42597c26c8ac818d">AnalysisResults::m_directionX</a></div><div class="ttdeci">float m_directionX</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:37</div></div>
+<div class="ttc" id="a00001_html_a6be9f9ff0b1993e9779fd059c8e91de2"><div class="ttname"><a href="a00001.html#a6be9f9ff0b1993e9779fd059c8e91de2">AnalysisResults::setDirectionX</a></div><div class="ttdeci">void setDirectionX(const float directionX)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:29</div></div>
+<div class="ttc" id="a00001_html_af5a3263ab582cab9531bcaadd6267c93"><div class="ttname"><a href="a00001.html#af5a3263ab582cab9531bcaadd6267c93">AnalysisResults::directionZChanged</a></div><div class="ttdeci">void directionZChanged()</div></div>
+<div class="ttc" id="a00001_html_a5999e0a117058c89c92b8b62565d1b73"><div class="ttname"><a href="a00001.html#a5999e0a117058c89c92b8b62565d1b73">AnalysisResults::m_directionZ</a></div><div class="ttdeci">float m_directionZ</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:39</div></div>
+<div class="ttc" id="a00001_html_a3b302d4031cf51e214535a631aafa7d1"><div class="ttname"><a href="a00001.html#a3b302d4031cf51e214535a631aafa7d1">AnalysisResults::m_workerStatus</a></div><div class="ttdeci">QString m_workerStatus</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><b>BoundingBox.h</b></li>
-    <li class="footer">Generated on Mon Jun 2 2014 23:32:37 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00035.html">AnalysisResults.h</a></li>
+    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
