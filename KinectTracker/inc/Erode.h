@@ -1,11 +1,11 @@
 #ifndef ERODE_H
 #define ERODE_H
 
-#include <QObject>
 #include <opencv2/opencv.hpp>
 #include <QSharedPointer>
+#include "ProcessingComponent.h"
 
-class Erode : public QObject
+class Erode : public ProcessingComponent
 {
     Q_OBJECT
 

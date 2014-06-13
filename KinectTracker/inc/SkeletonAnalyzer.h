@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QVector>
 #include <QPair>
+#include <QRect>
 #include "BoundingBox.h"
 
 class QVector3D;
@@ -17,7 +18,7 @@ public:
     SkeletonAnalyzer();
     ~SkeletonAnalyzer();
 
-    void update( const SkeletonData* skeleton,
+    void update( const SkeletonDataPtr& skeleton,
                  const unsigned int timestamp );
 
     void setDeltaX( const float deltaX );
@@ -25,6 +26,8 @@ public:
     void setDeltaZ( const float deltaZ );
     void setPhi1( const float phi1 );
     void setPhi2( const float phi2 );
+    void setKneelingThreshold( const float threshold );
+    void setLyingThreshold( const float threshold );
 
     float               estimatedHeight() const;
     float               currentHeight() const;
@@ -33,27 +36,34 @@ public:
     float               deltaZ() const;
     float               phi1() const;
     float               phi2() const;
+    float               kneelingThreshold() const;
+    float               lyingThreshold() const;
     QString             workerStatus() const;
-    bool                arePointsInLastBoundingBox( const SkeletonData& skeletonData );
+    bool                arePointsInLastBoundingBox( const SkeletonDataPtr& skeletonData );
     QVector3D           getVelocity( const unsigned int timestamp,
                                      const unsigned int ms );
-    const BoundingBox*  getLastBoundingBox() const;
-    const BoundingBox*  getBoundingBoxWholeBody() const;
+    const BoundingBox*    getLastBoundingBox() const;
+    const BoundingBox*    getBoundingBoxWholeBody() const;
+    const SkeletonDataPtr lastSkeletonData() const;
+    const QVector<QVector3D>& regionOfInterest() const;
 
 private:
-    void calculateFeatureVector( const SkeletonData* skeletonData );
+    void calculateFeatureVector( const SkeletonDataPtr& skeletonData );
     void addBoundingBox( BoundingBoxPtr& boundingBox,
                          const unsigned int timestamp );
-    bool calculateHeight( const SkeletonData* skeletonData, float& height );
+    bool calculateHeight( const SkeletonDataPtr skeletonData, float& height );
 
-    float   m_estimatedHeight;
-    float   m_currentHeight;
-    float   m_deltaX;
-    float   m_deltaY;
-    float   m_deltaZ;
-    float   m_phi1;
-    float   m_phi2;
-    QString m_workerStatus;
+    float     m_estimatedHeight;
+    float     m_currentHeight;
+    float     m_deltaX;
+    float     m_deltaY;
+    float     m_deltaZ;
+    float     m_phi1;
+    float     m_phi2;
+    float     m_kneelingThreshold;
+    float     m_lyingThreshold;
+    QString   m_workerStatus;
+    QVector<QVector3D> m_regionOfInteres;
 
 signals:
     void estimatedHeightChanged();
@@ -63,13 +73,15 @@ signals:
     void deltaZChanged();
     void phi1Changed();
     void phi2Changed();
+    void kneelingThresholdChanged();
+    void lyingThresholdChanged();
     void workerStatusChanged();
 
 private:
     QVector<BoundingBoxWithTimeStamp*> m_boxes;
     BoundingBox                        m_boundingBox;
+    SkeletonDataPtr                    m_skeletonData;
 
-    // PROPERTIES
 private:
     Q_PROPERTY( float estimatedHeight MEMBER m_estimatedHeight
                 READ estimatedHeight
@@ -103,6 +115,16 @@ private:
                 READ phi2
                 WRITE setPhi2
                 NOTIFY phi1Changed )
+
+    Q_PROPERTY( float kneelingThreshold MEMBER m_kneelingThreshold
+                READ kneelingThreshold
+                WRITE setKneelingThreshold
+                NOTIFY kneelingThresholdChanged )
+
+    Q_PROPERTY( float lyingThreshold MEMBER m_lyingThreshold
+                READ lyingThreshold()
+                WRITE setLyingThreshold
+                NOTIFY lyingThresholdChanged )
 
     Q_PROPERTY ( QString workerStatus MEMBER m_workerStatus
                  READ workerStatus

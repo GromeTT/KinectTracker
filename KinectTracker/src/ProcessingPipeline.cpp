@@ -1,5 +1,6 @@
 #include "../Inc/ProcessingPipeline.h"
 #include "../inc/ImageAnalyzer.h"
+#include <vector>
 #include <QDebug>
 
 ProcessingPipeline::ProcessingPipeline( ImageAnalyzer* parent )
@@ -107,4 +108,67 @@ void BSPipeline::process( cv::Mat& input )
     mp_erode->erode( input );
     mp_dilate->dilate( input );
 //    diff.copyTo( input );
+}
+
+
+/**************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************/
+
+HOGDetectionPipeline::HOGDetectionPipeline( ImageAnalyzer* parent )
+    : ProcessingPipeline( parent )
+    , mp_HOGFeatureDetector( new HOGFeatureDetector() )
+{
+    mp_HOGFeatureDetector->useDefaultPeopleDetector();
+    m_processingComponents.append( mp_HOGFeatureDetector.data() );
+}
+
+HOGDetectionPipeline::~HOGDetectionPipeline()
+{
+
+}
+
+void HOGDetectionPipeline::process( cv::Mat& input )
+{
+//    cv::Mat greyImg;
+//    cv::cvtColor( input, greyImg, CV_BGR2GRAY );
+//    mp_HOGFeatureDetector->detectMultiScale( greyImg,
+//                                             m_rectangles );
+
+//    for ( int i = 0; i < m_rectangles.size(); ++i )
+//    {
+
+//        cv::rectangle( input, m_rectangles.at( i ), cv::Scalar( 255, 0, 0 ), 5 );
+//    }
+}
+
+/**************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************/
+
+SkinColorDetectionPipeline::SkinColorDetectionPipeline( ImageAnalyzer* parent )
+    : ProcessingPipeline( parent )
+    , mp_skinColorDetector( new SkinColorDetector() )
+{
+    m_processingComponents.append( mp_skinColorDetector.data() );
+}
+
+SkinColorDetectionPipeline::~SkinColorDetectionPipeline()
+{
+
+}
+
+void SkinColorDetectionPipeline::process( cv::Mat& input )
+{
+    mp_skinColorDetector->detect( input );
 }

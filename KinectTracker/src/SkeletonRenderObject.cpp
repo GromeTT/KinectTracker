@@ -84,11 +84,11 @@ SkeletonRenderObject::~SkeletonRenderObject()
    \brief SkeletonRenderObject::updateData
    Updates the vertex buffer with \a data.
  */
-void SkeletonRenderObject::updateData( const SkeletonData& data )
+void SkeletonRenderObject::updateData( const SkeletonDataPtr& data )
 {
     m_vao.bind();
     m_vertexBuffer.bind();
-    m_vertexBuffer.allocate( data.getJoints().data(), data.getJoints().count() * sizeof( QVector3D ) );
+     m_vertexBuffer.allocate( data->getJoints().data(), data->getJoints().count() * sizeof( QVector3D ) );
     m_vao.release();
 }
 

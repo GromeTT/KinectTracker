@@ -6,13 +6,14 @@
 #include "Windows.h"
 #include "NuiApi.h"
 #include "NuiImageCamera.h"
+#include "SkeletonData.h"
 #include <QVector>
 #include <QSize>
 #include <QSharedPointer>
 #include <QOpenGLTexture>
 
 class QImage;
-class SkeletonData;
+class QVector2D;
 
 class Kinect
 {
@@ -51,7 +52,7 @@ public:
     HRESULT getRGBImage( uchar* img );
     HRESULT getDepthImage( QImage*& img );
     HRESULT getDepthImage( uchar* img );
-    HRESULT getSkeleton( QList<SkeletonData*>& skeletons );
+    HRESULT getSkeleton( QList<SkeletonDataPtr>& skeletons );
     QSize getRGBStreamResoultion() const;
     QSize getDepthStreamResolution() const;
     bool isInitialized() const;
@@ -71,6 +72,8 @@ private:
     bool        m_rgbStreamOpen;
     bool        m_deptStreamOpen;
 };
+
+QVector2D transformFromSkeltonToRGB( const QVector3D& coordinates );
 
 typedef QSharedPointer<Kinect> KinectPtr;
 

@@ -1,5 +1,6 @@
 #include "../inc/SkeletonData.h"
 #include <math.h>
+#include <QDebug>
 
 
 /*!
@@ -29,7 +30,7 @@ SkeletonData::SkeletonData( const NUI_SKELETON_DATA& skeletonData )
  */
 SkeletonData::~SkeletonData()
 {
-
+    qDebug() << "SkeltonData deleted.";
 }
 
 /*!

@@ -40,8 +40,15 @@ SOURCES += src/main.cpp\
            src/Threshold.cpp \
            src/TransformationObject.cpp \
            src/SkeletonData.cpp \
-    src/SkeletonRenderObject.cpp \
-    src/RenderObjectInterface.cpp
+           src/SkeletonRenderObject.cpp \
+           src/RenderObjectInterface.cpp \
+           src/HOGFeatureDetector.cpp \
+           src/SkinColorDetector.cpp \
+    src/InRange.cpp \
+    src/ProcessingComponent.cpp \
+    src/ArrayManipulator.cpp \
+    src/FloatEditor.cpp \
+    src/CustomStyledDelegate.cpp
 
 HEADERS  += inc/MainWindow.h \
             inc/OpenGLWindow.h \
@@ -70,16 +77,24 @@ HEADERS  += inc/MainWindow.h \
             inc/Threshold.h \
             inc/TransformationObject.h \
             inc/SkeletonData.h \
-    inc/SkeletonRenderObject.h \
-    inc/RenderObjectInterface.h \
-    inc/Defines.h
+            inc/SkeletonRenderObject.h \
+            inc/RenderObjectInterface.h \
+            inc/Defines.h \
+            inc/HOGFeatureDetector.h \
+            inc/SkinColorDetector.h \
+    inc/InRange.h \
+    inc/ProcessingComponent.h \
+    inc/ArrayManipulator.h \
+    inc/FloatEditor.h \
+    inc/CustomStyledDelegate.h
 
 FORMS    += MainWindow.ui \
             KinectInitializeDialog.ui \
             Explorer.ui \
             SceneGraphWidget.ui \
             DepthViewerWidget.ui \
-            RGBViewerWidget.ui
+            RGBViewerWidget.ui \
+    ArrayManipulator.ui
 
 
 TRANSLATIONS = trans/trans_de.ts
@@ -135,5 +150,8 @@ CONFIG( release, debug|release )
             -lopencv_video249 \
             -lopencv_highgui249 \
 }
+
+RESOURCES += \
+    Resources.qrc
 
 

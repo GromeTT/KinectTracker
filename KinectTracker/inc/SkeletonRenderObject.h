@@ -2,12 +2,12 @@
 #define SKELETONRENDEROBJECT_H
 
 #include "RenderObjectInterface.h"
+#include "SkeletonData.h"
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLBuffer>
 
 typedef QVector<unsigned int> Indices;
 
-class SkeletonData;
 class QOpenGLShaderProgram;
 class Vertex;
 
@@ -17,7 +17,7 @@ public:
     SkeletonRenderObject();
     ~SkeletonRenderObject();
 
-    void updateData( const SkeletonData& data );
+    void updateData( const SkeletonDataPtr& data );
     void setShaderProgramm( QOpenGLShaderProgram* program );
 
 private:

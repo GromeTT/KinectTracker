@@ -14,17 +14,17 @@ Threshold::~Threshold()
 
 }
 
-void Threshold::threshold(cv::Mat& input)
+void Threshold::threshold( cv::Mat& input )
 {
     cv::threshold( input, input, m_threshold, m_maxValue, m_thresholdType );
 }
 
-void Threshold::threshold(cv::Mat& input, cv::Mat& output)
+void Threshold::threshold( cv::Mat& input, cv::Mat& output )
 {
     cv::threshold( input, output, m_threshold, m_maxValue, m_thresholdType );
 }
 
-void Threshold::setMaxValue(const float maxValue)
+void Threshold::setMaxValue( const float maxValue )
 {
     if ( m_maxValue != maxValue )
     {
@@ -51,7 +51,7 @@ void Threshold::setThreshold ( const float threshold )
 //    }
 //}
 
-void Threshold::setThresholdType(const Threshold::ThresholdType thresholdType)
+void Threshold::setThresholdType( const Threshold::ThresholdType thresholdType )
 {
     if ( m_thresholdType != thresholdType )
     {

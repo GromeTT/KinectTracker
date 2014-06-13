@@ -6,6 +6,7 @@
 #include <NuiApi.h>
 #include <QVector3D>
 #include <QVector>
+#include <QSharedPointer>
 
 class SkeletonData
 {
@@ -69,6 +70,8 @@ private:
     QVector<TrackState> m_jointTrackState;
     Quality             m_quality;
 };
+
+typedef QSharedPointer<SkeletonData> SkeletonDataPtr;
 
 void copy( const Vector4& source, QVector3D& target );
 

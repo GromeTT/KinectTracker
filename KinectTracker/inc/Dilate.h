@@ -2,9 +2,9 @@
 #define DIALTE_H
 
 #include <opencv2/opencv.hpp>
-#include <QObject>
+#include "ProcessingComponent.h"
 
-class Dilate : public QObject
+class Dilate : public ProcessingComponent
 {
     Q_OBJECT
 

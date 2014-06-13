@@ -4,9 +4,9 @@
 #include <QDebug>
 
 AnalysisResults::AnalysisResults()
-    : m_directionX( 0 )
-    , m_directionY( 0 )
-    , m_directionZ( 0 )
+    : m_roll( 0 )
+    , m_yaw( 0 )
+    , m_pitch( 0 )
     , m_velocity( 0 )
 {
     setObjectName( "AnalysisResults" );
@@ -26,30 +26,30 @@ void AnalysisResults::setWorkerStatus( const QString& status )
     }
 }
 
-void AnalysisResults::setDirectionX( const float directionX )
+void AnalysisResults::setRoll( const float angle )
 {
-    if ( m_directionX != directionX )
+    if ( m_roll != angle )
     {
-        m_directionX = directionX;
-        emit directionXChanged();
+        m_roll = angle;
+        emit rollChanged();
     }
 }
 
-void AnalysisResults::setDirectionY( const float directionY )
+void AnalysisResults::setYaw( const float angle )
 {
-    if ( m_directionY != directionY )
+    if ( m_yaw != angle )
     {
-        m_directionY = directionY;
-        emit directionYChanged();
+        m_yaw = angle;
+        emit yawChanged();
     }
 }
 
-void AnalysisResults::setDirectionZ( const float directionZ )
+void AnalysisResults::setPitch( const float angle )
 {
-    if ( m_directionZ != directionZ)
+    if ( m_pitch != angle )
     {
-        m_directionZ = directionZ;
-        emit directionZChanged();
+        m_pitch = angle;
+        emit pitchChanged();
     }
 }
 
@@ -66,7 +66,7 @@ void AnalysisResults::setValuesByVetcor( const QVector3D& vec )
 {
     setVelocity( vec.length() );
     // http://de.wikipedia.org/wiki/Polarkoordinaten
-    setDirectionY( radToDeg( atan2( vec.z(), vec.x() ) ) );
+    setYaw( radToDeg( atan2( vec.z(), vec.x() ) ) );
 }
 
 QString AnalysisResults::workerStatus() const
@@ -74,19 +74,19 @@ QString AnalysisResults::workerStatus() const
     return m_workerStatus;
 }
 
-float AnalysisResults::directionX() const
+float AnalysisResults::roll() const
 {
-    return m_directionX;
+    return m_roll;
 }
 
-float AnalysisResults::directionY() const
+float AnalysisResults::yaw() const
 {
-    return m_directionY;
+    return m_yaw;
 }
 
-float AnalysisResults::directionZ() const
+float AnalysisResults::pitch() const
 {
-    return m_directionZ;
+    return m_pitch;
 }
 
 float AnalysisResults::velocity() const

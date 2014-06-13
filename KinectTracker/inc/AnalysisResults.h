@@ -12,49 +12,53 @@ public:
     ~AnalysisResults();
 
     void setWorkerStatus( const QString& status );
-    void setDirectionX( const float directionX );
-    void setDirectionY( const float directionY );
-    void setDirectionZ( const float directionZ );
+    void setRoll( const float angle );
+    void setPitch( const float angle );
+    void setYaw( const float angle );
     void setVelocity( const float velocity );
     void setValuesByVetcor( const QVector3D& vec );
 
     QString workerStatus() const;
-    float   directionX() const;
-    float   directionY() const;
-    float   directionZ() const;
+    float   roll() const;
+    float   pitch() const;
+    float   yaw() const;
     float   velocity() const;
 
 signals:
     void workerStatusChanged();
-    void directionXChanged();
-    void directionYChanged();
-    void directionZChanged();
+    void rollChanged();
+    void pitchChanged();
+    void yawChanged();
     void velocityChanged();
 
 private:
     float radToDeg( const float rad );
     QString m_workerStatus;
-    float   m_directionX;
-    float   m_directionY;
-    float   m_directionZ;
+    float   m_roll;
+    float   m_pitch;
+    float   m_yaw;
     float   m_velocity;
 
     Q_PROPERTY( QString workerStatus MEMBER m_workerStatus
                 READ workerStatus
                 WRITE setWorkerStatus
                 NOTIFY workerStatusChanged )
-    Q_PROPERTY( float directionX MEMBER m_directionX
-                READ directionX
-                WRITE setDirectionX
-                NOTIFY directionXChanged )
-    Q_PROPERTY( float directionY MEMBER m_directionY
-                READ directionY
-                WRITE setDirectionY
-                NOTIFY directionYChanged )
-    Q_PROPERTY( float directionZ MEMBER m_directionZ
-                READ directionZ
-                WRITE setDirectionZ
-                NOTIFY directionZChanged )
+
+    Q_PROPERTY( float roll MEMBER m_roll
+                READ roll
+                WRITE setRoll
+                NOTIFY rollChanged)
+
+    Q_PROPERTY( float pitch MEMBER m_pitch
+                READ pitch
+                WRITE setPitch
+                NOTIFY pitchChanged )
+
+    Q_PROPERTY( float yaw MEMBER m_yaw
+                READ yaw
+                WRITE setYaw
+                NOTIFY yawChanged )
+
     Q_PROPERTY( float velocity MEMBER m_velocity
                 READ velocity
                 WRITE setVelocity

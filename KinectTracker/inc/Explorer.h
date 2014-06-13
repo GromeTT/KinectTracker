@@ -6,7 +6,7 @@
 #include <QDebug>
 #include <QSignalMapper>
 #include <QMetaMethod>
-
+#include "CustomStyledDelegate.h"
 
 namespace Ui {
     class Explorer;
@@ -29,9 +29,10 @@ private slots:
     void propertyChanged();
 
 private:
-    Ui::Explorer* ui;
-    QObject*      mp_object;
-    bool          mp_updateHorizontalHeaderLabels;
+    Ui::Explorer*           ui;
+    CustomStyledDelegate*   mp_styledDelegate;
+    QObject*                mp_object;
+    bool                    mp_updateHorizontalHeaderLabels;
 };
 
 #endif // EXPLORER_H

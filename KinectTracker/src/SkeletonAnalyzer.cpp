@@ -17,7 +17,11 @@ SkeletonAnalyzer::SkeletonAnalyzer()
     , m_deltaZ( 0.1f )
     , m_phi1( 0.0f )
     , m_phi2( 0.0f )
+    , m_skeletonData( nullptr )
+    , m_kneelingThreshold( 0.55f )
+    , m_lyingThreshold( 0.4f )
 {
+    m_regionOfInteres.resize( 4 );
 }
 
 /*!
@@ -41,9 +45,10 @@ SkeletonAnalyzer::~SkeletonAnalyzer()
    pose of the tracked person. Furthermore the BoundingBox can be used to find out in which
    area of the image data the person is standing.
  */
-void SkeletonAnalyzer::update( const SkeletonData* skeleton,
+void SkeletonAnalyzer::update( const SkeletonDataPtr& skeleton,
                                const unsigned int timestamp )
 {
+    m_skeletonData = SkeletonDataPtr( skeleton );
     QVector<QVector3D> lowerBody;
     lowerBody << skeleton->getJoint( SkeletonData::Joints::FootLeft );
     lowerBody << skeleton->getJoint( SkeletonData::Joints::AnkleLeft );
@@ -75,6 +80,28 @@ void SkeletonAnalyzer::update( const SkeletonData* skeleton,
     // Compute the BoundingBox which encloses the whole body with no
     // extra space.
     m_boundingBox.calculateBoundingBox( skeleton->getJoints() );
+    float z   = m_boundingBox.getZ() + m_boundingBox.getDepth() / 2;
+    float x_p = m_boundingBox.getX() + m_boundingBox.getWidth() / 2;
+    float x_n = m_boundingBox.getX() - m_boundingBox.getWidth() / 2;
+    float y_p = m_boundingBox.getY() + m_boundingBox.getHeight() / 2;
+    float y_n = m_boundingBox.getY() - m_boundingBox.getHeight() / 2;
+
+    // Top right
+    m_regionOfInteres[0].setX( x_p );
+    m_regionOfInteres[0].setY( y_p );
+    m_regionOfInteres[0].setZ( z );
+    // Bottom right
+    m_regionOfInteres[1].setX( x_p );
+    m_regionOfInteres[1].setY( y_n );
+    m_regionOfInteres[1].setZ( z );
+    // Bottom left
+    m_regionOfInteres[2].setX( x_n );
+    m_regionOfInteres[2].setY( y_n );
+    m_regionOfInteres[2].setZ( z );
+    // Top left
+    m_regionOfInteres[3].setX( x_n );
+    m_regionOfInteres[3].setY( y_p );
+    m_regionOfInteres[3].setZ( z );
 
     // Analyse the pose of the person on the basis of the BoundingBox height.
     if ( m_boundingBox.getHeight() > m_estimatedHeight &&
@@ -93,13 +120,13 @@ void SkeletonAnalyzer::update( const SkeletonData* skeleton,
     }
     m_currentHeight = m_boundingBox.getHeight();
     emit currentHeightChanged();
-    if ( m_currentHeight >= 0.55 * m_estimatedHeight )
+    if ( m_currentHeight >= m_kneelingThreshold * m_estimatedHeight )
     {
         m_workerStatus = tr( "standing" );
     }
     else
     {
-        if ( m_currentHeight < 0.4 * m_estimatedHeight )
+        if ( m_currentHeight < m_lyingThreshold * m_estimatedHeight )
         {
             m_workerStatus = tr( "lying" );
         }
@@ -148,6 +175,24 @@ void SkeletonAnalyzer::setPhi2(const float phi2)
     }
 }
 
+void SkeletonAnalyzer::setKneelingThreshold( const float threshold )
+{
+    if( m_kneelingThreshold != threshold )
+    {
+        m_kneelingThreshold = threshold;
+        emit kneelingThresholdChanged();
+    }
+}
+
+void SkeletonAnalyzer::setLyingThreshold( const float threshold )
+{
+    if ( m_lyingThreshold != threshold )
+    {
+        m_lyingThreshold = threshold;
+        emit lyingThresholdChanged();
+    }
+}
+
 float SkeletonAnalyzer::estimatedHeight() const
 {
     return m_estimatedHeight;
@@ -183,6 +228,16 @@ float SkeletonAnalyzer::phi2() const
     return m_phi2;
 }
 
+float SkeletonAnalyzer::kneelingThreshold() const
+{
+    return m_kneelingThreshold;
+}
+
+float SkeletonAnalyzer::lyingThreshold() const
+{
+    return m_lyingThreshold;
+}
+
 QString SkeletonAnalyzer::workerStatus() const
 {
     return m_workerStatus;
@@ -194,7 +249,7 @@ QString SkeletonAnalyzer::workerStatus() const
    that has been calculated at last.
    Otherwise false.
  */
-bool SkeletonAnalyzer::arePointsInLastBoundingBox( const SkeletonData& skeletonData )
+bool SkeletonAnalyzer::arePointsInLastBoundingBox( const SkeletonDataPtr& skeletonData )
 {
     if ( !m_boxes.first() )
     {
@@ -202,7 +257,7 @@ bool SkeletonAnalyzer::arePointsInLastBoundingBox( const SkeletonData& skeletonD
     }
     else
     {
-        return m_boxes.first()->m_box->arePointsInsideBoundingBox( skeletonData.getJoints() );
+        return m_boxes.first()->m_box->arePointsInsideBoundingBox( skeletonData->getJoints() );
     }
 }
 
@@ -255,6 +310,16 @@ const BoundingBox* SkeletonAnalyzer::getBoundingBoxWholeBody() const
     return &m_boundingBox;
 }
 
+const SkeletonDataPtr SkeletonAnalyzer::lastSkeletonData() const
+{
+    return m_skeletonData;
+}
+
+const QVector<QVector3D>& SkeletonAnalyzer::regionOfInterest() const
+{
+    return m_regionOfInteres;
+}
+
 /*!
    \fn SkeletonAnalyzer::calculateFeatureVector
    Calculates a vector of features. \n
@@ -262,7 +327,7 @@ const BoundingBox* SkeletonAnalyzer::getBoundingBoxWholeBody() const
    1. Gestenbasierte Steuerung von interaktiven Umgebungen mithilfe der Microsoft Kinect - Ludwig Schmutzler \n
    2. Real-Time Classification of Dance Gestures from Skeleton Animation - Michais Raptis, Darko Kirovski, Hugues Hoppe \n
  */
-void SkeletonAnalyzer::calculateFeatureVector(const SkeletonData* skeletonData )
+void SkeletonAnalyzer::calculateFeatureVector( const SkeletonDataPtr& skeletonData )
 {
     // Calculate the stable part between spine and shoulder center.
     // The vector is directed upwards.
@@ -300,7 +365,7 @@ void SkeletonAnalyzer::addBoundingBox( BoundingBoxPtr& boundingBox,
     }
 }
 
-bool SkeletonAnalyzer::calculateHeight( const SkeletonData* skeletonData, float& height )
+bool SkeletonAnalyzer::calculateHeight( const SkeletonDataPtr skeletonData, float& height )
 {
     // http://www.codeproject.com/Tips/380152/Kinect-for-Windows-Find-User-Height-Accurately
 

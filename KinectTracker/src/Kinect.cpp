@@ -5,6 +5,7 @@
 #include <QColor>
 #include <QDebug>
 #include <iostream>
+#include <QVector2D>
 
 /*!
     \class Kinect
@@ -376,11 +377,8 @@ HRESULT Kinect::getDepthImage(uchar* img)
  * @param skeletons
  * @return
  */
-HRESULT Kinect::getSkeleton( QList<SkeletonData*>& skeletons )
+HRESULT Kinect::getSkeleton( QList<SkeletonDataPtr>& skeletons )
 {
-    // Resize vector for storing skeletons
-    qDeleteAll( skeletons );
-
     NUI_SKELETON_FRAME skeletonFrame;
     if ( mp_sensor->NuiSkeletonGetNextFrame( 0, &skeletonFrame) != S_OK )
     {
@@ -396,8 +394,7 @@ HRESULT Kinect::getSkeleton( QList<SkeletonData*>& skeletons )
         {
             case NUI_SKELETON_TRACKED:
             {
-                SkeletonData* skeleton = new SkeletonData( skeletonFrame.SkeletonData[i] );
-                skeletons.append( skeleton );
+                skeletons.append( SkeletonDataPtr( new SkeletonData( skeletonFrame.SkeletonData[i] ) ) );
             }
         }
     }
@@ -462,4 +459,25 @@ void Kinect::setSize(QSize& size, NUI_IMAGE_RESOLUTION resolution)
             break;
         }
     }
+}
+
+
+QVector2D transformFromSkeltonToRGB( const QVector3D& coordinates )
+{
+    Vector4 vec;
+    vec.x = coordinates.x();
+    vec.y = coordinates.y();
+    vec.z = coordinates.z();
+    LONG tmpX, tmpY;
+    USHORT depth;
+    NuiTransformSkeletonToDepthImage( vec, &tmpX, &tmpY, &depth );
+    LONG x, y;
+    NuiImageGetColorPixelCoordinatesFromDepthPixel( NUI_IMAGE_RESOLUTION_640x480,
+                                                    nullptr,
+                                                    tmpX,
+                                                    tmpY,
+                                                    depth,
+                                                    &x,
+                                                    &y );
+    return QVector2D( x, y );
 }

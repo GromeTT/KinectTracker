@@ -1,7 +1,7 @@
 #include "../Inc/ImageAnalyzer.h"
 
 ImageAnalyzer::ImageAnalyzer()
-    : mp_processingPipeline( new BSPipeline( this ) )
+    : mp_processingPipeline( new HOGDetectionPipeline( this ) )
     , m_snapshot()
 {
 }

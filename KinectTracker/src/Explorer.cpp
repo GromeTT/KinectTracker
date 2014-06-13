@@ -1,14 +1,16 @@
 #include "../Inc/Explorer.h"
 #include "ui_Explorer.h"
+#include "../inc/FloatEditor.h"
+#include <QItemEditorFactory>
 
 #include <QDebug>
-#include <QMetaProperty>
 
 Explorer::Explorer(QWidget *parent)
     : QWidget( parent )
     , ui( new Ui::Explorer )
 {
     ui->setupUi( this );
+    mp_styledDelegate = new CustomStyledDelegate( ui->tableWidget );
 
     // If the column count is less than 3, the labels are not
     // displayed correctly.
@@ -16,6 +18,13 @@ Explorer::Explorer(QWidget *parent)
     QStringList labelNames;
     labelNames << "Name" << "Type" << "Value";
     ui->tableWidget->setHorizontalHeaderLabels( labelNames );
+    QItemEditorFactory* factory = new QItemEditorFactory();
+
+    QItemEditorCreatorBase* floatEditor = new QStandardItemEditorCreator<FloatEditor>();
+    factory->registerEditor( QMetaType::Float, floatEditor );
+    mp_styledDelegate->setItemEditorFactory( factory );
+
+    ui->tableWidget->setItemDelegate( mp_styledDelegate );
 
     connect( ui->tableWidget, &QTableWidget::itemChanged, this, &Explorer::itemChanged );
 }
@@ -63,7 +72,8 @@ bool Explorer::setObject(QObject* object )
         nameItem->setFlags( Qt::NoItemFlags );
         QTableWidgetItem* typeItem = new QTableWidgetItem( typeName );
         typeItem->setFlags( Qt::NoItemFlags );
-        QTableWidgetItem* propItem = new QTableWidgetItem( value.toString() );
+        QTableWidgetItem* propItem = new QTableWidgetItem();
+        propItem->setData( Qt::EditRole, value );
 
         ui->tableWidget->setItem( i, 0, nameItem );
         ui->tableWidget->setItem( i, 1, typeItem );

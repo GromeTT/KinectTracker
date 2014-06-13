@@ -26,6 +26,7 @@ class QKeyPressEvent;
 class DepthViewerWidget;
 class QMdiSubWindow;
 class SkeletonRenderObject;
+class SkeletonData;
 
 namespace Ui {
     class MainWindow;

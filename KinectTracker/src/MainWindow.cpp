@@ -15,6 +15,7 @@
 #include "../inc/DepthViewerWidget.h"
 #include "../inc/ObjectLoader.h"
 #include "../inc/SkeletonRenderObject.h"
+#include "../inc/HOGFeatureDetector.h"
 #include <QMdiSubWindow>
 #include <QKeyEvent>
 #include <QMetaObject>
@@ -77,7 +78,6 @@ MainWindow::MainWindow( QWidget *parent )
 //    {
 //        qDebug() << tr( "Couldn't find classifier file. " );
 //    }
-
     // Construct explorer and it's dockWidget.
     mp_explorerDockWidget = new QDockWidget( "Explorer", this );
     mp_explorerDockWidget->setMinimumWidth( 350 );
@@ -166,20 +166,25 @@ void MainWindow::updateScenes()
     float dt_ms = dt_ns / 1000000;
     float fps = 1000000000 / dt_ns;
 
-    // Process RGB data
-    if ( m_updateRGBData )
+    if ( m_kinect->isInitialized() )
     {
-        processRGBData();
-    }
-    // Process Depth data.
-    if ( m_updateDepthData )
-    {
-        processDepthData();
-    }
-    // Process skeleton data
-    if ( m_updateSkeletonData )
-    {
-        processSkeletonData( timestamp );
+        // Process skeleton data
+        if ( m_updateSkeletonData )
+        {
+            processSkeletonData( timestamp );
+        }
+
+        // Process Depth data.
+        if ( m_updateDepthData )
+        {
+            processDepthData();
+        }
+
+        // Process RGB data
+        if ( m_updateRGBData )
+        {
+            processRGBData();
+        }
     }
 
     mp_openGLWindow->paintGL();
@@ -203,68 +208,34 @@ void MainWindow::processRGBData()
     res = m_kinect->getRGBImage( mp_rgbData );
     if ( res == S_OK )
     {
+
         cv::Mat curr ( m_kinect->getDepthStreamResolution().height(),
                        m_kinect->getRGBStreamResoultion().width(),
                        CV_8UC3,
                        mp_rgbData );
+        SkeletonDataPtr skeleton( m_skeletonAnalyzer.lastSkeletonData() );
+
         m_imageAnalyzer.analyze( curr );
-        if ( m_takeSnapshot )
-        {
-            m_imageAnalyzer.setSnapshot( curr );
-            m_takeSnapshot = false;
-        }
-//        imshow( "BS Window", curr );
-        if ( m_backGroundSubtraction )
-        {
 
-//            cv::Mat frame_gray;
-//            cvtColor( curr, frame_gray, CV_BGR2GRAY );
-//            equalizeHist( frame_gray, frame_gray );
-//            std::vector<Rect> faces;
-//            faceClassifier.detectMultiScale( frame_gray, faces );
-//            for ( int i = 0; i < faces.size(); ++i )
-//            {
-//                Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
-//                ellipse( curr, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
-//            }
-
-//            cv::Mat foreground;
-//            m_backgroundSubtractor->operator ()( curr, foreground );
-//            vector<vector<Point> > contours;
-//            vector<Vec4i> hierachy;
-//            cv::erode( foreground, foreground, cv::Mat( 2, 2, CV_8UC1 ) );
-//            cv::imshow( "Errode", foreground ) ;
-//            cv::dilate( foreground, foreground, cv::Mat( 2, 2, CV_8UC1 ) );
-//            cv::imshow( "Dilate", foreground ) ;
-//            cv::findContours( foreground, contours, hierachy, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE );
-//            for ( int i = 0; i < contours.size(); ++i )
-//            {
-//                cv::drawContours( curr, contours, i, cv::Scalar( 255, 0, 0 ) );
-//            }
-            mp_rgbViewerWindow->makeContextCurrent();
-            mp_rgbViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
-                                             m_kinect->getRGBStreamResoultion().width(),
-                                             m_kinect->getRGBStreamResoultion().height(),
-                                             QOpenGLTexture::PixelFormat::BGR,
-                                             QOpenGLTexture::PixelType::UInt8,
-                                             0,
-                                             curr.data,
-                                             QOpenGLTexture::Linear,
-                                             QOpenGLTexture::Linear );
-        }
-        else
+        if ( !skeleton.isNull() )
         {
-            mp_rgbViewerWindow->makeContextCurrent();
-            mp_rgbViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
-                                             m_kinect->getRGBStreamResoultion().width(),
-                                             m_kinect->getRGBStreamResoultion().height(),
-                                             QOpenGLTexture::PixelFormat::BGR,
-                                             QOpenGLTexture::PixelType::UInt8,
-                                             0,
-                                             mp_rgbData,
-                                             QOpenGLTexture::Linear,
-                                             QOpenGLTexture::Linear );
+            const QVector<QVector3D> regionOfInterest = m_skeletonAnalyzer.regionOfInterest();
+            QVector2D p1 = transformFromSkeltonToRGB( regionOfInterest.at( 0 ) ); // Top right
+            QVector2D p2 = transformFromSkeltonToRGB( regionOfInterest.at( 2 ) ); // Bottom left
+            Scalar color ( 0, 255, 255 );
+            rectangle( curr, Point( p1.x(), p1.y() ), Point( p2.x(), p2.y() ), color, 5 );
+
         }
+        mp_rgbViewerWindow->makeContextCurrent();
+        mp_rgbViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
+                                         m_kinect->getRGBStreamResoultion().width(),
+                                         m_kinect->getRGBStreamResoultion().height(),
+                                         QOpenGLTexture::PixelFormat::BGR,
+                                         QOpenGLTexture::PixelType::UInt8,
+                                         0,
+                                         curr.data,
+                                         QOpenGLTexture::Linear,
+                                         QOpenGLTexture::Linear );
     }
 }
 
@@ -296,7 +267,7 @@ void MainWindow::processDepthData()
  */
 void MainWindow::processSkeletonData( const unsigned int timestamp )
 {
-    QList<SkeletonData*> skeletons;
+    QList<SkeletonDataPtr> skeletons;
     HRESULT res = m_kinect->getSkeleton( skeletons );
 
     if ( res != S_OK )
@@ -313,10 +284,12 @@ void MainWindow::processSkeletonData( const unsigned int timestamp )
 
         // Update the skeleton render.
         mp_skeletonRenderObject->setVisible( true );
-        mp_skeletonRenderObject->updateData( *skeletons.at( 0 ) );
+
+        SkeletonDataPtr skeleton ( skeletons.at( 0 ) );
+        mp_skeletonRenderObject->updateData( skeleton );
 
         // Perfomr analysis
-         m_skeletonAnalyzer.update( skeletons.at( 0 ),
+         m_skeletonAnalyzer.update( skeleton,
                                     timestamp );
 
          // Update BoundingBox for the lower body.
@@ -336,7 +309,7 @@ void MainWindow::processSkeletonData( const unsigned int timestamp )
                                           boundingBox->getZ() );
          }
          m_analysisResults.setValuesByVetcor( m_skeletonAnalyzer.getVelocity( timestamp, 10 ) );
-         if ( m_analysisResults.directionY() == 0 )
+         if ( m_analysisResults.yaw() == 0 )
          {
             // Case: Person is not moving.
 
@@ -349,7 +322,7 @@ void MainWindow::processSkeletonData( const unsigned int timestamp )
              // Case: Person is moving.
 
              // Let the arrow point in the direction of the movement.
-             mp_arrowObject->setYaw( m_analysisResults.directionY() );
+             mp_arrowObject->setYaw( m_analysisResults.yaw() );
              mp_arrowObject->setRoll( 0 );
          }
 
@@ -606,7 +579,7 @@ void MainWindow::constructOpenGLRenderWidget()
     mp_arrowObject = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
     mp_arrowObject->setObjectName( "Arrow" );
     mp_arrowObject->setVisible( true );
-    mp_arrowObject->setScale( QVector3D( 0.2, 0.2, 0.2 ) );
+    mp_arrowObject->setScale( QVector3D( 0.2f, 0.2f, 0.2f ) );
 }
 
 void MainWindow::constructRGBViewer()
