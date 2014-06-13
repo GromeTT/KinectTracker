@@ -1,5 +1,7 @@
-#include "../Inc/SceneGraphWidget.h"
-#include "../Inc/RenderObject.h"
+#include "../inc/SceneGraphWidget.h"
+#include "../inc/RenderObject.h"
+#include "../inc/ProcessingComponent.h"
+#include "../inc/QObjectTreeWidgetItem.h"
 #include "ui_SceneGraphWidget.h"
 
 SceneGraphWidget::SceneGraphWidget(QWidget *parent) :
@@ -19,15 +21,7 @@ SceneGraphWidget::~SceneGraphWidget()
 
 void SceneGraphWidget::addObject( const QObject& object )
 {
-    QTreeWidgetItem* item = new QTreeWidgetItem();
-    item->setText( 0, object.objectName() );
-    ui->treeWidget->invisibleRootItem()->addChild( item );
-}
-
-void SceneGraphWidget::addObject( const RenderObject& object )
-{
-    QTreeWidgetItem* item = new QTreeWidgetItem();
-    item->setText( 0, object.objectName() );
+    QTreeWidgetItem* item = createItemFromObject( object );
     ui->treeWidget->invisibleRootItem()->addChild( item );
 }
 
@@ -55,6 +49,29 @@ void SceneGraphWidget::addObjects( const QVector<QObject*>& objects )
     }
 }
 
+void SceneGraphWidget::addObjects( const QVector<ProcessingComponent*>& objects )
+{
+    for ( int i = 0; i < objects.count(); ++i )
+    {
+        QTreeWidgetItem* parent = createItemFromObject( *objects.at( i ) );
+        addObjects( objects.at( i )->getComponents(), parent );
+        ui->treeWidget->invisibleRootItem()->addChild( parent );
+    }
+}
+
+QObject* SceneGraphWidget::getCurrentObject() const
+{
+    QObjectTreeWidgetItem* item = dynamic_cast<QObjectTreeWidgetItem*>( ui->treeWidget->currentItem() );
+    if ( !item )
+    {
+        return nullptr;
+    }
+    else
+    {
+        return item->getObject();
+    }
+}
+
 void SceneGraphWidget::clearTreeWidget()
 {
     QList<QTreeWidgetItem*> items = ui->treeWidget->invisibleRootItem()->takeChildren();
@@ -76,6 +93,47 @@ void SceneGraphWidget::selectionHasChanged( QTreeWidgetItem* curr,
         return;
     }
     emit selectionChanged( curr->text(0) );
+}
+
+QTreeWidgetItem* SceneGraphWidget::createItemFromObject( const QObject& object )
+{
+    QObjectTreeWidgetItem* item = new QObjectTreeWidgetItem();
+    item->setText( 0, object.objectName() );
+    return item;
+}
+
+QTreeWidgetItem* SceneGraphWidget::createItemFromObject( const QObject& object,
+                                                         QTreeWidgetItem* parent )
+{
+    QTreeWidgetItem* item = createItemFromObject( object );
+    parent->addChild( item );
+    return item;
+}
+
+QTreeWidgetItem*SceneGraphWidget::createItemFromObject( QObject& object )
+{
+    QObjectTreeWidgetItem* item = new QObjectTreeWidgetItem();
+    item->setText( 0, object.objectName() );
+    item->setObject( &object );
+    return item;
+}
+
+QTreeWidgetItem*SceneGraphWidget::createItemFromObject( QObject& object,
+                                                        QTreeWidgetItem* parent )
+{
+    QTreeWidgetItem* item = createItemFromObject( object );
+    parent->addChild( item );
+    return item;
+}
+
+void SceneGraphWidget::addObjects( const QVector<ProcessingComponent*>& objects,
+                                   QTreeWidgetItem* parent )
+{
+    for ( int i = 0; i < objects.count(); ++i )
+    {
+        QTreeWidgetItem* item = createItemFromObject( *objects.at( i ), parent );
+        addObjects( objects.at( i )->getComponents(), item );
+    }
 }
 
 

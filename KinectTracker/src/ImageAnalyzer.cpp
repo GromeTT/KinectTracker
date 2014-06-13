@@ -24,7 +24,7 @@ void ImageAnalyzer::setSnapshot( cv::Mat& snapshot )
     }
 }
 
-const QVector<QObject*>& ImageAnalyzer::getPiplineComponents() const
+const QVector<ProcessingComponent*>& ImageAnalyzer::getPiplineComponents() const
 {
 
     return mp_processingPipeline->getComponents();

@@ -1,7 +1,8 @@
 #include "../inc/ProcessingComponent.h"
 
 
-ProcessingComponent::ProcessingComponent()
+ProcessingComponent::ProcessingComponent( QObject* parent )
+    : QObject( parent )
 {
 
 }
@@ -16,7 +17,12 @@ void ProcessingComponent::addComponent( ProcessingComponent* compnent )
     m_components.append( compnent );
 }
 
-QVector<ProcessingComponent*>& ProcessingComponent::getComponents()
+const QVector<ProcessingComponent*>& ProcessingComponent::getComponents() const
 {
     return m_components;
+}
+
+ProcessingComponent*ProcessingComponent::getProcessingComponent( const int index ) const
+{
+    return m_components.at( index );
 }

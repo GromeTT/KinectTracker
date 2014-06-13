@@ -40,12 +40,8 @@ Explorer::~Explorer()
  * a QTableWidget.
  * @param object
  */
-bool Explorer::setObject(QObject* object )
+bool Explorer::setObject( QObject* object )
 {
-//    if ( mp_object )
-//    {
-//        disconnect( mp_object, 0, this, 0 );
-//    }
     if ( !object )
     {
         return false;

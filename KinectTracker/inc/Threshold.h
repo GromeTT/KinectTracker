@@ -4,8 +4,9 @@
 #include <QObject>
 #include <opencv2/opencv.hpp>
 #include <QSharedPointer>
+#include "ProcessingComponent.h"
 
-class Threshold : public QObject
+class Threshold : public ProcessingComponent
 {
     Q_OBJECT
 
@@ -30,7 +31,7 @@ public:
     Q_ENUMS( ThresholdType )
 
 public:
-    Threshold();
+    Threshold( QObject* parent = nullptr );
     virtual ~Threshold();
 
     void threshold( cv::Mat& input );

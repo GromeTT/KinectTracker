@@ -17,13 +17,20 @@ CustomStyledDelegate::~CustomStyledDelegate()
 
 }
 
+/*!
+   \brief CustomStyledDelegate::paint
+   This function is used to crate a preview of the data.
+   For each object type that can't be converted into QString there has to
+   be a castom paint method to providea preview of the data.
+   If this step is not done, the QTableWidgetItem will not have any caption
+   for costume types.
+ */
 void CustomStyledDelegate::paint( QPainter* painter,
                                   const QStyleOptionViewItem& option,
                                   const QModelIndex& index ) const
 {
     //       Unwrap data and display it.
-    //       If this step is not done, the QTableWidgetItem
-    //       will not have any caption for costume types.
+
 
     if ( index.data().canConvert<cv::Size>() )
     {
@@ -32,7 +39,7 @@ void CustomStyledDelegate::paint( QPainter* painter,
             painter->fillRect(option.rect, option.palette.highlight());
         cv::Size size = qvariant_cast<cv::Size>( index.data() );
         painter->drawText( option.rect ,QString( "{ %1, %2}" ).arg( size.width )
-                                                               .arg( size.height )  );
+                                                              .arg( size.height )  );
     }
     else
     {

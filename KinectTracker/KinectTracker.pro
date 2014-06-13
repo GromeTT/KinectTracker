@@ -48,7 +48,8 @@ SOURCES += src/main.cpp\
     src/ProcessingComponent.cpp \
     src/ArrayManipulator.cpp \
     src/FloatEditor.cpp \
-    src/CustomStyledDelegate.cpp
+    src/CustomStyledDelegate.cpp \
+    src/QObjectTreeWidgetItem.cpp
 
 HEADERS  += inc/MainWindow.h \
             inc/OpenGLWindow.h \
@@ -86,7 +87,8 @@ HEADERS  += inc/MainWindow.h \
     inc/ProcessingComponent.h \
     inc/ArrayManipulator.h \
     inc/FloatEditor.h \
-    inc/CustomStyledDelegate.h
+    inc/CustomStyledDelegate.h \
+    inc/QObjectTreeWidgetItem.h
 
 FORMS    += MainWindow.ui \
             KinectInitializeDialog.ui \

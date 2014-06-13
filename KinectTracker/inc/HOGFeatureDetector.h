@@ -2,19 +2,19 @@
 #define HOGFEATUREDETECTOR_H
 
 #include <opencv2/opencv.hpp>
-#include <QObject>
+#include "ProcessingComponent.h"
 #include <QSharedPointer>
 
 Q_DECLARE_METATYPE( cv::Size )
 
 class vector;
 
-class HOGFeatureDetector : public QObject
+class HOGFeatureDetector : public ProcessingComponent
 {
     Q_OBJECT
 
 public:
-    HOGFeatureDetector();
+    HOGFeatureDetector( QObject* parent = nullptr );
     ~HOGFeatureDetector();
 
     cv::Size    winSize() const;

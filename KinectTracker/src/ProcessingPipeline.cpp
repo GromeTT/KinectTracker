@@ -6,6 +6,7 @@
 ProcessingPipeline::ProcessingPipeline( ImageAnalyzer* parent )
     : m_parent( parent )
     , mp_snapshot( nullptr )
+    , m_instanceCounter( 0 )
 {
 
 }
@@ -19,7 +20,7 @@ void ProcessingPipeline::setSnapshot( cv::Mat* snapshot )
     mp_snapshot = snapshot;
 }
 
-const QVector<QObject*>& ProcessingPipeline::getComponents() const
+const QVector<ProcessingComponent*>& ProcessingPipeline::getComponents() const
 {
     return m_processingComponents;
 }
@@ -34,6 +35,19 @@ QObject* ProcessingPipeline::getObjectByName( const QString& name )
         }
     }
     return nullptr;
+}
+
+void ProcessingPipeline::registerComponent( ProcessingComponent* component,
+                                            const bool recursive )
+{
+    m_allComponents.insert( m_instanceCounter++, component );
+    if ( recursive )
+    {
+        for ( int i = 0; i < component->getComponents().count(); ++i )
+        {
+            registerComponent( component->getProcessingComponent( i ), true );
+        }
+    }
 }
 
 /**************************************************************************************************************************

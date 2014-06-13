@@ -3,12 +3,14 @@
 
 #include <opencv2/opencv.hpp>
 #include <QVector>
+#include <QMap>
 #include "Erode.h"
 #include "Dilate.h"
 #include "Threshold.h"
 #include "HOGFeatureDetector.h"
 #include "SkinColorDetector.h"
 #include "InRange.h"
+
 
 class ImageAnalyzer;
 class QObject;
@@ -31,13 +33,18 @@ public:
     virtual void process( cv::Mat& input ) = 0;
     void setSnapshot( cv::Mat* snapshot );
 
-    const QVector<QObject*>& getComponents() const;
-    QObject*                 getObjectByName( const QString& name );
+    const QVector<ProcessingComponent*>& getComponents() const;
+    QObject*                             getObjectByName( const QString& name );
 
 protected:
-    QVector<QObject*> m_processingComponents;
-    cv::Mat*          mp_snapshot;
-    ImageAnalyzer*    m_parent;
+    void registerComponent( ProcessingComponent* component,
+                            const bool recursive );
+
+    QVector<ProcessingComponent*>   m_processingComponents;
+    QMap<int, ProcessingComponent*> m_allComponents;
+    cv::Mat*                        mp_snapshot;
+    ImageAnalyzer*                  m_parent;
+    int                             m_instanceCounter;
 };
 
 

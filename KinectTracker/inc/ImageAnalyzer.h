@@ -5,6 +5,7 @@
 #include <opencv2/opencv.hpp>
 #include "ProcessingPipeline.h"
 
+class ProcessingComponent;
 
 class ImageAnalyzer : public QObject
 {
@@ -15,8 +16,8 @@ public:
     void analyze( cv::Mat& input );
     void setSnapshot( cv::Mat& snapshot );
 
-    const QVector<QObject*>& getPiplineComponents() const;
-    QObject*                 getObjectByName( const QString& name );
+    const QVector<ProcessingComponent*>& getPiplineComponents() const;
+    QObject*                             getObjectByName( const QString& name );
 
 private:
     ProcessingPipelinePtr mp_processingPipeline;

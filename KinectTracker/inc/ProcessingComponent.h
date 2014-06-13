@@ -7,11 +7,12 @@
 class ProcessingComponent : public QObject
 {
 public:
-    ProcessingComponent();
+    ProcessingComponent( QObject* parent = nullptr );
     virtual ~ProcessingComponent();
 
     void addComponent( ProcessingComponent* compnent );
-    QVector<ProcessingComponent*>& getComponents();
+    const QVector<ProcessingComponent*>& getComponents() const;
+    ProcessingComponent* getProcessingComponent( const int index ) const;
 
 private:
     QVector<ProcessingComponent*> m_components;

@@ -407,20 +407,18 @@ void MainWindow::subWindowActivated( QMdiSubWindow* subWindow )
     {
         return;
     }
+    mp_sceneGraph->clearTreeWidget();
     if ( subWindow->widget() == mp_openGLRenderWidget )
     {
-        mp_sceneGraph->clearTreeWidget();
         mp_sceneGraph->addObject( *mp_openGLWindow->getScene()->getCamera() );
         mp_sceneGraph->addObjects( mp_openGLWindow->getScene()->getRenderObjects() );
     }
     else if ( subWindow->widget() == mp_rgbViewerWidget )
     {
-        mp_sceneGraph->clearTreeWidget();
         mp_sceneGraph->addObjects( m_imageAnalyzer.getPiplineComponents() );
     }
     else if( subWindow->widget() == mp_depthViewerWidget )
     {
-        mp_sceneGraph->clearTreeWidget();
     }
 }
 
@@ -544,7 +542,7 @@ void MainWindow::selectObject( const QString& text )
     }
     else if ( ui->mdiArea->activeSubWindow()->widget() == mp_rgbViewerWidget )
     {
-        mp_explorer->setObject( m_imageAnalyzer.getObjectByName( text ) );
+        mp_explorer->setObject( mp_sceneGraph->getCurrentObject() );
     }
     else if ( ui->mdiArea->activeSubWindow()->widget() == mp_depthViewerWidget )
     {

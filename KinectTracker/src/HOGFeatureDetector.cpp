@@ -1,10 +1,14 @@
 #include "../inc/HOGFeatureDetector.h"
+#include "../inc/Dilate.h"
 #include <vector>
 
 
-HOGFeatureDetector::HOGFeatureDetector()
+HOGFeatureDetector::HOGFeatureDetector( QObject* parent )
+    : ProcessingComponent( parent )
 {
     setObjectName( "HOGFeatureDetector" );
+    Dilate* dilate = new Dilate( this );
+    addComponent( dilate );
 }
 
 HOGFeatureDetector::~HOGFeatureDetector()

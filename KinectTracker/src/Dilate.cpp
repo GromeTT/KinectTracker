@@ -1,8 +1,9 @@
 #include "../Inc/Dilate.h"
 #include <opencv2/opencv.hpp>
 
-Dilate::Dilate()
-    : m_anchorPointX( 1 )
+Dilate::Dilate( QObject* parent )
+    : ProcessingComponent( parent )
+    , m_anchorPointX( 1 )
     , m_anchorPointY( 1 )
     , m_iterations( 1 )
 {

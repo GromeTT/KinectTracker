@@ -1,8 +1,9 @@
 #include "../inc/Threshold.h"
 
 
-Threshold::Threshold()
-    : m_maxValue( 1 )
+Threshold::Threshold( QObject* parent )
+    : ProcessingComponent( parent )
+    , m_maxValue( 1 )
     , m_threshold( 0.5 )
     , m_thresholdType( Thresh_ToZero )
 {

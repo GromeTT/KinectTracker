@@ -9,7 +9,7 @@ class Dilate : public ProcessingComponent
     Q_OBJECT
 
 public:
-    Dilate();
+    Dilate( QObject* parent = nullptr );
     virtual ~Dilate();
 
     void dilate( cv::Mat& input );
