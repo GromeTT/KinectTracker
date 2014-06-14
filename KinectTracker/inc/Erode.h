@@ -10,7 +10,7 @@ class Erode : public ProcessingComponent
     Q_OBJECT
 
 public:
-    Erode();
+    Erode( QObject* parent = nullptr );
     virtual ~Erode();
 
     void erode( cv::Mat& input );
@@ -45,18 +45,22 @@ private:
                 READ anchorPointX
                 WRITE setAnchorPointX
                 NOTIFY anchorPointXChanged )
+
     Q_PROPERTY( float anchorPointY MEMBER m_anchorPointY
                 READ anchorPointY
                 WRITE setAnchorPointY
                 NOTIFY anchorPointYChanged )
+
     Q_PROPERTY( int iterations MEMBER m_iterations
                 READ iterations
                 WRITE setIterations
                 NOTIFY iterationsChanged )
+
     Q_PROPERTY( int kernelRowCount MEMBER m_kernelRowCount
                 READ kernelRowCount
                 WRITE setKernelRowCount
                 NOTIFY kernelRowCountChanged )
+
     Q_PROPERTY( int kernelColumnCount MEMBER m_kernelColumnCount
                 READ kernelColumnCount
                 WRITE setKernelColumnCount

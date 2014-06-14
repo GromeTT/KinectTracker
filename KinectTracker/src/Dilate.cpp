@@ -6,6 +6,8 @@ Dilate::Dilate( QObject* parent )
     , m_anchorPointX( 1 )
     , m_anchorPointY( 1 )
     , m_iterations( 1 )
+    , m_kernelRowCount( 1 )
+    , m_kernelColumnCount( 1 )
 {
     setObjectName( "Dilate" );
 }

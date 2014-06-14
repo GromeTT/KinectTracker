@@ -13,9 +13,8 @@ public:
     CustomStyledDelegate( QObject* parent );
     virtual ~CustomStyledDelegate();
 
-    void paint( QPainter* painter,
-                const QStyleOptionViewItem& option,
-                const QModelIndex& index ) const;
+    virtual QString displayText( const QVariant &value,
+                                 const QLocale &locale ) const;
     QSize sizeHint( const QStyleOptionViewItem& option,
                     const QModelIndex& index ) const;
     QWidget* createEditor( QWidget* parent,

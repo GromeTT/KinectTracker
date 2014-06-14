@@ -1,7 +1,7 @@
 #include "../Inc/ImageAnalyzer.h"
 
 ImageAnalyzer::ImageAnalyzer()
-    : mp_processingPipeline( new HOGDetectionPipeline( this ) )
+    : mp_processingPipeline( new SkinColorExplicitDefinedSkinRegionDetectionPipeline( this ) )
     , m_snapshot()
 {
 }

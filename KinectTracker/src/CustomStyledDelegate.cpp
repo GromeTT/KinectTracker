@@ -1,7 +1,10 @@
 #include "../inc/CustomStyledDelegate.h"
 #include <opencv2/opencv.hpp>
 #include <QLineEdit>
+#include <QRegularExpression>
+#include <QRegularExpressionValidator>
 #include <QPainter>
+#include <QDebug>
 
 Q_DECLARE_METATYPE( cv::Size )
 
@@ -17,35 +20,18 @@ CustomStyledDelegate::~CustomStyledDelegate()
 
 }
 
-/*!
-   \brief CustomStyledDelegate::paint
-   This function is used to crate a preview of the data.
-   For each object type that can't be converted into QString there has to
-   be a castom paint method to providea preview of the data.
-   If this step is not done, the QTableWidgetItem will not have any caption
-   for costume types.
- */
-void CustomStyledDelegate::paint( QPainter* painter,
-                                  const QStyleOptionViewItem& option,
-                                  const QModelIndex& index ) const
+QString CustomStyledDelegate::displayText( const QVariant& value,
+                                           const QLocale& locale ) const
 {
-    //       Unwrap data and display it.
-
-
-    if ( index.data().canConvert<cv::Size>() )
+    if ( value.canConvert<cv::Size>() )
     {
-        // case: QVariant contains an object from type cv::Size
-        if ( option.state & QStyle::State_Selected )
-            painter->fillRect(option.rect, option.palette.highlight());
-        cv::Size size = qvariant_cast<cv::Size>( index.data() );
-        painter->drawText( option.rect ,QString( "{ %1, %2}" ).arg( size.width )
-                                                              .arg( size.height )  );
+        cv::Size size = qvariant_cast<cv::Size>( value );
+        return QString( "{%1, %2}" ).arg( size.width )
+                                    .arg( size.height );
     }
     else
     {
-        QStyledItemDelegate::paint( painter,
-                                    option,
-                                    index );
+        return QStyledItemDelegate::displayText( value, locale );
     }
 }
 
@@ -61,9 +47,20 @@ QWidget* CustomStyledDelegate::createEditor( QWidget* parent,
                                              const QStyleOptionViewItem& option,
                                              const QModelIndex& index ) const
 {
-    return QStyledItemDelegate::createEditor( parent,
-                                              option,
-                                              index );
+    if ( index.data().canConvert<cv::Size>() )
+    {
+        QLineEdit* editor = new QLineEdit( parent );
+        QRegularExpression rx ( "{\\d+, \\d+}" );
+        QRegularExpressionValidator* validator = new QRegularExpressionValidator( rx, editor );
+        editor->setValidator( validator );
+        return editor;
+    }
+    else
+    {
+        return QStyledItemDelegate::createEditor( parent,
+                                                  option,
+                                                  index );
+    }
 }
 
 void CustomStyledDelegate::setEditorData( QWidget* editor,
@@ -73,8 +70,8 @@ void CustomStyledDelegate::setEditorData( QWidget* editor,
     {
         cv::Size size = qvariant_cast<cv::Size>( index.data() );
         QLineEdit* lineEdit = qobject_cast<QLineEdit*>( editor );
-        lineEdit->setText( QString( "{ %1, %2 }" ).arg( size.width )
-                                                  .arg( size.height ) );
+        lineEdit->setText( QString( "{%1, %2}" ).arg( size.width )
+                                                .arg( size.height ) );
     }
     else
     {
