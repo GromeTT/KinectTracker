@@ -1,0 +1,12 @@
+KinectTracker.pro.user
+Notes.txt
+ThirdParty/
+KinectTracker/Resources/Videomaterial/
+KinectTracker/Resources/haarcascade_frontalface_alt.xml
+KinectTracker/res/Videomaterial/
+KinectTracker/res/haarcascade_frontalface_alt.xml
+build-KinectTracker-Desktop_Qt_5_2_1_MSVC2011_OpenGL_64bit-Debug
+build-KinectTracker-Desktop_Qt_5_3_0_MSVC2013_OpenGL_64bit-Release
+build-KinectTracker-Desktop_Qt_5_3_0_MSVC2013_OpenGL_64bit-Debug
+build-KinectTracker-Desktop_Qt_5_3_0_MSVC2013_64bit-Debug
+build-KinectTracker-Desktop_Qt_5_2_1_MSVC2012_OpenGL_64bit-Debug
