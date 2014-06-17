@@ -26,7 +26,8 @@ public:
                        QAbstractItemModel* model,
                        const QModelIndex& index ) const;
 
-private:
+private slots:
+    void commit();
 };
 
 #endif // CUSTOMSTYLEDDELEGATE_H

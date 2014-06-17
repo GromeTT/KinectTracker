@@ -13,6 +13,7 @@
 #include "SkeletonAnalyzer.h"
 #include "AnalysisResults.h"
 #include "ImageAnalyzer.h"
+#include "PropertyBrowser.h"
 
 class OpenGLWidget;
 class OpenGLWindow;
@@ -68,13 +69,13 @@ private:
     Ui::MainWindow*         ui;
     // Explorer
     QDockWidget*            mp_explorerDockWidget;
-    Explorer*               mp_explorer;
+    PropertyBrowser*        mp_explorer;
     // ResultExplorer
     QDockWidget*            mp_resultExpDockWidget;
-    Explorer*               mp_resultExp;
+    PropertyBrowser*        mp_resultExp;
     // ResultExplorer
     QDockWidget*            mp_skeletonAnalyserDockWidget;
-    Explorer*               mp_skeletonAnalyserExplorer;
+    PropertyBrowser*        mp_skeletonAnalyserExplorer;
     // Scenegraph
     QDockWidget*            mp_sceneDockWidget;
     SceneGraphWidget*       mp_sceneGraph;

@@ -21,6 +21,7 @@ SkeletonAnalyzer::SkeletonAnalyzer()
     , m_kneelingThreshold( 0.55f )
     , m_lyingThreshold( 0.4f )
 {
+    setObjectName( "SkeletonAnalyzer" );
     m_regionOfInteres.resize( 4 );
 }
 

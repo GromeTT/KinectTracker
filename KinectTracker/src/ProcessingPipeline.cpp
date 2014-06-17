@@ -5,11 +5,12 @@
 #include <QDebug>
 
 ProcessingPipeline::ProcessingPipeline( ImageAnalyzer* parent )
-    : m_parent( parent )
+    : QObject( parent )
+    , m_parent( parent )
     , mp_snapshot( nullptr )
     , m_instanceCounter( 0 )
 {
-
+    setObjectName( "ProcessingPipeline" );
 }
 
 ProcessingPipeline::~ProcessingPipeline()
@@ -141,6 +142,7 @@ HOGDetectionPipeline::HOGDetectionPipeline( ImageAnalyzer* parent )
 {
     mp_HOGFeatureDetector->useDefaultPeopleDetector();
     m_processingComponents.append( mp_HOGFeatureDetector.data() );
+
 }
 
 HOGDetectionPipeline::~HOGDetectionPipeline()
@@ -201,10 +203,12 @@ SkinColorExplicitDefinedSkinRegionDetectionPipeline::SkinColorExplicitDefinedSki
     : ProcessingPipeline( parent )
     , mp_dilate( new Dilate() )
     , mp_erode( new Erode() )
+    , mp_inRange ( new InRange( 3 ) )
+
 {
     m_processingComponents.append( mp_dilate.data() );
     m_processingComponents.append( mp_erode.data() );
-
+    m_processingComponents.append( mp_inRange.data() );
 }
 
 
@@ -224,7 +228,7 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
     {
         qWarning() << QStringLiteral("SkinColorExplicitDefinedSkinRegionDetctionPipeline only supports CV_8UC3 as cv:: Mat type.");
     }
-    cv::Mat mask( input.rows, input.cols, input.type() );
+    cv::Mat skin = input.clone();
     int count = 3*input.rows*input.cols;
     int i = 0;
     while ( i < count )
@@ -241,20 +245,27 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
              r > g &&
              g > b )
         {
-            mask.data[i]   = 255;
-            mask.data[i+1] = 255;
-            mask.data[i+2] = 255;
+//            skin.data[i]   = 255;
+//            skin.data[i+1] = 255;
+//            skin.data[i+2] = 255;
         }
         else
         {
-            mask.data[i]   = 0;
-            mask.data[i+1] = 0;
-            mask.data[i+2] = 0;
+            skin.data[i]   = 0;
+            skin.data[i+1] = 0;
+            skin.data[i+2] = 0;
         }
         i+=3;
     }
-    cv::imshow( "Mask", mask );
-//    cv::cvtColor( mask, mask, cv::COLOR_BGR2HSV );
-    mp_erode->erode( mask );
-    mp_dilate->dilate( mask );
+    cv::imshow( "Skin", skin);
+
+    cv::Mat binary ( input.rows,
+                     input.cols,
+                     CV_8UC1 );
+
+    mp_inRange->process( skin, binary );
+    cv::imshow( "Binary", binary );
+
+//    mp_erode->erode( mask );
+//    mp_dilate->dilate( mask );
 }

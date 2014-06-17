@@ -35,3 +35,8 @@ QObject* ImageAnalyzer::getObjectByName( const QString& name )
     return mp_processingPipeline->getObjectByName( name );
 }
 
+ProcessingPipeline*ImageAnalyzer::getProcessingPipeline() const
+{
+    return mp_processingPipeline.data();
+}
+

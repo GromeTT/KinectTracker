@@ -1,16 +1,16 @@
-#include "../Inc/MainWindow.h"
-#include "../Inc/OpenGLWindow.h"
-#include "../Inc/RGBWidget.h"
-#include "../Inc/RenderObject.h"
-#include "../Inc/BasicUsageScene.h"
-#include "../Inc/Vertex.h"
-#include "../Inc/KinectInitializeDialog.h"
-#include "../Inc/Skeleton.h"
-#include "../Inc/BoundingBox.h"
-#include "../Inc/Floor.h"
-#include "../Inc/Explorer.h"
-#include "../Inc/SceneGraphWidget.h"
-#include "../Inc/Floor.h"
+#include "../inc/MainWindow.h"
+#include "../inc/OpenGLWindow.h"
+#include "../inc/RGBWidget.h"
+#include "../inc/RenderObject.h"
+#include "../inc/BasicUsageScene.h"
+#include "../inc/Vertex.h"
+#include "../inc/KinectInitializeDialog.h"
+#include "../inc/Skeleton.h"
+#include "../inc/BoundingBox.h"
+#include "../inc/Floor.h"
+#include "../inc/Explorer.h"
+#include "../inc/SceneGraphWidget.h"
+#include "../inc/Floor.h"
 #include "../inc/SignalBlocker.h"
 #include "../inc/DepthViewerWidget.h"
 #include "../inc/ObjectLoader.h"
@@ -82,19 +82,20 @@ MainWindow::MainWindow( QWidget *parent )
     mp_explorerDockWidget = new QDockWidget( "Explorer", this );
     mp_explorerDockWidget->setMinimumWidth( 350 );
     addDockWidget( Qt::LeftDockWidgetArea, mp_explorerDockWidget );
-    mp_explorer = new Explorer( mp_explorerDockWidget );
+    mp_explorer = new PropertyBrowser( mp_explorerDockWidget );
     mp_explorerDockWidget->setWidget( mp_explorer );
 
+    // Construct Skeleton analysere
     mp_skeletonAnalyserDockWidget = new QDockWidget( "SkeletonAnlyser" );
     addDockWidget(Qt::LeftDockWidgetArea, mp_skeletonAnalyserDockWidget );
-    mp_skeletonAnalyserExplorer = new Explorer( mp_skeletonAnalyserDockWidget );
+    mp_skeletonAnalyserExplorer = new PropertyBrowser( mp_skeletonAnalyserDockWidget );
     mp_skeletonAnalyserDockWidget->setWidget( mp_skeletonAnalyserExplorer );
     mp_skeletonAnalyserExplorer->setObject( &m_skeletonAnalyzer );
 
     // Construct result explorer and it's dockWidget.
     mp_resultExpDockWidget = new QDockWidget( "Anlysis", this );
     addDockWidget( Qt::LeftDockWidgetArea, mp_resultExpDockWidget );
-    mp_resultExp = new Explorer( mp_resultExpDockWidget );
+    mp_resultExp = new PropertyBrowser( mp_resultExpDockWidget );
     mp_resultExpDockWidget->setWidget( mp_resultExp );
     mp_resultExp->setObject( &m_analysisResults );
 
@@ -135,6 +136,8 @@ MainWindow::MainWindow( QWidget *parent )
     ui->actionKeep_Skeleton_up_to_date->setChecked( m_updateSkeletonData );
     ui->actionKeep_rgb_up_to_date->setChecked( m_updateRGBData );
     ui->actionKeep_depth_up_to_date->setChecked( m_updateDepthData );
+
+    ui->mdiArea->activateNextSubWindow();
 
     time.start();
     m_timer.start( 0 );

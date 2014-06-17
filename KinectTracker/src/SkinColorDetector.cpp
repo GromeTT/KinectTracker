@@ -2,7 +2,7 @@
 
 
 SkinColorDetector::SkinColorDetector()
-    : mp_inRange( new InRange() )
+//    : mp_inRange( new InRange() )
 {
     setObjectName( "SkinColorDetector" );
     setBins( 25 );

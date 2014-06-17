@@ -49,7 +49,10 @@ SOURCES += src/main.cpp\
     src/ArrayManipulator.cpp \
     src/FloatEditor.cpp \
     src/CustomStyledDelegate.cpp \
-    src/QObjectTreeWidgetItem.cpp
+    src/QObjectTreeWidgetItem.cpp \
+    src/FixedPropertyVector.cpp \
+    src/TreeModel.cpp \
+    src/PropertyBrowser.cpp
 
 HEADERS  += inc/MainWindow.h \
             inc/OpenGLWindow.h \
@@ -88,7 +91,10 @@ HEADERS  += inc/MainWindow.h \
     inc/ArrayManipulator.h \
     inc/FloatEditor.h \
     inc/CustomStyledDelegate.h \
-    inc/QObjectTreeWidgetItem.h
+    inc/QObjectTreeWidgetItem.h \
+    inc/FixedPropertyVector.h \
+    inc/TreeModel.h \
+    inc/PropertyBrowser.h
 
 FORMS    += MainWindow.ui \
             KinectInitializeDialog.ui \
@@ -96,7 +102,8 @@ FORMS    += MainWindow.ui \
             SceneGraphWidget.ui \
             DepthViewerWidget.ui \
             RGBViewerWidget.ui \
-    ArrayManipulator.ui
+    ArrayManipulator.ui \
+    PropertyBrowser.ui
 
 
 TRANSLATIONS = trans/trans_de.ts

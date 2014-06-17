@@ -18,6 +18,7 @@ public:
 
     const QVector<ProcessingComponent*>& getPiplineComponents() const;
     QObject*                             getObjectByName( const QString& name );
+    ProcessingPipeline*                  getProcessingPipeline() const;
 
 private:
     ProcessingPipelinePtr mp_processingPipeline;

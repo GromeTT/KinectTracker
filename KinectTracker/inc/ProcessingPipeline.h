@@ -4,6 +4,7 @@
 #include <opencv2/opencv.hpp>
 #include <QVector>
 #include <QMap>
+#include <QObject>
 #include "Erode.h"
 #include "Dilate.h"
 #include "Threshold.h"
@@ -24,8 +25,10 @@ class QObject;
  **************************************************************************************************************************
  **************************************************************************************************************************/
 
-class ProcessingPipeline
+class ProcessingPipeline : public QObject
 {
+    Q_OBJECT
+
 public:
     ProcessingPipeline( ImageAnalyzer* parent );
     virtual ~ProcessingPipeline();
@@ -158,9 +161,11 @@ public:
     ~SkinColorExplicitDefinedSkinRegionDetectionPipeline();
 
     virtual void process( cv::Mat& input );
+
 private:
-    DilatePtr mp_dilate;
-    ErodePtr  mp_erode;
+    DilatePtr  mp_dilate;
+    ErodePtr   mp_erode;
+    InRangePtr mp_inRange;
 };
 
 

@@ -1,8 +1,11 @@
 #include "../inc/InRange.h"
+#include <QDebug>
 
-
-
-InRange::InRange()
+InRange::InRange( const int channelCount,
+                  QObject* parent )
+    : ProcessingComponent( parent )
+    , m_lowerBounds( FixedPropertyVector( channelCount ) )
+    , m_upperBounds( FixedPropertyVector( channelCount ) )
 {
     setObjectName( "InRange" );
 }
@@ -12,37 +15,44 @@ InRange::~InRange()
 
 }
 
-//void InRange::inRange( cv::InputArray& src,
-//                       cv::OutputArray& dst,
-//                       const int channels )
-//{
-//    cv::inRange( src, m_lowerBoundary, m_upperBoundary, dst );
-//}
+void InRange::process( cv::InputArray& input,
+                       cv::OutputArray& output )
+{
+    cv::inRange( input,
+                 m_lowerBounds.data(),
+                 m_upperBounds.data(),
+                 output );
+}
 
-//int InRange::lowerBoundary() const
-//{
-//    return m_lowerBoundary;
-//}
+void InRange::setLowerBounds( const FixedPropertyVector& lowerBounds )
+{
+    if ( m_lowerBounds != lowerBounds )
+    {
+        m_lowerBounds = lowerBounds;
+        emit lowerBoundsChanged();
+    }
+}
 
-//int InRange::upperBoundary() const
-//{
-//    return m_upperBoundary;
-//}
+void InRange::setUpperBounds( const FixedPropertyVector& upperBounds )
+{
+    if ( m_upperBounds != upperBounds )
+    {
+        m_upperBounds = upperBounds;
+        emit upperBoundsChanged();
+    }
+}
 
-//void InRange::setLowerBoundary(const int boundary)
-//{
-//    if ( m_lowerBoundary != boundary )
-//    {
-//        m_lowerBoundary = boundary;
-//        emit lowerBoundaryChanged();
-//    }
-//}
+const FixedPropertyVector& InRange::lowerBounds() const
+{
+    return m_lowerBounds;
+}
 
-//void InRange::setUpperBoundary(const int boundary)
-//{
-//    if ( m_upperBoundary != boundary )
-//    {
-//        m_upperBoundary = boundary;
-//        emit upperBoundaryChanged();
-//    }
-//}
+const FixedPropertyVector& InRange::upperBounds() const
+{
+    return m_upperBounds;
+}
+
+
+
+
+

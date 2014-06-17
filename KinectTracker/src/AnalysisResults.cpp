@@ -58,6 +58,7 @@ void AnalysisResults::setVelocity( const float velocity )
     if ( m_velocity != velocity )
     {
         m_velocity = velocity;
+        qDebug() << "vec changed";
         emit velocityChanged();
     }
 }
@@ -69,27 +70,27 @@ void AnalysisResults::setValuesByVetcor( const QVector3D& vec )
     setYaw( radToDeg( atan2( vec.z(), vec.x() ) ) );
 }
 
-QString AnalysisResults::workerStatus() const
+const QString AnalysisResults::workerStatus() const
 {
     return m_workerStatus;
 }
 
-float AnalysisResults::roll() const
+const float AnalysisResults::roll() const
 {
     return m_roll;
 }
 
-float AnalysisResults::yaw() const
+const float AnalysisResults::yaw() const
 {
     return m_yaw;
 }
 
-float AnalysisResults::pitch() const
+const float AnalysisResults::pitch() const
 {
     return m_pitch;
 }
 
-float AnalysisResults::velocity() const
+const float AnalysisResults::velocity() const
 {
     return m_velocity;
 }

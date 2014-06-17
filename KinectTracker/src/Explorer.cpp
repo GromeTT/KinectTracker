@@ -1,9 +1,12 @@
 #include "../Inc/Explorer.h"
 #include "ui_Explorer.h"
 #include "../inc/FloatEditor.h"
+#include "../inc/FixedPropertyVector.h"
 #include <QItemEditorFactory>
 
 #include <QDebug>
+
+Q_DECLARE_METATYPE( FixedPropertyVector )
 
 Explorer::Explorer(QWidget *parent)
     : QWidget( parent )
@@ -78,7 +81,7 @@ bool Explorer::setObject( QObject* object )
         if ( metaProperty.hasNotifySignal() )
         {
             QMetaMethod signal = metaProperty.notifySignal();
-            QMetaMethod slot   = metaObject()->method( metaObject()->indexOfSlot( "propertyChanged()") );
+            QMetaMethod slot   = metaObject()->method( metaObject()->indexOfSlot( "propertyChanged()" ) );
             connect( mp_object, signal, this, slot );
         }
     }
@@ -100,23 +103,28 @@ void Explorer::itemChanged( QTableWidgetItem* item )
         if ( writable )
         {
             // Alter property.
-            mp_object->setProperty( propNameItem->text().toStdString().c_str(), item->text() );
+            if ( propNameItem->text() == "lowerBounds" )
+            {
+                QVariant v( item->data( Qt::EditRole ) );
+                FixedPropertyVector f = qvariant_cast<FixedPropertyVector>( v );
+            }
+            mp_object->setProperty( propNameItem->text().toStdString().c_str(), QVariant( item->data( Qt::EditRole ) ) );
         }
     }
 }
 
 void Explorer::propertyChanged()
 {
+
+    int propCount   = QObject::sender()->metaObject()->propertyCount();
     int signalIndex = QObject::senderSignalIndex();
-    int propCount = QObject::sender()->metaObject()->propertyCount();
     for ( int i = 0; i < propCount; ++i )
     {
         QMetaProperty metaProp = mp_object->metaObject()->property( i );
         if ( metaProp.notifySignalIndex() == signalIndex )
         {
-            QString name = metaProp.name();
-            QString value = mp_object->property( metaProp.name() ).toString();
-            ui->tableWidget->item( i, 2 )->setText( value );
+            ui->tableWidget->item( i, 2 )->setData( Qt::EditRole,
+                                                    mp_object->property( metaProp.name() ) );
         }
     }
 }

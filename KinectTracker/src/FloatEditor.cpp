@@ -1,7 +1,7 @@
 #include "../inc/FloatEditor.h"
 
 
-FloatEditor::FloatEditor(QWidget* parent)
+FloatEditor::FloatEditor( QWidget* parent )
     : QDoubleSpinBox( parent )
 {
 }
@@ -19,3 +19,5 @@ void FloatEditor::setData( const float number )
 {
     setValue( number );
 }
+
+

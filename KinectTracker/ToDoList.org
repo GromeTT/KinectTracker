@@ -1,0 +1,32 @@
+ToDo List Programm
+
+* TODO [0/6][0%]
+  + [-] Umstellen auf das neue Eigenschaften-Widget [3/5][60%]
+    + [X] Verbleibende Datentypen einfügen
+      + [X] Vector
+    + [X] Synchronisation der Ansicht durch Änderungen in den Daten implementieren
+    + [ ] Umbennnen TreeWidgetExplorer -> TreeWidgetPropertyViewer
+    + [X] altes Eigenschaften-Widget durch das neue ersetzen
+  + [ ] Kommunikation zwischen SkeletonAnalyzer und AnalysisResults optimieren.
+    Viele der Properties aus SkeletonAnalyzer müssen read only sein.
+  + [ ] Signale gezielt unterbrechen und nicht in den Settern prüfen, ob die Werte gleich sind.
+    + [ ] Führe eine Helper-Klasse ein, die die Verbindung kurz unterbricht und im Destruktor
+      wiederherstellt.
+  + [ ] Arbeiter - Zustand Beurteilung verbessern [0/3][0%]
+    + [ ] Größe des Arbeiters über die Höhe des Oberkörpers abschätzen
+    + [ ] In der bestehenden Größenschätzung die Arme aus der Berechnung ausschließen
+    + [ ] Für die Schätzung der aktuellen Größe die Anzahl der getrackten Punkte mit einbeziehen
+  + [ ] Biete  Möglichkeit die Bewegungsrichtung und die Geschwindigkeit zu ermitteln durch Kugeln berechnen
+    zu lassen
+  + [ ] Zusätzliche Feature [0/6][0%]
+    + [ ] Speichernfunktion für ProcessingComponents und ProcessingPipeline
+    + [ ] Pause/Wiedergabe des StreamsFunktion
+    + [ ] Schließen der Windows ermöglichen
+    + [ ] Verbindungsdialog zu Kinect / USB-Kamera fertig stellen
+    + [ ] Affine Transformation ausbessern
+    + [ ] Skelett Merkmalsvektor berechnen
+  + [ ] Infrarotdaten anschauen - IR anschauen ( Auflösung 640*480 )
+    http://msdn.microsoft.com/en-us/library/jj663865.aspx 
+*** Anregungen
+    + ViolaJones
+      
