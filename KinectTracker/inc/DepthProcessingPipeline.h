@@ -22,24 +22,33 @@ public:
                   ushort* screenshot,
                   const float size );
     void setThreshold( const int threshold );
+    void setMinContourSize( const int size );
 
     QVector<ProcessingComponent*>& getComponents();
     int threshold() const;
+    int minContourSize() const;
 
 private:
     QVector<ProcessingComponent*> m_processingComponents;
     int                           m_threshold;
+    int                           m_minContourSize;
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;
 
 signals:
     void thresholdChanged();
+    void minContourSizeChanged();
 
 private:
     Q_PROPERTY( int threshold
                 READ threshold
                 WRITE setThreshold
                 NOTIFY thresholdChanged )
+
+    Q_PROPERTY( int minContourSize MEMBER m_minContourSize
+                READ minContourSize
+                WRITE setMinContourSize
+                NOTIFY minContourSizeChanged )
 };
 
 typedef QSharedPointer<DepthProcessingPipeline> DepthProcessingPipelinePtr;
