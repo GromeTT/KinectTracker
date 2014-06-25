@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Member List</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SkinColorDetector.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,10 +67,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -85,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00006.html','');});
+$(document).ready(function(){initNavTree('a00104.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,33 +101,44 @@ $(document).ready(function(){initNavTree('a00006.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">BSPipeline Member List</div>  </div>
+<div class="title">SkinColorDetector.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &lt;QSharedPointer&gt;</code><br />
+<code>#include &quot;opencv2/opencv.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00088_source.html">ProcessingComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00079_source.html">InRange.h</a>&quot;</code><br />
+</div>
+<p><a href="a00104_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html">SkinColorDetector</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ac40b4167b704e8f1f1159c6c6bf952d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QSharedPointer&lt;<a class="el" href="a00051.html">SkinColorDetector</a>&gt; <a class="el" href="a00104.html#ac40b4167b704e8f1f1159c6c6bf952d2">SkinColorDetectorPtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
-<p>This is the complete list of members for <a class="el" href="a00006.html">BSPipeline</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00006.html#a5fdbf170f55b0f38b67a49928a3aace5">BSPipeline</a>(ImageAnalyzer *parent)</td><td class="entry"><a class="el" href="a00006.html">BSPipeline</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00020.html#a83b758aec4bce1cc453e8e32c72791ac">getComponents</a>() const </td><td class="entry"><a class="el" href="a00020.html">ProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00020.html#aa144235383e86765ca78fa3c8a2ac8bc">getObjectByName</a>(const QString &amp;name)</td><td class="entry"><a class="el" href="a00020.html">ProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00020.html#a5199b891bbaa75fce697241ab6a70ea5">m_parent</a></td><td class="entry"><a class="el" href="a00020.html">ProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00020.html#aeb2b75d84512ae7187b253da9db1915b">m_processingComponents</a></td><td class="entry"><a class="el" href="a00020.html">ProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00006.html#ad34691d3cef04688dfbcd32d783bb2c3">mp_dilate</a></td><td class="entry"><a class="el" href="a00006.html">BSPipeline</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00006.html#a321d0a02a737ab0eb4b2d4f56b914935">mp_erode</a></td><td class="entry"><a class="el" href="a00006.html">BSPipeline</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00020.html#a2e194253fd9b5eb15397cebf66f8d91e">mp_snapshot</a></td><td class="entry"><a class="el" href="a00020.html">ProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00006.html#a90edcead15c60213e658f20833290594">mp_threshold</a></td><td class="entry"><a class="el" href="a00006.html">BSPipeline</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00006.html#a3fbdaca91842edbb77ac057317ef425e">process</a>(cv::Mat &amp;input)</td><td class="entry"><a class="el" href="a00006.html">BSPipeline</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00020.html#a74a34db3a84f6582a913d54096bada3b">ProcessingPipeline</a>(ImageAnalyzer *parent)</td><td class="entry"><a class="el" href="a00020.html">ProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00020.html#a99a051f5228b7c5a9081c8eb9c2a93ad">setSnapshot</a>(cv::Mat *snapshot)</td><td class="entry"><a class="el" href="a00020.html">ProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00006.html#ac91da21850dd2ae090420f3f961916f0">~BSPipeline</a>()</td><td class="entry"><a class="el" href="a00006.html">BSPipeline</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00020.html#ae81c183fb5d32d3e611be54d6ebd64b4">~ProcessingPipeline</a>()</td><td class="entry"><a class="el" href="a00020.html">ProcessingPipeline</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-</table></div><!-- contents -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00104.html">SkinColorDetector.h</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

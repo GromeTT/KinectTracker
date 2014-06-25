@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: BasicUsageScene Class Reference</title>
+<title>KinectTracker: BackgroudSubtractionPipeline Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,136 +104,64 @@ $(document).ready(function(){initNavTree('a00003.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="a00101.html">List of all members</a>  </div>
+<a href="a00163.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">BasicUsageScene Class Reference</div>  </div>
+<div class="title">BackgroudSubtractionPipeline Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00036_source.html">BasicUsageScene.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00089_source.html">ProcessingPipeline.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for BasicUsageScene:</div>
+Inheritance diagram for BackgroudSubtractionPipeline:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00003.png" usemap="#BasicUsageScene_map" alt=""/>
-  <map id="BasicUsageScene_map" name="BasicUsageScene_map">
+  <img src="a00003.png" usemap="#BackgroudSubtractionPipeline_map" alt=""/>
+  <map id="BackgroudSubtractionPipeline_map" name="BackgroudSubtractionPipeline_map">
+<area href="a00035.html" alt="ProcessingPipeline" shape="rect" coords="0,56,182,80"/>
 </map>
  </div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a61d63f3b4e7cba1f4ff2dd43c12b194e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html#a61d63f3b4e7cba1f4ff2dd43c12b194e">resize</a> (const int width, const int height)</td></tr>
-<tr class="separator:a61d63f3b4e7cba1f4ff2dd43c12b194e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1b92d6bce5ac18f3d83b5bd91f214b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html#ad1b92d6bce5ac18f3d83b5bd91f214b5">moveCamera</a> (const float x, const float y, const float z)</td></tr>
-<tr class="separator:ad1b92d6bce5ac18f3d83b5bd91f214b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6575aba75042930f7aaa38a99b0eab01"><td class="memItemLeft" align="right" valign="top">QOpenGLShaderProgram *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html#a6575aba75042930f7aaa38a99b0eab01">getShaderProgram</a> (const unsigned short i) const </td></tr>
-<tr class="separator:a6575aba75042930f7aaa38a99b0eab01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a7a299ca2114df5e2f910ed14f8f20739"><td class="memItemLeft" align="right" valign="top">QOpenGLShaderProgram *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html#a7a299ca2114df5e2f910ed14f8f20739">createShaderProgram</a> (const QString vertexShader, const QString fragmentShader)</td></tr>
-<tr class="separator:a7a299ca2114df5e2f910ed14f8f20739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a300f47ec0959f76ca3a4404c10034f7c"></a>
+<a class="anchor" id="a66fe1985f69bd22185ea16999b5bb0c2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">BasicUsageScene::BasicUsageScene </td>
+          <td class="memname">BackgroudSubtractionPipeline::BackgroudSubtractionPipeline </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00019.html">OpenGLWindow</a> *&#160;</td>
+          <td class="paramtype">QObject *&#160;</td>
           <td class="paramname"><em>parent</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00003.html#a300f47ec0959f76ca3a4404c10034f7c" title="BasicUsageScene::BasicUsageScene Standardkonstruktor. ">BasicUsageScene::BasicUsageScene</a> Standardkonstruktor. </p>
-
 </div>
 </div>
-<a class="anchor" id="a835697831ddd29d5021b1ae157707f6d"></a>
+<a class="anchor" id="a7eeb0863dfc4b9cdcf8002d4887fa75e"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">BasicUsageScene::~BasicUsageScene </td>
+          <td class="memname">BackgroudSubtractionPipeline::~BackgroudSubtractionPipeline </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p><a class="el" href="a00003.html#a835697831ddd29d5021b1ae157707f6d" title="BasicUsageScene::~BasicUsageScene Destruktor. ">BasicUsageScene::~BasicUsageScene</a> Destruktor. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a602c81674ffc49c24ec4a34892d794c2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00021.html">RenderObject</a> * BasicUsageScene::createAxis </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae456cdcb38a3804a05b24e4e74b80511"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00021.html">RenderObject</a> * BasicUsageScene::createCube </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0949caccb01a66d84eadcf96ca962ead"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::createFloor </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0aa8b9ad7272137934e4ed30cf3a7143"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00021.html">RenderObject</a> * BasicUsageScene::createPlane </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7a299ca2114df5e2f910ed14f8f20739"></a>
+<a class="anchor" id="a63f510e00cfe29acd36a86733d30c282"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -241,537 +169,26 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QOpenGLShaderProgram * BasicUsageScene::createShaderProgram </td>
+          <td class="memname">void BackgroudSubtractionPipeline::process </td>
           <td>(</td>
-          <td class="paramtype">const QString&#160;</td>
-          <td class="paramname"><em>vertexShader</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString&#160;</td>
-          <td class="paramname"><em>fragmentShader</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00003.html#a7a299ca2114df5e2f910ed14f8f20739" title="BasicUsageScene::createShaderProgram Creates a QOpenGLVertexShaderProgram with a vertex sahder and a ...">BasicUsageScene::createShaderProgram</a> Creates a QOpenGLVertexShaderProgram with a vertex sahder and a fragment shader. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vertexShader</td><td>Path to vertex shader. </td></tr>
-    <tr><td class="paramname">fragmentShader</td><td>Path to framgent shader. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a1eed90fb66630b5a2490ca4c2220f532"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00029.html">SkeletonRenderObject</a> * BasicUsageScene::createSkeletonRenderObject </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9c8e86cfa0ef3863437ebe966e1d658a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QObject * BasicUsageScene::getCamera </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa5462ea97743f6c1bece025f71a1c606"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QObject * BasicUsageScene::getObjectByName </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac3a27f5b9ce297adbc99c16c0de80246"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00022.html">RenderObjectInterface</a> * BasicUsageScene::getRenderObject </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0694549db0f87e5d2c6fff4be2b193ed"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00022.html">RenderObjectInterface</a> * BasicUsageScene::getRenderObject </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a36d15b2d28785abbc9d48903dcc639de"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00022.html">RenderObjectInterface</a> * BasicUsageScene::getRenderObjectByName </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4add46c60fe60dd5adee8962378fef88"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00036.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a> &amp; BasicUsageScene::getRenderObjects </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6575aba75042930f7aaa38a99b0eab01"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QOpenGLShaderProgram * BasicUsageScene::getShaderProgram </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned short&#160;</td>
-          <td class="paramname"><em>i</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00003.html#a6575aba75042930f7aaa38a99b0eab01" title="BasicUsageScene::getShaderProgram. ">BasicUsageScene::getShaderProgram</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aec0e427d90f7508db10798dcb6ffd60f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::initialize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00003.html#aec0e427d90f7508db10798dcb6ffd60f" title="BasicUsageScene::initialize Initializes a basic shaderprogram and a texture. ">BasicUsageScene::initialize</a> Initializes a basic shaderprogram and a texture. </p>
-
-</div>
-</div>
-<a class="anchor" id="a612feeca46de656e12e66f03d9c4f5bf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00021.html">RenderObject</a> * BasicUsageScene::loadObjectFromFile </td>
-          <td>(</td>
-          <td class="paramtype">const QString&#160;</td>
-          <td class="paramname"><em>filename</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00003.html#a612feeca46de656e12e66f03d9c4f5bf" title="BasicUsageScene::loadObjectFromFile Constructs an RenderObject from the file specified by filename...">BasicUsageScene::loadObjectFromFile</a> Constructs an <a class="el" href="a00021.html">RenderObject</a> from the file specified by <em>filename</em>. If the procedure went wrong because of an invalid file or filename, nullptr will be returned. </p>
-
-</div>
-</div>
-<a class="anchor" id="ad1b92d6bce5ac18f3d83b5bd91f214b5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::moveCamera </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>z</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00003.html#ad1b92d6bce5ac18f3d83b5bd91f214b5" title="BasicUsageScene::moveCamera Moves the camera by x, y, z units. ">BasicUsageScene::moveCamera</a> Moves the camera by <em>x</em>, <em>y</em>, <em>z</em> units. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
-    <tr><td class="paramname">z</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a1846fd8966b0312b886ea112708d41fc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::moveCameraToPosition </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>z</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3c913057e8c078943f70136df1d326e8"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::objectHasBeenAdded </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00021.html">RenderObject</a> &amp;&#160;</td>
-          <td class="paramname"><em>object</em></td><td>)</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a933d0a38e9dfc3a9f67a3c2234de06d1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::pitchCamera </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>angle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af9e8f3419320e50112e1b64ac661859f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::prepareShaderProgram </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af295dbd4e13493378719587ee83dd86d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::prepareTextures </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00003.html#af295dbd4e13493378719587ee83dd86d" title="BasicUsageScene::prepareTextures Constructs all textures that are going to be used in the scene...">BasicUsageScene::prepareTextures</a> Constructs all textures that are going to be used in the scene. </p>
-
-</div>
-</div>
-<a class="anchor" id="a1cf271f29902fdc8614dd56d7170ee9f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::render </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00003.html#a1cf271f29902fdc8614dd56d7170ee9f" title="BasicUsageScene::render. ">BasicUsageScene::render</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a61d63f3b4e7cba1f4ff2dd43c12b194e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::resize </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>height</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00003.html#a61d63f3b4e7cba1f4ff2dd43c12b194e" title="BasicUsageScene::resize Refreshes the viewport dimensions. ">BasicUsageScene::resize</a> Refreshes the viewport dimensions. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">width</td><td>Current width. </td></tr>
-    <tr><td class="paramname">height</td><td>Current height. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="aafffdae67f5de436d3e92f4e19c1fd57"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::rollCamera </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>angle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6fe0541c49b5f1d43bb6bffd8e647f52"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::setCameraPitch </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>angle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac1be58046cdc53a21de80113e966900e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::setCameraRoll </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>angle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a2481633795b6bc8f0b5f81fb221ddb2d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::setCameraYaw </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>angle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1a3912dedfe221ce60216b814610b9cd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::takeSnapshot </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9925a27c44aaa51ccb727a5260141a2d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::update </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a65081212907d0ea2a9b89f242c82cacd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicUsageScene::yawCamera </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>angle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Implements <a class="el" href="a00035.html#aac43bf94ad3e70b41b87f6016c4f0f7d">ProcessingPipeline</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a3865878f6154055661ae8dc4d1666f04"></a>
+<a class="anchor" id="a2decba6aec1268b8482e567f0b2e88cb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -779,7 +196,7 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00007.html">Camera</a> BasicUsageScene::m_camera</td>
+          <td class="memname">cv::BackgroundSubtractorMOG BackgroudSubtractionPipeline::m_backgroundSubtractor</td>
         </tr>
       </table>
   </td>
@@ -791,7 +208,7 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa7f9bfa444d739b92ea4bb23c63e4353"></a>
+<a class="anchor" id="a5ad3989b90ddae691c6136ee95f98f4f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -799,192 +216,12 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QFileSystemWatcher BasicUsageScene::m_fileSystemWatcher</td>
+          <td class="memname"><a class="el" href="a00071.html#ac5e9e35e34113deab9a06fcfdd46a7fc">ErodePtr</a> BackgroudSubtractionPipeline::mp_erode</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae02a9f7f40ee4a65c7ef65f92117d145"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QMatrix4x4 BasicUsageScene::m_projectionMatrix</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a349f0b549b6068a8d43dc073ddb67379"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00036.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a> BasicUsageScene::m_renderObjects</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3a86956784d7eff683e354c80e261948"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00036.html#aa288f148caa1e8d74d29b8838ee211c8">ShaderPrograms</a> BasicUsageScene::m_shaderPrograms</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0a364cc2b47cbe4ee6173285cdec2c37"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool BasicUsageScene::m_takeSnapshot</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad6a39b4261676bf917a8e823959e5ade"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00036.html#a8d404d21e13f8fa172f7a01eba949a7c">OpenGLTextures</a> BasicUsageScene::m_textures</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a595968f6bbf7215609564285e0ecc596"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QImage* BasicUsageScene::mp_snapshot</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a29d589c18c116e02bbe9d0d76560bcb3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00019.html">OpenGLWindow</a>* BasicUsageScene::mp_window</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="add5769c8bde317eb0e141e6f1384b2ae"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const QString BasicUsageScene::pathToFragmentShader = &quot;../KinectTracker/Shader/FragmentShader.frag&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a06f3ef0a8c73c92a3c51c7c975ba41f0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const QString BasicUsageScene::pathToVertexShader = &quot;../KinectTracker/Shader/VertexShader.vert&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -992,16 +229,16 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00036_source.html">BasicUsageScene.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00067.html">BasicUsageScene.cpp</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00089_source.html">ProcessingPipeline.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00138.html">ProcessingPipeline.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00003.html">BasicUsageScene</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00003.html">BackgroudSubtractionPipeline</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

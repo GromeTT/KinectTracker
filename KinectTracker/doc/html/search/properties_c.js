@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['y',['y',['../a00007.html#ab0522c72fc25c7fa9ad6d0b91e0a3270',1,'Camera::y()'],['../a00032.html#a91bd7b7cac943d739dcf4e2d077a991a',1,'TransformationObject::y()']]],
-  ['yaw',['yaw',['../a00007.html#ad76701b22630f2df28a0ae15f0497a3a',1,'Camera::yaw()'],['../a00032.html#afe30a68d67c691f5f3779a1c42413351',1,'TransformationObject::yaw()']]],
-  ['yscale',['yScale',['../a00032.html#a9838281fe47b57f167f21e7f87201bd8',1,'TransformationObject']]]
+  ['roll',['roll',['../a00001.html#ac44945f8eca23456da733057b8660754',1,'AnalysisResults::roll()'],['../a00011.html#a08d9c6119a859e664d74ca07db4fe3d3',1,'Camera::roll()'],['../a00055.html#a476fe76f33c2ce33ced2a629fb4faa7f',1,'TransformationObject::roll()']]]
 ];

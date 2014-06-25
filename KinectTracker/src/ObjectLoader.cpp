@@ -11,7 +11,6 @@ LoaderObject::LoaderObject()
 
 LoaderObject::~LoaderObject()
 {
-    qDebug() << "LoaderObject destroyed.";
 }
 
 void LoaderObject::addVertex( const Vertex vertex )

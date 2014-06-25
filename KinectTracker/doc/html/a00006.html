@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: BSPipeline Class Reference</title>
+<title>KinectTracker: BoundingBox Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,32 +104,44 @@ $(document).ready(function(){initNavTree('a00006.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00104.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="a00166.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">BSPipeline Class Reference</div>  </div>
+<div class="title">BoundingBox Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00053_source.html">ProcessingPipeline.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00063_source.html">BoundingGeometry.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for BSPipeline:</div>
+Inheritance diagram for BoundingBox:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00006.png" usemap="#BSPipeline_map" alt=""/>
-  <map id="BSPipeline_map" name="BSPipeline_map">
-<area href="a00020.html" alt="ProcessingPipeline" shape="rect" coords="0,0,120,24"/>
+  <img src="a00006.png" usemap="#BoundingBox_map" alt=""/>
+  <map id="BoundingBox_map" name="BoundingBox_map">
+<area href="a00007.html" alt="BoundingGeometry" shape="rect" coords="0,0,119,24"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:abb20c845b8a47726b08b832f1547b63a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00006.html#abb20c845b8a47726b08b832f1547b63a">calculateBoundingBox</a> (const QVector&lt; QVector3D &gt; &amp;points, const float deltaW=0, const float deltaD=0, const float deltaH=0)</td></tr>
+<tr class="separator:abb20c845b8a47726b08b832f1547b63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8f1d5ebc762ff185e6ca9d22ab097221"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00006.html#a8f1d5ebc762ff185e6ca9d22ab097221">arePointsInsideGeometryV</a> (const QVector&lt; QVector3D &gt; &amp;points)</td></tr>
+<tr class="separator:a8f1d5ebc762ff185e6ca9d22ab097221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a5fdbf170f55b0f38b67a49928a3aace5"></a>
+<a class="anchor" id="a6e401c4da5839950f1f30c8b8c4d1208"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">BSPipeline::BSPipeline </td>
+          <td class="memname">BoundingBox::BoundingBox </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00013.html">ImageAnalyzer</a> *&#160;</td>
-          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -137,7 +149,61 @@ Inheritance diagram for BSPipeline:</div>
 
 </div>
 </div>
-<a class="anchor" id="ac91da21850dd2ae090420f3f961916f0"></a>
+<a class="anchor" id="a9f9e1c84026874480e343ce0d359d513"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoundingBox::BoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; QVector3D &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaW</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaD</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaH</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8dca1095bfeb6edff5723824af1407c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoundingBox::BoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00006.html">BoundingBox</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a587de78331711c6eb6d15de867b73991"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -145,7 +211,7 @@ Inheritance diagram for BSPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">BSPipeline::~BSPipeline </td>
+          <td class="memname">BoundingBox::~BoundingBox </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -161,7 +227,7 @@ Inheritance diagram for BSPipeline:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a3fbdaca91842edbb77ac057317ef425e"></a>
+<a class="anchor" id="a8f1d5ebc762ff185e6ca9d22ab097221"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -169,26 +235,161 @@ Inheritance diagram for BSPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void BSPipeline::process </td>
+          <td class="memname">bool BoundingBox::arePointsInsideGeometryV </td>
           <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
+          <td class="paramtype">const QVector&lt; QVector3D &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00007.html#a640cfdc505afb10917d7328337c100f6" title="BoundingGeometry::arePointsInsideGeometry Returns true, if all points of points are inside the geomet...">BoundingGeometry::arePointsInsideGeometry</a> </dd></dl>
 
-<p>Implements <a class="el" href="a00020.html#aac43bf94ad3e70b41b87f6016c4f0f7d">ProcessingPipeline</a>.</p>
+<p>Implements <a class="el" href="a00007.html#acef17525e9a7ad4b77f2b330db0e64cb">BoundingGeometry</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb20c845b8a47726b08b832f1547b63a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::calculateBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; QVector3D &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaW</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaD</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaH</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>/fn void BoundingBox::calculateBoundingGeometryV( const QVector&lt;QVector3D&gt;&amp; poinst, const float deltaW, const float deltaD, const float deltaH ) Computes this <a class="el" href="a00006.html">BoundingBox</a> so that it encloses the data provided by <em>points</em>. </p>
+<p>The remaning parameters can be used to enlarge the dimensions of the <a class="el" href="a00006.html">BoundingBox</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8e47b5b734e4594777c257c59d13a62b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::depth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aabdbe73f4d217e0ae61671ec1a387361"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4671e29075fba2ed829f2838a850994c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::setDepth </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>depth</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aff2f3e191249d0aa811b22e791fe3d9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::setHeight </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>height</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad9bc903c2a3c01d220969db034b9c4d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoundingBox::setWidth </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>width</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5da6cd402f1b4b1deeeebbdac405ab2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BoundingBox::width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ad34691d3cef04688dfbcd32d783bb2c3"></a>
+<a class="anchor" id="aa2a6700181e92cb7ba0e7d6fde3c15dc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -196,7 +397,7 @@ Inheritance diagram for BSPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00041.html#aa68996a9540ac9392c7b51f46cfb6357">DilatePtr</a> BSPipeline::mp_dilate</td>
+          <td class="memname">float BoundingBox::m_depth</td>
         </tr>
       </table>
   </td>
@@ -208,7 +409,7 @@ Inheritance diagram for BSPipeline:</div>
 
 </div>
 </div>
-<a class="anchor" id="a321d0a02a737ab0eb4b2d4f56b914935"></a>
+<a class="anchor" id="a8ef7d989f217a73fcd3c256eead9a960"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -216,7 +417,7 @@ Inheritance diagram for BSPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00042.html#ac5e9e35e34113deab9a06fcfdd46a7fc">ErodePtr</a> BSPipeline::mp_erode</td>
+          <td class="memname">float BoundingBox::m_height</td>
         </tr>
       </table>
   </td>
@@ -228,7 +429,7 @@ Inheritance diagram for BSPipeline:</div>
 
 </div>
 </div>
-<a class="anchor" id="a90edcead15c60213e658f20833290594"></a>
+<a class="anchor" id="a5fda8917e2a6f75c04aba2adaff6ec4a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -236,7 +437,7 @@ Inheritance diagram for BSPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00063.html#a3c8e90f8e3d2c03c67c9c037fd083cde">ThresholdPtr</a> BSPipeline::mp_threshold</td>
+          <td class="memname">float BoundingBox::m_width</td>
         </tr>
       </table>
   </td>
@@ -249,16 +450,16 @@ Inheritance diagram for BSPipeline:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00053_source.html">ProcessingPipeline.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00083.html">ProcessingPipeline.cpp</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00063_source.html">BoundingGeometry.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00113.html">BoundingGeometry.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00006.html">BSPipeline</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00006.html">BoundingBox</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

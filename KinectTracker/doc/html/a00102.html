@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Member List</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SkeletonData.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,10 +67,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -85,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00004.html','');});
+$(document).ready(function(){initNavTree('a00102.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,43 +101,73 @@ $(document).ready(function(){initNavTree('a00004.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">BoundingBox Member List</div>  </div>
+<div class="title">SkeletonData.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &lt;QObject&gt;</code><br />
+<code>#include &lt;Windows.h&gt;</code><br />
+<code>#include &lt;NuiApi.h&gt;</code><br />
+<code>#include &lt;QVector3D&gt;</code><br />
+<code>#include &lt;QVector&gt;</code><br />
+<code>#include &lt;QSharedPointer&gt;</code><br />
+</div>
+<p><a href="a00102_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00048.html">SkeletonData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a3ff4896d315d1270ac7622ce28abee47"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QSharedPointer&lt;<a class="el" href="a00048.html">SkeletonData</a>&gt; <a class="el" href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
-<p>This is the complete list of members for <a class="el" href="a00004.html">BoundingBox</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a5e59937134e983e6b544077dcfb7c2d7">arePointsInsideBoundingBox</a>(const QVector&lt; QVector3D &gt; &amp;points)</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#a6e401c4da5839950f1f30c8b8c4d1208">BoundingBox</a>()</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a9f9e1c84026874480e343ce0d359d513">BoundingBox</a>(const QVector&lt; QVector3D &gt; &amp;points, const float deltaW=0, const float deltaD=0, const float deltaH=0)</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#a8dca1095bfeb6edff5723824af1407c0">BoundingBox</a>(const BoundingBox &amp;other)</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#abb20c845b8a47726b08b832f1547b63a">calculateBoundingBox</a>(const QVector&lt; QVector3D &gt; &amp;points, const float deltaW=0, const float deltaD=0, const float deltaH=0)</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#a2765d599894e1ce70a71cc143f603601">getDepth</a>() const </td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#aeb0038310316513e738f712548394d45">getHeight</a>() const </td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#acd3378928b8a9996790b22ad9f8b6404">getWidth</a>() const </td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a61b21b1965b2b476b3209f70a6142c5f">getX</a>() const </td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#a9d90e3ff56eef1cd7b410389695b2899">getY</a>() const </td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a5341e4fa5385d4c621c74aa350d6720f">getZ</a>() const </td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#aa2a6700181e92cb7ba0e7d6fde3c15dc">m_depth</a></td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a8ef7d989f217a73fcd3c256eead9a960">m_height</a></td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#a5fda8917e2a6f75c04aba2adaff6ec4a">m_width</a></td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#aa6656a033f30a21da358da1f1b29bf2e">m_x</a></td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#ac2bb8379e9bf1b52c4ced7bbd9a824a2">m_y</a></td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#af309964a535f7e37dde54cd35733bfb2">m_z</a></td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#a4671e29075fba2ed829f2838a850994c">setDepth</a>(const float depth)</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#aff2f3e191249d0aa811b22e791fe3d9e">setHeight</a>(const float height)</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#ad9bc903c2a3c01d220969db034b9c4d4">setWidth</a>(const float width)</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#adc26582db90273fb86431937f6189251">setX</a>(const float x)</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#a99dba1c9c15c61b0b1e06abe16699bc2">setY</a>(const float y)</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#adb9be71a078e9def441780f83162e6ae">setZ</a>(const float z)</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#a587de78331711c6eb6d15de867b73991">~BoundingBox</a>()</td><td class="entry"><a class="el" href="a00004.html">BoundingBox</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a0215fce6b5c62bc073884c1c58ee4d25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void copy </td>
+          <td>(</td>
+          <td class="paramtype">const Vector4 &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVector3D &amp;&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00102.html">SkeletonData.h</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

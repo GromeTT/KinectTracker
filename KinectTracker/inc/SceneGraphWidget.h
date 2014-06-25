@@ -19,31 +19,47 @@ class SceneGraphWidget : public QWidget
     Q_OBJECT
 
 public:
+    enum class ActiveScene
+    {
+        RGBProcessingPipeline = 0,
+        DepthProcessingPipeline = 1,
+        RenderScene = 2
+    };
+
+public:
     explicit SceneGraphWidget( QWidget *parent = 0 );
     ~SceneGraphWidget();
 
-    void addObject( const QObject& object );
+    QObject*     getCurrentObject() const;
+    ActiveScene  activeScene() const;
+//    void addObject( QObject* object );
+    void addObject( const QObject* object );
+    void addObject( QObject* object );
     void addObjects( const QList<QObject*>& objects );
     void addObjects( const RenderObjects& objects );
     void addObjects( const QVector<QObject*>& objects );
     void addObjects( const QVector<ProcessingComponent*>& objects );
-    QObject* getCurrentObject() const;
-
     void clearTreeWidget();
 
 private:
     void selectionHasChanged( QTreeWidgetItem* curr,
                               QTreeWidgetItem* prev );
-    QTreeWidgetItem* createItemFromObject( const QObject& object );
-    QTreeWidgetItem* createItemFromObject( const QObject& object,
+    QTreeWidgetItem* createItemFromObject( const QObject* object );
+    QTreeWidgetItem* createItemFromObject( const QObject* object,
                                            QTreeWidgetItem* parent );
-    QTreeWidgetItem* createItemFromObject( QObject& object );
-    QTreeWidgetItem* createItemFromObject( QObject& object,
+    QTreeWidgetItem* createItemFromObject( QObject* object );
+    QTreeWidgetItem* createItemFromObject( QObject* object,
                                            QTreeWidgetItem* parent );
     void addObjects( const QVector<ProcessingComponent*>& objects,
                      QTreeWidgetItem* parent );
+
+    ActiveScene m_activeScene;
+private slots:
+    void comboBoxChanged( int index );
+
 signals:
     void selectionChanged( const QString& text );
+    void sceneChanged( ActiveScene index );
 
 private:
     Ui::SceneGraphWidget *ui;

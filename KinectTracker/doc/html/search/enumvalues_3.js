@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['fail',['FAIL',['../a00014.html#a260ceef1571ff51ff8571b1951782390a2416cb754692f4d74e8fa2ec14116c0b',1,'Kinect']]],
-  ['footleft',['FootLeft',['../a00028.html#ade909294e270cd0b16d248d90129401cac0957ad259802f0a919c8c12dd06ed0d',1,'SkeletonData']]],
-  ['footright',['FootRight',['../a00028.html#ade909294e270cd0b16d248d90129401cacce96a8bcdfeab497541a73c3f06d10e',1,'SkeletonData']]]
+  ['elbowleft',['ElbowLeft',['../a00048.html#af34e460c0da2f42218294f80e7070b28a62d7fd05a5c965ae80e4d59a5434f383',1,'SkeletonData']]],
+  ['elbowright',['ElbowRight',['../a00048.html#af34e460c0da2f42218294f80e7070b28a43b4a26b475222d959bb0f57d788387c',1,'SkeletonData']]]
 ];

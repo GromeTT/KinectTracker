@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: OpenGLWindow Class Reference</title>
+<title>KinectTracker: FixedPropertyVector Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,52 +104,67 @@ $(document).ready(function(){initNavTree('a00019.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00117.html">List of all members</a>  </div>
+<a href="a00179.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">OpenGLWindow Class Reference</div>  </div>
+<div class="title">FixedPropertyVector Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00052_source.html">OpenGLWindow.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for OpenGLWindow:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00019.png" usemap="#OpenGLWindow_map" alt=""/>
-  <map id="OpenGLWindow_map" name="OpenGLWindow_map">
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="a00066_source.html">Defines.h</a>&gt;</code></p>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a81b042bc42f2e3057c5eb30edf8029c6"></a>
+<a class="anchor" id="a4d8fdeba3cedb540692b58357d923611"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">OpenGLWindow::OpenGLWindow </td>
+          <td class="memname">FixedPropertyVector::FixedPropertyVector </td>
           <td>(</td>
-          <td class="paramtype">QScreen *&#160;</td>
-          <td class="paramname"><em>screen</em> = <code>0</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aa220b192c71871aab9100f4058a8d62d"></a>
+<a class="anchor" id="a02dc9c9d37712ad936bc257237c4b18f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">OpenGLWindow::~OpenGLWindow </td>
+          <td class="memname">FixedPropertyVector::FixedPropertyVector </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9d1571f30bf5147e849cc41fa5aedd0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FixedPropertyVector::FixedPropertyVector </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6874e41c4693c2cff0c0eb11e57952a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FixedPropertyVector::~FixedPropertyVector </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -160,184 +175,135 @@ Inheritance diagram for OpenGLWindow:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0798f49b14a35aa4d2ea5bc1d82a1bd7"></a>
+<a class="anchor" id="afa85a0006e87fe8629f1831ea1206637"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00036.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a> &amp; OpenGLWindow::getOpenGLContext </td>
+          <td class="memname">float FixedPropertyVector::at </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2667c22ea9b5e654a58440598a49e802"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; float &gt; &amp; FixedPropertyVector::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a685f81679ed40d2a072e6da696b0e160"></a>
+<a class="anchor" id="af9dc43efb450e3c03bc081d6a7d866c1"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00036.html#ab47e41722c2931c8063642b53ff6c04f">Scene</a> OpenGLWindow::getScene </td>
+          <td class="memname">float FixedPropertyVector::last </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ad5f75b29b792f0d4a3ce32bd2dd3fad8"></a>
+<a class="anchor" id="ad8f3e2a02bbb88bae18c4dd3c3dd60de"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void OpenGLWindow::init </td>
+          <td class="memname">bool FixedPropertyVector::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad8559e344284597624e58b14a4560769"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FixedPropertyVector::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a58c7fd0958fe997c38e36adc4aaa6df1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FixedPropertyVector::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6c696b3eed0f6dc6d6caa76d77672da3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FixedPropertyVector::setData </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9ac7c743b29482da86c5601939654075"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FixedPropertyVector::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a69f3cfa0a95ca91f57d90d9484bd6c54"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void OpenGLWindow::initializeGL </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aafa1fdd10232a09b77db2395519e9882"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void OpenGLWindow::keyPressEvent </td>
-          <td>(</td>
-          <td class="paramtype">QKeyEvent *&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab7514c6f73755094d5670765ec47a71c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void OpenGLWindow::keyReleaseEvent </td>
-          <td>(</td>
-          <td class="paramtype">QKeyEvent *&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a03229f68dac57be079e18b6ef135ab46"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void OpenGLWindow::makeContextCurrent </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7ae488627e37254bbe1863c928781d83"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void OpenGLWindow::paintGL </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a09f27a6f1628dadbd3c7ca3c1651ec59"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void OpenGLWindow::resizeGL </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae42079d2df46e3aa913e0ddfce3de023"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void OpenGLWindow::updateScene </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -345,7 +311,19 @@ Inheritance diagram for OpenGLWindow:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ab402508e5d28e6d005872fa6731507ee"></a>
+<a class="anchor" id="a9eade92d9e1c37aa3f2b59758a1ff1be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int FixedPropertyVector::channelCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adeaa2012c2d4b06e8913fe12c0304615"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -353,7 +331,7 @@ Inheritance diagram for OpenGLWindow:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00036.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a> OpenGLWindow::m_context</td>
+          <td class="memname">std::vector&lt;float&gt; FixedPropertyVector::m_data</td>
         </tr>
       </table>
   </td>
@@ -365,57 +343,30 @@ Inheritance diagram for OpenGLWindow:</div>
 
 </div>
 </div>
-<a class="anchor" id="a47480af9b80b37f9a8f0eead84eb90be"></a>
+<a class="anchor" id="ad907fd3830ad9e5ef8f75bc6421468b8"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00036.html#ab47e41722c2931c8063642b53ff6c04f">Scene</a> OpenGLWindow::m_scene</td>
+          <td class="memname">std::vector&lt;float&gt; FixedPropertyVector::vec</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad88460862bd55a441456b958a9563397"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool OpenGLWindow::m_strgPressed</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00052_source.html">OpenGLWindow.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00082.html">OpenGLWindow.cpp</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00066_source.html">Defines.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00073_source.html">FixedPropertyVector.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00122.html">FixedPropertyVector.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00019.html">OpenGLWindow</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00019.html">FixedPropertyVector</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -16,6 +16,7 @@ public:
     ~TreeModel();
 
     void setObject( QObject* object );
+    void clearModel();
 
 private:
     QStandardItem* createItem( const QMetaProperty& metaProperty,
@@ -23,7 +24,7 @@ private:
                                const bool editable );
     void connectProperty( QObject* object,
                           const QMetaProperty& metaProperty ,
-                          QStandardItem* item) ;
+                          QStandardItem* item );
     void updateItem( QStandardItem* item,
                      QObject* object,
                      const QMetaProperty& metaProperty );

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Member List</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Threshold.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,10 +67,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -85,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00007.html','');});
+$(document).ready(function(){initNavTree('a00105.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,62 +101,44 @@ $(document).ready(function(){initNavTree('a00007.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">Camera Member List</div>  </div>
+<div class="title">Threshold.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &lt;QObject&gt;</code><br />
+<code>#include &lt;opencv2/opencv.hpp&gt;</code><br />
+<code>#include &lt;QSharedPointer&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00088_source.html">ProcessingComponent.h</a>&quot;</code><br />
+</div>
+<p><a href="a00105_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html">Threshold</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a3c8e90f8e3d2c03c67c9c037fd083cde"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QSharedPointer&lt;<a class="el" href="a00054.html">Threshold</a>&gt; <a class="el" href="a00105.html#a3c8e90f8e3d2c03c67c9c037fd083cde">ThresholdPtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
-<p>This is the complete list of members for <a class="el" href="a00007.html">Camera</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a01f94c3543f56ede7af49dc778f19331">Camera</a>()</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a02e723fefee04161b70a00ac0c86f61c">cameraMatrix</a>() const </td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a248d8676e4fbd7e22be3796b02e66ff7">m_cameraMatrix</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">mutable</span><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a2202e419e9440bbb26e6997248268b0b">m_pitch</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#af1e90ce41845b6193459e7cdd7883620">m_recalculateMatrix</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">mutable</span><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#ae07dee191347241e6a3eb5fae8e412d7">m_roll</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a1ce573536836272b296f8e94c7974364">m_x</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a0b9da90c49bedc62790febde732a934a">m_y</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a0f8807da02d4a1bb695be51793279873">m_yaw</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a62832d8ac818a22cf962cbee1f5cdc34">m_z</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#ac6c1fa189a9e31024c6a3f1f5d848d88">move</a>(const float x, const float y, const float z)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#ae9633decd748db7971452fac9267afc3">moveToPosition</a>(const float x, const float y, const float z)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a42820409332f0a401ad48ff59cccaf38">moveX</a>(const float x)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a52459b6a02c5a884b3a3ab05d5ece2e9">moveY</a>(const float y)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a2e4f6e3b96b731be90d68ccec334eae8">moveZ</a>(const float z)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#ab56fcb39f580e8d2159cf2c9c6d9a65a">pitch</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a0bcbb567ac04d7a092d0c83634706bdb">pitch</a>(const float angle)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a466885878a075ab8bdfb346b91fce624">pitch</a>() const </td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#aaf98a368756099c37816eac824fee737">pitchChanged</a>()</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a08d9c6119a859e664d74ca07db4fe3d3">roll</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a405bbf625689bff37110322ced6eddcd">roll</a>(const float angle)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a14951fd778634707bd443f9200383ba3">roll</a>() const </td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#acc94eda68009dd5817bc22f3327034ff">rollChanged</a>()</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#aaf297908edc0aa91853f0358e6a438e9">setPitch</a>(const float pitch)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a313f6a950b7b69f653d23b4a829d2307">setRoll</a>(const float roll)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a9cfe70f6e06b1d487a7e13dfb718bcf4">setX</a>(const float x)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a35757c36cd5cef044792fdcf9a7c80b2">setY</a>(const float y)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a7acb45db6d68ae7cd84a0ea477aa86a2">setYaw</a>(const float yaw)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a5a9a1936f3658aed4241ec0de6b18664">setZ</a>(const float z)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#ae270fbd3b09b36f240a2d55b3b5b9cec">x</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#af37053e0dffc52966b1a4422b78aa23a">x</a>() const </td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#ac7fd18825b63f7f553d841266344e264">xChanged</a>()</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#ab0522c72fc25c7fa9ad6d0b91e0a3270">y</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a4c01649422c0d81985a2b5238a489a68">y</a>() const </td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#ad76701b22630f2df28a0ae15f0497a3a">yaw</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a4e7c8da6854bee2c133ad73ca20aba27">yaw</a>(const float angle)</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a1482388d0028f2e99737687ce8350a0f">yaw</a>() const </td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#ac7f165ebd0b97d1f6910ea019f0df267">yawChanged</a>()</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#a8d0698bd7dbedb50c282f6fe30d6da47">yChanged</a>()</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a86fd72da0b71b8028ad1312969be8831">z</a></td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#ad7b7cb14dcade7ea0aa64e6910626091">z</a>() const </td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a1240b8de533385099a4d6082058ee67a">zChanged</a>()</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00007.html#ad1897942d0ccf91052386388a497349f">~Camera</a>()</td><td class="entry"><a class="el" href="a00007.html">Camera</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-</table></div><!-- contents -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00105.html">Threshold.h</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

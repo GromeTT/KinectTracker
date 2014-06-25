@@ -63,6 +63,8 @@ public:
     const RenderObjects&         getRenderObjects() const;
     QObject*                     getObjectByName( const QString& name );
     QObject*                     getCamera();
+    bool                         deleteObject( RenderObject* object );
+    void                         deleteAllRenderObjects();
 
 signals:
     void objectHasBeenAdded( const RenderObject& object );
@@ -88,6 +90,6 @@ private:
     static const QString pathToFragmentShader;
 };
 
-typedef QSharedPointer<BasicUsageScene> Scene;
+typedef QSharedPointer<BasicUsageScene> ScenePtr;
 
 #endif // BASICUSAGESCENE_H

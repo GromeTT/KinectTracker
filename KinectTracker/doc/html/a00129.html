@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Member List</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/src/Intersection.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,10 +67,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -85,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00032.html','');});
+$(document).ready(function(){initNavTree('a00129.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -104,80 +102,145 @@ $(document).ready(function(){initNavTree('a00032.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">TransformationObject Member List</div>  </div>
+<div class="title">Intersection.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="a00080_source.html">../Inc/Intersection.h</a>&quot;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a15d309989b99341fa895624b77b7caac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pointInCube </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>cubeX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>cubeY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>cubeZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>depth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
-<p>This is the complete list of members for <a class="el" href="a00032.html">TransformationObject</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a875825a191b0aff449b2029675436501">getModelMatrix</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#aee4cdc318631337cb56d2026f11aab73">m_modelMatrix</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">mutable</span><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#ae0ff56de1413f2736c8da7246f7bd0a5">m_pitch</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#aba0b5b016349caeeaf8b54e75f5311da">m_recalculateMatrix</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">mutable</span><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#acd2d7705ea97bdcad7358b1d7a36015c">m_roll</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a3626806d9c781eba3878b194254963fa">m_visible</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a3a855f9ab839417dc6e2066445a5a827">m_x</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#ac84ff05e699852f7c816d87363a50789">m_xScale</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a75076ad7fddd85a5a8a47c4cb4c1ce59">m_y</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#ae311130ae61b9b44f195093af10c795d">m_yaw</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a68f6b551f5c47032478137ca6e77dec3">m_yScale</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a2370f0d5da1ad416d2deffa7b037df67">m_z</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a5cf35dd62862d7b6e1dcdc9541b50e26">m_zScale</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a566d60c5f68a547645f35428bda6630f">mp_parent</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a78a9190843631a93b4af995a55964469">pitch</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a9be888208038e869dcdcad05ddd7c678">pitch</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#aac9d3bdb4aa56d1f6371bca856663c39">pitchChanged</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a476fe76f33c2ce33ced2a629fb4faa7f">roll</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#ae1f04a208519ab4188b6cea40cb5f804">roll</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a5d5980036b6103e6a74e88b4c45c51a2">rollChanged</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a4dbbe5ae618278d7ec698b5558ad4a2f">rollPitchYaw</a>(const QVector3D &amp;rotation)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#af5dcdbdaf78275cb2a244bdb9d3ad445">scaleX</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#ac036df0057a1807569cbfb939d45e53a">scaleY</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#ae32356a812fbd89e6def985fef72cf90">scaleZ</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a9d28179610573842d45406b33d93d775">setPitch</a>(const float pitch)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a98243cfd0e6ff6278c0543ad2446abbb">setPosition</a>(const QVector3D &amp;position)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a4bf886ab1045eeb82607b51eae4e77aa">setPosition</a>(const float x, const float y, const float z)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a9f3e86037fa9e43412493c9606ec22b6">setRoll</a>(const float roll)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#abfeec387746e0dd55f9a081c4b9a4958">setRollPitchYaw</a>(const QVector3D &amp;rotation)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a56b7d3314f876ff169e7518c3590c2c9">setScale</a>(const QVector3D &amp;scale)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#af3963a72a74ff9030af5cd85cf8466a3">setScale</a>(const float x, const float y, const float z)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#ab4b9911cf504c3ba2db744e776f23c97">setScaleX</a>(const float xScale)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a2e00d12fa9ff379132c808bf2963d35d">setScaleY</a>(const float yScale)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a367aafac9b82b5ca0e6a57b12c408033">setScaleZ</a>(const float zScale)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a2f51651b74a14a78dbc1df8b58611c76">setVisible</a>(const bool visible)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a8de11bed8385039f08ffebc6f14fe089">setX</a>(const float x)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a32bd2e856bb1b00ce95e61de033cde3e">setY</a>(const float y)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a9816b014dcb2c3b0638c2a79627a0920">setYaw</a>(const float yaw)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#aef930cf43a573af5b460ce48a7cdb703">setZ</a>(const float z)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a7fa43b6c5d225600cbbc6898b1182279">TransformationObject</a>(TransformationObject *parent)</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#aa5357edad24ae0085fc5b15c9e5f2a1d">visible</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a07f52ba76285057ec9572dacd6e45f25">visible</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a8633dcd931879bbe893f5665ed4ec934">visibleChanged</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#ab7aed15fcdba46d5a7e7f711b7288b74">x</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#abdedd6467cbdc76b3945289a2c6b9f61">x</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a39271adfc808e8adb18e06156fae5b99">xChanged</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a5e68ba8694ee8d10329bd7798c66ccf5">xScale</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#aafbe35229f4d11ae4280932f5d1e0ec1">xScaleChanged</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a91bd7b7cac943d739dcf4e2d077a991a">y</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a2f5bcb27ab14e10061e17ea99985a1ca">y</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#afe30a68d67c691f5f3779a1c42413351">yaw</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#ab8d3eab7742c4dfd00c461a224d052de">yaw</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#acfe8ffd16ecc122d81f2b5974fa9904a">yawChanged</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a1f2a313c0c6f64bb0cb1460190ee3afb">yChanged</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a9838281fe47b57f167f21e7f87201bd8">yScale</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a9ed6d5fd8bac3982504ab34bc9fd01cf">yScaleChanged</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a5c97ef0fbde57d895f1c39727f324bc7">z</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a85d5474af0a1ae1fdd229083ea3fb4e6">z</a>() const </td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#af49bc07d191b1bec4260103d19fcbb0f">zChanged</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#a62a805453fb3fefa1b93a309f885348a">zScale</a></td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00032.html#a1db436bc3342e922b30828df5f197f26">zScaleChanged</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00032.html#acb771459d672d437d52838dfb15764a2">~TransformationObject</a>()</td><td class="entry"><a class="el" href="a00032.html">TransformationObject</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-</table></div><!-- contents -->
+</div>
+</div>
+<a class="anchor" id="ad79d142e408b4534d9b735e4ff3c1b95"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pointInSphere </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>originX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>originY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>originZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pointInSphere Checks if a given point with the coordinates p( <em>x</em>, <em>y</em>, <em>z</em>) lies in the sphere with origin o ( <em>originX</em>, <em>originY</em>, <em>originZ</em> ) and radius <em>radius</em>. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="a00129.html">Intersection.cpp</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

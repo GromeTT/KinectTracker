@@ -39,8 +39,8 @@ public:
     enum class TrackState : char
         {
            Not_Tracked = NUI_SKELETON_NOT_TRACKED,
-           Infered = NUI_SKELETON_POSITION_INFERRED,
-           Tracked = NUI_SKELETON_POSITION_TRACKED
+           Infered     = NUI_SKELETON_POSITION_INFERRED,
+           Tracked     = NUI_SKELETON_POSITION_TRACKED
         };
 
     enum class Quality : char
@@ -54,6 +54,7 @@ public:
 public:
     SkeletonData();
     SkeletonData( const NUI_SKELETON_DATA& skeletonData );
+    SkeletonData( const SkeletonData& other );
     ~SkeletonData();
 
     void setSkeletonBySkeletonData( const NUI_SKELETON_DATA& skeletonData );
@@ -62,6 +63,8 @@ public:
     const QVector3D&          getJoint( const Joints joint ) const;
     const TrackState          jointTrackState( const Joints joint ) const;
     const Quality             quality() const;
+    int                       numberOfTrackedPoints() const;
+    bool                      areMajorPointsTracked() const;
 
 private:
     void initialize();
@@ -69,6 +72,7 @@ private:
     QVector<QVector3D>  m_joints;
     QVector<TrackState> m_jointTrackState;
     Quality             m_quality;
+    short               m_numberOfTrackedPoints;
 };
 
 typedef QSharedPointer<SkeletonData> SkeletonDataPtr;

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['elbowleft',['ElbowLeft',['../a00028.html#ade909294e270cd0b16d248d90129401ca62d7fd05a5c965ae80e4d59a5434f383',1,'SkeletonData']]],
-  ['elbowright',['ElbowRight',['../a00028.html#ade909294e270cd0b16d248d90129401ca43b4a26b475222d959bb0f57d788387c',1,'SkeletonData']]]
+  ['device_5fnot_5fready',['DEVICE_NOT_READY',['../a00027.html#a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e',1,'Kinect']]]
 ];

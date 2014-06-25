@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/MainWindow.h File Reference</title>
+<title>KinectTracker: SkinColorDetectionPipeline Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,8 +67,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -102,47 +104,32 @@ $(document).ready(function(){initNavTree('a00050.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="a00210.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MainWindow.h File Reference</div>  </div>
+<div class="title">SkinColorDetectionPipeline Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QMainWindow&gt;</code><br />
-<code>#include &lt;QTimer&gt;</code><br />
-<code>#include &lt;QTime&gt;</code><br />
-<code>#include &lt;QElapsedTimer&gt;</code><br />
-<code>#include &lt;opencv2/opencv.hpp&gt;</code><br />
-<code>#include &lt;opencv2/core/core.hpp&gt;</code><br />
-<code>#include &lt;opencv2/highgui/highgui.hpp&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00047_source.html">Kinect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00037_source.html">BoundingBox.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00060_source.html">SkeletonAnalyzer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00035_source.html">AnalysisResults.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00045_source.html">ImageAnalyzer.h</a>&quot;</code><br />
-</div>
-<p><a href="a00050_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00017.html">MainWindow</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a00097"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html">Ui</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ac060fba4cb9114e246f54eb4de31f152"></a>
+
+<p><code>#include &lt;<a class="el" href="a00089_source.html">ProcessingPipeline.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SkinColorDetectionPipeline:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00050.png" usemap="#SkinColorDetectionPipeline_map" alt=""/>
+  <map id="SkinColorDetectionPipeline_map" name="SkinColorDetectionPipeline_map">
+<area href="a00035.html" alt="ProcessingPipeline" shape="rect" coords="0,56,165,80"/>
+</map>
+ </div></div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8a84e97ae3c7bb62626cf110f8818a5b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void detect_blobs </td>
+          <td class="memname">SkinColorDetectionPipeline::SkinColorDetectionPipeline </td>
           <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>current</em></td><td>)</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -150,13 +137,108 @@ Namespaces</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7741ee3969237baf18db47c998ef321a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SkinColorDetectionPipeline::~SkinColorDetectionPipeline </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac3718f2b9bf5db8d8912ae3937ed1924"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkinColorDetectionPipeline::process </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00035.html#aac43bf94ad3e70b41b87f6016c4f0f7d">ProcessingPipeline</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa58dccb917a81b36742618ac4b822a2f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00079.html#ac4cec0ef3ece3b040232a43e0e59f236">InRangePtr</a> SkinColorDetectionPipeline::mp_inRange</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeac8b23f3374bf4173c85f2e317e2129"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00104.html#ac40b4167b704e8f1f1159c6c6bf952d2">SkinColorDetectorPtr</a> SkinColorDetectionPipeline::mp_skinColorDetector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00089_source.html">ProcessingPipeline.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00138.html">ProcessingPipeline.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00050.html">MainWindow.h</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00050.html">SkinColorDetectionPipeline</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

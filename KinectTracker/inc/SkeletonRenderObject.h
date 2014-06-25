@@ -17,7 +17,7 @@ public:
     SkeletonRenderObject();
     ~SkeletonRenderObject();
 
-    void updateData( const SkeletonDataPtr& data );
+    void updateData( const SkeletonData* data );
     void setShaderProgramm( QOpenGLShaderProgram* program );
 
 private:

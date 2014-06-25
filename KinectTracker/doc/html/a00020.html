@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: ProcessingPipeline Class Reference</title>
+<title>KinectTracker: FloatEditor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,32 +104,30 @@ $(document).ready(function(){initNavTree('a00020.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00118.html">List of all members</a>  </div>
+<a href="a00180.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ProcessingPipeline Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">FloatEditor Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00053_source.html">ProcessingPipeline.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00074_source.html">FloatEditor.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for ProcessingPipeline:</div>
+Inheritance diagram for FloatEditor:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00020.png" usemap="#ProcessingPipeline_map" alt=""/>
-  <map id="ProcessingPipeline_map" name="ProcessingPipeline_map">
-<area href="a00002.html" alt="BackgroudSubtractionPipeline" shape="rect" coords="0,56,182,80"/>
-<area href="a00006.html" alt="BSPipeline" shape="rect" coords="192,56,374,80"/>
+  <img src="a00020.png" usemap="#FloatEditor_map" alt=""/>
+  <map id="FloatEditor_map" name="FloatEditor_map">
 </map>
  </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a74a34db3a84f6582a913d54096bada3b"></a>
+<a class="anchor" id="adae55d332f7b88cd78b0ca74a6d0eadc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ProcessingPipeline::ProcessingPipeline </td>
+          <td class="memname">FloatEditor::FloatEditor </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00013.html">ImageAnalyzer</a> *&#160;</td>
+          <td class="paramtype">QWidget *&#160;</td>
           <td class="paramname"><em>parent</em></td><td>)</td>
           <td></td>
         </tr>
@@ -138,36 +136,28 @@ Inheritance diagram for ProcessingPipeline:</div>
 
 </div>
 </div>
-<a class="anchor" id="ae81c183fb5d32d3e611be54d6ebd64b4"></a>
+<a class="anchor" id="a97720d6f6f6e918c699e46b0c642038c"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ProcessingPipeline::~ProcessingPipeline </td>
+          <td class="memname">FloatEditor::~FloatEditor </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a83b758aec4bce1cc453e8e32c72791ac"></a>
+<a class="anchor" id="a653b871c59f6898465a31b9387311afb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const QVector&lt; QObject * &gt; &amp; ProcessingPipeline::getComponents </td>
+          <td class="memname">float FloatEditor::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -177,15 +167,15 @@ Inheritance diagram for ProcessingPipeline:</div>
 
 </div>
 </div>
-<a class="anchor" id="aa144235383e86765ca78fa3c8a2ac8bc"></a>
+<a class="anchor" id="a5b522354ffa86bca95e0964b74730e8a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QObject * ProcessingPipeline::getObjectByName </td>
+          <td class="memname">void FloatEditor::setData </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -193,7 +183,8 @@ Inheritance diagram for ProcessingPipeline:</div>
 
 </div>
 </div>
-<a class="anchor" id="aac43bf94ad3e70b41b87f6016c4f0f7d"></a>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a5c301bf73cae8e9fa11268a24cba6083"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -201,95 +192,12 @@ Inheritance diagram for ProcessingPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ProcessingPipeline::process </td>
-          <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
-          <td></td>
+          <td class="memname">float FloatEditor::data</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00006.html#a3fbdaca91842edbb77ac057317ef425e">BSPipeline</a>, and <a class="el" href="a00002.html#a63f510e00cfe29acd36a86733d30c282">BackgroudSubtractionPipeline</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a99a051f5228b7c5a9081c8eb9c2a93ad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ProcessingPipeline::setSnapshot </td>
-          <td>(</td>
-          <td class="paramtype">cv::Mat *&#160;</td>
-          <td class="paramname"><em>snapshot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a5199b891bbaa75fce697241ab6a70ea5"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00013.html">ImageAnalyzer</a>* ProcessingPipeline::m_parent</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aeb2b75d84512ae7187b253da9db1915b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVector&lt;QObject*&gt; ProcessingPipeline::m_processingComponents</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a2e194253fd9b5eb15397cebf66f8d91e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">cv::Mat* ProcessingPipeline::mp_snapshot</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -297,16 +205,16 @@ Inheritance diagram for ProcessingPipeline:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00053_source.html">ProcessingPipeline.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00083.html">ProcessingPipeline.cpp</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00074_source.html">FloatEditor.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00123.html">FloatEditor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00020.html">ProcessingPipeline</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00020.html">FloatEditor</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

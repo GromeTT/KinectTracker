@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Explorer.h File Reference</title>
+<title>KinectTracker: SASDProcessingPipeline Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,8 +67,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -102,37 +104,234 @@ $(document).ready(function(){initNavTree('a00043.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="a00203.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Explorer.h File Reference</div>  </div>
+<div class="title">SASDProcessingPipeline Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QWidget&gt;</code><br />
-<code>#include &lt;QTableWidgetItem&gt;</code><br />
-<code>#include &lt;QDebug&gt;</code><br />
-<code>#include &lt;QSignalMapper&gt;</code><br />
-<code>#include &lt;QMetaMethod&gt;</code><br />
-</div>
-<p><a href="a00043_source.html">Go to the source code of this file.</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00097_source.html">SASDProcessingPipeline.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SASDProcessingPipeline:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00043.png" usemap="#SASDProcessingPipeline_map" alt=""/>
+  <map id="SASDProcessingPipeline_map" name="SASDProcessingPipeline_map">
+<area href="a00022.html" alt="HighLevelProcessingPipeline" shape="rect" coords="0,56,177,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00011.html">Explorer</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a00097"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html">Ui</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa7ad9f057418a0871e207c34132f6f97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00001.html">AnalysisResults</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00043.html#aa7ad9f057418a0871e207c34132f6f97">processV</a> (<a class="el" href="a00001.html">AnalysisResults</a> &amp;results, const unsigned int timestamp)</td></tr>
+<tr class="separator:aa7ad9f057418a0871e207c34132f6f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a6cff542c118af10abc9e27ffd35d6a09"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SASDProcessingPipeline::SASDProcessingPipeline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00081.html#affc3611a0f4ad546175a9cca2cfc53f1">KinectPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>kinect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00043.html#a6cff542c118af10abc9e27ffd35d6a09" title="SASDProcessingPipeline::SASDProcessingPipeline Constructs a SASDProcessingPipeline. ">SASDProcessingPipeline::SASDProcessingPipeline</a> Constructs a <a class="el" href="a00043.html">SASDProcessingPipeline</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7dd8a89717a7ac7bd8742b46f7757030"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SASDProcessingPipeline::~SASDProcessingPipeline </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00043.html#a7dd8a89717a7ac7bd8742b46f7757030" title="SASDProcessingPipeline::~SASDProcessingPipeline Destroyes the object. ">SASDProcessingPipeline::~SASDProcessingPipeline</a> Destroyes the object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a5f06ece8e81ca555c13ad9695488f9e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SASDProcessingPipeline::processRGBData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a51493a5745721feced7add389fc58e39"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SASDProcessingPipeline::processSkeletonData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00001.html">AnalysisResults</a> &amp;&#160;</td>
+          <td class="paramname"><em>results</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00043.html#a51493a5745721feced7add389fc58e39" title="SASDProcessingPipeline::processSkeletonData Process the skeleton data and store the results into resu...">SASDProcessingPipeline::processSkeletonData</a> Process the skeleton data and store the results into <em>results</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa7ad9f057418a0871e207c34132f6f97"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00001.html">AnalysisResults</a> SASDProcessingPipeline::processV </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00001.html">AnalysisResults</a> &amp;&#160;</td>
+          <td class="paramname"><em>results</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00043.html#aa7ad9f057418a0871e207c34132f6f97" title="SASDProcessingPipeline::processV. ">SASDProcessingPipeline::processV</a>. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00022.html#adb2161e70b63d10f68aa420d006c718f" title="HighLevelProcessingPipeline::process Process the RGB, depth and skeleton data. ">HighLevelProcessingPipeline::process()</a> </dd></dl>
+
+<p>Implements <a class="el" href="a00022.html#a9e625299a658b482ef91f9298e1234fd">HighLevelProcessingPipeline</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a07c764c1d9dea1f26c3f34daf2c777db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00047.html">SkeletonAnalyzer</a>* SASDProcessingPipeline::mp_skeletonAnalyzer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2d72c74c274105a72685ecdabaae74c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00052.html">SkinColorExplicitDefinedSkinRegionDetectionPipeline</a>* SASDProcessingPipeline::mp_skinDetectionPipeline</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00097_source.html">SASDProcessingPipeline.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00146.html">SASDProcessingPipeline.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00043.html">Explorer.h</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00043.html">SASDProcessingPipeline</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

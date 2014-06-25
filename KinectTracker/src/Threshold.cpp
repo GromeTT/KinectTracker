@@ -5,14 +5,13 @@ Threshold::Threshold( QObject* parent )
     : ProcessingComponent( parent )
     , m_maxValue( 1 )
     , m_threshold( 0.5 )
-    , m_thresholdType( Thresh_ToZero )
+    , m_thresholdType( Thresh_Binary )
 {
     setObjectName( "Threshold" );
 }
 
 Threshold::~Threshold()
 {
-
 }
 
 void Threshold::threshold( cv::Mat& input )
@@ -43,15 +42,6 @@ void Threshold::setThreshold ( const float threshold )
     }
 }
 
-//void Threshold::setAdaptiveMode(const Threshold::AdaptiveMode adaptiveMode)
-//{
-//    if ( m_adaptiveMode != adaptiveMode )
-//    {
-//        m_adaptiveMode = adaptiveMode;
-//        emit adaptiveModeChanged();
-//    }
-//}
-
 void Threshold::setThresholdType( const Threshold::ThresholdType thresholdType )
 {
     if ( m_thresholdType != thresholdType )
@@ -60,15 +50,6 @@ void Threshold::setThresholdType( const Threshold::ThresholdType thresholdType )
         emit thresholdTypeChanged();
     }
 }
-
-//void Threshold::setBlockSize(const int blockSize)
-//{
-//    if ( m_blockSize != blockSize )
-//    {
-//        m_blockSize = blockSize;
-//        emit blockSizeChanged();
-//    }
-//}
 
 float Threshold::maxValue() const
 {
@@ -80,17 +61,10 @@ float Threshold::threshold() const
     return m_threshold;
 }
 
-//Threshold::AdaptiveMode Threshold::adaptiveMode() const
-//{
-//    return m_adaptiveMode;
-//}
 
 Threshold::ThresholdType Threshold::thresholdType() const
 {
     return m_thresholdType;
 }
 
-//int Threshold::blockSize() const
-//{
-//    return m_blockSize;
-//}
+

@@ -1,16 +1,44 @@
 ToDo List Programm
 
-* TODO [0/6][0%]
-  + [-] Umstellen auf das neue Eigenschaften-Widget [3/5][60%]
-    + [X] Verbleibende Datentypen einfügen
-      + [X] Vector
-    + [X] Synchronisation der Ansicht durch Änderungen in den Daten implementieren
-    + [ ] Umbennnen TreeWidgetExplorer -> TreeWidgetPropertyViewer
-    + [X] altes Eigenschaften-Widget durch das neue ersetzen
-  + [ ] Kommunikation zwischen SkeletonAnalyzer und AnalysisResults optimieren.
-    Viele der Properties aus SkeletonAnalyzer müssen read only sein.
-  + [ ] Signale gezielt unterbrechen und nicht in den Settern prüfen, ob die Werte gleich sind.
-    + [ ] Führe eine Helper-Klasse ein, die die Verbindung kurz unterbricht und im Destruktor
+* Gespräch
+  + [ ] Frage nach einer BA-Arbeit, wo eine Schätzung der Körpergröße
+    über die Größe des Oberkörpers durchgeführt wurde.
+  + [ ] Meiner Meinung nach ist ein Detektion auf Basis der Hautfarbe
+    nicht zielführend, da keine Hautfarbe detektiert wird, sobald:
+       1. sich die Person umdreht
+       2. die Person mit dem Geischt zum Boden liegt
+    Darüberhinaus werden nicht zum Körper gehörende Teile im Bild
+    erkannt.
+
+* TODO Für morgen
+  + [ ] DepthPipeline aktivierbar
+  + [ ] Interesante Regionen einzeichnen.
+
+* TODO [7/20][35%]
+  + [ ] Nutze die Proportionen des Körpers aus, um die Größe der Person zu 
+    bestimmen, wenn sie nahe an der Kamera steht. Also ggfs. nur Knie in
+    die Berechnung mit einbeziehen und die Füße außen vor lassen. Dasselbe
+    gilt, für den Fall, dass keine Knie sichtbar sind.
+  + [ ] Verschiebe das Zeichnen des Skelettes in die Visualizer Klasse.
+  + [-] Dateien entfernen
+    + [X] Explorer
+    + [ ] ImageAnalyzer
+    + [ ] RGBAnylzer
+    + [X] AnalysisResults
+  + [ ] Berechnung dafür, ob der Oberkörper aufrecht ist ( über Winkel )vs. Länge der Glieder.
+  + [X] Datei BoundingBoxes in BoundingGeometries umbennen.
+  + [X] Worker Status wird nicht mehr angezeigt.
+  + [ ] Im Farbbild wird die letzte Region in der sich der Arbeiter befunden hat noch
+    angezeigt, obwohl kein Bild vorhanden ist -> Abschaffen
+  + [ ] Führe eine Trainingsphase für das Tiefenbild ein. Führe für jeden 
+    Pixel Intervalle des Ablehnungsbereiches.
+  + [X] SceneGraph anpassen.
+  + [ ] Ersetze unsichere Array Kopierfunktion durch eine sichere.
+  + [X] Explorer-Klasse aus dem Projekt entfernen
+  + [ ] Erode anpassen
+  + [ ] Dilate anpassen
+  + [X] Signale gezielt unterbrechen und nicht in den Settern prüfen, ob die Werte gleich sind.
+    + [X] Führe eine Helper-Klasse ein, die die Verbindung kurz unterbricht und im Destruktor
       wiederherstellt.
   + [ ] Arbeiter - Zustand Beurteilung verbessern [0/3][0%]
     + [ ] Größe des Arbeiters über die Höhe des Oberkörpers abschätzen
@@ -25,8 +53,29 @@ ToDo List Programm
     + [ ] Verbindungsdialog zu Kinect / USB-Kamera fertig stellen
     + [ ] Affine Transformation ausbessern
     + [ ] Skelett Merkmalsvektor berechnen
+  + [-] Umstellen auf das neue Eigenschaften-Widget [3/4][75%]
+    + [-] Verbleibende Datentypen einfügen
+      + [X] Vector<float>
+      + [ ] Enumeration
+      + [ ] Vector<QColor>
+    + [X] Synchronisation der Ansicht durch Änderungen in den Daten implementieren
+    + [X] Umbennnen TreeWidgetExplorer -> PropertyBrowser
+    + [X] altes Eigenschaften-Widget durch das neue ersetzen
   + [ ] Infrarotdaten anschauen - IR anschauen ( Auflösung 640*480 )
-    http://msdn.microsoft.com/en-us/library/jj663865.aspx 
+    http://msdn.microsoft.com/en-us/library/jj663865.aspx
+  +[ ] Refactoring
+    + [ ] Kinect-Klasse aufräumen
+  + [X] Kommunikation zwischen SkeletonAnalyzer und AnalysisResults optimieren.
+    Viele der Properties aus SkeletonAnalyzer müssen read only sein.
+
 *** Anregungen
     + ViolaJones
       
+
+** Erkenntnisse
+   + Nach http://malen-malerei.de/proportionsregel-menschen-zeichnen soll die Größe des
+     Oberkörpers 3/8 der gesamten Körpergröße betragen. Dies kommt leider nicht hin.
+     Der Wert muss deshalb empirisch ermittelt und an verschiedenen Menschen evaluiert 
+     werden.
+
+

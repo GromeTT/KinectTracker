@@ -104,13 +104,14 @@ $(document).ready(function(){initNavTree('a00001.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00099.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a00161.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AnalysisResults Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00035_source.html">AnalysisResults.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00059_source.html">AnalysisResults.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AnalysisResults:</div>
 <div class="dyncontent">
@@ -119,6 +120,12 @@ Inheritance diagram for AnalysisResults:</div>
   <map id="AnalysisResults_map" name="AnalysisResults_map">
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab098d61ae167f6b4b9d5fe1fe46a998a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#ab098d61ae167f6b4b9d5fe1fe46a998a">setBoundingGeometry</a> (<a class="el" href="a00007.html">BoundingGeometry</a> *geometry)</td></tr>
+<tr class="separator:ab098d61ae167f6b4b9d5fe1fe46a998a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a020b2b07912eef18bb5ae9615118192f"></a>
 <div class="memitem">
@@ -135,9 +142,28 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
+<a class="anchor" id="ab2f5d4cf8b626e913419afa088703485"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnalysisResults::AnalysisResults </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00001.html">AnalysisResults</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a6f232a238c51a88fe302dd6874f85922"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">AnalysisResults::~AnalysisResults </td>
@@ -146,17 +172,39 @@ Inheritance diagram for AnalysisResults:</div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa7b63d04c5848c57b1fb3198f8fb48f5"></a>
+<a class="anchor" id="a89de0f6f264116feeeb98c31e4b9adb3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float AnalysisResults::directionX </td>
+          <td class="memname">const <a class="el" href="a00007.html">BoundingGeometry</a> * AnalysisResults::boundingGeometry </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00001.html#a89de0f6f264116feeeb98c31e4b9adb3" title="AnalysisResults::boundingGeometry Return a BoundingGeometry. ">AnalysisResults::boundingGeometry</a> Return a <a class="el" href="a00007.html">BoundingGeometry</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5eb049a5ad04654f26f7b58d3507fc59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float AnalysisResults::pitch </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -166,7 +214,7 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
-<a class="anchor" id="a995f32a7b01dc305682db58c82a0c0f4"></a>
+<a class="anchor" id="a6a60c24e302b0668bc8fbc1f5e2fc8f6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -174,83 +222,7 @@ Inheritance diagram for AnalysisResults:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void AnalysisResults::directionXChanged </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a612d1b553456b25b7f588f5ca5310e0e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AnalysisResults::directionY </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab2dc7f3b695965b41a8967bfadc6d71e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AnalysisResults::directionYChanged </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a78f5b7db860b5ccaa0fd1a54bcc815e2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AnalysisResults::directionZ </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af5a3263ab582cab9531bcaadd6267c93"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AnalysisResults::directionZChanged </td>
+          <td class="memname">void AnalysisResults::pitchChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -289,15 +261,72 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
-<a class="anchor" id="a6be9f9ff0b1993e9779fd059c8e91de2"></a>
+<a class="anchor" id="a16e9d93ea33de9c4fff640197f3ae567"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AnalysisResults::setDirectionX </td>
+          <td class="memname">const float AnalysisResults::roll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6f84af1446989bab94b887c15a1432d6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnalysisResults::rollChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab098d61ae167f6b4b9d5fe1fe46a998a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnalysisResults::setBoundingGeometry </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00007.html">BoundingGeometry</a> *&#160;</td>
+          <td class="paramname"><em>geometry</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00001.html#ab098d61ae167f6b4b9d5fe1fe46a998a" title="AnalysisResults::setBoundingGeometry Stores geometry. ">AnalysisResults::setBoundingGeometry</a> Stores <em>geometry</em>. </p>
+<p><em>Geometry</em> will not be deleted. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab09e24bf8d1453fc0b7b7337add6d2f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnalysisResults::setPitch </td>
           <td>(</td>
           <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>directionX</em></td><td>)</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -305,15 +334,15 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
-<a class="anchor" id="a05906a40b1a8ec7ed8d8333564990b0b"></a>
+<a class="anchor" id="a198e1be5fc25e725c788396a4cb813cb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AnalysisResults::setDirectionY </td>
+          <td class="memname">void AnalysisResults::setRoll </td>
           <td>(</td>
           <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>directionY</em></td><td>)</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -321,19 +350,21 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
-<a class="anchor" id="a568bed59e2b3f02ae313c8a99b0e2f5c"></a>
+<a class="anchor" id="a28b52bbb7a56b94f6e532bbcfd9d61c8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AnalysisResults::setDirectionZ </td>
+          <td class="memname">void AnalysisResults::setSkeletonData </td>
           <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>directionZ</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>skeletonData</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="a00001.html#a28b52bbb7a56b94f6e532bbcfd9d61c8" title="AnalysisResults::setSkeletonData Sets the SkeletonData. ">AnalysisResults::setSkeletonData</a> Sets the <a class="el" href="a00048.html">SkeletonData</a>. </p>
 
 </div>
 </div>
@@ -385,12 +416,68 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
-<a class="anchor" id="a32b25bcab79516a64fde78cb3f870f05"></a>
+<a class="anchor" id="a265d632d39220b5d76f3f6a9a58d53f6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float AnalysisResults::velocity </td>
+          <td class="memname">void AnalysisResults::setYaw </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b9b6be4e4b1a963a9cc19a1d849fa6a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> AnalysisResults::skeletonData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00001.html#a5b9b6be4e4b1a963a9cc19a1d849fa6a" title="AnalysisResults::skeletonData Returns the skeleton data. ">AnalysisResults::skeletonData</a> Returns the skeleton data. </p>
+
+</div>
+</div>
+<a class="anchor" id="a66f1cbcca70ba1c0df110982e4a07bae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnalysisResults::vecChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa123411eaaea08906402bc9b71678d4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float AnalysisResults::velocity </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -423,12 +510,12 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
-<a class="anchor" id="a185f9f0da8d0092b65c64743f8c0105f"></a>
+<a class="anchor" id="ac5f7488b8c810b88f2e0282e8a7e119c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QString AnalysisResults::workerStatus </td>
+          <td class="memname">const QString AnalysisResults::workerStatus </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -461,8 +548,46 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
+<a class="anchor" id="ab54cac6927c9bcd2a6e71aed77cc31c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float AnalysisResults::yaw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac207cf09caf02b9f36753c042b1849df"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnalysisResults::yawChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="acec095f4faa08b2b42597c26c8ac818d"></a>
+<a class="anchor" id="a4b8638847eff5952fcf62a60b2d502fd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -470,7 +595,7 @@ Inheritance diagram for AnalysisResults:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float AnalysisResults::m_directionX</td>
+          <td class="memname">float AnalysisResults::m_pitch</td>
         </tr>
       </table>
   </td>
@@ -482,7 +607,7 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
-<a class="anchor" id="ac35e9f8104f69d24884f53499388b172"></a>
+<a class="anchor" id="a998e682dccced6326535290c22bdbefc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -490,7 +615,7 @@ Inheritance diagram for AnalysisResults:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float AnalysisResults::m_directionY</td>
+          <td class="memname">float AnalysisResults::m_roll</td>
         </tr>
       </table>
   </td>
@@ -502,7 +627,7 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
-<a class="anchor" id="a5999e0a117058c89c92b8b62565d1b73"></a>
+<a class="anchor" id="a16aed3fef51d67af74b093c2080bc593"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -510,7 +635,7 @@ Inheritance diagram for AnalysisResults:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float AnalysisResults::m_directionZ</td>
+          <td class="memname"><a class="el" href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> AnalysisResults::m_skeletonData</td>
         </tr>
       </table>
   </td>
@@ -562,8 +687,48 @@ Inheritance diagram for AnalysisResults:</div>
 
 </div>
 </div>
+<a class="anchor" id="a415bd6ac2f49687ddc40cc66c2d470e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AnalysisResults::m_yaw</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac84034c3a9adfb124109e349f0df02ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00007.html">BoundingGeometry</a>* AnalysisResults::mp_boundingGeometry</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a1ed376bbef1dba248f6a214410398aa3"></a>
+<a class="anchor" id="af4fd5c418e3fc61a1f099623faa6bd2b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -571,19 +736,19 @@ Inheritance diagram for AnalysisResults:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float AnalysisResults::directionX</td>
+          <td class="memname">const float AnalysisResults::pitch</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="abe259e537c6b9f09871ee34be4f26be1"></a>
+<a class="anchor" id="ac44945f8eca23456da733057b8660754"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -591,19 +756,19 @@ Inheritance diagram for AnalysisResults:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float AnalysisResults::directionY</td>
+          <td class="memname">const float AnalysisResults::roll</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="abbcc333b13510aa1c52c2f146bc85581"></a>
+<a class="anchor" id="ab68d2cc39fc69d11835f0ab21a1cf660"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -611,19 +776,19 @@ Inheritance diagram for AnalysisResults:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float AnalysisResults::directionZ</td>
+          <td class="memname">const float AnalysisResults::velocity</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a1e9fb51cf1b09e5070b124ff9e3848df"></a>
+<a class="anchor" id="ad8ec5f70da4ff5a6a0932f2bdcf6465b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -631,19 +796,19 @@ Inheritance diagram for AnalysisResults:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float AnalysisResults::velocity</td>
+          <td class="memname">const QString AnalysisResults::workerStatus</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a3fd453bc84350dc8cc9a67aabada0761"></a>
+<a class="anchor" id="a3af3df1563f70b2a807fb0a9471df3a7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -651,12 +816,12 @@ Inheritance diagram for AnalysisResults:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QString AnalysisResults::workerStatus</td>
+          <td class="memname">const float AnalysisResults::yaw</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -664,8 +829,8 @@ Inheritance diagram for AnalysisResults:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00035_source.html">AnalysisResults.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00066.html">AnalysisResults.cpp</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00059_source.html">AnalysisResults.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00109.html">AnalysisResults.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -673,7 +838,7 @@ Inheritance diagram for AnalysisResults:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="a00001.html">AnalysisResults</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -79,24 +79,25 @@ QWidget* CustomStyledDelegate::createEditor( QWidget* parent,
         editor->setValidator( validator );
         return editor;
     }
-    else if ( index.data().canConvert<float>() )
-    {
-        FloatEditor* editor  = static_cast<FloatEditor*>( QStyledItemDelegate::createEditor( parent,
-                                                                                             option,
-                                                                                             index ) );
-        connect( editor, SIGNAL( valueChanged(double) ), this, SLOT( commit() ) );
-        return editor;
-    }
-    else if ( index.data().canConvert<int>() )
+    else if ( index.data( Qt::EditRole ).type() == QMetaType::Int )
     {
         QSpinBox* editor = static_cast<QSpinBox*>( QStyledItemDelegate::createEditor( parent,
                                                                                       option,
                                                                                       index ) );
-        connect( editor, SIGNAL( valueChanged(double) ), this, SLOT( commit() ) );
+        connect( editor, SIGNAL( valueChanged(int) ), this, SLOT( commit() ) );
         return editor;
 
     }
-    else if ( index.data().canConvert<double>() )
+    else if ( index.data( Qt::EditRole ).type() == QMetaType::Float )
+    {
+        FloatEditor* editor  = static_cast<FloatEditor*>( QStyledItemDelegate::createEditor( parent,
+                                                                                             option,
+                                                                                             index ) );
+        editor->setRange( -999999, 999999 );
+        connect( editor, SIGNAL( valueChanged(double) ), this, SLOT( commit() ) );
+        return editor;
+    }
+    else if ( index.data( Qt::EditRole ).type() == QMetaType::Double )
     {
         QDoubleSpinBox* editor = static_cast<QDoubleSpinBox*>( QStyledItemDelegate::createEditor( parent,
                                                                                                   option,

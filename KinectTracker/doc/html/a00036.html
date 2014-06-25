@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/BasicUsageScene.h File Reference</title>
+<title>KinectTracker: PropertyBrowser Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,8 +67,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -102,96 +104,148 @@ $(document).ready(function(){initNavTree('a00036.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="a00196.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">BasicUsageScene.h File Reference</div>  </div>
+<div class="title">PropertyBrowser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QOpenGLShaderProgram&gt;</code><br />
-<code>#include &lt;QSharedPointer&gt;</code><br />
-<code>#include &lt;QOpenGLVersionFunctions&gt;</code><br />
-<code>#include &lt;QVector&gt;</code><br />
-<code>#include &lt;QVector3D&gt;</code><br />
-<code>#include &lt;QMatrix4x4&gt;</code><br />
-<code>#include &lt;QFileSystemWatcher&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00038_source.html">Camera.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00047_source.html">Kinect.h</a>&quot;</code><br />
+
+<p><code>#include &lt;<a class="el" href="a00090_source.html">PropertyBrowser.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for PropertyBrowser:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00036.png" usemap="#PropertyBrowser_map" alt=""/>
+  <map id="PropertyBrowser_map" name="PropertyBrowser_map">
+</map>
+ </div></div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ac5b29e3843c35e38646192229879bf85"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PropertyBrowser::PropertyBrowser </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00036.html#ac5b29e3843c35e38646192229879bf85" title="PropertyBrowser::PropertyBrowser. ">PropertyBrowser::PropertyBrowser</a>. </p>
+
 </div>
-<p><a href="a00036_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html">BasicUsageScene</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</div>
+<a class="anchor" id="ace847506a7bfc425da58050695248589"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PropertyBrowser::~PropertyBrowser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00036.html#ace847506a7bfc425da58050695248589" title="PropertyBrowser::~PropertyBrowser Destroys the widget. ">PropertyBrowser::~PropertyBrowser</a> Destroys the widget. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a754084a7249df03c12f4b8ad116e0355"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PropertyBrowser::setObject </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00036.html#a754084a7249df03c12f4b8ad116e0355" title="PropertyBrowser::setObject Displays all properties of object in the QTreeView. ">PropertyBrowser::setObject</a> Displays all properties of <em>object</em> in the QTreeView. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aed14d324bd0bb33491bdaf50caee5160"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00012.html">CustomStyledDelegate</a>* PropertyBrowser::mp_styledDelegate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a9c6c46b152fbf088399207c75fc07902"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef QSharedPointer&lt;QOpenGLContext&gt; <a class="el" href="a00036.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a></td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a8d404d21e13f8fa172f7a01eba949a7c"></a>
+<a class="anchor" id="a44c1ab2c2052529d94e189ad663ef34b"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">typedef QVector&lt;QOpenGLTexture*&gt; <a class="el" href="a00036.html#a8d404d21e13f8fa172f7a01eba949a7c">OpenGLTextures</a></td>
+          <td class="memname"><a class="el" href="a00056.html">TreeModel</a>* PropertyBrowser::mp_treeModel</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aa55256830fe9d68749225fa8387ceb47"></a>
+<a class="anchor" id="a102803f02bb5c3b141cc14f3902c15d6"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">typedef QVector&lt;<a class="el" href="a00022.html">RenderObjectInterface</a>*&gt; <a class="el" href="a00036.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a></td>
+          <td class="memname">Ui::PropertyBrowser* PropertyBrowser::ui</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ab47e41722c2931c8063642b53ff6c04f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef QSharedPointer&lt;<a class="el" href="a00003.html">BasicUsageScene</a>&gt; <a class="el" href="a00036.html#ab47e41722c2931c8063642b53ff6c04f">Scene</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa288f148caa1e8d74d29b8838ee211c8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef QVector&lt;QOpenGLShaderProgram*&gt; <a class="el" href="a00036.html#aa288f148caa1e8d74d29b8838ee211c8">ShaderPrograms</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00090_source.html">PropertyBrowser.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00139.html">PropertyBrowser.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00036.html">BasicUsageScene.h</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00036.html">PropertyBrowser</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

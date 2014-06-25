@@ -1,5 +1,6 @@
 #include "../inc/TreeModel.h"
 #include "../inc/FixedPropertyVector.h"
+#include "../inc/ConnectionHelper.h"
 #include <QTreeWidgetItem>
 #include <QVector3D>
 #include <QMetaProperty>
@@ -43,11 +44,11 @@ void TreeModel::setObject( QObject* object )
          mp_object != object )
     {
         // Remove connections.
-        for ( int i = 0 ; i < object->metaObject()->propertyCount(); ++i )
+        for ( int i = 0 ; i < mp_object->metaObject()->propertyCount(); ++i )
         {
-            if ( metaObject()->property( i ).hasNotifySignal() )
+            if ( mp_object->metaObject()->property( i ).hasNotifySignal() )
             {
-                QMetaMethod signal = metaObject()->property( i ).notifySignal();
+                QMetaMethod signal = mp_object->metaObject()->property( i ).notifySignal();
                 bool res = disconnect( mp_object, signal, this, m_updateSlot  );
                 Q_ASSERT( res );
             }
@@ -205,6 +206,11 @@ void TreeModel::setObject( QObject* object )
     }
 }
 
+void TreeModel::clearModel()
+{
+
+}
+
 
 /*!
    \brief TreeModel::createItem
@@ -243,7 +249,6 @@ void TreeModel::connectProperty( QObject* object,
                                  QStandardItem* item )
 {
     Q_ASSERT( object );
-
     if ( metaProperty.hasNotifySignal() )
     {
         int index = object->metaObject()->indexOfProperty( metaProperty.name() );
@@ -337,6 +342,11 @@ void TreeModel::slotItemChanged( QStandardItem* item )
     QVariant value = mp_object->property( metaProperty.name() );
     if ( metaProperty.isWritable() )
     {
+        // Interupt connection
+        ConnectionHelper connectionHelper( mp_object,
+                                           metaProperty.notifySignal(),
+                                           this,
+                                           m_updateSlot );
         if ( value.canConvert<QVector3D>() )
         {
             QVector3D vec;

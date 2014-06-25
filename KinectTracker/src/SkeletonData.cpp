@@ -25,12 +25,24 @@ SkeletonData::SkeletonData( const NUI_SKELETON_DATA& skeletonData )
 }
 
 /*!
+   \brief SkeletonData::SkeletonData
+   Copyconstrutor;
+ */
+
+SkeletonData::SkeletonData( const SkeletonData& other)
+{
+    m_joints                    = other.m_joints;
+    m_jointTrackState           = other.m_jointTrackState;
+    m_quality                   = other.m_quality;
+    m_numberOfTrackedPoints     = other.m_numberOfTrackedPoints;
+}
+
+/*!
    \fn SkeletonData::~SkeletonData
    Destroyes this object.
  */
 SkeletonData::~SkeletonData()
 {
-    qDebug() << "SkeltonData deleted.";
 }
 
 /*!
@@ -59,6 +71,8 @@ void SkeletonData::setSkeletonBySkeletonData( const NUI_SKELETON_DATA& skeletonD
     copy( skeletonData.SkeletonPositions[NUI_SKELETON_POSITION_KNEE_RIGHT], m_joints[static_cast<int>( Joints::KneeRight )] );
     copy( skeletonData.SkeletonPositions[NUI_SKELETON_POSITION_ANKLE_RIGHT], m_joints[static_cast<int>( Joints::AnkleRight )] );
     copy( skeletonData.SkeletonPositions[NUI_SKELETON_POSITION_FOOT_RIGHT], m_joints[static_cast<int>( Joints::FootRight )] );
+
+    m_numberOfTrackedPoints = 0;
 
     m_jointTrackState[static_cast<int>( Joints::Hip )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_HIP_CENTER] );
     m_jointTrackState[static_cast<int>( Joints::Spine )] = static_cast<TrackState>( skeletonData.eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_SPINE] );
@@ -101,14 +115,53 @@ const QVector3D& SkeletonData::getJoint( const SkeletonData::Joints joint ) cons
     return m_joints.at( static_cast<int>( joint ) );
 }
 
+/*!
+   \brief SkeletonData::jointTrackState
+   Returns the TrackState of \a joint.
+ */
 const SkeletonData::TrackState SkeletonData::jointTrackState( const SkeletonData::Joints joint ) const
 {
     return m_jointTrackState.at( static_cast<int>( joint ) );
 }
 
+/*!
+   \brief SkeletonData::quality
+   Returns the quality of the skeleton data.
+   \see http://msdn.microsoft.com/en-us/library/nuisensor.nui_skeleton_data.aspx
+ */
 const SkeletonData::Quality SkeletonData::quality() const
 {
     return m_quality;
+}
+
+/*!
+   \brief SkeletonData::numberOfTrackedPoints
+   Returns the nuber of points which are tracked.
+ */
+int SkeletonData::numberOfTrackedPoints() const
+{
+    return m_numberOfTrackedPoints;
+}
+
+/*!
+   \brief SkeletonData::areMajorPointsTracked
+   Returns true, if the following Joints are tracked:
+   1. Hip
+   2. Spine
+   3. ShoulderCenter
+ */
+bool SkeletonData::areMajorPointsTracked() const
+{
+    if ( m_jointTrackState.at( static_cast<int>( Joints::Hip ) ) == TrackState::Tracked &&
+         m_jointTrackState.at( static_cast<int>( Joints::Spine ) ) == TrackState::Tracked &&
+         m_jointTrackState.at( static_cast<int>( Joints::ShoulderCenter) ) == TrackState::Tracked )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 void SkeletonData::initialize()

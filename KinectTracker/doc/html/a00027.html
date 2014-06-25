@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: SkeletonAnalyzer Class Reference</title>
+<title>KinectTracker: Kinect Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,40 +105,75 @@ $(document).ready(function(){initNavTree('a00027.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00125.html">List of all members</a>  </div>
+<a href="a00187.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SkeletonAnalyzer Class Reference</div>  </div>
+<div class="title">Kinect Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00060_source.html">SkeletonAnalyzer.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for SkeletonAnalyzer:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00027.png" usemap="#SkeletonAnalyzer_map" alt=""/>
-  <map id="SkeletonAnalyzer_map" name="SkeletonAnalyzer_map">
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="a00081_source.html">Kinect.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af1aac491d6946153021413f6e8ab71af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#af1aac491d6946153021413f6e8ab71af">SkeletonAnalyzer</a> ()</td></tr>
-<tr class="separator:af1aac491d6946153021413f6e8ab71af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b00320eced2c517c11fe596bef576a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a1b00320eced2c517c11fe596bef576a2">update</a> (const <a class="el" href="a00028.html">SkeletonData</a> *skeleton, const unsigned int timestamp)</td></tr>
-<tr class="separator:a1b00320eced2c517c11fe596bef576a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cca10be2d08150de0917fecab94ab55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a8cca10be2d08150de0917fecab94ab55">arePointsInLastBoundingBox</a> (const <a class="el" href="a00028.html">SkeletonData</a> &amp;skeletonData)</td></tr>
-<tr class="separator:a8cca10be2d08150de0917fecab94ab55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a110125588617a3ddfdd1020d5ba41574"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00004.html">BoundingBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a110125588617a3ddfdd1020d5ba41574">getLastBoundingBox</a> () const </td></tr>
-<tr class="separator:a110125588617a3ddfdd1020d5ba41574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa141d262b4b5777eae142dae55f15dc2"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#aa141d262b4b5777eae142dae55f15dc2">initialize</a> (const DWORD flag)</td></tr>
+<tr class="separator:aa141d262b4b5777eae142dae55f15dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d60fbfe183e9e55eb2fc3fbc97185c"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a30d60fbfe183e9e55eb2fc3fbc97185c">openDepthStream</a> (NUI_IMAGE_RESOLUTION resolution, DWORD frameFlag, DWORD frameLimit, HANDLE nextFrame)</td></tr>
+<tr class="separator:a30d60fbfe183e9e55eb2fc3fbc97185c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb80028edfb709d23e39ca96c00f4e6"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a3bb80028edfb709d23e39ca96c00f4e6">getRGBImage</a> (uchar *img)</td></tr>
+<tr class="separator:a3bb80028edfb709d23e39ca96c00f4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bbf3bce1faa38fe566ee2a000d7b45e"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a1bbf3bce1faa38fe566ee2a000d7b45e">getSkeleton</a> (QList&lt; <a class="el" href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> &gt; &amp;skeletons)</td></tr>
+<tr class="separator:a1bbf3bce1faa38fe566ee2a000d7b45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a260ceef1571ff51ff8571b1951782390"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00027.html#a260ceef1571ff51ff8571b1951782390">Kinect::Error</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a71905f7f617133ae9dcc5a7f60fe5e3a"></a>OK&#160;</td><td class="fielddoc">
+<p>OK <br />
+ basdasa. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a2416cb754692f4d74e8fa2ec14116c0b"></a>FAIL&#160;</td><td class="fielddoc">
+<p>OK. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e"></a>DEVICE_NOT_READY&#160;</td><td class="fielddoc">
+<p>OK. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390ab34743ee923b6c4e3562d180cabcae7e"></a>OUT_OF_MEMORY&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a5639c3eef90d1eb8cc1c6159853fee5e"></a>POINTER&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a6733a7127f4734ab4c774e11f7fc0db9"></a>INVALIDARG&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390aaf317b58295141b7e9b5204516f96617"></a>INVALID_OPERATION&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390ae2312652bd828deeb1330c3e14759f12"></a>NO_SENSOR&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a5c8a6b1f5525ab61a3ec081c40c0e69a"></a>NO_FRAME_AVAILABLE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a5ee6222883adcc743ebfee91f3a96473"></a>INTERNAL_ERROR&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a2933fb7dbf002b59c3b1162c899051dc"></a>NO_INTERFACE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390af5e00d094d8888abd87b80afdf1ab6b9"></a>WRONG_VECTOR_SIZE&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af1aac491d6946153021413f6e8ab71af"></a>
+<a class="anchor" id="ab05389f710b912abff1d001edd77d847"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">SkeletonAnalyzer::SkeletonAnalyzer </td>
+          <td class="memname">Kinect::Kinect </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -146,30 +181,356 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00027.html#af1aac491d6946153021413f6e8ab71af" title="SkeletonAnalyzer::SkeletonAnalyzer Constructs a new SkeletonAnalzer. ">SkeletonAnalyzer::SkeletonAnalyzer</a> Constructs a new SkeletonAnalzer. </p>
-<p>Extra space in each dimension is set to 0.1.r </p>
+<p>Constructs an uninitialized <a class="el" href="a00027.html" title="Kinect is a wrapper for the Microsoft kinect sensor. ">Kinect</a> object. </p>
 
 </div>
 </div>
-<a class="anchor" id="a95aabf8cd26e09da89749e574ed0a627"></a>
+<a class="anchor" id="a3f417dc4deed8106a97f217c26326e12"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">SkeletonAnalyzer::~SkeletonAnalyzer </td>
+          <td class="memname">Kinect::~Kinect </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Destroys this object. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0d54408d03bf4318f84173e41a0d161d"></a>
+<a class="anchor" id="ab4565c33f97cf20a0e9d80ab9df230cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize Kinect::depthStreamResolution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4c853e60a6f038e240dc5fb3d9f8cc33"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getDepthImage </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; ushort &gt; &amp;&#160;</td>
+          <td class="paramname"><em>depthData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace879cb309adc13146cdc3350bc90e17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getDepthImage </td>
+          <td>(</td>
+          <td class="paramtype">ushort *&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a092766b57cc36215e781f30eca8993af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getDepthImageAsGreyImage </td>
+          <td>(</td>
+          <td class="paramtype">QImage *&amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0a1bb8599bb173295254b9ef749980ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getDepthImageAsGreyImage </td>
+          <td>(</td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af87d93505eeb457ec5ba7d899cded170"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getRGBImage </td>
+          <td>(</td>
+          <td class="paramtype">QImage *&amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3bb80028edfb709d23e39ca96c00f4e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getRGBImage </td>
+          <td>(</td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00027.html#a4c853e60a6f038e240dc5fb3d9f8cc33">Kinect::getDepthImage</a> If a rgb image is available it will be copied to <em>img</em> in BGRA format and the function returns S_OK. </p>
+<p>Otherwise <em>img</em> will not be touched and an error will be returned. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad964c079f06425da51dffb6c0ae86599"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Kinect::getSensorCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns how many kinect sensors are plugged in. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1bbf3bce1faa38fe566ee2a000d7b45e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getSkeleton </td>
+          <td>(</td>
+          <td class="paramtype">QList&lt; <a class="el" href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>skeletons</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00027.html#a1bbf3bce1faa38fe566ee2a000d7b45e" title="Kinect::getSkeleton. ">Kinect::getSkeleton</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">skeletons</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa141d262b4b5777eae142dae55f15dc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const DWORD&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the <a class="el" href="a00027.html" title="Kinect is a wrapper for the Microsoft kinect sensor. ">Kinect</a> with <em>flag</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a693565751dc489be7b7aa351ebdaa6e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Kinect::isDepthStreamOpen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a82e6d6e1b8e034ebc9a816e170718d16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Kinect::isInitialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1900c431b5dd5fff70529842dda23110"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Kinect::isRGBStreamOpen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a30d60fbfe183e9e55eb2fc3fbc97185c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::openDepthStream </td>
+          <td>(</td>
+          <td class="paramtype">NUI_IMAGE_RESOLUTION&#160;</td>
+          <td class="paramname"><em>resolution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>frameFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>frameLimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>nextFrame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resolution</td><td></td></tr>
+    <tr><td class="paramname">frameFlag</td><td></td></tr>
+    <tr><td class="paramname">frameLimit</td><td></td></tr>
+    <tr><td class="paramname">nextFrame</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae30aa93a19d11719a392faaee29bf5af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::openRGBStream </td>
+          <td>(</td>
+          <td class="paramtype">NUI_IMAGE_RESOLUTION&#160;</td>
+          <td class="paramname"><em>resolution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>frameFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>frameLimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>nextFrame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00027.html#ae30aa93a19d11719a392faaee29bf5af" title="Kinect::openRGBStream Das ist ein Test und soll da bitte nicht erscheinen. ">Kinect::openRGBStream</a> Das ist ein Test und soll da bitte nicht erscheinen. </p>
+
+</div>
+</div>
+<a class="anchor" id="a337e08ea00f2a721a34e7502d186887c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize Kinect::rgbStreamResolution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab28e82e1656f4a570c5c42782fa12602"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -177,16 +538,16 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SkeletonAnalyzer::addBoundingBox </td>
+          <td class="memname">void Kinect::setSize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a> &amp;&#160;</td>
-          <td class="paramname"><em>boundingBox</em>, </td>
+          <td class="paramtype">QSize &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>timestamp</em>&#160;</td>
+          <td class="paramtype">NUI_IMAGE_RESOLUTION&#160;</td>
+          <td class="paramname"><em>resolution</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -200,288 +561,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Enqueues <em>boundingBox</em> in the list of BoundingBoxes with <em>timestamp</em>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8cca10be2d08150de0917fecab94ab55"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool SkeletonAnalyzer::arePointsInLastBoundingBox </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00028.html">SkeletonData</a> &amp;&#160;</td>
-          <td class="paramname"><em>skeletonData</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true, if all points from <em>skeletonData</em> are lying within the <a class="el" href="a00004.html">BoundingBox</a>, that has been calculated at last. </p>
-<p>Otherwise false. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5f14288e08050feda7af19c031bf9a6d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float SkeletonAnalyzer::deltaX </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a964a665e921f88a135556bd522c1c9b1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SkeletonAnalyzer::deltaXChanged </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a664de7da0bfbde0f502a6e27844e727c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float SkeletonAnalyzer::deltaY </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7ceffdc6c032afa9847e95e3b0ec0593"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SkeletonAnalyzer::deltaYChanged </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aef4793bb834898e3801b76937c0e36e6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float SkeletonAnalyzer::deltaZ </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aaacef61698fcb109998e8a78494b60cd"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SkeletonAnalyzer::deltaZChanged </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a170fb6255f6d31599c88fe671a8d5812"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00004.html">BoundingBox</a> * SkeletonAnalyzer::getBoundingBoxWholeBody </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the <a class="el" href="a00004.html">BoundingBox</a> enclosing the whole body from the last <a class="el" href="a00027.html#a1b00320eced2c517c11fe596bef576a2" title="This function updates the tracking results. ">update()</a> call. </p>
-
-</div>
-</div>
-<a class="anchor" id="a110125588617a3ddfdd1020d5ba41574"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00004.html">BoundingBox</a> * SkeletonAnalyzer::getLastBoundingBox </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the <a class="el" href="a00004.html">BoundingBox</a>, that has been calculated at last. </p>
-<p>If no <a class="el" href="a00004.html">BoundingBox</a> is available <b>nullptr</b> will be returned. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac4e9253219f96d5e351535e3c1a9c29b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVector3D SkeletonAnalyzer::getVelocity </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>timestamp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>ms</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Uses <em>timestamp</em> and <em>ms</em> to calculate the avarage movement in the intervall from <b></b>[ timestamp - ms , timestamp ]. </p>
-
-</div>
-</div>
-<a class="anchor" id="a0c8e0a10526c82d573ce1a1f51944630"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SkeletonAnalyzer::setDeltaX </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>deltaX</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6b1218340d534a770c90b2834dd911bd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SkeletonAnalyzer::setDeltaY </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>deltaY</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="afeb422921c205cbd3a61a60cc0eb3bb8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SkeletonAnalyzer::setDeltaZ </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>deltaZ</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1b00320eced2c517c11fe596bef576a2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SkeletonAnalyzer::update </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00028.html">SkeletonData</a> *&#160;</td>
-          <td class="paramname"><em>skeleton</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>timestamp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00030.html#a00098" title="a BoundingBox object and an unsigned int to hold the timestemp. ">This</a> function updates the tracking results. </p>
-<p>For this purpose two bounding boxes will be constructed from <em>skeleton</em>. <br />
- The first one surrounds the lower body that is the parts from the feets to the knees. <a class="el" href="a00030.html#a00098" title="a BoundingBox object and an unsigned int to hold the timestemp. ">This</a> <a class="el" href="a00004.html">BoundingBox</a> is used to derive the human movement pace and direction. <br />
- The second <a class="el" href="a00004.html">BoundingBox</a> surrounds the whole body, so that one can determine the basic pose of the tracked person. Furthermore the <a class="el" href="a00004.html">BoundingBox</a> can be used to find out in which area of the image data the person is standing. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a899d33993277e90e799bc54ba51a2296"></a>
+<a class="anchor" id="a9c832a9139b215b8b0cba8de4c2984e0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -489,7 +573,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00004.html">BoundingBox</a> SkeletonAnalyzer::m_boundingBox</td>
+          <td class="memname">HANDLE Kinect::m_depthHandle</td>
         </tr>
       </table>
   </td>
@@ -501,7 +585,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a074f88485799e725550d6c587b7b500f"></a>
+<a class="anchor" id="adb04c032923d36d7b3bdd49519287237"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -509,7 +593,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt;<a class="el" href="a00005.html">BoundingBoxWithTimeStamp</a>*&gt; SkeletonAnalyzer::m_boxes</td>
+          <td class="memname">QSize Kinect::m_depthStreamResolution</td>
         </tr>
       </table>
   </td>
@@ -521,7 +605,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a01568e1587df0c36ed3b4add8facbc05"></a>
+<a class="anchor" id="a07d0fdf96ed5594dd649feb94bd5dea5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -529,7 +613,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float SkeletonAnalyzer::m_deltaX</td>
+          <td class="memname">bool Kinect::m_deptStreamOpen</td>
         </tr>
       </table>
   </td>
@@ -541,7 +625,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab1288993dc79e5e8e364f28164fd9af5"></a>
+<a class="anchor" id="a34a99c1886de3bffb4ee624d2ddeabe1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -549,7 +633,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float SkeletonAnalyzer::m_deltaY</td>
+          <td class="memname">bool Kinect::m_initialized</td>
         </tr>
       </table>
   </td>
@@ -561,7 +645,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8af61d2419d52836c67dfae8880fcb9c"></a>
+<a class="anchor" id="a08ea043a506761fc779b37bade79befe"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -569,7 +653,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float SkeletonAnalyzer::m_deltaZ</td>
+          <td class="memname">HANDLE Kinect::m_rgbHandle</td>
         </tr>
       </table>
   </td>
@@ -581,8 +665,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="ad1e4e5c1d9296692dadcd6e616f118e7"></a>
+<a class="anchor" id="a5d28ad4c6fd530d2e0d3e984d883e0cd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -590,19 +673,19 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float SkeletonAnalyzer::deltaX</td>
+          <td class="memname">bool Kinect::m_rgbStreamOpen</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ad07b391fd2a3ce7f03b492b80f368a2f"></a>
+<a class="anchor" id="ae1f39c5fbac1c56388d9793b0acbff55"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -610,19 +693,19 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float SkeletonAnalyzer::deltaY</td>
+          <td class="memname">QSize Kinect::m_rgbStreamResolution</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="adcee4f111bb40a5fc446c30c2c5d2a57"></a>
+<a class="anchor" id="a89345cee1b4aac5d3fb80149aa73e3a8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -630,12 +713,32 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float SkeletonAnalyzer::deltaZ</td>
+          <td class="memname">HANDLE Kinect::m_skeletonHandle</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1ba3f64fa8e801b769ba8be8e50ae4d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">INuiSensor* Kinect::mp_sensor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -643,16 +746,16 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00060_source.html">SkeletonAnalyzer.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00090.html">SkeletonAnalyzer.cpp</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00081_source.html">Kinect.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00130.html">Kinect.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00027.html">SkeletonAnalyzer</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00027.html">Kinect</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

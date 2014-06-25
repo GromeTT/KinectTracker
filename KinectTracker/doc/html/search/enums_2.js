@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['thresholdtype',['ThresholdType',['../a00031.html#ac6ab383d590ac973fe513219334d561f',1,'Threshold']]]
+  ['quality',['Quality',['../a00048.html#a6546984ae25a1d218c293eae231543fb',1,'SkeletonData']]]
 ];

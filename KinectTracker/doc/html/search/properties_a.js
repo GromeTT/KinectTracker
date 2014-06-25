@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['wireframemode',['wireFrameMode',['../a00021.html#a47162ba98412b7351424202ceb0075d9',1,'RenderObject']]],
-  ['workerstatus',['workerStatus',['../a00001.html#a3fd453bc84350dc8cc9a67aabada0761',1,'AnalysisResults']]]
+  ['numberofbins',['numberOfBins',['../a00024.html#ab5033d42524247e7de0cc893d43c2413',1,'HOGFeatureDetector']]],
+  ['numberoflevels',['numberOfLevels',['../a00024.html#a7a81989128e5fcb50c3d12324fb1ce80',1,'HOGFeatureDetector']]]
 ];

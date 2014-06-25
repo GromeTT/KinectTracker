@@ -1,9 +1,9 @@
 var a00036 =
 [
-    [ "BasicUsageScene", "a00003.html", "a00003" ],
-    [ "OpenGLContext", "a00036.html#a9c6c46b152fbf088399207c75fc07902", null ],
-    [ "OpenGLTextures", "a00036.html#a8d404d21e13f8fa172f7a01eba949a7c", null ],
-    [ "RenderObjects", "a00036.html#aa55256830fe9d68749225fa8387ceb47", null ],
-    [ "Scene", "a00036.html#ab47e41722c2931c8063642b53ff6c04f", null ],
-    [ "ShaderPrograms", "a00036.html#aa288f148caa1e8d74d29b8838ee211c8", null ]
+    [ "PropertyBrowser", "a00036.html#ac5b29e3843c35e38646192229879bf85", null ],
+    [ "~PropertyBrowser", "a00036.html#ace847506a7bfc425da58050695248589", null ],
+    [ "setObject", "a00036.html#a754084a7249df03c12f4b8ad116e0355", null ],
+    [ "mp_styledDelegate", "a00036.html#aed14d324bd0bb33491bdaf50caee5160", null ],
+    [ "mp_treeModel", "a00036.html#a44c1ab2c2052529d94e189ad663ef34b", null ],
+    [ "ui", "a00036.html#a102803f02bb5c3b141cc14f3902c15d6", null ]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['x',['x',['../a00007.html#ae270fbd3b09b36f240a2d55b3b5b9cec',1,'Camera::x()'],['../a00032.html#ab7aed15fcdba46d5a7e7f711b7288b74',1,'TransformationObject::x()']]],
-  ['xscale',['xScale',['../a00032.html#a5e68ba8694ee8d10329bd7798c66ccf5',1,'TransformationObject']]]
+  ['phi1',['phi1',['../a00047.html#abfb7d0f6d5ead6934057cd7d9e4c7d65',1,'SkeletonAnalyzer']]],
+  ['phi2',['phi2',['../a00047.html#ac8d26b3cc34ea6f0dd8bf4229c190e75',1,'SkeletonAnalyzer']]],
+  ['pitch',['pitch',['../a00001.html#af4fd5c418e3fc61a1f099623faa6bd2b',1,'AnalysisResults::pitch()'],['../a00011.html#ab56fcb39f580e8d2159cf2c9c6d9a65a',1,'Camera::pitch()'],['../a00055.html#a78a9190843631a93b4af995a55964469',1,'TransformationObject::pitch()']]]
 ];

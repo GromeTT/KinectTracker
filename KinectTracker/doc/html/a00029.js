@@ -1,13 +1,11 @@
 var a00029 =
 [
-    [ "SkeletonRenderObject", "a00029.html#a9307014f07afff49cc316f2e927759e1", null ],
-    [ "~SkeletonRenderObject", "a00029.html#a2cd26bc06a703c4eea4c7d805c799903", null ],
-    [ "renderV", "a00029.html#aa9155dc7affff14df61fa4377c41ef90", null ],
-    [ "setShaderProgramm", "a00029.html#a13e41d2faded80144f7271db38245782", null ],
-    [ "updateData", "a00029.html#af924f8281f2ae3d72afbcbda2b69f02d", null ],
-    [ "m_lineIndexBuffer", "a00029.html#aa96f28fc0bfd9fa81c6f7b4b38fac788", null ],
-    [ "m_pointIndexBuffer", "a00029.html#ae4450ee66fdc84a6e5957e1f16f44784", null ],
-    [ "m_vao", "a00029.html#afaa15b57644da827b3db1da34d6f3ee7", null ],
-    [ "m_vertexBuffer", "a00029.html#aba847b861719a19e48513d48c34faf91", null ],
-    [ "mp_shaderProgram", "a00029.html#adffa2d6df06a51c8f3434f627e0ffe38", null ]
+    [ "LoaderObject", "a00029.html#ab5619bcc09220112f0a342b3147b58c4", null ],
+    [ "~LoaderObject", "a00029.html#a2ee2ee5a245955568c138860e1c449dd", null ],
+    [ "addIndice", "a00029.html#a18be2a2412731797071c97bcff1e868c", null ],
+    [ "addVertex", "a00029.html#a39d542153aa5ad1e72e800cfda87092c", null ],
+    [ "getIndices", "a00029.html#a40e0c4e308b1097fe9e5fc1cce846351", null ],
+    [ "getVertices", "a00029.html#a20212264506edb13784d0041947b2238", null ],
+    [ "m_indices", "a00029.html#afcc2d24ff406650fe5fc0f46a575abfa", null ],
+    [ "m_vertices", "a00029.html#a31d9c4fa44ebf43f5686bc185d356c60", null ]
 ];

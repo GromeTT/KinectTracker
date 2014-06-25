@@ -26,7 +26,6 @@ PropertyBrowser::PropertyBrowser( QWidget* parent )
     ui->treeView->setItemDelegate( mp_styledDelegate );
 }
 
-
 /*!
    \brief PropertyBrowser::~PropertyBrowser
    Destroys the widget.

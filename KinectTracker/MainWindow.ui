@@ -48,16 +48,22 @@
     <property name="title">
      <string>Edit</string>
     </property>
-    <addaction name="actionBackground_Subtraction"/>
-    <addaction name="separator"/>
-    <addaction name="actionTake_snapshot"/>
+    <addaction name="actionTakeScreenshot"/>
     <addaction name="separator"/>
     <addaction name="actionKeep_Skeleton_up_to_date"/>
     <addaction name="actionKeep_rgb_up_to_date"/>
     <addaction name="actionKeep_depth_up_to_date"/>
    </widget>
+   <widget class="QMenu" name="menuAnalysis">
+    <property name="title">
+     <string>Analysis</string>
+    </property>
+    <addaction name="actionSASDMode"/>
+    <addaction name="actionSABSSDMode"/>
+   </widget>
    <addaction name="menuDatei"/>
    <addaction name="editMenu"/>
+   <addaction name="menuAnalysis"/>
    <addaction name="windowMenu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -95,16 +101,6 @@
     <string>OpenGLRender</string>
    </property>
   </action>
-  <action name="actionSnapshot">
-   <property name="text">
-    <string>Snapshot</string>
-   </property>
-  </action>
-  <action name="actionBackground_Subtraction">
-   <property name="text">
-    <string>Background Subtraction</string>
-   </property>
-  </action>
   <action name="actionKeep_Skeleton_up_to_date">
    <property name="checkable">
     <bool>true</bool>
@@ -129,9 +125,25 @@
     <string>Keep depth up to date</string>
    </property>
   </action>
-  <action name="actionTake_snapshot">
+  <action name="actionTakeScreenshot">
    <property name="text">
-    <string>Take snapshot</string>
+    <string>Take screenshot</string>
+   </property>
+  </action>
+  <action name="actionSASDMode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>SASDMode</string>
+   </property>
+  </action>
+  <action name="actionSABSSDMode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>SABSSDMode</string>
    </property>
   </action>
  </widget>

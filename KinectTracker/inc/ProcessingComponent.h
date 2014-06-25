@@ -11,8 +11,8 @@ public:
     virtual ~ProcessingComponent();
 
     void addComponent( ProcessingComponent* compnent );
-    const QVector<ProcessingComponent*>& getComponents() const;
-    ProcessingComponent* getProcessingComponent( const int index ) const;
+    const QVector<ProcessingComponent*>&    getComponents() const;
+    ProcessingComponent*                    getProcessingComponent( const int index ) const;
 
 private:
     QVector<ProcessingComponent*> m_components;

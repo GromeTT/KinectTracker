@@ -1,7 +1,7 @@
 var a00015 =
 [
-    [ "KinectInitializeDialog", "a00015.html#a5b562f825b336c713b878740963778ba", null ],
-    [ "~KinectInitializeDialog", "a00015.html#ad6728a188de665be594a4496da47f1cf", null ],
-    [ "m_kinect", "a00015.html#a0fa552efafad4fec8c1fd9a1ed68c71b", null ],
-    [ "ui", "a00015.html#a7cee097d014aa0ff801139ea013c1bb0", null ]
+    [ "DepthViewerWidget", "a00015.html#a89b0341d50cb5c1a2c49b7cac3da55b4", null ],
+    [ "~DepthViewerWidget", "a00015.html#ab880a830e46871a1faad8b04fe8af730", null ],
+    [ "update", "a00015.html#a10f41e9fb4d95679f2c30c754be698dc", null ],
+    [ "ui", "a00015.html#aa0a6541b50b5134435e9bebbdbf8254d", null ]
 ];

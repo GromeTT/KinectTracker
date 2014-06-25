@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Member List</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/src/Kinect.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,10 +67,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -85,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00033.html','');});
+$(document).ready(function(){initNavTree('a00130.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -104,32 +102,41 @@ $(document).ready(function(){initNavTree('a00033.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Vertex Member List</div>  </div>
+<div class="title">Kinect.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="a00081_source.html">../inc/Kinect.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00102_source.html">../inc/SkeletonData.h</a>&quot;</code><br />
+<code>#include &lt;QSize&gt;</code><br />
+<code>#include &lt;QImage&gt;</code><br />
+<code>#include &lt;QColor&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;QVector2D&gt;</code><br />
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a2a63e2b8bb4d59e9adb12cd113ade438"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector2D transformFromSkeltonToRGB </td>
+          <td>(</td>
+          <td class="paramtype">const QVector3D &amp;&#160;</td>
+          <td class="paramname"><em>coordinates</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
-<p>This is the complete list of members for <a class="el" href="a00033.html">Vertex</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a91493b1de792faae6bf96329bed6d06a">a</a></td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00033.html#a270be8167fe744b56cae25215c7d52be">b</a></td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a4da5050c518fc2657e34f51bf61ae0e4">g</a></td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00033.html#a088ea2f6ac59b1a5bee2d02da11ea50f">pointSize</a></td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a8c22b31da489e22d5d58ea667eda65b9">r</a></td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00033.html#afa8e01935fde5cb9702075d25346e135">u</a></td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a6ef8693374fd8c435715b32fbbdc4e41">v</a></td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00033.html#a97488994a2482d70da74e1b91d40e169">Vertex</a>()</td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00033.html#ae1c8f2ab8b7fd1d70b575134fb900979">Vertex</a>(const float x, const float y, const float z)</td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00033.html#a5240b12afe350c85527f71fcc364064e">Vertex</a>(const float x, const float y, const float z, const float r, const float g, const float b, const float a=1.0f, const float u=0, const float v=0)</td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00033.html#aa592e1564aa3b226ff629b824b240310">x</a></td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00033.html#a448817068556fe43e81dc0a3e7d1fa43">y</a></td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00033.html#af5d14cd74cd842c01f9a8a8d92325339">z</a></td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00033.html#ad7a0ce588b7f688dc4488a0f567d9155">~Vertex</a>()</td><td class="entry"><a class="el" href="a00033.html">Vertex</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="a00130.html">Kinect.cpp</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

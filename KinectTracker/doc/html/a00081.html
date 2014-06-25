@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/src/ObjectLoader.cpp File Reference</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Kinect.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,21 +101,78 @@ $(document).ready(function(){initNavTree('a00081.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">ObjectLoader.cpp File Reference</div>  </div>
+<div class="title">Kinect.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00051_source.html">../inc/ObjectLoader.h</a>&quot;</code><br />
-<code>#include &lt;QFile&gt;</code><br />
-<code>#include &lt;QTextStream&gt;</code><br />
-<code>#include &lt;QDebug&gt;</code><br />
-</div></div><!-- contents -->
+<div class="textblock"><code>#include &quot;Windows.h&quot;</code><br />
+<code>#include &quot;NuiApi.h&quot;</code><br />
+<code>#include &quot;NuiImageCamera.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00102_source.html">SkeletonData.h</a>&quot;</code><br />
+<code>#include &lt;QVector&gt;</code><br />
+<code>#include &lt;QSize&gt;</code><br />
+<code>#include &lt;QSharedPointer&gt;</code><br />
+<code>#include &lt;QOpenGLTexture&gt;</code><br />
+</div>
+<p><a href="a00081_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html">Kinect</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a9f918755b601cf4bffca775992e6fb90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOMINMAX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="affc3611a0f4ad546175a9cca2cfc53f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QSharedPointer&lt;<a class="el" href="a00027.html">Kinect</a>&gt; <a class="el" href="a00081.html#affc3611a0f4ad546175a9cca2cfc53f1">KinectPtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a2a63e2b8bb4d59e9adb12cd113ade438"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector2D transformFromSkeltonToRGB </td>
+          <td>(</td>
+          <td class="paramtype">const QVector3D &amp;&#160;</td>
+          <td class="paramname"><em>coordinates</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="a00081.html">ObjectLoader.cpp</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00081.html">Kinect.h</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

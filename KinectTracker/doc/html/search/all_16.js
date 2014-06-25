@@ -1,7 +1,14 @@
 var searchData=
 [
-  ['x',['x',['../a00007.html#ae270fbd3b09b36f240a2d55b3b5b9cec',1,'Camera::x()'],['../a00032.html#ab7aed15fcdba46d5a7e7f711b7288b74',1,'TransformationObject::x()'],['../a00033.html#aa592e1564aa3b226ff629b824b240310',1,'Vertex::x()'],['../a00007.html#af37053e0dffc52966b1a4422b78aa23a',1,'Camera::x()'],['../a00032.html#abdedd6467cbdc76b3945289a2c6b9f61',1,'TransformationObject::x()']]],
-  ['xchanged',['xChanged',['../a00007.html#ac7fd18825b63f7f553d841266344e264',1,'Camera::xChanged()'],['../a00032.html#a39271adfc808e8adb18e06156fae5b99',1,'TransformationObject::xChanged()']]],
-  ['xscale',['xScale',['../a00032.html#a5e68ba8694ee8d10329bd7798c66ccf5',1,'TransformationObject']]],
-  ['xscalechanged',['xScaleChanged',['../a00032.html#aafbe35229f4d11ae4280932f5d1e0ec1',1,'TransformationObject']]]
+  ['width',['width',['../a00006.html#a5da6cd402f1b4b1deeeebbdac405ab2e',1,'BoundingBox']]],
+  ['winsigma',['winSigma',['../a00024.html#a6f255de46586e4064a92448c13b16463',1,'HOGFeatureDetector::winSigma()'],['../a00024.html#a3afe5bc995833f9e9868ebb759196735',1,'HOGFeatureDetector::winSigma() const ']]],
+  ['winsigmachanged',['winSigmaChanged',['../a00024.html#a2350bd5c27d976f30ee05453bc05e739',1,'HOGFeatureDetector']]],
+  ['winsize',['winSize',['../a00024.html#a264c612ef4532b53a14c1b2b69f90a12',1,'HOGFeatureDetector::winSize()'],['../a00024.html#a9fcef41b233fbc69b1b6ae3bd4220341',1,'HOGFeatureDetector::winSize() const ']]],
+  ['winsizechanged',['winSizeChanged',['../a00024.html#a6dd9726098d685ca769a6d7665d2d49a',1,'HOGFeatureDetector']]],
+  ['wireframemode',['wireFrameMode',['../a00038.html#a47162ba98412b7351424202ceb0075d9',1,'RenderObject']]],
+  ['workerstatus',['workerStatus',['../a00001.html#ad8ec5f70da4ff5a6a0932f2bdcf6465b',1,'AnalysisResults::workerStatus()'],['../a00047.html#aa27c9d1335bfe252be0888a54cde2b33',1,'SkeletonAnalyzer::workerStatus()'],['../a00001.html#ac5f7488b8c810b88f2e0282e8a7e119c',1,'AnalysisResults::workerStatus()'],['../a00047.html#a611c8cd6d70e5f07b10edcf44881714d',1,'SkeletonAnalyzer::workerStatus()']]],
+  ['workerstatuschanged',['workerStatusChanged',['../a00001.html#a7f320567dbbef79795e32a3739e6ca68',1,'AnalysisResults::workerStatusChanged()'],['../a00047.html#a9269aef3fa824661e013183613377c28',1,'SkeletonAnalyzer::workerStatusChanged()']]],
+  ['wristleft',['WristLeft',['../a00048.html#af34e460c0da2f42218294f80e7070b28a588e9efafd75b6a1fe22a9960c44181e',1,'SkeletonData']]],
+  ['wristright',['WristRight',['../a00048.html#af34e460c0da2f42218294f80e7070b28aa06437c22d077beaecbbe4508d9e41c8',1,'SkeletonData']]],
+  ['wrong_5fvector_5fsize',['WRONG_VECTOR_SIZE',['../a00027.html#a260ceef1571ff51ff8571b1951782390af5e00d094d8888abd87b80afdf1ab6b9',1,'Kinect']]]
 ];

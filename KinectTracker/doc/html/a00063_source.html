@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Threshold.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/BoundingGeometry.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,125 +102,197 @@ $(document).ready(function(){initNavTree('a00063_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Threshold.h</div>  </div>
+<div class="title">BoundingGeometry.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00063.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef THRESHOLD_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define THRESHOLD_H</span></div>
+<a href="a00063.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BOUNDINGGEOMETRY_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BOUNDINGGEOMETRY_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QSharedPointer&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="a00031.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00031.html">Threshold</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//    enum</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//    {</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//        Adaptive_Thresh_Mean = cv::ADAPTIVE_THRESH_MEAN_C,</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//        Adaptive_Thresh_Gaussian_C = cv::ADAPTIVE_THRESH_GAUSSIAN_C</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//    }AdaptiveMode;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00031.html#ac6ab383d590ac973fe513219334d561f">   19</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">// http://docs.opencv.org/modules/imgproc/doc/miscellaneous_transformations.html?highlight=threshold#double%20threshold%28InputArray%20src,%20OutputArray%20dst,%20double%20thresh,%20double%20maxval,%20int%20type%29</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00031.html#ac6ab383d590ac973fe513219334d561fa8948c833b6fc66bcff50479b88281cb3">   22</a></span>&#160;        <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561fa8948c833b6fc66bcff50479b88281cb3">Thresh_Binary</a> = cv::THRESH_BINARY,</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a00031.html#ac6ab383d590ac973fe513219334d561fa62a8f48e1511dace93562cc70c5f9b23">   23</a></span>&#160;        <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561fa62a8f48e1511dace93562cc70c5f9b23">Thresh_Binary_Inv</a> = cv::THRESH_BINARY_INV,</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a00031.html#ac6ab383d590ac973fe513219334d561fadfb3f3a4b2c053ccfe6e1f436666b90b">   24</a></span>&#160;        <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561fadfb3f3a4b2c053ccfe6e1f436666b90b">Thresh_Trunc</a> = cv::THRESH_TRUNC,</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00031.html#ac6ab383d590ac973fe513219334d561fae6d119e2634d6968445f85b5b2a3ec98">   25</a></span>&#160;        <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561fae6d119e2634d6968445f85b5b2a3ec98">Thresh_ToZero</a> = cv::THRESH_TOZERO,</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00031.html#ac6ab383d590ac973fe513219334d561fac86486a6eb7621b1bc221aa08bb8d23b">   26</a></span>&#160;        <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561fac86486a6eb7621b1bc221aa08bb8d23b">Thresh_ToZero_Inv</a> = cv::THRESH_TOZERO_INV</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//    Q_ENUMS( AdaptiveMode )</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    Q_ENUMS( <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a> )</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;public:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="a00031.html">Threshold</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    virtual ~Threshold();</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QSharedPointer&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00108.html">Vertex.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../inc/SkeletonData.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00063.html#a259f4df67df3fce159eb227839d3c425">    9</a></span>&#160;<span class="keyword">class </span>QMatrix4x4;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">typedef</span> QVector&lt;Vertex&gt; <a class="code" href="a00063.html#a259f4df67df3fce159eb227839d3c425">Vertices</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00007.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00007.html">BoundingGeometry</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="a00007.html#aae8fca07fff143561e4f804bb4c04231">BoundingGeometry</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="a00007.html#aae8fca07fff143561e4f804bb4c04231">BoundingGeometry</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00007.html#a796b87288d54b500b7a60569b159765c">x</a>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00007.html#aff9888614106a46f7571bda70558f63a">y</a>,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00007.html#af0a0f88c731db295f511076751522438">z</a> );</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00007.html#a8ea3a2cd602c5b0040dee82adc2c039c">~BoundingGeometry</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00007.html#a796b87288d54b500b7a60569b159765c">x</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00007.html#aff9888614106a46f7571bda70558f63a">y</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00007.html#af0a0f88c731db295f511076751522438">z</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00007.html#a75123a3246f4dba43705271beefa5673">setX</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> x );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00007.html#a9e09f6c5f870ca7313e1243b35f26647">setY</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> y );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00007.html#a7b1858a9b8f56bafbb792c323821073e">setZ</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> z );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// TODO: convert to const.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00007.html#a640cfdc505afb10917d7328337c100f6">arePointsInsideGeometry</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00007.html#acef17525e9a7ad4b77f2b330db0e64cb">arePointsInsideGeometryV</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points ) = 0;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00031.html#ac0e492803006dc4f32f3f113cf1bec3d">threshold</a>( cv::Mat&amp; input );</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00031.html#ac0e492803006dc4f32f3f113cf1bec3d">threshold</a>( cv::Mat&amp; input, cv::Mat&amp; output );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00031.html#a7afb07c346eef63aef445b049718ec46">setMaxValue</a>( const <span class="keywordtype">float</span> <a class="code" href="a00031.html#a5367a49945393b0f1367310f677c88ce">maxValue</a> );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//    void setAdaptiveMode( const AdaptiveMode adaptiveMode );</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00031.html#a747ecbd752a29d1f2158e05ed568d78a">setThreshold</a>( const <span class="keywordtype">float</span> <a class="code" href="a00031.html#ac0e492803006dc4f32f3f113cf1bec3d">threshold</a> );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00031.html#a7f98dba2c45fb8f04e88bb4efe057d67">setThresholdType</a>( const <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a> <a class="code" href="a00031.html#a2d23416e7525ec0223ebb8a65530ce73">thresholdType</a> );</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//    void setBlockSize( const int blockSize );</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a00007.html#aba2234f46306ea693735a59de37fcd32">   37</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00007.html#aba2234f46306ea693735a59de37fcd32">m_x</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00007.html#ab5fffe49bc65fa0e1754423abdd5e8d7">   38</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00007.html#ab5fffe49bc65fa0e1754423abdd5e8d7">m_y</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a00007.html#a5c40a1430cee5a7c605d45d3a907e03c">   39</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00007.html#a5c40a1430cee5a7c605d45d3a907e03c">m_z</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00063.html#a98382f9c2f98387986e0fd9434910ca2">   43</a></span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;BoundingGeometry&gt; <a class="code" href="a00063.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">float</span>         maxValue() const;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">float</span>         threshold() const;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//    AdaptiveMode  adaptiveMode() const;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a> thresholdType() const;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//    int           blockSize() const;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;signals:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00031.html#a559a43ae2c6f94a9f348d74e0c93f426">maxValueChanged</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00031.html#a95e78d77660f0dabdb0ed073e83753c9">thresholdChanged</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//    void adaptiveModeChanged();</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00031.html#a84f2d972a1347fbb406b2eea1273f5a9">thresholdTypeChanged</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//    void blockSizeChanged();</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;private:</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a00031.html#a9789b9923bce9710752324cc47c5320f">   59</a></span>&#160;    <span class="keywordtype">float</span>           <a class="code" href="a00031.html#a9789b9923bce9710752324cc47c5320f">m_maxValue</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a00031.html#a46cfc35879992bf0cb3e5742c3f673fa">   60</a></span>&#160;    <span class="keywordtype">float</span>           <a class="code" href="a00031.html#a46cfc35879992bf0cb3e5742c3f673fa">m_threshold</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//    AdaptiveMode    m_adaptiveMode;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="a00031.html#ac3573bcd8d9a70d9b6e5c40da545ee2d">   62</a></span>&#160;    <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a>   <a class="code" href="a00031.html#ac3573bcd8d9a70d9b6e5c40da545ee2d">m_thresholdType</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//    int             m_blockSize;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/**************************************************************************************************************************</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> **************************************************************************************************************************/</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a00006.html">   54</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00006.html">BoundingBox</a> : <span class="keyword">public</span> <a class="code" href="a00007.html">BoundingGeometry</a></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="a00006.html#a6e401c4da5839950f1f30c8b8c4d1208">BoundingBox</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="a00006.html#a6e401c4da5839950f1f30c8b8c4d1208">BoundingBox</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">float</span> deltaW = 0,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">float</span> deltaD = 0,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">float</span> deltaH = 0 );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="a00006.html#a6e401c4da5839950f1f30c8b8c4d1208">BoundingBox</a>( <span class="keyword">const</span> <a class="code" href="a00006.html">BoundingBox</a>&amp; other );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00006.html#a587de78331711c6eb6d15de867b73991">~BoundingBox</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> maxValue MEMBER m_maxValue</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                READ maxValue</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                WRITE <a class="code" href="a00031.html#a7afb07c346eef63aef445b049718ec46">setMaxValue</a></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="a00031.html#a6e9aec8892a8b8c16c8c0ffb8d293299">   68</a></span>&#160;                NOTIFY maxValueChanged )</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">//    Q_PROPERTY( AdaptiveMode adaptiveMode MEMBER m_adaptiveMode</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">//                READ adaptiveMode</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">//                WRITE setAdaptiveMode</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">//                NOTIFY adaptiveModeChanged )</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> threshold MEMBER m_threshold</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                READ threshold</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                WRITE <a class="code" href="a00031.html#a747ecbd752a29d1f2158e05ed568d78a">setThreshold</a></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="a00031.html#a4553c33cf0267aa206970186f29534a1">   76</a></span>&#160;                NOTIFY thresholdChanged )</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    Q_PROPERTY( <a class="code" href="a00031.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a> thresholdType MEMBER m_thresholdType</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                READ thresholdType</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                WRITE <a class="code" href="a00031.html#a7f98dba2c45fb8f04e88bb4efe057d67">setThresholdType</a></div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="a00031.html#a1dd6b42c58c35809ba3664ad43b9f2a1">   80</a></span>&#160;                NOTIFY thresholdTypeChanged )</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">//    Q_PROPERTY( int blockSize MEMBER m_blockSize</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">//                READ blockSize</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">//                WRITE setBlockSize</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">//                NOTIFY blockSizeChanged )</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="a00063.html#a3c8e90f8e3d2c03c67c9c037fd083cde">   87</a></span>&#160;typedef QSharedPointer&lt;Threshold&gt; <a class="code" href="a00063.html#a3c8e90f8e3d2c03c67c9c037fd083cde">ThresholdPtr</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif // THRESHOLD_H</span></div>
-<div class="ttc" id="a00031_html_ac6ab383d590ac973fe513219334d561fadfb3f3a4b2c053ccfe6e1f436666b90b"><div class="ttname"><a href="a00031.html#ac6ab383d590ac973fe513219334d561fadfb3f3a4b2c053ccfe6e1f436666b90b">Threshold::Thresh_Trunc</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:24</div></div>
-<div class="ttc" id="a00031_html_a559a43ae2c6f94a9f348d74e0c93f426"><div class="ttname"><a href="a00031.html#a559a43ae2c6f94a9f348d74e0c93f426">Threshold::maxValueChanged</a></div><div class="ttdeci">void maxValueChanged()</div></div>
-<div class="ttc" id="a00031_html_a5367a49945393b0f1367310f677c88ce"><div class="ttname"><a href="a00031.html#a5367a49945393b0f1367310f677c88ce">Threshold::maxValue</a></div><div class="ttdeci">float maxValue() const </div></div>
-<div class="ttc" id="a00031_html_a7afb07c346eef63aef445b049718ec46"><div class="ttname"><a href="a00031.html#a7afb07c346eef63aef445b049718ec46">Threshold::setMaxValue</a></div><div class="ttdeci">void setMaxValue(const float maxValue)</div><div class="ttdef"><b>Definition:</b> Threshold.cpp:27</div></div>
-<div class="ttc" id="a00031_html_ac6ab383d590ac973fe513219334d561fa8948c833b6fc66bcff50479b88281cb3"><div class="ttname"><a href="a00031.html#ac6ab383d590ac973fe513219334d561fa8948c833b6fc66bcff50479b88281cb3">Threshold::Thresh_Binary</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:22</div></div>
-<div class="ttc" id="a00031_html_a7f98dba2c45fb8f04e88bb4efe057d67"><div class="ttname"><a href="a00031.html#a7f98dba2c45fb8f04e88bb4efe057d67">Threshold::setThresholdType</a></div><div class="ttdeci">void setThresholdType(const ThresholdType thresholdType)</div><div class="ttdef"><b>Definition:</b> Threshold.cpp:54</div></div>
-<div class="ttc" id="a00031_html_a747ecbd752a29d1f2158e05ed568d78a"><div class="ttname"><a href="a00031.html#a747ecbd752a29d1f2158e05ed568d78a">Threshold::setThreshold</a></div><div class="ttdeci">void setThreshold(const float threshold)</div><div class="ttdef"><b>Definition:</b> Threshold.cpp:36</div></div>
-<div class="ttc" id="a00031_html_a2d23416e7525ec0223ebb8a65530ce73"><div class="ttname"><a href="a00031.html#a2d23416e7525ec0223ebb8a65530ce73">Threshold::thresholdType</a></div><div class="ttdeci">ThresholdType thresholdType() const </div></div>
-<div class="ttc" id="a00031_html_ac6ab383d590ac973fe513219334d561fac86486a6eb7621b1bc221aa08bb8d23b"><div class="ttname"><a href="a00031.html#ac6ab383d590ac973fe513219334d561fac86486a6eb7621b1bc221aa08bb8d23b">Threshold::Thresh_ToZero_Inv</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:26</div></div>
-<div class="ttc" id="a00031_html_ac6ab383d590ac973fe513219334d561fa62a8f48e1511dace93562cc70c5f9b23"><div class="ttname"><a href="a00031.html#ac6ab383d590ac973fe513219334d561fa62a8f48e1511dace93562cc70c5f9b23">Threshold::Thresh_Binary_Inv</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:23</div></div>
-<div class="ttc" id="a00031_html_ac0e492803006dc4f32f3f113cf1bec3d"><div class="ttname"><a href="a00031.html#ac0e492803006dc4f32f3f113cf1bec3d">Threshold::threshold</a></div><div class="ttdeci">float threshold() const </div></div>
-<div class="ttc" id="a00031_html_a46cfc35879992bf0cb3e5742c3f673fa"><div class="ttname"><a href="a00031.html#a46cfc35879992bf0cb3e5742c3f673fa">Threshold::m_threshold</a></div><div class="ttdeci">float m_threshold</div><div class="ttdef"><b>Definition:</b> Threshold.h:60</div></div>
-<div class="ttc" id="a00031_html_ac6ab383d590ac973fe513219334d561fae6d119e2634d6968445f85b5b2a3ec98"><div class="ttname"><a href="a00031.html#ac6ab383d590ac973fe513219334d561fae6d119e2634d6968445f85b5b2a3ec98">Threshold::Thresh_ToZero</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:25</div></div>
-<div class="ttc" id="a00031_html_a9789b9923bce9710752324cc47c5320f"><div class="ttname"><a href="a00031.html#a9789b9923bce9710752324cc47c5320f">Threshold::m_maxValue</a></div><div class="ttdeci">float m_maxValue</div><div class="ttdef"><b>Definition:</b> Threshold.h:59</div></div>
-<div class="ttc" id="a00031_html_a84f2d972a1347fbb406b2eea1273f5a9"><div class="ttname"><a href="a00031.html#a84f2d972a1347fbb406b2eea1273f5a9">Threshold::thresholdTypeChanged</a></div><div class="ttdeci">void thresholdTypeChanged()</div></div>
-<div class="ttc" id="a00031_html_a95e78d77660f0dabdb0ed073e83753c9"><div class="ttname"><a href="a00031.html#a95e78d77660f0dabdb0ed073e83753c9">Threshold::thresholdChanged</a></div><div class="ttdeci">void thresholdChanged()</div></div>
-<div class="ttc" id="a00063_html_a3c8e90f8e3d2c03c67c9c037fd083cde"><div class="ttname"><a href="a00063.html#a3c8e90f8e3d2c03c67c9c037fd083cde">ThresholdPtr</a></div><div class="ttdeci">QSharedPointer&lt; Threshold &gt; ThresholdPtr</div><div class="ttdef"><b>Definition:</b> Threshold.h:87</div></div>
-<div class="ttc" id="a00031_html"><div class="ttname"><a href="a00031.html">Threshold</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:8</div></div>
-<div class="ttc" id="a00031_html_ac6ab383d590ac973fe513219334d561f"><div class="ttname"><a href="a00031.html#ac6ab383d590ac973fe513219334d561f">Threshold::ThresholdType</a></div><div class="ttdeci">ThresholdType</div><div class="ttdef"><b>Definition:</b> Threshold.h:19</div></div>
-<div class="ttc" id="a00031_html_ac3573bcd8d9a70d9b6e5c40da545ee2d"><div class="ttname"><a href="a00031.html#ac3573bcd8d9a70d9b6e5c40da545ee2d">Threshold::m_thresholdType</a></div><div class="ttdeci">ThresholdType m_thresholdType</div><div class="ttdef"><b>Definition:</b> Threshold.h:62</div></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00006.html#a8e47b5b734e4594777c257c59d13a62b">depth</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00006.html#a5da6cd402f1b4b1deeeebbdac405ab2e">width</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00006.html#aabdbe73f4d217e0ae61671ec1a387361">height</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00006.html#a4671e29075fba2ed829f2838a850994c">setDepth</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> depth );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00006.html#ad9bc903c2a3c01d220969db034b9c4d4">setWidth</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> width );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00006.html#aff2f3e191249d0aa811b22e791fe3d9e">setHeight</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> height );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00006.html#abb20c845b8a47726b08b832f1547b63a">calculateBoundingBox</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">float</span> deltaW = 0,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">float</span> deltaD = 0,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">float</span> deltaH = 0);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00006.html#a8f1d5ebc762ff185e6ca9d22ab097221">arePointsInsideGeometryV</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="a00006.html#a5fda8917e2a6f75c04aba2adaff6ec4a">   81</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00006.html#a5fda8917e2a6f75c04aba2adaff6ec4a">m_width</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="a00006.html#a8ef7d989f217a73fcd3c256eead9a960">   82</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00006.html#a8ef7d989f217a73fcd3c256eead9a960">m_height</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="a00006.html#aa2a6700181e92cb7ba0e7d6fde3c15dc">   83</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00006.html#aa2a6700181e92cb7ba0e7d6fde3c15dc">m_depth</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="a00063.html#a63be8cb12104dd2612c80c1defebd264">   86</a></span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;BoundingBox&gt; <a class="code" href="a00063.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/**************************************************************************************************************************</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"> **************************************************************************************************************************/</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="a00008.html">   97</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00008.html">BoundingGeometryWithTimeStamp</a></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="a00008.html#a51402e40ce7f97f93b1dc135a6fc929a">BoundingGeometryWithTimeStamp</a>( );</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="a00008.html#a51402e40ce7f97f93b1dc135a6fc929a">BoundingGeometryWithTimeStamp</a>( <a class="code" href="a00007.html">BoundingGeometry</a>* geometry,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp );</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="a00008.html#aa28e3f18055ba0b6f144194ab92c2765">  103</a></span>&#160;    <a class="code" href="a00007.html">BoundingGeometry</a>*   <a class="code" href="a00008.html#aa28e3f18055ba0b6f144194ab92c2765">mp_geometry</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="a00008.html#a3c01b44f3bd3209c38161c07511b65eb">  104</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        <a class="code" href="a00008.html#a3c01b44f3bd3209c38161c07511b65eb">m_timestamp</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/**************************************************************************************************************************</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> **************************************************************************************************************************</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> **************************************************************************************************************************/</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="a00009.html">  116</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00009.html">BoundingSphere</a> : <span class="keyword">public</span> <a class="code" href="a00007.html">BoundingGeometry</a></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="a00009.html#afe6caf7fabdf98631fd9977fb739ffde">BoundingSphere</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">float</span> delta );</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="a00009.html#afe6caf7fabdf98631fd9977fb739ffde">BoundingSphere</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00007.html#a796b87288d54b500b7a60569b159765c">x</a>,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00007.html#aff9888614106a46f7571bda70558f63a">y</a>,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00007.html#af0a0f88c731db295f511076751522438">z</a>,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">float</span> r );</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00009.html#a0d6744fa169e5d5b884013da1237098c">~BoundingSphere</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00009.html#a96122d4873e589ecdd3d61dccc4bb020">arePointsInsideGeometryV</a>( <span class="keyword">const</span> QVector&lt;QVector3D&gt;&amp; points );</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="a00009.html#a71f3775844ac5a99ddff54a5d9654983">  130</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00009.html#a71f3775844ac5a99ddff54a5d9654983">m_x</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="a00009.html#af05319563b8551c14b56549e0724f873">  131</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00009.html#af05319563b8551c14b56549e0724f873">m_y</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="a00009.html#a813c8f9f00d5e1bccdf9e17fa51f0b89">  132</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00009.html#a813c8f9f00d5e1bccdf9e17fa51f0b89">m_z</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="a00009.html#a6ee4fd0fe571ff2ecc9c0f970bf3b845">  134</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00009.html#a6ee4fd0fe571ff2ecc9c0f970bf3b845">m_r</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#endif // BOUNDINGGEOMETRY_H</span></div>
+<div class="ttc" id="a00009_html_af05319563b8551c14b56549e0724f873"><div class="ttname"><a href="a00009.html#af05319563b8551c14b56549e0724f873">BoundingSphere::m_y</a></div><div class="ttdeci">float m_y</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:131</div></div>
+<div class="ttc" id="a00009_html_a813c8f9f00d5e1bccdf9e17fa51f0b89"><div class="ttname"><a href="a00009.html#a813c8f9f00d5e1bccdf9e17fa51f0b89">BoundingSphere::m_z</a></div><div class="ttdeci">float m_z</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:132</div></div>
+<div class="ttc" id="a00006_html_a4671e29075fba2ed829f2838a850994c"><div class="ttname"><a href="a00006.html#a4671e29075fba2ed829f2838a850994c">BoundingBox::setDepth</a></div><div class="ttdeci">void setDepth(const float depth)</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:129</div></div>
+<div class="ttc" id="a00006_html_a5da6cd402f1b4b1deeeebbdac405ab2e"><div class="ttname"><a href="a00006.html#a5da6cd402f1b4b1deeeebbdac405ab2e">BoundingBox::width</a></div><div class="ttdeci">float width() const </div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:119</div></div>
+<div class="ttc" id="a00009_html_a0d6744fa169e5d5b884013da1237098c"><div class="ttname"><a href="a00009.html#a0d6744fa169e5d5b884013da1237098c">BoundingSphere::~BoundingSphere</a></div><div class="ttdeci">virtual ~BoundingSphere()</div><div class="ttdoc">BoundingSphere::~BoundingSphere Destoryes the object. </div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:325</div></div>
+<div class="ttc" id="a00007_html_aff9888614106a46f7571bda70558f63a"><div class="ttname"><a href="a00007.html#aff9888614106a46f7571bda70558f63a">BoundingGeometry::y</a></div><div class="ttdeci">float y() const </div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:37</div></div>
+<div class="ttc" id="a00006_html_abb20c845b8a47726b08b832f1547b63a"><div class="ttname"><a href="a00006.html#abb20c845b8a47726b08b832f1547b63a">BoundingBox::calculateBoundingBox</a></div><div class="ttdeci">void calculateBoundingBox(const QVector&lt; QVector3D &gt; &amp;points, const float deltaW=0, const float deltaD=0, const float deltaH=0)</div><div class="ttdoc">/fn void BoundingBox::calculateBoundingGeometryV( const QVector<QVector3D>& poinst, const float deltaW, const float deltaD, const float deltaH ) Computes this BoundingBox so that it encloses the data provided by points. </div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:150</div></div>
+<div class="ttc" id="a00007_html_a5c40a1430cee5a7c605d45d3a907e03c"><div class="ttname"><a href="a00007.html#a5c40a1430cee5a7c605d45d3a907e03c">BoundingGeometry::m_z</a></div><div class="ttdeci">float m_z</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:39</div></div>
+<div class="ttc" id="a00008_html_aa28e3f18055ba0b6f144194ab92c2765"><div class="ttname"><a href="a00008.html#aa28e3f18055ba0b6f144194ab92c2765">BoundingGeometryWithTimeStamp::mp_geometry</a></div><div class="ttdeci">BoundingGeometry * mp_geometry</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:103</div></div>
+<div class="ttc" id="a00006_html_a8e47b5b734e4594777c257c59d13a62b"><div class="ttname"><a href="a00006.html#a8e47b5b734e4594777c257c59d13a62b">BoundingBox::depth</a></div><div class="ttdeci">float depth() const </div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:114</div></div>
+<div class="ttc" id="a00007_html_aba2234f46306ea693735a59de37fcd32"><div class="ttname"><a href="a00007.html#aba2234f46306ea693735a59de37fcd32">BoundingGeometry::m_x</a></div><div class="ttdeci">float m_x</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:37</div></div>
+<div class="ttc" id="a00006_html_aabdbe73f4d217e0ae61671ec1a387361"><div class="ttname"><a href="a00006.html#aabdbe73f4d217e0ae61671ec1a387361">BoundingBox::height</a></div><div class="ttdeci">float height() const </div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:124</div></div>
+<div class="ttc" id="a00007_html_ab5fffe49bc65fa0e1754423abdd5e8d7"><div class="ttname"><a href="a00007.html#ab5fffe49bc65fa0e1754423abdd5e8d7">BoundingGeometry::m_y</a></div><div class="ttdeci">float m_y</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:38</div></div>
+<div class="ttc" id="a00006_html_ad9bc903c2a3c01d220969db034b9c4d4"><div class="ttname"><a href="a00006.html#ad9bc903c2a3c01d220969db034b9c4d4">BoundingBox::setWidth</a></div><div class="ttdeci">void setWidth(const float width)</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:134</div></div>
+<div class="ttc" id="a00007_html_a8ea3a2cd602c5b0040dee82adc2c039c"><div class="ttname"><a href="a00007.html#a8ea3a2cd602c5b0040dee82adc2c039c">BoundingGeometry::~BoundingGeometry</a></div><div class="ttdeci">virtual ~BoundingGeometry()</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:27</div></div>
+<div class="ttc" id="a00006_html"><div class="ttname"><a href="a00006.html">BoundingBox</a></div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:54</div></div>
+<div class="ttc" id="a00063_html_a63be8cb12104dd2612c80c1defebd264"><div class="ttname"><a href="a00063.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a></div><div class="ttdeci">QSharedPointer&lt; BoundingBox &gt; BoundingBoxPtr</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:86</div></div>
+<div class="ttc" id="a00008_html_a3c01b44f3bd3209c38161c07511b65eb"><div class="ttname"><a href="a00008.html#a3c01b44f3bd3209c38161c07511b65eb">BoundingGeometryWithTimeStamp::m_timestamp</a></div><div class="ttdeci">unsigned int m_timestamp</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:104</div></div>
+<div class="ttc" id="a00006_html_a5fda8917e2a6f75c04aba2adaff6ec4a"><div class="ttname"><a href="a00006.html#a5fda8917e2a6f75c04aba2adaff6ec4a">BoundingBox::m_width</a></div><div class="ttdeci">float m_width</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:81</div></div>
+<div class="ttc" id="a00006_html_a8ef7d989f217a73fcd3c256eead9a960"><div class="ttname"><a href="a00006.html#a8ef7d989f217a73fcd3c256eead9a960">BoundingBox::m_height</a></div><div class="ttdeci">float m_height</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:82</div></div>
+<div class="ttc" id="a00009_html_afe6caf7fabdf98631fd9977fb739ffde"><div class="ttname"><a href="a00009.html#afe6caf7fabdf98631fd9977fb739ffde">BoundingSphere::BoundingSphere</a></div><div class="ttdeci">BoundingSphere(const QVector&lt; QVector3D &gt; &amp;points, const float delta)</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:299</div></div>
+<div class="ttc" id="a00007_html_aae8fca07fff143561e4f804bb4c04231"><div class="ttname"><a href="a00007.html#aae8fca07fff143561e4f804bb4c04231">BoundingGeometry::BoundingGeometry</a></div><div class="ttdeci">BoundingGeometry()</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:9</div></div>
+<div class="ttc" id="a00009_html"><div class="ttname"><a href="a00009.html">BoundingSphere</a></div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:116</div></div>
+<div class="ttc" id="a00007_html_a640cfdc505afb10917d7328337c100f6"><div class="ttname"><a href="a00007.html#a640cfdc505afb10917d7328337c100f6">BoundingGeometry::arePointsInsideGeometry</a></div><div class="ttdeci">bool arePointsInsideGeometry(const QVector&lt; QVector3D &gt; &amp;points)</div><div class="ttdoc">BoundingGeometry::arePointsInsideGeometry Returns true, if all points of points are inside the geomet...</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:66</div></div>
+<div class="ttc" id="a00007_html_af0a0f88c731db295f511076751522438"><div class="ttname"><a href="a00007.html#af0a0f88c731db295f511076751522438">BoundingGeometry::z</a></div><div class="ttdeci">float z() const </div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:42</div></div>
+<div class="ttc" id="a00006_html_aa2a6700181e92cb7ba0e7d6fde3c15dc"><div class="ttname"><a href="a00006.html#aa2a6700181e92cb7ba0e7d6fde3c15dc">BoundingBox::m_depth</a></div><div class="ttdeci">float m_depth</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:83</div></div>
+<div class="ttc" id="a00063_html_a98382f9c2f98387986e0fd9434910ca2"><div class="ttname"><a href="a00063.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a></div><div class="ttdeci">QSharedPointer&lt; BoundingGeometry &gt; BoundingGeometryPtr</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:43</div></div>
+<div class="ttc" id="a00007_html_a7b1858a9b8f56bafbb792c323821073e"><div class="ttname"><a href="a00007.html#a7b1858a9b8f56bafbb792c323821073e">BoundingGeometry::setZ</a></div><div class="ttdeci">void setZ(const float z)</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:57</div></div>
+<div class="ttc" id="a00007_html_a796b87288d54b500b7a60569b159765c"><div class="ttname"><a href="a00007.html#a796b87288d54b500b7a60569b159765c">BoundingGeometry::x</a></div><div class="ttdeci">float x() const </div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:32</div></div>
+<div class="ttc" id="a00009_html_a96122d4873e589ecdd3d61dccc4bb020"><div class="ttname"><a href="a00009.html#a96122d4873e589ecdd3d61dccc4bb020">BoundingSphere::arePointsInsideGeometryV</a></div><div class="ttdeci">virtual bool arePointsInsideGeometryV(const QVector&lt; QVector3D &gt; &amp;points)</div><div class="ttdoc">BoundingSphere::arePointsInsideGeometry. </div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:334</div></div>
+<div class="ttc" id="a00008_html"><div class="ttname"><a href="a00008.html">BoundingGeometryWithTimeStamp</a></div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:97</div></div>
+<div class="ttc" id="a00006_html_aff2f3e191249d0aa811b22e791fe3d9e"><div class="ttname"><a href="a00006.html#aff2f3e191249d0aa811b22e791fe3d9e">BoundingBox::setHeight</a></div><div class="ttdeci">void setHeight(const float height)</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:139</div></div>
+<div class="ttc" id="a00108_html"><div class="ttname"><a href="a00108.html">Vertex.h</a></div></div>
+<div class="ttc" id="a00006_html_a587de78331711c6eb6d15de867b73991"><div class="ttname"><a href="a00006.html#a587de78331711c6eb6d15de867b73991">BoundingBox::~BoundingBox</a></div><div class="ttdeci">virtual ~BoundingBox()</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:110</div></div>
+<div class="ttc" id="a00007_html_acef17525e9a7ad4b77f2b330db0e64cb"><div class="ttname"><a href="a00007.html#acef17525e9a7ad4b77f2b330db0e64cb">BoundingGeometry::arePointsInsideGeometryV</a></div><div class="ttdeci">virtual bool arePointsInsideGeometryV(const QVector&lt; QVector3D &gt; &amp;points)=0</div></div>
+<div class="ttc" id="a00006_html_a6e401c4da5839950f1f30c8b8c4d1208"><div class="ttname"><a href="a00006.html#a6e401c4da5839950f1f30c8b8c4d1208">BoundingBox::BoundingBox</a></div><div class="ttdeci">BoundingBox()</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:81</div></div>
+<div class="ttc" id="a00009_html_a6ee4fd0fe571ff2ecc9c0f970bf3b845"><div class="ttname"><a href="a00009.html#a6ee4fd0fe571ff2ecc9c0f970bf3b845">BoundingSphere::m_r</a></div><div class="ttdeci">float m_r</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:134</div></div>
+<div class="ttc" id="a00007_html_a75123a3246f4dba43705271beefa5673"><div class="ttname"><a href="a00007.html#a75123a3246f4dba43705271beefa5673">BoundingGeometry::setX</a></div><div class="ttdeci">void setX(const float x)</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:47</div></div>
+<div class="ttc" id="a00008_html_a51402e40ce7f97f93b1dc135a6fc929a"><div class="ttname"><a href="a00008.html#a51402e40ce7f97f93b1dc135a6fc929a">BoundingGeometryWithTimeStamp::BoundingGeometryWithTimeStamp</a></div><div class="ttdeci">BoundingGeometryWithTimeStamp()</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:267</div></div>
+<div class="ttc" id="a00007_html_a9e09f6c5f870ca7313e1243b35f26647"><div class="ttname"><a href="a00007.html#a9e09f6c5f870ca7313e1243b35f26647">BoundingGeometry::setY</a></div><div class="ttdeci">void setY(const float y)</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:52</div></div>
+<div class="ttc" id="a00009_html_a71f3775844ac5a99ddff54a5d9654983"><div class="ttname"><a href="a00009.html#a71f3775844ac5a99ddff54a5d9654983">BoundingSphere::m_x</a></div><div class="ttdeci">float m_x</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:130</div></div>
+<div class="ttc" id="a00007_html"><div class="ttname"><a href="a00007.html">BoundingGeometry</a></div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:13</div></div>
+<div class="ttc" id="a00006_html_a8f1d5ebc762ff185e6ca9d22ab097221"><div class="ttname"><a href="a00006.html#a8f1d5ebc762ff185e6ca9d22ab097221">BoundingBox::arePointsInsideGeometryV</a></div><div class="ttdeci">bool arePointsInsideGeometryV(const QVector&lt; QVector3D &gt; &amp;points)</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.cpp:229</div></div>
+<div class="ttc" id="a00063_html_a259f4df67df3fce159eb227839d3c425"><div class="ttname"><a href="a00063.html#a259f4df67df3fce159eb227839d3c425">Vertices</a></div><div class="ttdeci">QVector&lt; Vertex &gt; Vertices</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00063.html">Threshold.h</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00063.html">BoundingGeometry.h</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

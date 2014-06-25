@@ -50,17 +50,19 @@ public:
                              HANDLE nextFrame );
     HRESULT getRGBImage( QImage*& img );
     HRESULT getRGBImage( uchar* img );
-    HRESULT getDepthImage( QImage*& img );
-    HRESULT getDepthImage( uchar* img );
+    HRESULT getDepthImageAsGreyImage( QImage*& img );
+    HRESULT getDepthImageAsGreyImage( uchar* img );
+    HRESULT getDepthImage( std::vector<ushort>& depthData );
+    HRESULT getDepthImage( ushort* img );
     HRESULT getSkeleton( QList<SkeletonDataPtr>& skeletons );
-    QSize getRGBStreamResoultion() const;
-    QSize getDepthStreamResolution() const;
+    QSize rgbStreamResolution() const;
+    QSize depthStreamResolution() const;
     bool isInitialized() const;
     bool isRGBStreamOpen() const;
     bool isDepthStreamOpen() const;
 
 private:
-    void        setSize( QSize& size, NUI_IMAGE_RESOLUTION resolution );
+    void setSize( QSize& size, NUI_IMAGE_RESOLUTION resolution );
 
     INuiSensor* mp_sensor;
     HANDLE      m_depthHandle;

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SkeletonAnalyzer.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/ArrayManipulator.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,114 +102,39 @@ $(document).ready(function(){initNavTree('a00060_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">SkeletonAnalyzer.h</div>  </div>
+<div class="title">ArrayManipulator.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00060.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SKELETONANALYZER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SKELETONANALYZER_H</span></div>
+<a href="a00060.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ARRAYMANIPULATOR_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ARRAYMANIPULATOR_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QPair&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00037.html">BoundingBox.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="a00159.html">    4</a></span>&#160;<span class="keyword">namespace </span>Ui</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">class </span><a class="code" href="a00002.html">ArrayManipulator</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span>QVector3D;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="a00028.html">SkeletonData</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="a00027.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00027.html">SkeletonAnalyzer</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="a00027.html#af1aac491d6946153021413f6e8ab71af">SkeletonAnalyzer</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="a00027.html#a95aabf8cd26e09da89749e574ed0a627">~SkeletonAnalyzer</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00027.html#a1b00320eced2c517c11fe596bef576a2">update</a>( <span class="keyword">const</span> <a class="code" href="a00028.html">SkeletonData</a>* skeleton,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp );</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00027.html#a0c8e0a10526c82d573ce1a1f51944630">setDeltaX</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00027.html#a5f14288e08050feda7af19c031bf9a6d">deltaX</a> );</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00027.html#a6b1218340d534a770c90b2834dd911bd">setDeltaY</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00027.html#a664de7da0bfbde0f502a6e27844e727c">deltaY</a> );</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00027.html#afeb422921c205cbd3a61a60cc0eb3bb8">setDeltaZ</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00027.html#aef4793bb834898e3801b76937c0e36e6">deltaZ</a> );</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">float</span>               <a class="code" href="a00027.html#a5f14288e08050feda7af19c031bf9a6d">deltaX</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">float</span>               <a class="code" href="a00027.html#a664de7da0bfbde0f502a6e27844e727c">deltaY</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">float</span>               <a class="code" href="a00027.html#aef4793bb834898e3801b76937c0e36e6">deltaZ</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span>                <a class="code" href="a00027.html#a8cca10be2d08150de0917fecab94ab55">arePointsInLastBoundingBox</a>( <span class="keyword">const</span> <a class="code" href="a00028.html">SkeletonData</a>&amp; skeletonData );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QVector3D           <a class="code" href="a00027.html#ac4e9253219f96d5e351535e3c1a9c29b">getVelocity</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ms );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00004.html">BoundingBox</a>*  <a class="code" href="a00027.html#a110125588617a3ddfdd1020d5ba41574">getLastBoundingBox</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00004.html">BoundingBox</a>*  <a class="code" href="a00027.html#a170fb6255f6d31599c88fe671a8d5812">getBoundingBoxWholeBody</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00027.html#a0d54408d03bf4318f84173e41a0d161d">addBoundingBox</a>( <a class="code" href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a>&amp; boundingBox,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00027.html#a01568e1587df0c36ed3b4add8facbc05">   40</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00027.html#a01568e1587df0c36ed3b4add8facbc05">m_deltaX</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a00027.html#ab1288993dc79e5e8e364f28164fd9af5">   41</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00027.html#ab1288993dc79e5e8e364f28164fd9af5">m_deltaY</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00027.html#a8af61d2419d52836c67dfae8880fcb9c">   42</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00027.html#a8af61d2419d52836c67dfae8880fcb9c">m_deltaZ</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;signals:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00027.html#a964a665e921f88a135556bd522c1c9b1">deltaXChanged</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00027.html#a7ceffdc6c032afa9847e95e3b0ec0593">deltaYChanged</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00027.html#aaacef61698fcb109998e8a78494b60cd">deltaZChanged</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a00027.html#a074f88485799e725550d6c587b7b500f">   50</a></span>&#160;    QVector&lt;BoundingBoxWithTimeStamp*&gt; <a class="code" href="a00027.html#a074f88485799e725550d6c587b7b500f">m_boxes</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00027.html#a899d33993277e90e799bc54ba51a2296">   51</a></span>&#160;    <a class="code" href="a00004.html">BoundingBox</a>                        <a class="code" href="a00027.html#a899d33993277e90e799bc54ba51a2296">m_boundingBox</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// PROPERTIES</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> deltaX MEMBER <a class="code" href="a00027.html#a01568e1587df0c36ed3b4add8facbc05">m_deltaX</a></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                READ deltaX</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                WRITE setDeltaX</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="a00027.html#ad1e4e5c1d9296692dadcd6e616f118e7">   58</a></span>&#160;                NOTIFY <a class="code" href="a00027.html#a964a665e921f88a135556bd522c1c9b1">deltaXChanged</a> )</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> deltaY MEMBER <a class="code" href="a00027.html#ab1288993dc79e5e8e364f28164fd9af5">m_deltaY</a></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                READ deltaY</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                WRITE setDeltaY</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a00027.html#ad07b391fd2a3ce7f03b492b80f368a2f">   63</a></span>&#160;                NOTIFY <a class="code" href="a00027.html#a7ceffdc6c032afa9847e95e3b0ec0593">deltaYChanged</a> )</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> deltaZ MEMBER <a class="code" href="a00027.html#a8af61d2419d52836c67dfae8880fcb9c">m_deltaZ</a></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                READ deltaZ</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                WRITE setDeltaZ</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="a00027.html#adcee4f111bb40a5fc446c30c2c5d2a57">   68</a></span>&#160;                NOTIFY <a class="code" href="a00027.html#aaacef61698fcb109998e8a78494b60cd">deltaZChanged</a> )</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif // SKELETONANALYZER_H</span></div>
-<div class="ttc" id="a00027_html_ac4e9253219f96d5e351535e3c1a9c29b"><div class="ttname"><a href="a00027.html#ac4e9253219f96d5e351535e3c1a9c29b">SkeletonAnalyzer::getVelocity</a></div><div class="ttdeci">QVector3D getVelocity(const unsigned int timestamp, const unsigned int ms)</div><div class="ttdoc">Uses timestamp and ms to calculate the avarage movement in the intervall from [ timestamp - ms ...</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:130</div></div>
-<div class="ttc" id="a00027_html_a0d54408d03bf4318f84173e41a0d161d"><div class="ttname"><a href="a00027.html#a0d54408d03bf4318f84173e41a0d161d">SkeletonAnalyzer::addBoundingBox</a></div><div class="ttdeci">void addBoundingBox(BoundingBoxPtr &amp;boundingBox, const unsigned int timestamp)</div><div class="ttdoc">Enqueues boundingBox in the list of BoundingBoxes with timestamp. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:178</div></div>
-<div class="ttc" id="a00027_html"><div class="ttname"><a href="a00027.html">SkeletonAnalyzer</a></div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:12</div></div>
-<div class="ttc" id="a00027_html_af1aac491d6946153021413f6e8ab71af"><div class="ttname"><a href="a00027.html#af1aac491d6946153021413f6e8ab71af">SkeletonAnalyzer::SkeletonAnalyzer</a></div><div class="ttdeci">SkeletonAnalyzer()</div><div class="ttdoc">SkeletonAnalyzer::SkeletonAnalyzer Constructs a new SkeletonAnalzer. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:11</div></div>
-<div class="ttc" id="a00027_html_a664de7da0bfbde0f502a6e27844e727c"><div class="ttname"><a href="a00027.html#a664de7da0bfbde0f502a6e27844e727c">SkeletonAnalyzer::deltaY</a></div><div class="ttdeci">float deltaY() const </div></div>
-<div class="ttc" id="a00027_html_a95aabf8cd26e09da89749e574ed0a627"><div class="ttname"><a href="a00027.html#a95aabf8cd26e09da89749e574ed0a627">SkeletonAnalyzer::~SkeletonAnalyzer</a></div><div class="ttdeci">~SkeletonAnalyzer()</div><div class="ttdoc">Destroys this object. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:23</div></div>
-<div class="ttc" id="a00027_html_a964a665e921f88a135556bd522c1c9b1"><div class="ttname"><a href="a00027.html#a964a665e921f88a135556bd522c1c9b1">SkeletonAnalyzer::deltaXChanged</a></div><div class="ttdeci">void deltaXChanged()</div></div>
-<div class="ttc" id="a00027_html_a8af61d2419d52836c67dfae8880fcb9c"><div class="ttname"><a href="a00027.html#a8af61d2419d52836c67dfae8880fcb9c">SkeletonAnalyzer::m_deltaZ</a></div><div class="ttdeci">float m_deltaZ</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:42</div></div>
-<div class="ttc" id="a00027_html_ab1288993dc79e5e8e364f28164fd9af5"><div class="ttname"><a href="a00027.html#ab1288993dc79e5e8e364f28164fd9af5">SkeletonAnalyzer::m_deltaY</a></div><div class="ttdeci">float m_deltaY</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:41</div></div>
-<div class="ttc" id="a00027_html_afeb422921c205cbd3a61a60cc0eb3bb8"><div class="ttname"><a href="a00027.html#afeb422921c205cbd3a61a60cc0eb3bb8">SkeletonAnalyzer::setDeltaZ</a></div><div class="ttdeci">void setDeltaZ(const float deltaZ)</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:87</div></div>
-<div class="ttc" id="a00027_html_a0c8e0a10526c82d573ce1a1f51944630"><div class="ttname"><a href="a00027.html#a0c8e0a10526c82d573ce1a1f51944630">SkeletonAnalyzer::setDeltaX</a></div><div class="ttdeci">void setDeltaX(const float deltaX)</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:77</div></div>
-<div class="ttc" id="a00027_html_a1b00320eced2c517c11fe596bef576a2"><div class="ttname"><a href="a00027.html#a1b00320eced2c517c11fe596bef576a2">SkeletonAnalyzer::update</a></div><div class="ttdeci">void update(const SkeletonData *skeleton, const unsigned int timestamp)</div><div class="ttdoc">This function updates the tracking results. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:40</div></div>
-<div class="ttc" id="a00027_html_aaacef61698fcb109998e8a78494b60cd"><div class="ttname"><a href="a00027.html#aaacef61698fcb109998e8a78494b60cd">SkeletonAnalyzer::deltaZChanged</a></div><div class="ttdeci">void deltaZChanged()</div></div>
-<div class="ttc" id="a00037_html_a63be8cb12104dd2612c80c1defebd264"><div class="ttname"><a href="a00037.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a></div><div class="ttdeci">QSharedPointer&lt; BoundingBox &gt; BoundingBoxPtr</div><div class="ttdef"><b>Definition:</b> BoundingBox.h:53</div></div>
-<div class="ttc" id="a00027_html_a7ceffdc6c032afa9847e95e3b0ec0593"><div class="ttname"><a href="a00027.html#a7ceffdc6c032afa9847e95e3b0ec0593">SkeletonAnalyzer::deltaYChanged</a></div><div class="ttdeci">void deltaYChanged()</div></div>
-<div class="ttc" id="a00027_html_a8cca10be2d08150de0917fecab94ab55"><div class="ttname"><a href="a00027.html#a8cca10be2d08150de0917fecab94ab55">SkeletonAnalyzer::arePointsInLastBoundingBox</a></div><div class="ttdeci">bool arePointsInLastBoundingBox(const SkeletonData &amp;skeletonData)</div><div class="ttdoc">Returns true, if all points from skeletonData are lying within the BoundingBox, that has been calcula...</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:113</div></div>
-<div class="ttc" id="a00037_html"><div class="ttname"><a href="a00037.html">BoundingBox.h</a></div></div>
-<div class="ttc" id="a00027_html_a170fb6255f6d31599c88fe671a8d5812"><div class="ttname"><a href="a00027.html#a170fb6255f6d31599c88fe671a8d5812">SkeletonAnalyzer::getBoundingBoxWholeBody</a></div><div class="ttdeci">const BoundingBox * getBoundingBoxWholeBody() const </div><div class="ttdoc">Returns the BoundingBox enclosing the whole body from the last update() call. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:169</div></div>
-<div class="ttc" id="a00027_html_a110125588617a3ddfdd1020d5ba41574"><div class="ttname"><a href="a00027.html#a110125588617a3ddfdd1020d5ba41574">SkeletonAnalyzer::getLastBoundingBox</a></div><div class="ttdeci">const BoundingBox * getLastBoundingBox() const </div><div class="ttdoc">Returns the BoundingBox, that has been calculated at last. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:153</div></div>
-<div class="ttc" id="a00027_html_a6b1218340d534a770c90b2834dd911bd"><div class="ttname"><a href="a00027.html#a6b1218340d534a770c90b2834dd911bd">SkeletonAnalyzer::setDeltaY</a></div><div class="ttdeci">void setDeltaY(const float deltaY)</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:82</div></div>
-<div class="ttc" id="a00027_html_a074f88485799e725550d6c587b7b500f"><div class="ttname"><a href="a00027.html#a074f88485799e725550d6c587b7b500f">SkeletonAnalyzer::m_boxes</a></div><div class="ttdeci">QVector&lt; BoundingBoxWithTimeStamp * &gt; m_boxes</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:50</div></div>
-<div class="ttc" id="a00027_html_aef4793bb834898e3801b76937c0e36e6"><div class="ttname"><a href="a00027.html#aef4793bb834898e3801b76937c0e36e6">SkeletonAnalyzer::deltaZ</a></div><div class="ttdeci">float deltaZ() const </div></div>
-<div class="ttc" id="a00027_html_a5f14288e08050feda7af19c031bf9a6d"><div class="ttname"><a href="a00027.html#a5f14288e08050feda7af19c031bf9a6d">SkeletonAnalyzer::deltaX</a></div><div class="ttdeci">float deltaX() const </div></div>
-<div class="ttc" id="a00028_html"><div class="ttname"><a href="a00028.html">SkeletonData</a></div><div class="ttdef"><b>Definition:</b> SkeletonData.h:10</div></div>
-<div class="ttc" id="a00004_html"><div class="ttname"><a href="a00004.html">BoundingBox</a></div><div class="ttdef"><b>Definition:</b> BoundingBox.h:13</div></div>
-<div class="ttc" id="a00027_html_a01568e1587df0c36ed3b4add8facbc05"><div class="ttname"><a href="a00027.html#a01568e1587df0c36ed3b4add8facbc05">SkeletonAnalyzer::m_deltaX</a></div><div class="ttdeci">float m_deltaX</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:40</div></div>
-<div class="ttc" id="a00027_html_a899d33993277e90e799bc54ba51a2296"><div class="ttname"><a href="a00027.html#a899d33993277e90e799bc54ba51a2296">SkeletonAnalyzer::m_boundingBox</a></div><div class="ttdeci">BoundingBox m_boundingBox</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:51</div></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00002.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00002.html">ArrayManipulator</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="a00002.html#a88473ca0ad7b6174d0ea63c4ac82bb65">ArrayManipulator</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="a00002.html#a6e49d34c8e83e4101a391d94ddcfe370">~ArrayManipulator</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00002.html#a2bcdcec19330c334514af89e8d324d8e">   16</a></span>&#160;    Ui::ArrayManipulator* <a class="code" href="a00002.html#a2bcdcec19330c334514af89e8d324d8e">mp_manipulator</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif // ARRAYMANIPULATOR_H</span></div>
+<div class="ttc" id="a00002_html_a6e49d34c8e83e4101a391d94ddcfe370"><div class="ttname"><a href="a00002.html#a6e49d34c8e83e4101a391d94ddcfe370">ArrayManipulator::~ArrayManipulator</a></div><div class="ttdeci">~ArrayManipulator()</div><div class="ttdef"><b>Definition:</b> ArrayManipulator.cpp:10</div></div>
+<div class="ttc" id="a00002_html_a88473ca0ad7b6174d0ea63c4ac82bb65"><div class="ttname"><a href="a00002.html#a88473ca0ad7b6174d0ea63c4ac82bb65">ArrayManipulator::ArrayManipulator</a></div><div class="ttdeci">ArrayManipulator()</div><div class="ttdef"><b>Definition:</b> ArrayManipulator.cpp:4</div></div>
+<div class="ttc" id="a00002_html_a2bcdcec19330c334514af89e8d324d8e"><div class="ttname"><a href="a00002.html#a2bcdcec19330c334514af89e8d324d8e">ArrayManipulator::mp_manipulator</a></div><div class="ttdeci">Ui::ArrayManipulator * mp_manipulator</div><div class="ttdef"><b>Definition:</b> ArrayManipulator.h:16</div></div>
+<div class="ttc" id="a00002_html"><div class="ttname"><a href="a00002.html">ArrayManipulator</a></div><div class="ttdef"><b>Definition:</b> ArrayManipulator.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00060.html">SkeletonAnalyzer.h</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00060.html">ArrayManipulator.h</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
