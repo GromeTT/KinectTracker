@@ -1,10 +1,13 @@
 #include "../inc/Erode.h"
 
 
-Erode::Erode()
-    : m_anchorPointX( 1 )
+Erode::Erode( QObject* parent )
+    : ProcessingComponent( parent )
+    , m_anchorPointX( 1 )
     , m_anchorPointY( 1 )
     , m_iterations( 1 )
+    , m_kernelRowCount( 0 )
+    , m_kernelColumnCount( 0 )
 {
     setObjectName( "Erode" );
 }
@@ -15,20 +18,23 @@ Erode::~Erode()
 
 void Erode::erode( cv::Mat& input )
 {
+    cv::Mat element = cv::getStructuringElement( cv::MORPH_ELLIPSE,
+                                                 cv::Size( 2*m_kernelRowCount + 1, 2*m_kernelRowCount+1 ),
+                                                 cv::Point( m_kernelRowCount, m_kernelRowCount ) );
+
     cv::erode( input,
                input,
-               cv::Mat(),
-               cv::Point( m_anchorPointX, m_anchorPointY ),
-               m_iterations );
+               element );
 }
 
 void Erode::erode(cv::Mat& input, cv::Mat& output)
 {
+    cv::Mat element = cv::getStructuringElement( cv::MORPH_CLOSE,
+                                                 cv::Size( 2*m_kernelRowCount + 1, 2*m_kernelRowCount+1 ),
+                                                 cv::Point( m_kernelRowCount, m_kernelRowCount ) );
     cv::erode( input,
                output,
-               cv::Mat(),
-               cv::Point( m_anchorPointX, m_anchorPointY ),
-               m_iterations );
+               element );
 }
 
 float Erode::anchorPointX() const

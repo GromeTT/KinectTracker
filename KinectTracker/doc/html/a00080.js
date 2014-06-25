@@ -1,4 +1,5 @@
 var a00080 =
 [
-    [ "detect_blobs", "a00080.html#a36e3eec1091545590dddf12e94c91964", null ]
+    [ "pointInCube", "a00080.html#a15d309989b99341fa895624b77b7caac", null ],
+    [ "pointInSphere", "a00080.html#ad79d142e408b4534d9b735e4ff3c1b95", null ]
 ];

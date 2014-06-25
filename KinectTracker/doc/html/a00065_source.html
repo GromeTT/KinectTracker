@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Vertex.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/CustomStyledDelegate.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,54 +102,58 @@ $(document).ready(function(){initNavTree('a00065_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Vertex.h</div>  </div>
+<div class="title">CustomStyledDelegate.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00065.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VERTEX_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VERTEX_H</span></div>
+<a href="a00065.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CUSTOMSTYLEDDELEGATE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CUSTOMSTYLEDDELEGATE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QStyledItemDelegate&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="a00033.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00033.html">Vertex</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="a00033.html#a97488994a2482d70da74e1b91d40e169">Vertex</a>();</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="a00033.html#a97488994a2482d70da74e1b91d40e169">Vertex</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00033.html#aa592e1564aa3b226ff629b824b240310">x</a>, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00033.html#a448817068556fe43e81dc0a3e7d1fa43">y</a>, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00033.html#af5d14cd74cd842c01f9a8a8d92325339">z</a> );</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="a00033.html#a97488994a2482d70da74e1b91d40e169">Vertex</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> x, <span class="keyword">const</span> <span class="keywordtype">float</span> y, <span class="keyword">const</span> <span class="keywordtype">float</span> z,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00033.html#a8c22b31da489e22d5d58ea667eda65b9">r</a>, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00033.html#a4da5050c518fc2657e34f51bf61ae0e4">g</a>, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00033.html#a270be8167fe744b56cae25215c7d52be">b</a>, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00033.html#a91493b1de792faae6bf96329bed6d06a">a</a> = 1.0f,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00033.html#afa8e01935fde5cb9702075d25346e135">u</a> = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00033.html#a6ef8693374fd8c435715b32fbbdc4e41">v</a> = 0);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="a00033.html#ad7a0ce588b7f688dc4488a0f567d9155">~Vertex</a>();</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="a00012.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00012.html">CustomStyledDelegate</a> : <span class="keyword">public</span> QStyledItemDelegate</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="a00012.html#a2fd599cbcc59614d3d1ea678ccdafb9c">CustomStyledDelegate</a>( QObject* parent );</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00012.html#a90c589d80818c897bbb818649990e2f5">~CustomStyledDelegate</a>();</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00033.html#af5d14cd74cd842c01f9a8a8d92325339">   16</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00033.html#aa592e1564aa3b226ff629b824b240310">x</a>, <a class="code" href="a00033.html#a448817068556fe43e81dc0a3e7d1fa43">y</a>, <a class="code" href="a00033.html#af5d14cd74cd842c01f9a8a8d92325339">z</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00033.html#a8c22b31da489e22d5d58ea667eda65b9">   17</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00033.html#a8c22b31da489e22d5d58ea667eda65b9">r</a>, <a class="code" href="a00033.html#a4da5050c518fc2657e34f51bf61ae0e4">g</a>, <a class="code" href="a00033.html#a270be8167fe744b56cae25215c7d52be">b</a>, <a class="code" href="a00033.html#a91493b1de792faae6bf96329bed6d06a">a</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a00033.html#a6ef8693374fd8c435715b32fbbdc4e41">   18</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00033.html#afa8e01935fde5cb9702075d25346e135">u</a>, <a class="code" href="a00033.html#a6ef8693374fd8c435715b32fbbdc4e41">v</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00033.html#a088ea2f6ac59b1a5bee2d02da11ea50f">   19</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00033.html#a088ea2f6ac59b1a5bee2d02da11ea50f">pointSize</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00065.html#a259f4df67df3fce159eb227839d3c425">   22</a></span>&#160;<span class="keyword">typedef</span> QVector&lt;Vertex&gt;<a class="code" href="a00065.html#a259f4df67df3fce159eb227839d3c425">Vertices</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // VERTEX_H</span></div>
-<div class="ttc" id="a00033_html_a088ea2f6ac59b1a5bee2d02da11ea50f"><div class="ttname"><a href="a00033.html#a088ea2f6ac59b1a5bee2d02da11ea50f">Vertex::pointSize</a></div><div class="ttdeci">float pointSize</div><div class="ttdef"><b>Definition:</b> Vertex.h:19</div></div>
-<div class="ttc" id="a00033_html_afa8e01935fde5cb9702075d25346e135"><div class="ttname"><a href="a00033.html#afa8e01935fde5cb9702075d25346e135">Vertex::u</a></div><div class="ttdeci">float u</div><div class="ttdef"><b>Definition:</b> Vertex.h:18</div></div>
-<div class="ttc" id="a00033_html_a270be8167fe744b56cae25215c7d52be"><div class="ttname"><a href="a00033.html#a270be8167fe744b56cae25215c7d52be">Vertex::b</a></div><div class="ttdeci">float b</div><div class="ttdef"><b>Definition:</b> Vertex.h:17</div></div>
-<div class="ttc" id="a00033_html_a6ef8693374fd8c435715b32fbbdc4e41"><div class="ttname"><a href="a00033.html#a6ef8693374fd8c435715b32fbbdc4e41">Vertex::v</a></div><div class="ttdeci">float v</div><div class="ttdef"><b>Definition:</b> Vertex.h:18</div></div>
-<div class="ttc" id="a00033_html_af5d14cd74cd842c01f9a8a8d92325339"><div class="ttname"><a href="a00033.html#af5d14cd74cd842c01f9a8a8d92325339">Vertex::z</a></div><div class="ttdeci">float z</div><div class="ttdef"><b>Definition:</b> Vertex.h:16</div></div>
-<div class="ttc" id="a00033_html_ad7a0ce588b7f688dc4488a0f567d9155"><div class="ttname"><a href="a00033.html#ad7a0ce588b7f688dc4488a0f567d9155">Vertex::~Vertex</a></div><div class="ttdeci">~Vertex()</div><div class="ttdef"><b>Definition:</b> Vertex.cpp:30</div></div>
-<div class="ttc" id="a00033_html_a4da5050c518fc2657e34f51bf61ae0e4"><div class="ttname"><a href="a00033.html#a4da5050c518fc2657e34f51bf61ae0e4">Vertex::g</a></div><div class="ttdeci">float g</div><div class="ttdef"><b>Definition:</b> Vertex.h:17</div></div>
-<div class="ttc" id="a00033_html_aa592e1564aa3b226ff629b824b240310"><div class="ttname"><a href="a00033.html#aa592e1564aa3b226ff629b824b240310">Vertex::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> Vertex.h:16</div></div>
-<div class="ttc" id="a00033_html_a8c22b31da489e22d5d58ea667eda65b9"><div class="ttname"><a href="a00033.html#a8c22b31da489e22d5d58ea667eda65b9">Vertex::r</a></div><div class="ttdeci">float r</div><div class="ttdef"><b>Definition:</b> Vertex.h:17</div></div>
-<div class="ttc" id="a00033_html_a448817068556fe43e81dc0a3e7d1fa43"><div class="ttname"><a href="a00033.html#a448817068556fe43e81dc0a3e7d1fa43">Vertex::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> Vertex.h:16</div></div>
-<div class="ttc" id="a00033_html"><div class="ttname"><a href="a00033.html">Vertex</a></div><div class="ttdef"><b>Definition:</b> Vertex.h:6</div></div>
-<div class="ttc" id="a00033_html_a97488994a2482d70da74e1b91d40e169"><div class="ttname"><a href="a00033.html#a97488994a2482d70da74e1b91d40e169">Vertex::Vertex</a></div><div class="ttdeci">Vertex()</div><div class="ttdef"><b>Definition:</b> Vertex.cpp:3</div></div>
-<div class="ttc" id="a00065_html_a259f4df67df3fce159eb227839d3c425"><div class="ttname"><a href="a00065.html#a259f4df67df3fce159eb227839d3c425">Vertices</a></div><div class="ttdeci">QVector&lt; Vertex &gt; Vertices</div><div class="ttdef"><b>Definition:</b> Vertex.h:22</div></div>
-<div class="ttc" id="a00033_html_a91493b1de792faae6bf96329bed6d06a"><div class="ttname"><a href="a00033.html#a91493b1de792faae6bf96329bed6d06a">Vertex::a</a></div><div class="ttdeci">float a</div><div class="ttdef"><b>Definition:</b> Vertex.h:17</div></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> QString <a class="code" href="a00012.html#a1121c1c11c85bd6a534830c7f7af57d5">displayText</a>( <span class="keyword">const</span> QVariant &amp;value,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                 <span class="keyword">const</span> QLocale &amp;locale ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    QSize <a class="code" href="a00012.html#a12020ec39c9bb394e46f082ab6afb03c">sizeHint</a>( <span class="keyword">const</span> QStyleOptionViewItem&amp; option,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    <span class="keyword">const</span> QModelIndex&amp; index ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    QWidget* <a class="code" href="a00012.html#a4034e12e5d289fde5519a600d33063be">createEditor</a>( QWidget* parent,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                           <span class="keyword">const</span> QStyleOptionViewItem&amp; option,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                           <span class="keyword">const</span> QModelIndex &amp;index ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00012.html#a8557eba6802e88a8363584688261d1b2">setEditorData</a>( QWidget* editor,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                        <span class="keyword">const</span> QModelIndex&amp; index ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00012.html#a6d0e30599da9730136bf9213765fb067">setModelData</a>( QWidget* editor,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                       QAbstractItemModel* model,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                       <span class="keyword">const</span> QModelIndex&amp; index ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00012.html#a0ae8befef987cff672d1be2c08c22bb8">commit</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif // CUSTOMSTYLEDDELEGATE_H</span></div>
+<div class="ttc" id="a00012_html_a0ae8befef987cff672d1be2c08c22bb8"><div class="ttname"><a href="a00012.html#a0ae8befef987cff672d1be2c08c22bb8">CustomStyledDelegate::commit</a></div><div class="ttdeci">void commit()</div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.cpp:187</div></div>
+<div class="ttc" id="a00012_html_a8557eba6802e88a8363584688261d1b2"><div class="ttname"><a href="a00012.html#a8557eba6802e88a8363584688261d1b2">CustomStyledDelegate::setEditorData</a></div><div class="ttdeci">void setEditorData(QWidget *editor, const QModelIndex &amp;index) const </div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.cpp:115</div></div>
+<div class="ttc" id="a00012_html_a6d0e30599da9730136bf9213765fb067"><div class="ttname"><a href="a00012.html#a6d0e30599da9730136bf9213765fb067">CustomStyledDelegate::setModelData</a></div><div class="ttdeci">void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &amp;index) const </div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.cpp:147</div></div>
+<div class="ttc" id="a00012_html_a90c589d80818c897bbb818649990e2f5"><div class="ttname"><a href="a00012.html#a90c589d80818c897bbb818649990e2f5">CustomStyledDelegate::~CustomStyledDelegate</a></div><div class="ttdeci">virtual ~CustomStyledDelegate()</div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.cpp:21</div></div>
+<div class="ttc" id="a00012_html_a12020ec39c9bb394e46f082ab6afb03c"><div class="ttname"><a href="a00012.html#a12020ec39c9bb394e46f082ab6afb03c">CustomStyledDelegate::sizeHint</a></div><div class="ttdeci">QSize sizeHint(const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const </div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.cpp:54</div></div>
+<div class="ttc" id="a00012_html"><div class="ttname"><a href="a00012.html">CustomStyledDelegate</a></div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.h:8</div></div>
+<div class="ttc" id="a00012_html_a2fd599cbcc59614d3d1ea678ccdafb9c"><div class="ttname"><a href="a00012.html#a2fd599cbcc59614d3d1ea678ccdafb9c">CustomStyledDelegate::CustomStyledDelegate</a></div><div class="ttdeci">CustomStyledDelegate(QObject *parent)</div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.cpp:15</div></div>
+<div class="ttc" id="a00012_html_a4034e12e5d289fde5519a600d33063be"><div class="ttname"><a href="a00012.html#a4034e12e5d289fde5519a600d33063be">CustomStyledDelegate::createEditor</a></div><div class="ttdeci">QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const </div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.cpp:62</div></div>
+<div class="ttc" id="a00012_html_a1121c1c11c85bd6a534830c7f7af57d5"><div class="ttname"><a href="a00012.html#a1121c1c11c85bd6a534830c7f7af57d5">CustomStyledDelegate::displayText</a></div><div class="ttdeci">virtual QString displayText(const QVariant &amp;value, const QLocale &amp;locale) const </div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.cpp:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00065.html">Vertex.h</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00065.html">CustomStyledDelegate.h</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

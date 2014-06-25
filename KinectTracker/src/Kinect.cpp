@@ -5,6 +5,7 @@
 #include <QColor>
 #include <QDebug>
 #include <iostream>
+#include <QVector2D>
 
 /*!
     \class Kinect
@@ -74,7 +75,6 @@ HRESULT Kinect::initialize( const DWORD flag )
 
 /*!
    \fn int Kinect::getSensorCount() const
-
     Returns how many kinect sensors are plugged in.
  */
 int Kinect::getSensorCount() const
@@ -92,11 +92,6 @@ int Kinect::getSensorCount() const
 /*!
    \brief Kinect::openRGBStream
    Das ist ein Test und soll da bitte nicht erscheinen.
-   \param resolution
-   \param frameFlag
-   \param frameLimit
-   \param nextFrame
-   \return
  */
 HRESULT Kinect::openRGBStream( NUI_IMAGE_RESOLUTION resolution,
                                DWORD frameFlag,
@@ -212,6 +207,12 @@ HRESULT Kinect::getRGBImage( QImage*& img )
     return res;
 }
 
+/*!
+   \brief Kinect::getDepthImage
+   If a rgb image is available it will be copied to \a img in BGRA format and the function
+   returns S_OK.
+   Otherwise \a img will not be touched and an error will be returned.
+ */
 HRESULT Kinect::getRGBImage( uchar* img )
 {
     Q_ASSERT( m_initialized );
@@ -231,8 +232,9 @@ HRESULT Kinect::getRGBImage( uchar* img )
     texture->LockRect(0, &LockedRect, NULL, 0);
     if ( LockedRect.Pitch != 0 )
     {
+        // NOTE: Kinect stores the image in RGBA output will be in RGB.
         uchar* curr = ( uchar* ) LockedRect.pBits;
-        uchar* end   =  curr + ( m_rgbStreamResolution.width()*m_rgbStreamResolution.height()*4 );
+        uchar* end  =  curr + ( m_rgbStreamResolution.width()*m_rgbStreamResolution.height()*4);
         while ( curr < end )
         {
 //            *curr++;
@@ -249,7 +251,7 @@ HRESULT Kinect::getRGBImage( uchar* img )
     return res;
 }
 
-HRESULT Kinect::getDepthImage(QImage*& img)
+HRESULT Kinect::getDepthImageAsGreyImage( QImage*& img )
 {
     Q_ASSERT( m_initialized );
     Q_ASSERT( m_deptStreamOpen );
@@ -332,7 +334,7 @@ HRESULT Kinect::getDepthImage(QImage*& img)
     return res;
 }
 
-HRESULT Kinect::getDepthImage(uchar* img)
+HRESULT Kinect::getDepthImageAsGreyImage( uchar* img )
 {
     Q_ASSERT( m_initialized );
     Q_ASSERT( m_deptStreamOpen );
@@ -371,16 +373,76 @@ HRESULT Kinect::getDepthImage(uchar* img)
     return res;
 }
 
+HRESULT Kinect::getDepthImage( std::vector<ushort>& depthData )
+{
+    NUI_IMAGE_FRAME imageFrame;
+    NUI_LOCKED_RECT LockedRect;
+    HRESULT res;
+    if ( res = mp_sensor->NuiImageStreamGetNextFrame( m_depthHandle, 0, &imageFrame ) < 0 )
+    {
+        return res;
+    }
+    INuiFrameTexture* texture = imageFrame.pFrameTexture;
+    texture->LockRect(0, &LockedRect, NULL, 0);
+    if ( LockedRect.Pitch != 0 )
+    {
+        int size = m_depthStreamResolution.width() * m_depthStreamResolution.height();
+        if ( depthData.size() != size )
+        {
+            depthData.resize( size );
+        }
+        const USHORT* curr = ( const USHORT* ) LockedRect.pBits;
+        const USHORT* dataEnd = curr + size;
+        int i = -1;
+        while ( curr < dataEnd )
+        {
+            USHORT depth = NuiDepthPixelToDepth( *curr );
+            depthData[++i] = depth;
+            ++curr;
+        }
+    }
+    texture->UnlockRect( 0 );
+    res = mp_sensor->NuiImageStreamReleaseFrame( m_depthHandle, &imageFrame );
+    return res;
+}
+
+
+HRESULT Kinect::getDepthImage(ushort* img )
+{
+    NUI_IMAGE_FRAME imageFrame;
+    NUI_LOCKED_RECT LockedRect;
+    HRESULT res;
+    if ( res = mp_sensor->NuiImageStreamGetNextFrame( m_depthHandle, 0, &imageFrame ) < 0 )
+    {
+        return res;
+    }
+    INuiFrameTexture* texture = imageFrame.pFrameTexture;
+    texture->LockRect(0, &LockedRect, NULL, 0);
+    if ( LockedRect.Pitch != 0 )
+    {
+
+        const USHORT* curr = ( const USHORT* ) LockedRect.pBits;
+        const USHORT* dataEnd = curr + ( m_depthStreamResolution.width() * m_depthStreamResolution.height() );
+        int i = -1;
+        while ( curr < dataEnd )
+        {
+            USHORT depth = NuiDepthPixelToDepth( *curr );
+            img[++i] = depth ;
+            ++curr;
+        }
+    }
+    texture->UnlockRect( 0 );
+    res = mp_sensor->NuiImageStreamReleaseFrame( m_depthHandle, &imageFrame );
+    return res;
+}
+
 /**
  * @brief Kinect::getSkeleton
  * @param skeletons
  * @return
  */
-HRESULT Kinect::getSkeleton( QList<SkeletonData*>& skeletons )
+HRESULT Kinect::getSkeleton( QList<SkeletonDataPtr>& skeletons )
 {
-    // Resize vector for storing skeletons
-    qDeleteAll( skeletons );
-
     NUI_SKELETON_FRAME skeletonFrame;
     if ( mp_sensor->NuiSkeletonGetNextFrame( 0, &skeletonFrame) != S_OK )
     {
@@ -396,20 +458,19 @@ HRESULT Kinect::getSkeleton( QList<SkeletonData*>& skeletons )
         {
             case NUI_SKELETON_TRACKED:
             {
-                SkeletonData* skeleton = new SkeletonData( skeletonFrame.SkeletonData[i] );
-                skeletons.append( skeleton );
+                skeletons.append( SkeletonDataPtr ( new SkeletonData( skeletonFrame.SkeletonData[i] ) ) );
             }
         }
     }
     return S_OK;
 }
 
-QSize Kinect::getRGBStreamResoultion() const
+QSize Kinect::rgbStreamResolution() const
 {
     return m_rgbStreamResolution;
 }
 
-QSize Kinect::getDepthStreamResolution() const
+QSize Kinect::depthStreamResolution() const
 {
     return m_depthStreamResolution;
 }
@@ -462,4 +523,25 @@ void Kinect::setSize(QSize& size, NUI_IMAGE_RESOLUTION resolution)
             break;
         }
     }
+}
+
+
+QVector2D transformFromSkeltonToRGB( const QVector3D& coordinates )
+{
+    Vector4 vec;
+    vec.x = coordinates.x();
+    vec.y = coordinates.y();
+    vec.z = coordinates.z();
+    LONG tmpX, tmpY;
+    USHORT depth;
+    NuiTransformSkeletonToDepthImage( vec, &tmpX, &tmpY, &depth );
+    LONG x, y;
+    NuiImageGetColorPixelCoordinatesFromDepthPixel( NUI_IMAGE_RESOLUTION_640x480,
+                                                    nullptr,
+                                                    tmpX,
+                                                    tmpY,
+                                                    depth,
+                                                    &x,
+                                                    &y );
+    return QVector2D( x, y );
 }

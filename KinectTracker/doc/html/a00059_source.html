@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Skeleton.h Source File</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/AnalysisResults.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,42 +102,130 @@ $(document).ready(function(){initNavTree('a00059_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Skeleton.h</div>  </div>
+<div class="title">AnalysisResults.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00059.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SKELETON_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SKELETON_H</span></div>
+<a href="a00059.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ANALYSISRESULTS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ANALYSISRESULTS_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QVector3D&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Windows.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;NuiApi.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../Inc/Vertex.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVector3D&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00102.html">SkeletonData.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="a00007.html">BoundingGeometry</a>;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="a00026.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00026.html">Skeleton</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="a00001.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00001.html">AnalysisResults</a> : <span class="keyword">public</span> QObject</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00026.html#af01a02f1ce9ae4c801cd6e66ccf7407f">Skeleton</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00026.html#af01a02f1ce9ae4c801cd6e66ccf7407f">Skeleton</a>( <span class="keyword">const</span> NUI_SKELETON_DATA&amp; skeletonData );</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="a00026.html#aeece886a4e2f039128144f94f25efd10">~Skeleton</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif // SKELETON_H</span></div>
-<div class="ttc" id="a00026_html_af01a02f1ce9ae4c801cd6e66ccf7407f"><div class="ttname"><a href="a00026.html#af01a02f1ce9ae4c801cd6e66ccf7407f">Skeleton::Skeleton</a></div><div class="ttdeci">Skeleton()</div><div class="ttdoc">Skeleton::Skeleton Creates an skeleton with random coordinates. </div><div class="ttdef"><b>Definition:</b> Skeleton.cpp:9</div></div>
-<div class="ttc" id="a00026_html_aeece886a4e2f039128144f94f25efd10"><div class="ttname"><a href="a00026.html#aeece886a4e2f039128144f94f25efd10">Skeleton::~Skeleton</a></div><div class="ttdeci">~Skeleton()</div><div class="ttdoc">Skeleton::~Skeleton Destructor. </div><div class="ttdef"><b>Definition:</b> Skeleton.cpp:17</div></div>
-<div class="ttc" id="a00026_html"><div class="ttname"><a href="a00026.html">Skeleton</a></div><div class="ttdef"><b>Definition:</b> Skeleton.h:10</div></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="a00001.html#a020b2b07912eef18bb5ae9615118192f">AnalysisResults</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="a00001.html#a020b2b07912eef18bb5ae9615118192f">AnalysisResults</a>( <span class="keyword">const</span> <a class="code" href="a00001.html">AnalysisResults</a>&amp; other );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00001.html#a6f232a238c51a88fe302dd6874f85922">~AnalysisResults</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a529f8458a0574509660edcc8c02b7776">setWorkerStatus</a>( <span class="keyword">const</span> QString&amp; status );</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a198e1be5fc25e725c788396a4cb813cb">setRoll</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> angle );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#ab09e24bf8d1453fc0b7b7337add6d2f8">setPitch</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> angle );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a265d632d39220b5d76f3f6a9a58d53f6">setYaw</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> angle );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a7f0310a7b661d2454e1772575ff6faee">setVelocity</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00001.html#aa123411eaaea08906402bc9b71678d4d">velocity</a> );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#aff447783e8be37a00c9db9942f32d4a4">setValuesByVetcor</a>( <span class="keyword">const</span> QVector3D&amp; vec );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#ab098d61ae167f6b4b9d5fe1fe46a998a">setBoundingGeometry</a>( <a class="code" href="a00007.html">BoundingGeometry</a>* geometry );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a28b52bbb7a56b94f6e532bbcfd9d61c8">setSkeletonData</a>( <span class="keyword">const</span> <a class="code" href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>&amp; <a class="code" href="a00001.html#a5b9b6be4e4b1a963a9cc19a1d849fa6a">skeletonData</a> );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> QString           <a class="code" href="a00001.html#ac5f7488b8c810b88f2e0282e8a7e119c">workerStatus</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span>             <a class="code" href="a00001.html#a16e9d93ea33de9c4fff640197f3ae567">roll</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span>             <a class="code" href="a00001.html#a5eb049a5ad04654f26f7b58d3507fc59">pitch</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span>             <a class="code" href="a00001.html#ab54cac6927c9bcd2a6e71aed77cc31c8">yaw</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span>             <a class="code" href="a00001.html#aa123411eaaea08906402bc9b71678d4d">velocity</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00007.html">BoundingGeometry</a>* <a class="code" href="a00001.html#a89de0f6f264116feeeb98c31e4b9adb3">boundingGeometry</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>   <a class="code" href="a00001.html#a5b9b6be4e4b1a963a9cc19a1d849fa6a">skeletonData</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;signals:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a7f320567dbbef79795e32a3739e6ca68">workerStatusChanged</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a6f84af1446989bab94b887c15a1432d6">rollChanged</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a6a60c24e302b0668bc8fbc1f5e2fc8f6">pitchChanged</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#ac207cf09caf02b9f36753c042b1849df">yawChanged</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#ab311c230ce884301bc73697993e4a704">velocityChanged</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00001.html#a66f1cbcca70ba1c0df110982e4a07bae">vecChanged</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00001.html#a0302887c10a36abf97f7d27f600db409">radToDeg</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> rad );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00001.html#a3b302d4031cf51e214535a631aafa7d1">   47</a></span>&#160;    QString                 <a class="code" href="a00001.html#a3b302d4031cf51e214535a631aafa7d1">m_workerStatus</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00001.html#a998e682dccced6326535290c22bdbefc">   48</a></span>&#160;    <span class="keywordtype">float</span>                   <a class="code" href="a00001.html#a998e682dccced6326535290c22bdbefc">m_roll</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a00001.html#a4b8638847eff5952fcf62a60b2d502fd">   49</a></span>&#160;    <span class="keywordtype">float</span>                   <a class="code" href="a00001.html#a4b8638847eff5952fcf62a60b2d502fd">m_pitch</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a00001.html#a415bd6ac2f49687ddc40cc66c2d470e9">   50</a></span>&#160;    <span class="keywordtype">float</span>                   <a class="code" href="a00001.html#a415bd6ac2f49687ddc40cc66c2d470e9">m_yaw</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00001.html#a472f2de78be8a038d6a33c4b6f07d34b">   51</a></span>&#160;    <span class="keywordtype">float</span>                   <a class="code" href="a00001.html#a472f2de78be8a038d6a33c4b6f07d34b">m_velocity</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a00001.html#ac84034c3a9adfb124109e349f0df02ec">   52</a></span>&#160;    <a class="code" href="a00007.html">BoundingGeometry</a>*       <a class="code" href="a00001.html#ac84034c3a9adfb124109e349f0df02ec">mp_boundingGeometry</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00001.html#a16aed3fef51d67af74b093c2080bc593">   53</a></span>&#160;    <a class="code" href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>         <a class="code" href="a00001.html#a16aed3fef51d67af74b093c2080bc593">m_skeletonData</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Q_PROPERTY( QString workerStatus</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                READ workerStatus</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a00001.html#ad8ec5f70da4ff5a6a0932f2bdcf6465b">   59</a></span>&#160;                NOTIFY workerStatusChanged )</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> roll</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                READ roll</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a00001.html#ac44945f8eca23456da733057b8660754">   63</a></span>&#160;                NOTIFY rollChanged)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> pitch</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                READ pitch</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00001.html#af4fd5c418e3fc61a1f099623faa6bd2b">   67</a></span>&#160;                NOTIFY pitchChanged )</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> yaw</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                READ yaw</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00001.html#a3af3df1563f70b2a807fb0a9471df3a7">   71</a></span>&#160;                NOTIFY yawChanged )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> velocity</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                READ velocity</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a00001.html#ab68d2cc39fc69d11835f0ab21a1cf660">   75</a></span>&#160;                NOTIFY velocityChanged )</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif // ANALYSISRESULTS_H</span></div>
+<div class="ttc" id="a00001_html_a6f84af1446989bab94b887c15a1432d6"><div class="ttname"><a href="a00001.html#a6f84af1446989bab94b887c15a1432d6">AnalysisResults::rollChanged</a></div><div class="ttdeci">void rollChanged()</div></div>
+<div class="ttc" id="a00001_html_a529f8458a0574509660edcc8c02b7776"><div class="ttname"><a href="a00001.html#a529f8458a0574509660edcc8c02b7776">AnalysisResults::setWorkerStatus</a></div><div class="ttdeci">void setWorkerStatus(const QString &amp;status)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:32</div></div>
+<div class="ttc" id="a00001_html_ab311c230ce884301bc73697993e4a704"><div class="ttname"><a href="a00001.html#ab311c230ce884301bc73697993e4a704">AnalysisResults::velocityChanged</a></div><div class="ttdeci">void velocityChanged()</div></div>
+<div class="ttc" id="a00001_html_a0302887c10a36abf97f7d27f600db409"><div class="ttname"><a href="a00001.html#a0302887c10a36abf97f7d27f600db409">AnalysisResults::radToDeg</a></div><div class="ttdeci">float radToDeg(const float rad)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:147</div></div>
+<div class="ttc" id="a00001_html"><div class="ttname"><a href="a00001.html">AnalysisResults</a></div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:10</div></div>
+<div class="ttc" id="a00001_html_ab54cac6927c9bcd2a6e71aed77cc31c8"><div class="ttname"><a href="a00001.html#ab54cac6927c9bcd2a6e71aed77cc31c8">AnalysisResults::yaw</a></div><div class="ttdeci">const float yaw() const </div></div>
+<div class="ttc" id="a00001_html_ab09e24bf8d1453fc0b7b7337add6d2f8"><div class="ttname"><a href="a00001.html#ab09e24bf8d1453fc0b7b7337add6d2f8">AnalysisResults::setPitch</a></div><div class="ttdeci">void setPitch(const float angle)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:59</div></div>
+<div class="ttc" id="a00001_html_a020b2b07912eef18bb5ae9615118192f"><div class="ttname"><a href="a00001.html#a020b2b07912eef18bb5ae9615118192f">AnalysisResults::AnalysisResults</a></div><div class="ttdeci">AnalysisResults()</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:6</div></div>
+<div class="ttc" id="a00001_html_a6f232a238c51a88fe302dd6874f85922"><div class="ttname"><a href="a00001.html#a6f232a238c51a88fe302dd6874f85922">AnalysisResults::~AnalysisResults</a></div><div class="ttdeci">virtual ~AnalysisResults()</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:28</div></div>
+<div class="ttc" id="a00001_html_a265d632d39220b5d76f3f6a9a58d53f6"><div class="ttname"><a href="a00001.html#a265d632d39220b5d76f3f6a9a58d53f6">AnalysisResults::setYaw</a></div><div class="ttdeci">void setYaw(const float angle)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:50</div></div>
+<div class="ttc" id="a00001_html_aff447783e8be37a00c9db9942f32d4a4"><div class="ttname"><a href="a00001.html#aff447783e8be37a00c9db9942f32d4a4">AnalysisResults::setValuesByVetcor</a></div><div class="ttdeci">void setValuesByVetcor(const QVector3D &amp;vec)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:77</div></div>
+<div class="ttc" id="a00001_html_aa123411eaaea08906402bc9b71678d4d"><div class="ttname"><a href="a00001.html#aa123411eaaea08906402bc9b71678d4d">AnalysisResults::velocity</a></div><div class="ttdeci">const float velocity() const </div></div>
+<div class="ttc" id="a00001_html_ac207cf09caf02b9f36753c042b1849df"><div class="ttname"><a href="a00001.html#ac207cf09caf02b9f36753c042b1849df">AnalysisResults::yawChanged</a></div><div class="ttdeci">void yawChanged()</div></div>
+<div class="ttc" id="a00001_html_a16aed3fef51d67af74b093c2080bc593"><div class="ttname"><a href="a00001.html#a16aed3fef51d67af74b093c2080bc593">AnalysisResults::m_skeletonData</a></div><div class="ttdeci">SkeletonDataPtr m_skeletonData</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:53</div></div>
+<div class="ttc" id="a00001_html_a415bd6ac2f49687ddc40cc66c2d470e9"><div class="ttname"><a href="a00001.html#a415bd6ac2f49687ddc40cc66c2d470e9">AnalysisResults::m_yaw</a></div><div class="ttdeci">float m_yaw</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:50</div></div>
+<div class="ttc" id="a00001_html_a7f320567dbbef79795e32a3739e6ca68"><div class="ttname"><a href="a00001.html#a7f320567dbbef79795e32a3739e6ca68">AnalysisResults::workerStatusChanged</a></div><div class="ttdeci">void workerStatusChanged()</div></div>
+<div class="ttc" id="a00001_html_a66f1cbcca70ba1c0df110982e4a07bae"><div class="ttname"><a href="a00001.html#a66f1cbcca70ba1c0df110982e4a07bae">AnalysisResults::vecChanged</a></div><div class="ttdeci">void vecChanged()</div></div>
+<div class="ttc" id="a00001_html_a198e1be5fc25e725c788396a4cb813cb"><div class="ttname"><a href="a00001.html#a198e1be5fc25e725c788396a4cb813cb">AnalysisResults::setRoll</a></div><div class="ttdeci">void setRoll(const float angle)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:41</div></div>
+<div class="ttc" id="a00001_html_a7f0310a7b661d2454e1772575ff6faee"><div class="ttname"><a href="a00001.html#a7f0310a7b661d2454e1772575ff6faee">AnalysisResults::setVelocity</a></div><div class="ttdeci">void setVelocity(const float velocity)</div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:68</div></div>
+<div class="ttc" id="a00001_html_a5eb049a5ad04654f26f7b58d3507fc59"><div class="ttname"><a href="a00001.html#a5eb049a5ad04654f26f7b58d3507fc59">AnalysisResults::pitch</a></div><div class="ttdeci">const float pitch() const </div></div>
+<div class="ttc" id="a00001_html_a28b52bbb7a56b94f6e532bbcfd9d61c8"><div class="ttname"><a href="a00001.html#a28b52bbb7a56b94f6e532bbcfd9d61c8">AnalysisResults::setSkeletonData</a></div><div class="ttdeci">void setSkeletonData(const SkeletonDataPtr &amp;skeletonData)</div><div class="ttdoc">AnalysisResults::setSkeletonData Sets the SkeletonData. </div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:99</div></div>
+<div class="ttc" id="a00001_html_a16e9d93ea33de9c4fff640197f3ae567"><div class="ttname"><a href="a00001.html#a16e9d93ea33de9c4fff640197f3ae567">AnalysisResults::roll</a></div><div class="ttdeci">const float roll() const </div></div>
+<div class="ttc" id="a00001_html_ac84034c3a9adfb124109e349f0df02ec"><div class="ttname"><a href="a00001.html#ac84034c3a9adfb124109e349f0df02ec">AnalysisResults::mp_boundingGeometry</a></div><div class="ttdeci">BoundingGeometry * mp_boundingGeometry</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:52</div></div>
+<div class="ttc" id="a00001_html_a998e682dccced6326535290c22bdbefc"><div class="ttname"><a href="a00001.html#a998e682dccced6326535290c22bdbefc">AnalysisResults::m_roll</a></div><div class="ttdeci">float m_roll</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:48</div></div>
+<div class="ttc" id="a00102_html_a3ff4896d315d1270ac7622ce28abee47"><div class="ttname"><a href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a></div><div class="ttdeci">QSharedPointer&lt; SkeletonData &gt; SkeletonDataPtr</div><div class="ttdef"><b>Definition:</b> SkeletonData.h:78</div></div>
+<div class="ttc" id="a00001_html_a4b8638847eff5952fcf62a60b2d502fd"><div class="ttname"><a href="a00001.html#a4b8638847eff5952fcf62a60b2d502fd">AnalysisResults::m_pitch</a></div><div class="ttdeci">float m_pitch</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:49</div></div>
+<div class="ttc" id="a00001_html_a472f2de78be8a038d6a33c4b6f07d34b"><div class="ttname"><a href="a00001.html#a472f2de78be8a038d6a33c4b6f07d34b">AnalysisResults::m_velocity</a></div><div class="ttdeci">float m_velocity</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:51</div></div>
+<div class="ttc" id="a00001_html_a89de0f6f264116feeeb98c31e4b9adb3"><div class="ttname"><a href="a00001.html#a89de0f6f264116feeeb98c31e4b9adb3">AnalysisResults::boundingGeometry</a></div><div class="ttdeci">const BoundingGeometry * boundingGeometry() const </div><div class="ttdoc">AnalysisResults::boundingGeometry Return a BoundingGeometry. </div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:133</div></div>
+<div class="ttc" id="a00001_html_ab098d61ae167f6b4b9d5fe1fe46a998a"><div class="ttname"><a href="a00001.html#ab098d61ae167f6b4b9d5fe1fe46a998a">AnalysisResults::setBoundingGeometry</a></div><div class="ttdeci">void setBoundingGeometry(BoundingGeometry *geometry)</div><div class="ttdoc">AnalysisResults::setBoundingGeometry Stores geometry. </div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:89</div></div>
+<div class="ttc" id="a00001_html_a5b9b6be4e4b1a963a9cc19a1d849fa6a"><div class="ttname"><a href="a00001.html#a5b9b6be4e4b1a963a9cc19a1d849fa6a">AnalysisResults::skeletonData</a></div><div class="ttdeci">const SkeletonDataPtr skeletonData() const </div><div class="ttdoc">AnalysisResults::skeletonData Returns the skeleton data. </div><div class="ttdef"><b>Definition:</b> AnalysisResults.cpp:142</div></div>
+<div class="ttc" id="a00102_html"><div class="ttname"><a href="a00102.html">SkeletonData.h</a></div></div>
+<div class="ttc" id="a00001_html_a6a60c24e302b0668bc8fbc1f5e2fc8f6"><div class="ttname"><a href="a00001.html#a6a60c24e302b0668bc8fbc1f5e2fc8f6">AnalysisResults::pitchChanged</a></div><div class="ttdeci">void pitchChanged()</div></div>
+<div class="ttc" id="a00001_html_ac5f7488b8c810b88f2e0282e8a7e119c"><div class="ttname"><a href="a00001.html#ac5f7488b8c810b88f2e0282e8a7e119c">AnalysisResults::workerStatus</a></div><div class="ttdeci">const QString workerStatus() const </div></div>
+<div class="ttc" id="a00001_html_a3b302d4031cf51e214535a631aafa7d1"><div class="ttname"><a href="a00001.html#a3b302d4031cf51e214535a631aafa7d1">AnalysisResults::m_workerStatus</a></div><div class="ttdeci">QString m_workerStatus</div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:47</div></div>
+<div class="ttc" id="a00007_html"><div class="ttname"><a href="a00007.html">BoundingGeometry</a></div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00059.html">Skeleton.h</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00059.html">AnalysisResults.h</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

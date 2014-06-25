@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['this',['This',['../a00030.html#a00098',1,'']]],
-  ['threshold',['Threshold',['../a00031.html',1,'']]],
-  ['transformationobject',['TransformationObject',['../a00032.html',1,'']]]
+  ['renderobject',['RenderObject',['../a00038.html',1,'']]],
+  ['renderobjectinterface',['RenderObjectInterface',['../a00039.html',1,'']]],
+  ['rgbanalyzer',['RGBAnalyzer',['../a00040.html',1,'']]],
+  ['rgbwidget',['RGBWidget',['../a00041.html',1,'']]]
 ];

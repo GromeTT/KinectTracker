@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>res/Icons/Button Add-01.ico</file>
+        <file>res/Icons/Button Close-01.ico</file>
+    </qresource>
+</RCC>

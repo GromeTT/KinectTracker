@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['device_5fnot_5fready',['DEVICE_NOT_READY',['../a00014.html#a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e',1,'Kinect']]]
+  ['clipped_5fbottom',['Clipped_Bottom',['../a00048.html#a6546984ae25a1d218c293eae231543fba37cc791606e969ea6889fbd4e69162ab',1,'SkeletonData']]],
+  ['clipped_5fleft',['Clipped_Left',['../a00048.html#a6546984ae25a1d218c293eae231543fba1b41bd4bdb7ff73efe63c5de3440e993',1,'SkeletonData']]],
+  ['clipped_5fright',['Clipped_Right',['../a00048.html#a6546984ae25a1d218c293eae231543fba9671f25f9168e2526e5963701936a3ba',1,'SkeletonData']]],
+  ['clipped_5ftop',['Clipped_Top',['../a00048.html#a6546984ae25a1d218c293eae231543fbad9c6b883f28bc395a9d9c277bd4fbebd',1,'SkeletonData']]]
 ];

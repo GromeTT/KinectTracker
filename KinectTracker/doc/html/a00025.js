@@ -1,6 +1,10 @@
 var a00025 =
 [
-    [ "SignalBlocker", "a00025.html#a52aab5afe05d9177ca34427f01a49d61", null ],
-    [ "~SignalBlocker", "a00025.html#ad6e40057af8a899cfbc7fe8f74625fdf", null ],
-    [ "mp_object", "a00025.html#a9bb36e7d781a0ec0206a7143d7f7485c", null ]
+    [ "ImageAnalyzer", "a00025.html#ad04ac23137412987314f1d1af0523a1b", null ],
+    [ "~ImageAnalyzer", "a00025.html#a55d69408e1ca725d957c3e8780d435ff", null ],
+    [ "analyze", "a00025.html#afec5cb16c58b2825fe43bc574fc78595", null ],
+    [ "getObjectByName", "a00025.html#a5d6e87f2e55923dcf0d22ea2aa5204f8", null ],
+    [ "getProcessingPipeline", "a00025.html#a382a963300a4c11694aa08d929f6f81a", null ],
+    [ "setProcessingPipeline", "a00025.html#a2cbc0a1747b4d7e757b6e7cd94391d70", null ],
+    [ "mp_processingPipeline", "a00025.html#aea03d52a9ff62b3c0b7a5e3021f13112", null ]
 ];

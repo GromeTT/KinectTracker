@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SkeletonData.h File Reference</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/BasicUsageScene.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,43 +104,81 @@ $(document).ready(function(){initNavTree('a00061.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">SkeletonData.h File Reference</div>  </div>
+<div class="title">BasicUsageScene.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QObject&gt;</code><br />
-<code>#include &lt;Windows.h&gt;</code><br />
-<code>#include &lt;NuiApi.h&gt;</code><br />
-<code>#include &lt;QVector3D&gt;</code><br />
+<div class="textblock"><code>#include &lt;QOpenGLShaderProgram&gt;</code><br />
+<code>#include &lt;QSharedPointer&gt;</code><br />
+<code>#include &lt;QOpenGLVersionFunctions&gt;</code><br />
 <code>#include &lt;QVector&gt;</code><br />
+<code>#include &lt;QVector3D&gt;</code><br />
+<code>#include &lt;QMatrix4x4&gt;</code><br />
+<code>#include &lt;QFileSystemWatcher&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00064_source.html">Camera.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00081_source.html">Kinect.h</a>&quot;</code><br />
 </div>
 <p><a href="a00061_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00028.html">SkeletonData</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html">BasicUsageScene</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a0215fce6b5c62bc073884c1c58ee4d25"></a>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a9c6c46b152fbf088399207c75fc07902"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void copy </td>
-          <td>(</td>
-          <td class="paramtype">const Vector4 &amp;&#160;</td>
-          <td class="paramname"><em>source</em>, </td>
+          <td class="memname">typedef QSharedPointer&lt;QOpenGLContext&gt; <a class="el" href="a00061.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a></td>
         </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8d404d21e13f8fa172f7a01eba949a7c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QVector3D &amp;&#160;</td>
-          <td class="paramname"><em>target</em>&#160;</td>
+          <td class="memname">typedef QVector&lt;QOpenGLTexture*&gt; <a class="el" href="a00061.html#a8d404d21e13f8fa172f7a01eba949a7c">OpenGLTextures</a></td>
         </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa55256830fe9d68749225fa8387ceb47"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">typedef QVector&lt;<a class="el" href="a00039.html">RenderObjectInterface</a>*&gt; <a class="el" href="a00061.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab47e41722c2931c8063642b53ff6c04f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QSharedPointer&lt;<a class="el" href="a00004.html">BasicUsageScene</a>&gt; <a class="el" href="a00061.html#ab47e41722c2931c8063642b53ff6c04f">Scene</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa288f148caa1e8d74d29b8838ee211c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QVector&lt;QOpenGLShaderProgram*&gt; <a class="el" href="a00061.html#aa288f148caa1e8d74d29b8838ee211c8">ShaderPrograms</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -152,8 +190,8 @@ Classes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00061.html">SkeletonData.h</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00061.html">BasicUsageScene.h</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

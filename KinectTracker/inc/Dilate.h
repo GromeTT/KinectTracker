@@ -2,14 +2,14 @@
 #define DIALTE_H
 
 #include <opencv2/opencv.hpp>
-#include <QObject>
+#include "ProcessingComponent.h"
 
-class Dilate : public QObject
+class Dilate : public ProcessingComponent
 {
     Q_OBJECT
 
 public:
-    Dilate();
+    Dilate( QObject* parent = nullptr );
     virtual ~Dilate();
 
     void dilate( cv::Mat& input );
@@ -45,18 +45,22 @@ private:
                 READ anchorPointX
                 WRITE setAnchorPointX
                 NOTIFY anchorPointXChanged )
+
     Q_PROPERTY( float anchorPointY MEMBER m_anchorPointY
                 READ anchorPointY
                 WRITE setAnchorPointY
                 NOTIFY anchorPointYChanged )
+
     Q_PROPERTY( int iterations MEMBER m_iterations
                 READ iterations
                 WRITE setIterations
                 NOTIFY iterationsChanged )
+
     Q_PROPERTY( int kernelRowCount MEMBER m_kernelRowCount
                 READ kernelRowCount
                 WRITE setKernelRowCount
                 NOTIFY kernelRowCountChanged )
+
     Q_PROPERTY( int kernelColumnCount MEMBER m_kernelColumnCount
                 READ kernelColumnCount
                 WRITE setKernelColumnCount

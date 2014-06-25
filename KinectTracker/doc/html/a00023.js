@@ -1,7 +1,9 @@
 var a00023 =
 [
-    [ "RGBWidget", "a00023.html#a71b0775bb1e7f8d21cbca138276b5411", null ],
-    [ "~RGBWidget", "a00023.html#a3036a1e1d9854436a54b6504ff0d0ef9", null ],
-    [ "update", "a00023.html#a2b5e055d1afaf6b855934b4f78a4c33f", null ],
-    [ "ui", "a00023.html#a5d0229327ac7728cd72e2c43119bbb05", null ]
+    [ "HOGDetectionPipeline", "a00023.html#ab7dc0cbb77175d53ad33e000e4fa7541", null ],
+    [ "~HOGDetectionPipeline", "a00023.html#aeeb62e996d0a582e80e729534d86b899", null ],
+    [ "process", "a00023.html#a6a98b00bb1c0bce667985396149c4eb2", null ],
+    [ "m_foundLocations", "a00023.html#acf62a78541b87002d9a32717d863797f", null ],
+    [ "m_rectangles", "a00023.html#ab656552c5edb212433dc813a8b9ae618", null ],
+    [ "mp_HOGFeatureDetector", "a00023.html#ad70af1ed1b07bcac625a751b79ccdac1", null ]
 ];

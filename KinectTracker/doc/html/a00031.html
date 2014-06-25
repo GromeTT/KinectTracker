@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Threshold Class Reference</title>
+<title>KinectTracker: MovementAnalyzer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,63 +104,42 @@ $(document).ready(function(){initNavTree('a00031.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00128.html">List of all members</a>  </div>
+<a href="a00191.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Threshold Class Reference</div>  </div>
+<div class="title">MovementAnalyzer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00063_source.html">Threshold.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00085_source.html">MovementAnalyzer.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for Threshold:</div>
+Inheritance diagram for MovementAnalyzer:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00031.png" usemap="#Threshold_map" alt=""/>
-  <map id="Threshold_map" name="Threshold_map">
+  <img src="a00031.png" usemap="#MovementAnalyzer_map" alt=""/>
+  <map id="MovementAnalyzer_map" name="MovementAnalyzer_map">
+<area href="a00005.html" alt="BBMovementAnalyzer" shape="rect" coords="0,112,137,136"/>
 </map>
  </div></div>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
-<a class="anchor" id="ac6ab383d590ac973fe513219334d561f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00031.html#ac6ab383d590ac973fe513219334d561f">Threshold::ThresholdType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ac6ab383d590ac973fe513219334d561fa8948c833b6fc66bcff50479b88281cb3"></a>Thresh_Binary&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ac6ab383d590ac973fe513219334d561fa62a8f48e1511dace93562cc70c5f9b23"></a>Thresh_Binary_Inv&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ac6ab383d590ac973fe513219334d561fadfb3f3a4b2c053ccfe6e1f436666b90b"></a>Thresh_Trunc&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ac6ab383d590ac973fe513219334d561fae6d119e2634d6968445f85b5b2a3ec98"></a>Thresh_ToZero&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ac6ab383d590ac973fe513219334d561fac86486a6eb7621b1bc221aa08bb8d23b"></a>Thresh_ToZero_Inv&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0d93fca2833487c8978c3bd1fdfbb3cd"></a>
+<a class="anchor" id="a950981be4142b22fc4e133d6ef3412d7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Threshold::Threshold </td>
+          <td class="memname">MovementAnalyzer::MovementAnalyzer </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00031.html#a950981be4142b22fc4e133d6ef3412d7" title="MovementAnalyzer::MovementAnalyzer Standardconstructor. ">MovementAnalyzer::MovementAnalyzer</a> Standardconstructor. </p>
+
 </div>
 </div>
-<a class="anchor" id="a43d1b8d6c21fb49a16ba90a3526a052c"></a>
+<a class="anchor" id="a30b01985f212cbe998c7d685e84ddf1c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -168,7 +147,7 @@ Inheritance diagram for Threshold:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Threshold::~Threshold </td>
+          <td class="memname">MovementAnalyzer::~MovementAnalyzer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -181,25 +160,29 @@ Inheritance diagram for Threshold:</div>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00031.html#a30b01985f212cbe998c7d685e84ddf1c" title="MovementAnalyzer::~MovementAnalyzer Destroyes the object. ">MovementAnalyzer::~MovementAnalyzer</a> Destroyes the object. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a5367a49945393b0f1367310f677c88ce"></a>
+<a class="anchor" id="ad65a6e9c98e84c2cee5f6a5262ee66ef"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float Threshold::maxValue </td>
+          <td class="memname">void MovementAnalyzer::analyze </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00031.html#ad65a6e9c98e84c2cee5f6a5262ee66ef" title="MovementAnalyzer::analyze Analyzes the human&#39;s movement. ">MovementAnalyzer::analyze</a> Analyzes the human's movement. </p>
+
 </div>
 </div>
-<a class="anchor" id="a559a43ae2c6f94a9f348d74e0c93f426"></a>
+<a class="anchor" id="a58a2a82237e19effd52ed934bd2b95f6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -207,7 +190,7 @@ Inheritance diagram for Threshold:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Threshold::maxValueChanged </td>
+          <td class="memname">virtual void MovementAnalyzer::anaylzeV </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -215,109 +198,21 @@ Inheritance diagram for Threshold:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a7afb07c346eef63aef445b049718ec46"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Threshold::setMaxValue </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>maxValue</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Implemented in <a class="el" href="a00005.html#a81b6fadc280e39c2ef86b3d21e1c8101">BBMovementAnalyzer</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a747ecbd752a29d1f2158e05ed568d78a"></a>
+<a class="anchor" id="afc9a86154bca9345449b256ac3fbc588"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Threshold::setThreshold </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>threshold</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7f98dba2c45fb8f04e88bb4efe057d67"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Threshold::setThresholdType </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00031.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a>&#160;</td>
-          <td class="paramname"><em>thresholdType</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a513c2d2da1df062b8879163fa89221b2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Threshold::threshold </td>
-          <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4bb277fbeb7b1486efd0366503e85621"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Threshold::threshold </td>
-          <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>output</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac0e492803006dc4f32f3f113cf1bec3d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Threshold::threshold </td>
+          <td class="memname">QList&lt; <a class="el" href="a00063.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a> &gt; &amp; MovementAnalyzer::boundingGeometries </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -325,71 +220,12 @@ Inheritance diagram for Threshold:</div>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a95e78d77660f0dabdb0ed073e83753c9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Threshold::thresholdChanged </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a2d23416e7525ec0223ebb8a65530ce73"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00031.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a> Threshold::thresholdType </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a84f2d972a1347fbb406b2eea1273f5a9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Threshold::thresholdTypeChanged </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p><a class="el" href="a00031.html#afc9a86154bca9345449b256ac3fbc588" title="MovementAnalyzer::boundingGeometries Returns a QList with all BoundingGeometries calculated within th...">MovementAnalyzer::boundingGeometries</a> Returns a QList with all BoundingGeometries calculated within this class. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a9789b9923bce9710752324cc47c5320f"></a>
+<a class="anchor" id="ad0b66ec19da305b82c7c883c748d6ffc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -397,113 +233,12 @@ Inheritance diagram for Threshold:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float Threshold::m_maxValue</td>
+          <td class="memname">QList&lt;<a class="el" href="a00063.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a>&gt; MovementAnalyzer::m_boundingGeomerties</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a46cfc35879992bf0cb3e5742c3f673fa"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Threshold::m_threshold</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac3573bcd8d9a70d9b6e5c40da545ee2d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00031.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a> Threshold::m_thresholdType</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a6e9aec8892a8b8c16c8c0ffb8d293299"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Threshold::maxValue</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4553c33cf0267aa206970186f29534a1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Threshold::threshold</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1dd6b42c58c35809ba3664ad43b9f2a1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00031.html#ac6ab383d590ac973fe513219334d561f">Threshold::ThresholdType</a> Threshold::thresholdType</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -511,16 +246,16 @@ Inheritance diagram for Threshold:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00063_source.html">Threshold.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00093.html">Threshold.cpp</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00085_source.html">MovementAnalyzer.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00134.html">MovementAnalyzer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00031.html">Threshold</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00031.html">MovementAnalyzer</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

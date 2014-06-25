@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/src/MainWindow.cpp File Reference</title>
+<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Intersection.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,50 +102,135 @@ $(document).ready(function(){initNavTree('a00080.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">MainWindow.cpp File Reference</div>  </div>
+<div class="title">Intersection.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00050_source.html">../Inc/MainWindow.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00052_source.html">../Inc/OpenGLWindow.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00056_source.html">../Inc/RGBWidget.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00054_source.html">../Inc/RenderObject.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00036_source.html">../Inc/BasicUsageScene.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00065_source.html">../Inc/Vertex.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00048_source.html">../Inc/KinectInitializeDialog.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00059_source.html">../Inc/Skeleton.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00037_source.html">../Inc/BoundingBox.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00044_source.html">../Inc/Floor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00043_source.html">../Inc/Explorer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00057_source.html">../Inc/SceneGraphWidget.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00058_source.html">../inc/SignalBlocker.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00040_source.html">../inc/DepthViewerWidget.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00051_source.html">../inc/ObjectLoader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00062_source.html">../inc/SkeletonRenderObject.h</a>&quot;</code><br />
-<code>#include &lt;QMdiSubWindow&gt;</code><br />
-<code>#include &lt;QKeyEvent&gt;</code><br />
-<code>#include &lt;QMetaObject&gt;</code><br />
-<code>#include &lt;QMetaProperty&gt;</code><br />
-<code>#include &lt;QLabel&gt;</code><br />
-<code>#include &lt;QTimer&gt;</code><br />
-<code>#include &lt;QImage&gt;</code><br />
-<code>#include &lt;QFileInfo&gt;</code><br />
-<code>#include &lt;QDockWidget&gt;</code><br />
-<code>#include &lt;QDebug&gt;</code><br />
-<code>#include &quot;ui_MainWindow.h&quot;</code><br />
-</div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a36e3eec1091545590dddf12e94c91964"></a>
+
+<p><a href="a00080_source.html">Go to the source code of this file.</a></p>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a15d309989b99341fa895624b77b7caac"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void detect_blobs </td>
+          <td class="memname">bool pointInCube </td>
           <td>(</td>
-          <td class="paramtype">Mat &amp;&#160;</td>
-          <td class="paramname"><em>current</em></td><td>)</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>cubeX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>cubeY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>cubeZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>depth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad79d142e408b4534d9b735e4ff3c1b95"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pointInSphere </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>originX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>originY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>originZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pointInSphere Checks if a given point with the coordinates p( <em>x</em>, <em>y</em>, <em>z</em>) lies in the sphere with origin o ( <em>originX</em>, <em>originY</em>, <em>originZ</em> ) and radius <em>radius</em>. </p>
 
 </div>
 </div>
@@ -154,8 +239,8 @@ $(document).ready(function(){initNavTree('a00080.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="a00080.html">MainWindow.cpp</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00080.html">Intersection.h</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

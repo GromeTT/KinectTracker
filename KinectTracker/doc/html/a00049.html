@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Macros.h File Reference</title>
+<title>KinectTracker: SkeletonRenderObject Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,8 +67,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -101,43 +103,270 @@ $(document).ready(function(){initNavTree('a00049.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="a00209.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Macros.h File Reference</div>  </div>
+<div class="title">SkeletonRenderObject Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a href="a00049_source.html">Go to the source code of this file.</a></p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a4b8b2bed986c06c207ebac140ba65a7a"></a>
+<p><code>#include &lt;<a class="el" href="a00103_source.html">SkeletonRenderObject.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SkeletonRenderObject:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00049.png" usemap="#SkeletonRenderObject_map" alt=""/>
+  <map id="SkeletonRenderObject_map" name="SkeletonRenderObject_map">
+<area href="a00039.html" alt="RenderObjectInterface" shape="rect" coords="0,112,140,136"/>
+<area href="a00055.html" alt="TransformationObject" shape="rect" coords="0,56,140,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9307014f07afff49cc316f2e927759e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00049.html#a9307014f07afff49cc316f2e927759e1">SkeletonRenderObject</a> ()</td></tr>
+<tr class="separator:a9307014f07afff49cc316f2e927759e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00055"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00055')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00055.html">TransformationObject</a></td></tr>
+<tr class="memitem:a875825a191b0aff449b2029675436501 inherit pub_methods_a00055"><td class="memItemLeft" align="right" valign="top">const QMatrix4x4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#a875825a191b0aff449b2029675436501">getModelMatrix</a> () const </td></tr>
+<tr class="separator:a875825a191b0aff449b2029675436501 inherit pub_methods_a00055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aa9155dc7affff14df61fa4377c41ef90"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00049.html#aa9155dc7affff14df61fa4377c41ef90">renderV</a> (const QMatrix4x4 &amp;projection, const QMatrix4x4 &amp;view)</td></tr>
+<tr class="separator:aa9155dc7affff14df61fa4377c41ef90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9307014f07afff49cc316f2e927759e1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SAFE_DELETE</td>
+          <td class="memname">SkeletonRenderObject::SkeletonRenderObject </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                        \</div>
-<div class="line">    if ( x )             \</div>
-<div class="line">    {                    \</div>
-<div class="line">        delete x;        \</div>
-<div class="line">        x = <span class="keyword">nullptr</span>;     \</div>
-<div class="line">    }                    \</div>
-<div class="line">}                        \</div>
-</div><!-- fragment -->
+
+<p><a class="el" href="a00049.html#a9307014f07afff49cc316f2e927759e1" title="SkeletonRenderObject::SkeletonRenderObject Constructs an SkeletonRenderObject with no vertex data...">SkeletonRenderObject::SkeletonRenderObject</a> Constructs an <a class="el" href="a00049.html">SkeletonRenderObject</a> with no vertex data. </p>
+<p>All indices will be created for a point and line representation of the skeleton. To set vertex data use <a class="el" href="a00049.html#a415a0614316e53787f6687fcebbd72e0" title="SkeletonRenderObject::updateData Updates the vertex buffer with data. ">updateData()</a>. </p>
+
 </div>
 </div>
+<a class="anchor" id="a2cd26bc06a703c4eea4c7d805c799903"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SkeletonRenderObject::~SkeletonRenderObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00049.html#a2cd26bc06a703c4eea4c7d805c799903" title="SkeletonRenderObject::~SkeletonRenderObject Destroyes the object. ">SkeletonRenderObject::~SkeletonRenderObject</a> Destroyes the object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aa9155dc7affff14df61fa4377c41ef90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonRenderObject::renderV </td>
+          <td>(</td>
+          <td class="paramtype">const QMatrix4x4 &amp;&#160;</td>
+          <td class="paramname"><em>projection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QMatrix4x4 &amp;&#160;</td>
+          <td class="paramname"><em>view</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00049.html#aa9155dc7affff14df61fa4377c41ef90" title="SkeletonRenderObject::renderV Renders the object, if visible is set to true. ">SkeletonRenderObject::renderV</a> Renders the object, if visible is set to <b>true</b>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">projection</td><td></td></tr>
+    <tr><td class="paramname">view</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="a00039.html#a9b6fbb888f50e751887e36687fa7a6d4">RenderObjectInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a13e41d2faded80144f7271db38245782"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonRenderObject::setShaderProgramm </td>
+          <td>(</td>
+          <td class="paramtype">QOpenGLShaderProgram *&#160;</td>
+          <td class="paramname"><em>program</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00049.html#a13e41d2faded80144f7271db38245782" title="SkeletonRenderObject::setShaderProgramm Set the shaderprogram to program. ">SkeletonRenderObject::setShaderProgramm</a> Set the shaderprogram to <em>program</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a415a0614316e53787f6687fcebbd72e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkeletonRenderObject::updateData </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00048.html">SkeletonData</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00049.html#a415a0614316e53787f6687fcebbd72e0" title="SkeletonRenderObject::updateData Updates the vertex buffer with data. ">SkeletonRenderObject::updateData</a> Updates the vertex buffer with <em>data</em>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa96f28fc0bfd9fa81c6f7b4b38fac788"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QOpenGLBuffer SkeletonRenderObject::m_lineIndexBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae4450ee66fdc84a6e5957e1f16f44784"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QOpenGLBuffer SkeletonRenderObject::m_pointIndexBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afaa15b57644da827b3db1da34d6f3ee7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QOpenGLVertexArrayObject SkeletonRenderObject::m_vao</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aba847b861719a19e48513d48c34faf91"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QOpenGLBuffer SkeletonRenderObject::m_vertexBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adffa2d6df06a51c8f3434f627e0ffe38"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QOpenGLShaderProgram* SkeletonRenderObject::mp_shaderProgram</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00103_source.html">SkeletonRenderObject.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00152.html">SkeletonRenderObject.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00049.html">Macros.h</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:57 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00049.html">SkeletonRenderObject</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -1,20 +1,23 @@
-#include "../Inc/MainWindow.h"
-#include "../Inc/OpenGLWindow.h"
-#include "../Inc/RGBWidget.h"
-#include "../Inc/RenderObject.h"
-#include "../Inc/BasicUsageScene.h"
-#include "../Inc/Vertex.h"
-#include "../Inc/KinectInitializeDialog.h"
-#include "../Inc/Skeleton.h"
-#include "../Inc/BoundingBox.h"
-#include "../Inc/Floor.h"
-#include "../Inc/Explorer.h"
-#include "../Inc/SceneGraphWidget.h"
-#include "../Inc/Floor.h"
+#include "../inc/MainWindow.h"
+#include "../inc/OpenGLWindow.h"
+#include "../inc/RGBWidget.h"
+#include "../inc/RenderObject.h"
+#include "../inc/BasicUsageScene.h"
+#include "../inc/Vertex.h"
+#include "../inc/KinectInitializeDialog.h"
+#include "../inc/Floor.h"
 #include "../inc/SignalBlocker.h"
 #include "../inc/DepthViewerWidget.h"
 #include "../inc/ObjectLoader.h"
 #include "../inc/SkeletonRenderObject.h"
+#include "../inc/HOGFeatureDetector.h"
+#include "../inc/RGBAnalyzer.h"
+#include "../inc/DepthProcessingPipeline.h"
+#include "../inc/HighLevelProcessingPipeline.h"
+#include "../inc/SASDProcessingPipeline.h"
+#include "../inc/BBMovementVisualizer.h"
+#include "../inc/BBMovementAnalyzer.h"
+#include "../inc/SABSSDProcessingPipeline.h"
 #include <QMdiSubWindow>
 #include <QKeyEvent>
 #include <QMetaObject>
@@ -58,18 +61,10 @@ MainWindow::MainWindow( QWidget *parent )
     , mp_rgbViewObject( nullptr )
     , mp_depthViewObject( nullptr )
     , mp_skeletonRenderObject( nullptr )
-    , mp_boundingBoxWholeBody( nullptr )
-    , mp_boundingBoxLowerBody( nullptr )
-    , mp_arrowObject( nullptr )
-    , m_backgroundSubtractor( new BackgroundSubtractorMOG )
     , m_lastTiming( 0 )
-    , m_backGroundSubtraction( false )
-    , mp_rgbData( nullptr )
-    , mp_depthData( nullptr )
     , m_updateSkeletonData( true )
     , m_updateRGBData( true )
     , m_updateDepthData( true )
-    , m_takeSnapshot( true )
 {
     ui->setupUi(this);
 
@@ -82,21 +77,20 @@ MainWindow::MainWindow( QWidget *parent )
     mp_explorerDockWidget = new QDockWidget( "Explorer", this );
     mp_explorerDockWidget->setMinimumWidth( 350 );
     addDockWidget( Qt::LeftDockWidgetArea, mp_explorerDockWidget );
-    mp_explorer = new Explorer( mp_explorerDockWidget );
+    mp_explorer = new PropertyBrowser( mp_explorerDockWidget );
     mp_explorerDockWidget->setWidget( mp_explorer );
 
-    mp_skeletonAnalyserDockWidget = new QDockWidget( "SkeletonAnlyser" );
-    addDockWidget(Qt::LeftDockWidgetArea, mp_skeletonAnalyserDockWidget );
-    mp_skeletonAnalyserExplorer = new Explorer( mp_skeletonAnalyserDockWidget );
-    mp_skeletonAnalyserDockWidget->setWidget( mp_skeletonAnalyserExplorer );
-    mp_skeletonAnalyserExplorer->setObject( &m_skeletonAnalyzer );
+    // Construct skeleton analyser
+    mp_analyserDockWidget = new QDockWidget( "SkeletonAnlyser" );
+    addDockWidget(Qt::LeftDockWidgetArea, mp_analyserDockWidget );
+    mp_analyerBrowser = new PropertyBrowser( mp_analyserDockWidget );
+    mp_analyserDockWidget->setWidget( mp_analyerBrowser );
 
-    // Construct result explorer and it's dockWidget.
-    mp_resultExpDockWidget = new QDockWidget( "Anlysis", this );
-    addDockWidget( Qt::LeftDockWidgetArea, mp_resultExpDockWidget );
-    mp_resultExp = new Explorer( mp_resultExpDockWidget );
-    mp_resultExpDockWidget->setWidget( mp_resultExp );
-    mp_resultExp->setObject( &m_analysisResults );
+    // Construct SizeAnalyzer
+    mp_sizeAnalyzerDockWidget = new QDockWidget( "SizeAnalyzer" );
+    addDockWidget(Qt::LeftDockWidgetArea, mp_sizeAnalyzerDockWidget );
+    mp_sizeAnalyzerBrowser = new PropertyBrowser( mp_sizeAnalyzerDockWidget );
+    mp_sizeAnalyzerDockWidget->setWidget( mp_sizeAnalyzerBrowser );
 
     // Construct scenegraph ant it's dockWidget.
     mp_sceneDockWidget = new QDockWidget( "Scenegraph", this );
@@ -114,27 +108,30 @@ MainWindow::MainWindow( QWidget *parent )
     // Setup mdiArea.
     ui->mdiArea->tileSubWindows();
 
-    mp_rgbData   = new uchar [ m_kinect->getRGBStreamResoultion().width() * m_kinect->getRGBStreamResoultion().height() * 3 ];
-    mp_depthData = new uchar [ m_kinect->getDepthStreamResolution().width() * m_kinect->getDepthStreamResolution().height() * 3 ];
-
-    // Connect signals and slots.
+    // Connect timer
+    connect( &m_timer, &QTimer::timeout, this, &MainWindow::updateScenes );
+    // Connect mechanics
+    connect( mp_sceneGraph, &SceneGraphWidget::selectionChanged, this, &MainWindow::selectObject );
+    // Connect actions
     connect( ui->actionQuit, &QAction::triggered, this, &MainWindow::close );
     connect( ui->actionOpenKinectStream, &QAction::triggered, this, &MainWindow::showKinectDialog );
-    connect( mp_sceneGraph, &SceneGraphWidget::selectionChanged, this, &MainWindow::selectObject );
     connect( ui->actionOpenGLRender, &QAction::toggled, this, &MainWindow::actionOpenGLRenderWidgetChecked );
-    connect( ui->actionBackground_Subtraction, &QAction::triggered, this, &MainWindow::actionBackgroundSubtractionToggled );
-    connect( ui->actionTake_snapshot, &QAction::triggered, this, &MainWindow::takeSnapshot );
-    connect( &m_timer, &QTimer::timeout, this, &MainWindow::updateScenes );
-
-    connect ( ui->actionKeep_Skeleton_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateSkeltonData );
-    connect ( ui->actionKeep_rgb_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateRGBData );
-    connect ( ui->actionKeep_depth_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateDepthData );
-
-    connect ( ui->mdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::subWindowActivated );
+    connect( ui->actionTakeScreenshot, &QAction::triggered, this, &MainWindow::takeScreenshot );
+    connect( ui->actionKeep_Skeleton_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateSkeltonData );
+    connect( ui->actionKeep_rgb_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateRGBData );
+    connect( ui->actionKeep_depth_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateDepthData );
+    connect( mp_sceneGraph, &SceneGraphWidget::sceneChanged, this, &MainWindow::switchCatergoryOnSceneGraph );
+    connect( ui->actionSASDMode, &QAction::toggled, this, &MainWindow::activateSASDMode );
+    connect( ui->actionSABSSDMode, &QAction::toggled, this, &MainWindow::activateSABSSDMode );
 
     ui->actionKeep_Skeleton_up_to_date->setChecked( m_updateSkeletonData );
     ui->actionKeep_rgb_up_to_date->setChecked( m_updateRGBData );
     ui->actionKeep_depth_up_to_date->setChecked( m_updateDepthData );
+    ui->actionSASDMode->setChecked( true );
+
+    ui->mdiArea->activateNextSubWindow();
+
+    switchCatergoryOnSceneGraph( SceneGraphWidget::ActiveScene::RGBProcessingPipeline );
 
     time.start();
     m_timer.start( 0 );
@@ -148,8 +145,7 @@ MainWindow::MainWindow( QWidget *parent )
 */
 MainWindow::~MainWindow()
 {
-    delete [] mp_rgbData;
-    delete [] mp_depthData;
+    m_timer.stop();
     delete ui;
 }
 
@@ -166,128 +162,51 @@ void MainWindow::updateScenes()
     float dt_ms = dt_ns / 1000000;
     float fps = 1000000000 / dt_ns;
 
-    // Process RGB data
-    if ( m_updateRGBData )
+    if ( m_kinect->isInitialized() &&
+         !m_highLvlProcessingPipeline.isNull() )
     {
-        processRGBData();
-    }
-    // Process Depth data.
-    if ( m_updateDepthData )
-    {
-        processDepthData();
-    }
-    // Process skeleton data
-    if ( m_updateSkeletonData )
-    {
-        processSkeletonData( timestamp );
+        m_highLvlProcessingPipeline->process( timestamp );
+        SkeletonDataPtr data = m_highLvlProcessingPipeline->skeletonData();
+        if ( !data.isNull() )
+        {
+
+            mp_openGLWindow->makeContextCurrent();
+            mp_skeletonRenderObject->setVisible( true );
+            mp_skeletonRenderObject->updateData( data.data() );
+        }
+        mp_rgbViewerWindow->makeContextCurrent();
+        mp_rgbViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
+                                         m_kinect->rgbStreamResolution().width(),
+                                         m_kinect->rgbStreamResolution().height(),
+                                         QOpenGLTexture::PixelFormat::BGR,
+                                         QOpenGLTexture::PixelType::UInt8,
+                                         0,
+                                         m_highLvlProcessingPipeline->rgbImage(),
+                                         QOpenGLTexture::Linear,
+                                         QOpenGLTexture::Linear );
+        mp_depthViewerWindow->makeContextCurrent();
+        mp_depthViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
+                                           m_kinect->rgbStreamResolution().width(),
+                                           m_kinect->rgbStreamResolution().height(),
+                                           QOpenGLTexture::PixelFormat::Luminance,
+                                           QOpenGLTexture::PixelType::Int16,
+                                           0,
+                                           m_highLvlProcessingPipeline->depthImage(),
+                                           QOpenGLTexture::Linear,
+                                           QOpenGLTexture::Linear );
+        if ( !m_visualizer.isNull() )
+        {
+            m_visualizer->render();
+        }
     }
 
     mp_openGLWindow->paintGL();
     mp_rgbViewerWindow->paintGL();
     mp_depthViewerWindow->paintGL();
 
-    QString status = "Nothing detected.";
-    ui->statusBar->showMessage( QString("Status: %4 Update Time: %1 ms Framerat: %2")
+    ui->statusBar->showMessage( QStringLiteral( "Update Time: %1 ms Framerat: %2")
                                 .arg(dt_ms)
-                                .arg(fps)
-                                .arg (status ) );
-}
-
-/*!
-   \brief MainWindow::processRGBData
-   Processes the RGB data provided by the kinect sensor.
- */
-void MainWindow::processRGBData()
-{
-    HRESULT res;
-    res = m_kinect->getRGBImage( mp_rgbData );
-    if ( res == S_OK )
-    {
-        cv::Mat curr ( m_kinect->getDepthStreamResolution().height(),
-                       m_kinect->getRGBStreamResoultion().width(),
-                       CV_8UC3,
-                       mp_rgbData );
-        m_imageAnalyzer.analyze( curr );
-        if ( m_takeSnapshot )
-        {
-            m_imageAnalyzer.setSnapshot( curr );
-            m_takeSnapshot = false;
-        }
-//        imshow( "BS Window", curr );
-        if ( m_backGroundSubtraction )
-        {
-
-//            cv::Mat frame_gray;
-//            cvtColor( curr, frame_gray, CV_BGR2GRAY );
-//            equalizeHist( frame_gray, frame_gray );
-//            std::vector<Rect> faces;
-//            faceClassifier.detectMultiScale( frame_gray, faces );
-//            for ( int i = 0; i < faces.size(); ++i )
-//            {
-//                Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
-//                ellipse( curr, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
-//            }
-
-//            cv::Mat foreground;
-//            m_backgroundSubtractor->operator ()( curr, foreground );
-//            vector<vector<Point> > contours;
-//            vector<Vec4i> hierachy;
-//            cv::erode( foreground, foreground, cv::Mat( 2, 2, CV_8UC1 ) );
-//            cv::imshow( "Errode", foreground ) ;
-//            cv::dilate( foreground, foreground, cv::Mat( 2, 2, CV_8UC1 ) );
-//            cv::imshow( "Dilate", foreground ) ;
-//            cv::findContours( foreground, contours, hierachy, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE );
-//            for ( int i = 0; i < contours.size(); ++i )
-//            {
-//                cv::drawContours( curr, contours, i, cv::Scalar( 255, 0, 0 ) );
-//            }
-            mp_rgbViewerWindow->makeContextCurrent();
-            mp_rgbViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
-                                             m_kinect->getRGBStreamResoultion().width(),
-                                             m_kinect->getRGBStreamResoultion().height(),
-                                             QOpenGLTexture::PixelFormat::BGR,
-                                             QOpenGLTexture::PixelType::UInt8,
-                                             0,
-                                             curr.data,
-                                             QOpenGLTexture::Linear,
-                                             QOpenGLTexture::Linear );
-        }
-        else
-        {
-            mp_rgbViewerWindow->makeContextCurrent();
-            mp_rgbViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
-                                             m_kinect->getRGBStreamResoultion().width(),
-                                             m_kinect->getRGBStreamResoultion().height(),
-                                             QOpenGLTexture::PixelFormat::BGR,
-                                             QOpenGLTexture::PixelType::UInt8,
-                                             0,
-                                             mp_rgbData,
-                                             QOpenGLTexture::Linear,
-                                             QOpenGLTexture::Linear );
-        }
-    }
-}
-
-/*!
-   \brief MainWindow::processDepthData
- */
-void MainWindow::processDepthData()
-{
-    HRESULT res;
-    res = m_kinect->getDepthImage( mp_depthData );
-    if ( res == S_OK )
-    {
-        mp_depthViewerWindow->makeContextCurrent();
-        mp_depthViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
-                                           m_kinect->getDepthStreamResolution().width(),
-                                           m_kinect->getDepthStreamResolution().height(),
-                                           QOpenGLTexture::PixelFormat::BGR,
-                                           QOpenGLTexture::PixelType::UInt8,
-                                           0,
-                                           mp_depthData,
-                                           QOpenGLTexture::Linear,
-                                           QOpenGLTexture::Linear );
-    }
+                                .arg(fps));
 }
 
 /*!
@@ -296,85 +215,83 @@ void MainWindow::processDepthData()
  */
 void MainWindow::processSkeletonData( const unsigned int timestamp )
 {
-    QList<SkeletonData*> skeletons;
-    HRESULT res = m_kinect->getSkeleton( skeletons );
+    Q_UNUSED( timestamp );
+    QList<SkeletonDataPtr> skeletons;
+//    HRESULT res = m_kinect->getSkeleton( skeletons );
 
-    if ( res != S_OK )
-    {
-        return;
-    }
+//    if ( res != S_OK )
+//    {
+//        return;
+//    }
 
     if ( skeletons.count() > 0 )
     {
         // Skeleton detected.
         mp_openGLWindow->makeContextCurrent();
 
-        mp_arrowObject->setVisible( true );
-
         // Update the skeleton render.
         mp_skeletonRenderObject->setVisible( true );
-        mp_skeletonRenderObject->updateData( *skeletons.at( 0 ) );
+
+//        SkeletonDataPtr skeleton ( skeletons.at( 0 ) );
+//        mp_skeletonRenderObject->updateData( skeleton );
 
         // Perfomr analysis
-         m_skeletonAnalyzer.update( skeletons.at( 0 ),
-                                    timestamp );
+//         m_skeletonAnalyzer.update( skeleton,
+//                                    timestamp );
 
          // Update BoundingBox for the lower body.
-         mp_boundingBoxLowerBody->setVisible( true );
-         const BoundingBox* boundingBox = m_skeletonAnalyzer.getLastBoundingBox();
-         if ( boundingBox )
-         {
-             mp_boundingBoxLowerBody->setPosition( QVector3D( boundingBox->getX(),
-                                                              boundingBox->getY(),
-                                                              boundingBox->getZ() ) );
-             mp_boundingBoxLowerBody->setScale( QVector3D( boundingBox->getWidth(),
-                                                           boundingBox->getHeight(),
-                                                           boundingBox->getDepth() ) );
+//         mp_boundingBoxLowerBody->setVisible( true );
+//         const BoundingBox* boundingBox = m_skeletonAnalyzer.getLastBoundingBox();
+//         if ( boundingBox )
+//         {
+//             mp_boundingBoxLowerBody->setPosition( QVector3D( boundingBox->x(),
+//                                                              boundingBox->y(),
+//                                                              boundingBox->z() ) );
+//             mp_boundingBoxLowerBody->setScale( QVector3D( boundingBox->width(),
+//                                                           boundingBox->height(),
+//                                                           boundingBox->depth() ) );
 
-             mp_arrowObject->setPosition( boundingBox->getX(),
-                                          boundingBox->getY() + 2.0f,
-                                          boundingBox->getZ() );
-         }
-         m_analysisResults.setValuesByVetcor( m_skeletonAnalyzer.getVelocity( timestamp, 10 ) );
-         if ( m_analysisResults.directionY() == 0 )
-         {
+//             mp_arrowObject->setPosition( boundingBox->x(),
+//                                          boundingBox->y() + 2.0f,
+//                                          boundingBox->z() );
+//         }
+//         m_analysisResults.setValuesByVetcor( m_skeletonAnalyzer.getVelocity( timestamp, 10 ) );
+//         if ( m_analysisResults.yaw() == 0 )
+//         {
             // Case: Person is not moving.
 
             // Indicates standing person by making the arrow pointing up.
-            mp_arrowObject->setYaw( 0 );
-            mp_arrowObject->setRoll( 90 );
-         }
-         else
-         {
+//            mp_arrowObject->setYaw( 0 );
+//            mp_arrowObject->setRoll( 90 );
+//         }
+//         else
+//         {
              // Case: Person is moving.
 
              // Let the arrow point in the direction of the movement.
-             mp_arrowObject->setYaw( m_analysisResults.directionY() );
-             mp_arrowObject->setRoll( 0 );
-         }
+//             mp_arrowObject->setYaw( m_analysisResults.yaw() );
+//             mp_arrowObject->setRoll( 0 );
+//         }
 
          // Update BoundingBox for the whole body.
-         mp_boundingBoxWholeBody->setVisible( true );
-         boundingBox = m_skeletonAnalyzer.getBoundingBoxWholeBody();
-         if ( boundingBox )
-         {
-             mp_boundingBoxWholeBody->setPosition( QVector3D( boundingBox->getX(),
-                                                              boundingBox->getY(),
-                                                              boundingBox->getZ() ) );
-             mp_boundingBoxWholeBody->setScale( QVector3D( boundingBox->getWidth(),
-                                                           boundingBox->getHeight(),
-                                                           boundingBox->getDepth() ) );
-         }
+//         mp_boundingBoxWholeBody->setVisible( true );
+//         boundingBox = m_skeletonAnalyzer.getBoundingBoxWholeBody();
+//         if ( boundingBox )
+//         {
+//             mp_boundingBoxWholeBody->setPosition( QVector3D( boundingBox->x(),
+//                                                              boundingBox->y(),
+//                                                              boundingBox->z() ) );
+//             mp_boundingBoxWholeBody->setScale( QVector3D( boundingBox->width(),
+//                                                           boundingBox->height(),
+//                                                           boundingBox->depth() ) );
+//         }
     }
     else
     {
         // Case: Recived Skeletonframe, but no skeleton detected.
 
         // Turn all objects invisible.
-        mp_skeletonRenderObject->setVisible( false );
-        mp_boundingBoxLowerBody->setVisible( false );
-        mp_boundingBoxWholeBody->setVisible( false );
-        mp_arrowObject->setVisible( false );
+//        mp_boundingBoxLowerBody->setVisible( false );
     }
 }
 
@@ -391,14 +308,9 @@ void MainWindow::actionOpenGLRenderWidgetChecked( bool checked )
     }
 }
 
-void MainWindow::actionBackgroundSubtractionToggled()
+void MainWindow::takeScreenshot()
 {
-    m_backGroundSubtraction = !m_backGroundSubtraction;
-}
-
-void MainWindow::takeSnapshot()
-{
-    m_takeSnapshot = true;
+    m_highLvlProcessingPipeline->takeScreenShot();
 }
 
 void MainWindow::setUpdateSkeltonData( const bool on )
@@ -428,26 +340,88 @@ void MainWindow::setUpdateDepthData( const bool on )
     }
 }
 
-void MainWindow::subWindowActivated( QMdiSubWindow* subWindow )
+/*!
+   \brief MainWindow::activateSASDMode
+   Construct all relvant objects for working in SASDMode.
+ */
+void MainWindow::activateSASDMode( bool checked )
 {
-    if( !subWindow )
+    Q_UNUSED( checked );
+    if ( checked )
     {
-        return;
+        mp_analyerBrowser->setObject( nullptr );
+        mp_sizeAnalyzerBrowser->setObject( nullptr );
+        m_highLvlProcessingPipeline = HighLevelProcessingPipelinePtr( new SASDProcessingPipeline( m_kinect ) );
+        setVisualizer();
+        mp_analyerBrowser->setObject( m_highLvlProcessingPipeline->movementAnalyzer().data() );
+        mp_sizeAnalyzerBrowser->setObject( m_highLvlProcessingPipeline->sizeAnalyzer().data() );
+        switchCatergoryOnSceneGraph( mp_sceneGraph->activeScene() );
+        ui->actionSABSSDMode->setChecked( false );
     }
-    if ( subWindow->widget() == mp_openGLRenderWidget )
+
+}
+
+/*!
+   \brief MainWindow::activateSABSSDMode
+   Construct all relvant object for working in SABSSDMode.
+ */
+void MainWindow::activateSABSSDMode( bool checked )
+{
+    Q_UNUSED( checked );
+    if ( checked )
     {
-        mp_sceneGraph->clearTreeWidget();
-        mp_sceneGraph->addObject( *mp_openGLWindow->getScene()->getCamera() );
-        mp_sceneGraph->addObjects( mp_openGLWindow->getScene()->getRenderObjects() );
+        mp_analyerBrowser->setObject( nullptr );
+        mp_sizeAnalyzerBrowser->setObject( nullptr );
+        m_highLvlProcessingPipeline = HighLevelProcessingPipelinePtr( new SABSSDProcessingPipeline( m_kinect ) );
+        setVisualizer();
+        mp_analyerBrowser->setObject( m_highLvlProcessingPipeline->movementAnalyzer().data() );
+        mp_sizeAnalyzerBrowser->setObject( m_highLvlProcessingPipeline->sizeAnalyzer().data() );
+        switchCatergoryOnSceneGraph( mp_sceneGraph->activeScene() );
+        ui->actionSASDMode->setChecked( false );
     }
-    else if ( subWindow->widget() == mp_rgbViewerWidget )
+}
+
+/*!
+   \brief MainWindow::setVisualizer
+   Sets the proper visualizer.
+ */
+void MainWindow::setVisualizer()
+{
+    BBMovementAnalyzerPtr analyzer( m_highLvlProcessingPipeline->movementAnalyzer().dynamicCast<BBMovementAnalyzer>() );
+    if ( !analyzer.isNull() )
     {
-        mp_sceneGraph->clearTreeWidget();
-        mp_sceneGraph->addObjects( m_imageAnalyzer.getPiplineComponents() );
+         m_visualizer = VisualizerPtr( new BBMovementVisualizer( analyzer, mp_openGLWindow ) );
     }
-    else if( subWindow->widget() == mp_depthViewerWidget )
+}
+
+/*!
+   \brief MainWindow::switchCatergoryOnSceneGraph
+   Adjusts the content in the SceneGraph.
+ */
+void MainWindow::switchCatergoryOnSceneGraph( SceneGraphWidget::ActiveScene scene )
+{
+    mp_sceneGraph->clearTreeWidget();
+    switch ( scene )
     {
-        mp_sceneGraph->clearTreeWidget();
+        case SceneGraphWidget::ActiveScene::RGBProcessingPipeline:
+        {
+            // case: RGBProcessingPipeline
+            mp_sceneGraph->addObjects( m_highLvlProcessingPipeline->rgbProcessingPipeline()->getComponents() );
+            break;
+        }
+        case SceneGraphWidget::ActiveScene::DepthProcessingPipeline:
+        {
+            // case: DepthProcessingPipeline
+            mp_sceneGraph->addObject( m_highLvlProcessingPipeline->depthProcessingPipeline().data() );
+            mp_sceneGraph->addObjects( m_highLvlProcessingPipeline->depthProcessingPipeline()->getComponents() );
+            break;
+        }
+        case SceneGraphWidget::ActiveScene::RenderScene:
+        {
+            // case: RenderScene
+            mp_sceneGraph->addObjects( mp_openGLWindow->getScene()->getRenderObjects() );
+            break;
+        }
     }
 }
 
@@ -559,23 +533,19 @@ void MainWindow::openKinectStream()
     }
 }
 
+/*!
+   \brief MainWindow::selectObject
+
+ */
 void MainWindow::selectObject( const QString& text )
 {
-    if ( !ui->mdiArea->activeSubWindow() )
-    {
-        return;
-    }
-    if ( ui->mdiArea->activeSubWindow()->widget() == mp_openGLRenderWidget )
+    if ( mp_sceneGraph->activeScene() == SceneGraphWidget::ActiveScene::RenderScene )
     {
         mp_explorer->setObject( mp_openGLWindow->getScene()->getObjectByName( text ) );
     }
-    else if ( ui->mdiArea->activeSubWindow()->widget() == mp_rgbViewerWidget )
+    else
     {
-        mp_explorer->setObject( m_imageAnalyzer.getObjectByName( text ) );
-    }
-    else if ( ui->mdiArea->activeSubWindow()->widget() == mp_depthViewerWidget )
-    {
-
+        mp_explorer->setObject( mp_sceneGraph->getCurrentObject() );
     }
 }
 
@@ -594,19 +564,13 @@ void MainWindow::constructOpenGLRenderWidget()
 
     // Skeleton
     mp_skeletonRenderObject = mp_openGLWindow->getScene()->createSkeletonRenderObject();
-    // BoundingBoxLowerBody
-    mp_boundingBoxLowerBody = mp_openGLWindow->getScene()->createCube();
-    mp_boundingBoxLowerBody->setObjectName( "BoundingBoxLowerBody" );
-    mp_boundingBoxLowerBody->setWireFrameMode( true );
     // BoundingBoxWholeBody
-    mp_boundingBoxWholeBody = mp_openGLWindow->getScene()->createCube();
-    mp_boundingBoxWholeBody->setObjectName( "BoundingBoxWholeBody" );
-    mp_boundingBoxWholeBody->setWireFrameMode( true );
+
     // Arrow
-    mp_arrowObject = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
-    mp_arrowObject->setObjectName( "Arrow" );
-    mp_arrowObject->setVisible( true );
-    mp_arrowObject->setScale( QVector3D( 0.2, 0.2, 0.2 ) );
+//    mp_arrowObject = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
+//    mp_arrowObject->setObjectName( "Arrow" );
+//    mp_arrowObject->setVisible( true );
+//    mp_arrowObject->setScale( QVector3D( 0.2f, 0.2f, 0.2f ) );
 }
 
 void MainWindow::constructRGBViewer()

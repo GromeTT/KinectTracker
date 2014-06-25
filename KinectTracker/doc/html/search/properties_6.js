@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['roll',['roll',['../a00007.html#a08d9c6119a859e664d74ca07db4fe3d3',1,'Camera::roll()'],['../a00032.html#a476fe76f33c2ce33ced2a629fb4faa7f',1,'TransformationObject::roll()']]]
+  ['iterations',['iterations',['../a00016.html#a1db765de20ce9fd3c957e551fc93d254',1,'Dilate::iterations()'],['../a00017.html#aaa9c8a0038f7bad8ef88864cd2785753',1,'Erode::iterations()']]]
 ];

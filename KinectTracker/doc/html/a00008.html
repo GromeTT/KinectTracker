@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: DepthViewerWidget Class Reference</title>
+<title>KinectTracker: BoundingGeometryWithTimeStamp Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,44 +104,20 @@ $(document).ready(function(){initNavTree('a00008.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00106.html">List of all members</a>  </div>
+<a href="a00168.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">DepthViewerWidget Class Reference</div>  </div>
+<div class="title">BoundingGeometryWithTimeStamp Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00040_source.html">DepthViewerWidget.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for DepthViewerWidget:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00008.png" usemap="#DepthViewerWidget_map" alt=""/>
-  <map id="DepthViewerWidget_map" name="DepthViewerWidget_map">
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="a00063_source.html">BoundingGeometry.h</a>&gt;</code></p>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a89b0341d50cb5c1a2c49b7cac3da55b4"></a>
+<a class="anchor" id="a51402e40ce7f97f93b1dc135a6fc929a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DepthViewerWidget::DepthViewerWidget </td>
-          <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab880a830e46871a1faad8b04fe8af730"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DepthViewerWidget::~DepthViewerWidget </td>
+          <td class="memname">BoundingGeometryWithTimeStamp::BoundingGeometryWithTimeStamp </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -151,17 +127,26 @@ Inheritance diagram for DepthViewerWidget:</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a10f41e9fb4d95679f2c30c754be698dc"></a>
+<a class="anchor" id="a6c41c23c6ef73a388f8214ef6757fafb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DepthViewerWidget::update </td>
+          <td class="memname">BoundingGeometryWithTimeStamp::BoundingGeometryWithTimeStamp </td>
           <td>(</td>
-          <td class="paramtype">QImage *&#160;</td>
-          <td class="paramname"><em>image</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00007.html">BoundingGeometry</a> *&#160;</td>
+          <td class="paramname"><em>geometry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -169,37 +154,41 @@ Inheritance diagram for DepthViewerWidget:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa0a6541b50b5134435e9bebbdbf8254d"></a>
+<a class="anchor" id="a3c01b44f3bd3209c38161c07511b65eb"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Ui::DepthViewerWidget* DepthViewerWidget::ui</td>
+          <td class="memname">unsigned int BoundingGeometryWithTimeStamp::m_timestamp</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa28e3f18055ba0b6f144194ab92c2765"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00007.html">BoundingGeometry</a>* BoundingGeometryWithTimeStamp::mp_geometry</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00040_source.html">DepthViewerWidget.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00070.html">DepthViewerWidget.cpp</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00063_source.html">BoundingGeometry.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00113.html">BoundingGeometry.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00008.html">DepthViewerWidget</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00008.html">BoundingGeometryWithTimeStamp</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

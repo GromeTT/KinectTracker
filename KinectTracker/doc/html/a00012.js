@@ -1,14 +1,11 @@
 var a00012 =
 [
-    [ "Floor", "a00012.html#ae6ea8fc9ab0efa806acd6319add9c0a4", null ],
-    [ "~Floor", "a00012.html#ae1b805579f18a76fe2754a3601202e80", null ],
-    [ "calculateFloor", "a00012.html#a214d1acaa058565e167202641c6d3308", null ],
-    [ "getLineCount", "a00012.html#a896f9ebfa0fd8186675235e6709c8f15", null ],
-    [ "getSize", "a00012.html#adfca60247da94056f4679ebdd54b0f33", null ],
-    [ "lineCountChanged", "a00012.html#a87bced96a4282f9deb20914053dd11da", null ],
-    [ "setLineCount", "a00012.html#a3718ea0c1deb22defc68691f273b287b", null ],
-    [ "setSize", "a00012.html#adc1ca32177370b4e7999b323a8437a0e", null ],
-    [ "sizeChanged", "a00012.html#af0452840465743213d72eef9b4b43ca3", null ],
-    [ "m_lineCount", "a00012.html#ad049955c58e2012551a4b662d1d5712d", null ],
-    [ "m_size", "a00012.html#ae8a312f6a248fdb4eea0c6b0458b8b50", null ]
+    [ "CustomStyledDelegate", "a00012.html#a2fd599cbcc59614d3d1ea678ccdafb9c", null ],
+    [ "~CustomStyledDelegate", "a00012.html#a90c589d80818c897bbb818649990e2f5", null ],
+    [ "commit", "a00012.html#a0ae8befef987cff672d1be2c08c22bb8", null ],
+    [ "createEditor", "a00012.html#a4034e12e5d289fde5519a600d33063be", null ],
+    [ "displayText", "a00012.html#a1121c1c11c85bd6a534830c7f7af57d5", null ],
+    [ "setEditorData", "a00012.html#a8557eba6802e88a8363584688261d1b2", null ],
+    [ "setModelData", "a00012.html#a6d0e30599da9730136bf9213765fb067", null ],
+    [ "sizeHint", "a00012.html#a12020ec39c9bb394e46f082ab6afb03c", null ]
 ];

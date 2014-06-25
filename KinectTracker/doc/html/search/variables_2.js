@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['faceclassifier',['faceClassifier',['../a00017.html#a9f84e5b655f386aeda69f3a8fbe4b05c',1,'MainWindow']]],
-  ['factorradiantodegree',['factorRadianToDegree',['../a00039.html#a06bcd4055a1710817731bdfad688c4e5',1,'Defines.h']]]
+  ['channelcount',['channelCount',['../a00019.html#a9eade92d9e1c37aa3f2b59758a1ff1be',1,'FixedPropertyVector']]]
 ];

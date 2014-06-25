@@ -23,25 +23,49 @@ SOURCES += src/main.cpp\
            src/Kinect.cpp \
            src/KinectInitializeDialog.cpp \
            src/Floor.cpp \
-           src/Explorer.cpp \
            src/SceneGraphWidget.cpp \
            src/SignalBlocker.cpp \
            src/DepthViewerWidget.cpp \
            src/SkeletonAnalyzer.cpp \
-           src/BoundingBox.cpp \
            src/Intersection.cpp \
            src/ObjectLoader.cpp \
-           src/AnalysisResults.cpp \
            src/Camera.cpp \
            src/ImageAnalyzer.cpp \
            src/Erode.cpp \
-           src/ProcessingPipeline.cpp \
            src/Dilate.cpp \
            src/Threshold.cpp \
            src/TransformationObject.cpp \
            src/SkeletonData.cpp \
-    src/SkeletonRenderObject.cpp \
-    src/RenderObjectInterface.cpp
+           src/SkeletonRenderObject.cpp \
+           src/RenderObjectInterface.cpp \
+           src/HOGFeatureDetector.cpp \
+           src/SkinColorDetector.cpp \
+    src/InRange.cpp \
+    src/ProcessingComponent.cpp \
+    src/ArrayManipulator.cpp \
+    src/FloatEditor.cpp \
+    src/CustomStyledDelegate.cpp \
+    src/QObjectTreeWidgetItem.cpp \
+    src/FixedPropertyVector.cpp \
+    src/TreeModel.cpp \
+    src/PropertyBrowser.cpp \
+    src/RGBAnalyzer.cpp \
+    src/DepthProcessingPipeline.cpp \
+    src/HighLevelProcessingPipeline.cpp \
+    src/SASDProcessingPipeline.cpp \
+    src/SABSSDProcessingPipeline.cpp \
+    src/BoundingGeometry.cpp \
+    src/MovementAnalyzer.cpp \
+    src/BBMovementAnalyzer.cpp \
+    src/AMath.cpp \
+    src/LowLevelProcessingPipeline.cpp \
+    src/Visualizer.cpp \
+    src/BBMovementVisualizer.cpp \
+    src/ConnectionHelper.cpp \
+    src/TestObject.cpp \
+    src/SizeAnalyzer.cpp \
+    src/BBSizeAnalyzer.cpp \
+    src/UpperBodySizeAnalyzer.cpp
 
 HEADERS  += inc/MainWindow.h \
             inc/OpenGLWindow.h \
@@ -52,34 +76,60 @@ HEADERS  += inc/MainWindow.h \
             inc/Kinect.h \
             inc/KinectInitializeDialog.h \
             inc/Floor.h \
-            inc/Explorer.h \
             inc/SceneGraphWidget.h \
             inc/SignalBlocker.h \
             inc/DepthViewerWidget.h \
             inc/Macros.h \
             inc/SkeletonAnalyzer.h \
-            inc/BoundingBox.h \
             inc/Intersection.h \
             inc/ObjectLoader.h \
-            inc/AnalysisResults.h \
             inc/Camera.h \
             inc/ImageAnalyzer.h \
             inc/Erode.h \
-            inc/ProcessingPipeline.h \
             inc/Dilate.h \
             inc/Threshold.h \
             inc/TransformationObject.h \
             inc/SkeletonData.h \
-    inc/SkeletonRenderObject.h \
-    inc/RenderObjectInterface.h \
-    inc/Defines.h
+            inc/SkeletonRenderObject.h \
+            inc/RenderObjectInterface.h \
+            inc/Defines.h \
+            inc/HOGFeatureDetector.h \
+            inc/SkinColorDetector.h \
+    inc/InRange.h \
+    inc/ProcessingComponent.h \
+    inc/ArrayManipulator.h \
+    inc/FloatEditor.h \
+    inc/CustomStyledDelegate.h \
+    inc/QObjectTreeWidgetItem.h \
+    inc/FixedPropertyVector.h \
+    inc/TreeModel.h \
+    inc/PropertyBrowser.h \
+    inc/RGBAnalyzer.h \
+    inc/DepthProcessingPipeline.h \
+    inc/HighLevelProcessingPipeline.h \
+    inc/SASDProcessingPipeline.h \
+    inc/SABSSDProcessingPipeline.h \
+    inc/BoundingGeometry.h \
+    inc/MovementAnalyzer.h \
+    inc/BBMovementAnalyzer.h \
+    inc/AMath.h \
+    inc/LowLevelProcessingPipeline.h \
+    inc/Visualizer.h \
+    inc/BBMovementVisualizer.h \
+    inc/ConnectionHelper.h \
+    inc/TestObject.h \
+    inc/SizeAnalyzer.h \
+    inc/UpperBodySizeAnalyzer.h \
+    inc/BBSizeAnalyzer.h
 
 FORMS    += MainWindow.ui \
             KinectInitializeDialog.ui \
             Explorer.ui \
             SceneGraphWidget.ui \
             DepthViewerWidget.ui \
-            RGBViewerWidget.ui
+            RGBViewerWidget.ui \
+    ArrayManipulator.ui \
+    PropertyBrowser.ui
 
 
 TRANSLATIONS = trans/trans_de.ts
@@ -116,6 +166,7 @@ CONFIG( debug, debug|release )
             -lopencv_ts249d \
             -lopencv_video249d \
             -lopencv_highgui249d \
+            -lopencv_photo249d \
 }
 
 CONFIG( release, debug|release )
@@ -135,5 +186,8 @@ CONFIG( release, debug|release )
             -lopencv_video249 \
             -lopencv_highgui249 \
 }
+
+RESOURCES += \
+    Resources.qrc
 
 

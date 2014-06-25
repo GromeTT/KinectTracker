@@ -1,4 +1,5 @@
 #include "../Inc/Intersection.h"
+#include <math.h>
 
 bool pointInCube( const float x,
                   const float y,
@@ -33,4 +34,30 @@ bool pointInCube( const float x,
     }
 
     return true;
+}
+
+
+/*!
+   \brief pointInSphere
+   Checks if a given point with the coordinates p( \a x, \a y, \a z) lies
+   in the sphere with origin o ( \a originX, \a originY, \a originZ ) and radius
+   \a radius.
+ */
+bool pointInSphere( const float x,
+                    const float y,
+                    const float z,
+                    const float originX,
+                    const float originY,
+                    const float originZ,
+                    const float radius )
+{
+    float tmpX = x - originX;
+    float tmpY = y - originY;
+    float tmpZ = z - originZ;
+    float distance = sqrt( tmpX*tmpX + tmpY*tmpY + tmpZ*tmpZ );
+    if ( distance <= radius )
+    {
+        return true;
+    }
+    return false;
 }

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: RGBWidget Class Reference</title>
+<title>KinectTracker: HOGDetectionPipeline Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,23 +104,40 @@ $(document).ready(function(){initNavTree('a00023.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00121.html">List of all members</a>  </div>
+<a href="a00183.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">RGBWidget Class Reference</div>  </div>
+<div class="title">HOGDetectionPipeline Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00056_source.html">RGBWidget.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00089_source.html">ProcessingPipeline.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for RGBWidget:</div>
+Inheritance diagram for HOGDetectionPipeline:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00023.png" usemap="#RGBWidget_map" alt=""/>
-  <map id="RGBWidget_map" name="RGBWidget_map">
+  <img src="a00023.png" usemap="#HOGDetectionPipeline_map" alt=""/>
+  <map id="HOGDetectionPipeline_map" name="HOGDetectionPipeline_map">
+<area href="a00035.html" alt="ProcessingPipeline" shape="rect" coords="0,56,138,80"/>
 </map>
  </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a71b0775bb1e7f8d21cbca138276b5411"></a>
+<a class="anchor" id="ab7dc0cbb77175d53ad33e000e4fa7541"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HOGDetectionPipeline::HOGDetectionPipeline </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeeb62e996d0a582e80e729534d86b899"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -128,56 +145,23 @@ Inheritance diagram for RGBWidget:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">RGBWidget::RGBWidget </td>
+          <td class="memname">HOGDetectionPipeline::~HOGDetectionPipeline </td>
           <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a3036a1e1d9854436a54b6504ff0d0ef9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">RGBWidget::~RGBWidget </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2b5e055d1afaf6b855934b4f78a4c33f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RGBWidget::update </td>
-          <td>(</td>
-          <td class="paramtype">QImage *&#160;</td>
-          <td class="paramname"><em>image</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a5d0229327ac7728cd72e2c43119bbb05"></a>
+<a class="anchor" id="a6a98b00bb1c0bce667985396149c4eb2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -185,7 +169,74 @@ Inheritance diagram for RGBWidget:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Ui::RGBViewerWidget* RGBWidget::ui</td>
+          <td class="memname">void HOGDetectionPipeline::process </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00035.html#aac43bf94ad3e70b41b87f6016c4f0f7d">ProcessingPipeline</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="acf62a78541b87002d9a32717d863797f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;cv::Point&gt; HOGDetectionPipeline::m_foundLocations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab656552c5edb212433dc813a8b9ae618"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;cv::Rect&gt; HOGDetectionPipeline::m_rectangles</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad70af1ed1b07bcac625a751b79ccdac1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#a6056454c387806d137c1d7b4cf0cda4d">HogFeatureDetectorPtr</a> HOGDetectionPipeline::mp_HOGFeatureDetector</td>
         </tr>
       </table>
   </td>
@@ -198,16 +249,16 @@ Inheritance diagram for RGBWidget:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00056_source.html">RGBWidget.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00086.html">RGBWidget.cpp</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00089_source.html">ProcessingPipeline.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00138.html">ProcessingPipeline.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00023.html">RGBWidget</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00023.html">HOGDetectionPipeline</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

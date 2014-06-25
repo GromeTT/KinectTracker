@@ -1,11 +1,10 @@
 var a00013 =
 [
-    [ "ImageAnalyzer", "a00013.html#ab4c5bd6ffe5cf87ffee97bc533cc24f9", null ],
-    [ "~ImageAnalyzer", "a00013.html#a55d69408e1ca725d957c3e8780d435ff", null ],
-    [ "analyze", "a00013.html#aecc29b66bd7551825e94f02987174750", null ],
-    [ "getObjectByName", "a00013.html#a5d6e87f2e55923dcf0d22ea2aa5204f8", null ],
-    [ "getPiplineComponents", "a00013.html#ae6eccb1b03694fb4433e61e7d2485236", null ],
-    [ "setSnapshot", "a00013.html#a7f29e4d2ad84be571f490d5c7fa6c7ed", null ],
-    [ "m_snapshot", "a00013.html#a657d5688019994853fae2639a72a954b", null ],
-    [ "mp_processingPipeline", "a00013.html#aea03d52a9ff62b3c0b7a5e3021f13112", null ]
+    [ "DepthAnalyzer", "a00013.html#a029fd17ddc9694cd9fb8f60bd0675b07", null ],
+    [ "~DepthAnalyzer", "a00013.html#a4b511bd978698d4ddbfc44aec0b2b6f4", null ],
+    [ "analyze", "a00013.html#aa2d58fa1227f8bce9cb1a99d7a3fbd63", null ],
+    [ "getDepthData", "a00013.html#a973583c7e36c9a2c83c46692808064a7", null ],
+    [ "getPipeline", "a00013.html#ac02de08b9a9a7e88cb9b759280a58981", null ],
+    [ "m_depthData", "a00013.html#a442657c53d0f8fb650a9aee019d9fac8", null ],
+    [ "mp_processingPipeline", "a00013.html#afee0d8d0fda80d4d540ac493aff78157", null ]
 ];

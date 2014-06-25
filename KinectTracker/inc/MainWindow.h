@@ -5,14 +5,17 @@
 #include <QTimer>
 #include <QTime>
 #include <QElapsedTimer>
+#include <vector>
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include "Kinect.h"
-#include "BoundingBox.h"
+#include "BoundingGeometry.h"
 #include "SkeletonAnalyzer.h"
-#include "AnalysisResults.h"
-#include "ImageAnalyzer.h"
+#include "PropertyBrowser.h"
+#include "HighLevelProcessingPipeline.h"
+#include "Visualizer.h"
+#include "SceneGraphWidget.h"
 
 class OpenGLWidget;
 class OpenGLWindow;
@@ -21,11 +24,12 @@ class RGBWidget;
 class RenderObject;
 class QOpenGLTexture;
 class Explorer;
-class SceneGraphWidget;
 class QKeyPressEvent;
 class DepthViewerWidget;
 class QMdiSubWindow;
 class SkeletonRenderObject;
+class SkeletonData;
+class ImageAnalyzer;
 
 namespace Ui {
     class MainWindow;
@@ -47,16 +51,18 @@ private:
     void constructRGBViewer();
     void constructDepthViewer();
     void updateScenes();
-    void processRGBData();
-    void processDepthData();
     void processSkeletonData( const unsigned int timestamp) ;
     void actionOpenGLRenderWidgetChecked( bool checked );
-    void actionBackgroundSubtractionToggled( );
-    void takeSnapshot();
+
+    void takeScreenshot();
     void setUpdateSkeltonData( const bool on );
     void setUpdateRGBData( const bool on );
     void setUpdateDepthData( const bool on );
-    void subWindowActivated( QMdiSubWindow* subWindow );
+
+    void activateSASDMode( bool checked );
+    void activateSABSSDMode( bool checked );
+    void setVisualizer();
+    void switchCatergoryOnSceneGraph( SceneGraphWidget::ActiveScene scene );
 
 signals:
     void updateSkeletonDataChanged();
@@ -67,13 +73,13 @@ private:
     Ui::MainWindow*         ui;
     // Explorer
     QDockWidget*            mp_explorerDockWidget;
-    Explorer*               mp_explorer;
-    // ResultExplorer
-    QDockWidget*            mp_resultExpDockWidget;
-    Explorer*               mp_resultExp;
-    // ResultExplorer
-    QDockWidget*            mp_skeletonAnalyserDockWidget;
-    Explorer*               mp_skeletonAnalyserExplorer;
+    PropertyBrowser*        mp_explorer;
+    // MovementAnalyzer
+    QDockWidget*            mp_analyserDockWidget;
+    PropertyBrowser*        mp_analyerBrowser;
+    // SizeAnalyzer
+    QDockWidget*            mp_sizeAnalyzerDockWidget;
+    PropertyBrowser*        mp_sizeAnalyzerBrowser;
     // Scenegraph
     QDockWidget*            mp_sceneDockWidget;
     SceneGraphWidget*       mp_sceneGraph;
@@ -95,29 +101,16 @@ private:
     // Importent render objects
     RenderObject*           mp_rgbViewObject;
     RenderObject*           mp_depthViewObject;
-    RenderObject*           mp_boundingBoxWholeBody;
-    RenderObject*           mp_boundingBoxLowerBody;
-    RenderObject*           mp_arrowObject;
     SkeletonRenderObject*   mp_skeletonRenderObject;
-    // OpenCV stuff
-    cv::Ptr<cv::BackgroundSubtractor> m_backgroundSubtractor;
-    cv::CascadeClassifier faceClassifier;
-    // Modes
-    bool m_backGroundSubtraction;
     QTime time;
-    // RGB/Depth-data
-    uchar* mp_rgbData;
-    uchar* mp_depthData;
     // Analysis
-    SkeletonAnalyzer m_skeletonAnalyzer;
-    ImageAnalyzer    m_imageAnalyzer;
-    AnalysisResults  m_analysisResults;
-    //
+    HighLevelProcessingPipelinePtr m_highLvlProcessingPipeline;
+    // Visualizer
+    VisualizerPtr m_visualizer;
+
     bool m_updateSkeletonData;
     bool m_updateRGBData;
     bool m_updateDepthData;
-    //
-    bool m_takeSnapshot;
 };
 
 void detect_blobs( cv::Mat& current );

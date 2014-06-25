@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['renderobject_2ecpp',['RenderObject.cpp',['../a00084.html',1,'']]],
-  ['renderobject_2eh',['RenderObject.h',['../a00054.html',1,'']]],
-  ['renderobjectinterface_2ecpp',['RenderObjectInterface.cpp',['../a00085.html',1,'']]],
-  ['renderobjectinterface_2eh',['RenderObjectInterface.h',['../a00055.html',1,'']]],
-  ['rgbwidget_2ecpp',['RGBWidget.cpp',['../a00086.html',1,'']]],
-  ['rgbwidget_2eh',['RGBWidget.h',['../a00056.html',1,'']]]
+  ['processingcomponent_2ecpp',['ProcessingComponent.cpp',['../a00137.html',1,'']]],
+  ['processingcomponent_2eh',['ProcessingComponent.h',['../a00088.html',1,'']]],
+  ['processingpipeline_2ecpp',['ProcessingPipeline.cpp',['../a00138.html',1,'']]],
+  ['processingpipeline_2eh',['ProcessingPipeline.h',['../a00089.html',1,'']]],
+  ['propertybrowser_2ecpp',['PropertyBrowser.cpp',['../a00139.html',1,'']]],
+  ['propertybrowser_2eh',['PropertyBrowser.h',['../a00090.html',1,'']]]
 ];

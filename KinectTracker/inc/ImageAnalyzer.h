@@ -3,24 +3,27 @@
 
 #include <QObject>
 #include <opencv2/opencv.hpp>
-#include "ProcessingPipeline.h"
+#include "LowLevelProcessingPipeline.h"
 
+class ProcessingComponent;
 
 class ImageAnalyzer : public QObject
 {
 public:
-    ImageAnalyzer();
+    ImageAnalyzer( LowLevelProcessingPipeline* pipeline = nullptr,
+                   QObject* parent = nullptr );
     virtual ~ImageAnalyzer();
 
-    void analyze( cv::Mat& input );
-    void setSnapshot( cv::Mat& snapshot );
+    virtual void analyze( cv::Mat& input ) = 0;
 
-    const QVector<QObject*>& getPiplineComponents() const;
-    QObject*                 getObjectByName( const QString& name );
+    QObject*            getObjectByName( const QString& name );
+    LowLevelProcessingPipeline* getProcessingPipeline() const;
 
-private:
-    ProcessingPipelinePtr mp_processingPipeline;
-    cv::Mat               m_snapshot;
+protected:
+    void setProcessingPipeline( LowLevelProcessingPipelinePtr& pipeline );
+
+protected:
+    LowLevelProcessingPipelinePtr mp_processingPipeline;
 };
 
 #endif // IMAGEANALYZER_H

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: SignalBlocker Class Reference</title>
+<title>KinectTracker: ImageAnalyzer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,47 +104,50 @@ $(document).ready(function(){initNavTree('a00025.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00123.html">List of all members</a>  </div>
+<a href="a00185.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SignalBlocker Class Reference</div>  </div>
+<div class="title">ImageAnalyzer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00058_source.html">SignalBlocker.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00078_source.html">ImageAnalyzer.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ImageAnalyzer:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00025.png" usemap="#ImageAnalyzer_map" alt=""/>
+  <map id="ImageAnalyzer_map" name="ImageAnalyzer_map">
+<area href="a00040.html" alt="RGBAnalyzer" shape="rect" coords="0,112,96,136"/>
+</map>
+ </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a52aab5afe05d9177ca34427f01a49d61"></a>
+<a class="anchor" id="ad04ac23137412987314f1d1af0523a1b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">SignalBlocker::SignalBlocker </td>
+          <td class="memname">ImageAnalyzer::ImageAnalyzer </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="a00035.html">ProcessingPipeline</a> *&#160;</td>
+          <td class="paramname"><em>pipeline</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>object</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad6e40057af8a899cfbc7fe8f74625fdf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">SignalBlocker::~SignalBlocker </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
           <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a9bb36e7d781a0ec0206a7143d7f7485c"></a>
+<a class="anchor" id="a55d69408e1ca725d957c3e8780d435ff"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -152,12 +155,120 @@ $(document).ready(function(){initNavTree('a00025.html','');});
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QObject* SignalBlocker::mp_object</td>
+          <td class="memname">ImageAnalyzer::~ImageAnalyzer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00025.html#a55d69408e1ca725d957c3e8780d435ff" title="ImageAnalyzer::~ImageAnalyzer. ">ImageAnalyzer::~ImageAnalyzer</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="afec5cb16c58b2825fe43bc574fc78595"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ImageAnalyzer::analyze </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a00040.html#a7999eb93181fa90de573616ec26c0a30">RGBAnalyzer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d6e87f2e55923dcf0d22ea2aa5204f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QObject * ImageAnalyzer::getObjectByName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a382a963300a4c11694aa08d929f6f81a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00035.html">ProcessingPipeline</a> * ImageAnalyzer::getProcessingPipeline </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2cbc0a1747b4d7e757b6e7cd94391d70"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageAnalyzer::setProcessingPipeline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00089.html#a075f0fdffe851c8f611423ed149b747c">ProcessingPipelinePtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>pipeline</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aea03d52a9ff62b3c0b7a5e3021f13112"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00089.html#a075f0fdffe851c8f611423ed149b747c">ProcessingPipelinePtr</a> ImageAnalyzer::mp_processingPipeline</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -165,16 +276,16 @@ $(document).ready(function(){initNavTree('a00025.html','');});
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00058_source.html">SignalBlocker.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00088.html">SignalBlocker.cpp</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00078_source.html">ImageAnalyzer.h</a></li>
+<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00127.html">ImageAnalyzer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00025.html">SignalBlocker</a></li>
-    <li class="footer">Generated on Tue Jun 3 2014 18:52:58 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00025.html">ImageAnalyzer</a></li>
+    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

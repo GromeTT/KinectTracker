@@ -397,9 +397,39 @@ QObject* BasicUsageScene::getObjectByName( const QString& name )
     }
 }
 
+/*!
+   \brief BasicUsageScene::getCamera
+   Returns the camera.
+ */
 QObject* BasicUsageScene::getCamera()
 {
     return &m_camera;
+}
+
+/*!
+   \brief BasicUsageScene::deleteObject
+   Deletes \a object.
+ */
+bool BasicUsageScene::deleteObject( RenderObject* object )
+{
+    for ( int i = 0; i < m_renderObjects.count(); ++i )
+    {
+        if ( m_renderObjects.at( i ) == object )
+        {
+            m_renderObjects.removeAt( i );
+            return true;
+        }
+    }
+    return false;
+}
+
+/*!
+   \brief BasicUsageScene::deleteAllRenderObjects
+   Deletes all RenderObjects.
+ */
+void BasicUsageScene::deleteAllRenderObjects()
+{
+    qDeleteAll( m_renderObjects );
 }
 
 void BasicUsageScene::prepareShaderProgram()

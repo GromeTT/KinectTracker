@@ -6,13 +6,14 @@
 #include "Windows.h"
 #include "NuiApi.h"
 #include "NuiImageCamera.h"
+#include "SkeletonData.h"
 #include <QVector>
 #include <QSize>
 #include <QSharedPointer>
 #include <QOpenGLTexture>
 
 class QImage;
-class SkeletonData;
+class QVector2D;
 
 class Kinect
 {
@@ -49,17 +50,19 @@ public:
                              HANDLE nextFrame );
     HRESULT getRGBImage( QImage*& img );
     HRESULT getRGBImage( uchar* img );
-    HRESULT getDepthImage( QImage*& img );
-    HRESULT getDepthImage( uchar* img );
-    HRESULT getSkeleton( QList<SkeletonData*>& skeletons );
-    QSize getRGBStreamResoultion() const;
-    QSize getDepthStreamResolution() const;
+    HRESULT getDepthImageAsGreyImage( QImage*& img );
+    HRESULT getDepthImageAsGreyImage( uchar* img );
+    HRESULT getDepthImage( std::vector<ushort>& depthData );
+    HRESULT getDepthImage( ushort* img );
+    HRESULT getSkeleton( QList<SkeletonDataPtr>& skeletons );
+    QSize rgbStreamResolution() const;
+    QSize depthStreamResolution() const;
     bool isInitialized() const;
     bool isRGBStreamOpen() const;
     bool isDepthStreamOpen() const;
 
 private:
-    void        setSize( QSize& size, NUI_IMAGE_RESOLUTION resolution );
+    void setSize( QSize& size, NUI_IMAGE_RESOLUTION resolution );
 
     INuiSensor* mp_sensor;
     HANDLE      m_depthHandle;
@@ -71,6 +74,8 @@ private:
     bool        m_rgbStreamOpen;
     bool        m_deptStreamOpen;
 };
+
+QVector2D transformFromSkeltonToRGB( const QVector3D& coordinates );
 
 typedef QSharedPointer<Kinect> KinectPtr;
 
