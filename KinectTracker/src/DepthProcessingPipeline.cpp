@@ -6,6 +6,7 @@
 DepthProcessingPipeline::DepthProcessingPipeline( QObject* parent )
     : QObject( parent )
     , m_threshold( 2000 )
+    , m_minContourSize( 1000 )
 {
     setObjectName( "DepthProcessingPipeline" );
 //    cv::SimpleBlobDetector::Params params;
@@ -73,6 +74,12 @@ void DepthProcessingPipeline::setThreshold( const int threshold )
     m_threshold = threshold;
 }
 
+void DepthProcessingPipeline::setMinContourSize( const int size )
+{
+    m_minContourSize = size;
+    emit minContourSizeChanged();
+}
+
 QVector<ProcessingComponent*>& DepthProcessingPipeline::getComponents()
 {
     return m_processingComponents;
@@ -81,4 +88,9 @@ QVector<ProcessingComponent*>& DepthProcessingPipeline::getComponents()
 int DepthProcessingPipeline::threshold() const
 {
     return m_threshold;
+}
+
+int DepthProcessingPipeline::minContourSize() const
+{
+    return m_minContourSize;
 }
