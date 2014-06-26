@@ -66,6 +66,8 @@ namespace AMath
                      const float height );
         ~Rectangle3D();
 
+        void setByTopLeftAndBottomRight( const QVector3D& topLeftCorner,
+                                         const QVector3D& bottomRightCorner );
         void move( const float x,
                    const float y,
                    const float z );

@@ -28,6 +28,8 @@ public:
     void setZ( const float z );
 
     bool arePointsInsideGeometry( const QVector<QVector3D>& points );
+    QVector3D frontFaceTopLeftCorner();
+    QVector3D frontFaceBottomRightCorner();
 
 private:
     virtual bool arePointsInsideGeometryV( const QVector<QVector3D>& points ) = 0;
@@ -64,12 +66,12 @@ public:
     float depth() const;
     float width() const;
     float height() const;
+    QVector3D frontFaceTopLeftCorner();
+    QVector3D frontFaceBottomRightCorner();
 
     void setDepth( const float depth );
     void setWidth( const float width );
     void setHeight( const float height );
-
-
     void calculateBoundingBox( const QVector<QVector3D>& points,
                                const float deltaW = 0,
                                const float deltaD = 0,

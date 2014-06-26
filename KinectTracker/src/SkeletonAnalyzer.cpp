@@ -18,7 +18,6 @@ SkeletonAnalyzer::SkeletonAnalyzer( QObject* parent )
     , m_phi2( 0.0f )
 {
     setObjectName( "SkeletonAnalyzer" );
-    m_regionOfInteres.resize( 4 );
 }
 
 /*!
@@ -53,32 +52,32 @@ bool SkeletonAnalyzer::update( const SkeletonDataPtr skeleton,
     m_boundingBox.calculateBoundingBox( skeleton->getJoints() );
 
     // Calculate a region of interest.
-    float z   = m_boundingBox.z() + m_boundingBox.depth() / 2;
-    float x_p = m_boundingBox.x() + m_boundingBox.width() / 2;
-    float x_n = m_boundingBox.x() - m_boundingBox.width() / 2;
-    float y_p = m_boundingBox.y() + m_boundingBox.height() / 2;
-    float y_n = m_boundingBox.y() - m_boundingBox.height() / 2;
 
-    // Top right
-    m_regionOfInteres[0].setX( x_p );
-    m_regionOfInteres[0].setY( y_p );
-    m_regionOfInteres[0].setZ( z );
-    // Bottom right
-    m_regionOfInteres[1].setX( x_p );
-    m_regionOfInteres[1].setY( y_n );
-    m_regionOfInteres[1].setZ( z );
-    // Bottom left
-    m_regionOfInteres[2].setX( x_n );
-    m_regionOfInteres[2].setY( y_n );
-    m_regionOfInteres[2].setZ( z );
-    // Top left
-    m_regionOfInteres[3].setX( x_n );
-    m_regionOfInteres[3].setY( y_p );
-    m_regionOfInteres[3].setZ( z );
 
-    m_headRegion.move( skeleton->getJoint( SkeletonData::Joints::Head ).x(),
-                       skeleton->getJoint( SkeletonData::Joints::Head ).y(),
-                       skeleton->getJoint( SkeletonData::Joints::Head ).z() );
+//    // Top right
+//    m_regionOfInteres[0].setX( x_p );
+//    m_regionOfInteres[0].setY( y_p );
+//    m_regionOfInteres[0].setZ( z );
+//    // Bottom right
+//    m_regionOfInteres[1].setX( x_p );
+//    m_regionOfInteres[1].setY( y_n );
+//    m_regionOfInteres[1].setZ( z );
+//    // Bottom left
+//    m_regionOfInteres[2].setX( x_n );
+//    m_regionOfInteres[2].setY( y_n );
+//    m_regionOfInteres[2].setZ( z );
+//    // Top left
+//    m_regionOfInteres[3].setX( x_n );
+//    m_regionOfInteres[3].setY( y_p );
+//    m_regionOfInteres[3].setZ( z );
+
+    // Front of the box.
+//    m_regionOfInterest.setByTopLeftAndBottomRight( m_boundingBox.frontFaceTopLeftCorner(),
+//                                                   m_boundingBox.frontFaceBottomRightCorner() );
+
+//    m_headRegion.move( skeleton->getJoint( SkeletonData::Joints::Head ).x(),
+//                       skeleton->getJoint( SkeletonData::Joints::Head ).y(),
+//                       skeleton->getJoint( SkeletonData::Joints::Head ).z() );
 
     // Compute feature vector.
 //    calculateFeatureVector( skeleton );
@@ -141,10 +140,11 @@ const BoundingBox* SkeletonAnalyzer::getBoundingBoxWholeBody() const
 
 /*!
    \brief SkeletonAnalyzer::regionOfInterest
+   Returns a rectangle which encloses the whole body.
  */
-const QVector<QVector3D>& SkeletonAnalyzer::regionOfInterest() const
+AMath::Rectangle3D SkeletonAnalyzer::regionOfInterest() const
 {
-    return m_regionOfInteres;
+    return m_regionOfInterest;
 }
 
 /*!

@@ -137,6 +137,19 @@ AMath::Rectangle3D::~Rectangle3D()
 }
 
 /*!
+   \brief AMath::Rectangle3D::setByTopLeftAndBottomRight
+ */
+void AMath::Rectangle3D::setByTopLeftAndBottomRight( const QVector3D& topLeftCorner,
+                                                     const QVector3D& bottomRightCorner )
+{
+    m_width  = fabs( topLeftCorner.x() - bottomRightCorner.x() );
+    m_height = fabs( topLeftCorner.y() - bottomRightCorner.y() );
+    m_x = topLeftCorner.x() + m_width / 2;
+    m_y = topLeftCorner.y() - m_height / 2;
+    m_z = topLeftCorner.z();
+}
+
+/*!
    \brief AMath::Rectangle3D::move
    Sets the center of the rectangle to (\a x, \a y, \a z).
  */

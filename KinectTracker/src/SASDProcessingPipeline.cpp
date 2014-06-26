@@ -67,7 +67,8 @@ bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
         //       Perform the further analysis on the skeleton data.
         m_movementAnalyzer->analyze( m_skeletons.at( 0 ), timestamp );
         m_sizeAnalyzer->analyze( m_skeletons.at( 0 ) );
-        drawRegionOfInterest( m_skeletonAnalyzer->headRegion(), cv::Scalar( 255, 0, 0 ) );
+//        drawRegionOfInterest( m_skeletonAnalyzer->regionOfInterest(), cv::Scalar( 0, 0, 255 ) );
+//        drawRegionOfInterestWithAndHeightAsPixels( m_skeletonAnalyzer->headRegion(), cv::Scalar( 255, 0, 0 ) );
         return true;
     }
 }

@@ -147,6 +147,21 @@ void HighLevelProcessingPipeline::takeScreenShot()
 void HighLevelProcessingPipeline::drawRegionOfInterest( const AMath::Rectangle3D& rect,
                                                         const cv::Scalar& color )
 {
+    QVector2D p1 = transformFromSkeltonToRGB( rect.topLeftCorner() );
+    QVector2D p2 = transformFromSkeltonToRGB( rect.bottomRightCorner() );
+    cv::Mat curr ( m_kinect->rgbStreamResolution().height(),
+                   m_kinect->rgbStreamResolution().width(),
+                   CV_8UC3,
+                   mp_rgbData );
+    rectangle( curr,
+               cv::Point( p1.x(), p1.y() ), cv::Point( p2.x(), p2.y() ),
+               color,
+               5 );
+}
+
+void HighLevelProcessingPipeline::drawRegionOfInterestWithAndHeightAsPixels( const AMath::Rectangle3D& rect,
+                                                                             const cv::Scalar& color )
+{
     QVector2D p1 = transformFromSkeltonToRGB( rect.center() );
     cv::Mat curr ( m_kinect->rgbStreamResolution().height(),
                    m_kinect->rgbStreamResolution().width(),

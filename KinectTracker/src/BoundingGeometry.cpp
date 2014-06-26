@@ -161,6 +161,28 @@ float BoundingBox::height() const
     return m_height;
 }
 
+/*!
+   \brief BoundingBox::frontFaceTopLeftCorner
+   Returns the top left conrer of the front face.
+ */
+QVector3D BoundingBox::frontFaceTopLeftCorner()
+{
+    return QVector3D( m_x - m_width / 2,
+                      m_y + m_height / 2,
+                      m_z + m_depth / 2 );
+}
+
+/*!
+   \brief BoundingBox::frontFaceBottomRightCorner
+   Returns the bottom right corner of the front face.
+ */
+QVector3D BoundingBox::frontFaceBottomRightCorner()
+{
+    return QVector3D( m_x + m_width / 2,
+                      m_y - m_height / 2,
+                      m_z + m_depth / 2 );
+}
+
 void BoundingBox::setDepth( const float depth )
 {
     m_depth = depth;

@@ -27,6 +27,7 @@ public:
     void process( const unsigned int timestamp );
     void takeScreenShot();
     void drawRegionOfInterest( const AMath::Rectangle3D& rect, const cv::Scalar& color );
+    void drawRegionOfInterestWithAndHeightAsPixels( const AMath::Rectangle3D& rect, const cv::Scalar& color );
 
     uchar*                          rgbImage() const;
     ushort*                         depthImage() const;

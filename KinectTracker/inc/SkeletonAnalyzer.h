@@ -36,7 +36,7 @@ public:
     float                     lyingThreshold() const;
     QString                   workerStatus() const;
     const BoundingBox*        getBoundingBoxWholeBody() const;
-    const QVector<QVector3D>& regionOfInterest() const;
+    AMath::Rectangle3D        regionOfInterest() const;
     AMath::Rectangle3D        headRegion() const;
 
 private:
@@ -48,7 +48,7 @@ private:
     float               m_phi1;
     float               m_phi2;
     QString             m_workerStatus;
-    QVector<QVector3D>  m_regionOfInteres;
+    AMath::Rectangle3D  m_regionOfInterest;
     AMath::Rectangle3D  m_headRegion;
 
 signals:
