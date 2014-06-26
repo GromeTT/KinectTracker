@@ -30,7 +30,6 @@ SOURCES += src/main.cpp\
            src/Intersection.cpp \
            src/ObjectLoader.cpp \
            src/Camera.cpp \
-           src/ImageAnalyzer.cpp \
            src/Erode.cpp \
            src/Dilate.cpp \
            src/Threshold.cpp \
@@ -49,7 +48,6 @@ SOURCES += src/main.cpp\
     src/FixedPropertyVector.cpp \
     src/TreeModel.cpp \
     src/PropertyBrowser.cpp \
-    src/RGBAnalyzer.cpp \
     src/DepthProcessingPipeline.cpp \
     src/HighLevelProcessingPipeline.cpp \
     src/SASDProcessingPipeline.cpp \
@@ -65,7 +63,8 @@ SOURCES += src/main.cpp\
     src/TestObject.cpp \
     src/SizeAnalyzer.cpp \
     src/BBSizeAnalyzer.cpp \
-    src/UpperBodySizeAnalyzer.cpp
+    src/UpperBodySizeAnalyzer.cpp \
+    src/RectangleHistogram.cpp
 
 HEADERS  += inc/MainWindow.h \
             inc/OpenGLWindow.h \
@@ -84,7 +83,6 @@ HEADERS  += inc/MainWindow.h \
             inc/Intersection.h \
             inc/ObjectLoader.h \
             inc/Camera.h \
-            inc/ImageAnalyzer.h \
             inc/Erode.h \
             inc/Dilate.h \
             inc/Threshold.h \
@@ -104,7 +102,6 @@ HEADERS  += inc/MainWindow.h \
     inc/FixedPropertyVector.h \
     inc/TreeModel.h \
     inc/PropertyBrowser.h \
-    inc/RGBAnalyzer.h \
     inc/DepthProcessingPipeline.h \
     inc/HighLevelProcessingPipeline.h \
     inc/SASDProcessingPipeline.h \
@@ -120,7 +117,8 @@ HEADERS  += inc/MainWindow.h \
     inc/TestObject.h \
     inc/SizeAnalyzer.h \
     inc/UpperBodySizeAnalyzer.h \
-    inc/BBSizeAnalyzer.h
+    inc/BBSizeAnalyzer.h \
+    inc/RectangleHistogram.h
 
 FORMS    += MainWindow.ui \
             KinectInitializeDialog.ui \

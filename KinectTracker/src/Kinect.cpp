@@ -525,7 +525,11 @@ void Kinect::setSize(QSize& size, NUI_IMAGE_RESOLUTION resolution)
     }
 }
 
-
+/*!
+   \brief transformFromSkeltonToRGB
+   \param coordinates
+   \return
+ */
 QVector2D transformFromSkeltonToRGB( const QVector3D& coordinates )
 {
     Vector4 vec;

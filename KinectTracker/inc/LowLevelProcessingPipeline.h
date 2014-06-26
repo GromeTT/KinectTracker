@@ -160,11 +160,11 @@ public:
     virtual ~SkinColorExplicitDefinedSkinRegionDetectionPipeline();
 
     virtual void process( cv::Mat& input );
-
+    int    absoluteFrequency();
+    float  relativeFrequecy();
 private:
-    DilatePtr  mp_dilate;
-    ErodePtr   mp_erode;
-    InRangePtr mp_inRange;
+    int   m_absoluteFrequency;
+    float m_relativeFrequency;
 };
 
 

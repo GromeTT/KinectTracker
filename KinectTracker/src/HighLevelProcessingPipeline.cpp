@@ -141,16 +141,21 @@ void HighLevelProcessingPipeline::takeScreenShot()
 
 /*!
    \brief HighLevelProcessingPipeline::drawRegionOfInterest
+   Translates the region defined by \a rect from the 3D space to the rgb space
+   and draws it.
  */
-void HighLevelProcessingPipeline::drawRegionOfInterest()
+void HighLevelProcessingPipeline::drawRegionOfInterest( const AMath::Rectangle3D& rect,
+                                                        const cv::Scalar& color )
 {
-    const QVector<QVector3D> regionOfInterest = m_skeletonAnalyzer->regionOfInterest();
-    QVector2D p1 = transformFromSkeltonToRGB( regionOfInterest.at( 0 ) ); // Top right
-    QVector2D p2 = transformFromSkeltonToRGB( regionOfInterest.at( 2 ) ); // Bottom left
-    cv::Scalar color ( 0, 255, 255 );
+    QVector2D p1 = transformFromSkeltonToRGB( rect.center() );
     cv::Mat curr ( m_kinect->rgbStreamResolution().height(),
                    m_kinect->rgbStreamResolution().width(),
                    CV_8UC3,
                    mp_rgbData );
-    rectangle( curr, cv::Point( p1.x(), p1.y() ), cv::Point( p2.x(), p2.y() ), color, 5 );
+    float w = rect.width()/2;
+    float h = rect.height()/2;
+    rectangle( curr,
+               cv::Point( p1.x() + w, p1.y() + w ), cv::Point( p1.x() - w, p1.y() - h),
+               color,
+               5 );
 }

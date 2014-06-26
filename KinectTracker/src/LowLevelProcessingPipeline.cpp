@@ -200,13 +200,9 @@ void SkinColorDetectionPipeline::process( cv::Mat& input )
 
 SkinColorExplicitDefinedSkinRegionDetectionPipeline::SkinColorExplicitDefinedSkinRegionDetectionPipeline( QObject* parent )
     : LowLevelProcessingPipeline( parent )
-    , mp_dilate( new Dilate() )
-    , mp_erode( new Erode() )
-    , mp_inRange( new InRange( 1 ) )
+    , m_absoluteFrequency( 0 )
+    , m_relativeFrequency( 0 )
 {
-    m_processingComponents.append( mp_inRange.data() );
-    m_processingComponents.append( mp_erode.data() );
-    m_processingComponents.append( mp_dilate.data() );
 }
 
 
@@ -224,12 +220,16 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
     // MatTypes: http://ninghang.blogspot.de/2012/11/list-of-mat-type-in-opencv.html
     if ( input.type() != CV_8UC3 )
     {
-        qWarning() << QStringLiteral("SkinColorExplicitDefinedSkinRegionDetctionPipeline only supports CV_8UC3 as cv:: Mat type.");
+        qWarning() << QStringLiteral( "SkinColorExplicitDefinedSkinRegionDetctionPipeline only supports CV_8UC3 as cv:: Mat type." );
     }
-    cv::Mat skin = input.clone();
-    int count = 3*input.rows*input.cols;
+
+    // Reset counters
+    m_absoluteFrequency = 0;
+    m_relativeFrequency = 0.0f;
+
+    int pixelCount = input.rows*input.cols;
     int i = 0;
-    while ( i < count )
+    while ( i <  input.channels()*pixelCount )
     {
         uchar b = input.data[i];
         uchar g = input.data[i+1];
@@ -247,20 +247,31 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
             input.data[i+1] = 0;
             input.data[i+2] = 0;
         }
+        else
+        {
+            ++m_absoluteFrequency;
+        }
         i+=3;
     }
-    cv::imshow( "Skin", skin );
-//    cv::Mat grey;
-//    cv::cvtColor( skin, grey, CV_BGR2GRAY );
-//    cv::imshow( "Grey", grey);
-//    cv::Mat binary;
-//    mp_inRange->process( grey, binary );
-//    cv::imshow( "Binary", binary );
+    m_relativeFrequency = m_absoluteFrequency/pixelCount;
+    cv::imshow( "Skin", input );
+}
 
-//    mp_erode->erode( binary );
-//    cv::imshow( "Erode", binary );
+/*!
+   \brief SkinColorExplicitDefinedSkinRegionDetectionPipeline::absoluteFrequency
+   Returns the absolute frequency of the appearance of skin color.
+ */
+int SkinColorExplicitDefinedSkinRegionDetectionPipeline::absoluteFrequency()
+{
+    return m_absoluteFrequency;
+}
 
-//    mp_dilate->dilate( binary );
-//    cv::imshow( "Dilate", binary );
+/*!
+   \brief SkinColorExplicitDefinedSkinRegionDetectionPipeline::relativeFrequecy
+   Returns the relative frequency of the appearance of skin color.
+ */
+float SkinColorExplicitDefinedSkinRegionDetectionPipeline::relativeFrequecy()
+{
+    return m_relativeFrequency;
 }
 

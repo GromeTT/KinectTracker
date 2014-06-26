@@ -8,6 +8,7 @@
 #include <QSharedPointer>
 #include "BoundingGeometry.h"
 #include "MovementAnalyzer.h"
+#include "AMath.h"
 
 class QVector3D;
 class SkeletonData;
@@ -36,6 +37,7 @@ public:
     QString                   workerStatus() const;
     const BoundingBox*        getBoundingBoxWholeBody() const;
     const QVector<QVector3D>& regionOfInterest() const;
+    AMath::Rectangle3D        headRegion() const;
 
 private:
     void calculateFeatureVector( const SkeletonDataPtr& skeletonData );
@@ -47,6 +49,7 @@ private:
     float               m_phi2;
     QString             m_workerStatus;
     QVector<QVector3D>  m_regionOfInteres;
+    AMath::Rectangle3D  m_headRegion;
 
 signals:
     void estimatedHeightChanged();

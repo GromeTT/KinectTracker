@@ -11,7 +11,6 @@
 #include "../inc/ObjectLoader.h"
 #include "../inc/SkeletonRenderObject.h"
 #include "../inc/HOGFeatureDetector.h"
-#include "../inc/RGBAnalyzer.h"
 #include "../inc/DepthProcessingPipeline.h"
 #include "../inc/HighLevelProcessingPipeline.h"
 #include "../inc/SASDProcessingPipeline.h"
