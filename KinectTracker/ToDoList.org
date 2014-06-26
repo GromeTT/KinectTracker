@@ -1,3 +1,4 @@
+
 ToDo List Programm
 
 * Gespräch
@@ -9,6 +10,14 @@ ToDo List Programm
        2. die Person mit dem Geischt zum Boden liegt
     Darüberhinaus werden nicht zum Körper gehörende Teile im Bild
     erkannt.
+
+* Treffen
+  + Dienstag: 1.7 10:00 Uhr Lehrstuhl
+  + Monatg: 7.7 17:00 Uhr
+
+* Zusätzches Kriterium für Liegend, Abstand Füße Kopf
+* Farbhistogramm für Gelenke und Gesicht berechnen 
+* Kopftracking: schaut in kamera oder nicht
 
 * TODO Für morgen
   + [ ] DepthPipeline aktivierbar
