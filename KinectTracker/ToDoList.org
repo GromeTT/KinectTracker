@@ -1,5 +1,10 @@
 ToDo List 
 
+* Ziele für heute
+  + Tracking aller Gelenke
+  + Auswertung, ob der Benutzer in die Kamera schaut oder nicht
+  + PCL einbinden
+  + Meldung wenn der Benutzer zu nahe an der Kamera ist
 * Gespräch
   + [ ] Frage nach einer BA-Arbeit, wo eine Schätzung der Körpergröße
     über die Größe des Oberkörpers durchgeführt wurde.
@@ -25,13 +30,13 @@ ToDo List
   + Dienstag: 1.7 10:00 Uhr Lehrstuhl
   + Monatg: 7.7 17:00 Uhr
   
-* TODO [6/25][24%]
+* TODO [7/25][28%]
   + [ ] Ebene für den Boden schätzen mittel PCL Lib.
-  + 
-  + [ ] Bewegliches Farbhistogramm für Gelenke und Gesicht berechnen.
+  + [ ]  Farbhistogramm für Gelenke und Gesicht berechnen.
     + Für das Gesicht gibt es 2 Möglichkeiten:
       1. Farbbereich aus dem Paper.
-      2. Histogramm aus den LiveDatan ableiten, wenn sicher ist,
+      2. Histogramm aus den LiveDatan ableiten, wenn sicher ist
+      3. Gesichtserkennungsalgorithmus von opencv benutzen
      das der Mensch in die Kamera guckt.
   + [ ] Kopftracking: Schaut in die Kamera oder nicht.
   + [ ] Zusätzliches Kriterium für liegend:
@@ -41,10 +46,10 @@ ToDo List
     die Berechnung mit einbeziehen und die Füße außen vor lassen. Dasselbe
     gilt, für den Fall, dass keine Knie sichtbar sind.
   + [ ] Verschiebe das Zeichnen des Skelettes in die Visualizer Klasse.
-  + [-] Dateien entfernen
+  + [X] Dateien entfernen
     + [X] Explorer
-    + [ ] ImageAnalyzer
-    + [ ] RGBAnylzer
+    + [X] ImageAnalyzer
+    + [X] RGBAnylzer
     + [X] AnalysisResults
   + [ ] Berechnung dafür, ob der Oberkörper aufrecht ist ( über Winkel )vs. Länge der Glieder.
   + [X] Datei BoundingBoxes in BoundingGeometries umbennen.

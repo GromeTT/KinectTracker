@@ -17,6 +17,8 @@ protected:
    void processV( const unsigned int timestamp );
 
 private:
+   SkinColorExplicitDefinedSkinRegionDetectionPipelinePtr m_skinPipeline;
+
    bool processSkeletonData( const unsigned int timestamp );
    void processRGBData();
    void processDepthData();

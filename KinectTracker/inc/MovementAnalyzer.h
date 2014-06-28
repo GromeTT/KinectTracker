@@ -21,6 +21,7 @@ public:
     void setYaw( const float yaw );
     void setVelocityInterval( const int intervall );
     void setDataAvailable( const bool available );
+    void setViewingDirection( const QString& direction );
 
     BoundingGeometryPtr                              getLatestBoudingGeomerty() const;
     const QVector<BoundingGeometryWithTimeStampPtr>& boundingGeometries() const;
@@ -30,6 +31,7 @@ public:
     const int                                        velocityInterval() const;
     const float                                      velocity() const;
     const bool                                       dataAvailable() const;
+    QString                                          viewingDirection() const;
 
 private:
     virtual void anaylzeV( const SkeletonDataPtr skeleton,
@@ -43,6 +45,7 @@ private:
     mutable float   m_velocity;
     unsigned int    m_velocityInterval;
     bool            m_dataAvaibale;
+    QString         m_viewingDirection;
 
 signals:
     void rollChanged();
@@ -50,6 +53,7 @@ signals:
     void yawChanged();
     void velocityIntervalChanged();
     void veloctiyChanged();
+    void viewingDirectionChanged();
 
 protected:
     bool arePointsInsideLatestBoudingGeomerty( const QVector<QVector3D>& points ) const;
@@ -81,6 +85,10 @@ private:
     Q_PROPERTY( float velocity
                 READ velocity
                 NOTIFY veloctiyChanged )
+
+    Q_PROPERTY( QString viewingDirection
+                READ viewingDirection
+                NOTIFY viewingDirectionChanged )
 };
 
 typedef QSharedPointer<MovementAnalyzer> MovementAnalyzerPtr;

@@ -1,5 +1,4 @@
 #include "../inc/LowLevelProcessingPipeline.h"
-#include "../inc/ImageAnalyzer.h"
 #include <opencv2/opencv.hpp>
 #include <vector>
 #include <QDebug>
@@ -221,6 +220,7 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
     if ( input.type() != CV_8UC3 )
     {
         qWarning() << QStringLiteral( "SkinColorExplicitDefinedSkinRegionDetctionPipeline only supports CV_8UC3 as cv:: Mat type." );
+        return;
     }
 
     // Reset counters
@@ -243,9 +243,9 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
              r <= g ||
              g < b )
         {
-            input.data[i]   = 0;
-            input.data[i+1] = 0;
-            input.data[i+2] = 0;
+//            input.data[i]   = 0;
+//            input.data[i+1] = 0;
+//            input.data[i+2] = 0;
         }
         else
         {
@@ -254,6 +254,8 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
         i+=3;
     }
     m_relativeFrequency = m_absoluteFrequency/pixelCount;
+    qDebug() << "Häufigkeit: " << m_absoluteFrequency;
+    qDebug() << "Size " << pixelCount;
     cv::imshow( "Skin", input );
 }
 

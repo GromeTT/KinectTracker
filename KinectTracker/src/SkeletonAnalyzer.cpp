@@ -53,34 +53,16 @@ bool SkeletonAnalyzer::update( const SkeletonDataPtr skeleton,
 
     // Calculate a region of interest.
 
-
-//    // Top right
-//    m_regionOfInteres[0].setX( x_p );
-//    m_regionOfInteres[0].setY( y_p );
-//    m_regionOfInteres[0].setZ( z );
-//    // Bottom right
-//    m_regionOfInteres[1].setX( x_p );
-//    m_regionOfInteres[1].setY( y_n );
-//    m_regionOfInteres[1].setZ( z );
-//    // Bottom left
-//    m_regionOfInteres[2].setX( x_n );
-//    m_regionOfInteres[2].setY( y_n );
-//    m_regionOfInteres[2].setZ( z );
-//    // Top left
-//    m_regionOfInteres[3].setX( x_n );
-//    m_regionOfInteres[3].setY( y_p );
-//    m_regionOfInteres[3].setZ( z );
-
     // Front of the box.
-//    m_regionOfInterest.setByTopLeftAndBottomRight( m_boundingBox.frontFaceTopLeftCorner(),
-//                                                   m_boundingBox.frontFaceBottomRightCorner() );
+    m_regionOfInterest.setByTopLeftAndBottomRight( m_boundingBox.frontFaceTopLeftCorner(),
+                                                   m_boundingBox.frontFaceBottomRightCorner() );
 
-//    m_headRegion.move( skeleton->getJoint( SkeletonData::Joints::Head ).x(),
-//                       skeleton->getJoint( SkeletonData::Joints::Head ).y(),
-//                       skeleton->getJoint( SkeletonData::Joints::Head ).z() );
+    m_headRegion.move( skeleton->getJoint( SkeletonData::Joints::Head ).x(),
+                       skeleton->getJoint( SkeletonData::Joints::Head ).y(),
+                       skeleton->getJoint( SkeletonData::Joints::Head ).z() );
 
     // Compute feature vector.
-//    calculateFeatureVector( skeleton );
+    calculateFeatureVector( skeleton );
 
     return true;
 }
@@ -150,6 +132,7 @@ AMath::Rectangle3D SkeletonAnalyzer::regionOfInterest() const
 /*!
    \brief SkeletonAnalyzer::headRegion
    Returns a rectangular region around the head.
+   Notice that the height and the width are in pixels.
  */
 AMath::Rectangle3D SkeletonAnalyzer::headRegion() const
 {

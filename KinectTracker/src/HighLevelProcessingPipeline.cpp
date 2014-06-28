@@ -145,7 +145,7 @@ void HighLevelProcessingPipeline::takeScreenShot()
    and draws it.
  */
 void HighLevelProcessingPipeline::drawRegionOfInterest( const AMath::Rectangle3D& rect,
-                                                        const cv::Scalar& color )
+                                                   const cv::Scalar& color )
 {
     QVector2D p1 = transformFromSkeltonToRGB( rect.topLeftCorner() );
     QVector2D p2 = transformFromSkeltonToRGB( rect.bottomRightCorner() );

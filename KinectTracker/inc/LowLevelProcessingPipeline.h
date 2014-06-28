@@ -167,7 +167,6 @@ private:
     float m_relativeFrequency;
 };
 
-
 /**************************************************************************************************************************
  **************************************************************************************************************************
  **************************************************************************************************************************
@@ -178,5 +177,6 @@ private:
  **************************************************************************************************************************/
 
 typedef QSharedPointer<LowLevelProcessingPipeline> LowLevelProcessingPipelinePtr;
+typedef QSharedPointer<SkinColorExplicitDefinedSkinRegionDetectionPipeline> SkinColorExplicitDefinedSkinRegionDetectionPipelinePtr;
 
 #endif // PROCESSINGPIPELINE_H

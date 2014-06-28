@@ -13,6 +13,7 @@ MovementAnalyzer::MovementAnalyzer( QObject* parent )
     , m_yaw( 0 )
     , m_velocity( 0 )
     , m_velocityInterval( 10 )
+    , m_viewingDirection( "Nothing tracked" )
 {
 }
 
@@ -82,6 +83,16 @@ void MovementAnalyzer::setVelocityInterval(const int interval )
 void MovementAnalyzer::setDataAvailable( const bool available )
 {
     m_dataAvaibale = available;
+}
+
+/*!
+   \brief MovementAnalyzer::setViewingDirection
+   Sets the description of the worker's viewing direction to \a direction.
+ */
+void MovementAnalyzer::setViewingDirection( const QString& direction )
+{
+    m_viewingDirection = direction;
+    emit viewingDirectionChanged();
 }
 
 /*!
@@ -161,6 +172,15 @@ const float MovementAnalyzer::velocity() const
 const bool MovementAnalyzer::dataAvailable() const
 {
     return m_dataAvaibale;
+}
+
+/*!
+   \brief MovementAnalyzer::viewingDirection
+   Returns a description of the worker's viewing direction.
+ */
+QString MovementAnalyzer::viewingDirection() const
+{
+    return m_viewingDirection;
 }
 
 void MovementAnalyzer::calculateOriantationAndVelocity( const int timestamp )
