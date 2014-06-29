@@ -12,7 +12,6 @@
 #include "inc/ProcessingPipelines/inc/SABSSDProcessingPipeline.h"
 #include "inc/Visualizer/inc/BBMovementVisualizer.h"
 #include "inc/Analyzer/inc/BBMovementAnalyzer.h"
-#include "SignalBlocker.h"
 #include <QMdiSubWindow>
 #include <QKeyEvent>
 #include <QMetaObject>
@@ -104,12 +103,12 @@ MainWindow::MainWindow( QWidget *parent )
     connect( &m_timer, &QTimer::timeout, this, &MainWindow::updateScenes );
     // Connect mechanics
     connect( mp_sceneGraph, &SceneGraphWidget::selectionChanged, this, &MainWindow::selectObject );
+    connect( mp_sceneGraph, &SceneGraphWidget::sceneChanged, this, &MainWindow::switchCatergoryOnSceneGraph );
     // Connect actions
     connect( ui->actionQuit, &QAction::triggered, this, &MainWindow::close );
     connect( ui->actionOpenKinectStream, &QAction::triggered, this, &MainWindow::showKinectDialog );
     connect( ui->actionOpenGLRender, &QAction::toggled, this, &MainWindow::actionOpenGLRenderWidgetChecked );
     connect( ui->actionTakeScreenshot, &QAction::triggered, this, &MainWindow::takeScreenshot );
-    connect( mp_sceneGraph, &SceneGraphWidget::sceneChanged, this, &MainWindow::switchCatergoryOnSceneGraph );
     connect( ui->actionSASDMode, &QAction::toggled, this, &MainWindow::activateSASDMode );
     connect( ui->actionSABSSDMode, &QAction::toggled, this, &MainWindow::activateSABSSDMode );
     connect( ui->actionStartCapturing, &QAction::toggled, this, &MainWindow::toggleCapturing );

@@ -1,6 +1,6 @@
 #include "../inc/TreeModel.h"
 #include "../inc/FixedPropertyVector.h"
-#include "../inc/ConnectionHelper.h"
+#include "../../ConnectionHelper.h"
 #include <QTreeWidgetItem>
 #include <QVector3D>
 #include <QMetaProperty>

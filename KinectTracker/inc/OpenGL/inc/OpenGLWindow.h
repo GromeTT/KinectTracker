@@ -5,7 +5,6 @@
 #include "BasicUsageScene.h"
 
 class QOpenGLContext;
-
 typedef QSharedPointer<QOpenGLContext> OpenGLContext;
 
 class OpenGLWindow : public QWindow

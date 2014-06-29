@@ -1,5 +1,7 @@
 ToDo List 
 
+       
+
 * Ziele für heute
   + [ ] Auswertung, ob der Benutzer in die Kamera schaut oder nicht.
     Klappt nicht so gut.
@@ -8,6 +10,14 @@ ToDo List
     + Braucht Visual Studio 2010
     + [ ] Extra Programm schreiben, dass die Schätzung des Bodens übernimmt.
   + [ ] Meldung wenn der Benutzer zu nahe an der Kamera ist.
+
+* Neues Feature Histogram-Analyse
+  + Funktionen:
+    - Bild laden
+    - Region für das Histogram auswählen
+    - Histogram berechnen ( mittels LowLewevelProcessingPipeline )
+    - Histogram speichern in externe Datei / in Buffer
+    - Histogram vergleichen
 * Gespräch
   + [X] Frage nach einer BA-Arbeit, wo eine Schätzung der Körpergröße
     über die Größe des Oberkörpers durchgeführt wurde.
@@ -39,7 +49,7 @@ ToDo List
   + Monatg: 7.7 17:00 Uhr
   
 * TODO [7/26][26%]
-  + [ ] Connect/Disconnect Signal.
+  + [ ] Kinect connect/disconnect Signal.
     [[http://msdn.microsoft.com/en-us/library/nuiapi.nuisetdevicestatuscallback.aspx]]
   + [ ] Ebene für den Boden schätzen mittels PCL Lib.
   + [ ] Farbhistogramm für Gelenke und Gesicht berechnen.
@@ -133,23 +143,6 @@ ToDo List
        	 + Value: Hellwert bzw. Dunkelstue
 	   - 0% keine Helligkeit
 	   - 100% volle Helligkeit
-
-       
-
-* Neues Feature Histogram-Analyse
-  + Funktionen:
-    - Bild laden
-    - Region für das Histogram auswählen
-    - Histogram berechnen ( mittels LowLewevelProcessingPipeline )
-    - Histogram speichern in externe Datei / in Buffer
-    - Histogram vergleichen
-
-* Entfernen
-  + [ ] DepthViewerWidget
-  + [ ] RGBWidget
-  + [ ] ArrayManipulator
-  + [ ] SkinColorDeterctor
-
 * Ausarbeitung
   + Kinect Sensor erklären
     + Verschiedene Sensoren und ihre Räume erläutern.
@@ -164,4 +157,5 @@ ToDo List
     + Chi-Quadrat
     + Intersect
     + Bhattacharyya
+ 
 
