@@ -26,8 +26,18 @@ public:
 
     void process( const unsigned int timestamp );
     void takeScreenShot();
-    void drawRegionOfInterest( const AMath::Rectangle3D& rect, const cv::Scalar& color );
-    void drawRegionOfInterestWithAndHeightAsPixels( const AMath::Rectangle3D& rect, const cv::Scalar& color );
+    void saveHeadHistograms();
+    void drawRegionOfInterest( const AMath::Rectangle3D& rect,
+                               cv::Mat& image,
+                               const cv::Scalar& color );
+    void drawRegionOfInterestWithAndHeightAsPixels( const QVector3D& center,
+                                                    const float width,
+                                                    const float height,
+                                                    cv::Mat& image,
+                                                    const cv::Scalar& color );
+    void drawRegionOfInterestWithAndHeightAsPixels( const AMath::Rectangle3D& rect,
+                                                    cv::Mat image,
+                                                    const cv::Scalar& color );
 
     uchar*                          rgbImage() const;
     ushort*                         depthImage() const;
@@ -36,7 +46,6 @@ public:
     DepthProcessingPipelinePtr      depthProcessingPipeline() const;
     MovementAnalyzerPtr             movementAnalyzer() const;
     SizeAnalyzerPtr                 sizeAnalyzer() const;
-
 
 protected:
     virtual void processV( const unsigned int timestamp ) = 0;

@@ -200,7 +200,6 @@ void SkinColorDetectionPipeline::process( cv::Mat& input )
 SkinColorExplicitDefinedSkinRegionDetectionPipeline::SkinColorExplicitDefinedSkinRegionDetectionPipeline( QObject* parent )
     : LowLevelProcessingPipeline( parent )
     , m_absoluteFrequency( 0 )
-    , m_relativeFrequency( 0 )
 {
 }
 
@@ -225,7 +224,6 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
 
     // Reset counters
     m_absoluteFrequency = 0;
-    m_relativeFrequency = 0.0f;
 
     int pixelCount = input.rows*input.cols;
     int i = 0;
@@ -253,9 +251,6 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
         }
         i+=3;
     }
-    m_relativeFrequency = m_absoluteFrequency/pixelCount;
-    qDebug() << "Häufigkeit: " << m_absoluteFrequency;
-    qDebug() << "Size " << pixelCount;
     cv::imshow( "Skin", input );
 }
 
@@ -266,14 +261,5 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
 int SkinColorExplicitDefinedSkinRegionDetectionPipeline::absoluteFrequency()
 {
     return m_absoluteFrequency;
-}
-
-/*!
-   \brief SkinColorExplicitDefinedSkinRegionDetectionPipeline::relativeFrequecy
-   Returns the relative frequency of the appearance of skin color.
- */
-float SkinColorExplicitDefinedSkinRegionDetectionPipeline::relativeFrequecy()
-{
-    return m_relativeFrequency;
 }
 

@@ -48,11 +48,10 @@
     <property name="title">
      <string>Edit</string>
     </property>
+    <addaction name="actionStartCapturing"/>
+    <addaction name="separator"/>
     <addaction name="actionTakeScreenshot"/>
     <addaction name="separator"/>
-    <addaction name="actionKeep_Skeleton_up_to_date"/>
-    <addaction name="actionKeep_rgb_up_to_date"/>
-    <addaction name="actionKeep_depth_up_to_date"/>
    </widget>
    <widget class="QMenu" name="menuAnalysis">
     <property name="title">
@@ -101,30 +100,6 @@
     <string>OpenGLRender</string>
    </property>
   </action>
-  <action name="actionKeep_Skeleton_up_to_date">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Keep skeleton up to date</string>
-   </property>
-  </action>
-  <action name="actionKeep_rgb_up_to_date">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Keep rgb up to date</string>
-   </property>
-  </action>
-  <action name="actionKeep_depth_up_to_date">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Keep depth up to date</string>
-   </property>
-  </action>
   <action name="actionTakeScreenshot">
    <property name="text">
     <string>Take screenshot</string>
@@ -144,6 +119,17 @@
    </property>
    <property name="text">
     <string>SABSSDMode</string>
+   </property>
+  </action>
+  <action name="actionStartCapturing">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Start Capturing</string>
+   </property>
+   <property name="toolTip">
+    <string>Start/Stop Capturing</string>
    </property>
   </action>
  </widget>

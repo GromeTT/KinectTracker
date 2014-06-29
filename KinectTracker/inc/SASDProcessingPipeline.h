@@ -22,6 +22,12 @@ private:
    bool processSkeletonData( const unsigned int timestamp );
    void processRGBData();
    void processDepthData();
+   void deriveViewingDirectionBySkinColor( cv::Mat& currentImage,
+                                           const QVector2D& center );
+   void deriveViewingDirectionByHistogram( cv::Mat& currentImage,
+                                           const QVector2D& center );
+
+   AMath::Rectangle3D m_lastRegion;
 };
 
 #endif // SASDPROCESSINGPIPELINE_H

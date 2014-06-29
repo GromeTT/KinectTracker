@@ -12,8 +12,8 @@
  */
 SkeletonAnalyzer::SkeletonAnalyzer( QObject* parent )
     : QObject( parent )
+    , m_skeletonData( nullptr )
     , m_estimatedHeight( 0.0f )
-    , m_headRegion( 0, 0, 0, 50, 50 )
     , m_phi1( 0.0f )
     , m_phi2( 0.0f )
 {
@@ -56,10 +56,6 @@ bool SkeletonAnalyzer::update( const SkeletonDataPtr skeleton,
     // Front of the box.
     m_regionOfInterest.setByTopLeftAndBottomRight( m_boundingBox.frontFaceTopLeftCorner(),
                                                    m_boundingBox.frontFaceBottomRightCorner() );
-
-    m_headRegion.move( skeleton->getJoint( SkeletonData::Joints::Head ).x(),
-                       skeleton->getJoint( SkeletonData::Joints::Head ).y(),
-                       skeleton->getJoint( SkeletonData::Joints::Head ).z() );
 
     // Compute feature vector.
     calculateFeatureVector( skeleton );
@@ -127,16 +123,6 @@ const BoundingBox* SkeletonAnalyzer::getBoundingBoxWholeBody() const
 AMath::Rectangle3D SkeletonAnalyzer::regionOfInterest() const
 {
     return m_regionOfInterest;
-}
-
-/*!
-   \brief SkeletonAnalyzer::headRegion
-   Returns a rectangular region around the head.
-   Notice that the height and the width are in pixels.
- */
-AMath::Rectangle3D SkeletonAnalyzer::headRegion() const
-{
-    return m_headRegion;
 }
 
 /*!

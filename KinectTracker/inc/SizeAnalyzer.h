@@ -22,6 +22,8 @@ public:
     float   currentBodySize();
     float   kneelingThreshold();
     float   lyingThreshold();
+    float   distanceHeadRightFood();
+    float   distanceHeadLeftFood();
     QString workerStatus();
 
 protected:
@@ -29,6 +31,8 @@ protected:
     float   m_lyingThreshold;
     float   m_estimatedBodySize;
     float   m_currentBodySize;
+    float   m_distanceHeadRightFood;
+    float   m_distanceHeadLeftFood;
     QString m_workerStatus;
 
 private:
@@ -40,6 +44,8 @@ signals:
     void workerStatusChanged();
     void kneelingThresholdChanged();
     void lyingThresholdChanged();
+    void distanceHeadRightFoodChanged();
+    void distanceHeadLeftFoodChanged();
 
 private:
     Q_PROPERTY( float estimatedBodySize
@@ -63,6 +69,14 @@ private:
                 READ lyingThreshold()
                 WRITE setLyingThreshold
                 NOTIFY lyingThresholdChanged )
+
+    Q_PROPERTY( float distanceHeadRightFood
+                READ distanceHeadRightFood
+                NOTIFY distanceHeadRightFoodChanged )
+
+    Q_PROPERTY( float distanceHeadLeftFood
+                READ distanceHeadLeftFood
+                NOTIFY distanceHeadLeftFoodChanged )
 };
 
 typedef QSharedPointer<SizeAnalyzer> SizeAnalyzerPtr;

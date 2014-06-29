@@ -64,7 +64,8 @@ SOURCES += src/main.cpp\
     src/SizeAnalyzer.cpp \
     src/BBSizeAnalyzer.cpp \
     src/UpperBodySizeAnalyzer.cpp \
-    src/RectangleHistogram.cpp
+    src/RectangleHistogram.cpp \
+    src/ViewingDirectionAnalyzer.cpp
 
 HEADERS  += inc/MainWindow.h \
             inc/OpenGLWindow.h \
@@ -118,7 +119,8 @@ HEADERS  += inc/MainWindow.h \
     inc/SizeAnalyzer.h \
     inc/UpperBodySizeAnalyzer.h \
     inc/BBSizeAnalyzer.h \
-    inc/RectangleHistogram.h
+    inc/RectangleHistogram.h \
+    inc/ViewingDirectionAnalyzer.h
 
 FORMS    += MainWindow.ui \
             KinectInitializeDialog.ui \

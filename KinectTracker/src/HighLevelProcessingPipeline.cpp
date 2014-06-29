@@ -140,37 +140,63 @@ void HighLevelProcessingPipeline::takeScreenShot()
 }
 
 /*!
+   \brief HighLevelProcessingPipeline::saveHeadHistograms
+   Saves the current histograms for comparison.
+ */
+void HighLevelProcessingPipeline::saveHeadHistograms()
+{
+
+}
+
+
+
+/*!
    \brief HighLevelProcessingPipeline::drawRegionOfInterest
    Translates the region defined by \a rect from the 3D space to the rgb space
    and draws it.
  */
 void HighLevelProcessingPipeline::drawRegionOfInterest( const AMath::Rectangle3D& rect,
-                                                   const cv::Scalar& color )
+                                                        cv::Mat& image,
+                                                        const cv::Scalar& color )
 {
     QVector2D p1 = transformFromSkeltonToRGB( rect.topLeftCorner() );
     QVector2D p2 = transformFromSkeltonToRGB( rect.bottomRightCorner() );
-    cv::Mat curr ( m_kinect->rgbStreamResolution().height(),
-                   m_kinect->rgbStreamResolution().width(),
-                   CV_8UC3,
-                   mp_rgbData );
-    rectangle( curr,
+    rectangle( image,
                cv::Point( p1.x(), p1.y() ), cv::Point( p2.x(), p2.y() ),
                color,
                5 );
 }
 
-void HighLevelProcessingPipeline::drawRegionOfInterestWithAndHeightAsPixels( const AMath::Rectangle3D& rect,
+/*!
+   \brief HighLevelProcessingPipeline::drawRegionOfInterest
+   Draws a rectangle around \a center defined by \a width and \a height in \a image.
+   Note that \a center has to be in rgb space.
+ */
+void HighLevelProcessingPipeline::drawRegionOfInterestWithAndHeightAsPixels( const QVector3D& center,
+                                                                             const float width,
+                                                                             const float height,
+                                                                             cv::Mat& image,
                                                                              const cv::Scalar& color )
 {
-    QVector2D p1 = transformFromSkeltonToRGB( rect.center() );
-    cv::Mat curr ( m_kinect->rgbStreamResolution().height(),
-                   m_kinect->rgbStreamResolution().width(),
-                   CV_8UC3,
-                   mp_rgbData );
-    float w = rect.width()/2;
-    float h = rect.height()/2;
-    rectangle( curr,
-               cv::Point( p1.x() + w, p1.y() + w ), cv::Point( p1.x() - w, p1.y() - h),
+    rectangle( image,
+               cv::Point( center.x() + width, center.y() + height ), cv::Point( center.x() - width, center.y() - height),
                color,
                5 );
+}
+
+/*!
+   \brief HighLevelProcessingPipeline::drawRegionOfInterestWithAndHeightAsPixels
+   Transforms the center point of \a rect into color space and passes it to
+   HighLevelProcessingPipeline::drawRegionOfInterestWithAndHeightAsPixels
+
+ */
+void HighLevelProcessingPipeline::drawRegionOfInterestWithAndHeightAsPixels( const AMath::Rectangle3D& rect,
+                                                                             cv:: Mat image,
+                                                                             const cv::Scalar& color )
+{
+    drawRegionOfInterestWithAndHeightAsPixels( transformFromSkeltonToRGB( rect.center() ),
+                                               rect.width(),
+                                               rect.height(),
+                                               image,
+                                               color );
 }

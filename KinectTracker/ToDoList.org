@@ -1,9 +1,11 @@
 ToDo List 
 
 * Ziele für heute
-  + Tracking aller Gelenke
   + Auswertung, ob der Benutzer in die Kamera schaut oder nicht
+    Klappt nicht so gut.
+  + Tracking aller Gelenke
   + PCL einbinden
+    + Braucht Visual Studio 2010
   + Meldung wenn der Benutzer zu nahe an der Kamera ist
 * Gespräch
   + [ ] Frage nach einer BA-Arbeit, wo eine Schätzung der Körpergröße
@@ -14,7 +16,7 @@ ToDo List
        2. die Person mit dem Geischt zum Boden liegt
     Darüberhinaus werden nicht zum Körper gehörende Teile im Bild
     erkannt.
-
+    
 * Aufnahmeszenarien:
   + [ ] Person vollführt alle Posen (stehen, knien, liegen )
   + [ ] Person ist nahe an der Kamera
@@ -32,15 +34,21 @@ ToDo List
   
 * TODO [7/25][28%]
   + [ ] Ebene für den Boden schätzen mittel PCL Lib.
-  + [ ]  Farbhistogramm für Gelenke und Gesicht berechnen.
+  + [ ] Farbhistogramm für Gelenke und Gesicht berechnen.
     + Für das Gesicht gibt es 2 Möglichkeiten:
       1. Farbbereich aus dem Paper.
       2. Histogramm aus den LiveDatan ableiten, wenn sicher ist
       3. Gesichtserkennungsalgorithmus von opencv benutzen
      das der Mensch in die Kamera guckt.
-  + [ ] Kopftracking: Schaut in die Kamera oder nicht.
-  + [ ] Zusätzliches Kriterium für liegend:
-    Abstand Füße zu Kopf.
+  + [-] Kopftracking: Schaut in die Kamera oder nicht.
+    + [X] Mittels Farbintervalle
+    + [ ] Mittels Gesichtserkennung
+    + [ ] Mittels Histogramme
+  + [-] Zusätzliches Kriterium für liegend:
+    + [X] Abstand berechnen.
+    + [ ] Threshold ermitteln.
+    + [ ] Herausfinden , wann die Füße nicht mehr getrackt werden.
+    + [ ] Unterschied zu den Fußgelenken untersuchen.
   + [ ] Nutze die Proportionen des Körpers aus, um die Größe der Person zu 
     bestimmen, wenn sie nahe an der Kamera steht. Also ggfs. nur Knie in
     die Berechnung mit einbeziehen und die Füße außen vor lassen. Dasselbe
@@ -72,9 +80,9 @@ ToDo List
     + [ ] Für die Schätzung der aktuellen Größe die Anzahl der getrackten Punkte mit einbeziehen
   + [ ] Biete  Möglichkeit die Bewegungsrichtung und die Geschwindigkeit zu ermitteln durch Kugeln berechnen
     zu lassen
-  + [ ] Zusätzliche Feature [0/6][0%]
+  + [-] Zusätzliche Feature [1/6][16%]
     + [ ] Speichernfunktion für ProcessingComponents und ProcessingPipeline
-    + [ ] Pause/Wiedergabe des StreamsFunktion
+    + [X] Pause/Wiedergabe des Streams.
     + [ ] Schließen der Windows ermöglichen
     + [ ] Verbindungsdialog zu Kinect / USB-Kamera fertig stellen
     + [ ] Affine Transformation ausbessern
@@ -105,5 +113,17 @@ ToDo List
      werden.
    + Sobald der vorgschriebene Mindestabstand unterschritten wird, sind die gelieferten Daten 
      unzuverlässig.
+   + Skelett-Space ist in Metern.
+   + Tiefendataen sind in Milimetern.
+   + Farbräume
+     + HSV ( Hue Saturation Value):
+       + Hue: Farbwert
+       + Saturation: Farbsättigung
+	 - 0% Neutralgrau
+	 - 50% Wenig gesättigte Farbe
+	 - 100% Gesättigte Farbe / reine Farbe
+       + Value: Hellwert bzw. Dunkelstue
+	 - 0% keine Helligkeit
+	 - 100% volle Helligkeit
 
-
+     

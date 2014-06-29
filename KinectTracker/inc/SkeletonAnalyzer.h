@@ -27,7 +27,6 @@ public:
     void setPhi1( const float phi1 );
     void setPhi2( const float phi2 );
 
-
     float                     estimatedHeight() const;
     float                     currentHeight() const;
     float                     phi1() const;
@@ -37,7 +36,7 @@ public:
     QString                   workerStatus() const;
     const BoundingBox*        getBoundingBoxWholeBody() const;
     AMath::Rectangle3D        regionOfInterest() const;
-    AMath::Rectangle3D        headRegion() const;
+    SkeletonDataPtr           skeleton() const;
 
 private:
     void calculateFeatureVector( const SkeletonDataPtr& skeletonData );
@@ -49,7 +48,7 @@ private:
     float               m_phi2;
     QString             m_workerStatus;
     AMath::Rectangle3D  m_regionOfInterest;
-    AMath::Rectangle3D  m_headRegion;
+    SkeletonDataPtr     m_skeletonData;
 
 signals:
     void estimatedHeightChanged();

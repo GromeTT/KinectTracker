@@ -61,9 +61,6 @@ MainWindow::MainWindow( QWidget *parent )
     , mp_depthViewObject( nullptr )
     , mp_skeletonRenderObject( nullptr )
     , m_lastTiming( 0 )
-    , m_updateSkeletonData( true )
-    , m_updateRGBData( true )
-    , m_updateDepthData( true )
 {
     ui->setupUi(this);
 
@@ -116,25 +113,17 @@ MainWindow::MainWindow( QWidget *parent )
     connect( ui->actionOpenKinectStream, &QAction::triggered, this, &MainWindow::showKinectDialog );
     connect( ui->actionOpenGLRender, &QAction::toggled, this, &MainWindow::actionOpenGLRenderWidgetChecked );
     connect( ui->actionTakeScreenshot, &QAction::triggered, this, &MainWindow::takeScreenshot );
-    connect( ui->actionKeep_Skeleton_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateSkeltonData );
-    connect( ui->actionKeep_rgb_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateRGBData );
-    connect( ui->actionKeep_depth_up_to_date, &QAction::toggled, this, &MainWindow::setUpdateDepthData );
     connect( mp_sceneGraph, &SceneGraphWidget::sceneChanged, this, &MainWindow::switchCatergoryOnSceneGraph );
     connect( ui->actionSASDMode, &QAction::toggled, this, &MainWindow::activateSASDMode );
     connect( ui->actionSABSSDMode, &QAction::toggled, this, &MainWindow::activateSABSSDMode );
+    connect( ui->actionStartCapturing, &QAction::toggled, this, &MainWindow::toggleCapturing );
 
-    ui->actionKeep_Skeleton_up_to_date->setChecked( m_updateSkeletonData );
-    ui->actionKeep_rgb_up_to_date->setChecked( m_updateRGBData );
-    ui->actionKeep_depth_up_to_date->setChecked( m_updateDepthData );
     ui->actionSASDMode->setChecked( true );
+    ui->actionStartCapturing->setChecked( true );
 
     ui->mdiArea->activateNextSubWindow();
 
     switchCatergoryOnSceneGraph( SceneGraphWidget::ActiveScene::RGBProcessingPipeline );
-
-    time.start();
-    m_timer.start( 0 );
-    m_elpasedTimer.start();
 }
 
 /*!
@@ -312,30 +301,20 @@ void MainWindow::takeScreenshot()
     m_highLvlProcessingPipeline->takeScreenShot();
 }
 
-void MainWindow::setUpdateSkeltonData( const bool on )
+/*!
+   \brief MainWindow::toggleCapturing
+   Stops and starts the capturing.
+ */
+void MainWindow::toggleCapturing( bool checked )
 {
-    if ( m_updateSkeletonData != on )
+    if ( checked )
     {
-        m_updateSkeletonData = on;
-        emit updateSkeletonDataChanged();
-    }
-}
+        m_timer.start();
 
-void MainWindow::setUpdateRGBData( const bool on )
-{
-    if ( m_updateRGBData != on )
-    {
-        m_updateRGBData = on;
-        emit updateRGBDataChanged();
     }
-}
-
-void MainWindow::setUpdateDepthData( const bool on )
-{
-    if ( m_updateDepthData != on )
+    else
     {
-        m_updateDepthData = on;
-        emit updateDepthDataChanged();
+        m_timer.stop();
     }
 }
 

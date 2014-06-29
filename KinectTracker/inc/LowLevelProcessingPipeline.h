@@ -161,10 +161,8 @@ public:
 
     virtual void process( cv::Mat& input );
     int    absoluteFrequency();
-    float  relativeFrequecy();
 private:
     int   m_absoluteFrequency;
-    float m_relativeFrequency;
 };
 
 /**************************************************************************************************************************

@@ -11,6 +11,8 @@ SizeAnalyzer::SizeAnalyzer( QObject* parent )
     , m_estimatedBodySize( 0.0f )
     , m_currentBodySize( 0.0f )
     , m_workerStatus( "Not tracked" )
+    , m_distanceHeadRightFood( 0 )
+    , m_distanceHeadLeftFood( 0 )
 {
 }
 
@@ -29,6 +31,14 @@ SizeAnalyzer::~SizeAnalyzer()
  */
 void SizeAnalyzer::analyze( const SkeletonDataPtr& skeletonData )
 {
+    // Compute the distance between the head and the feets.
+    // It's going to be used to determine, if the person is lying.
+    m_distanceHeadLeftFood = ( skeletonData->getJoint( SkeletonData::Joints::Head ) - skeletonData->getJoint( SkeletonData::Joints::FootLeft ) ).length();
+    emit distanceHeadLeftFoodChanged();
+    m_distanceHeadRightFood = ( skeletonData->getJoint( SkeletonData::Joints::Head ) - skeletonData->getJoint( SkeletonData::Joints::FootRight) ).length();
+    emit distanceHeadRightFoodChanged();
+
+
     analyzeV( skeletonData );
     if ( m_currentBodySize >= m_kneelingThreshold * m_estimatedBodySize )
     {
@@ -110,6 +120,24 @@ float SizeAnalyzer::kneelingThreshold()
 float SizeAnalyzer::lyingThreshold()
 {
     return m_lyingThreshold;
+}
+
+/*!
+   \brief SizeAnalyzer::distanceHeadRightFood
+   Returns the distance between the head and the right food.
+ */
+float SizeAnalyzer::distanceHeadRightFood()
+{
+    return m_distanceHeadRightFood;
+}
+
+/*!
+   \brief SizeAnalyzer::distanceHeadLeftFood
+   Returns the distance between the head and the left food.
+ */
+float SizeAnalyzer::distanceHeadLeftFood()
+{
+    return m_distanceHeadLeftFood;
 }
 
 /*!

@@ -52,7 +52,7 @@ bool SABSSDProcessingPipeline::processSkeletonData(const unsigned int timestamp)
         //       Perform the further analysis on the skeleton data.
         m_movementAnalyzer->analyze( m_skeletons.at( 0 ), timestamp );
         m_sizeAnalyzer->analyze( m_skeletons.at( 0 ) );
-        drawRegionOfInterest( m_skeletonAnalyzer->headRegion(), cv::Scalar( 255, 0, 0 ) );
+//        drawRegionOfInterest( m_skeletonAnalyzer->headRegion(), cv::Scalar( 255, 0, 0 ) );
         return true;
     }
 }

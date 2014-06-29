@@ -55,10 +55,8 @@ private:
     void actionOpenGLRenderWidgetChecked( bool checked );
 
     void takeScreenshot();
-    void setUpdateSkeltonData( const bool on );
-    void setUpdateRGBData( const bool on );
-    void setUpdateDepthData( const bool on );
 
+    void toggleCapturing( bool checked );
     void activateSASDMode( bool checked );
     void activateSABSSDMode( bool checked );
     void setVisualizer();
@@ -107,10 +105,6 @@ private:
     HighLevelProcessingPipelinePtr m_highLvlProcessingPipeline;
     // Visualizer
     VisualizerPtr m_visualizer;
-
-    bool m_updateSkeletonData;
-    bool m_updateRGBData;
-    bool m_updateDepthData;
 };
 
 void detect_blobs( cv::Mat& current );
