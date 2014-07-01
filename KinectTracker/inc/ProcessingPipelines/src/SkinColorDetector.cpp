@@ -45,7 +45,9 @@ void SkinColorDetector::detect( cv::Mat& img )
     cv::Mat histImg = cv::Mat::zeros( w, h, CV_8UC3 );
 
     for( int i = 0; i < m_bins; i ++ )
-       { rectangle( histImg, cv::Point( i*bin_w, h ), cv::Point( (i+1)*bin_w, h - cvRound( hist.at<float>(i)*h/255.0 ) ), cv::Scalar( 0, 0, 255 ), -1 ); }
+    {
+        rectangle( histImg, cv::Point( i*bin_w, h ), cv::Point( (i+1)*bin_w, h - cvRound( hist.at<float>(i)*h/255.0 ) ), cv::Scalar( 0, 0, 255 ), -1 );
+    }
 
     imshow( "Histogram", histImg );
 }

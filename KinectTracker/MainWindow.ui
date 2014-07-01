@@ -59,6 +59,8 @@
     </property>
     <addaction name="actionSASDMode"/>
     <addaction name="actionSABSSDMode"/>
+    <addaction name="separator"/>
+    <addaction name="actionImageAnalysisTool"/>
    </widget>
    <addaction name="menuDatei"/>
    <addaction name="editMenu"/>
@@ -130,6 +132,11 @@
    </property>
    <property name="toolTip">
     <string>Start/Stop Capturing</string>
+   </property>
+  </action>
+  <action name="actionImageAnalysisTool">
+   <property name="text">
+    <string>Image Analysis Tool</string>
    </property>
   </action>
  </widget>

@@ -1,15 +1,15 @@
 #include "../inc/SceneGraphWidget.h"
-#include "../inc/RenderObject.h"
-#include "../inc/ProcessingComponent.h"
 #include "../inc/QObjectTreeWidgetItem.h"
+#include "../../OpenGL/inc/RenderObject.h"
+#include "../../ProcessingPipelines/inc/ProcessingComponent.h"
 #include "ui_SceneGraphWidget.h"
 
 SceneGraphWidget::SceneGraphWidget(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::SceneGraphWidget)
+    : QWidget( parent )
+    , ui( new Ui::SceneGraphWidget )
     , m_activeScene( ActiveScene::RGBProcessingPipeline )
 {
-    ui->setupUi(this);
+    ui->setupUi( this );
 
     ui->treeWidget->setHeaderLabel( "Objects" );
     ui->comboBox->addItem( "RGBProcessingPipeline" );

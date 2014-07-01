@@ -52,12 +52,14 @@ private:
     void actionOpenGLRenderWidgetChecked( bool checked );
 
     void takeScreenshot();
+    void openImageAnalysisDialog();
 
     void toggleCapturing( bool checked );
     void activateSASDMode( bool checked );
     void activateSABSSDMode( bool checked );
     void setVisualizer();
     void switchCatergoryOnSceneGraph( SceneGraphWidget::ActiveScene scene );
+
 
 signals:
     void updateSkeletonDataChanged();

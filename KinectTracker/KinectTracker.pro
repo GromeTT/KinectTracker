@@ -62,16 +62,8 @@ SOURCES += inc/AMath/src/AMath.cpp \
     inc/QtHelper/src/SignalBlocker.cpp \
     inc/ProcessingPipelines/src/SkinColorDetector.cpp \
     inc/Dialogs/src/ImageAnalysisDialog.cpp \
-    inc/3DScene/src/BasicUsageScene.cpp \
-    inc/3DScene/src/Camera.cpp \
-    inc/3DScene/src/Floor.cpp \
-    inc/3DScene/src/ObjectLoader.cpp \
-    inc/3DScene/src/OpenGLWindow.cpp \
-    inc/3DScene/src/RenderObject.cpp \
-    inc/3DScene/src/RenderObjectInterface.cpp \
-    inc/3DScene/src/SkeletonRenderObject.cpp \
-    inc/3DScene/src/TransformationObject.cpp \
-    inc/3DScene/src/Vertex.cpp
+    inc/ImageWidget/src/ImageWidget.cpp \
+    inc/ProcessingPipelines/src/Histogram.cpp
 
 HEADERS  += inc/AMath/inc/AMath.h \
     inc/Analyzer/inc/BBMovementAnalyzer.h \
@@ -123,24 +115,16 @@ HEADERS  += inc/AMath/inc/AMath.h \
     inc/QtHelper/inc/SignalBlocker.h \
     inc/ProcessingPipelines/inc/SkinColorDetector.h \
     inc/PropertyBrowser/inc/PropertyBrowser.h \
-    inc/Dialogs/inc/ImageAnalysisDialog.h \
-    inc/3DScene/inc/BasicUsageScene.h \
-    inc/3DScene/inc/Camera.h \
-    inc/3DScene/inc/Floor.h \
-    inc/3DScene/inc/ObjectLoader.h \
-    inc/3DScene/inc/OpenGLWindow.h \
-    inc/3DScene/inc/PropertyBrowser.h \
-    inc/3DScene/inc/RenderObject.h \
-    inc/3DScene/inc/RenderObjectInterface.h \
-    inc/3DScene/inc/SkeletonRenderObject.h \
-    inc/3DScene/inc/TransformationObject.h \
-    inc/3DScene/inc/Vertex.h \
+    inc/Dialogs/inc/ImageAnalysisDialog.h \\
+    inc/ImageWidget/inc/ImageWidget.h \
+    inc/ProcessingPipelines/inc/Histogram.h
 
 FORMS    += MainWindow.ui \
     inc/Dialogs/ui/KinectInitializeDialog.ui \
     inc/SceneGraph/ui/SceneGraphWidget.ui \
     inc/PropertyBrowser/ui/PropertyBrowser.ui \
-    inc/SceneGraph/ui/ImageAnalysisDialog.ui
+    inc/SceneGraph/ui/ImageAnalysisDialog.ui \
+    inc/ImageWidget/ui/ImageWidget.ui
 
 
 TRANSLATIONS = trans/trans_de.ts

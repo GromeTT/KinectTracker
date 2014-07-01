@@ -12,6 +12,7 @@
 #include "inc/ProcessingPipelines/inc/SABSSDProcessingPipeline.h"
 #include "inc/Visualizer/inc/BBMovementVisualizer.h"
 #include "inc/Analyzer/inc/BBMovementAnalyzer.h"
+#include "inc/Dialogs/inc/ImageAnalysisDialog.h"
 #include <QMdiSubWindow>
 #include <QKeyEvent>
 #include <QMetaObject>
@@ -63,7 +64,6 @@ MainWindow::MainWindow( QWidget *parent )
 //    {
 //        qDebug() << tr( "Couldn't find classifier file. " );
 //    }
-
     // Construct explorer and it's dockWidget.
     mp_explorerDockWidget = new QDockWidget( "Explorer", this );
     mp_explorerDockWidget->setMinimumWidth( 350 );
@@ -112,6 +112,7 @@ MainWindow::MainWindow( QWidget *parent )
     connect( ui->actionSASDMode, &QAction::toggled, this, &MainWindow::activateSASDMode );
     connect( ui->actionSABSSDMode, &QAction::toggled, this, &MainWindow::activateSABSSDMode );
     connect( ui->actionStartCapturing, &QAction::toggled, this, &MainWindow::toggleCapturing );
+    connect( ui->actionImageAnalysisTool, &QAction::triggered, this, &MainWindow::openImageAnalysisDialog );
 
     ui->actionSASDMode->setChecked( true );
     ui->actionStartCapturing->setChecked( true );
@@ -291,9 +292,25 @@ void MainWindow::actionOpenGLRenderWidgetChecked( bool checked )
     }
 }
 
+/*!
+   \brief MainWindow::takeScreenshot
+   Causes the HighLevelProcessingPipeline to save the current color and depth
+   image.
+ */
 void MainWindow::takeScreenshot()
 {
     m_highLvlProcessingPipeline->takeScreenShot();
+}
+
+/*!
+   \brief MainWindow::openImageAnalysisDialog
+   Opens the ImageAnalysisDialog.
+ */
+void MainWindow::openImageAnalysisDialog()
+{
+    ui->actionImageAnalysisTool->setChecked( false );
+    ImageAnalysisDialog dial;
+    dial.exec();
 }
 
 /*!
@@ -305,7 +322,6 @@ void MainWindow::toggleCapturing( bool checked )
     if ( checked )
     {
         m_timer.start();
-
     }
     else
     {
