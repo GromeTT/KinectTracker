@@ -1,8 +1,7 @@
 #include "../inc/SkeletonAnalyzer.h"
-#include "../../../Defines.h"
-#include "../../Kinect/inc/SkeletonData.h"
-#include "../../AMath/inc/AMath.h"
 #include "../inc/BBMovementAnalyzer.h"
+#include "../../AMath/inc/AMath.h"
+#include "../../../Defines.h"
 #include <QVector3D>
 
 /*!
@@ -81,6 +80,28 @@ void SkeletonAnalyzer::setPhi2(const float phi2)
     }
 }
 
+void SkeletonAnalyzer::setJoint(const SkeletonData::Joints joint)
+{
+    m_joint = joint;
+}
+
+/*!
+   \brief SkeletonAnalyzer::findMinimalDistanceFromCamera
+   Returns the distance of the joint closest to the camera.
+ */
+float SkeletonAnalyzer::findMinimalDistanceFromCamera( const SkeletonDataPtr skeleton )
+{
+    float minDist = skeleton->getJoints().at( 0 ).z();
+    for ( int i = 1; i < skeleton->getJoints().count(); ++i )
+    {
+        if ( minDist > skeleton->getJoints().at( i ).z() )
+        {
+            minDist = skeleton->getJoints().at( i ).z();
+        }
+    }
+    return minDist;
+}
+
 float SkeletonAnalyzer::estimatedHeight() const
 {
     return m_estimatedHeight;
@@ -123,6 +144,11 @@ const BoundingBox* SkeletonAnalyzer::getBoundingBoxWholeBody() const
 AMath::Rectangle3D SkeletonAnalyzer::regionOfInterest() const
 {
     return m_regionOfInterest;
+}
+
+SkeletonData::Joints SkeletonAnalyzer::joint() const
+{
+    return m_joint;
 }
 
 /*!

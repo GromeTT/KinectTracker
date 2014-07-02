@@ -1,13 +1,14 @@
 #include "../inc/CustomStyledDelegate.h"
 #include "../inc/FixedPropertyVector.h"
 #include "../inc/FloatEditor.h"
+#include "../../Kinect/inc/SkeletonData.h"
 #include <opencv2/opencv.hpp>
 #include <QLineEdit>
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
+#include <QComboBox>
 #include <QPainter>
 #include <QDebug>
-
 
 Q_DECLARE_METATYPE( cv::Size )
 Q_DECLARE_METATYPE( FixedPropertyVector )
@@ -32,7 +33,7 @@ QString CustomStyledDelegate::displayText( const QVariant& value,
         return QString( "{%1, %2}" ).arg( size.width )
                                     .arg( size.height );
     }
-    if ( value.canConvert<FixedPropertyVector>() )
+    else if ( value.canConvert<FixedPropertyVector>() )
     {
         FixedPropertyVector vec = qvariant_cast<FixedPropertyVector>( value );
         QString text ( "{" );
@@ -58,7 +59,9 @@ QSize CustomStyledDelegate::sizeHint( const QStyleOptionViewItem& option,
                                           index );
 }
 
-
+/*!
+   \brief CustomStyledDelegate::createEditor
+ */
 QWidget* CustomStyledDelegate::createEditor( QWidget* parent,
                                              const QStyleOptionViewItem& option,
                                              const QModelIndex& index ) const
@@ -81,11 +84,39 @@ QWidget* CustomStyledDelegate::createEditor( QWidget* parent,
     }
     else if ( index.data( Qt::EditRole ).type() == QMetaType::Int )
     {
-        QSpinBox* editor = static_cast<QSpinBox*>( QStyledItemDelegate::createEditor( parent,
-                                                                                      option,
-                                                                                      index ) );
-        connect( editor, SIGNAL( valueChanged(int) ), this, SLOT( commit() ) );
-        return editor;
+        QString typeName ( index.data( Qt::EditRole ).typeName() );
+        if ( typeName == "SkeletonData::Joints" )
+        {
+            QComboBox* editor = new QComboBox( parent );
+            editor->addItem( "Hip" );
+            editor->addItem( "Spine" );
+            editor->addItem( "ShoulderCenter" );
+            editor->addItem( "ShoulderLeft" );
+            editor->addItem( "ElbowLeft" );
+            editor->addItem( "WristLeft" );
+            editor->addItem( "HandLeft" );
+            editor->addItem( "ShoulderRight" );
+            editor->addItem( "ElbowRight" );
+            editor->addItem( "WristRight" );
+            editor->addItem( "HandRight" );
+            editor->addItem( "HipLeft" );
+            editor->addItem( "KneeLeft" );
+            editor->addItem( "AnkleLeft" );
+            editor->addItem( "FootLeft" );
+            editor->addItem( "HipRight" );
+            editor->addItem( "KneeRight" );
+            editor->addItem( "AnkleRight" );
+            editor->addItem( "FootRight" );
+            return editor;
+        }
+        else
+        {
+            QSpinBox* editor = static_cast<QSpinBox*>( QStyledItemDelegate::createEditor( parent,
+                                                                                          option,
+                                                                                          index ) );
+            connect( editor, SIGNAL( valueChanged(int) ), this, SLOT( commit() ) );
+            return editor;
+        }
 
     }
     else if ( index.data( Qt::EditRole ).type() == QMetaType::Float )

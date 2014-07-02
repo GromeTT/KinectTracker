@@ -46,6 +46,7 @@ public:
     DepthProcessingPipelinePtr      depthProcessingPipeline() const;
     MovementAnalyzerPtr             movementAnalyzer() const;
     SizeAnalyzerPtr                 sizeAnalyzer() const;
+    SkeletonAnalyzerPtr             skeletonAnalyzer() const;
 
 protected:
     virtual void processV( const unsigned int timestamp ) = 0;

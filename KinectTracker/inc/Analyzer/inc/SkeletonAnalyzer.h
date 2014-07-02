@@ -9,6 +9,7 @@
 #include "MovementAnalyzer.h"
 #include "../../Geometries/inc/BoundingGeometry.h"
 #include "../../AMath/inc/AMath.h"
+#include "../../Kinect/inc/SkeletonData.h"
 
 class QVector3D;
 class SkeletonData;
@@ -16,6 +17,7 @@ class SkeletonData;
 class SkeletonAnalyzer : public QObject
 {
     Q_OBJECT
+    Q_ENUMS( SkeletonData::Joints )
 
 public:
     SkeletonAnalyzer( QObject* parent = nullptr );
@@ -26,7 +28,9 @@ public:
 
     void setPhi1( const float phi1 );
     void setPhi2( const float phi2 );
+    void setJoint( const SkeletonData::Joints joint );
 
+    float                     findMinimalDistanceFromCamera( const SkeletonDataPtr skeleton );
     float                     estimatedHeight() const;
     float                     currentHeight() const;
     float                     phi1() const;
@@ -36,7 +40,7 @@ public:
     QString                   workerStatus() const;
     const BoundingBox*        getBoundingBoxWholeBody() const;
     AMath::Rectangle3D        regionOfInterest() const;
-    SkeletonDataPtr           skeleton() const;
+    SkeletonData::Joints      joint() const;
 
 private:
     void calculateFeatureVector( const SkeletonDataPtr& skeletonData );
@@ -49,12 +53,14 @@ private:
     QString             m_workerStatus;
     AMath::Rectangle3D  m_regionOfInterest;
     SkeletonDataPtr     m_skeletonData;
+    SkeletonData::Joints m_joint;
 
 signals:
     void estimatedHeightChanged();
     void currentHeightChanged();
     void phi1Changed();
     void phi2Changed();
+    void jointChanged();
 
 private:
     BoundingBox m_boundingBox;
@@ -77,6 +83,11 @@ private:
                 READ phi2
                 WRITE setPhi2
                 NOTIFY phi1Changed )
+
+    Q_PROPERTY( SkeletonData::Joints joint
+                WRITE setJoint
+                READ joint
+                NOTIFY jointChanged )
 };
 
 typedef QSharedPointer<SkeletonAnalyzer> SkeletonAnalyzerPtr;

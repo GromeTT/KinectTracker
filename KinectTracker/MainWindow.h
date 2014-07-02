@@ -73,7 +73,7 @@ private:
     PropertyBrowser*        mp_explorer;
     // MovementAnalyzer
     QDockWidget*            mp_analyserDockWidget;
-    PropertyBrowser*        mp_analyerBrowser;
+    PropertyBrowser*        mp_analyzerBrowser;
     // SizeAnalyzer
     QDockWidget*            mp_sizeAnalyzerDockWidget;
     PropertyBrowser*        mp_sizeAnalyzerBrowser;

@@ -50,6 +50,8 @@ ToDo List
   
 * TODO [7/26][26%]
   + [ ] Kinect connect/disconnect Signal.
+  + [ ] Rechtecke, die in cv::Mat gezeichnet werden sollen, müssen abgeschnitten werden,
+    falls sie die Größe überschreiten.
     [[http://msdn.microsoft.com/en-us/library/nuiapi.nuisetdevicestatuscallback.aspx]]
   + [ ] Ebene für den Boden schätzen mittels PCL Lib.
     Brauch nicht über die PCL Lib gemacht werden, da die Kinect selber eine 

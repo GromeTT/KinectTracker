@@ -1,16 +1,16 @@
 #ifndef PROCESSINGPIPELINE_H
 #define PROCESSINGPIPELINE_H
 
-#include <opencv2/opencv.hpp>
-#include <QVector>
-#include <QMap>
-#include <QObject>
 #include "Erode.h"
 #include "Dilate.h"
 #include "Threshold.h"
 #include "HOGFeatureDetector.h"
 #include "InRange.h"
 #include "SkinColorDetector.h"
+#include <opencv2/opencv.hpp>
+#include <QVector>
+#include <QMap>
+#include <QObject>
 
 class ImageAnalyzer;
 class QObject;
@@ -163,6 +163,34 @@ public:
 private:
     int   m_absoluteFrequency;
 };
+
+/**************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************/
+
+class SkinColorHistogramDetectionPipeline : public LowLevelProcessingPipeline
+{
+public:
+    SkinColorHistogramDetectionPipeline( QObject* parent = nullptr );
+    virtual ~SkinColorHistogramDetectionPipeline();
+
+    virtual void process( cv::Mat& input );
+    void         computeAndSaveROIHistogram( cv::Mat& roi );
+
+private:
+    int       m_channels [3];
+    int       m_bins[3];
+    float     m_ranges[2];
+    double    m_threshold;
+    cv::Mat   m_roi;
+    cv::MatND m_histogram;
+};
+
 
 /**************************************************************************************************************************
  **************************************************************************************************************************

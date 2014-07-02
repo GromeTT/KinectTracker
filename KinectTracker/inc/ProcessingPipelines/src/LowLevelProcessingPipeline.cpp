@@ -15,6 +15,11 @@ LowLevelProcessingPipeline::~LowLevelProcessingPipeline()
 {
 }
 
+/*!
+   \brief LowLevelProcessingPipeline::setScreenshot
+   Stores a pointer to \a screenshot but does not take controll
+   over it.
+ */
 void LowLevelProcessingPipeline::setScreenshot( cv::Mat* screenshot )
 {
     mp_screenshot = screenshot;
@@ -263,3 +268,65 @@ int SkinColorExplicitDefinedSkinRegionDetectionPipeline::absoluteFrequency()
     return m_absoluteFrequency;
 }
 
+/**************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************
+ **************************************************************************************************************************/
+
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::SkinColorHistogramDetectionPipeline
+   Standardconstructor.
+ */
+SkinColorHistogramDetectionPipeline::SkinColorHistogramDetectionPipeline( QObject* parent )
+    : LowLevelProcessingPipeline( parent )
+{
+    m_channels[0] = 0;
+    m_channels[0] = 1;
+    m_channels[0] = 2;
+
+    m_bins[0] = 256;
+    m_bins[1] = 256;
+    m_bins[2] = 256;
+
+    m_ranges[0] = 0;
+    m_ranges[1] = 256;
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::~SkinColorHistogramDetectionPipeline
+   Destroyes the object.
+ */
+SkinColorHistogramDetectionPipeline::~SkinColorHistogramDetectionPipeline()
+{
+
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::process
+   Computes the backprojection of \a input and the histogram which will be
+   computed by calling SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram.
+ */
+void SkinColorHistogramDetectionPipeline::process( cv::Mat& input )
+{
+    cv::MatND backprojection;
+    const float* range = { m_ranges };
+    cv::calcBackProject( &input, 1, &m_channels[0], m_histogram, backprojection, &range, 1, true );
+    cv::imshow( "Backprojection", backprojection );
+    cv::threshold( backprojection, backprojection, m_threshold, 255, cv::THRESH_BINARY );
+    cv::imshow( "Threshold", backprojection );
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram
+   Computes a histogram of \a roi and saves it.
+ */
+void SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram( cv::Mat& roi )
+{
+    const float* range = { m_ranges };
+    cv::calcHist( &roi, 1, &m_channels[0], cv::Mat(), m_histogram, 1, &m_bins[0], &range, true, false );
+}

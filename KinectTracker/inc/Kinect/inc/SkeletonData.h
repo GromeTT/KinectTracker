@@ -8,8 +8,10 @@
 #include <QVector>
 #include <QSharedPointer>
 
-class SkeletonData
+class SkeletonData : public QObject
 {
+    Q_OBJECT
+    Q_ENUMS( Joints )
 
 public:
     enum class Joints : char
@@ -75,8 +77,8 @@ private:
     short               m_numberOfTrackedPoints;
 };
 
-typedef QSharedPointer<SkeletonData> SkeletonDataPtr;
-
 void copy( const Vector4& source, QVector3D& target );
+
+typedef QSharedPointer<SkeletonData> SkeletonDataPtr;
 
 #endif // SKELETONDATA_H
