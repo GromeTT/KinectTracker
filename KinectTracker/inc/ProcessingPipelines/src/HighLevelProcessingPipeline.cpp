@@ -131,6 +131,15 @@ SizeAnalyzerPtr HighLevelProcessingPipeline::sizeAnalyzer() const
 }
 
 /*!
+   \brief HighLevelProcessingPipeline::skeletonAnalyzer
+   Returns the skeletonanlyzer.
+ */
+SkeletonAnalyzerPtr HighLevelProcessingPipeline::skeletonAnalyzer() const
+{
+    return m_skeletonAnalyzer;
+}
+
+/*!
    \brief HighLevelProcessingPipeline::takeScreenShot
    Makes a copy of the current depth and rgb Data.
  */

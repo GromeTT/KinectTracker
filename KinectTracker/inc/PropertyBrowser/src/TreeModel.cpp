@@ -1,5 +1,9 @@
 #include "../inc/TreeModel.h"
 #include "../inc/FixedPropertyVector.h"
+<<<<<<< HEAD
+=======
+#include "../../Kinect/inc/SkeletonData.h"
+>>>>>>> 9de9831140ad410c00384007563c7ce4af10e073
 #include "../../QtHelper/inc/ConnectionHelper.h"
 #include <QTreeWidgetItem>
 #include <QVector3D>
@@ -79,7 +83,16 @@ void TreeModel::setObject( QObject* object )
 
         QStandardItem* first = createItem( metaProperty, typeName, false );
         itemRow.append( first );
-
+//        if ( metaProperty.isEnumType() )
+//        {
+//            qDebug() << metaProperty.type();
+//            qDebug() << metaProperty.typeName();
+//            QString name = metaProperty.typeName();
+//            if ( name == "SkeletonData::Joints" )
+//            {
+//                qDebug() << "GOT IT";
+//            }
+//        }
         // Unwrap special QVariant types.
         if ( value.canConvert<QVector3D>() )
         {

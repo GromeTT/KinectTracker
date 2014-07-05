@@ -74,8 +74,8 @@ MainWindow::MainWindow( QWidget *parent )
     // Construct skeleton analyser
     mp_analyserDockWidget = new QDockWidget( "SkeletonAnlyser" );
     addDockWidget(Qt::LeftDockWidgetArea, mp_analyserDockWidget );
-    mp_analyerBrowser = new PropertyBrowser( mp_analyserDockWidget );
-    mp_analyserDockWidget->setWidget( mp_analyerBrowser );
+    mp_analyzerBrowser = new PropertyBrowser( mp_analyserDockWidget );
+    mp_analyserDockWidget->setWidget( mp_analyzerBrowser );
 
     // Construct SizeAnalyzer
     mp_sizeAnalyzerDockWidget = new QDockWidget( "SizeAnalyzer" );
@@ -308,7 +308,7 @@ void MainWindow::takeScreenshot()
  */
 void MainWindow::openImageAnalysisDialog()
 {
-    ui->actionImageAnalysisTool->setChecked( false );
+    ui->actionStartCapturing->setChecked( false );
     ImageAnalysisDialog dial;
     dial.exec();
 }
@@ -338,11 +338,11 @@ void MainWindow::activateSASDMode( bool checked )
     Q_UNUSED( checked );
     if ( checked )
     {
-        mp_analyerBrowser->setObject( nullptr );
+        mp_analyzerBrowser->setObject( nullptr );
         mp_sizeAnalyzerBrowser->setObject( nullptr );
         m_highLvlProcessingPipeline = HighLevelProcessingPipelinePtr( new SASDProcessingPipeline( m_kinect ) );
         setVisualizer();
-        mp_analyerBrowser->setObject( m_highLvlProcessingPipeline->movementAnalyzer().data() );
+        mp_analyzerBrowser->setObject( m_highLvlProcessingPipeline->skeletonAnalyzer().data() );
         mp_sizeAnalyzerBrowser->setObject( m_highLvlProcessingPipeline->sizeAnalyzer().data() );
         switchCatergoryOnSceneGraph( mp_sceneGraph->activeScene() );
         ui->actionSABSSDMode->setChecked( false );
@@ -359,11 +359,11 @@ void MainWindow::activateSABSSDMode( bool checked )
     Q_UNUSED( checked );
     if ( checked )
     {
-        mp_analyerBrowser->setObject( nullptr );
+        mp_analyzerBrowser->setObject( nullptr );
         mp_sizeAnalyzerBrowser->setObject( nullptr );
         m_highLvlProcessingPipeline = HighLevelProcessingPipelinePtr( new SABSSDProcessingPipeline( m_kinect ) );
         setVisualizer();
-        mp_analyerBrowser->setObject( m_highLvlProcessingPipeline->movementAnalyzer().data() );
+        mp_analyzerBrowser->setObject( m_highLvlProcessingPipeline->skeletonAnalyzer().data() );
         mp_sizeAnalyzerBrowser->setObject( m_highLvlProcessingPipeline->sizeAnalyzer().data() );
         switchCatergoryOnSceneGraph( mp_sceneGraph->activeScene() );
         ui->actionSASDMode->setChecked( false );

@@ -1,5 +1,5 @@
-#include "../Inc/KinectInitializeDialog.h"
-#include "../../Kinect/inc/Kinect.h"
+#include "../inc/KinectInitializeDialog.h"
+#include "../../Kinect/inc//Kinect.h"
 #include "ui_KinectInitializeDialog.h"
 #include <QPushButton>
 
