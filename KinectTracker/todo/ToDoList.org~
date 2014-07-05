@@ -1,5 +1,5 @@
 ToDo List 
-
+  
 * Ziele für heute
   + [ ] Auswertung, ob der Benutzer in die Kamera schaut oder nicht.
     Klappt nicht so gut.
@@ -8,6 +8,16 @@ ToDo List
     + Braucht Visual Studio 2010
     + [ ] Extra Programm schreiben, dass die Schätzung des Bodens übernimmt.
   + [ ] Meldung wenn der Benutzer zu nahe an der Kamera ist.
+
+* Neues Feature Histogram-Analyse
+  + Funktionen:
+    - [X] Bild laden
+    - [X] Region für das Histogram auswählen
+    - [ ] Histogram berechnen ( mittels LowLewevelProcessingPipeline )
+    - [ ] Histogram speichern in externe Datei / in Buffer
+    - [ ] Histogram vergleichen und Regionen einzeichnen
+  + Probleme:
+    + Resize-Verhalten ist scheiße
 * Gespräch
   + [X] Frage nach einer BA-Arbeit, wo eine Schätzung der Körpergröße
     über die Größe des Oberkörpers durchgeführt wurde.
@@ -39,15 +49,21 @@ ToDo List
   + Monatg: 7.7 17:00 Uhr
   
 * TODO [7/26][26%]
-  + [ ] Connect/Disconnect Signal.
+  + [ ] Kinect connect/disconnect Signal.
     [[http://msdn.microsoft.com/en-us/library/nuiapi.nuisetdevicestatuscallback.aspx]]
   + [ ] Ebene für den Boden schätzen mittels PCL Lib.
+    Brauch nicht über die PCL Lib gemacht werden, da die Kinect selber eine 
+    Funktion dafür bereitstellt.
+    http://msdn.microsoft.com/en-us/library/hh973078.aspx
   + [ ] Farbhistogramm für Gelenke und Gesicht berechnen.
     + Für das Gesicht gibt es 3 Möglichkeiten:
       1. Farbbereich aus dem Paper.
       2. Histogramm aus den LiveDatan ableiten, wenn sicher ist
       3. Gesichtserkennungsalgorithmus von opencv benutzen
      das der Mensch in die Kamera guckt.
+  + [ ] Histogram vergleich
+    1. [[http://docs.opencv.org/trunk/doc/py_tutorials/py_imgproc/py_histograms/py_histogram_backprojection/py_histogram_backprojection.html][opencv]]
+    2. [[http://scien.stanford.edu/pages/labsite/2002/psych221/projects/02/sojeong/][Methodik]]
   + [-] Kopftracking: Schaut in die Kamera oder nicht.
     + [X] Mittels Farbintervalle
     + [ ] Mittels Gesichtserkennung
@@ -133,19 +149,24 @@ ToDo List
        	 + Value: Hellwert bzw. Dunkelstue
 	   - 0% keine Helligkeit
 	   - 100% volle Helligkeit
+* Ausarbeitung
+  + Kinect Sensor erklären
+    + Verschiedene Sensoren und ihre Räume erläutern.
+      + RGB
+      + Tiefenbild in mm ( [[http://msdn.microsoft.com/en-us/library/hh973078.aspx][KinectSDK]] )
+      + Skelettdaten in meter / Kooordinaten System zeiegn
+  + Skelettgliederung
+    + Bild
+  + Verschiedene [[http://docs.opencv.org/modules/imgproc/doc/histograms.html][Funktionen]] für den Vergleich von Histogrammen
+    erklären, mit Formeln.
+    + Korrelation
+    + Chi-Quadrat
+    + Intersect
+    + Bhattacharyya 
+  + [[http://www.brinkmann-du.de/mathe/gost/bstat_01_03.htm][Histogramm]]
+   + Häufigkeitsdichte = (relative Häufigkeit)/(Intervallbreite)
+   + Summe alle Intervalle = 1
 
-       
-
-* Neues Feature Histogram-Analyse
-  + Funktionen:
-    - Bild laden
-    - Region für das Histogram auswählen
-    - Histogram berechnen ( mittels LowLewevelProcessingPipeline )
-    - Histogram speichern in externe Datei / in Buffer
-    - Histogram vergleichen
-
-* Entfernen
-  + [ ] DepthViewerWidget
-  + [ ] RGBWidget
-  + [ ] ArrayManipulator
-  + [ ] SkinColorDeterctor
+ 
+  + Floor determination / Schätzung des Fußbodens 
+    [[http://msdn.microsoft.com/en-us/library/hh973078.aspx][SDK]]

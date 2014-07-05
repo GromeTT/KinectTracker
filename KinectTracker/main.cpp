@@ -1,5 +1,5 @@
-#include "../Inc/MainWindow.h"
-#include "../Inc/OpenGLWindow.h"
+#include "MainWindow.h"
+#include "inc/OpenGL/inc/OpenGLWindow.h"
 #include <QTranslator>
 #include <QApplication>
 

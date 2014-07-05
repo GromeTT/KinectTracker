@@ -57,6 +57,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QPushButton" name="calculateSkinRegionButton">
+         <property name="text">
+          <string>Show skin color pixels</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="showCurrentHistogramButton">
          <property name="text">
           <string>Show current histogram</string>

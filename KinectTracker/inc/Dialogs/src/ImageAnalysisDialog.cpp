@@ -21,6 +21,7 @@ ImageAnalysisDialog::ImageAnalysisDialog( QWidget* parent )
     connect( ui->loadButton, &QPushButton::pressed, this, &ImageAnalysisDialog::loadImage );
     connect( ui->loadROIButton, &QPushButton::pressed, this, &ImageAnalysisDialog::loadROI );
     connect( ui->computeHistogramButton, &QPushButton::pressed, this, &ImageAnalysisDialog::computeHistogram );
+    connect( ui->calculateSkinRegionButton, &QPushButton::pressed, this, &ImageAnalysisDialog::showSkinColor );
 }
 
 /*!
@@ -99,5 +100,10 @@ void ImageAnalysisDialog::computeHistogram()
     cv::imshow( "Backprojection", backprojection );
     cv::threshold( backprojection, backprojection, ui->thresholdSpinBox->value(), 255, cv::THRESH_BINARY );
     cv::imshow( "Threshold", backprojection );
+}
+
+void ImageAnalysisDialog::showSkinColor()
+{
+
 }
 

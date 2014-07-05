@@ -20,6 +20,7 @@ private:
     void loadImage();
     void loadROI();
     void computeHistogram();
+    void showSkinColor();
 
     Ui::ImageAnalysisDialog* ui;
     QDir                     m_lastDirectory;

@@ -26,6 +26,7 @@ HighLevelProcessingPipeline::HighLevelProcessingPipeline( KinectPtr& kinect,
     m_rgbSize = kinect->rgbStreamResolution().width() * kinect->rgbStreamResolution().height() * 3;
     mp_rgbData = new uchar [m_rgbSize];
     mp_rgbScreenshot = new uchar [m_rgbSize];
+    m_skeletons.resize( 6 );
 }
 
 HighLevelProcessingPipeline::~HighLevelProcessingPipeline()
