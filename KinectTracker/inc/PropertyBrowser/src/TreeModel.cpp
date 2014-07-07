@@ -1,9 +1,6 @@
 #include "../inc/TreeModel.h"
 #include "../inc/FixedPropertyVector.h"
-<<<<<<< HEAD
-=======
 #include "../../Kinect/inc/SkeletonData.h"
->>>>>>> 9de9831140ad410c00384007563c7ce4af10e073
 #include "../../QtHelper/inc/ConnectionHelper.h"
 #include <QTreeWidgetItem>
 #include <QVector3D>

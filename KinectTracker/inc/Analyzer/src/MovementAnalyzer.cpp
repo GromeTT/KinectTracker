@@ -96,6 +96,14 @@ void MovementAnalyzer::setViewingDirection( const QString& direction )
 }
 
 /*!
+   \brief MovementAnalyzer::reset
+ */
+void MovementAnalyzer::reset()
+{
+    m_boudingGeometries.clear();
+}
+
+/*!
    \brief MovementAnalyzer::getLatestBoudingGeomerty
    Returns the latest inserted BoundingGeometryPtr.
  */

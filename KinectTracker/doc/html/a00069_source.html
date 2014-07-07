@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/DepthViewerWidget.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Analyzer/inc/SizeAnalyzer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,45 +102,131 @@ $(document).ready(function(){initNavTree('a00069_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">DepthViewerWidget.h</div>  </div>
+<div class="title">SizeAnalyzer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00069.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DEPTHVIEWERWIDGETO_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DEPTHVIEWERWIDGETO_H</span></div>
+<a href="a00069.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SIZEANALYZER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SIZEANALYZER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>Ui{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">class </span><a class="code" href="a00015.html">DepthViewerWidget</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="a00015.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00015.html">DepthViewerWidget</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="a00015.html#a89b0341d50cb5c1a2c49b7cac3da55b4">DepthViewerWidget</a>( QWidget* parent = 0 );</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="a00015.html#ab880a830e46871a1faad8b04fe8af730">~DepthViewerWidget</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00015.html#a10f41e9fb4d95679f2c30c754be698dc">update</a>( QImage* image );</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a00015.html#aa0a6541b50b5134435e9bebbdbf8254d">   20</a></span>&#160;    Ui::DepthViewerWidget* <a class="code" href="a00015.html#aa0a6541b50b5134435e9bebbdbf8254d">ui</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // DEPTHVIEWERWIDGETO_H</span></div>
-<div class="ttc" id="a00015_html_a89b0341d50cb5c1a2c49b7cac3da55b4"><div class="ttname"><a href="a00015.html#a89b0341d50cb5c1a2c49b7cac3da55b4">DepthViewerWidget::DepthViewerWidget</a></div><div class="ttdeci">DepthViewerWidget(QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> DepthViewerWidget.cpp:5</div></div>
-<div class="ttc" id="a00015_html"><div class="ttname"><a href="a00015.html">DepthViewerWidget</a></div><div class="ttdef"><b>Definition:</b> DepthViewerWidget.h:10</div></div>
-<div class="ttc" id="a00015_html_a10f41e9fb4d95679f2c30c754be698dc"><div class="ttname"><a href="a00015.html#a10f41e9fb4d95679f2c30c754be698dc">DepthViewerWidget::update</a></div><div class="ttdeci">void update(QImage *image)</div><div class="ttdef"><b>Definition:</b> DepthViewerWidget.cpp:17</div></div>
-<div class="ttc" id="a00015_html_ab880a830e46871a1faad8b04fe8af730"><div class="ttname"><a href="a00015.html#ab880a830e46871a1faad8b04fe8af730">DepthViewerWidget::~DepthViewerWidget</a></div><div class="ttdeci">~DepthViewerWidget()</div><div class="ttdef"><b>Definition:</b> DepthViewerWidget.cpp:12</div></div>
-<div class="ttc" id="a00015_html_aa0a6541b50b5134435e9bebbdbf8254d"><div class="ttname"><a href="a00015.html#aa0a6541b50b5134435e9bebbdbf8254d">DepthViewerWidget::ui</a></div><div class="ttdeci">Ui::DepthViewerWidget * ui</div><div class="ttdef"><b>Definition:</b> DepthViewerWidget.h:20</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../../Kinect/inc/SkeletonData.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QSharedPointer&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="a00046.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00046.html">SizeAnalyzer</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="a00046.html#ab427c3268cb08064889e8c266c016a6e">SizeAnalyzer</a>( QObject* parent = <span class="keyword">nullptr</span> );</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00046.html#a4a579beda4a49067273a87364b05181c">~SizeAnalyzer</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#a564bf9f97315a8b9742e91953d2871dc">analyze</a>( <span class="keyword">const</span> <a class="code" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>&amp; skeletonData );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#ab34ad2bdb7741e6a40de9564a7aea653">setKneelingThreshold</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> threshold );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#a7fc5b2277e9037ae39fca6bf3e926574">setLyingThreshold</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> threshold );</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#a75462c3e1804ac87c5262bb74f5d940f">setWorkerStatus</a>( <span class="keyword">const</span> QString&amp; status );</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#ae8ca630dbf8d9ceaddd34f083ee74dc4">estimatedBodySize</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#adaae64786f04e2e6352b19744d629189">currentBodySize</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#a2a64bd363f2f244782d7669ffbddd76a">kneelingThreshold</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#a8c2d381ae1ce073d1892f583866437a9">lyingThreshold</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#a9e2ae4ea0a16de5b810c86968f3ade68">distanceHeadRightFood</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#adf0b55a113c6449e354cc2b6f867d912">distanceHeadLeftFood</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    QString <a class="code" href="a00046.html#aabb32e55968613c55d0fd470eab66b2c">workerStatus</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00046.html#aa3892681525820ec7b0577c0b340f951">   30</a></span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#aa3892681525820ec7b0577c0b340f951">m_kneelingThreshold</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00046.html#ad069684e4065b137c0e6702b20c8b016">   31</a></span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#ad069684e4065b137c0e6702b20c8b016">m_lyingThreshold</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00046.html#a7535ef129c3849c28e42cefef6bde73e">   32</a></span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#a7535ef129c3849c28e42cefef6bde73e">m_estimatedBodySize</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00046.html#a6d0b84f8d3fb643e0eba1632930fe382">   33</a></span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#a6d0b84f8d3fb643e0eba1632930fe382">m_currentBodySize</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00046.html#a7d714384f75b725ea54a0e5093b16454">   34</a></span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#a7d714384f75b725ea54a0e5093b16454">m_distanceHeadRightFood</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00046.html#ab68bf0c8978bdeb2c3558ff81a267e13">   35</a></span>&#160;    <span class="keywordtype">float</span>   <a class="code" href="a00046.html#ab68bf0c8978bdeb2c3558ff81a267e13">m_distanceHeadLeftFood</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a00046.html#a75aa4c993eff4887c8a58671c3a6e8e2">   36</a></span>&#160;    QString <a class="code" href="a00046.html#a75aa4c993eff4887c8a58671c3a6e8e2">m_workerStatus</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00046.html#afeafe74db5b4966c7777447943096238">analyzeV</a>( <span class="keyword">const</span> <a class="code" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>&amp; skeletonData ) = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;signals:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#a9e087b8c79f8b1aacdf0f74a539424c0">estimatedBodySizeChanged</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#ae8c29b8c47977da2e4932b9c30e2928e">currentBodySizeChanged</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#ac0f3db8c74f536f7ca03b5a05019f70d">workerStatusChanged</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#aa04db6f570bad592e192a61fcdde66fa">kneelingThresholdChanged</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#ad22c5f3f1cc42f501733d0e79700ab65">lyingThresholdChanged</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#a7e4347c7f2abd26ccd1ed96d07f33ad9">distanceHeadRightFoodChanged</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#a6038748efa61d39a8ddebfecce2ba9a0">distanceHeadLeftFoodChanged</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> estimatedBodySize</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                READ estimatedBodySize</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00046.html#afa85ba7f8c9d92627ca4bd27c2fc2221">   53</a></span>&#160;                NOTIFY <a class="code" href="a00046.html#a9e087b8c79f8b1aacdf0f74a539424c0">estimatedBodySizeChanged</a> )</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> currentBodySize</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                READ currentBodySize</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a00046.html#ab6a8ee924164580bc8b7a240fe5a41a2">   57</a></span>&#160;                NOTIFY <a class="code" href="a00046.html#ae8c29b8c47977da2e4932b9c30e2928e">currentBodySizeChanged</a> )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Q_PROPERTY( QString workerStatus</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                READ workerStatus</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a00046.html#a97f2612ec1029afc0af552998bd276fe">   61</a></span>&#160;                NOTIFY <a class="code" href="a00046.html#ac0f3db8c74f536f7ca03b5a05019f70d">workerStatusChanged</a> )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> kneelingThreshold MEMBER <a class="code" href="a00046.html#aa3892681525820ec7b0577c0b340f951">m_kneelingThreshold</a></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                READ kneelingThreshold</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                WRITE setKneelingThreshold</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="a00046.html#ac6d8a342b5435c17d684149c85db8193">   66</a></span>&#160;                NOTIFY <a class="code" href="a00046.html#aa04db6f570bad592e192a61fcdde66fa">kneelingThresholdChanged</a> )</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> lyingThreshold MEMBER <a class="code" href="a00046.html#ad069684e4065b137c0e6702b20c8b016">m_lyingThreshold</a></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="a00046.html#aa1a46fd1b62465bcf7692e6d82c30245">   69</a></span>&#160;                READ <a class="code" href="a00046.html#a8c2d381ae1ce073d1892f583866437a9">lyingThreshold</a>()</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                WRITE setLyingThreshold</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                NOTIFY <a class="code" href="a00046.html#ad22c5f3f1cc42f501733d0e79700ab65">lyingThresholdChanged</a> )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> distanceHeadRightFood</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                READ distanceHeadRightFood</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a00046.html#a7ea72bc8fe7d8c36e13b17a565a920b1">   75</a></span>&#160;                NOTIFY <a class="code" href="a00046.html#a7e4347c7f2abd26ccd1ed96d07f33ad9">distanceHeadRightFoodChanged</a> )</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> distanceHeadLeftFood</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                READ distanceHeadLeftFood</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="a00046.html#a2ba0916cd5f2b992f4839b2b0abd49fa">   79</a></span>&#160;                NOTIFY <a class="code" href="a00046.html#a6038748efa61d39a8ddebfecce2ba9a0">distanceHeadLeftFoodChanged</a> )</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="a00069.html#afff5f851b83adcc3fc64f8a9c2ad96a9">   82</a></span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;SizeAnalyzer&gt; <a class="code" href="a00069.html#afff5f851b83adcc3fc64f8a9c2ad96a9">SizeAnalyzerPtr</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif // SIZEANALYZER_H</span></div>
+<div class="ttc" id="a00091_html_a3ff4896d315d1270ac7622ce28abee47"><div class="ttname"><a href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a></div><div class="ttdeci">QSharedPointer&lt; SkeletonData &gt; SkeletonDataPtr</div><div class="ttdef"><b>Definition:</b> SkeletonData.h:83</div></div>
+<div class="ttc" id="a00069_html_afff5f851b83adcc3fc64f8a9c2ad96a9"><div class="ttname"><a href="a00069.html#afff5f851b83adcc3fc64f8a9c2ad96a9">SizeAnalyzerPtr</a></div><div class="ttdeci">QSharedPointer&lt; SizeAnalyzer &gt; SizeAnalyzerPtr</div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.h:82</div></div>
+<div class="ttc" id="a00046_html_adaae64786f04e2e6352b19744d629189"><div class="ttname"><a href="a00046.html#adaae64786f04e2e6352b19744d629189">SizeAnalyzer::currentBodySize</a></div><div class="ttdeci">float currentBodySize()</div></div>
+<div class="ttc" id="a00046_html_a7fc5b2277e9037ae39fca6bf3e926574"><div class="ttname"><a href="a00046.html#a7fc5b2277e9037ae39fca6bf3e926574">SizeAnalyzer::setLyingThreshold</a></div><div class="ttdeci">void setLyingThreshold(const float threshold)</div><div class="ttdoc">SizeAnalyzer::setLyingThreshold Sets the lyingThreshold. </div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.cpp:75</div></div>
+<div class="ttc" id="a00046_html_ae8c29b8c47977da2e4932b9c30e2928e"><div class="ttname"><a href="a00046.html#ae8c29b8c47977da2e4932b9c30e2928e">SizeAnalyzer::currentBodySizeChanged</a></div><div class="ttdeci">void currentBodySizeChanged()</div></div>
+<div class="ttc" id="a00046_html_a6038748efa61d39a8ddebfecce2ba9a0"><div class="ttname"><a href="a00046.html#a6038748efa61d39a8ddebfecce2ba9a0">SizeAnalyzer::distanceHeadLeftFoodChanged</a></div><div class="ttdeci">void distanceHeadLeftFoodChanged()</div></div>
+<div class="ttc" id="a00046_html_a7535ef129c3849c28e42cefef6bde73e"><div class="ttname"><a href="a00046.html#a7535ef129c3849c28e42cefef6bde73e">SizeAnalyzer::m_estimatedBodySize</a></div><div class="ttdeci">float m_estimatedBodySize</div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.h:32</div></div>
+<div class="ttc" id="a00046_html_a7e4347c7f2abd26ccd1ed96d07f33ad9"><div class="ttname"><a href="a00046.html#a7e4347c7f2abd26ccd1ed96d07f33ad9">SizeAnalyzer::distanceHeadRightFoodChanged</a></div><div class="ttdeci">void distanceHeadRightFoodChanged()</div></div>
+<div class="ttc" id="a00046_html_a9e087b8c79f8b1aacdf0f74a539424c0"><div class="ttname"><a href="a00046.html#a9e087b8c79f8b1aacdf0f74a539424c0">SizeAnalyzer::estimatedBodySizeChanged</a></div><div class="ttdeci">void estimatedBodySizeChanged()</div></div>
+<div class="ttc" id="a00046_html_ab427c3268cb08064889e8c266c016a6e"><div class="ttname"><a href="a00046.html#ab427c3268cb08064889e8c266c016a6e">SizeAnalyzer::SizeAnalyzer</a></div><div class="ttdeci">SizeAnalyzer(QObject *parent=nullptr)</div><div class="ttdoc">SizeAnalyzer::SizeAnalyzer Standardconstructor. </div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.cpp:7</div></div>
+<div class="ttc" id="a00046_html_ab34ad2bdb7741e6a40de9564a7aea653"><div class="ttname"><a href="a00046.html#ab34ad2bdb7741e6a40de9564a7aea653">SizeAnalyzer::setKneelingThreshold</a></div><div class="ttdeci">void setKneelingThreshold(const float threshold)</div><div class="ttdoc">SizeAnalyzer::setKneelingThreshold Sets the kneelingThreshold. </div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.cpp:65</div></div>
+<div class="ttc" id="a00046_html_adf0b55a113c6449e354cc2b6f867d912"><div class="ttname"><a href="a00046.html#adf0b55a113c6449e354cc2b6f867d912">SizeAnalyzer::distanceHeadLeftFood</a></div><div class="ttdeci">float distanceHeadLeftFood()</div></div>
+<div class="ttc" id="a00046_html_a75aa4c993eff4887c8a58671c3a6e8e2"><div class="ttname"><a href="a00046.html#a75aa4c993eff4887c8a58671c3a6e8e2">SizeAnalyzer::m_workerStatus</a></div><div class="ttdeci">QString m_workerStatus</div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.h:36</div></div>
+<div class="ttc" id="a00046_html"><div class="ttname"><a href="a00046.html">SizeAnalyzer</a></div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.h:8</div></div>
+<div class="ttc" id="a00046_html_a2a64bd363f2f244782d7669ffbddd76a"><div class="ttname"><a href="a00046.html#a2a64bd363f2f244782d7669ffbddd76a">SizeAnalyzer::kneelingThreshold</a></div><div class="ttdeci">float kneelingThreshold()</div></div>
+<div class="ttc" id="a00046_html_aabb32e55968613c55d0fd470eab66b2c"><div class="ttname"><a href="a00046.html#aabb32e55968613c55d0fd470eab66b2c">SizeAnalyzer::workerStatus</a></div><div class="ttdeci">QString workerStatus()</div></div>
+<div class="ttc" id="a00046_html_ac0f3db8c74f536f7ca03b5a05019f70d"><div class="ttname"><a href="a00046.html#ac0f3db8c74f536f7ca03b5a05019f70d">SizeAnalyzer::workerStatusChanged</a></div><div class="ttdeci">void workerStatusChanged()</div></div>
+<div class="ttc" id="a00046_html_ae8ca630dbf8d9ceaddd34f083ee74dc4"><div class="ttname"><a href="a00046.html#ae8ca630dbf8d9ceaddd34f083ee74dc4">SizeAnalyzer::estimatedBodySize</a></div><div class="ttdeci">float estimatedBodySize()</div></div>
+<div class="ttc" id="a00046_html_a564bf9f97315a8b9742e91953d2871dc"><div class="ttname"><a href="a00046.html#a564bf9f97315a8b9742e91953d2871dc">SizeAnalyzer::analyze</a></div><div class="ttdeci">void analyze(const SkeletonDataPtr &amp;skeletonData)</div><div class="ttdoc">SizeAnalyzer::analyze Perform analysis on skeletonData. </div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.cpp:32</div></div>
+<div class="ttc" id="a00046_html_a75462c3e1804ac87c5262bb74f5d940f"><div class="ttname"><a href="a00046.html#a75462c3e1804ac87c5262bb74f5d940f">SizeAnalyzer::setWorkerStatus</a></div><div class="ttdeci">void setWorkerStatus(const QString &amp;status)</div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.cpp:81</div></div>
+<div class="ttc" id="a00046_html_aa3892681525820ec7b0577c0b340f951"><div class="ttname"><a href="a00046.html#aa3892681525820ec7b0577c0b340f951">SizeAnalyzer::m_kneelingThreshold</a></div><div class="ttdeci">float m_kneelingThreshold</div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.h:30</div></div>
+<div class="ttc" id="a00046_html_aa04db6f570bad592e192a61fcdde66fa"><div class="ttname"><a href="a00046.html#aa04db6f570bad592e192a61fcdde66fa">SizeAnalyzer::kneelingThresholdChanged</a></div><div class="ttdeci">void kneelingThresholdChanged()</div></div>
+<div class="ttc" id="a00046_html_a9e2ae4ea0a16de5b810c86968f3ade68"><div class="ttname"><a href="a00046.html#a9e2ae4ea0a16de5b810c86968f3ade68">SizeAnalyzer::distanceHeadRightFood</a></div><div class="ttdeci">float distanceHeadRightFood()</div></div>
+<div class="ttc" id="a00046_html_afeafe74db5b4966c7777447943096238"><div class="ttname"><a href="a00046.html#afeafe74db5b4966c7777447943096238">SizeAnalyzer::analyzeV</a></div><div class="ttdeci">virtual void analyzeV(const SkeletonDataPtr &amp;skeletonData)=0</div></div>
+<div class="ttc" id="a00046_html_a7d714384f75b725ea54a0e5093b16454"><div class="ttname"><a href="a00046.html#a7d714384f75b725ea54a0e5093b16454">SizeAnalyzer::m_distanceHeadRightFood</a></div><div class="ttdeci">float m_distanceHeadRightFood</div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.h:34</div></div>
+<div class="ttc" id="a00046_html_ad22c5f3f1cc42f501733d0e79700ab65"><div class="ttname"><a href="a00046.html#ad22c5f3f1cc42f501733d0e79700ab65">SizeAnalyzer::lyingThresholdChanged</a></div><div class="ttdeci">void lyingThresholdChanged()</div></div>
+<div class="ttc" id="a00046_html_a4a579beda4a49067273a87364b05181c"><div class="ttname"><a href="a00046.html#a4a579beda4a49067273a87364b05181c">SizeAnalyzer::~SizeAnalyzer</a></div><div class="ttdeci">virtual ~SizeAnalyzer()</div><div class="ttdoc">SizeAnalyzer::~SizeAnalyzer Destroyes the object. </div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.cpp:23</div></div>
+<div class="ttc" id="a00046_html_ab68bf0c8978bdeb2c3558ff81a267e13"><div class="ttname"><a href="a00046.html#ab68bf0c8978bdeb2c3558ff81a267e13">SizeAnalyzer::m_distanceHeadLeftFood</a></div><div class="ttdeci">float m_distanceHeadLeftFood</div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.h:35</div></div>
+<div class="ttc" id="a00046_html_a6d0b84f8d3fb643e0eba1632930fe382"><div class="ttname"><a href="a00046.html#a6d0b84f8d3fb643e0eba1632930fe382">SizeAnalyzer::m_currentBodySize</a></div><div class="ttdeci">float m_currentBodySize</div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.h:33</div></div>
+<div class="ttc" id="a00046_html_ad069684e4065b137c0e6702b20c8b016"><div class="ttname"><a href="a00046.html#ad069684e4065b137c0e6702b20c8b016">SizeAnalyzer::m_lyingThreshold</a></div><div class="ttdeci">float m_lyingThreshold</div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.h:31</div></div>
+<div class="ttc" id="a00046_html_a8c2d381ae1ce073d1892f583866437a9"><div class="ttname"><a href="a00046.html#a8c2d381ae1ce073d1892f583866437a9">SizeAnalyzer::lyingThreshold</a></div><div class="ttdeci">float lyingThreshold()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00069.html">DepthViewerWidget.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_7d1f4849ef4395e3ffbc74b409afca8d.html">Analyzer</a></li><li class="navelem"><a class="el" href="dir_37ee937b15c4fe0701734dc8b32bf2cf.html">inc</a></li><li class="navelem"><a class="el" href="a00069.html">SizeAnalyzer.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

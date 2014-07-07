@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['highlevelprocessingpipeline',['HighLevelProcessingPipeline',['../a00022.html',1,'']]],
-  ['hogdetectionpipeline',['HOGDetectionPipeline',['../a00023.html',1,'']]],
-  ['hogfeaturedetector',['HOGFeatureDetector',['../a00024.html',1,'']]]
+  ['imageanalysisdialog',['ImageAnalysisDialog',['../a00025.html',1,'']]],
+  ['imagewidget',['ImageWidget',['../a00026.html',1,'']]],
+  ['inrange',['InRange',['../a00027.html',1,'']]]
 ];

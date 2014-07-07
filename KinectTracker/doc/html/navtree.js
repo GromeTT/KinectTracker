@@ -2,7 +2,12 @@ var NAVTREE =
 [
   [ "KinectTracker", "index.html", [
     [ "Namespaces", null, [
-      [ "Namespace List", "namespaces.html", "namespaces" ]
+      [ "Namespace List", "namespaces.html", "namespaces" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
+      ] ]
     ] ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
@@ -22,7 +27,6 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -33,10 +37,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "a00001.html",
-"a00016.html#ae0222fa088331077fdedfa5a8c563f35",
-"a00030.html#a6948a9e3d5fef3f4e41aae09e5faf0de",
-"a00048.html#a02266718608ecfdc3aa4a0fa96c5c5b7",
-"a00078_source.html"
+"a00016.html#a8346ac2797103fbb55f6fe982e2e57c7",
+"a00028.html#af1ba3f64fa8e801b769ba8be8e50ae4d",
+"a00044.html#a66da606d103d5f31f14cb1cc66af8c9d",
+"a00056.html#a75076ad7fddd85a5a8a47c4cb4c1ce59",
+"a00131.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

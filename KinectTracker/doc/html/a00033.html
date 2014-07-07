@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: OpenGLWindow Class Reference</title>
+<title>KinectTracker: MovementAnalyzer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,23 +104,51 @@ $(document).ready(function(){initNavTree('a00033.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00193.html">List of all members</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="a00203.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">OpenGLWindow Class Reference</div>  </div>
+<div class="title">MovementAnalyzer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00087_source.html">OpenGLWindow.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00068_source.html">MovementAnalyzer.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for OpenGLWindow:</div>
+Inheritance diagram for MovementAnalyzer:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00033.png" usemap="#OpenGLWindow_map" alt=""/>
-  <map id="OpenGLWindow_map" name="OpenGLWindow_map">
+  <img src="a00033.png" usemap="#MovementAnalyzer_map" alt=""/>
+  <map id="MovementAnalyzer_map" name="MovementAnalyzer_map">
+<area href="a00003.html" alt="BBMovementAnalyzer" shape="rect" coords="0,112,137,136"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ab9d159bcf00339f0a1eb3148a43a3620"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#ab9d159bcf00339f0a1eb3148a43a3620">arePointsInsideLatestBoudingGeomerty</a> (const QVector&lt; QVector3D &gt; &amp;points) const </td></tr>
+<tr class="separator:ab9d159bcf00339f0a1eb3148a43a3620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ed3ad06629ef6ac1f6ba715090187b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#a08ed3ad06629ef6ac1f6ba715090187b">addBoundingGeometry</a> (<a class="el" href="a00086.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a> &amp;boundingGeometry, const unsigned int timestamp)</td></tr>
+<tr class="separator:a08ed3ad06629ef6ac1f6ba715090187b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a81b042bc42f2e3057c5eb30edf8029c6"></a>
+<a class="anchor" id="a950981be4142b22fc4e133d6ef3412d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MovementAnalyzer::MovementAnalyzer </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#a950981be4142b22fc4e133d6ef3412d7" title="MovementAnalyzer::MovementAnalyzer Standardconstructor. ">MovementAnalyzer::MovementAnalyzer</a> Standardconstructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a30b01985f212cbe998c7d685e84ddf1c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -128,54 +156,25 @@ Inheritance diagram for OpenGLWindow:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">OpenGLWindow::OpenGLWindow </td>
-          <td>(</td>
-          <td class="paramtype">QScreen *&#160;</td>
-          <td class="paramname"><em>screen</em> = <code>0</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa220b192c71871aab9100f4058a8d62d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">OpenGLWindow::~OpenGLWindow </td>
+          <td class="memname">MovementAnalyzer::~MovementAnalyzer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#a30b01985f212cbe998c7d685e84ddf1c" title="MovementAnalyzer::~MovementAnalyzer Destroyes the object. ">MovementAnalyzer::~MovementAnalyzer</a> Destroyes the object. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0798f49b14a35aa4d2ea5bc1d82a1bd7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00061.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a> &amp; OpenGLWindow::getOpenGLContext </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a685f81679ed40d2a072e6da696b0e160"></a>
+<a class="anchor" id="a08ed3ad06629ef6ac1f6ba715090187b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -183,37 +182,64 @@ Inheritance diagram for OpenGLWindow:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00061.html#ab47e41722c2931c8063642b53ff6c04f">Scene</a> OpenGLWindow::getScene </td>
+          <td class="memname">void MovementAnalyzer::addBoundingGeometry </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00086.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>boundingGeometry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00033.html#a08ed3ad06629ef6ac1f6ba715090187b" title="MovementAnalyzer::addBoundingGeometry Prepends boundingGeometry and timestamp into a vector...">MovementAnalyzer::addBoundingGeometry</a> Prepends <em>boundingGeometry</em> and <em>timestamp</em> into a vector. </p>
+<p>The vector will never be greater then m_maxBoudingGeometryCount. </p>
+
 </div>
 </div>
-<a class="anchor" id="ad5f75b29b792f0d4a3ce32bd2dd3fad8"></a>
+<a class="anchor" id="aeb259bd408c39666bcc12cf44f9be5b4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void OpenGLWindow::init </td>
+          <td class="memname">void MovementAnalyzer::analyze </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>skeleton</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00033.html#aeb259bd408c39666bcc12cf44f9be5b4" title="MovementAnalyzer::analyze Analyzes the human&#39;s movement. ">MovementAnalyzer::analyze</a> Analyzes the human's movement. </p>
+
 </div>
 </div>
-<a class="anchor" id="a69f3cfa0a95ca91f57d90d9484bd6c54"></a>
+<a class="anchor" id="a7d4bfd94e927064226a6bd6efb4ba58a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -221,9 +247,90 @@ Inheritance diagram for OpenGLWindow:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void OpenGLWindow::initializeGL </td>
+          <td class="memname">virtual void MovementAnalyzer::anaylzeV </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>&#160;</td>
+          <td class="paramname"><em>skeleton</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a00003.html#ab3cc94cd31a0019d49e51ea16d5f3ed0">BBMovementAnalyzer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9d159bcf00339f0a1eb3148a43a3620"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MovementAnalyzer::arePointsInsideLatestBoudingGeomerty </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; QVector3D &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#ab9d159bcf00339f0a1eb3148a43a3620" title="MovementAnalyzer::arePointsInsideLatestBoudingGeomerty Returns true, if one of the points from points...">MovementAnalyzer::arePointsInsideLatestBoudingGeomerty</a> Returns true, if one of the points from <em>points</em> is within the first (latest inserted ) <a class="el" href="a00007.html">BoundingGeometry</a>. </p>
+<p>Otherwise false will be returned. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6bc2046d0c2fe3ad6bfc7fc10c7b2871"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QVector&lt; <a class="el" href="a00086.html#a2cf6b652a4fccd40c0719bb68dfd26e0">BoundingGeometryWithTimeStampPtr</a> &gt; &amp; MovementAnalyzer::boundingGeometries </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#a6bc2046d0c2fe3ad6bfc7fc10c7b2871" title="MovementAnalyzer::boundingGeometries Returns a QList with all BoundingGeometries calculated within th...">MovementAnalyzer::boundingGeometries</a> Returns a QList with all BoundingGeometries calculated within this class. </p>
+
+</div>
+</div>
+<a class="anchor" id="adfa678b7a5da8bfc09c437d5c178943f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::calculateOriantationAndVelocity </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>timestamp</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -236,7 +343,56 @@ Inheritance diagram for OpenGLWindow:</div>
 
 </div>
 </div>
-<a class="anchor" id="aafa1fdd10232a09b77db2395519e9882"></a>
+<a class="anchor" id="ab2e5fede5bf17fc6625ce98eb5fa0c7d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool MovementAnalyzer::dataAvailable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#ab2e5fede5bf17fc6625ce98eb5fa0c7d" title="MovementAnalyzer::dataAvailable Returns true, if there a skeleton data available. ...">MovementAnalyzer::dataAvailable</a> Returns true, if there a skeleton data available. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8567df352f7b9d3addca81024349efb2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00086.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a> MovementAnalyzer::getLatestBoudingGeomerty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#a8567df352f7b9d3addca81024349efb2" title="MovementAnalyzer::getLatestBoudingGeomerty Returns the latest inserted BoundingGeometryPtr. ">MovementAnalyzer::getLatestBoudingGeomerty</a> Returns the latest inserted BoundingGeometryPtr. </p>
+
+</div>
+</div>
+<a class="anchor" id="a65133ef4fb75009b82c7975f6fb26d6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float MovementAnalyzer::pitch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acbd619fac863258147a2abcc009ebb12"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -244,10 +400,125 @@ Inheritance diagram for OpenGLWindow:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void OpenGLWindow::keyPressEvent </td>
+          <td class="memname">void MovementAnalyzer::pitchChanged </td>
           <td>(</td>
-          <td class="paramtype">QKeyEvent *&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af03825f5c6df9167c4c3b49e6e77e301"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float MovementAnalyzer::roll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af9349cccf207d467dc8c2144de1ed542"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::rollChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2298804955816e3f249d9df242857436"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::setDataAvailable </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>available</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#a2298804955816e3f249d9df242857436" title="MovementAnalyzer::setDataAvailable. ">MovementAnalyzer::setDataAvailable</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a965a227db5b24d6fcda905175af260b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::setPitch </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>pitch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#a965a227db5b24d6fcda905175af260b0" title="MovementAnalyzer::setPitch Sets the pitch angle to pitch. ">MovementAnalyzer::setPitch</a> Sets the pitch angle to <em>pitch</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="adfa1d6103aaaeee5e8064565f91394fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::setRoll </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>roll</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#adfa1d6103aaaeee5e8064565f91394fa" title="MovementAnalyzer::setRoll Sets the roll angle to roll. ">MovementAnalyzer::setRoll</a> Sets the roll angle to <em>roll</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="aac195402ddd6deb8924a46f1bec339dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::setVelocity </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>velocity</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -258,9 +529,97 @@ Inheritance diagram for OpenGLWindow:</div>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00033.html#aac195402ddd6deb8924a46f1bec339dc" title="MovementAnalyzer::setVelocity Sets teh velocity to velocity. ">MovementAnalyzer::setVelocity</a> Sets teh velocity to <em>velocity</em>. </p>
+
 </div>
 </div>
-<a class="anchor" id="ab7514c6f73755094d5670765ec47a71c"></a>
+<a class="anchor" id="a03497cf6ee35b2a76fcb6fe007c34aa8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::setVelocityInterval </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>intervall</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MovementAnalyzer::setVelocityIntervall Sets the intervall over which the velocity will be calculated. </p>
+
+</div>
+</div>
+<a class="anchor" id="ace6ff636fdde11fa5c47a289a2588b3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::setViewingDirection </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#ace6ff636fdde11fa5c47a289a2588b3d" title="MovementAnalyzer::setViewingDirection Sets the description of the worker&#39;s viewing direction to direc...">MovementAnalyzer::setViewingDirection</a> Sets the description of the worker's viewing direction to <em>direction</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4856ffbad80bdd4bf04cf49813956852"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::setYaw </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>yaw</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#a4856ffbad80bdd4bf04cf49813956852" title="MovementAnalyzer::setYaw Sets the yaw angle to yaw. ">MovementAnalyzer::setYaw</a> Sets the yaw angle to <em>yaw</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9ea3ea54c4c1600fdac8a15fdfa739ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float MovementAnalyzer::velocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a059ce5c4cdec5c2ac9fc84b517984d05"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int MovementAnalyzer::velocityInterval </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#aae0cd6d6acabee35acd2093d8dfe8957">MovementAnalyzer::velocityIntervall</a> Returns the size of the intervall over which the velocity will be calculated. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3c910d5b7ebba8bd069d120373d9c7eb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -268,84 +627,122 @@ Inheritance diagram for OpenGLWindow:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void OpenGLWindow::keyReleaseEvent </td>
+          <td class="memname">void MovementAnalyzer::velocityIntervalChanged </td>
           <td>(</td>
-          <td class="paramtype">QKeyEvent *&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a03229f68dac57be079e18b6ef135ab46"></a>
+<a class="anchor" id="a6dbc250a29e5a72cd9c8e081156fbbe6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::veloctiyChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad5ef9417f30003bb7eac8aea84e76316"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void OpenGLWindow::makeContextCurrent </td>
+          <td class="memname">QString MovementAnalyzer::viewingDirection </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a7ae488627e37254bbe1863c928781d83"></a>
+<a class="anchor" id="abdbf8f2a49a8509be07302c41f8bb228"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovementAnalyzer::viewingDirectionChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4e4e5c49bcd4fe1e52924f403af1074b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void OpenGLWindow::paintGL </td>
+          <td class="memname">const float MovementAnalyzer::yaw </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a09f27a6f1628dadbd3c7ca3c1651ec59"></a>
+<a class="anchor" id="a9623c58dae7c417ad459a654ef892dcb"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void OpenGLWindow::resizeGL </td>
+          <td class="memname">void MovementAnalyzer::yawChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae42079d2df46e3aa913e0ddfce3de023"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void OpenGLWindow::updateScene </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ab402508e5d28e6d005872fa6731507ee"></a>
+<a class="anchor" id="aec2fd35b7788882e6fbbe997bd508cd2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -353,7 +750,27 @@ Inheritance diagram for OpenGLWindow:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00061.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a> OpenGLWindow::m_context</td>
+          <td class="memname">QVector&lt;<a class="el" href="a00086.html#a2cf6b652a4fccd40c0719bb68dfd26e0">BoundingGeometryWithTimeStampPtr</a>&gt; MovementAnalyzer::m_boudingGeometries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a36bc6d75a94fc2f96e554e098fcbea5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MovementAnalyzer::m_dataAvaibale</td>
         </tr>
       </table>
   </td>
@@ -365,7 +782,7 @@ Inheritance diagram for OpenGLWindow:</div>
 
 </div>
 </div>
-<a class="anchor" id="a47480af9b80b37f9a8f0eead84eb90be"></a>
+<a class="anchor" id="afa1233957658d3ac7aa31632ea397b90"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -373,7 +790,87 @@ Inheritance diagram for OpenGLWindow:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00061.html#ab47e41722c2931c8063642b53ff6c04f">Scene</a> OpenGLWindow::m_scene</td>
+          <td class="memname">const int MovementAnalyzer::m_maxBoudingGeometryCount = 200</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9140d6254574968d0b699f28d3dc0234"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MovementAnalyzer::m_pitch</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a00085b25c8a46990acf69da0751c6cb9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MovementAnalyzer::m_roll</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a780403c416d66f8d168c9d0c5096dc9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MovementAnalyzer::m_velocity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8ff9f1ff00e18e1d4406123c8327ab9f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int MovementAnalyzer::m_velocityInterval</td>
         </tr>
       </table>
   </td>
@@ -385,7 +882,7 @@ Inheritance diagram for OpenGLWindow:</div>
 
 </div>
 </div>
-<a class="anchor" id="ad88460862bd55a441456b958a9563397"></a>
+<a class="anchor" id="ad2ee4c9291465f6783f1eff88bec1082"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -393,7 +890,7 @@ Inheritance diagram for OpenGLWindow:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool OpenGLWindow::m_strgPressed</td>
+          <td class="memname">QString MovementAnalyzer::m_viewingDirection</td>
         </tr>
       </table>
   </td>
@@ -402,20 +899,171 @@ Inheritance diagram for OpenGLWindow:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae87791a6259b62b210460d8d6b3ac0e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MovementAnalyzer::m_yaw</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="ad7d80b4fdfcd15612a2c82a5c18c4b0e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float MovementAnalyzer::pitch</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#ad7d80b4fdfcd15612a2c82a5c18c4b0e" title="MovementAnalyzer::pitch Returns the pitch angle. ">MovementAnalyzer::pitch</a> Returns the pitch angle. </p>
+
+</div>
+</div>
+<a class="anchor" id="ace5c54cafffdc11629a205ae7bbebdac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float MovementAnalyzer::roll</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#ace5c54cafffdc11629a205ae7bbebdac" title="MovementAnalyzer::roll Returns the roll angle. ">MovementAnalyzer::roll</a> Returns the roll angle. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4d66dcb8b892767f9509a20426e6adf1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float MovementAnalyzer::velocity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#a4d66dcb8b892767f9509a20426e6adf1" title="MovementAnalyzer::velocity Returns the velocity of the movement. ">MovementAnalyzer::velocity</a> Returns the velocity of the movement. </p>
+
+</div>
+</div>
+<a class="anchor" id="aae0cd6d6acabee35acd2093d8dfe8957"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MovementAnalyzer::velocityIntervall</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3ca9ce77df855f480097faaeecf25fcd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString MovementAnalyzer::viewingDirection</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#a3ca9ce77df855f480097faaeecf25fcd" title="MovementAnalyzer::viewingDirection Returns a description of the worker&#39;s viewing direction. ">MovementAnalyzer::viewingDirection</a> Returns a description of the worker's viewing direction. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab50f8c3c4a633e4cfc662e6ce0274282"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float MovementAnalyzer::yaw</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00033.html#ab50f8c3c4a633e4cfc662e6ce0274282" title="MovementAnalyzer::yaw Returns the yaw angle;. ">MovementAnalyzer::yaw</a> Returns the yaw angle;. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00087_source.html">OpenGLWindow.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00136.html">OpenGLWindow.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Analyzer/inc/<a class="el" href="a00068_source.html">MovementAnalyzer.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Analyzer/src/<a class="el" href="a00075.html">MovementAnalyzer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00033.html">OpenGLWindow</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00033.html">MovementAnalyzer</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

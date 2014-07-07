@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SASDProcessingPipeline.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/OpenGL/inc/ObjectLoader.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,60 +102,80 @@ $(document).ready(function(){initNavTree('a00097_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">SASDProcessingPipeline.h</div>  </div>
+<div class="title">ObjectLoader.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00097.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SASDPROCESSINGPIPELINE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SASDPROCESSINGPIPELINE_H</span></div>
+<a href="a00097.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OBJECTLOADER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define OBJECTLOADER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00076.html">HighLevelProcessingPipeline.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00089.html">ProcessingPipeline.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span><a class="code" href="a00001.html">AnalysisResults</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="a00047.html">SkeletonAnalyzer</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="a00043.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00043.html">SASDProcessingPipeline</a> : <span class="keyword">public</span> <a class="code" href="a00022.html">HighLevelProcessingPipeline</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="a00043.html#a6cff542c118af10abc9e27ffd35d6a09">SASDProcessingPipeline</a>( <a class="code" href="a00081.html#affc3611a0f4ad546175a9cca2cfc53f1">KinectPtr</a>&amp; kinect, QObject* parent = <span class="keyword">nullptr</span> );</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00043.html#a7dd8a89717a7ac7bd8742b46f7757030">~SASDProcessingPipeline</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   <a class="code" href="a00001.html">AnalysisResults</a> <a class="code" href="a00043.html#aa7ad9f057418a0871e207c34132f6f97">processV</a>( <a class="code" href="a00001.html">AnalysisResults</a>&amp; results,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp );</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="a00043.html#a51493a5745721feced7add389fc58e39">processSkeletonData</a>( <a class="code" href="a00001.html">AnalysisResults</a>&amp; results,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp );</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="a00043.html#a5f06ece8e81ca555c13ad9695488f9e1">processRGBData</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00043.html#a07c764c1d9dea1f26c3f34daf2c777db">   25</a></span>&#160;   <a class="code" href="a00047.html">SkeletonAnalyzer</a>*                                    <a class="code" href="a00043.html#a07c764c1d9dea1f26c3f34daf2c777db">mp_skeletonAnalyzer</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00043.html#a2d72c74c274105a72685ecdabaae74c1">   26</a></span>&#160;   <a class="code" href="a00052.html">SkinColorExplicitDefinedSkinRegionDetectionPipeline</a>* <a class="code" href="a00043.html#a2d72c74c274105a72685ecdabaae74c1">mp_skinDetectionPipeline</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif // SASDPROCESSINGPIPELINE_H</span></div>
-<div class="ttc" id="a00022_html"><div class="ttname"><a href="a00022.html">HighLevelProcessingPipeline</a></div><div class="ttdef"><b>Definition:</b> HighLevelProcessingPipeline.h:12</div></div>
-<div class="ttc" id="a00043_html_a2d72c74c274105a72685ecdabaae74c1"><div class="ttname"><a href="a00043.html#a2d72c74c274105a72685ecdabaae74c1">SASDProcessingPipeline::mp_skinDetectionPipeline</a></div><div class="ttdeci">SkinColorExplicitDefinedSkinRegionDetectionPipeline * mp_skinDetectionPipeline</div><div class="ttdef"><b>Definition:</b> SASDProcessingPipeline.h:26</div></div>
-<div class="ttc" id="a00001_html"><div class="ttname"><a href="a00001.html">AnalysisResults</a></div><div class="ttdef"><b>Definition:</b> AnalysisResults.h:10</div></div>
-<div class="ttc" id="a00076_html"><div class="ttname"><a href="a00076.html">HighLevelProcessingPipeline.h</a></div></div>
-<div class="ttc" id="a00047_html"><div class="ttname"><a href="a00047.html">SkeletonAnalyzer</a></div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:15</div></div>
-<div class="ttc" id="a00043_html_a51493a5745721feced7add389fc58e39"><div class="ttname"><a href="a00043.html#a51493a5745721feced7add389fc58e39">SASDProcessingPipeline::processSkeletonData</a></div><div class="ttdeci">bool processSkeletonData(AnalysisResults &amp;results, const unsigned int timestamp)</div><div class="ttdoc">SASDProcessingPipeline::processSkeletonData Process the skeleton data and store the results into resu...</div><div class="ttdef"><b>Definition:</b> SASDProcessingPipeline.cpp:51</div></div>
-<div class="ttc" id="a00043_html"><div class="ttname"><a href="a00043.html">SASDProcessingPipeline</a></div><div class="ttdef"><b>Definition:</b> SASDProcessingPipeline.h:10</div></div>
-<div class="ttc" id="a00043_html_a07c764c1d9dea1f26c3f34daf2c777db"><div class="ttname"><a href="a00043.html#a07c764c1d9dea1f26c3f34daf2c777db">SASDProcessingPipeline::mp_skeletonAnalyzer</a></div><div class="ttdeci">SkeletonAnalyzer * mp_skeletonAnalyzer</div><div class="ttdef"><b>Definition:</b> SASDProcessingPipeline.h:25</div></div>
-<div class="ttc" id="a00043_html_a7dd8a89717a7ac7bd8742b46f7757030"><div class="ttname"><a href="a00043.html#a7dd8a89717a7ac7bd8742b46f7757030">SASDProcessingPipeline::~SASDProcessingPipeline</a></div><div class="ttdeci">virtual ~SASDProcessingPipeline()</div><div class="ttdoc">SASDProcessingPipeline::~SASDProcessingPipeline Destroyes the object. </div><div class="ttdef"><b>Definition:</b> SASDProcessingPipeline.cpp:30</div></div>
-<div class="ttc" id="a00052_html"><div class="ttname"><a href="a00052.html">SkinColorExplicitDefinedSkinRegionDetectionPipeline</a></div><div class="ttdef"><b>Definition:</b> ProcessingPipeline.h:156</div></div>
-<div class="ttc" id="a00043_html_aa7ad9f057418a0871e207c34132f6f97"><div class="ttname"><a href="a00043.html#aa7ad9f057418a0871e207c34132f6f97">SASDProcessingPipeline::processV</a></div><div class="ttdeci">AnalysisResults processV(AnalysisResults &amp;results, const unsigned int timestamp)</div><div class="ttdoc">SASDProcessingPipeline::processV. </div><div class="ttdef"><b>Definition:</b> SASDProcessingPipeline.cpp:39</div></div>
-<div class="ttc" id="a00043_html_a5f06ece8e81ca555c13ad9695488f9e1"><div class="ttname"><a href="a00043.html#a5f06ece8e81ca555c13ad9695488f9e1">SASDProcessingPipeline::processRGBData</a></div><div class="ttdeci">void processRGBData()</div><div class="ttdef"><b>Definition:</b> SASDProcessingPipeline.cpp:69</div></div>
-<div class="ttc" id="a00081_html_affc3611a0f4ad546175a9cca2cfc53f1"><div class="ttname"><a href="a00081.html#affc3611a0f4ad546175a9cca2cfc53f1">KinectPtr</a></div><div class="ttdeci">QSharedPointer&lt; Kinect &gt; KinectPtr</div><div class="ttdef"><b>Definition:</b> Kinect.h:80</div></div>
-<div class="ttc" id="a00043_html_a6cff542c118af10abc9e27ffd35d6a09"><div class="ttname"><a href="a00043.html#a6cff542c118af10abc9e27ffd35d6a09">SASDProcessingPipeline::SASDProcessingPipeline</a></div><div class="ttdeci">SASDProcessingPipeline(KinectPtr &amp;kinect, QObject *parent=nullptr)</div><div class="ttdoc">SASDProcessingPipeline::SASDProcessingPipeline Constructs a SASDProcessingPipeline. </div><div class="ttdef"><b>Definition:</b> SASDProcessingPipeline.cpp:17</div></div>
-<div class="ttc" id="a00089_html"><div class="ttname"><a href="a00089.html">ProcessingPipeline.h</a></div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QSharedPointer&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00105.html">Vertex.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00030.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00030.html">LoaderObject</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="a00030.html#ab5619bcc09220112f0a342b3147b58c4">LoaderObject</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="a00030.html#a2ee2ee5a245955568c138860e1c449dd">~LoaderObject</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00030.html#a39d542153aa5ad1e72e800cfda87092c">addVertex</a>( <span class="keyword">const</span> <a class="code" href="a00059.html">Vertex</a> vertex );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00030.html#a18be2a2412731797071c97bcff1e868c">addIndice</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> indice );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00086.html#a259f4df67df3fce159eb227839d3c425">Vertices</a>&amp;              <a class="code" href="a00030.html#a20212264506edb13784d0041947b2238">getVertices</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">const</span> QVector&lt;unsigned int&gt;&amp; <a class="code" href="a00030.html#a40e0c4e308b1097fe9e5fc1cce846351">getIndices</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00030.html#a31d9c4fa44ebf43f5686bc185d356c60">   22</a></span>&#160;    <a class="code" href="a00086.html#a259f4df67df3fce159eb227839d3c425">Vertices</a>              <a class="code" href="a00030.html#a31d9c4fa44ebf43f5686bc185d356c60">m_vertices</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a00030.html#afcc2d24ff406650fe5fc0f46a575abfa">   23</a></span>&#160;    QVector&lt;unsigned int&gt; <a class="code" href="a00030.html#afcc2d24ff406650fe5fc0f46a575abfa">m_indices</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00097.html#af2d2d934df351d4e2b38aab9daaf0e94">   26</a></span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;LoaderObject&gt; <a class="code" href="a00097.html#af2d2d934df351d4e2b38aab9daaf0e94">LoaderObjectPtr</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00034.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00034.html">ObjectLoader</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="a00034.html#af9ecb6be20590e95539db718aaa74096">ObjectLoader</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="a00034.html#af9ecb6be20590e95539db718aaa74096">ObjectLoader</a>( <span class="keyword">const</span> QString&amp; filename );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="a00034.html#abe35e670f22d62f56a95e28b67b43c93">~ObjectLoader</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00034.html#ab0c747b6f0fee84f51236cfe3e7ae4e3">setFilename</a>( <span class="keyword">const</span> QString&amp; filename );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="a00097.html#af2d2d934df351d4e2b38aab9daaf0e94">LoaderObjectPtr</a> <a class="code" href="a00034.html#a2d7bda5977707e5b1b4ec5bcde039ff5">load</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    QString         <a class="code" href="a00034.html#a44d2471ac19507310b4011b12b5c76de">getFilename</a>( ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a00034.html#aa4485753ec65569c72620226717f1e18">   41</a></span>&#160;    QString <a class="code" href="a00034.html#aa4485753ec65569c72620226717f1e18">m_filename</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // OBJECTLOADER_H</span></div>
+<div class="ttc" id="a00034_html_a2d7bda5977707e5b1b4ec5bcde039ff5"><div class="ttname"><a href="a00034.html#a2d7bda5977707e5b1b4ec5bcde039ff5">ObjectLoader::load</a></div><div class="ttdeci">LoaderObjectPtr load()</div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:70</div></div>
+<div class="ttc" id="a00030_html_a20212264506edb13784d0041947b2238"><div class="ttname"><a href="a00030.html#a20212264506edb13784d0041947b2238">LoaderObject::getVertices</a></div><div class="ttdeci">const Vertices &amp; getVertices() const </div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:26</div></div>
+<div class="ttc" id="a00034_html_abe35e670f22d62f56a95e28b67b43c93"><div class="ttname"><a href="a00034.html#abe35e670f22d62f56a95e28b67b43c93">ObjectLoader::~ObjectLoader</a></div><div class="ttdeci">~ObjectLoader()</div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:60</div></div>
+<div class="ttc" id="a00030_html"><div class="ttname"><a href="a00030.html">LoaderObject</a></div><div class="ttdef"><b>Definition:</b> ObjectLoader.h:9</div></div>
+<div class="ttc" id="a00059_html"><div class="ttname"><a href="a00059.html">Vertex</a></div><div class="ttdef"><b>Definition:</b> Vertex.h:6</div></div>
+<div class="ttc" id="a00030_html_a18be2a2412731797071c97bcff1e868c"><div class="ttname"><a href="a00030.html#a18be2a2412731797071c97bcff1e868c">LoaderObject::addIndice</a></div><div class="ttdeci">void addIndice(const unsigned int indice)</div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:21</div></div>
+<div class="ttc" id="a00034_html_ab0c747b6f0fee84f51236cfe3e7ae4e3"><div class="ttname"><a href="a00034.html#ab0c747b6f0fee84f51236cfe3e7ae4e3">ObjectLoader::setFilename</a></div><div class="ttdeci">void setFilename(const QString &amp;filename)</div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:65</div></div>
+<div class="ttc" id="a00034_html_af9ecb6be20590e95539db718aaa74096"><div class="ttname"><a href="a00034.html#af9ecb6be20590e95539db718aaa74096">ObjectLoader::ObjectLoader</a></div><div class="ttdeci">ObjectLoader()</div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:48</div></div>
+<div class="ttc" id="a00030_html_a39d542153aa5ad1e72e800cfda87092c"><div class="ttname"><a href="a00030.html#a39d542153aa5ad1e72e800cfda87092c">LoaderObject::addVertex</a></div><div class="ttdeci">void addVertex(const Vertex vertex)</div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:16</div></div>
+<div class="ttc" id="a00030_html_afcc2d24ff406650fe5fc0f46a575abfa"><div class="ttname"><a href="a00030.html#afcc2d24ff406650fe5fc0f46a575abfa">LoaderObject::m_indices</a></div><div class="ttdeci">QVector&lt; unsigned int &gt; m_indices</div><div class="ttdef"><b>Definition:</b> ObjectLoader.h:23</div></div>
+<div class="ttc" id="a00086_html_a259f4df67df3fce159eb227839d3c425"><div class="ttname"><a href="a00086.html#a259f4df67df3fce159eb227839d3c425">Vertices</a></div><div class="ttdeci">QVector&lt; Vertex &gt; Vertices</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:9</div></div>
+<div class="ttc" id="a00030_html_ab5619bcc09220112f0a342b3147b58c4"><div class="ttname"><a href="a00030.html#ab5619bcc09220112f0a342b3147b58c4">LoaderObject::LoaderObject</a></div><div class="ttdeci">LoaderObject()</div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:7</div></div>
+<div class="ttc" id="a00034_html"><div class="ttname"><a href="a00034.html">ObjectLoader</a></div><div class="ttdef"><b>Definition:</b> ObjectLoader.h:28</div></div>
+<div class="ttc" id="a00105_html"><div class="ttname"><a href="a00105.html">Vertex.h</a></div></div>
+<div class="ttc" id="a00097_html_af2d2d934df351d4e2b38aab9daaf0e94"><div class="ttname"><a href="a00097.html#af2d2d934df351d4e2b38aab9daaf0e94">LoaderObjectPtr</a></div><div class="ttdeci">QSharedPointer&lt; LoaderObject &gt; LoaderObjectPtr</div><div class="ttdef"><b>Definition:</b> ObjectLoader.h:26</div></div>
+<div class="ttc" id="a00030_html_a40e0c4e308b1097fe9e5fc1cce846351"><div class="ttname"><a href="a00030.html#a40e0c4e308b1097fe9e5fc1cce846351">LoaderObject::getIndices</a></div><div class="ttdeci">const QVector&lt; unsigned int &gt; &amp; getIndices() const </div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:31</div></div>
+<div class="ttc" id="a00034_html_a44d2471ac19507310b4011b12b5c76de"><div class="ttname"><a href="a00034.html#a44d2471ac19507310b4011b12b5c76de">ObjectLoader::getFilename</a></div><div class="ttdeci">QString getFilename() const </div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:102</div></div>
+<div class="ttc" id="a00030_html_a2ee2ee5a245955568c138860e1c449dd"><div class="ttname"><a href="a00030.html#a2ee2ee5a245955568c138860e1c449dd">LoaderObject::~LoaderObject</a></div><div class="ttdeci">~LoaderObject()</div><div class="ttdef"><b>Definition:</b> ObjectLoader.cpp:12</div></div>
+<div class="ttc" id="a00034_html_aa4485753ec65569c72620226717f1e18"><div class="ttname"><a href="a00034.html#aa4485753ec65569c72620226717f1e18">ObjectLoader::m_filename</a></div><div class="ttdeci">QString m_filename</div><div class="ttdef"><b>Definition:</b> ObjectLoader.h:41</div></div>
+<div class="ttc" id="a00030_html_a31d9c4fa44ebf43f5686bc185d356c60"><div class="ttname"><a href="a00030.html#a31d9c4fa44ebf43f5686bc185d356c60">LoaderObject::m_vertices</a></div><div class="ttdeci">Vertices m_vertices</div><div class="ttdef"><b>Definition:</b> ObjectLoader.h:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00097.html">SASDProcessingPipeline.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_8c83c19a9b6a99c3d579766fba10a6da.html">OpenGL</a></li><li class="navelem"><a class="el" href="dir_422157eb8ded5070cf70eb32824fdbfa.html">inc</a></li><li class="navelem"><a class="el" href="a00097.html">ObjectLoader.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

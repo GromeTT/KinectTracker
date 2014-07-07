@@ -92,6 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_j"><span>j</span></a></li>
       <li><a href="#index_k"><span>k</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
@@ -161,6 +162,9 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>blockStride
 : <a class="el" href="a00024.html#a8811769e0cb7c5b8001dd5b82fd47379">HOGFeatureDetector</a>
 </li>
+<li>bodyPropotionFactor
+: <a class="el" href="a00058.html#a81814fa6e46fd048325347b1ba76b236">UpperBodySizeAnalyzer</a>
+</li>
 </ul>
 
 
@@ -168,31 +172,37 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>cellSize
 : <a class="el" href="a00024.html#a53b12f4c7639a8fc2ec0c2b50de63c33">HOGFeatureDetector</a>
 </li>
-<li>currentHeight
-: <a class="el" href="a00047.html#ad93e7afdb091bbea9b5cb4257defb319">SkeletonAnalyzer</a>
+<li>currentBodySize
+: <a class="el" href="a00046.html#ab6a8ee924164580bc8b7a240fe5a41a2">SizeAnalyzer</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>data
-: <a class="el" href="a00020.html#a5c301bf73cae8e9fa11268a24cba6083">FloatEditor</a>
+: <a class="el" href="a00019.html#a5c301bf73cae8e9fa11268a24cba6083">FloatEditor</a>
 </li>
 <li>deltaX
-: <a class="el" href="a00047.html#ad1e4e5c1d9296692dadcd6e616f118e7">SkeletonAnalyzer</a>
+: <a class="el" href="a00003.html#a33e025e0c6b4f9d22b9e22a3226c2f2a">BBMovementAnalyzer</a>
 </li>
 <li>deltaY
-: <a class="el" href="a00047.html#ad07b391fd2a3ce7f03b492b80f368a2f">SkeletonAnalyzer</a>
+: <a class="el" href="a00003.html#a5c06d851a906e83f7464f57d9e00b631">BBMovementAnalyzer</a>
 </li>
 <li>deltaZ
-: <a class="el" href="a00047.html#adcee4f111bb40a5fc446c30c2c5d2a57">SkeletonAnalyzer</a>
+: <a class="el" href="a00003.html#a31bb050a3885f633004dfd0b9617d3fe">BBMovementAnalyzer</a>
+</li>
+<li>distanceHeadLeftFood
+: <a class="el" href="a00046.html#a2ba0916cd5f2b992f4839b2b0abd49fa">SizeAnalyzer</a>
+</li>
+<li>distanceHeadRightFood
+: <a class="el" href="a00046.html#a7ea72bc8fe7d8c36e13b17a565a920b1">SizeAnalyzer</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
-<li>estimatedHeight
-: <a class="el" href="a00047.html#a47c9c4ea031a22d99a1b3176bc090de2">SkeletonAnalyzer</a>
+<li>estimatedBodySize
+: <a class="el" href="a00046.html#afa85ba7f8c9d92627ca4bd27c2fc2221">SizeAnalyzer</a>
 </li>
 </ul>
 
@@ -212,6 +222,13 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 </ul>
 
 
+<h3><a class="anchor" id="index_j"></a>- j -</h3><ul>
+<li>joint
+: <a class="el" href="a00047.html#a3bcadc9d20a4ffd70f49dee4a1b5ee52">SkeletonAnalyzer</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
 <li>kernelColumnCount
 : <a class="el" href="a00016.html#ae0222fa088331077fdedfa5a8c563f35">Dilate</a>
@@ -222,24 +239,27 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 , <a class="el" href="a00017.html#ad20b4f0f1517df8067fb8d8d96c95345">Erode</a>
 </li>
 <li>kneelingThreshold
-: <a class="el" href="a00047.html#a02a7c60793bd9e921c25370703e21e58">SkeletonAnalyzer</a>
+: <a class="el" href="a00046.html#ac6d8a342b5435c17d684149c85db8193">SizeAnalyzer</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>lowerBounds
-: <a class="el" href="a00026.html#a5fd14775e1455ca9763d816a7561689d">InRange</a>
+: <a class="el" href="a00027.html#a5fd14775e1455ca9763d816a7561689d">InRange</a>
 </li>
 <li>lyingThreshold
-: <a class="el" href="a00047.html#acfe41a7d411d1f1e5f7b1895f88302ad">SkeletonAnalyzer</a>
+: <a class="el" href="a00046.html#aa1a46fd1b62465bcf7692e6d82c30245">SizeAnalyzer</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>maxValue
-: <a class="el" href="a00054.html#a6e9aec8892a8b8c16c8c0ffb8d293299">Threshold</a>
+: <a class="el" href="a00055.html#a6e9aec8892a8b8c16c8c0ffb8d293299">Threshold</a>
+</li>
+<li>minContourSize
+: <a class="el" href="a00015.html#ac16ba608d449ff14d9cebfab3f2c05b8">DepthProcessingPipeline</a>
 </li>
 </ul>
 
@@ -262,52 +282,61 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 : <a class="el" href="a00047.html#ac8d26b3cc34ea6f0dd8bf4229c190e75">SkeletonAnalyzer</a>
 </li>
 <li>pitch
-: <a class="el" href="a00001.html#af4fd5c418e3fc61a1f099623faa6bd2b">AnalysisResults</a>
-, <a class="el" href="a00011.html#ab56fcb39f580e8d2159cf2c9c6d9a65a">Camera</a>
-, <a class="el" href="a00055.html#a78a9190843631a93b4af995a55964469">TransformationObject</a>
+: <a class="el" href="a00011.html#ab56fcb39f580e8d2159cf2c9c6d9a65a">Camera</a>
+, <a class="el" href="a00033.html#ad7d80b4fdfcd15612a2c82a5c18c4b0e">MovementAnalyzer</a>
+, <a class="el" href="a00056.html#a78a9190843631a93b4af995a55964469">TransformationObject</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>roll
-: <a class="el" href="a00001.html#ac44945f8eca23456da733057b8660754">AnalysisResults</a>
-, <a class="el" href="a00011.html#a08d9c6119a859e664d74ca07db4fe3d3">Camera</a>
-, <a class="el" href="a00055.html#a476fe76f33c2ce33ced2a629fb4faa7f">TransformationObject</a>
+: <a class="el" href="a00011.html#a08d9c6119a859e664d74ca07db4fe3d3">Camera</a>
+, <a class="el" href="a00033.html#ace5c54cafffdc11629a205ae7bbebdac">MovementAnalyzer</a>
+, <a class="el" href="a00056.html#a476fe76f33c2ce33ced2a629fb4faa7f">TransformationObject</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>threshold
-: <a class="el" href="a00014.html#a7a6449261a10b67242818ad8bb7a87bc">DepthProcessingPipeline</a>
-, <a class="el" href="a00054.html#a4553c33cf0267aa206970186f29534a1">Threshold</a>
+: <a class="el" href="a00015.html#a7a6449261a10b67242818ad8bb7a87bc">DepthProcessingPipeline</a>
+, <a class="el" href="a00055.html#a4553c33cf0267aa206970186f29534a1">Threshold</a>
 </li>
 <li>thresholdL2Hys
 : <a class="el" href="a00024.html#ad67acbb7fedc82f34af8a1a731b26aed">HOGFeatureDetector</a>
 </li>
 <li>thresholdType
-: <a class="el" href="a00054.html#a1dd6b42c58c35809ba3664ad43b9f2a1">Threshold</a>
+: <a class="el" href="a00055.html#a1dd6b42c58c35809ba3664ad43b9f2a1">Threshold</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
 <li>upperBounds
-: <a class="el" href="a00026.html#a4796196984828ab423dcf1dfbc2bab22">InRange</a>
+: <a class="el" href="a00027.html#a4796196984828ab423dcf1dfbc2bab22">InRange</a>
+</li>
+<li>userToClose
+: <a class="el" href="a00047.html#ad6e6a6e9cca8feb7489196f2fca5e7ba">SkeletonAnalyzer</a>
 </li>
 <li>useTexture
-: <a class="el" href="a00038.html#a4d5b9f8422d31de9c9a964c2c4320419">RenderObject</a>
+: <a class="el" href="a00040.html#a4d5b9f8422d31de9c9a964c2c4320419">RenderObject</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
 <li>velocity
-: <a class="el" href="a00001.html#ab68d2cc39fc69d11835f0ab21a1cf660">AnalysisResults</a>
+: <a class="el" href="a00033.html#a4d66dcb8b892767f9509a20426e6adf1">MovementAnalyzer</a>
+</li>
+<li>velocityIntervall
+: <a class="el" href="a00033.html#aae0cd6d6acabee35acd2093d8dfe8957">MovementAnalyzer</a>
+</li>
+<li>viewingDirection
+: <a class="el" href="a00033.html#a3ca9ce77df855f480097faaeecf25fcd">MovementAnalyzer</a>
 </li>
 <li>visible
-: <a class="el" href="a00055.html#aa5357edad24ae0085fc5b15c9e5f2a1d">TransformationObject</a>
+: <a class="el" href="a00056.html#aa5357edad24ae0085fc5b15c9e5f2a1d">TransformationObject</a>
 </li>
 </ul>
 
@@ -320,11 +349,10 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 : <a class="el" href="a00024.html#a264c612ef4532b53a14c1b2b69f90a12">HOGFeatureDetector</a>
 </li>
 <li>wireFrameMode
-: <a class="el" href="a00038.html#a47162ba98412b7351424202ceb0075d9">RenderObject</a>
+: <a class="el" href="a00040.html#a47162ba98412b7351424202ceb0075d9">RenderObject</a>
 </li>
 <li>workerStatus
-: <a class="el" href="a00001.html#ad8ec5f70da4ff5a6a0932f2bdcf6465b">AnalysisResults</a>
-, <a class="el" href="a00047.html#aa27c9d1335bfe252be0888a54cde2b33">SkeletonAnalyzer</a>
+: <a class="el" href="a00046.html#a97f2612ec1029afc0af552998bd276fe">SizeAnalyzer</a>
 </li>
 </ul>
 
@@ -332,10 +360,10 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <h3><a class="anchor" id="index_x"></a>- x -</h3><ul>
 <li>x
 : <a class="el" href="a00011.html#ae270fbd3b09b36f240a2d55b3b5b9cec">Camera</a>
-, <a class="el" href="a00055.html#ab7aed15fcdba46d5a7e7f711b7288b74">TransformationObject</a>
+, <a class="el" href="a00056.html#ab7aed15fcdba46d5a7e7f711b7288b74">TransformationObject</a>
 </li>
 <li>xScale
-: <a class="el" href="a00055.html#a5e68ba8694ee8d10329bd7798c66ccf5">TransformationObject</a>
+: <a class="el" href="a00056.html#a5e68ba8694ee8d10329bd7798c66ccf5">TransformationObject</a>
 </li>
 </ul>
 
@@ -343,15 +371,15 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <h3><a class="anchor" id="index_y"></a>- y -</h3><ul>
 <li>y
 : <a class="el" href="a00011.html#ab0522c72fc25c7fa9ad6d0b91e0a3270">Camera</a>
-, <a class="el" href="a00055.html#a91bd7b7cac943d739dcf4e2d077a991a">TransformationObject</a>
+, <a class="el" href="a00056.html#a91bd7b7cac943d739dcf4e2d077a991a">TransformationObject</a>
 </li>
 <li>yaw
-: <a class="el" href="a00001.html#a3af3df1563f70b2a807fb0a9471df3a7">AnalysisResults</a>
-, <a class="el" href="a00011.html#ad76701b22630f2df28a0ae15f0497a3a">Camera</a>
-, <a class="el" href="a00055.html#afe30a68d67c691f5f3779a1c42413351">TransformationObject</a>
+: <a class="el" href="a00011.html#ad76701b22630f2df28a0ae15f0497a3a">Camera</a>
+, <a class="el" href="a00033.html#ab50f8c3c4a633e4cfc662e6ce0274282">MovementAnalyzer</a>
+, <a class="el" href="a00056.html#afe30a68d67c691f5f3779a1c42413351">TransformationObject</a>
 </li>
 <li>yScale
-: <a class="el" href="a00055.html#a9838281fe47b57f167f21e7f87201bd8">TransformationObject</a>
+: <a class="el" href="a00056.html#a9838281fe47b57f167f21e7f87201bd8">TransformationObject</a>
 </li>
 </ul>
 
@@ -359,10 +387,10 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <h3><a class="anchor" id="index_z"></a>- z -</h3><ul>
 <li>z
 : <a class="el" href="a00011.html#a86fd72da0b71b8028ad1312969be8831">Camera</a>
-, <a class="el" href="a00055.html#a5c97ef0fbde57d895f1c39727f324bc7">TransformationObject</a>
+, <a class="el" href="a00056.html#a5c97ef0fbde57d895f1c39727f324bc7">TransformationObject</a>
 </li>
 <li>zScale
-: <a class="el" href="a00055.html#a62a805453fb3fefa1b93a309f885348a">TransformationObject</a>
+: <a class="el" href="a00056.html#a62a805453fb3fefa1b93a309f885348a">TransformationObject</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -370,7 +398,7 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:08 for KinectTracker by
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:40 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

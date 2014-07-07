@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: PropertyBrowser Class Reference</title>
+<title>KinectTracker: ProcessingComponent Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,78 +104,118 @@ $(document).ready(function(){initNavTree('a00036.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00196.html">List of all members</a>  </div>
+<a href="a00206.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">PropertyBrowser Class Reference</div>  </div>
+<div class="title">ProcessingComponent Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00090_source.html">PropertyBrowser.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00124_source.html">ProcessingComponent.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for PropertyBrowser:</div>
+Inheritance diagram for ProcessingComponent:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00036.png" usemap="#PropertyBrowser_map" alt=""/>
-  <map id="PropertyBrowser_map" name="PropertyBrowser_map">
+  <img src="a00036.png" usemap="#ProcessingComponent_map" alt=""/>
+  <map id="ProcessingComponent_map" name="ProcessingComponent_map">
+<area href="a00016.html" alt="Dilate" shape="rect" coords="0,112,138,136"/>
+<area href="a00017.html" alt="Erode" shape="rect" coords="148,112,286,136"/>
+<area href="a00022.html" alt="Histogram" shape="rect" coords="296,112,434,136"/>
+<area href="a00024.html" alt="HOGFeatureDetector" shape="rect" coords="444,112,582,136"/>
+<area href="a00027.html" alt="InRange" shape="rect" coords="592,112,730,136"/>
+<area href="a00051.html" alt="SkinColorDetector" shape="rect" coords="740,112,878,136"/>
+<area href="a00055.html" alt="Threshold" shape="rect" coords="888,112,1026,136"/>
 </map>
  </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac5b29e3843c35e38646192229879bf85"></a>
+<a class="anchor" id="a880fd2eeeef65f0a905127d5b1607c40"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PropertyBrowser::PropertyBrowser </td>
+          <td class="memname">ProcessingComponent::ProcessingComponent </td>
           <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00036.html#ac5b29e3843c35e38646192229879bf85" title="PropertyBrowser::PropertyBrowser. ">PropertyBrowser::PropertyBrowser</a>. </p>
-
 </div>
 </div>
-<a class="anchor" id="ace847506a7bfc425da58050695248589"></a>
+<a class="anchor" id="ab491c8e7e4cbf4f225c5b5ec7b744822"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">PropertyBrowser::~PropertyBrowser </td>
+          <td class="memname">ProcessingComponent::~ProcessingComponent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p><a class="el" href="a00036.html#ace847506a7bfc425da58050695248589" title="PropertyBrowser::~PropertyBrowser Destroys the widget. ">PropertyBrowser::~PropertyBrowser</a> Destroys the widget. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a754084a7249df03c12f4b8ad116e0355"></a>
+<a class="anchor" id="ae3bf7f460db17ff7472e1d85b4b14f2f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PropertyBrowser::setObject </td>
+          <td class="memname">void ProcessingComponent::addComponent </td>
           <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>object</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00036.html">ProcessingComponent</a> *&#160;</td>
+          <td class="paramname"><em>compnent</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00036.html#a754084a7249df03c12f4b8ad116e0355" title="PropertyBrowser::setObject Displays all properties of object in the QTreeView. ">PropertyBrowser::setObject</a> Displays all properties of <em>object</em> in the QTreeView. </p>
+</div>
+</div>
+<a class="anchor" id="a321720770de558665249606e6928e737"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QVector&lt; <a class="el" href="a00036.html">ProcessingComponent</a> * &gt; &amp; ProcessingComponent::getComponents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7ebc7811af8663c7cd1e3b3a1d776ae5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00036.html">ProcessingComponent</a> * ProcessingComponent::getProcessingComponent </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aed14d324bd0bb33491bdaf50caee5160"></a>
+<a class="anchor" id="aa0f3cdca75ddc21a3945daae06968b1f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -183,47 +223,7 @@ Inheritance diagram for PropertyBrowser:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00012.html">CustomStyledDelegate</a>* PropertyBrowser::mp_styledDelegate</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a44c1ab2c2052529d94e189ad663ef34b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00056.html">TreeModel</a>* PropertyBrowser::mp_treeModel</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a102803f02bb5c3b141cc14f3902c15d6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Ui::PropertyBrowser* PropertyBrowser::ui</td>
+          <td class="memname">QVector&lt;<a class="el" href="a00036.html">ProcessingComponent</a>*&gt; ProcessingComponent::m_components</td>
         </tr>
       </table>
   </td>
@@ -236,16 +236,16 @@ Inheritance diagram for PropertyBrowser:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00090_source.html">PropertyBrowser.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00139.html">PropertyBrowser.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/inc/<a class="el" href="a00124_source.html">ProcessingComponent.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/src/<a class="el" href="a00137.html">ProcessingComponent.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00036.html">PropertyBrowser</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00036.html">ProcessingComponent</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:39 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

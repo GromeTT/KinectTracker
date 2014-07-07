@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00041.html','');});
+$(document).ready(function(){initNavTree('a00031.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -104,22 +104,29 @@ $(document).ready(function(){initNavTree('a00041.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">RGBWidget Member List</div>  </div>
+<div class="title">LowLevelProcessingPipeline Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00041.html">RGBWidget</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00031.html">LowLevelProcessingPipeline</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00041.html#a71b0775bb1e7f8d21cbca138276b5411">RGBWidget</a>(QWidget *parent=0)</td><td class="entry"><a class="el" href="a00041.html">RGBWidget</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00041.html#a5d0229327ac7728cd72e2c43119bbb05">ui</a></td><td class="entry"><a class="el" href="a00041.html">RGBWidget</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00041.html#a2b5e055d1afaf6b855934b4f78a4c33f">update</a>(QImage *image)</td><td class="entry"><a class="el" href="a00041.html">RGBWidget</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00041.html#a3036a1e1d9854436a54b6504ff0d0ef9">~RGBWidget</a>()</td><td class="entry"><a class="el" href="a00041.html">RGBWidget</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00031.html#a3d132d2f2875b6b875c8c6a4d852d8b2">getComponents</a>() const </td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00031.html#a3abf43b291947100a3594528bb401f62">getObjectByName</a>(const QString &amp;name)</td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00031.html#aba88576ff1e56b9969644fe35aab9f05">LowLevelProcessingPipeline</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00031.html#a54f054c8a944ea6c9eecaa60caf4bef0">m_allComponents</a></td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00031.html#a36c4f7f68af568346d63f356847dac4d">m_instanceCounter</a></td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00031.html#ac20543dc9ea8a4c00bca0f3acab9183d">m_processingComponents</a></td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00031.html#a3bea63f951ec26d9c860b82724284fb7">mp_screenshot</a></td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00031.html#a5ee87a0ab5c911a7b237ee2835b06c9c">process</a>(cv::Mat &amp;input)=0</td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00031.html#a32b461bc4563ecc77b06387d79826548">registerComponent</a>(ProcessingComponent *component, const bool recursive)</td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00031.html#ad1d35317ce15566d6eba83e89e73ebd6">setScreenshot</a>(cv::Mat *screenshot)</td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00031.html#a8451d67d65d13be58ba4091c8a2ca8a0">~LowLevelProcessingPipeline</a>()</td><td class="entry"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

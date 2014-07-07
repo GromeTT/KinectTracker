@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00056.html','');});
+$(document).ready(function(){initNavTree('a00046.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -104,30 +104,53 @@ $(document).ready(function(){initNavTree('a00056.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">TreeModel Member List</div>  </div>
+<div class="title">SizeAnalyzer Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00056.html">TreeModel</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00046.html">SizeAnalyzer</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00056.html#ad84ba65901736026b1c444358e267923">connectProperty</a>(QObject *object, const QMetaProperty &amp;metaProperty, QStandardItem *item)</td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00056.html#acf0057c3d62dd5b27c509399bdbd4f0a">createItem</a>(const QMetaProperty &amp;metaProperty, const QVariant &amp;value, const bool editable)</td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00056.html#a4ec8db860fd4221d597bde2ca426ed13">deleteAllItems</a>()</td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00056.html#ab6304f721f81645e7563cef183661e90">m_propertyIndexToItemMap</a></td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00056.html#a16910d6fca7a82421588146ca9d2fb3e">m_updateSlot</a></td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00056.html#aa07f6ab8b348f9e7e0dd54f5b42f5fff">mp_object</a></td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00056.html#a385fc89ff89c7b75708cb133b2c6da85">propertyChanged</a>()</td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00056.html#a945eb4330459d2ac316d6f2cad253cac">setObject</a>(QObject *object)</td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00056.html#a35d1975df997b4ce5259af55019666b5">slotItemChanged</a>(QStandardItem *item)</td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00056.html#aaf3785f824253b25b086bc8cc6692d1f">TreeModel</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00056.html#acf17322f506afbbf90ad857320c45a21">updateItem</a>(QStandardItem *item, QObject *object, const QMetaProperty &amp;metaProperty)</td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00056.html#af0998d55a63c2b18be1f03e4e8567926">~TreeModel</a>()</td><td class="entry"><a class="el" href="a00056.html">TreeModel</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#a564bf9f97315a8b9742e91953d2871dc">analyze</a>(const SkeletonDataPtr &amp;skeletonData)</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#afeafe74db5b4966c7777447943096238">analyzeV</a>(const SkeletonDataPtr &amp;skeletonData)=0</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#ab6a8ee924164580bc8b7a240fe5a41a2">currentBodySize</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#adaae64786f04e2e6352b19744d629189">currentBodySize</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#ae8c29b8c47977da2e4932b9c30e2928e">currentBodySizeChanged</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#a2ba0916cd5f2b992f4839b2b0abd49fa">distanceHeadLeftFood</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#adf0b55a113c6449e354cc2b6f867d912">distanceHeadLeftFood</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#a6038748efa61d39a8ddebfecce2ba9a0">distanceHeadLeftFoodChanged</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#a7ea72bc8fe7d8c36e13b17a565a920b1">distanceHeadRightFood</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#a9e2ae4ea0a16de5b810c86968f3ade68">distanceHeadRightFood</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#a7e4347c7f2abd26ccd1ed96d07f33ad9">distanceHeadRightFoodChanged</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#afa85ba7f8c9d92627ca4bd27c2fc2221">estimatedBodySize</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#ae8ca630dbf8d9ceaddd34f083ee74dc4">estimatedBodySize</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#a9e087b8c79f8b1aacdf0f74a539424c0">estimatedBodySizeChanged</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#ac6d8a342b5435c17d684149c85db8193">kneelingThreshold</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#a2a64bd363f2f244782d7669ffbddd76a">kneelingThreshold</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#aa04db6f570bad592e192a61fcdde66fa">kneelingThresholdChanged</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#aa1a46fd1b62465bcf7692e6d82c30245">lyingThreshold</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#a8c2d381ae1ce073d1892f583866437a9">lyingThreshold</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#ad22c5f3f1cc42f501733d0e79700ab65">lyingThresholdChanged</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#a6d0b84f8d3fb643e0eba1632930fe382">m_currentBodySize</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#ab68bf0c8978bdeb2c3558ff81a267e13">m_distanceHeadLeftFood</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#a7d714384f75b725ea54a0e5093b16454">m_distanceHeadRightFood</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#a7535ef129c3849c28e42cefef6bde73e">m_estimatedBodySize</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#aa3892681525820ec7b0577c0b340f951">m_kneelingThreshold</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#ad069684e4065b137c0e6702b20c8b016">m_lyingThreshold</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#a75aa4c993eff4887c8a58671c3a6e8e2">m_workerStatus</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#ab34ad2bdb7741e6a40de9564a7aea653">setKneelingThreshold</a>(const float threshold)</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#a7fc5b2277e9037ae39fca6bf3e926574">setLyingThreshold</a>(const float threshold)</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#a75462c3e1804ac87c5262bb74f5d940f">setWorkerStatus</a>(const QString &amp;status)</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#ab427c3268cb08064889e8c266c016a6e">SizeAnalyzer</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#a97f2612ec1029afc0af552998bd276fe">workerStatus</a></td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#aabb32e55968613c55d0fd470eab66b2c">workerStatus</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00046.html#ac0f3db8c74f536f7ca03b5a05019f70d">workerStatusChanged</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00046.html#a4a579beda4a49067273a87364b05181c">~SizeAnalyzer</a>()</td><td class="entry"><a class="el" href="a00046.html">SizeAnalyzer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:39 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

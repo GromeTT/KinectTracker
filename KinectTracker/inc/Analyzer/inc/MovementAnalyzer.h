@@ -22,6 +22,7 @@ public:
     void setVelocityInterval( const int intervall );
     void setDataAvailable( const bool available );
     void setViewingDirection( const QString& direction );
+    void reset();
 
     BoundingGeometryPtr                              getLatestBoudingGeomerty() const;
     const QVector<BoundingGeometryWithTimeStampPtr>& boundingGeometries() const;
@@ -36,6 +37,7 @@ public:
 private:
     virtual void anaylzeV( const SkeletonDataPtr skeleton,
                            const unsigned int timestamp ) = 0;
+    virtual void resetV() = 0;
     void calculateOriantationAndVelocity( const int timestamp );
     void setVelocity( const float velocity );
 

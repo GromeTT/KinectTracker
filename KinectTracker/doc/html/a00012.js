@@ -1,11 +1,15 @@
 var a00012 =
 [
-    [ "CustomStyledDelegate", "a00012.html#a2fd599cbcc59614d3d1ea678ccdafb9c", null ],
-    [ "~CustomStyledDelegate", "a00012.html#a90c589d80818c897bbb818649990e2f5", null ],
-    [ "commit", "a00012.html#a0ae8befef987cff672d1be2c08c22bb8", null ],
-    [ "createEditor", "a00012.html#a4034e12e5d289fde5519a600d33063be", null ],
-    [ "displayText", "a00012.html#a1121c1c11c85bd6a534830c7f7af57d5", null ],
-    [ "setEditorData", "a00012.html#a8557eba6802e88a8363584688261d1b2", null ],
-    [ "setModelData", "a00012.html#a6d0e30599da9730136bf9213765fb067", null ],
-    [ "sizeHint", "a00012.html#a12020ec39c9bb394e46f082ab6afb03c", null ]
+    [ "Circle2D", "a00012.html#a7779d1f012354f3072e2b4a59ca22662", null ],
+    [ "Circle2D", "a00012.html#a122a76bb8a823702d6371b45ab446960", null ],
+    [ "~Circle2D", "a00012.html#aa0ea76f26f494b876ddd8c626404d916", null ],
+    [ "radius", "a00012.html#ac2c55012c9fc69c9b6f0649a5e01b601", null ],
+    [ "setRadius", "a00012.html#a4e7a46053c9db4080429b9d6cd5c3405", null ],
+    [ "setX", "a00012.html#a25b5825a301d9fff264d7bac36db368a", null ],
+    [ "setY", "a00012.html#a371bdec036ab08ffd5925c3b53d8ef7c", null ],
+    [ "x", "a00012.html#a8e9649828c25180057dab6bab932c3ad", null ],
+    [ "y", "a00012.html#aa4c80ba2b0f300ce177686d4e005c652", null ],
+    [ "m_radius", "a00012.html#af458c71c1a1727cb7f87c8e12f956e1d", null ],
+    [ "m_x", "a00012.html#af55376a192d9fb485e4a7d674c3f0d8a", null ],
+    [ "m_y", "a00012.html#a41dc4f27ea23cddda39551858569eb48", null ]
 ];

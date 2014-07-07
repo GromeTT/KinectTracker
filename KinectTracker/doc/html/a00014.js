@@ -1,13 +1,11 @@
 var a00014 =
 [
-    [ "DepthProcessingPipeline", "a00014.html#abf397c04b8bb77dd0056eb743dca5dca", null ],
-    [ "~DepthProcessingPipeline", "a00014.html#a69e948baaef5695a908d50fc23c7543c", null ],
-    [ "getComponents", "a00014.html#a6c1b5ded2663cd4b58e21535a03dcc9f", null ],
-    [ "process", "a00014.html#af6971f9b63d57a35c0798e777b0bed14", null ],
-    [ "setThreshold", "a00014.html#afc0708800c1b44a3c53861ebaecb055e", null ],
-    [ "threshold", "a00014.html#a5945fbccc98ef266f5d2220af76be333", null ],
-    [ "thresholdChanged", "a00014.html#a47fb0fcdfa80b5421a3ce5d5291fc8e0", null ],
-    [ "m_processingComponents", "a00014.html#a89c84f4bb2eb5b58ee2e4f2993af800d", null ],
-    [ "m_threshold", "a00014.html#a271923a829986da68841c8045a4ebed6", null ],
-    [ "threshold", "a00014.html#a7a6449261a10b67242818ad8bb7a87bc", null ]
+    [ "CustomStyledDelegate", "a00014.html#a2fd599cbcc59614d3d1ea678ccdafb9c", null ],
+    [ "~CustomStyledDelegate", "a00014.html#a90c589d80818c897bbb818649990e2f5", null ],
+    [ "commit", "a00014.html#a0ae8befef987cff672d1be2c08c22bb8", null ],
+    [ "createEditor", "a00014.html#a4034e12e5d289fde5519a600d33063be", null ],
+    [ "displayText", "a00014.html#a1121c1c11c85bd6a534830c7f7af57d5", null ],
+    [ "setEditorData", "a00014.html#a8557eba6802e88a8363584688261d1b2", null ],
+    [ "setModelData", "a00014.html#a6d0e30599da9730136bf9213765fb067", null ],
+    [ "sizeHint", "a00014.html#a12020ec39c9bb394e46f082ab6afb03c", null ]
 ];

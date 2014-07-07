@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Dilate.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Analyzer/inc/SkeletonAnalyzer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,114 +102,143 @@ $(document).ready(function(){initNavTree('a00070_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Dilate.h</div>  </div>
+<div class="title">SkeletonAnalyzer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00070.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DIALTE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DIALTE_H</span></div>
+<a href="a00070.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SKELETONANALYZER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SKELETONANALYZER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00088.html">ProcessingComponent.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="a00016.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00016.html">Dilate</a> : <span class="keyword">public</span> <a class="code" href="a00034.html">ProcessingComponent</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="a00016.html#a062fba258056f4e1e1fed226eb05c5f8">Dilate</a>( QObject* parent = <span class="keyword">nullptr</span> );</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00016.html#aa535fdb487aa7332688ee80fbc3f0a5c">~Dilate</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#a74109510cd06dc2d3bcaeaca810d8d57">dilate</a>( cv::Mat&amp; input );</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#a74109510cd06dc2d3bcaeaca810d8d57">dilate</a>( cv::Mat&amp; input, cv::Mat&amp; output );</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00016.html#a56123ceafd06c614134fb4c9070c109e">anchorPointX</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00016.html#af873065e862614fe144046999fbe926c">anchorPointY</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span>   <a class="code" href="a00016.html#af6d5221f35ba90ac38d5be86f1ba3932">iterations</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span>   <a class="code" href="a00016.html#a8346ac2797103fbb55f6fe982e2e57c7">kernelRowCount</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span>   <a class="code" href="a00016.html#a0c41a0539dcdbdd12798ddd030f40be5">kernelColumnCount</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#af31246e27d73531fb50904b3c683e6fe">setAnchorPointX</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> x );</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#a58e84f9e582243372f9fac30e4393a1c">setAnchorPointY</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> y );</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#a2b7e8a47fff048208e0a85fa356a93f7">setIterations</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> iterations );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#a33eeea3c9c40e5acc76d91bbfe669c2c">setKernelRowCount</a>( <span class="keyword">const</span> <span class="keywordtype">int</span> rowCount );</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#aef022a638832611b7001348c5e45e8f0">setKernelColumnCount</a> ( <span class="keyword">const</span> <span class="keywordtype">int</span> columnCount );</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;signals:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#a16c927abe4898af85a8156563811a4b8">anchorPointXChanged</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#ad89054c8dbb90ef407b4ed56e34450e1">anchorPointYChanged</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#a4831a99c8dcc9d9b9134aa166703482e">iterationsChanged</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#a9e5473db17502c23703febb170d8034a">kernelRowCountChanged</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00016.html#a3f8b51fe661048d28fb9c82083a06d06">kernelColumnCountChanged</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00016.html#a19047c5d164de38019b57ec2018a09b2">   38</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00016.html#a19047c5d164de38019b57ec2018a09b2">m_anchorPointX</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a00016.html#a731421906ececff8017908d514f65500">   39</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00016.html#a731421906ececff8017908d514f65500">m_anchorPointY</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00016.html#a95a736e7e95bdda285505f3be33774d8">   40</a></span>&#160;    <span class="keywordtype">int</span>   <a class="code" href="a00016.html#a95a736e7e95bdda285505f3be33774d8">m_iterations</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a00016.html#aa06b63a314f68280e60da34374628464">   41</a></span>&#160;    <span class="keywordtype">int</span>   <a class="code" href="a00016.html#aa06b63a314f68280e60da34374628464">m_kernelRowCount</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00016.html#a72ad826d08e6038dec221724585c1be6">   42</a></span>&#160;    <span class="keywordtype">int</span>   <a class="code" href="a00016.html#a72ad826d08e6038dec221724585c1be6">m_kernelColumnCount</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> anchorPointX MEMBER <a class="code" href="a00016.html#a19047c5d164de38019b57ec2018a09b2">m_anchorPointX</a></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                READ anchorPointX</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                WRITE setAnchorPointX</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00016.html#a2e3935152d3bc8990439cad0b5cc33b9">   47</a></span>&#160;                NOTIFY anchorPointXChanged )</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QPair&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QRect&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QSharedPointer&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00068.html">MovementAnalyzer.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../../Geometries/inc/BoundingGeometry.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../../AMath/inc/AMath.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../../Kinect/inc/SkeletonData.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span>QVector3D;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="a00048.html">SkeletonData</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00047.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00047.html">SkeletonAnalyzer</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Q_ENUMS( <a class="code" href="a00048.html#af34e460c0da2f42218294f80e7070b28">SkeletonData::Joints</a> )</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="a00047.html#ae4ded58f084078ba022aaa9c5e27d807">SkeletonAnalyzer</a>( QObject* parent = <span class="keyword">nullptr</span> );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00047.html#a95aabf8cd26e09da89749e574ed0a627">~SkeletonAnalyzer</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00047.html#a889f3a17e9b4ea2fd7a8f69c887d6eee">update</a>( <span class="keyword">const</span> <a class="code" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> skeleton,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timestamp );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00047.html#a5465658f3139966d9d06217f6de09b2c">setPhi1</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00047.html#aa00c09f826063c9b9982789761b8c4c9">phi1</a> );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00047.html#aac978efd71fdd51b68de20938bf772e9">setPhi2</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00047.html#a88940e51155fffa44385a7af19613f89">phi2</a> );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00047.html#a922c379c9423144cd568b285ced9912a">setJoint</a>( <span class="keyword">const</span> <a class="code" href="a00048.html#af34e460c0da2f42218294f80e7070b28">SkeletonData::Joints</a> <a class="code" href="a00047.html#a61a84268ed3ab5160ad0da69393271ef">joint</a> );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">float</span>                     <a class="code" href="a00047.html#ae7aa0521927bdb9726352a8a492786b1">findMinimalDistanceFromCamera</a>( <span class="keyword">const</span> <a class="code" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> skeleton );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">float</span>                     <a class="code" href="a00047.html#adab7dab7b1ce24c9a75eefddfd4f1b57">estimatedHeight</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">float</span>                     <a class="code" href="a00047.html#a59b9dcedf4ef511591d9dad4bdacdb8f">currentHeight</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">float</span>                     <a class="code" href="a00047.html#aa00c09f826063c9b9982789761b8c4c9">phi1</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">float</span>                     <a class="code" href="a00047.html#a88940e51155fffa44385a7af19613f89">phi2</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">float</span>                     <a class="code" href="a00047.html#a8160b86a8ca59b02619a7abe01f9aa39">kneelingThreshold</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span>                     <a class="code" href="a00047.html#afbb015a10377987b11433e0572a18b97">lyingThreshold</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    QString                   <a class="code" href="a00047.html#a611c8cd6d70e5f07b10edcf44881714d">workerStatus</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00006.html">BoundingBox</a>*        <a class="code" href="a00047.html#a170fb6255f6d31599c88fe671a8d5812">getBoundingBoxWholeBody</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="a00039.html">AMath::Rectangle3D</a>        <a class="code" href="a00047.html#a49e2e420d79bd3e19464dc57030a0b88">regionOfInterest</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="a00048.html#af34e460c0da2f42218294f80e7070b28">SkeletonData::Joints</a>      <a class="code" href="a00047.html#a61a84268ed3ab5160ad0da69393271ef">joint</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span>                      <a class="code" href="a00047.html#acb5b75b79c54efede37f274af6708d72">userToClose</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00047.html#a688ac6b0cdd39d30f9b6ff110c351eb8">calculateFeatureVector</a>( <span class="keyword">const</span> <a class="code" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>&amp; skeletonData );</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> anchorPointY MEMBER <a class="code" href="a00016.html#a731421906ececff8017908d514f65500">m_anchorPointY</a></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                READ anchorPointY</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                WRITE setAnchorPointY</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a00016.html#abe56318dce971985dfaced39c64ab4e0">   52</a></span>&#160;                NOTIFY anchorPointYChanged )</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    Q_PROPERTY( <span class="keywordtype">int</span> iterations MEMBER <a class="code" href="a00016.html#a95a736e7e95bdda285505f3be33774d8">m_iterations</a></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                READ iterations</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                WRITE setIterations</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a00016.html#a1db765de20ce9fd3c957e551fc93d254">   57</a></span>&#160;                NOTIFY iterationsChanged )</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Q_PROPERTY( <span class="keywordtype">int</span> kernelRowCount MEMBER <a class="code" href="a00016.html#aa06b63a314f68280e60da34374628464">m_kernelRowCount</a></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                READ kernelRowCount</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                WRITE setKernelRowCount</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="a00016.html#a3a8271aa22bbe839a3552624c1f22e18">   62</a></span>&#160;                NOTIFY kernelRowCountChanged )</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    Q_PROPERTY( <span class="keywordtype">int</span> kernelColumnCount MEMBER <a class="code" href="a00016.html#a72ad826d08e6038dec221724585c1be6">m_kernelColumnCount</a></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                READ kernelColumnCount</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                WRITE setKernelColumnCount</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00016.html#ae0222fa088331077fdedfa5a8c563f35">   67</a></span>&#160;                NOTIFY kernelColumnCountChanged )</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a00070.html#aa68996a9540ac9392c7b51f46cfb6357">   70</a></span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;Dilate&gt; <a class="code" href="a00070.html#aa68996a9540ac9392c7b51f46cfb6357">DilatePtr</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif // DIALTE_H</span></div>
-<div class="ttc" id="a00016_html_a2b7e8a47fff048208e0a85fa356a93f7"><div class="ttname"><a href="a00016.html#a2b7e8a47fff048208e0a85fa356a93f7">Dilate::setIterations</a></div><div class="ttdeci">void setIterations(const float iterations)</div><div class="ttdef"><b>Definition:</b> Dilate.cpp:80</div></div>
-<div class="ttc" id="a00016_html_af6d5221f35ba90ac38d5be86f1ba3932"><div class="ttname"><a href="a00016.html#af6d5221f35ba90ac38d5be86f1ba3932">Dilate::iterations</a></div><div class="ttdeci">int iterations() const </div></div>
-<div class="ttc" id="a00016_html_a3f8b51fe661048d28fb9c82083a06d06"><div class="ttname"><a href="a00016.html#a3f8b51fe661048d28fb9c82083a06d06">Dilate::kernelColumnCountChanged</a></div><div class="ttdeci">void kernelColumnCountChanged()</div></div>
-<div class="ttc" id="a00016_html_a4831a99c8dcc9d9b9134aa166703482e"><div class="ttname"><a href="a00016.html#a4831a99c8dcc9d9b9134aa166703482e">Dilate::iterationsChanged</a></div><div class="ttdeci">void iterationsChanged()</div></div>
-<div class="ttc" id="a00016_html_a95a736e7e95bdda285505f3be33774d8"><div class="ttname"><a href="a00016.html#a95a736e7e95bdda285505f3be33774d8">Dilate::m_iterations</a></div><div class="ttdeci">int m_iterations</div><div class="ttdef"><b>Definition:</b> Dilate.h:40</div></div>
-<div class="ttc" id="a00016_html_a8346ac2797103fbb55f6fe982e2e57c7"><div class="ttname"><a href="a00016.html#a8346ac2797103fbb55f6fe982e2e57c7">Dilate::kernelRowCount</a></div><div class="ttdeci">int kernelRowCount() const </div></div>
-<div class="ttc" id="a00016_html_aa535fdb487aa7332688ee80fbc3f0a5c"><div class="ttname"><a href="a00016.html#aa535fdb487aa7332688ee80fbc3f0a5c">Dilate::~Dilate</a></div><div class="ttdeci">virtual ~Dilate()</div><div class="ttdef"><b>Definition:</b> Dilate.cpp:15</div></div>
-<div class="ttc" id="a00088_html"><div class="ttname"><a href="a00088.html">ProcessingComponent.h</a></div></div>
-<div class="ttc" id="a00016_html_a33eeea3c9c40e5acc76d91bbfe669c2c"><div class="ttname"><a href="a00016.html#a33eeea3c9c40e5acc76d91bbfe669c2c">Dilate::setKernelRowCount</a></div><div class="ttdeci">void setKernelRowCount(const int rowCount)</div><div class="ttdef"><b>Definition:</b> Dilate.cpp:89</div></div>
-<div class="ttc" id="a00016_html_a9e5473db17502c23703febb170d8034a"><div class="ttname"><a href="a00016.html#a9e5473db17502c23703febb170d8034a">Dilate::kernelRowCountChanged</a></div><div class="ttdeci">void kernelRowCountChanged()</div></div>
-<div class="ttc" id="a00016_html_a56123ceafd06c614134fb4c9070c109e"><div class="ttname"><a href="a00016.html#a56123ceafd06c614134fb4c9070c109e">Dilate::anchorPointX</a></div><div class="ttdeci">float anchorPointX() const </div></div>
-<div class="ttc" id="a00016_html_a16c927abe4898af85a8156563811a4b8"><div class="ttname"><a href="a00016.html#a16c927abe4898af85a8156563811a4b8">Dilate::anchorPointXChanged</a></div><div class="ttdeci">void anchorPointXChanged()</div></div>
-<div class="ttc" id="a00016_html_aef022a638832611b7001348c5e45e8f0"><div class="ttname"><a href="a00016.html#aef022a638832611b7001348c5e45e8f0">Dilate::setKernelColumnCount</a></div><div class="ttdeci">void setKernelColumnCount(const int columnCount)</div><div class="ttdef"><b>Definition:</b> Dilate.cpp:98</div></div>
-<div class="ttc" id="a00016_html_a062fba258056f4e1e1fed226eb05c5f8"><div class="ttname"><a href="a00016.html#a062fba258056f4e1e1fed226eb05c5f8">Dilate::Dilate</a></div><div class="ttdeci">Dilate(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> Dilate.cpp:4</div></div>
-<div class="ttc" id="a00034_html"><div class="ttname"><a href="a00034.html">ProcessingComponent</a></div><div class="ttdef"><b>Definition:</b> ProcessingComponent.h:7</div></div>
-<div class="ttc" id="a00016_html_a72ad826d08e6038dec221724585c1be6"><div class="ttname"><a href="a00016.html#a72ad826d08e6038dec221724585c1be6">Dilate::m_kernelColumnCount</a></div><div class="ttdeci">int m_kernelColumnCount</div><div class="ttdef"><b>Definition:</b> Dilate.h:42</div></div>
-<div class="ttc" id="a00070_html_aa68996a9540ac9392c7b51f46cfb6357"><div class="ttname"><a href="a00070.html#aa68996a9540ac9392c7b51f46cfb6357">DilatePtr</a></div><div class="ttdeci">QSharedPointer&lt; Dilate &gt; DilatePtr</div><div class="ttdef"><b>Definition:</b> Dilate.h:70</div></div>
-<div class="ttc" id="a00016_html_aa06b63a314f68280e60da34374628464"><div class="ttname"><a href="a00016.html#aa06b63a314f68280e60da34374628464">Dilate::m_kernelRowCount</a></div><div class="ttdeci">int m_kernelRowCount</div><div class="ttdef"><b>Definition:</b> Dilate.h:41</div></div>
-<div class="ttc" id="a00016_html_ad89054c8dbb90ef407b4ed56e34450e1"><div class="ttname"><a href="a00016.html#ad89054c8dbb90ef407b4ed56e34450e1">Dilate::anchorPointYChanged</a></div><div class="ttdeci">void anchorPointYChanged()</div></div>
-<div class="ttc" id="a00016_html_a731421906ececff8017908d514f65500"><div class="ttname"><a href="a00016.html#a731421906ececff8017908d514f65500">Dilate::m_anchorPointY</a></div><div class="ttdeci">float m_anchorPointY</div><div class="ttdef"><b>Definition:</b> Dilate.h:39</div></div>
-<div class="ttc" id="a00016_html_af31246e27d73531fb50904b3c683e6fe"><div class="ttname"><a href="a00016.html#af31246e27d73531fb50904b3c683e6fe">Dilate::setAnchorPointX</a></div><div class="ttdeci">void setAnchorPointX(const float x)</div><div class="ttdef"><b>Definition:</b> Dilate.cpp:62</div></div>
-<div class="ttc" id="a00016_html_a74109510cd06dc2d3bcaeaca810d8d57"><div class="ttname"><a href="a00016.html#a74109510cd06dc2d3bcaeaca810d8d57">Dilate::dilate</a></div><div class="ttdeci">void dilate(cv::Mat &amp;input)</div><div class="ttdef"><b>Definition:</b> Dilate.cpp:19</div></div>
-<div class="ttc" id="a00016_html_af873065e862614fe144046999fbe926c"><div class="ttname"><a href="a00016.html#af873065e862614fe144046999fbe926c">Dilate::anchorPointY</a></div><div class="ttdeci">float anchorPointY() const </div></div>
-<div class="ttc" id="a00016_html_a0c41a0539dcdbdd12798ddd030f40be5"><div class="ttname"><a href="a00016.html#a0c41a0539dcdbdd12798ddd030f40be5">Dilate::kernelColumnCount</a></div><div class="ttdeci">int kernelColumnCount() const </div></div>
-<div class="ttc" id="a00016_html_a19047c5d164de38019b57ec2018a09b2"><div class="ttname"><a href="a00016.html#a19047c5d164de38019b57ec2018a09b2">Dilate::m_anchorPointX</a></div><div class="ttdeci">float m_anchorPointX</div><div class="ttdef"><b>Definition:</b> Dilate.h:38</div></div>
-<div class="ttc" id="a00016_html_a58e84f9e582243372f9fac30e4393a1c"><div class="ttname"><a href="a00016.html#a58e84f9e582243372f9fac30e4393a1c">Dilate::setAnchorPointY</a></div><div class="ttdeci">void setAnchorPointY(const float y)</div><div class="ttdef"><b>Definition:</b> Dilate.cpp:71</div></div>
-<div class="ttc" id="a00016_html"><div class="ttname"><a href="a00016.html">Dilate</a></div><div class="ttdef"><b>Definition:</b> Dilate.h:7</div></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a00047.html#a22061d1c8dee124d7e57ee30e9424c7d">   49</a></span>&#160;    <span class="keywordtype">float</span>                <a class="code" href="a00047.html#a22061d1c8dee124d7e57ee30e9424c7d">m_phi1</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a00047.html#a135b58e823437294983650026fa1da1e">   50</a></span>&#160;    <span class="keywordtype">float</span>                <a class="code" href="a00047.html#a135b58e823437294983650026fa1da1e">m_phi2</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00047.html#a317797fcb391752d40da62ba851b1def">   51</a></span>&#160;    <span class="keywordtype">bool</span>                 <a class="code" href="a00047.html#a317797fcb391752d40da62ba851b1def">m_userToClose</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a00047.html#abf8609652d7cbec0089cd1bc4d00c379">   52</a></span>&#160;    <a class="code" href="a00039.html">AMath::Rectangle3D</a>   <a class="code" href="a00047.html#abf8609652d7cbec0089cd1bc4d00c379">m_regionOfInterest</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00047.html#a41de5bb65f95f382d2c0bc1376ca1d6f">   53</a></span>&#160;    <a class="code" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>      <a class="code" href="a00047.html#a41de5bb65f95f382d2c0bc1376ca1d6f">m_skeletonData</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a00047.html#a701cf2b359bdb7df5d080019be48f5dd">   54</a></span>&#160;    <a class="code" href="a00048.html#af34e460c0da2f42218294f80e7070b28">SkeletonData::Joints</a> <a class="code" href="a00047.html#a701cf2b359bdb7df5d080019be48f5dd">m_joint</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;signals:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00047.html#adf181bd93c3bdc74cd72fd76bbd70ba0">phi1Changed</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00047.html#a7736404935fae34329566dba9bbf8843">phi2Changed</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00047.html#aec083140fa03f13ecfd2e41ae5fcdba1">jointChanged</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00047.html#a9b96da0421fc6f47e67e756b783d843c">userToCloseChanged</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a00047.html#a899d33993277e90e799bc54ba51a2296">   64</a></span>&#160;    <a class="code" href="a00006.html">BoundingBox</a> <a class="code" href="a00047.html#a899d33993277e90e799bc54ba51a2296">m_boundingBox</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> phi1</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                READ phi1</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                WRITE setPhi1</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a00047.html#abfb7d0f6d5ead6934057cd7d9e4c7d65">   70</a></span>&#160;                NOTIFY <a class="code" href="a00047.html#adf181bd93c3bdc74cd72fd76bbd70ba0">phi1Changed</a> )</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Q_PROPERTY( <span class="keywordtype">float</span> phi2</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                READ phi2</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                WRITE setPhi2</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a00047.html#ac8d26b3cc34ea6f0dd8bf4229c190e75">   75</a></span>&#160;                NOTIFY <a class="code" href="a00047.html#adf181bd93c3bdc74cd72fd76bbd70ba0">phi1Changed</a> )</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    Q_PROPERTY( <a class="code" href="a00048.html#af34e460c0da2f42218294f80e7070b28">SkeletonData::Joints</a> joint</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                WRITE setJoint</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                READ joint</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="a00047.html#a3bcadc9d20a4ffd70f49dee4a1b5ee52">   80</a></span>&#160;                NOTIFY <a class="code" href="a00047.html#aec083140fa03f13ecfd2e41ae5fcdba1">jointChanged</a> )</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    Q_PROPERTY( <span class="keywordtype">bool</span> userToClose MEMBER <a class="code" href="a00047.html#a317797fcb391752d40da62ba851b1def">m_userToClose</a></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                READ userToClose</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="a00047.html#ad6e6a6e9cca8feb7489196f2fca5e7ba">   84</a></span>&#160;                NOTIFY <a class="code" href="a00047.html#a9b96da0421fc6f47e67e756b783d843c">userToCloseChanged</a> )</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="a00070.html#abd8c20b28498e32943a5495a44a1ad53">   87</a></span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;SkeletonAnalyzer&gt; <a class="code" href="a00070.html#abd8c20b28498e32943a5495a44a1ad53">SkeletonAnalyzerPtr</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif // SKELETONANALYZER_H</span></div>
+<div class="ttc" id="a00091_html_a3ff4896d315d1270ac7622ce28abee47"><div class="ttname"><a href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a></div><div class="ttdeci">QSharedPointer&lt; SkeletonData &gt; SkeletonDataPtr</div><div class="ttdef"><b>Definition:</b> SkeletonData.h:83</div></div>
+<div class="ttc" id="a00047_html_ae7aa0521927bdb9726352a8a492786b1"><div class="ttname"><a href="a00047.html#ae7aa0521927bdb9726352a8a492786b1">SkeletonAnalyzer::findMinimalDistanceFromCamera</a></div><div class="ttdeci">float findMinimalDistanceFromCamera(const SkeletonDataPtr skeleton)</div><div class="ttdoc">SkeletonAnalyzer::findMinimalDistanceFromCamera Returns the distance of the joint closest to the came...</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:91</div></div>
+<div class="ttc" id="a00047_html_a317797fcb391752d40da62ba851b1def"><div class="ttname"><a href="a00047.html#a317797fcb391752d40da62ba851b1def">SkeletonAnalyzer::m_userToClose</a></div><div class="ttdeci">bool m_userToClose</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:51</div></div>
+<div class="ttc" id="a00068_html"><div class="ttname"><a href="a00068.html">MovementAnalyzer.h</a></div></div>
+<div class="ttc" id="a00039_html"><div class="ttname"><a href="a00039.html">AMath::Rectangle3D</a></div><div class="ttdef"><b>Definition:</b> AMath.h:56</div></div>
+<div class="ttc" id="a00048_html_af34e460c0da2f42218294f80e7070b28"><div class="ttname"><a href="a00048.html#af34e460c0da2f42218294f80e7070b28">SkeletonData::Joints</a></div><div class="ttdeci">Joints</div><div class="ttdef"><b>Definition:</b> SkeletonData.h:17</div></div>
+<div class="ttc" id="a00047_html_a59b9dcedf4ef511591d9dad4bdacdb8f"><div class="ttname"><a href="a00047.html#a59b9dcedf4ef511591d9dad4bdacdb8f">SkeletonAnalyzer::currentHeight</a></div><div class="ttdeci">float currentHeight() const </div></div>
+<div class="ttc" id="a00047_html_a701cf2b359bdb7df5d080019be48f5dd"><div class="ttname"><a href="a00047.html#a701cf2b359bdb7df5d080019be48f5dd">SkeletonAnalyzer::m_joint</a></div><div class="ttdeci">SkeletonData::Joints m_joint</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:54</div></div>
+<div class="ttc" id="a00047_html_a8160b86a8ca59b02619a7abe01f9aa39"><div class="ttname"><a href="a00047.html#a8160b86a8ca59b02619a7abe01f9aa39">SkeletonAnalyzer::kneelingThreshold</a></div><div class="ttdeci">float kneelingThreshold() const </div></div>
+<div class="ttc" id="a00047_html"><div class="ttname"><a href="a00047.html">SkeletonAnalyzer</a></div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:17</div></div>
+<div class="ttc" id="a00047_html_a922c379c9423144cd568b285ced9912a"><div class="ttname"><a href="a00047.html#a922c379c9423144cd568b285ced9912a">SkeletonAnalyzer::setJoint</a></div><div class="ttdeci">void setJoint(const SkeletonData::Joints joint)</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:82</div></div>
+<div class="ttc" id="a00047_html_afbb015a10377987b11433e0572a18b97"><div class="ttname"><a href="a00047.html#afbb015a10377987b11433e0572a18b97">SkeletonAnalyzer::lyingThreshold</a></div><div class="ttdeci">float lyingThreshold() const </div></div>
+<div class="ttc" id="a00047_html_a95aabf8cd26e09da89749e574ed0a627"><div class="ttname"><a href="a00047.html#a95aabf8cd26e09da89749e574ed0a627">SkeletonAnalyzer::~SkeletonAnalyzer</a></div><div class="ttdeci">virtual ~SkeletonAnalyzer()</div><div class="ttdoc">Destroys this object. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:25</div></div>
+<div class="ttc" id="a00047_html_a61a84268ed3ab5160ad0da69393271ef"><div class="ttname"><a href="a00047.html#a61a84268ed3ab5160ad0da69393271ef">SkeletonAnalyzer::joint</a></div><div class="ttdeci">SkeletonData::Joints joint() const </div></div>
+<div class="ttc" id="a00047_html_a88940e51155fffa44385a7af19613f89"><div class="ttname"><a href="a00047.html#a88940e51155fffa44385a7af19613f89">SkeletonAnalyzer::phi2</a></div><div class="ttdeci">float phi2() const </div></div>
+<div class="ttc" id="a00047_html_abf8609652d7cbec0089cd1bc4d00c379"><div class="ttname"><a href="a00047.html#abf8609652d7cbec0089cd1bc4d00c379">SkeletonAnalyzer::m_regionOfInterest</a></div><div class="ttdeci">AMath::Rectangle3D m_regionOfInterest</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:52</div></div>
+<div class="ttc" id="a00047_html_a135b58e823437294983650026fa1da1e"><div class="ttname"><a href="a00047.html#a135b58e823437294983650026fa1da1e">SkeletonAnalyzer::m_phi2</a></div><div class="ttdeci">float m_phi2</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:50</div></div>
+<div class="ttc" id="a00006_html"><div class="ttname"><a href="a00006.html">BoundingBox</a></div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:55</div></div>
+<div class="ttc" id="a00047_html_a49e2e420d79bd3e19464dc57030a0b88"><div class="ttname"><a href="a00047.html#a49e2e420d79bd3e19464dc57030a0b88">SkeletonAnalyzer::regionOfInterest</a></div><div class="ttdeci">AMath::Rectangle3D regionOfInterest() const </div><div class="ttdoc">SkeletonAnalyzer::regionOfInterest Returns a rectangle which encloses the whole body. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:127</div></div>
+<div class="ttc" id="a00047_html_a9b96da0421fc6f47e67e756b783d843c"><div class="ttname"><a href="a00047.html#a9b96da0421fc6f47e67e756b783d843c">SkeletonAnalyzer::userToCloseChanged</a></div><div class="ttdeci">void userToCloseChanged()</div></div>
+<div class="ttc" id="a00047_html_a889f3a17e9b4ea2fd7a8f69c887d6eee"><div class="ttname"><a href="a00047.html#a889f3a17e9b4ea2fd7a8f69c887d6eee">SkeletonAnalyzer::update</a></div><div class="ttdeci">bool update(const SkeletonDataPtr skeleton, const unsigned int timestamp)</div><div class="ttdoc">This function updates the tracking results. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:38</div></div>
+<div class="ttc" id="a00047_html_adf181bd93c3bdc74cd72fd76bbd70ba0"><div class="ttname"><a href="a00047.html#adf181bd93c3bdc74cd72fd76bbd70ba0">SkeletonAnalyzer::phi1Changed</a></div><div class="ttdeci">void phi1Changed()</div></div>
+<div class="ttc" id="a00047_html_a611c8cd6d70e5f07b10edcf44881714d"><div class="ttname"><a href="a00047.html#a611c8cd6d70e5f07b10edcf44881714d">SkeletonAnalyzer::workerStatus</a></div><div class="ttdeci">QString workerStatus() const </div></div>
+<div class="ttc" id="a00047_html_a41de5bb65f95f382d2c0bc1376ca1d6f"><div class="ttname"><a href="a00047.html#a41de5bb65f95f382d2c0bc1376ca1d6f">SkeletonAnalyzer::m_skeletonData</a></div><div class="ttdeci">SkeletonDataPtr m_skeletonData</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:53</div></div>
+<div class="ttc" id="a00047_html_a170fb6255f6d31599c88fe671a8d5812"><div class="ttname"><a href="a00047.html#a170fb6255f6d31599c88fe671a8d5812">SkeletonAnalyzer::getBoundingBoxWholeBody</a></div><div class="ttdeci">const BoundingBox * getBoundingBoxWholeBody() const </div><div class="ttdoc">Returns the BoundingBox enclosing the whole body from the last update() call. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:118</div></div>
+<div class="ttc" id="a00047_html_acb5b75b79c54efede37f274af6708d72"><div class="ttname"><a href="a00047.html#acb5b75b79c54efede37f274af6708d72">SkeletonAnalyzer::userToClose</a></div><div class="ttdeci">bool userToClose() const </div></div>
+<div class="ttc" id="a00047_html_ae4ded58f084078ba022aaa9c5e27d807"><div class="ttname"><a href="a00047.html#ae4ded58f084078ba022aaa9c5e27d807">SkeletonAnalyzer::SkeletonAnalyzer</a></div><div class="ttdeci">SkeletonAnalyzer(QObject *parent=nullptr)</div><div class="ttdoc">SkeletonAnalyzer::SkeletonAnalyzer Constructs a new SkeletonAnalzer. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:12</div></div>
+<div class="ttc" id="a00047_html_a5465658f3139966d9d06217f6de09b2c"><div class="ttname"><a href="a00047.html#a5465658f3139966d9d06217f6de09b2c">SkeletonAnalyzer::setPhi1</a></div><div class="ttdeci">void setPhi1(const float phi1)</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:64</div></div>
+<div class="ttc" id="a00047_html_aac978efd71fdd51b68de20938bf772e9"><div class="ttname"><a href="a00047.html#aac978efd71fdd51b68de20938bf772e9">SkeletonAnalyzer::setPhi2</a></div><div class="ttdeci">void setPhi2(const float phi2)</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:73</div></div>
+<div class="ttc" id="a00047_html_adab7dab7b1ce24c9a75eefddfd4f1b57"><div class="ttname"><a href="a00047.html#adab7dab7b1ce24c9a75eefddfd4f1b57">SkeletonAnalyzer::estimatedHeight</a></div><div class="ttdeci">float estimatedHeight() const </div></div>
+<div class="ttc" id="a00047_html_aa00c09f826063c9b9982789761b8c4c9"><div class="ttname"><a href="a00047.html#aa00c09f826063c9b9982789761b8c4c9">SkeletonAnalyzer::phi1</a></div><div class="ttdeci">float phi1() const </div></div>
+<div class="ttc" id="a00047_html_a899d33993277e90e799bc54ba51a2296"><div class="ttname"><a href="a00047.html#a899d33993277e90e799bc54ba51a2296">SkeletonAnalyzer::m_boundingBox</a></div><div class="ttdeci">BoundingBox m_boundingBox</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:64</div></div>
+<div class="ttc" id="a00047_html_a7736404935fae34329566dba9bbf8843"><div class="ttname"><a href="a00047.html#a7736404935fae34329566dba9bbf8843">SkeletonAnalyzer::phi2Changed</a></div><div class="ttdeci">void phi2Changed()</div></div>
+<div class="ttc" id="a00047_html_a688ac6b0cdd39d30f9b6ff110c351eb8"><div class="ttname"><a href="a00047.html#a688ac6b0cdd39d30f9b6ff110c351eb8">SkeletonAnalyzer::calculateFeatureVector</a></div><div class="ttdeci">void calculateFeatureVector(const SkeletonDataPtr &amp;skeletonData)</div><div class="ttdoc">Calculates a vector of features. </div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.cpp:154</div></div>
+<div class="ttc" id="a00047_html_a22061d1c8dee124d7e57ee30e9424c7d"><div class="ttname"><a href="a00047.html#a22061d1c8dee124d7e57ee30e9424c7d">SkeletonAnalyzer::m_phi1</a></div><div class="ttdeci">float m_phi1</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:49</div></div>
+<div class="ttc" id="a00047_html_aec083140fa03f13ecfd2e41ae5fcdba1"><div class="ttname"><a href="a00047.html#aec083140fa03f13ecfd2e41ae5fcdba1">SkeletonAnalyzer::jointChanged</a></div><div class="ttdeci">void jointChanged()</div></div>
+<div class="ttc" id="a00048_html"><div class="ttname"><a href="a00048.html">SkeletonData</a></div><div class="ttdef"><b>Definition:</b> SkeletonData.h:11</div></div>
+<div class="ttc" id="a00070_html_abd8c20b28498e32943a5495a44a1ad53"><div class="ttname"><a href="a00070.html#abd8c20b28498e32943a5495a44a1ad53">SkeletonAnalyzerPtr</a></div><div class="ttdeci">QSharedPointer&lt; SkeletonAnalyzer &gt; SkeletonAnalyzerPtr</div><div class="ttdef"><b>Definition:</b> SkeletonAnalyzer.h:87</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00070.html">Dilate.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_7d1f4849ef4395e3ffbc74b409afca8d.html">Analyzer</a></li><li class="navelem"><a class="el" href="dir_37ee937b15c4fe0701734dc8b32bf2cf.html">inc</a></li><li class="navelem"><a class="el" href="a00070.html">SkeletonAnalyzer.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

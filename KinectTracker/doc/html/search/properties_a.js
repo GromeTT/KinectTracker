@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['numberofbins',['numberOfBins',['../a00024.html#ab5033d42524247e7de0cc893d43c2413',1,'HOGFeatureDetector']]],
-  ['numberoflevels',['numberOfLevels',['../a00024.html#a7a81989128e5fcb50c3d12324fb1ce80',1,'HOGFeatureDetector']]]
+  ['maxvalue',['maxValue',['../a00055.html#a6e9aec8892a8b8c16c8c0ffb8d293299',1,'Threshold']]],
+  ['mincontoursize',['minContourSize',['../a00015.html#ac16ba608d449ff14d9cebfab3f2c05b8',1,'DepthProcessingPipeline']]]
 ];

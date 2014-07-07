@@ -11,10 +11,29 @@
  */
 SkeletonAnalyzer::SkeletonAnalyzer( QObject* parent )
     : QObject( parent )
-    , m_skeletonData( nullptr )
-    , m_estimatedHeight( 0.0f )
     , m_phi1( 0.0f )
     , m_phi2( 0.0f )
+    , m_userToClose( false )
+    , m_hipTracked( false )
+    , m_spineTracked( false )
+    , m_shoulderCenterTracked( false )
+    , m_headTracked( false )
+    , m_shoulderLeftTracked( false )
+    , m_elbowLeftTracked( false )
+    , m_wristLeftTracked( false )
+    , m_handLeftTracked( false )
+    , m_shoulderRightTracked( false )
+    , m_elbowRightTracked( false )
+    , m_wristRightTracked( false )
+    , m_handRightTracked( false )
+    , m_hipLeftTracked( false )
+    , m_kneeLeftTracked( false )
+    , m_ankleLeftTracked( false )
+    , m_footLeftTracked( false )
+    , m_hipRightTracked( false )
+    , m_kneeRightTracked( false )
+    , m_ankleRightTracked( false )
+    , m_footRightTracked( false )
 {
     setObjectName( "SkeletonAnalyzer" );
 }
@@ -42,10 +61,11 @@ bool SkeletonAnalyzer::update( const SkeletonDataPtr skeleton,
     Q_UNUSED( timestamp );
 
     if ( !skeleton ||
-         !skeleton->areMajorPointsTracked() )
+         !skeleton->majorPointsTracked() )
     {
         return false;
     }
+    updateJointTrackingState( skeleton );
     // Compute the BoundingBox which encloses the whole body with no
     // extra space.
     m_boundingBox.calculateBoundingBox( skeleton->getJoints() );
@@ -86,6 +106,113 @@ void SkeletonAnalyzer::setJoint(const SkeletonData::Joints joint)
 }
 
 /*!
+   \brief SkeletonAnalyzer::setUserLooksTowardsCamera
+ */
+void SkeletonAnalyzer::setUserLooksTowardsCamera( const bool b )
+{
+    m_userLooksTowardsCamera = b;
+    emit userLooksTowardsCameraChanged();
+}
+
+void SkeletonAnalyzer::updateJointTrackingState( const SkeletonDataPtr skeleton )
+{
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::Hip,
+                         m_hipTracked );
+    emit hipTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::Spine,
+                         m_spineTracked );
+    emit spineTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::ShoulderCenter,
+                         m_shoulderCenterTracked );
+    emit shoulderCenterTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::Head,
+                         m_headTracked);
+    emit headTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::ShoulderLeft,
+                         m_shoulderLeftTracked );
+    emit shoulderLeftTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::ElbowLeft,
+                         m_elbowLeftTracked);
+    emit elbowLeftTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::WristLeft,
+                         m_wristLeftTracked );
+    emit wristLeftTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::HandLeft,
+                         m_handLeftTracked );
+    emit handLeftTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::ShoulderRight,
+                         m_shoulderRightTracked );
+    emit shoulderRightTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::ElbowRight,
+                         m_elbowRightTracked );
+    emit elbowRightTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::WristRight,
+                         m_wristRightTracked );
+    emit wristRightTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::HandRight,
+                         m_handRightTracked );
+    emit handRightTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::HipLeft,
+                         m_hipLeftTracked );
+    emit hipLeftTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::KneeLeft,
+                         m_kneeLeftTracked );
+    emit kneeLeftTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::AnkleLeft,
+                         m_ankleLeftTracked );
+    emit ankleLeftTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::FootLeft,
+                         m_footLeftTracked );
+    emit footLeftTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::HipRight,
+                         m_hipRightTracked );
+    emit hipRightTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::KneeRight,
+                         m_kneeRightTracked );
+    emit kneeRightTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::AnkleRight,
+                         m_ankleRightTracked );
+    emit ankleRightTrackedChanged();
+    trackingStateToBool( skeleton,
+                         SkeletonData::Joints::FootRight,
+                         m_footRightTracked );
+    emit footRightTrackedChanged();
+}
+
+void SkeletonAnalyzer::trackingStateToBool( const SkeletonDataPtr skeleton,
+                                            const SkeletonData::Joints joint,
+                                            bool& state )
+{
+    if ( skeleton->jointTrackState( joint ) != SkeletonData::TrackState::Tracked )
+    {
+        state = false;
+    }
+    else
+    {
+        state = true;
+    }
+}
+
+/*!
    \brief SkeletonAnalyzer::findMinimalDistanceFromCamera
    Returns the distance of the joint closest to the camera.
  */
@@ -102,16 +229,6 @@ float SkeletonAnalyzer::findMinimalDistanceFromCamera( const SkeletonDataPtr ske
     return minDist;
 }
 
-float SkeletonAnalyzer::estimatedHeight() const
-{
-    return m_estimatedHeight;
-}
-
-float SkeletonAnalyzer::currentHeight() const
-{
-    return m_currentHeight;
-}
-
 float SkeletonAnalyzer::phi1() const
 {
     return m_phi1;
@@ -120,12 +237,6 @@ float SkeletonAnalyzer::phi1() const
 float SkeletonAnalyzer::phi2() const
 {
     return m_phi2;
-}
-
-
-QString SkeletonAnalyzer::workerStatus() const
-{
-    return m_workerStatus;
 }
 
 /*!
@@ -149,6 +260,130 @@ AMath::Rectangle3D SkeletonAnalyzer::regionOfInterest() const
 SkeletonData::Joints SkeletonAnalyzer::joint() const
 {
     return m_joint;
+}
+
+/*!
+   \brief SkeletonAnalyzer::userToClose
+   Returns true, if the user is to close to the camera.
+   Otherwise false.
+ */
+bool SkeletonAnalyzer::userToClose() const
+{
+    return m_userToClose;
+}
+
+/*!
+   \brief SkeletonAnalyzer::userLooksTowardsCamera
+   Returns true, if the user looks towards the camera.
+   False otherwise.
+ */
+bool SkeletonAnalyzer::userLooksTowardsCamera()
+{
+    return m_userLooksTowardsCamera;
+}
+
+/*!
+   \brief SkeletonAnalyzer::hipTracked
+   \return
+ */
+bool SkeletonAnalyzer::hipTracked() const
+{
+    return m_hipTracked;
+}
+
+bool SkeletonAnalyzer::spineTracked() const
+{
+    return m_spineTracked;
+}
+
+bool SkeletonAnalyzer::shoulderCenterTracked() const
+{
+    return m_shoulderCenterTracked;
+}
+
+bool SkeletonAnalyzer::headTracked() const
+{
+    return m_headTracked;
+}
+
+bool SkeletonAnalyzer::shoulderLeftTracked() const
+{
+    return m_shoulderLeftTracked;
+}
+
+bool SkeletonAnalyzer::elbowLeftTracked() const
+{
+    return m_elbowLeftTracked;
+}
+
+bool SkeletonAnalyzer::wristLeftTracked() const
+{
+    return m_wristLeftTracked;
+}
+
+bool SkeletonAnalyzer::handLeftTracked() const
+{
+    return m_handLeftTracked;
+}
+
+bool SkeletonAnalyzer::shoulderRightTracked() const
+{
+    return m_shoulderRightTracked;
+}
+
+bool SkeletonAnalyzer::elbowRightTracked() const
+{
+    return m_elbowRightTracked;
+}
+
+bool SkeletonAnalyzer::wristRightTracked() const
+{
+    return m_wristRightTracked;
+}
+
+bool SkeletonAnalyzer::handRightTracked() const
+{
+    return m_handRightTracked;
+}
+
+bool SkeletonAnalyzer::hipLeftTracked() const
+{
+    return m_hipLeftTracked;
+}
+
+bool SkeletonAnalyzer::kneeLeftTracked() const
+{
+    return m_kneeLeftTracked;
+}
+
+bool SkeletonAnalyzer::ankleLeftTracked() const
+{
+    return m_ankleLeftTracked;
+}
+
+bool SkeletonAnalyzer::footLeftTracked() const
+{
+    return m_footLeftTracked;
+}
+
+bool SkeletonAnalyzer::hipRightTracked() const
+{
+    return m_hipRightTracked;
+}
+
+bool SkeletonAnalyzer::kneeRightTracked() const
+{
+    return m_kneeRightTracked;
+}
+
+bool SkeletonAnalyzer::ankleRightTracked() const
+{
+    return m_ankleRightTracked;
+}
+
+bool SkeletonAnalyzer::footRightTracked() const
+{
+    return m_footRightTracked;
 }
 
 /*!
@@ -178,12 +413,16 @@ void SkeletonAnalyzer::calculateFeatureVector( const SkeletonDataPtr& skeletonDa
     QVector3D v3 = QVector3D::crossProduct( tmpNormalized, centerNormalized );
     QVector3D v2 = QVector3D::crossProduct( centerNormalized, v3 );
     setPhi2( acosf( QVector3D::dotProduct( v1.normalized(), v2 ) ) * AMath::factorRadianToDegree );
-}
 
-bool SkeletonAnalyzer::calculateHeight( const SkeletonDataPtr skeletonData, float& height )
-{
-    // http://www.codeproject.com/Tips/380152/Kinect-for-Windows-Find-User-Height-Accurately
-    return true;
-
+    // Checks if the user is to close to the camera.
+    if ( findMinimalDistanceFromCamera( skeletonData ) < 0.7 )
+    {
+        m_userToClose = true;
+    }
+    else
+    {
+        m_userToClose = false;
+    }
+    emit userToCloseChanged();
 }
 

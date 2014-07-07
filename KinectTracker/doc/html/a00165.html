@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Member List</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/MainWindow.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,10 +67,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -85,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00005.html','');});
+$(document).ready(function(){initNavTree('a00165.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -104,25 +102,59 @@ $(document).ready(function(){initNavTree('a00005.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">BBMovementAnalyzer Member List</div>  </div>
+<div class="title">C:/Projekte/C++/Kinect_Tracker/KinectTracker/MainWindow.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="a00166_source.html">MainWindow.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00098_source.html">inc/OpenGL/inc/OpenGLWindow.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00101_source.html">inc/OpenGL/inc/RenderObject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00094_source.html">inc/OpenGL/inc/BasicUsageScene.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00096_source.html">inc/OpenGL/inc/Floor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00103_source.html">inc/OpenGL/inc/SkeletonRenderObject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00083_source.html">inc/Dialogs/inc/KinectInitializeDialog.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00121_source.html">inc/ProcessingPipelines/inc/HOGFeatureDetector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00116_source.html">inc/ProcessingPipelines/inc/DepthProcessingPipeline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00119_source.html">inc/ProcessingPipelines/inc/HighLevelProcessingPipeline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00126_source.html">inc/ProcessingPipelines/inc/SASDProcessingPipeline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00125_source.html">inc/ProcessingPipelines/inc/SABSSDProcessingPipeline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00159_source.html">inc/Visualizer/inc/BBMovementVisualizer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00066_source.html">inc/Analyzer/inc/BBMovementAnalyzer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00082_source.html">inc/Dialogs/inc/ImageAnalysisDialog.h</a>&quot;</code><br />
+<code>#include &lt;QMdiSubWindow&gt;</code><br />
+<code>#include &lt;QKeyEvent&gt;</code><br />
+<code>#include &lt;QMetaObject&gt;</code><br />
+<code>#include &lt;QMetaProperty&gt;</code><br />
+<code>#include &lt;QLabel&gt;</code><br />
+<code>#include &lt;QTimer&gt;</code><br />
+<code>#include &lt;QImage&gt;</code><br />
+<code>#include &lt;QFileInfo&gt;</code><br />
+<code>#include &lt;QDockWidget&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+<code>#include &quot;ui_MainWindow.h&quot;</code><br />
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a36e3eec1091545590dddf12e94c91964"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void detect_blobs </td>
+          <td>(</td>
+          <td class="paramtype">Mat &amp;&#160;</td>
+          <td class="paramname"><em>current</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
-<p>This is the complete list of members for <a class="el" href="a00005.html">BBMovementAnalyzer</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00031.html#ad65a6e9c98e84c2cee5f6a5262ee66ef">analyze</a>()</td><td class="entry"><a class="el" href="a00031.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00005.html#a81b6fadc280e39c2ef86b3d21e1c8101">anaylzeV</a>()</td><td class="entry"><a class="el" href="a00005.html">BBMovementAnalyzer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00005.html#ac68f990d9d96ef4f338cc4802727ff82">BBMovementAnalyzer</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00005.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00031.html#afc9a86154bca9345449b256ac3fbc588">boundingGeometries</a>() const </td><td class="entry"><a class="el" href="a00031.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00031.html#a950981be4142b22fc4e133d6ef3412d7">MovementAnalyzer</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00031.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00005.html#ac67f0e2bae42ad31d95aa1682191a5ea">~BBMovementAnalyzer</a>()</td><td class="entry"><a class="el" href="a00005.html">BBMovementAnalyzer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00031.html#a30b01985f212cbe998c7d685e84ddf1c">~MovementAnalyzer</a>()</td><td class="entry"><a class="el" href="a00031.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-</table></div><!-- contents -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00165.html">MainWindow.cpp</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

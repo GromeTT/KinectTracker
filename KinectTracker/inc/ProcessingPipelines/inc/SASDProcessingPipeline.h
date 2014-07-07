@@ -3,6 +3,7 @@
 
 #include "HighLevelProcessingPipeline.h"
 #include "LowLevelProcessingPipeline.h"
+#include <QVector4D>
 
 class AnalysisResults;
 class SkeletonAnalyzer;
@@ -15,19 +16,22 @@ public:
 
 protected:
    void processV( const unsigned int timestamp );
+   virtual void resetV();
 
 private:
-   SkinColorExplicitDefinedSkinRegionDetectionPipelinePtr m_skinPipeline;
-
    bool processSkeletonData( const unsigned int timestamp );
    void processRGBData();
    void processDepthData();
    void deriveViewingDirectionBySkinColor( cv::Mat& currentImage,
                                            const QVector2D& center );
-   void deriveViewingDirectionByHistogram( cv::Mat& currentImage,
-                                           const QVector2D& center );
+   void deriveViewingDirectionByHistogram( cv::Mat& headRegion );
+   void deriveViewingDirectionByHistogramHSV( cv::Mat& headRegion );
 
-   AMath::Rectangle3D m_lastRegion;
+   QRect                                                  m_lastRegion;
+   QVector4D                                              m_planeCoefficient;
+   SkinColorDetectionPipeline                             m_skinColorDetectionPipeline;
+   SkinColorHistogramDetectionPipelinePtr                 m_skinColorHistogramDetectionPipeline;
+   SkinColorExplicitDefinedSkinRegionDetectionPipelinePtr m_skinPipeline;
 };
 
 #endif // SASDPROCESSINGPIPELINE_H

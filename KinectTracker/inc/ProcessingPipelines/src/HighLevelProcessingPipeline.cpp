@@ -11,7 +11,6 @@ HighLevelProcessingPipeline::HighLevelProcessingPipeline( KinectPtr& kinect,
                                                           QObject* parent )
     : QObject( parent )
     , m_kinect( kinect )
-    , m_rgbProcessingPipeline( rbgProcessingPipeline )
     , m_depthProcessingPipeline( depthProcessingPipeline )
     , m_movementAnalyzer( new BBMovementAnalyzer )
     , m_sizeAnalyzer( new BBSizeAnalyzer )
@@ -26,7 +25,8 @@ HighLevelProcessingPipeline::HighLevelProcessingPipeline( KinectPtr& kinect,
     m_rgbSize = kinect->rgbStreamResolution().width() * kinect->rgbStreamResolution().height() * 3;
     mp_rgbData = new uchar [m_rgbSize];
     mp_rgbScreenshot = new uchar [m_rgbSize];
-    m_skeletons.resize( 6 );
+
+    m_rgbProcessingPipelines.append( LowLevelProcessingPipelinePtr( rbgProcessingPipeline ) );
 }
 
 HighLevelProcessingPipeline::~HighLevelProcessingPipeline()
@@ -38,7 +38,7 @@ HighLevelProcessingPipeline::~HighLevelProcessingPipeline()
    \brief HighLevelProcessingPipeline::process
    Process the RGB, depth and skeleton data.
  */
-void HighLevelProcessingPipeline::process( const unsigned int timestamp )
+bool HighLevelProcessingPipeline::process( const unsigned int timestamp )
 {
     m_skeletons.clear();
 
@@ -47,20 +47,21 @@ void HighLevelProcessingPipeline::process( const unsigned int timestamp )
     res = m_kinect->getDepthImage( mp_depthData );
     if ( res != S_OK )
     {
-        return;
+        return false;
     }
     res = m_kinect->getRGBImage( mp_rgbData );
     if ( res != S_OK )
     {
-        return;
+        return false;
     }
     res = m_kinect->getSkeleton( m_skeletons );
     if ( res != S_OK )
     {
-        return;
+        return false;
     }
     // Process the data.
     processV( timestamp );
+    return true;
 }
 
 /*!
@@ -95,12 +96,12 @@ SkeletonDataPtr HighLevelProcessingPipeline::skeletonData() const
 }
 
 /*!
-   \brief HighLevelProcessingPipeline::rgbProcessingPipeline
-   Returns the RGBProcessingPipeline.
+   \brief HighLevelProcessingPipeline::processingPipelines
+   Returns a list of all RGBPipelines registered.
  */
-LowLevelProcessingPipelinePtr HighLevelProcessingPipeline::rgbProcessingPipeline() const
+QList<LowLevelProcessingPipelinePtr>& HighLevelProcessingPipeline::rgbProcessingPipelines()
 {
-    return m_rgbProcessingPipeline;
+    return m_rgbProcessingPipelines;
 }
 
 /*!
@@ -140,6 +141,64 @@ SkeletonAnalyzerPtr HighLevelProcessingPipeline::skeletonAnalyzer() const
 }
 
 /*!
+   \brief HighLevelProcessingPipeline::skeletonDataAvailable
+ */
+bool HighLevelProcessingPipeline::skeletonDataAvailable() const
+{
+    return m_skeletonDataAvailable;
+}
+
+/*!
+   \brief HighLevelProcessingPipeline::trackJoints
+   \param skeleton
+ */
+void HighLevelProcessingPipeline::trackJoints( const SkeletonDataPtr skeleton, cv::Mat image )
+{
+    drawJoint( SkeletonData::Joints::Hip, skeleton, image );
+    drawJoint( SkeletonData::Joints::Spine, skeleton, image );
+    drawJoint( SkeletonData::Joints::ShoulderCenter, skeleton, image );
+    drawJoint( SkeletonData::Joints::ShoulderLeft, skeleton, image );
+    drawJoint( SkeletonData::Joints::ElbowLeft, skeleton, image );
+    drawJoint( SkeletonData::Joints::WristLeft, skeleton, image );
+    drawJoint( SkeletonData::Joints::HandLeft, skeleton, image );
+    drawJoint( SkeletonData::Joints::ShoulderRight, skeleton, image );
+    drawJoint( SkeletonData::Joints::ElbowRight, skeleton, image );
+    drawJoint( SkeletonData::Joints::WristRight, skeleton, image );
+    drawJoint( SkeletonData::Joints::HandRight, skeleton, image );
+    drawJoint( SkeletonData::Joints::HipLeft, skeleton, image );
+    drawJoint( SkeletonData::Joints::KneeLeft, skeleton, image );
+    drawJoint( SkeletonData::Joints::AnkleLeft, skeleton, image );
+    drawJoint( SkeletonData::Joints::FootLeft, skeleton, image );
+    drawJoint( SkeletonData::Joints::HipRight, skeleton, image );
+    drawJoint( SkeletonData::Joints::KneeRight, skeleton, image );
+    drawJoint( SkeletonData::Joints::AnkleRight, skeleton, image );
+    drawJoint( SkeletonData::Joints::FootRight, skeleton, image );
+}
+
+void HighLevelProcessingPipeline::drawJoint( SkeletonData::Joints joint,
+                                             const SkeletonDataPtr skeleton,
+                                             cv::Mat image,
+                                             const int width,
+                                             const int height )
+{
+    QPoint p;
+    QRect r;
+    p = transformFromSkeltonToRGB( skeleton->getJoint( joint ) );
+    r = cropRegionWithWidthAndHeightAsPixels( p,
+                                              width,
+                                              height,
+                                              image );
+    if ( skeleton->jointTrackState( joint ) == SkeletonData::TrackState::Tracked )
+    {
+        drawRegionOfInterest( r, image, cv::Scalar( 0, 255, 0) );
+    }
+    else
+    {
+        drawRegionOfInterest( r, image, cv::Scalar( 0, 0, 255 ) );
+    }
+}
+
+/*!
    \brief HighLevelProcessingPipeline::takeScreenShot
    Makes a copy of the current depth and rgb Data.
  */
@@ -155,58 +214,110 @@ void HighLevelProcessingPipeline::takeScreenShot()
  */
 void HighLevelProcessingPipeline::saveHeadHistograms()
 {
-
-}
-
-
-
-/*!
-   \brief HighLevelProcessingPipeline::drawRegionOfInterest
-   Translates the region defined by \a rect from the 3D space to the rgb space
-   and draws it.
- */
-void HighLevelProcessingPipeline::drawRegionOfInterest( const AMath::Rectangle3D& rect,
-                                                        cv::Mat& image,
-                                                        const cv::Scalar& color )
-{
-    QVector2D p1 = transformFromSkeltonToRGB( rect.topLeftCorner() );
-    QVector2D p2 = transformFromSkeltonToRGB( rect.bottomRightCorner() );
-    rectangle( image,
-               cv::Point( p1.x(), p1.y() ), cv::Point( p2.x(), p2.y() ),
-               color,
-               5 );
 }
 
 /*!
    \brief HighLevelProcessingPipeline::drawRegionOfInterest
-   Draws a rectangle around \a center defined by \a width and \a height in \a image.
-   Note that \a center has to be in rgb space.
+   Draws \a rect into \a image with \a color.
+   Note that the region has to be croped.
  */
-void HighLevelProcessingPipeline::drawRegionOfInterestWithAndHeightAsPixels( const QVector3D& center,
-                                                                             const float width,
-                                                                             const float height,
-                                                                             cv::Mat& image,
-                                                                             const cv::Scalar& color )
+void HighLevelProcessingPipeline::drawRegionOfInterest( QRect& rect,
+                                                        cv::Mat image,
+                                                        cv::Scalar color )
 {
-    rectangle( image,
-               cv::Point( center.x() + width, center.y() + height ), cv::Point( center.x() - width, center.y() - height),
-               color,
-               5 );
+    // Draw the reactangle only if the it's width and height
+    // is greater then 0.
+    if ( rect.width() > 0 && rect.height() > 0 )
+    {
+        rectangle( image,
+                   cv::Point( rect.bottomRight().x(), rect.bottomRight().y() ),
+                   cv::Point( rect.topLeft().x(), rect.topLeft().y() ),
+                   color,
+                   5 );
+    }
 }
 
 /*!
-   \brief HighLevelProcessingPipeline::drawRegionOfInterestWithAndHeightAsPixels
-   Transforms the center point of \a rect into color space and passes it to
-   HighLevelProcessingPipeline::drawRegionOfInterestWithAndHeightAsPixels
-
+   \brief HighLevelProcessingPipeline::reset
  */
-void HighLevelProcessingPipeline::drawRegionOfInterestWithAndHeightAsPixels( const AMath::Rectangle3D& rect,
-                                                                             cv:: Mat image,
-                                                                             const cv::Scalar& color )
+void HighLevelProcessingPipeline::reset()
 {
-    drawRegionOfInterestWithAndHeightAsPixels( transformFromSkeltonToRGB( rect.center() ),
-                                               rect.width(),
-                                               rect.height(),
-                                               image,
-                                               color );
+    m_sizeAnalyzer->reset();
+    m_movementAnalyzer->reset();
+    resetV();
+}
+
+/*!
+   \brief HighLevelProcessingPipeline::crop
+   Corps \a rect, so that it fits into \a image.
+ */
+QRect HighLevelProcessingPipeline::crop( const AMath::Rectangle3D& rect,
+                                         cv::Mat& image )
+{
+    QPoint topLeft = transformFromSkeltonToRGB( rect.topLeftCorner() );
+    if ( topLeft.x() < 0 )
+    {
+        topLeft.setX( 0 );
+    }
+    if ( topLeft.y() < 0 )
+    {
+        topLeft.setY( 0 );
+    }
+    QPoint bottomRight = transformFromSkeltonToRGB( rect.bottomRightCorner() );
+    if ( bottomRight.x() >= image.cols )
+    {
+        bottomRight.setX( image.cols - 1 );
+    }
+    if ( bottomRight.y() >= image.rows )
+    {
+        bottomRight.setY( image.rows - 1 );
+    }
+    return QRect( topLeft, bottomRight );
+}
+
+/*!
+   \brief HighLevelProcessingPipeline::cropRegionWithWidthAndHeightAsPixels
+   \overload HighLevelProcessingPipeline::cropRegionWithWidthAndHeightAsPixels(QPoint &center, const float width, const float height, cv::Mat &image)
+ */
+QRect HighLevelProcessingPipeline::cropRegionWithWidthAndHeightAsPixels( const QRect& rect,
+                                                                         const cv::Mat& image)
+{
+    return cropRegionWithWidthAndHeightAsPixels( rect.center(),
+                                                 rect.width(),
+                                                 rect.height(),
+                                                 image );
+}
+
+/*!
+   \brief HighLevelProcessingPipeline::cropRegionWithWidthAndHeightAsPixels
+   Crops the rectangle descibed by \a center, \a width and \a height so that it
+   fits into \a image.
+ */
+QRect HighLevelProcessingPipeline::cropRegionWithWidthAndHeightAsPixels( const QPoint& center,
+                                                                         const float width,
+                                                                         const float height,
+                                                                         const cv::Mat& image )
+{
+    QPoint bottomRight ( center.x() + width,
+                         center.y() + height );
+    QPoint topLeft (center.x() - width,
+                    center.y() - height );
+
+    if ( bottomRight.x() >= image.cols )
+    {
+        bottomRight.setX( image.cols - 1 );
+    }
+    if ( bottomRight.y() >= image.rows )
+    {
+        bottomRight.setY( image.rows - 1  );
+    }
+    if ( topLeft.x() < 0  )
+    {
+        topLeft.setX( 0 );
+    }
+    if ( topLeft.y() < 0 )
+    {
+        topLeft.setY( 0 );
+    }
+    return QRect( topLeft, bottomRight );
 }

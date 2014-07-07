@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Explorer Class Reference</title>
+<title>KinectTracker: FixedPropertyVector Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,59 +104,67 @@ $(document).ready(function(){initNavTree('a00018.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00178.html">List of all members</a>  </div>
+<a href="a00188.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Explorer Class Reference</div>  </div>
+<div class="title">FixedPropertyVector Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00072_source.html">Explorer.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for Explorer:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00018.png" usemap="#Explorer_map" alt=""/>
-  <map id="Explorer_map" name="Explorer_map">
-</map>
- </div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ac0d276e25fbe8c7e6958a0371c16ff46"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00018.html#ac0d276e25fbe8c7e6958a0371c16ff46">setObject</a> (QObject *object)</td></tr>
-<tr class="separator:ac0d276e25fbe8c7e6958a0371c16ff46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
+<p><code>#include &lt;<a class="el" href="a00062_source.html">Defines.h</a>&gt;</code></p>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a218238d8630f75d20fb6552ab40612c8"></a>
+<a class="anchor" id="a4d8fdeba3cedb540692b58357d923611"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Explorer::Explorer </td>
+          <td class="memname">FixedPropertyVector::FixedPropertyVector </td>
           <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aa1b0a71e92e003e9162a5ba99d843392"></a>
+<a class="anchor" id="a02dc9c9d37712ad936bc257237c4b18f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Explorer::~Explorer </td>
+          <td class="memname">FixedPropertyVector::FixedPropertyVector </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9d1571f30bf5147e849cc41fa5aedd0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FixedPropertyVector::FixedPropertyVector </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00018.html">FixedPropertyVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6874e41c4693c2cff0c0eb11e57952a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FixedPropertyVector::~FixedPropertyVector </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -167,94 +175,155 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="af284cbaa95db2b32a271db90af9c2128"></a>
+<a class="anchor" id="afa85a0006e87fe8629f1831ea1206637"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Explorer::clearView </td>
+          <td class="memname">float FixedPropertyVector::at </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2667c22ea9b5e654a58440598a49e802"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; float &gt; &amp; FixedPropertyVector::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a730efedf292635772e57bfbb5ec060d6"></a>
+<a class="anchor" id="af9dc43efb450e3c03bc081d6a7d866c1"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Explorer::itemChanged </td>
-          <td>(</td>
-          <td class="paramtype">QTableWidgetItem *&#160;</td>
-          <td class="paramname"><em>item</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7f59ea3cd441ef0d6bf4929787d3ebba"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Explorer::propertyChanged </td>
+          <td class="memname">float FixedPropertyVector::last </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ac0d276e25fbe8c7e6958a0371c16ff46"></a>
+<a class="anchor" id="ad8f3e2a02bbb88bae18c4dd3c3dd60de"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Explorer::setObject </td>
+          <td class="memname">bool FixedPropertyVector::operator!= </td>
           <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>object</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="a00018.html">FixedPropertyVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00018.html#ac0d276e25fbe8c7e6958a0371c16ff46" title="Explorer::setObject All properties of object will be extracted and displayed in a QTableWidget...">Explorer::setObject</a> All properties of <em>object</em> will be extracted and displayed in a QTableWidget. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">object</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+</div>
+</div>
+<a class="anchor" id="ad8559e344284597624e58b14a4560769"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FixedPropertyVector::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00018.html">FixedPropertyVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a58c7fd0958fe997c38e36adc4aaa6df1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FixedPropertyVector::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00018.html">FixedPropertyVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6c696b3eed0f6dc6d6caa76d77672da3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FixedPropertyVector::setData </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9ac7c743b29482da86c5601939654075"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FixedPropertyVector::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a65fbc04e4351a0cbf79f7cb8d923b139"></a>
+<a class="anchor" id="a9eade92d9e1c37aa3f2b59758a1ff1be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int FixedPropertyVector::channelCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adeaa2012c2d4b06e8913fe12c0304615"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -262,7 +331,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QObject* Explorer::mp_object</td>
+          <td class="memname">std::vector&lt;float&gt; FixedPropertyVector::m_data</td>
         </tr>
       </table>
   </td>
@@ -274,77 +343,30 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a35e9d61e0af3900df852e3688700fbe2"></a>
+<a class="anchor" id="ad907fd3830ad9e5ef8f75bc6421468b8"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00012.html">CustomStyledDelegate</a>* Explorer::mp_styledDelegate</td>
+          <td class="memname">std::vector&lt;float&gt; FixedPropertyVector::vec</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae0e6d6738af9678b50f5a46554889807"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Explorer::mp_updateHorizontalHeaderLabels</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="acc8d92ff897418bcfb113ac7366699cb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Ui::Explorer* Explorer::ui</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00072_source.html">Explorer.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00121.html">Explorer.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/<a class="el" href="a00062_source.html">Defines.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/PropertyBrowser/inc/<a class="el" href="a00143_source.html">FixedPropertyVector.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/PropertyBrowser/src/<a class="el" href="a00147.html">FixedPropertyVector.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00018.html">Explorer</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00018.html">FixedPropertyVector</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

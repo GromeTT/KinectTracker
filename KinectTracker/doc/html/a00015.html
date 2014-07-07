@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: DepthViewerWidget Class Reference</title>
+<title>KinectTracker: DepthProcessingPipeline Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,31 +104,31 @@ $(document).ready(function(){initNavTree('a00015.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00175.html">List of all members</a>  </div>
+<a href="a00185.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">DepthViewerWidget Class Reference</div>  </div>
+<div class="title">DepthProcessingPipeline Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00069_source.html">DepthViewerWidget.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00116_source.html">DepthProcessingPipeline.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for DepthViewerWidget:</div>
+Inheritance diagram for DepthProcessingPipeline:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00015.png" usemap="#DepthViewerWidget_map" alt=""/>
-  <map id="DepthViewerWidget_map" name="DepthViewerWidget_map">
+  <img src="a00015.png" usemap="#DepthProcessingPipeline_map" alt=""/>
+  <map id="DepthProcessingPipeline_map" name="DepthProcessingPipeline_map">
 </map>
  </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a89b0341d50cb5c1a2c49b7cac3da55b4"></a>
+<a class="anchor" id="abf397c04b8bb77dd0056eb743dca5dca"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DepthViewerWidget::DepthViewerWidget </td>
+          <td class="memname">DepthProcessingPipeline::DepthProcessingPipeline </td>
           <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -136,12 +136,12 @@ Inheritance diagram for DepthViewerWidget:</div>
 
 </div>
 </div>
-<a class="anchor" id="ab880a830e46871a1faad8b04fe8af730"></a>
+<a class="anchor" id="a69e948baaef5695a908d50fc23c7543c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DepthViewerWidget::~DepthViewerWidget </td>
+          <td class="memname">DepthProcessingPipeline::~DepthProcessingPipeline </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -152,15 +152,14 @@ Inheritance diagram for DepthViewerWidget:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a10f41e9fb4d95679f2c30c754be698dc"></a>
+<a class="anchor" id="a6c1b5ded2663cd4b58e21535a03dcc9f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DepthViewerWidget::update </td>
+          <td class="memname">QVector&lt; <a class="el" href="a00036.html">ProcessingComponent</a> * &gt; &amp; DepthProcessingPipeline::getComponents </td>
           <td>(</td>
-          <td class="paramtype">QImage *&#160;</td>
-          <td class="paramname"><em>image</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -168,8 +167,22 @@ Inheritance diagram for DepthViewerWidget:</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa0a6541b50b5134435e9bebbdbf8254d"></a>
+<a class="anchor" id="a4027475f1a7063da342e9244e0f20e57"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DepthProcessingPipeline::minContourSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a47f173c4932c4f34e0b803192c9f297a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -177,7 +190,133 @@ Inheritance diagram for DepthViewerWidget:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Ui::DepthViewerWidget* DepthViewerWidget::ui</td>
+          <td class="memname">void DepthProcessingPipeline::minContourSizeChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1235c2aef37ca9868355d4544999adb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DepthProcessingPipeline::process </td>
+          <td>(</td>
+          <td class="paramtype">ushort *&#160;</td>
+          <td class="paramname"><em>depthImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ushort *&#160;</td>
+          <td class="paramname"><em>screenshot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a32c0a2e5896953e35d7a91f3c63b9b9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DepthProcessingPipeline::setMinContourSize </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afc0708800c1b44a3c53861ebaecb055e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DepthProcessingPipeline::setThreshold </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5945fbccc98ef266f5d2220af76be333"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DepthProcessingPipeline::threshold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a47fb0fcdfa80b5421a3ce5d5291fc8e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DepthProcessingPipeline::thresholdChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a6fd1bebe9f1fdae712c7936db6e2c267"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;cv::Point&gt; &gt; DepthProcessingPipeline::contours</td>
         </tr>
       </table>
   </td>
@@ -189,17 +328,138 @@ Inheritance diagram for DepthViewerWidget:</div>
 
 </div>
 </div>
+<a class="anchor" id="aa794b581b373a53ab22a81be460b1173"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;cv::Vec4i&gt; DepthProcessingPipeline::hierarchy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a853812708b3b83c112185e566b935c0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DepthProcessingPipeline::m_minContourSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a89c84f4bb2eb5b58ee2e4f2993af800d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;<a class="el" href="a00036.html">ProcessingComponent</a>*&gt; DepthProcessingPipeline::m_processingComponents</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a271923a829986da68841c8045a4ebed6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DepthProcessingPipeline::m_threshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="ac16ba608d449ff14d9cebfab3f2c05b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DepthProcessingPipeline::minContourSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7a6449261a10b67242818ad8bb7a87bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DepthProcessingPipeline::threshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00069_source.html">DepthViewerWidget.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00118.html">DepthViewerWidget.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/inc/<a class="el" href="a00116_source.html">DepthProcessingPipeline.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/src/<a class="el" href="a00129.html">DepthProcessingPipeline.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00015.html">DepthViewerWidget</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00015.html">DepthProcessingPipeline</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

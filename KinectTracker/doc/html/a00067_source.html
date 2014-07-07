@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/DepthAnalyzer.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Analyzer/inc/BBSizeAnalyzer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,49 +102,48 @@ $(document).ready(function(){initNavTree('a00067_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">DepthAnalyzer.h</div>  </div>
+<div class="title">BBSizeAnalyzer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00067.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DEPTHANALYZER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DEPTHANALYZER_H</span></div>
+<a href="a00067.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BBSIZEANALYZER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BBSIZEANALYZER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00068.html">DepthProcessingPipeline.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00069.html">SizeAnalyzer.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../../Geometries/inc/BoundingGeometry.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="a00013.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00013.html">DepthAnalyzer</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="a00005.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00005.html">BBSizeAnalyzer</a> : <span class="keyword">public</span> <a class="code" href="a00046.html">SizeAnalyzer</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="a00013.html#a029fd17ddc9694cd9fb8f60bd0675b07">DepthAnalyzer</a>( QObject* parent = <span class="keyword">nullptr</span> );</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00013.html#a4b511bd978698d4ddbfc44aec0b2b6f4">~DepthAnalyzer</a>();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="a00005.html#a920dd278eac81a60b28f3e43b9d5971f">BBSizeAnalyzer</a>( QObject* parent = <span class="keyword">nullptr</span> );</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00005.html#aecaa79282e49145ffe06cd1cdfd5eede">~BBSizeAnalyzer</a>();</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00013.html#aa2d58fa1227f8bce9cb1a99d7a3fbd63">analyze</a>( std::vector&lt;ushort&gt;&amp; input );</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::vector&lt;ushort&gt;&amp;     <a class="code" href="a00013.html#a973583c7e36c9a2c83c46692808064a7">getDepthData</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="a00014.html">DepthProcessingPipeline</a>* <a class="code" href="a00013.html#ac02de08b9a9a7e88cb9b759280a58981">getPipeline</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a00013.html#a442657c53d0f8fb650a9aee019d9fac8">   18</a></span>&#160;    std::vector&lt;ushort&gt;      <a class="code" href="a00013.html#a442657c53d0f8fb650a9aee019d9fac8">m_depthData</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00013.html#afee0d8d0fda80d4d540ac493aff78157">   19</a></span>&#160;    <a class="code" href="a00014.html">DepthProcessingPipeline</a>* <a class="code" href="a00013.html#afee0d8d0fda80d4d540ac493aff78157">mp_processingPipeline</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="a00086.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a> <a class="code" href="a00005.html#a458d7555ce76b7d294aaeddb59e516fe">boundigBox</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00005.html#a0e0d735639be1f3c932af4ee441f06b8">analyzeV</a>( <span class="keyword">const</span> <a class="code" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>&amp; skeletonData );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00046.html#ae8ca630dbf8d9ceaddd34f083ee74dc4">estimatedBodySize</a>( <span class="keyword">const</span> <a class="code" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>&amp; skeletonDat );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a00005.html#ab5d65278457b43580989ef732817e93f">   18</a></span>&#160;    <a class="code" href="a00086.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a> <a class="code" href="a00005.html#ab5d65278457b43580989ef732817e93f">m_boundingBox</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif // DEPTHANALYZER_H</span></div>
-<div class="ttc" id="a00013_html_ac02de08b9a9a7e88cb9b759280a58981"><div class="ttname"><a href="a00013.html#ac02de08b9a9a7e88cb9b759280a58981">DepthAnalyzer::getPipeline</a></div><div class="ttdeci">DepthProcessingPipeline * getPipeline() const </div><div class="ttdef"><b>Definition:</b> DepthAnalyzer.cpp:27</div></div>
-<div class="ttc" id="a00068_html"><div class="ttname"><a href="a00068.html">DepthProcessingPipeline.h</a></div></div>
-<div class="ttc" id="a00013_html_a029fd17ddc9694cd9fb8f60bd0675b07"><div class="ttname"><a href="a00013.html#a029fd17ddc9694cd9fb8f60bd0675b07">DepthAnalyzer::DepthAnalyzer</a></div><div class="ttdeci">DepthAnalyzer(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> DepthAnalyzer.cpp:6</div></div>
-<div class="ttc" id="a00013_html_a442657c53d0f8fb650a9aee019d9fac8"><div class="ttname"><a href="a00013.html#a442657c53d0f8fb650a9aee019d9fac8">DepthAnalyzer::m_depthData</a></div><div class="ttdeci">std::vector&lt; ushort &gt; m_depthData</div><div class="ttdef"><b>Definition:</b> DepthAnalyzer.h:18</div></div>
-<div class="ttc" id="a00014_html"><div class="ttname"><a href="a00014.html">DepthProcessingPipeline</a></div><div class="ttdef"><b>Definition:</b> DepthProcessingPipeline.h:9</div></div>
-<div class="ttc" id="a00013_html_a4b511bd978698d4ddbfc44aec0b2b6f4"><div class="ttname"><a href="a00013.html#a4b511bd978698d4ddbfc44aec0b2b6f4">DepthAnalyzer::~DepthAnalyzer</a></div><div class="ttdeci">virtual ~DepthAnalyzer()</div><div class="ttdef"><b>Definition:</b> DepthAnalyzer.cpp:13</div></div>
-<div class="ttc" id="a00013_html"><div class="ttname"><a href="a00013.html">DepthAnalyzer</a></div><div class="ttdef"><b>Definition:</b> DepthAnalyzer.h:7</div></div>
-<div class="ttc" id="a00013_html_afee0d8d0fda80d4d540ac493aff78157"><div class="ttname"><a href="a00013.html#afee0d8d0fda80d4d540ac493aff78157">DepthAnalyzer::mp_processingPipeline</a></div><div class="ttdeci">DepthProcessingPipeline * mp_processingPipeline</div><div class="ttdef"><b>Definition:</b> DepthAnalyzer.h:19</div></div>
-<div class="ttc" id="a00013_html_a973583c7e36c9a2c83c46692808064a7"><div class="ttname"><a href="a00013.html#a973583c7e36c9a2c83c46692808064a7">DepthAnalyzer::getDepthData</a></div><div class="ttdeci">std::vector&lt; ushort &gt; &amp; getDepthData()</div><div class="ttdef"><b>Definition:</b> DepthAnalyzer.cpp:22</div></div>
-<div class="ttc" id="a00013_html_aa2d58fa1227f8bce9cb1a99d7a3fbd63"><div class="ttname"><a href="a00013.html#aa2d58fa1227f8bce9cb1a99d7a3fbd63">DepthAnalyzer::analyze</a></div><div class="ttdeci">virtual void analyze(std::vector&lt; ushort &gt; &amp;input)</div><div class="ttdef"><b>Definition:</b> DepthAnalyzer.cpp:17</div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif // BBSIZEANALYZER_H</span></div>
+<div class="ttc" id="a00091_html_a3ff4896d315d1270ac7622ce28abee47"><div class="ttname"><a href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a></div><div class="ttdeci">QSharedPointer&lt; SkeletonData &gt; SkeletonDataPtr</div><div class="ttdef"><b>Definition:</b> SkeletonData.h:83</div></div>
+<div class="ttc" id="a00005_html_ab5d65278457b43580989ef732817e93f"><div class="ttname"><a href="a00005.html#ab5d65278457b43580989ef732817e93f">BBSizeAnalyzer::m_boundingBox</a></div><div class="ttdeci">BoundingBoxPtr m_boundingBox</div><div class="ttdef"><b>Definition:</b> BBSizeAnalyzer.h:18</div></div>
+<div class="ttc" id="a00005_html_a458d7555ce76b7d294aaeddb59e516fe"><div class="ttname"><a href="a00005.html#a458d7555ce76b7d294aaeddb59e516fe">BBSizeAnalyzer::boundigBox</a></div><div class="ttdeci">BoundingBoxPtr boundigBox() const </div><div class="ttdoc">BBSizeAnalyzer::boundigBox Returns the BoundingBox which contains the following joints: ...</div><div class="ttdef"><b>Definition:</b> BBSizeAnalyzer.cpp:39</div></div>
+<div class="ttc" id="a00005_html_aecaa79282e49145ffe06cd1cdfd5eede"><div class="ttname"><a href="a00005.html#aecaa79282e49145ffe06cd1cdfd5eede">BBSizeAnalyzer::~BBSizeAnalyzer</a></div><div class="ttdeci">virtual ~BBSizeAnalyzer()</div><div class="ttdoc">BBSizeAnalyzer::~BBSizeAnalyzer Destroyes the object. </div><div class="ttdef"><b>Definition:</b> BBSizeAnalyzer.cpp:18</div></div>
+<div class="ttc" id="a00005_html_a0e0d735639be1f3c932af4ee441f06b8"><div class="ttname"><a href="a00005.html#a0e0d735639be1f3c932af4ee441f06b8">BBSizeAnalyzer::analyzeV</a></div><div class="ttdeci">void analyzeV(const SkeletonDataPtr &amp;skeletonData)</div><div class="ttdoc">BBSizeAnalyzer::analyzeV This method will calculate a BoundingBox around the. </div><div class="ttdef"><b>Definition:</b> BBSizeAnalyzer.cpp:65</div></div>
+<div class="ttc" id="a00046_html"><div class="ttname"><a href="a00046.html">SizeAnalyzer</a></div><div class="ttdef"><b>Definition:</b> SizeAnalyzer.h:8</div></div>
+<div class="ttc" id="a00005_html"><div class="ttname"><a href="a00005.html">BBSizeAnalyzer</a></div><div class="ttdef"><b>Definition:</b> BBSizeAnalyzer.h:7</div></div>
+<div class="ttc" id="a00046_html_ae8ca630dbf8d9ceaddd34f083ee74dc4"><div class="ttname"><a href="a00046.html#ae8ca630dbf8d9ceaddd34f083ee74dc4">SizeAnalyzer::estimatedBodySize</a></div><div class="ttdeci">float estimatedBodySize()</div></div>
+<div class="ttc" id="a00069_html"><div class="ttname"><a href="a00069.html">SizeAnalyzer.h</a></div></div>
+<div class="ttc" id="a00086_html_a63be8cb12104dd2612c80c1defebd264"><div class="ttname"><a href="a00086.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a></div><div class="ttdeci">QSharedPointer&lt; BoundingBox &gt; BoundingBoxPtr</div><div class="ttdef"><b>Definition:</b> BoundingGeometry.h:87</div></div>
+<div class="ttc" id="a00005_html_a920dd278eac81a60b28f3e43b9d5971f"><div class="ttname"><a href="a00005.html#a920dd278eac81a60b28f3e43b9d5971f">BBSizeAnalyzer::BBSizeAnalyzer</a></div><div class="ttdeci">BBSizeAnalyzer(QObject *parent=nullptr)</div><div class="ttdoc">BBSizeAnalyzer::BBSizeAnalyzer Standardconstructor. </div><div class="ttdef"><b>Definition:</b> BBSizeAnalyzer.cpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00067.html">DepthAnalyzer.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_7d1f4849ef4395e3ffbc74b409afca8d.html">Analyzer</a></li><li class="navelem"><a class="el" href="dir_37ee937b15c4fe0701734dc8b32bf2cf.html">inc</a></li><li class="navelem"><a class="el" href="a00067.html">BBSizeAnalyzer.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

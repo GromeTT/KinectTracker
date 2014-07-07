@@ -63,8 +63,9 @@ void BasicUsageScene::render()
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT );
     glEnable( GL_VERTEX_PROGRAM_POINT_SIZE );
     glEnable( GL_BLEND );
+    glEnable( GL_DEPTH_TEST );
 
-    const QMatrix4x4 m = m_camera.cameraMatrix();
+    int c = m_renderObjects.count();
     for ( int i = 0; i < m_renderObjects.count(); ++i )
     {
         RenderObjectInterface* object = m_renderObjects.at( i );
@@ -342,13 +343,31 @@ SkeletonRenderObject* BasicUsageScene::createSkeletonRenderObject()
     return object;
 }
 
-void BasicUsageScene::createFloor()
+Floor* BasicUsageScene::createFloor()
 {
     mp_window->makeContextCurrent();
-
     Floor* floor = new Floor();
     floor->setShaderProgram( m_shaderPrograms.at( 0 ) );
     m_renderObjects << floor;
+    return floor;
+}
+/*!
+   \brief BasicUsageScene::createFloor
+   \param a
+   \param b
+   \param c
+   \param d
+ */
+Floor* BasicUsageScene::createFloor( const float a,
+                                     const float b,
+                                     const float c,
+                                     const float d )
+{
+    mp_window->makeContextCurrent();
+    Floor* floor = new Floor( a, b, c, d );
+    floor->setShaderProgram( m_shaderPrograms.at( 0 ) );
+    m_renderObjects << floor;
+    return floor;
 }
 
 void BasicUsageScene::takeSnapshot()

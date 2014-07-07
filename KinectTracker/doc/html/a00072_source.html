@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Explorer.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Analyzer/inc/ViewingDirectionAnalyzer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,67 +102,53 @@ $(document).ready(function(){initNavTree('a00072_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Explorer.h</div>  </div>
+<div class="title">ViewingDirectionAnalyzer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00072.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef EXPLORER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define EXPLORER_H</span></div>
+<a href="a00072.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VIEWINGDIRECTIONANALYZER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VIEWINGDIRECTIONANALYZER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QTableWidgetItem&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QSignalMapper&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QMetaMethod&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00065.html">CustomStyledDelegate.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>Ui {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">class </span><a class="code" href="a00018.html">Explorer</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="a00018.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00018.html">Explorer</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00018.html#a218238d8630f75d20fb6552ab40612c8">Explorer</a>(QWidget *parent = 0);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="a00018.html#aa1b0a71e92e003e9162a5ba99d843392">~Explorer</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00018.html#ac0d276e25fbe8c7e6958a0371c16ff46">setObject</a>( QObject* <span class="keywordtype">object</span> );</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00018.html#af284cbaa95db2b32a271db90af9c2128">clearView</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00018.html#a730efedf292635772e57bfbb5ec060d6">itemChanged</a>( QTableWidgetItem* item );</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00018.html#a7f59ea3cd441ef0d6bf4929787d3ebba">propertyChanged</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00018.html#acc8d92ff897418bcfb113ac7366699cb">   32</a></span>&#160;    Ui::Explorer*           <a class="code" href="a00018.html#acc8d92ff897418bcfb113ac7366699cb">ui</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00018.html#a35e9d61e0af3900df852e3688700fbe2">   33</a></span>&#160;    <a class="code" href="a00012.html">CustomStyledDelegate</a>*   <a class="code" href="a00018.html#a35e9d61e0af3900df852e3688700fbe2">mp_styledDelegate</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00018.html#a65fbc04e4351a0cbf79f7cb8d923b139">   34</a></span>&#160;    QObject*                <a class="code" href="a00018.html#a65fbc04e4351a0cbf79f7cb8d923b139">mp_object</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00018.html#ae0e6d6738af9678b50f5a46554889807">   35</a></span>&#160;    <span class="keywordtype">bool</span>                    <a class="code" href="a00018.html#ae0e6d6738af9678b50f5a46554889807">mp_updateHorizontalHeaderLabels</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif // EXPLORER_H</span></div>
-<div class="ttc" id="a00018_html_a7f59ea3cd441ef0d6bf4929787d3ebba"><div class="ttname"><a href="a00018.html#a7f59ea3cd441ef0d6bf4929787d3ebba">Explorer::propertyChanged</a></div><div class="ttdeci">void propertyChanged()</div><div class="ttdef"><b>Definition:</b> Explorer.cpp:116</div></div>
-<div class="ttc" id="a00018_html_acc8d92ff897418bcfb113ac7366699cb"><div class="ttname"><a href="a00018.html#acc8d92ff897418bcfb113ac7366699cb">Explorer::ui</a></div><div class="ttdeci">Ui::Explorer * ui</div><div class="ttdef"><b>Definition:</b> Explorer.h:32</div></div>
-<div class="ttc" id="a00018_html"><div class="ttname"><a href="a00018.html">Explorer</a></div><div class="ttdef"><b>Definition:</b> Explorer.h:15</div></div>
-<div class="ttc" id="a00012_html"><div class="ttname"><a href="a00012.html">CustomStyledDelegate</a></div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.h:8</div></div>
-<div class="ttc" id="a00018_html_a218238d8630f75d20fb6552ab40612c8"><div class="ttname"><a href="a00018.html#a218238d8630f75d20fb6552ab40612c8">Explorer::Explorer</a></div><div class="ttdeci">Explorer(QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> Explorer.cpp:11</div></div>
-<div class="ttc" id="a00018_html_af284cbaa95db2b32a271db90af9c2128"><div class="ttname"><a href="a00018.html#af284cbaa95db2b32a271db90af9c2128">Explorer::clearView</a></div><div class="ttdeci">void clearView()</div></div>
-<div class="ttc" id="a00018_html_a35e9d61e0af3900df852e3688700fbe2"><div class="ttname"><a href="a00018.html#a35e9d61e0af3900df852e3688700fbe2">Explorer::mp_styledDelegate</a></div><div class="ttdeci">CustomStyledDelegate * mp_styledDelegate</div><div class="ttdef"><b>Definition:</b> Explorer.h:33</div></div>
-<div class="ttc" id="a00018_html_ae0e6d6738af9678b50f5a46554889807"><div class="ttname"><a href="a00018.html#ae0e6d6738af9678b50f5a46554889807">Explorer::mp_updateHorizontalHeaderLabels</a></div><div class="ttdeci">bool mp_updateHorizontalHeaderLabels</div><div class="ttdef"><b>Definition:</b> Explorer.h:35</div></div>
-<div class="ttc" id="a00018_html_aa1b0a71e92e003e9162a5ba99d843392"><div class="ttname"><a href="a00018.html#aa1b0a71e92e003e9162a5ba99d843392">Explorer::~Explorer</a></div><div class="ttdeci">~Explorer()</div><div class="ttdef"><b>Definition:</b> Explorer.cpp:35</div></div>
-<div class="ttc" id="a00018_html_ac0d276e25fbe8c7e6958a0371c16ff46"><div class="ttname"><a href="a00018.html#ac0d276e25fbe8c7e6958a0371c16ff46">Explorer::setObject</a></div><div class="ttdeci">bool setObject(QObject *object)</div><div class="ttdoc">Explorer::setObject All properties of object will be extracted and displayed in a QTableWidget...</div><div class="ttdef"><b>Definition:</b> Explorer.cpp:46</div></div>
-<div class="ttc" id="a00065_html"><div class="ttname"><a href="a00065.html">CustomStyledDelegate.h</a></div></div>
-<div class="ttc" id="a00018_html_a65fbc04e4351a0cbf79f7cb8d923b139"><div class="ttname"><a href="a00018.html#a65fbc04e4351a0cbf79f7cb8d923b139">Explorer::mp_object</a></div><div class="ttdeci">QObject * mp_object</div><div class="ttdef"><b>Definition:</b> Explorer.h:34</div></div>
-<div class="ttc" id="a00018_html_a730efedf292635772e57bfbb5ec060d6"><div class="ttname"><a href="a00018.html#a730efedf292635772e57bfbb5ec060d6">Explorer::itemChanged</a></div><div class="ttdeci">void itemChanged(QTableWidgetItem *item)</div><div class="ttdef"><b>Definition:</b> Explorer.cpp:91</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="a00060.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00060.html">ViewingDirectionHistogramAnalyzer</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="a00060.html#aa1669345e1da1ba5b1d8f375691411a2">ViewingDirectionHistogramAnalyzer</a>();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="a00060.html#a428310e3d845ae1767928feb977529e4">~ViewingDirectionHistogramAnalyzer</a>();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00060.html#afd53ea12f5a82eea759d6a17c8551906">update</a>( cv::Mat image );</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00060.html#ac86db4aa65f4d8b159f5f0757a4276ec">saveCurrentHistograms</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00060.html#a0e5d1b3b029c174f87d9241a3f665d16">compare</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00060.html#aeaeebe53725fda7d6590079ae54459db">   17</a></span>&#160;    cv::Mat <a class="code" href="a00060.html#aeaeebe53725fda7d6590079ae54459db">m_rHistogram</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a00060.html#a790f9411ae96f427ba6dcb082c214847">   18</a></span>&#160;    cv::Mat <a class="code" href="a00060.html#a790f9411ae96f427ba6dcb082c214847">m_gHistogram</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00060.html#a147aacdb200e4f6df892a2fe44be5106">   19</a></span>&#160;    cv::Mat <a class="code" href="a00060.html#a147aacdb200e4f6df892a2fe44be5106">m_bHistogram</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a00060.html#a29e65274ba951ed17ec0515cfe424890">   20</a></span>&#160;    cv::Mat <a class="code" href="a00060.html#a29e65274ba951ed17ec0515cfe424890">m_currentRHistogram</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a00060.html#a45d5aa9d2a8da8ab53dd4ce2ea92ce5e">   21</a></span>&#160;    cv::Mat <a class="code" href="a00060.html#a45d5aa9d2a8da8ab53dd4ce2ea92ce5e">m_currentGHistogram</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00060.html#a08c935c855ccd98d13a6d1c1b18f0c99">   22</a></span>&#160;    cv::Mat <a class="code" href="a00060.html#a08c935c855ccd98d13a6d1c1b18f0c99">m_currentBHistogram</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif // VIEWINGDIRECTIONANALYZER_H</span></div>
+<div class="ttc" id="a00060_html_afd53ea12f5a82eea759d6a17c8551906"><div class="ttname"><a href="a00060.html#afd53ea12f5a82eea759d6a17c8551906">ViewingDirectionHistogramAnalyzer::update</a></div><div class="ttdeci">void update(cv::Mat image)</div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.cpp:26</div></div>
+<div class="ttc" id="a00060_html_a790f9411ae96f427ba6dcb082c214847"><div class="ttname"><a href="a00060.html#a790f9411ae96f427ba6dcb082c214847">ViewingDirectionHistogramAnalyzer::m_gHistogram</a></div><div class="ttdeci">cv::Mat m_gHistogram</div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.h:18</div></div>
+<div class="ttc" id="a00060_html_a45d5aa9d2a8da8ab53dd4ce2ea92ce5e"><div class="ttname"><a href="a00060.html#a45d5aa9d2a8da8ab53dd4ce2ea92ce5e">ViewingDirectionHistogramAnalyzer::m_currentGHistogram</a></div><div class="ttdeci">cv::Mat m_currentGHistogram</div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.h:21</div></div>
+<div class="ttc" id="a00060_html_aeaeebe53725fda7d6590079ae54459db"><div class="ttname"><a href="a00060.html#aeaeebe53725fda7d6590079ae54459db">ViewingDirectionHistogramAnalyzer::m_rHistogram</a></div><div class="ttdeci">cv::Mat m_rHistogram</div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.h:17</div></div>
+<div class="ttc" id="a00060_html_a29e65274ba951ed17ec0515cfe424890"><div class="ttname"><a href="a00060.html#a29e65274ba951ed17ec0515cfe424890">ViewingDirectionHistogramAnalyzer::m_currentRHistogram</a></div><div class="ttdeci">cv::Mat m_currentRHistogram</div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.h:20</div></div>
+<div class="ttc" id="a00060_html_a428310e3d845ae1767928feb977529e4"><div class="ttname"><a href="a00060.html#a428310e3d845ae1767928feb977529e4">ViewingDirectionHistogramAnalyzer::~ViewingDirectionHistogramAnalyzer</a></div><div class="ttdeci">~ViewingDirectionHistogramAnalyzer()</div><div class="ttdoc">ViewingDirectionHistogramAnalyzer::~ViewingDirectionHistogramAnalyzer Destroyes the object...</div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.cpp:20</div></div>
+<div class="ttc" id="a00060_html_a08c935c855ccd98d13a6d1c1b18f0c99"><div class="ttname"><a href="a00060.html#a08c935c855ccd98d13a6d1c1b18f0c99">ViewingDirectionHistogramAnalyzer::m_currentBHistogram</a></div><div class="ttdeci">cv::Mat m_currentBHistogram</div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.h:22</div></div>
+<div class="ttc" id="a00060_html_aa1669345e1da1ba5b1d8f375691411a2"><div class="ttname"><a href="a00060.html#aa1669345e1da1ba5b1d8f375691411a2">ViewingDirectionHistogramAnalyzer::ViewingDirectionHistogramAnalyzer</a></div><div class="ttdeci">ViewingDirectionHistogramAnalyzer()</div><div class="ttdoc">ViewingDirectionHistogramAnalyzer::ViewingDirectionHistogramAnalyzer Constructs the analyzer...</div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.cpp:11</div></div>
+<div class="ttc" id="a00060_html_a0e5d1b3b029c174f87d9241a3f665d16"><div class="ttname"><a href="a00060.html#a0e5d1b3b029c174f87d9241a3f665d16">ViewingDirectionHistogramAnalyzer::compare</a></div><div class="ttdeci">float compare()</div><div class="ttdoc">ViewingDirectionHistogramAnalyzer::compare Compares the currentHistograms with the saved one and retu...</div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.cpp:57</div></div>
+<div class="ttc" id="a00060_html"><div class="ttname"><a href="a00060.html">ViewingDirectionHistogramAnalyzer</a></div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.h:6</div></div>
+<div class="ttc" id="a00060_html_ac86db4aa65f4d8b159f5f0757a4276ec"><div class="ttname"><a href="a00060.html#ac86db4aa65f4d8b159f5f0757a4276ec">ViewingDirectionHistogramAnalyzer::saveCurrentHistograms</a></div><div class="ttdeci">void saveCurrentHistograms()</div><div class="ttdoc">ViewingDirectionHistogramAnalyzer::saveCurrentHistogram Saves the current histograms. </div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.cpp:66</div></div>
+<div class="ttc" id="a00060_html_a147aacdb200e4f6df892a2fe44be5106"><div class="ttname"><a href="a00060.html#a147aacdb200e4f6df892a2fe44be5106">ViewingDirectionHistogramAnalyzer::m_bHistogram</a></div><div class="ttdeci">cv::Mat m_bHistogram</div><div class="ttdef"><b>Definition:</b> ViewingDirectionAnalyzer.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00072.html">Explorer.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_7d1f4849ef4395e3ffbc74b409afca8d.html">Analyzer</a></li><li class="navelem"><a class="el" href="dir_37ee937b15c4fe0701734dc8b32bf2cf.html">inc</a></li><li class="navelem"><a class="el" href="a00072.html">ViewingDirectionAnalyzer.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

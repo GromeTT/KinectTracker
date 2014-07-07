@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00034.html','');});
+$(document).ready(function(){initNavTree('a00024.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -104,24 +104,67 @@ $(document).ready(function(){initNavTree('a00034.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ProcessingComponent Member List</div>  </div>
+<div class="title">HOGFeatureDetector Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00034.html">ProcessingComponent</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00024.html">HOGFeatureDetector</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00034.html#ae3bf7f460db17ff7472e1d85b4b14f2f">addComponent</a>(ProcessingComponent *compnent)</td><td class="entry"><a class="el" href="a00034.html">ProcessingComponent</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00034.html#a321720770de558665249606e6928e737">getComponents</a>() const </td><td class="entry"><a class="el" href="a00034.html">ProcessingComponent</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00034.html#a7ebc7811af8663c7cd1e3b3a1d776ae5">getProcessingComponent</a>(const int index) const </td><td class="entry"><a class="el" href="a00034.html">ProcessingComponent</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00034.html#aa0f3cdca75ddc21a3945daae06968b1f">m_components</a></td><td class="entry"><a class="el" href="a00034.html">ProcessingComponent</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00034.html#a880fd2eeeef65f0a905127d5b1607c40">ProcessingComponent</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00034.html">ProcessingComponent</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00034.html#ab491c8e7e4cbf4f225c5b5ec7b744822">~ProcessingComponent</a>()</td><td class="entry"><a class="el" href="a00034.html">ProcessingComponent</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00036.html#ae3bf7f460db17ff7472e1d85b4b14f2f">addComponent</a>(ProcessingComponent *compnent)</td><td class="entry"><a class="el" href="a00036.html">ProcessingComponent</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#ac010d7901cc85e6ac730130ca852c195">blockSize</a></td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a36c3c9511ba633849581327d9442eca7">blockSize</a>() const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a0f52251c5fcbeac8d6a98f114b3fe90f">blockSizeChanged</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a8811769e0cb7c5b8001dd5b82fd47379">blockStride</a></td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#ac413bd4a8defda6c97c92e10eec97c0d">blockStride</a>() const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#aa9d08f6a95e078bb5c826c80a8530433">blockStrideChanged</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a53b12f4c7639a8fc2ec0c2b50de63c33">cellSize</a></td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a327d9802574a82c864013777fc689ca2">cellSize</a>() const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a17559346b22b610b8f44d08e480628cc">cellSizeChanged</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#ad6a3126434619efb65581937f0ecdc75">detect</a>(const cv::Mat &amp;img, CV_OUT std::vector&lt; cv::Point &gt; &amp;foundLocations, double hitThreshold=0, cv::Size winStride=cv::Size(), cv::Size padding=cv::Size(), const std::vector&lt; cv::Point &gt; &amp;searchLocations=std::vector&lt; cv::Point &gt;()) const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#ab9216a5c0487e1e7f15a7a115dda01f9">detect</a>(const cv::Mat &amp;img, std::vector&lt; cv::Point &gt; &amp;foundLocations, std::vector&lt; double &gt; &amp;weights, double hitThreshold=0, cv::Size winStride=cv::Size(), cv::Size padding=cv::Size(), const std::vector&lt; cv::Point &gt; &amp;searchLocations=std::vector&lt; cv::Point &gt;()) const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a6b548d6583fc58022f2fa01a68b49c97">detectMultiScale</a>(const cv::Mat &amp;img, std::vector&lt; cv::Rect &gt; &amp;foundLocations, double hitThreshold=0, cv::Size winStride=cv::Size(), cv::Size padding=cv::Size(), double scale=1.05)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#ae14fba114510ba1823f75c2408a1c22b">gammaCorrection</a></td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a7e6d7bb3b11bfda80565ef077975a247">gammaCorrection</a>() const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a8b4d97c2599a1d4b1485f9904327adfb">gammaCorrectionChanged</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00036.html#a321720770de558665249606e6928e737">getComponents</a>() const </td><td class="entry"><a class="el" href="a00036.html">ProcessingComponent</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00036.html#a7ebc7811af8663c7cd1e3b3a1d776ae5">getProcessingComponent</a>(const int index) const </td><td class="entry"><a class="el" href="a00036.html">ProcessingComponent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a7551970c600e47f9888512feb61a734e">HOGFeatureDetector</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#aabbeebb22782e6044b27686af7412746">m_descriptor</a></td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#ab5033d42524247e7de0cc893d43c2413">numberOfBins</a></td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#aca66c38b86388863e44c5768ef220b4e">numberOfBins</a>() const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a42127ba5d84a937fb24d6d5a20a62cff">numberOfBinsChanged</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a7a81989128e5fcb50c3d12324fb1ce80">numberOfLevels</a></td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#ac32414c2cb1cd59fdbd01104088d7a91">numberOfLevels</a>() const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a445a6b3431802e8ac131b179c42223c0">numberOfLevelsChanged</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00036.html#a880fd2eeeef65f0a905127d5b1607c40">ProcessingComponent</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00036.html">ProcessingComponent</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a6738562fb74527f24311743b3693d5cb">setBlockSize</a>(const cv::Size &amp;blockSize)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a09a844e9fd8bca485027aa184e92d1ae">setBlockStride</a>(const cv::Size &amp;blockStride)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a9decded4e89720092dc3f951551d5d64">setCellSize</a>(const cv::Size &amp;cellSize)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a6e658eafe16f7b560e73174b03391796">setGammaCorrection</a>(const bool gammaCorrection)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a6bf932a22c1fa40f3ebaa3450c24c285">setNumberOfBins</a>(const int numberOfBins)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a3c06b172d6c412fb6b711130db253583">setNumberOfLevels</a>(const int numberOfLevels)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a0e2dfceff16d2177d82ab5473d3c0817">setSVMDetector</a>(const std::vector&lt; float &gt; &amp;detector)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#afb303d7da3a221113a1cc1f0fa3713ef">setThresholdL2Hys</a>(const double threshold)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#afcdf66cb3ffb9e28d116a3df534cc7de">setWinSigma</a>(const double winSigma)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a83d0fa9227dc40e60ccb73f0cd7fbbd2">setWinSize</a>(const cv::Size &amp;winSize)</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#ad67acbb7fedc82f34af8a1a731b26aed">thresholdL2Hys</a></td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#ac084bb595e27bd027fc001b6da27178e">thresholdL2Hys</a>() const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a877b5cee8f5d8d52458de1eed32f5a27">thresholdL2HysChanged</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a363f17dc81cd09feb54e8a7003e19107">useDefaultPeopleDetector</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a6f255de46586e4064a92448c13b16463">winSigma</a></td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a3afe5bc995833f9e9868ebb759196735">winSigma</a>() const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a2350bd5c27d976f30ee05453bc05e739">winSigmaChanged</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a264c612ef4532b53a14c1b2b69f90a12">winSize</a></td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#a9fcef41b233fbc69b1b6ae3bd4220341">winSize</a>() const </td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00024.html#a6dd9726098d685ca769a6d7665d2d49a">winSizeChanged</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00024.html#af1caf6151ff2b060b1a11ea313a6a215">~HOGFeatureDetector</a>()</td><td class="entry"><a class="el" href="a00024.html">HOGFeatureDetector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00036.html#ab491c8e7e4cbf4f225c5b5ec7b744822">~ProcessingComponent</a>()</td><td class="entry"><a class="el" href="a00036.html">ProcessingComponent</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

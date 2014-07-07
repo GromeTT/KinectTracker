@@ -1,14 +1,18 @@
 var a00035 =
 [
-    [ "ProcessingPipeline", "a00035.html#ac2b026f4efdfacca5a940f92a242fbce", null ],
-    [ "~ProcessingPipeline", "a00035.html#ae81c183fb5d32d3e611be54d6ebd64b4", null ],
-    [ "getComponents", "a00035.html#aa10bf9f7655d9ec0f3aa73f1c028492d", null ],
-    [ "getObjectByName", "a00035.html#aa144235383e86765ca78fa3c8a2ac8bc", null ],
-    [ "process", "a00035.html#aac43bf94ad3e70b41b87f6016c4f0f7d", null ],
-    [ "registerComponent", "a00035.html#aa7cc109a733fcb9e285498c8889035d8", null ],
-    [ "setScreenshot", "a00035.html#abb2ce193fbdedd4a8aef5e1ed5886478", null ],
-    [ "m_allComponents", "a00035.html#ad927650114ae1c2fb62fa7b85f60d82a", null ],
-    [ "m_instanceCounter", "a00035.html#a55281d23d200e0c6eeafb1c023fbb12e", null ],
-    [ "m_processingComponents", "a00035.html#ae825c5e5e8f0acdc9f0338cbb63eb458", null ],
-    [ "mp_screenshot", "a00035.html#a8c4abc98b5702ab950d4199b638a525a", null ]
+    [ "OpenGLWindow", "a00035.html#a81b042bc42f2e3057c5eb30edf8029c6", null ],
+    [ "~OpenGLWindow", "a00035.html#aa220b192c71871aab9100f4058a8d62d", null ],
+    [ "getOpenGLContext", "a00035.html#a0798f49b14a35aa4d2ea5bc1d82a1bd7", null ],
+    [ "getScene", "a00035.html#a47a2d281de563101f985de2465b9e45b", null ],
+    [ "init", "a00035.html#ad5f75b29b792f0d4a3ce32bd2dd3fad8", null ],
+    [ "initializeGL", "a00035.html#a69f3cfa0a95ca91f57d90d9484bd6c54", null ],
+    [ "keyPressEvent", "a00035.html#aafa1fdd10232a09b77db2395519e9882", null ],
+    [ "keyReleaseEvent", "a00035.html#ab7514c6f73755094d5670765ec47a71c", null ],
+    [ "makeContextCurrent", "a00035.html#a03229f68dac57be079e18b6ef135ab46", null ],
+    [ "paintGL", "a00035.html#a7ae488627e37254bbe1863c928781d83", null ],
+    [ "resizeGL", "a00035.html#a09f27a6f1628dadbd3c7ca3c1651ec59", null ],
+    [ "updateScene", "a00035.html#ae42079d2df46e3aa913e0ddfce3de023", null ],
+    [ "m_context", "a00035.html#ab402508e5d28e6d005872fa6731507ee", null ],
+    [ "m_scene", "a00035.html#a423de24503a21bcfe9c05c6ce4581c45", null ],
+    [ "m_strgPressed", "a00035.html#ad88460862bd55a441456b958a9563397", null ]
 ];

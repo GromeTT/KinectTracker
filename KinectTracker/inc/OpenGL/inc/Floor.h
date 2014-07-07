@@ -9,18 +9,25 @@ class Floor : public RenderObject
 
 public:
     Floor( RenderObject* parent = nullptr );
+    Floor( const float a,
+           const float b,
+           const float c,
+           const float d,
+           RenderObject* parent = nullptr );
     virtual ~Floor();
 
     void setSize( const float size );
     void setLineCount( const float lineCount );
-
+    void calculateFloor();
+    void calculateFloor( const float a,
+                         const float b,
+                         const float c,
+                         const float d );
     float getSize() const ;
     float getLineCount() const;
+    float m_size;
 
 private:
-    void calculateFloor();
-
-    float m_size;
     float m_lineCount;
 
 signals:

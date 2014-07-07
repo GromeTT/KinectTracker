@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/ProcessingComponent.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ImageWidget/inc/ImageWidget.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,45 +102,73 @@ $(document).ready(function(){initNavTree('a00088_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ProcessingComponent.h</div>  </div>
+<div class="title">ImageWidget.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00088.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROCESSINGCOMPONENT_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PROCESSINGCOMPONENT_H</span></div>
+<a href="a00088.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IMAGEWIDGET_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IMAGEWIDGET_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="a00034.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00034.html">ProcessingComponent</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="a00034.html#a880fd2eeeef65f0a905127d5b1607c40">ProcessingComponent</a>( QObject* parent = <span class="keyword">nullptr</span> );</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00034.html#ab491c8e7e4cbf4f225c5b5ec7b744822">~ProcessingComponent</a>();</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>Ui</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">class </span><a class="code" href="a00026.html">ImageWidget</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span>QImage;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00034.html#ae3bf7f460db17ff7472e1d85b4b14f2f">addComponent</a>( <a class="code" href="a00034.html">ProcessingComponent</a>* compnent );</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">const</span> QVector&lt;ProcessingComponent*&gt;&amp;    <a class="code" href="a00034.html#a321720770de558665249606e6928e737">getComponents</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="a00034.html">ProcessingComponent</a>*                    <a class="code" href="a00034.html#a7ebc7811af8663c7cd1e3b3a1d776ae5">getProcessingComponent</a>( <span class="keyword">const</span> <span class="keywordtype">int</span> index ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00026.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00026.html">ImageWidget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a00034.html#aa0f3cdca75ddc21a3945daae06968b1f">   18</a></span>&#160;    QVector&lt;ProcessingComponent*&gt; <a class="code" href="a00034.html#aa0f3cdca75ddc21a3945daae06968b1f">m_components</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif // PROCESSINGCOMPONENT_H</span></div>
-<div class="ttc" id="a00034_html_ae3bf7f460db17ff7472e1d85b4b14f2f"><div class="ttname"><a href="a00034.html#ae3bf7f460db17ff7472e1d85b4b14f2f">ProcessingComponent::addComponent</a></div><div class="ttdeci">void addComponent(ProcessingComponent *compnent)</div><div class="ttdef"><b>Definition:</b> ProcessingComponent.cpp:15</div></div>
-<div class="ttc" id="a00034_html_a880fd2eeeef65f0a905127d5b1607c40"><div class="ttname"><a href="a00034.html#a880fd2eeeef65f0a905127d5b1607c40">ProcessingComponent::ProcessingComponent</a></div><div class="ttdeci">ProcessingComponent(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> ProcessingComponent.cpp:4</div></div>
-<div class="ttc" id="a00034_html_a7ebc7811af8663c7cd1e3b3a1d776ae5"><div class="ttname"><a href="a00034.html#a7ebc7811af8663c7cd1e3b3a1d776ae5">ProcessingComponent::getProcessingComponent</a></div><div class="ttdeci">ProcessingComponent * getProcessingComponent(const int index) const </div><div class="ttdef"><b>Definition:</b> ProcessingComponent.cpp:25</div></div>
-<div class="ttc" id="a00034_html"><div class="ttname"><a href="a00034.html">ProcessingComponent</a></div><div class="ttdef"><b>Definition:</b> ProcessingComponent.h:7</div></div>
-<div class="ttc" id="a00034_html_ab491c8e7e4cbf4f225c5b5ec7b744822"><div class="ttname"><a href="a00034.html#ab491c8e7e4cbf4f225c5b5ec7b744822">ProcessingComponent::~ProcessingComponent</a></div><div class="ttdeci">virtual ~ProcessingComponent()</div><div class="ttdef"><b>Definition:</b> ProcessingComponent.cpp:10</div></div>
-<div class="ttc" id="a00034_html_aa0f3cdca75ddc21a3945daae06968b1f"><div class="ttname"><a href="a00034.html#aa0f3cdca75ddc21a3945daae06968b1f">ProcessingComponent::m_components</a></div><div class="ttdeci">QVector&lt; ProcessingComponent * &gt; m_components</div><div class="ttdef"><b>Definition:</b> ProcessingComponent.h:18</div></div>
-<div class="ttc" id="a00034_html_a321720770de558665249606e6928e737"><div class="ttname"><a href="a00034.html#a321720770de558665249606e6928e737">ProcessingComponent::getComponents</a></div><div class="ttdeci">const QVector&lt; ProcessingComponent * &gt; &amp; getComponents() const </div><div class="ttdef"><b>Definition:</b> ProcessingComponent.cpp:20</div></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="a00026.html#aee9964454921e094b3d67d62f5907e91">ImageWidget</a>( QWidget* parent = <span class="keyword">nullptr</span> );</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00026.html#ad7ce3e83b4756c1cadb25d27439eea9b">~ImageWidget</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00026.html#a84c5e7fa559aec5c035ad364c2f0d48a">setImage</a>( <span class="keyword">const</span> QImage&amp; image );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00026.html#a7190cf05a77976a3fad6ecac44116329">eventFilter</a>(QObject* <span class="keywordtype">object</span>, QEvent* event );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QRect <a class="code" href="a00026.html#ab528ea452769fbeb21fdb6968eb647e3">rect</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00026.html#a0ef052c72a039438da633de7eb9c321a">updateStatusbar</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00026.html#a28de8752b2fd43bb3ccee8568a4858b1">   28</a></span>&#160;    Ui::ImageWidget* <a class="code" href="a00026.html#a28de8752b2fd43bb3ccee8568a4858b1">ui</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00026.html#ab12062541db9427b15ccd9251f74acfa">   29</a></span>&#160;    QImage           <a class="code" href="a00026.html#ab12062541db9427b15ccd9251f74acfa">m_image</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00026.html#ab9f5c9144e4e2a6af506a32bfc6186ad">   30</a></span>&#160;    QPoint           <a class="code" href="a00026.html#ab9f5c9144e4e2a6af506a32bfc6186ad">m_startPoint</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00026.html#a1abbcc95ff9df2ae8c1b9d124fc7c175">   31</a></span>&#160;    QPoint           <a class="code" href="a00026.html#a1abbcc95ff9df2ae8c1b9d124fc7c175">m_endPoint</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00026.html#abde506575a901b4a4fb93013d16f7716">   32</a></span>&#160;    <span class="keywordtype">bool</span>             <a class="code" href="a00026.html#abde506575a901b4a4fb93013d16f7716">m_leftMousePressed</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;signals:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00026.html#a7d998b289ec66ec964b48f1fb54cbb23">leftMousePressed</a>( QPoint point );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00026.html#a05dd77c9cb99cab5a02ae038454c6296">leftMouseReleased</a>( QPoint point );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00026.html#a80a5cc4a556c94d9fcc6d8168a50c5a8">mouseMoved</a>( QPoint point );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif // IMAGEWIDGET_H</span></div>
+<div class="ttc" id="a00026_html_a0ef052c72a039438da633de7eb9c321a"><div class="ttname"><a href="a00026.html#a0ef052c72a039438da633de7eb9c321a">ImageWidget::updateStatusbar</a></div><div class="ttdeci">void updateStatusbar()</div></div>
+<div class="ttc" id="a00026_html_a7190cf05a77976a3fad6ecac44116329"><div class="ttname"><a href="a00026.html#a7190cf05a77976a3fad6ecac44116329">ImageWidget::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *object, QEvent *event)</div><div class="ttdoc">ImageWidget::eventFilter Displayes informations in the statusbar. </div><div class="ttdef"><b>Definition:</b> ImageWidget.cpp:52</div></div>
+<div class="ttc" id="a00026_html_a7d998b289ec66ec964b48f1fb54cbb23"><div class="ttname"><a href="a00026.html#a7d998b289ec66ec964b48f1fb54cbb23">ImageWidget::leftMousePressed</a></div><div class="ttdeci">void leftMousePressed(QPoint point)</div></div>
+<div class="ttc" id="a00026_html_ab9f5c9144e4e2a6af506a32bfc6186ad"><div class="ttname"><a href="a00026.html#ab9f5c9144e4e2a6af506a32bfc6186ad">ImageWidget::m_startPoint</a></div><div class="ttdeci">QPoint m_startPoint</div><div class="ttdef"><b>Definition:</b> ImageWidget.h:30</div></div>
+<div class="ttc" id="a00026_html_abde506575a901b4a4fb93013d16f7716"><div class="ttname"><a href="a00026.html#abde506575a901b4a4fb93013d16f7716">ImageWidget::m_leftMousePressed</a></div><div class="ttdeci">bool m_leftMousePressed</div><div class="ttdef"><b>Definition:</b> ImageWidget.h:32</div></div>
+<div class="ttc" id="a00026_html"><div class="ttname"><a href="a00026.html">ImageWidget</a></div><div class="ttdef"><b>Definition:</b> ImageWidget.h:13</div></div>
+<div class="ttc" id="a00026_html_a84c5e7fa559aec5c035ad364c2f0d48a"><div class="ttname"><a href="a00026.html#a84c5e7fa559aec5c035ad364c2f0d48a">ImageWidget::setImage</a></div><div class="ttdeci">void setImage(const QImage &amp;image)</div><div class="ttdoc">ImageWidget::setImage Displays image. </div><div class="ttdef"><b>Definition:</b> ImageWidget.cpp:40</div></div>
+<div class="ttc" id="a00026_html_a1abbcc95ff9df2ae8c1b9d124fc7c175"><div class="ttname"><a href="a00026.html#a1abbcc95ff9df2ae8c1b9d124fc7c175">ImageWidget::m_endPoint</a></div><div class="ttdeci">QPoint m_endPoint</div><div class="ttdef"><b>Definition:</b> ImageWidget.h:31</div></div>
+<div class="ttc" id="a00026_html_ad7ce3e83b4756c1cadb25d27439eea9b"><div class="ttname"><a href="a00026.html#ad7ce3e83b4756c1cadb25d27439eea9b">ImageWidget::~ImageWidget</a></div><div class="ttdeci">virtual ~ImageWidget()</div><div class="ttdoc">ImageWidget::~ImageWidget Destroyes the object. </div><div class="ttdef"><b>Definition:</b> ImageWidget.cpp:31</div></div>
+<div class="ttc" id="a00026_html_ab12062541db9427b15ccd9251f74acfa"><div class="ttname"><a href="a00026.html#ab12062541db9427b15ccd9251f74acfa">ImageWidget::m_image</a></div><div class="ttdeci">QImage m_image</div><div class="ttdef"><b>Definition:</b> ImageWidget.h:29</div></div>
+<div class="ttc" id="a00026_html_a28de8752b2fd43bb3ccee8568a4858b1"><div class="ttname"><a href="a00026.html#a28de8752b2fd43bb3ccee8568a4858b1">ImageWidget::ui</a></div><div class="ttdeci">Ui::ImageWidget * ui</div><div class="ttdef"><b>Definition:</b> ImageWidget.h:28</div></div>
+<div class="ttc" id="a00026_html_aee9964454921e094b3d67d62f5907e91"><div class="ttname"><a href="a00026.html#aee9964454921e094b3d67d62f5907e91">ImageWidget::ImageWidget</a></div><div class="ttdeci">ImageWidget(QWidget *parent=nullptr)</div><div class="ttdoc">ImageWidget::ImageWidget Standardconstructor. </div><div class="ttdef"><b>Definition:</b> ImageWidget.cpp:11</div></div>
+<div class="ttc" id="a00026_html_a05dd77c9cb99cab5a02ae038454c6296"><div class="ttname"><a href="a00026.html#a05dd77c9cb99cab5a02ae038454c6296">ImageWidget::leftMouseReleased</a></div><div class="ttdeci">void leftMouseReleased(QPoint point)</div></div>
+<div class="ttc" id="a00026_html_ab528ea452769fbeb21fdb6968eb647e3"><div class="ttname"><a href="a00026.html#ab528ea452769fbeb21fdb6968eb647e3">ImageWidget::rect</a></div><div class="ttdeci">QRect rect() const </div><div class="ttdoc">ImageWidget::rect Returns the rectangle painted by the user. </div><div class="ttdef"><b>Definition:</b> ImageWidget.cpp:126</div></div>
+<div class="ttc" id="a00026_html_a80a5cc4a556c94d9fcc6d8168a50c5a8"><div class="ttname"><a href="a00026.html#a80a5cc4a556c94d9fcc6d8168a50c5a8">ImageWidget::mouseMoved</a></div><div class="ttdeci">void mouseMoved(QPoint point)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00088.html">ProcessingComponent.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_cc9e7ed5fc0ba7acc72535078041fca3.html">ImageWidget</a></li><li class="navelem"><a class="el" href="dir_ca16503ebd242cad939d781f68430e81.html">inc</a></li><li class="navelem"><a class="el" href="a00088.html">ImageWidget.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: CustomStyledDelegate Class Reference</title>
+<title>KinectTracker: AMath::Circle2D Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,31 +104,22 @@ $(document).ready(function(){initNavTree('a00012.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00172.html">List of all members</a>  </div>
+<a href="a00230.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">CustomStyledDelegate Class Reference</div>  </div>
+<div class="title">AMath::Circle2D Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00065_source.html">CustomStyledDelegate.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for CustomStyledDelegate:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00012.png" usemap="#CustomStyledDelegate_map" alt=""/>
-  <map id="CustomStyledDelegate_map" name="CustomStyledDelegate_map">
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="a00064_source.html">AMath.h</a>&gt;</code></p>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a2fd599cbcc59614d3d1ea678ccdafb9c"></a>
+<a class="anchor" id="a7779d1f012354f3072e2b4a59ca22662"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CustomStyledDelegate::CustomStyledDelegate </td>
+          <td class="memname">AMath::Circle2D::Circle2D </td>
           <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -136,86 +127,149 @@ Inheritance diagram for CustomStyledDelegate:</div>
 
 </div>
 </div>
-<a class="anchor" id="a90c589d80818c897bbb818649990e2f5"></a>
+<a class="anchor" id="a122a76bb8a823702d6371b45ab446960"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CustomStyledDelegate::~CustomStyledDelegate </td>
+          <td class="memname">AMath::Circle2D::Circle2D </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa0ea76f26f494b876ddd8c626404d916"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMath::Circle2D::~Circle2D </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0ae8befef987cff672d1be2c08c22bb8"></a>
+<a class="anchor" id="ac2c55012c9fc69c9b6f0649a5e01b601"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CustomStyledDelegate::commit </td>
+          <td class="memname">float AMath::Circle2D::radius </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a4034e12e5d289fde5519a600d33063be"></a>
+<a class="anchor" id="a4e7a46053c9db4080429b9d6cd5c3405"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QWidget * CustomStyledDelegate::createEditor </td>
+          <td class="memname">void AMath::Circle2D::setRadius </td>
           <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>radius</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const QStyleOptionViewItem &amp;&#160;</td>
-          <td class="paramname"><em>option</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QModelIndex &amp;&#160;</td>
-          <td class="paramname"><em>index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a1121c1c11c85bd6a534830c7f7af57d5"></a>
+<a class="anchor" id="a25b5825a301d9fff264d7bac36db368a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AMath::Circle2D::setX </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a371bdec036ab08ffd5925c3b53d8ef7c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AMath::Circle2D::setY </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8e9649828c25180057dab6bab932c3ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AMath::Circle2D::x </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa4c80ba2b0f300ce177686d4e005c652"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AMath::Circle2D::y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="af458c71c1a1727cb7f87c8e12f956e1d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -223,127 +277,69 @@ Inheritance diagram for CustomStyledDelegate:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QString CustomStyledDelegate::displayText </td>
-          <td>(</td>
-          <td class="paramtype">const QVariant &amp;&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QLocale &amp;&#160;</td>
-          <td class="paramname"><em>locale</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="memname">float AMath::Circle2D::m_radius</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a8557eba6802e88a8363584688261d1b2"></a>
+<a class="anchor" id="af55376a192d9fb485e4a7d674c3f0d8a"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CustomStyledDelegate::setEditorData </td>
-          <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>editor</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QModelIndex &amp;&#160;</td>
-          <td class="paramname"><em>index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="memname">float AMath::Circle2D::m_x</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a6d0e30599da9730136bf9213765fb067"></a>
+<a class="anchor" id="a41dc4f27ea23cddda39551858569eb48"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CustomStyledDelegate::setModelData </td>
-          <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>editor</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QAbstractItemModel *&#160;</td>
-          <td class="paramname"><em>model</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QModelIndex &amp;&#160;</td>
-          <td class="paramname"><em>index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="memname">float AMath::Circle2D::m_y</td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a12020ec39c9bb394e46f082ab6afb03c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QSize CustomStyledDelegate::sizeHint </td>
-          <td>(</td>
-          <td class="paramtype">const QStyleOptionViewItem &amp;&#160;</td>
-          <td class="paramname"><em>option</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QModelIndex &amp;&#160;</td>
-          <td class="paramname"><em>index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00065_source.html">CustomStyledDelegate.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00115.html">CustomStyledDelegate.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/AMath/inc/<a class="el" href="a00064_source.html">AMath.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/AMath/src/<a class="el" href="a00065.html">AMath.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00012.html">CustomStyledDelegate</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00167.html">AMath</a></li><li class="navelem"><a class="el" href="a00012.html">Circle2D</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:39 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

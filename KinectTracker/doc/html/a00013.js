@@ -1,10 +1,9 @@
 var a00013 =
 [
-    [ "DepthAnalyzer", "a00013.html#a029fd17ddc9694cd9fb8f60bd0675b07", null ],
-    [ "~DepthAnalyzer", "a00013.html#a4b511bd978698d4ddbfc44aec0b2b6f4", null ],
-    [ "analyze", "a00013.html#aa2d58fa1227f8bce9cb1a99d7a3fbd63", null ],
-    [ "getDepthData", "a00013.html#a973583c7e36c9a2c83c46692808064a7", null ],
-    [ "getPipeline", "a00013.html#ac02de08b9a9a7e88cb9b759280a58981", null ],
-    [ "m_depthData", "a00013.html#a442657c53d0f8fb650a9aee019d9fac8", null ],
-    [ "mp_processingPipeline", "a00013.html#afee0d8d0fda80d4d540ac493aff78157", null ]
+    [ "ConnectionHelper", "a00013.html#a6496a906a3665181309f63f2f6e74c70", null ],
+    [ "~ConnectionHelper", "a00013.html#a8b9140fb195ca81c27ac1751e6bd89f9", null ],
+    [ "m_signal", "a00013.html#a64ea062b7055aeb0ad77a4202fbcfc16", null ],
+    [ "m_slot", "a00013.html#afb15f230a060b8677e3f243757c5072d", null ],
+    [ "mp_signalObject", "a00013.html#a164669cef7b194246967d78be76cc6e7", null ],
+    [ "mp_slotObject", "a00013.html#a09663b940d2ca79a6915662c8fda877c", null ]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: BackgroudSubtractionPipeline Class Reference</title>
+<title>KinectTracker: BBMovementAnalyzer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,40 +104,57 @@ $(document).ready(function(){initNavTree('a00003.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00163.html">List of all members</a>  </div>
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="a00174.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">BackgroudSubtractionPipeline Class Reference</div>  </div>
+<div class="title">BBMovementAnalyzer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00089_source.html">ProcessingPipeline.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00066_source.html">BBMovementAnalyzer.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for BackgroudSubtractionPipeline:</div>
+Inheritance diagram for BBMovementAnalyzer:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00003.png" usemap="#BackgroudSubtractionPipeline_map" alt=""/>
-  <map id="BackgroudSubtractionPipeline_map" name="BackgroudSubtractionPipeline_map">
-<area href="a00035.html" alt="ProcessingPipeline" shape="rect" coords="0,56,182,80"/>
+  <img src="a00003.png" usemap="#BBMovementAnalyzer_map" alt=""/>
+  <map id="BBMovementAnalyzer_map" name="BBMovementAnalyzer_map">
+<area href="a00033.html" alt="MovementAnalyzer" shape="rect" coords="0,56,137,80"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab3cc94cd31a0019d49e51ea16d5f3ed0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html#ab3cc94cd31a0019d49e51ea16d5f3ed0">anaylzeV</a> (const <a class="el" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> skeleton, const unsigned int timestamp)</td></tr>
+<tr class="separator:ab3cc94cd31a0019d49e51ea16d5f3ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_a00033"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a00033')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a00033.html">MovementAnalyzer</a></td></tr>
+<tr class="memitem:ab9d159bcf00339f0a1eb3148a43a3620 inherit pro_methods_a00033"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#ab9d159bcf00339f0a1eb3148a43a3620">arePointsInsideLatestBoudingGeomerty</a> (const QVector&lt; QVector3D &gt; &amp;points) const </td></tr>
+<tr class="separator:ab9d159bcf00339f0a1eb3148a43a3620 inherit pro_methods_a00033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ed3ad06629ef6ac1f6ba715090187b inherit pro_methods_a00033"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#a08ed3ad06629ef6ac1f6ba715090187b">addBoundingGeometry</a> (<a class="el" href="a00086.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a> &amp;boundingGeometry, const unsigned int timestamp)</td></tr>
+<tr class="separator:a08ed3ad06629ef6ac1f6ba715090187b inherit pro_methods_a00033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a66fe1985f69bd22185ea16999b5bb0c2"></a>
+<a class="anchor" id="ac68f990d9d96ef4f338cc4802727ff82"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">BackgroudSubtractionPipeline::BackgroudSubtractionPipeline </td>
+          <td class="memname">BBMovementAnalyzer::BBMovementAnalyzer </td>
           <td>(</td>
           <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00003.html#ac68f990d9d96ef4f338cc4802727ff82" title="BBMovementAnalyzer::BBMovementAnalyzer Standardconstructor. ">BBMovementAnalyzer::BBMovementAnalyzer</a> Standardconstructor. </p>
+
 </div>
 </div>
-<a class="anchor" id="a7eeb0863dfc4b9cdcf8002d4887fa75e"></a>
+<a class="anchor" id="ac67f0e2bae42ad31d95aa1682191a5ea"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -145,7 +162,7 @@ Inheritance diagram for BackgroudSubtractionPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">BackgroudSubtractionPipeline::~BackgroudSubtractionPipeline </td>
+          <td class="memname">BBMovementAnalyzer::~BBMovementAnalyzer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -158,10 +175,12 @@ Inheritance diagram for BackgroudSubtractionPipeline:</div>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00003.html#ac67f0e2bae42ad31d95aa1682191a5ea" title="BBMovementAnalyzer::~BBMovementAnalyzer Destroyes the object. ">BBMovementAnalyzer::~BBMovementAnalyzer</a> Destroyes the object. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a63f510e00cfe29acd36a86733d30c282"></a>
+<a class="anchor" id="ab3cc94cd31a0019d49e51ea16d5f3ed0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -169,26 +188,201 @@ Inheritance diagram for BackgroudSubtractionPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void BackgroudSubtractionPipeline::process </td>
+          <td class="memname">void BBMovementAnalyzer::anaylzeV </td>
           <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>&#160;</td>
+          <td class="paramname"><em>skeleton</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00003.html#ab3cc94cd31a0019d49e51ea16d5f3ed0" title="BBMovementAnalyzer::anaylzeV. ">BBMovementAnalyzer::anaylzeV</a>. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00033.html#aeb259bd408c39666bcc12cf44f9be5b4" title="MovementAnalyzer::analyze Analyzes the human&#39;s movement. ">MovementAnalyzer::analyze</a> </dd></dl>
+
+<p>Implements <a class="el" href="a00033.html#a7d4bfd94e927064226a6bd6efb4ba58a">MovementAnalyzer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a5c1da43dc616b933553ff2f6a54806"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BBMovementAnalyzer::deltaX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7309f169698df86c6a285e2fed9f0601"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BBMovementAnalyzer::deltaXChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="a00035.html#aac43bf94ad3e70b41b87f6016c4f0f7d">ProcessingPipeline</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a1abb3c31a955783f40e81ff93bccfaa7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BBMovementAnalyzer::deltaY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a150251f2c59556e367bf6bf1a50adbc9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BBMovementAnalyzer::deltaYChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abcae738d42f905431d2fd33e7ec385f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BBMovementAnalyzer::deltaZ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7679c4396b4b0e41080aeaa811a05721"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BBMovementAnalyzer::deltaZChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5777ef9182f763b610f9674c2d1c4c73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BBMovementAnalyzer::setDeltaX </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaX</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b1b40ed51808a9d520d5275572d52d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BBMovementAnalyzer::setDeltaY </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaY</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aea5f178118df25be54c1eb0f9a380378"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BBMovementAnalyzer::setDeltaZ </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>deltaZ</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a2decba6aec1268b8482e567f0b2e88cb"></a>
+<a class="anchor" id="a8c1c79a68f73f9164b3add9a3a5d9731"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -196,7 +390,7 @@ Inheritance diagram for BackgroudSubtractionPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">cv::BackgroundSubtractorMOG BackgroudSubtractionPipeline::m_backgroundSubtractor</td>
+          <td class="memname">float BBMovementAnalyzer::m_deltaX</td>
         </tr>
       </table>
   </td>
@@ -208,7 +402,7 @@ Inheritance diagram for BackgroudSubtractionPipeline:</div>
 
 </div>
 </div>
-<a class="anchor" id="a5ad3989b90ddae691c6136ee95f98f4f"></a>
+<a class="anchor" id="acbb76aa66c606e8d166d59ca00e4b837"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -216,12 +410,93 @@ Inheritance diagram for BackgroudSubtractionPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00071.html#ac5e9e35e34113deab9a06fcfdd46a7fc">ErodePtr</a> BackgroudSubtractionPipeline::mp_erode</td>
+          <td class="memname">float BBMovementAnalyzer::m_deltaY</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aced75a4c41ea59a5f5992afce2ec3440"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BBMovementAnalyzer::m_deltaZ</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a33e025e0c6b4f9d22b9e22a3226c2f2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BBMovementAnalyzer::deltaX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5c06d851a906e83f7464f57d9e00b631"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BBMovementAnalyzer::deltaY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a31bb050a3885f633004dfd0b9617d3fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BBMovementAnalyzer::deltaZ</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -229,16 +504,16 @@ Inheritance diagram for BackgroudSubtractionPipeline:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00089_source.html">ProcessingPipeline.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00138.html">ProcessingPipeline.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Analyzer/inc/<a class="el" href="a00066_source.html">BBMovementAnalyzer.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Analyzer/src/<a class="el" href="a00073.html">BBMovementAnalyzer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00003.html">BackgroudSubtractionPipeline</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00003.html">BBMovementAnalyzer</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -1,5 +1,5 @@
 var a00117 =
 [
-    [ "pointInCube", "a00117.html#a15d309989b99341fa895624b77b7caac", null ],
-    [ "pointInSphere", "a00117.html#ad79d142e408b4534d9b735e4ff3c1b95", null ]
+    [ "Dilate", "a00016.html", "a00016" ],
+    [ "DilatePtr", "a00117.html#aa68996a9540ac9392c7b51f46cfb6357", null ]
 ];

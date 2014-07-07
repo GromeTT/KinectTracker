@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/RenderObject.h File Reference</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Kinect/src/Kinect.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,61 +102,48 @@ $(document).ready(function(){initNavTree('a00092.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">RenderObject.h File Reference</div>  </div>
+<div class="title">Kinect.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QOpenGLBuffer&gt;</code><br />
-<code>#include &lt;QVector&gt;</code><br />
-<code>#include &lt;QVector3D&gt;</code><br />
-<code>#include &lt;QMatrix4x4&gt;</code><br />
-<code>#include &lt;QOpenGLVertexArrayObject&gt;</code><br />
-<code>#include &lt;QOpenGLTexture&gt;</code><br />
-<code>#include &lt;QSharedPointer&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00093_source.html">RenderObjectInterface.h</a>&quot;</code><br />
-</div>
-<p><a href="a00092_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html">RenderObject</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00090_source.html">../inc/Kinect.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00091_source.html">../inc/SkeletonData.h</a>&quot;</code><br />
+<code>#include &lt;QSize&gt;</code><br />
+<code>#include &lt;QImage&gt;</code><br />
+<code>#include &lt;QColor&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;QVector2D&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2a63e2b8bb4d59e9adb12cd113ade438"><td class="memItemLeft" align="right" valign="top">QVector2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00092.html#a2a63e2b8bb4d59e9adb12cd113ade438">transformFromSkeltonToRGB</a> (const QVector3D &amp;coordinates)</td></tr>
+<tr class="separator:a2a63e2b8bb4d59e9adb12cd113ade438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="ab494067ab3de3d56c38a5a4288b44afb"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a2a63e2b8bb4d59e9adb12cd113ade438"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef QVector&lt;unsigned int&gt; <a class="el" href="a00092.html#ab494067ab3de3d56c38a5a4288b44afb">Indices</a></td>
+          <td class="memname">QVector2D transformFromSkeltonToRGB </td>
+          <td>(</td>
+          <td class="paramtype">const QVector3D &amp;&#160;</td>
+          <td class="paramname"><em>coordinates</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a8d404d21e13f8fa172f7a01eba949a7c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef QVector&lt;QOpenGLTexture*&gt; <a class="el" href="a00061.html#a8d404d21e13f8fa172f7a01eba949a7c">OpenGLTextures</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a259f4df67df3fce159eb227839d3c425"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef QVector&lt;<a class="el" href="a00057.html">Vertex</a>&gt; <a class="el" href="a00063.html#a259f4df67df3fce159eb227839d3c425">Vertices</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>transformFromSkeltonToRGB </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coordinates</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -165,8 +152,8 @@ Classes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00092.html">RenderObject.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_7f96fc9519b893d3ad6f809c8a4323f4.html">Kinect</a></li><li class="navelem"><a class="el" href="dir_6463f098b465f3917f82045b9035b690.html">src</a></li><li class="navelem"><a class="el" href="a00092.html">Kinect.cpp</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

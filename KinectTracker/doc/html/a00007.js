@@ -5,6 +5,8 @@ var a00007 =
     [ "~BoundingGeometry", "a00007.html#a8ea3a2cd602c5b0040dee82adc2c039c", null ],
     [ "arePointsInsideGeometry", "a00007.html#a640cfdc505afb10917d7328337c100f6", null ],
     [ "arePointsInsideGeometryV", "a00007.html#acef17525e9a7ad4b77f2b330db0e64cb", null ],
+    [ "frontFaceBottomRightCorner", "a00007.html#a7fa598d9a123e9b769f8996aa60ef471", null ],
+    [ "frontFaceTopLeftCorner", "a00007.html#ad8e981ae1f34369b182462e7cacf9b6c", null ],
     [ "setX", "a00007.html#a75123a3246f4dba43705271beefa5673", null ],
     [ "setY", "a00007.html#a9e09f6c5f870ca7313e1243b35f26647", null ],
     [ "setZ", "a00007.html#a7b1858a9b8f56bafbb792c323821073e", null ],

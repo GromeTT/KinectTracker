@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['threshold',['threshold',['../a00014.html#a7a6449261a10b67242818ad8bb7a87bc',1,'DepthProcessingPipeline::threshold()'],['../a00054.html#a4553c33cf0267aa206970186f29534a1',1,'Threshold::threshold()']]],
-  ['thresholdl2hys',['thresholdL2Hys',['../a00024.html#ad67acbb7fedc82f34af8a1a731b26aed',1,'HOGFeatureDetector']]],
-  ['thresholdtype',['thresholdType',['../a00054.html#a1dd6b42c58c35809ba3664ad43b9f2a1',1,'Threshold']]]
+  ['roll',['roll',['../a00033.html#ace5c54cafffdc11629a205ae7bbebdac',1,'MovementAnalyzer::roll()'],['../a00011.html#a08d9c6119a859e664d74ca07db4fe3d3',1,'Camera::roll()'],['../a00056.html#a476fe76f33c2ce33ced2a629fb4faa7f',1,'TransformationObject::roll()']]]
 ];

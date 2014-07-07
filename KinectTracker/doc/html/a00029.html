@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: LoaderObject Class Reference</title>
+<title>KinectTracker: KinectInitializeDialog Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,109 +104,23 @@ $(document).ready(function(){initNavTree('a00029.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00189.html">List of all members</a>  </div>
+<a href="a00199.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">LoaderObject Class Reference</div>  </div>
+<div class="title">KinectInitializeDialog Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00086_source.html">ObjectLoader.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00083_source.html">KinectInitializeDialog.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for KinectInitializeDialog:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00029.png" usemap="#KinectInitializeDialog_map" alt=""/>
+  <map id="KinectInitializeDialog_map" name="KinectInitializeDialog_map">
+</map>
+ </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab5619bcc09220112f0a342b3147b58c4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">LoaderObject::LoaderObject </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a2ee2ee5a245955568c138860e1c449dd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">LoaderObject::~LoaderObject </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a18be2a2412731797071c97bcff1e868c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void LoaderObject::addIndice </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>indice</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a39d542153aa5ad1e72e800cfda87092c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void LoaderObject::addVertex </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00057.html">Vertex</a>&#160;</td>
-          <td class="paramname"><em>vertex</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a40e0c4e308b1097fe9e5fc1cce846351"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const QVector&lt; unsigned int &gt; &amp; LoaderObject::getIndices </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a20212264506edb13784d0041947b2238"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00063.html#a259f4df67df3fce159eb227839d3c425">Vertices</a> &amp; LoaderObject::getVertices </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="afcc2d24ff406650fe5fc0f46a575abfa"></a>
+<a class="anchor" id="a5b562f825b336c713b878740963778ba"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -214,7 +128,57 @@ $(document).ready(function(){initNavTree('a00029.html','');});
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt;unsigned int&gt; LoaderObject::m_indices</td>
+          <td class="memname">KinectInitializeDialog::KinectInitializeDialog </td>
+          <td>(</td>
+          <td class="paramtype">QSharedPointer&lt; <a class="el" href="a00028.html">Kinect</a> &gt;&#160;</td>
+          <td class="paramname"><em>kinect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad6728a188de665be594a4496da47f1cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">KinectInitializeDialog::~KinectInitializeDialog </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a0fa552efafad4fec8c1fd9a1ed68c71b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSharedPointer&lt;<a class="el" href="a00028.html">Kinect</a>&gt; KinectInitializeDialog::m_kinect</td>
         </tr>
       </table>
   </td>
@@ -226,7 +190,7 @@ $(document).ready(function(){initNavTree('a00029.html','');});
 
 </div>
 </div>
-<a class="anchor" id="a31d9c4fa44ebf43f5686bc185d356c60"></a>
+<a class="anchor" id="a7cee097d014aa0ff801139ea013c1bb0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -234,7 +198,7 @@ $(document).ready(function(){initNavTree('a00029.html','');});
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00063.html#a259f4df67df3fce159eb227839d3c425">Vertices</a> LoaderObject::m_vertices</td>
+          <td class="memname">Ui::KinectInitializeDialog* KinectInitializeDialog::ui</td>
         </tr>
       </table>
   </td>
@@ -247,16 +211,16 @@ $(document).ready(function(){initNavTree('a00029.html','');});
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00086_source.html">ObjectLoader.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00135.html">ObjectLoader.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Dialogs/inc/<a class="el" href="a00083_source.html">KinectInitializeDialog.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Dialogs/src/<a class="el" href="a00085.html">KinectInitializeDialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00029.html">LoaderObject</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00029.html">KinectInitializeDialog</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

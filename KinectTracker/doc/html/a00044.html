@@ -104,13 +104,13 @@ $(document).ready(function(){initNavTree('a00044.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00204.html">List of all members</a>  </div>
+<a href="a00213.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">SceneGraphWidget Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00098_source.html">SceneGraphWidget.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00156_source.html">SceneGraphWidget.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SceneGraphWidget:</div>
 <div class="dyncontent">
@@ -119,6 +119,35 @@ Inheritance diagram for SceneGraphWidget:</div>
   <map id="SceneGraphWidget_map" name="SceneGraphWidget_map">
 </map>
  </div></div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="aef1e200ea667c4ceb65705f90fb6bbec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00044.html#aef1e200ea667c4ceb65705f90fb6bbec">SceneGraphWidget::ActiveScene</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aef1e200ea667c4ceb65705f90fb6bbeca6d956cded9ac71eab76483155d2c2251"></a>RGBProcessingPipeline&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aef1e200ea667c4ceb65705f90fb6bbeca8db007cfe72af83b304f0ec6661c757b"></a>DepthProcessingPipeline&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aef1e200ea667c4ceb65705f90fb6bbeca6b2e4bd2d3c457f16365a659c4412435"></a>RenderScene&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a98d3fbaea1309c64ef9bbdb33d4ce293"></a>
 <div class="memitem">
@@ -160,6 +189,23 @@ Inheritance diagram for SceneGraphWidget:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac37c170b38d180513ab85c95c4aa5654"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00044.html#aef1e200ea667c4ceb65705f90fb6bbec">SceneGraphWidget::ActiveScene</a> SceneGraphWidget::activeScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00044.html#ac37c170b38d180513ab85c95c4aa5654" title="SceneGraphWidget::activeScene Returns the active scene. ">SceneGraphWidget::activeScene</a> Returns the active scene. </p>
+
+</div>
+</div>
 <a class="anchor" id="ae6efae163f8076c356fbc92e0f4e3a8a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -168,6 +214,22 @@ Inheritance diagram for SceneGraphWidget:</div>
           <td class="memname">void SceneGraphWidget::addObject </td>
           <td>(</td>
           <td class="paramtype">const QObject *&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa292ed0ac1753686b520df69f8f72dc4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneGraphWidget::addObject </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
           <td class="paramname"><em>object</em></td><td>)</td>
           <td></td>
         </tr>
@@ -199,7 +261,7 @@ Inheritance diagram for SceneGraphWidget:</div>
         <tr>
           <td class="memname">void SceneGraphWidget::addObjects </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00061.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00094.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a> &amp;&#160;</td>
           <td class="paramname"><em>objects</em></td><td>)</td>
           <td></td>
         </tr>
@@ -231,7 +293,7 @@ Inheritance diagram for SceneGraphWidget:</div>
         <tr>
           <td class="memname">void SceneGraphWidget::addObjects </td>
           <td>(</td>
-          <td class="paramtype">const QVector&lt; <a class="el" href="a00034.html">ProcessingComponent</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const QVector&lt; <a class="el" href="a00036.html">ProcessingComponent</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>objects</em></td><td>)</td>
           <td></td>
         </tr>
@@ -250,7 +312,7 @@ Inheritance diagram for SceneGraphWidget:</div>
         <tr>
           <td class="memname">void SceneGraphWidget::addObjects </td>
           <td>(</td>
-          <td class="paramtype">const QVector&lt; <a class="el" href="a00034.html">ProcessingComponent</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const QVector&lt; <a class="el" href="a00036.html">ProcessingComponent</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>objects</em>, </td>
         </tr>
         <tr>
@@ -286,6 +348,32 @@ Inheritance diagram for SceneGraphWidget:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af3d9dea8b40b916c3e414f738c12edd1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneGraphWidget::comboBoxChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00044.html#af3d9dea8b40b916c3e414f738c12edd1" title="SceneGraphWidget::comboBoxChanged Is called, whenever the value in the QComboBox changes. ">SceneGraphWidget::comboBoxChanged</a> Is called, whenever the value in the QComboBox changes. </p>
 
 </div>
 </div>
@@ -420,6 +508,30 @@ Inheritance diagram for SceneGraphWidget:</div>
 
 </div>
 </div>
+<a class="anchor" id="ac7a64f8e3ace6ff3e98df13b6e1084e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneGraphWidget::sceneChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00044.html#aef1e200ea667c4ceb65705f90fb6bbec">ActiveScene</a>&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aabc2f7df1ed84720e9e5128bfb85de5c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -479,6 +591,26 @@ Inheritance diagram for SceneGraphWidget:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a0eb92fd0faf480119a4bbc733bf14625"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00044.html#aef1e200ea667c4ceb65705f90fb6bbec">ActiveScene</a> SceneGraphWidget::m_activeScene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a66da606d103d5f31f14cb1cc66af8c9d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -500,8 +632,8 @@ Inheritance diagram for SceneGraphWidget:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00098_source.html">SceneGraphWidget.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00147.html">SceneGraphWidget.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/SceneGraph/inc/<a class="el" href="a00156_source.html">SceneGraphWidget.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/SceneGraph/src/<a class="el" href="a00158.html">SceneGraphWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -509,7 +641,7 @@ Inheritance diagram for SceneGraphWidget:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="a00044.html">SceneGraphWidget</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:39 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

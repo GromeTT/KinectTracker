@@ -11,8 +11,9 @@ SizeAnalyzer::SizeAnalyzer( QObject* parent )
     , m_estimatedBodySize( 0.0f )
     , m_currentBodySize( 0.0f )
     , m_workerStatus( "Not tracked" )
-    , m_distanceHeadRightFood( 0 )
-    , m_distanceHeadLeftFood( 0 )
+    , m_distanceHeadRightFood( 0.0f )
+    , m_distanceHeadLeftFood( 0.0f )
+    , m_distanceFloorHead( 0.0f )
 {
 }
 
@@ -29,7 +30,8 @@ SizeAnalyzer::~SizeAnalyzer()
    \brief SizeAnalyzer::analyze
    Perform analysis on \a skeletonData.
  */
-void SizeAnalyzer::analyze( const SkeletonDataPtr& skeletonData )
+void SizeAnalyzer::analyze( const KinectPtr kinect,
+                            const SkeletonDataPtr& skeletonData )
 {
     // Compute the distance between the head and the feets.
     // It's going to be used to determine, if the person is lying.
@@ -38,8 +40,11 @@ void SizeAnalyzer::analyze( const SkeletonDataPtr& skeletonData )
     m_distanceHeadRightFood = ( skeletonData->getJoint( SkeletonData::Joints::Head ) - skeletonData->getJoint( SkeletonData::Joints::FootRight) ).length();
     emit distanceHeadRightFoodChanged();
 
-
+    // Estimate the body height of the user and update the current body height.
     analyzeV( skeletonData );
+
+    // Compare the current body height with the estiamed body height
+    // and classify the pose.
     if ( m_currentBodySize >= m_kneelingThreshold * m_estimatedBodySize )
     {
         m_workerStatus = tr( "Staying" );
@@ -54,6 +59,33 @@ void SizeAnalyzer::analyze( const SkeletonDataPtr& skeletonData )
         {
             m_workerStatus = tr( "Kneeling" );
         }
+    }
+
+    // Compute the distance from the head to the floor.
+    if ( skeletonData->allPointsTracked() )
+    {
+        // All joints are tracked and the floor coefficients haven't
+        // been stored yet.
+        // Do it now.
+        m_planeCoefficients = kinect->planeCoefficients();
+        m_floorInitialized = true;
+    }
+    if ( skeletonData->jointTrackState( SkeletonData::Joints::Head ) == SkeletonData::TrackState::Tracked &&
+         m_floorInitialized )
+    {
+        // The head is tracked and the plane coefficients have been stored.
+        // Now compute the distance between the head and the floor by formula:
+        // http://www.frustfrei-lernen.de/mathematik/abstand-punkt-zu-ebene.html
+        QVector3D normalVector ( m_planeCoefficients.x(),
+                                 m_planeCoefficients.y(),
+                                 m_planeCoefficients.z() );
+        QVector3D pointInPlane( 0,
+                                -m_planeCoefficients.w() / m_planeCoefficients.y() ,
+                                0 );
+        normalVector.normalize();
+        QVector3D head = skeletonData->getJoint( SkeletonData::Joints::Head );
+        m_distanceFloorHead = head.distanceToPlane( pointInPlane, normalVector );
+        emit distanceFloorHeadChanged();
     }
     emit workerStatusChanged();
 }
@@ -88,7 +120,7 @@ void SizeAnalyzer::setWorkerStatus( const QString& status )
    \brief SizeAnalyzer::estimatedBodySize
    Returns the estimated body size.
  */
-float SizeAnalyzer::estimatedBodySize()
+float SizeAnalyzer::estimatedBodySize() const
 {
     return m_estimatedBodySize;
 }
@@ -97,7 +129,7 @@ float SizeAnalyzer::estimatedBodySize()
    \brief SizeAnalyzer::currentBodySize
    Returns the current body size.
  */
-float SizeAnalyzer::currentBodySize()
+float SizeAnalyzer::currentBodySize() const
 {
     return m_currentBodySize;
 }
@@ -107,7 +139,7 @@ float SizeAnalyzer::currentBodySize()
    Returns the threshold used to determine if the worker
    is kneeling.
  */
-float SizeAnalyzer::kneelingThreshold()
+float SizeAnalyzer::kneelingThreshold() const
 {
     return m_kneelingThreshold;
 }
@@ -117,7 +149,7 @@ float SizeAnalyzer::kneelingThreshold()
    Returns the threshold used to determine if the worker
    is lying.
  */
-float SizeAnalyzer::lyingThreshold()
+float SizeAnalyzer::lyingThreshold() const
 {
     return m_lyingThreshold;
 }
@@ -126,7 +158,7 @@ float SizeAnalyzer::lyingThreshold()
    \brief SizeAnalyzer::distanceHeadRightFood
    Returns the distance between the head and the right food.
  */
-float SizeAnalyzer::distanceHeadRightFood()
+float SizeAnalyzer::distanceHeadRightFood() const
 {
     return m_distanceHeadRightFood;
 }
@@ -135,16 +167,52 @@ float SizeAnalyzer::distanceHeadRightFood()
    \brief SizeAnalyzer::distanceHeadLeftFood
    Returns the distance between the head and the left food.
  */
-float SizeAnalyzer::distanceHeadLeftFood()
+float SizeAnalyzer::distanceHeadLeftFood() const
 {
     return m_distanceHeadLeftFood;
+}
+
+/*!
+   \brief SizeAnalyzer::distanceFloorHead
+   Returns the distance between the floor and the head.
+ */
+float SizeAnalyzer::distanceFloorHead() const
+{
+    return m_distanceFloorHead;
 }
 
 /*!
    \brief SizeAnalyzer::workerStatus
    Returns the status of the worker.
  */
-QString SizeAnalyzer::workerStatus()
+QString SizeAnalyzer::workerStatus() const
 {
     return m_workerStatus;
+}
+
+/*!
+   \brief SizeAnalyzer::floorInitialized
+   Returns if the coefficients has been adopted.
+ */
+bool SizeAnalyzer::floorInitialized() const
+{
+    return m_floorInitialized;}
+
+/*!
+   \brief SizeAnalyzer::planeCoefficients
+   Returns the plane coefficients.
+ */
+QVector4D SizeAnalyzer::planeCoefficients() const
+{
+    return m_planeCoefficients;
+}
+
+/*!
+   \brief SizeAnalyzer::reset
+ */
+void SizeAnalyzer::reset()
+{
+    m_floorInitialized = false;
+    m_estimatedBodySize = 0;
+    resetV();
 }

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SignalBlocker.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/OpenGL/inc/PropertyBrowser.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,36 +102,53 @@ $(document).ready(function(){initNavTree('a00099_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">SignalBlocker.h</div>  </div>
+<div class="title">PropertyBrowser.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00099.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SIGNALBLOCKER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SIGNALBLOCKER_H</span></div>
+<a href="a00099.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TREEWIDGETEXPLORER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TREEWIDGETEXPLORER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">class </span>QObject;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="a00045.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00045.html">SignalBlocker</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>Ui</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="a00045.html#a52aab5afe05d9177ca34427f01a49d61">SignalBlocker</a>( QObject* <span class="keywordtype">object</span> );</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="a00045.html#ad6e40057af8a899cfbc7fe8f74625fdf">~SignalBlocker</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00045.html#a9bb36e7d781a0ec0206a7143d7f7485c">   13</a></span>&#160;    QObject* <a class="code" href="a00045.html#a9bb36e7d781a0ec0206a7143d7f7485c">mp_object</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif // SIGNALBLOCKER_H</span></div>
-<div class="ttc" id="a00045_html_ad6e40057af8a899cfbc7fe8f74625fdf"><div class="ttname"><a href="a00045.html#ad6e40057af8a899cfbc7fe8f74625fdf">SignalBlocker::~SignalBlocker</a></div><div class="ttdeci">~SignalBlocker()</div><div class="ttdef"><b>Definition:</b> SignalBlocker.cpp:12</div></div>
-<div class="ttc" id="a00045_html"><div class="ttname"><a href="a00045.html">SignalBlocker</a></div><div class="ttdef"><b>Definition:</b> SignalBlocker.h:6</div></div>
-<div class="ttc" id="a00045_html_a52aab5afe05d9177ca34427f01a49d61"><div class="ttname"><a href="a00045.html#a52aab5afe05d9177ca34427f01a49d61">SignalBlocker::SignalBlocker</a></div><div class="ttdeci">SignalBlocker(QObject *object)</div><div class="ttdef"><b>Definition:</b> SignalBlocker.cpp:4</div></div>
-<div class="ttc" id="a00045_html_a9bb36e7d781a0ec0206a7143d7f7485c"><div class="ttname"><a href="a00045.html#a9bb36e7d781a0ec0206a7143d7f7485c">SignalBlocker::mp_object</a></div><div class="ttdeci">QObject * mp_object</div><div class="ttdef"><b>Definition:</b> SignalBlocker.h:13</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">class </span><a class="code" href="a00037.html">PropertyBrowser</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="a00057.html">TreeModel</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="a00014.html">CustomStyledDelegate</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00037.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00037.html">PropertyBrowser</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="a00037.html#ac5b29e3843c35e38646192229879bf85">PropertyBrowser</a>( QWidget* parent );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="a00037.html#ace847506a7bfc425da58050695248589">~PropertyBrowser</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00037.html#a754084a7249df03c12f4b8ad116e0355">setObject</a>( QObject* <span class="keywordtype">object</span> );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a00037.html#aee25d096154f8374aa3c4e90d6f6866e">   23</a></span>&#160;    <a class="code" href="a00057.html">TreeModel</a>*              <a class="code" href="a00037.html#aee25d096154f8374aa3c4e90d6f6866e">mp_treeModel</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a00037.html#a8bb011242a4055aaade12ce3f98558b5">   24</a></span>&#160;    <a class="code" href="a00014.html">CustomStyledDelegate</a>*   <a class="code" href="a00037.html#a8bb011242a4055aaade12ce3f98558b5">mp_styledDelegate</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00037.html#a5456810e7988f47bc7fe5dc4e73fc7c1">   25</a></span>&#160;    Ui::PropertyBrowser*    <a class="code" href="a00037.html#a5456810e7988f47bc7fe5dc4e73fc7c1">ui</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif // TREEWIDGETEXPLORER_H</span></div>
+<div class="ttc" id="a00037_html_a754084a7249df03c12f4b8ad116e0355"><div class="ttname"><a href="a00037.html#a754084a7249df03c12f4b8ad116e0355">PropertyBrowser::setObject</a></div><div class="ttdeci">void setObject(QObject *object)</div><div class="ttdoc">PropertyBrowser::setObject Displays all properties of object in the QTreeView. </div><div class="ttdef"><b>Definition:</b> PropertyBrowser.cpp:41</div></div>
+<div class="ttc" id="a00037_html_aee25d096154f8374aa3c4e90d6f6866e"><div class="ttname"><a href="a00037.html#aee25d096154f8374aa3c4e90d6f6866e">PropertyBrowser::mp_treeModel</a></div><div class="ttdeci">TreeModel * mp_treeModel</div><div class="ttdef"><b>Definition:</b> PropertyBrowser.h:23</div></div>
+<div class="ttc" id="a00014_html"><div class="ttname"><a href="a00014.html">CustomStyledDelegate</a></div><div class="ttdef"><b>Definition:</b> CustomStyledDelegate.h:8</div></div>
+<div class="ttc" id="a00037_html_a5456810e7988f47bc7fe5dc4e73fc7c1"><div class="ttname"><a href="a00037.html#a5456810e7988f47bc7fe5dc4e73fc7c1">PropertyBrowser::ui</a></div><div class="ttdeci">Ui::PropertyBrowser * ui</div><div class="ttdef"><b>Definition:</b> PropertyBrowser.h:25</div></div>
+<div class="ttc" id="a00037_html_ac5b29e3843c35e38646192229879bf85"><div class="ttname"><a href="a00037.html#ac5b29e3843c35e38646192229879bf85">PropertyBrowser::PropertyBrowser</a></div><div class="ttdeci">PropertyBrowser(QWidget *parent)</div><div class="ttdoc">PropertyBrowser::PropertyBrowser. </div><div class="ttdef"><b>Definition:</b> PropertyBrowser.cpp:12</div></div>
+<div class="ttc" id="a00037_html"><div class="ttname"><a href="a00037.html">PropertyBrowser</a></div><div class="ttdef"><b>Definition:</b> PropertyBrowser.h:14</div></div>
+<div class="ttc" id="a00057_html"><div class="ttname"><a href="a00057.html">TreeModel</a></div><div class="ttdef"><b>Definition:</b> TreeModel.h:10</div></div>
+<div class="ttc" id="a00037_html_ace847506a7bfc425da58050695248589"><div class="ttname"><a href="a00037.html#ace847506a7bfc425da58050695248589">PropertyBrowser::~PropertyBrowser</a></div><div class="ttdeci">~PropertyBrowser()</div><div class="ttdoc">PropertyBrowser::~PropertyBrowser Destroys the widget. </div><div class="ttdef"><b>Definition:</b> PropertyBrowser.cpp:33</div></div>
+<div class="ttc" id="a00037_html_a8bb011242a4055aaade12ce3f98558b5"><div class="ttname"><a href="a00037.html#a8bb011242a4055aaade12ce3f98558b5">PropertyBrowser::mp_styledDelegate</a></div><div class="ttdeci">CustomStyledDelegate * mp_styledDelegate</div><div class="ttdef"><b>Definition:</b> PropertyBrowser.h:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00099.html">SignalBlocker.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_8c83c19a9b6a99c3d579766fba10a6da.html">OpenGL</a></li><li class="navelem"><a class="el" href="dir_422157eb8ded5070cf70eb32824fdbfa.html">inc</a></li><li class="navelem"><a class="el" href="a00099.html">PropertyBrowser.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

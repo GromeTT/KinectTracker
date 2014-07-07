@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['objectloader',['ObjectLoader',['../a00032.html',1,'']]],
-  ['openglwindow',['OpenGLWindow',['../a00033.html',1,'']]]
+  ['processingcomponent',['ProcessingComponent',['../a00036.html',1,'']]],
+  ['propertybrowser',['PropertyBrowser',['../a00037.html',1,'']]]
 ];

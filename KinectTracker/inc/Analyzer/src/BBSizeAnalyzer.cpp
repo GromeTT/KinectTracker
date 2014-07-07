@@ -82,10 +82,12 @@ void BBSizeAnalyzer::analyzeV( const SkeletonDataPtr& skeletonData )
     // Calculate a bounding box around the joints.
     m_boundingBox->calculateBoundingBox( joints );
 
-    //
     if ( m_boundingBox->height() > m_estimatedBodySize &&
          m_boundingBox->height() < 2.30f )
     {
+        // If the bounding box is greater then the estiamted body height
+        // and lower the 2.3 meters, update the value of the estimated body
+        // size.
         m_estimatedBodySize = m_boundingBox->height();
         emit estimatedBodySizeChanged();
     }
@@ -93,7 +95,7 @@ void BBSizeAnalyzer::analyzeV( const SkeletonDataPtr& skeletonData )
     m_currentBodySize = m_boundingBox->height();
     emit currentBodySizeChanged();
 
-    // This crap is for another Method.
+    // This crap is for another method.
 
 //    if ( skeletonData->jointTrackState( SkeletonData::Joints::Head ) == SkeletonData::TrackState::Tracked &&
 //         skeletonData->jointTrackState( SkeletonData::Joints::ShoulderCenter ) == SkeletonData::TrackState::Tracked  &&
@@ -124,4 +126,9 @@ void BBSizeAnalyzer::analyzeV( const SkeletonDataPtr& skeletonData )
 //        }
 //    }
     //    return false;
+}
+
+void BBSizeAnalyzer::resetV()
+{
+
 }

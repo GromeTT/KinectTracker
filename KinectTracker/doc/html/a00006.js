@@ -7,6 +7,8 @@ var a00006 =
     [ "arePointsInsideGeometryV", "a00006.html#a8f1d5ebc762ff185e6ca9d22ab097221", null ],
     [ "calculateBoundingBox", "a00006.html#abb20c845b8a47726b08b832f1547b63a", null ],
     [ "depth", "a00006.html#a8e47b5b734e4594777c257c59d13a62b", null ],
+    [ "frontFaceBottomRightCorner", "a00006.html#a3b0ccc87dea356da1f8c5588624e75a8", null ],
+    [ "frontFaceTopLeftCorner", "a00006.html#afb008f3920b11b4ee76e2d0684c67c8a", null ],
     [ "height", "a00006.html#aabdbe73f4d217e0ae61671ec1a387361", null ],
     [ "setDepth", "a00006.html#a4671e29075fba2ed829f2838a850994c", null ],
     [ "setHeight", "a00006.html#aff2f3e191249d0aa811b22e791fe3d9e", null ],

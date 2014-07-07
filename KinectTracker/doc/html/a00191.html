@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00031.html','');});
+$(document).ready(function(){initNavTree('a00021.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -104,24 +104,51 @@ $(document).ready(function(){initNavTree('a00031.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">MovementAnalyzer Member List</div>  </div>
+<div class="title">HighLevelProcessingPipeline Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00031.html">MovementAnalyzer</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00021.html">HighLevelProcessingPipeline</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00031.html#ad65a6e9c98e84c2cee5f6a5262ee66ef">analyze</a>()</td><td class="entry"><a class="el" href="a00031.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00031.html#a58a2a82237e19effd52ed934bd2b95f6">anaylzeV</a>()=0</td><td class="entry"><a class="el" href="a00031.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00031.html#afc9a86154bca9345449b256ac3fbc588">boundingGeometries</a>() const </td><td class="entry"><a class="el" href="a00031.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00031.html#ad0b66ec19da305b82c7c883c748d6ffc">m_boundingGeomerties</a></td><td class="entry"><a class="el" href="a00031.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00031.html#a950981be4142b22fc4e133d6ef3412d7">MovementAnalyzer</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00031.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00031.html#a30b01985f212cbe998c7d685e84ddf1c">~MovementAnalyzer</a>()</td><td class="entry"><a class="el" href="a00031.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#afd432bd463e6c1a24c06ef72b14b0baf">crop</a>(const AMath::Rectangle3D &amp;rect, cv::Mat &amp;image)</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a40c8d559ab0e4e65bdcdc316c8684660">cropRegionWithWidthAndHeightAsPixels</a>(QVector3D &amp;center, const float width, const float height, cv::Mat image)</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a0e909cc435a8bbe223f9c4b484c76d34">cropRegionWithWidthAndHeightAsPixels</a>(const AMath::Rectangle3D &amp;rect, cv::Mat image)</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a3ebd8509c952e6e108c0dc6e354a7dd6">depthImage</a>() const </td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a454e078766eee5eb47358dd558838b9c">depthProcessingPipeline</a>() const </td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a518227ff2885f7b2797fe5bcc2fa78a1">drawRegionOfInterest</a>(const AMath::Rectangle3D &amp;rect, cv::Mat &amp;image, const cv::Scalar &amp;color)</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a3dbf6f7915f7447fcc0ada096621854d">drawRegionOfInterestWidthAndHeightAsPixels</a>(const QVector3D &amp;center, const float width, const float height, cv::Mat &amp;image, const cv::Scalar &amp;color)</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a11e1057090a642bd4dcf0b36b969da2c">drawRegionOfInterestWitdhAndHeightAsPixels</a>(const AMath::Rectangle3D &amp;rect, cv::Mat image, const cv::Scalar &amp;color)</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#aab3e4218c1f9c587e11505fb7a817ad3">HighLevelProcessingPipeline</a>(KinectPtr &amp;kinect, LowLevelProcessingPipeline *rbgProcessingPipeline, DepthProcessingPipeline *depthProcessingPipeline, QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a8975ebbddededbe8ab7b179ae6950ed4">m_depthProcessingPipeline</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a83f97f610aeec4364c55c2ef5c6d8662">m_depthSize</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a536629a6d22b49827322449f21ffd2c0">m_kinect</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a19ac0c0fe681074915baf34148ac99fc">m_movementAnalyzer</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a0467caa4dfc8c89d7db12bcb6eebc4b4">m_rgbProcessingPipeline</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#af6197cabcb6739b487e328e1ae658c75">m_rgbSize</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#ac0f7dc5d8e5c0d597b2297a145840684">m_sizeAnalyzer</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a7bc872810bb0998af439790663e29da3">m_skeletonAnalyzer</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#ab02ef16b56729184d0f498007b1047c5">m_skeletons</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a84b053517f531dfb72d89adf35acf5c7">movementAnalyzer</a>() const </td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#afa9571c360ed5cd4aabaa676f47e8f99">mp_depthData</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#ac8835768df7d8ed0e332afe299539a75">mp_depthScrennshot</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a9d9f79d84e76d8bc0cdcf307551ef2da">mp_rgbData</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#aa38772cc6b8223338d127872ec79c85c">mp_rgbScreenshot</a></td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a758944f4026ebe6b309f93694156e048">process</a>(const unsigned int timestamp)</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a09db4fa46842d9c4ea55915e07250646">processV</a>(const unsigned int timestamp)=0</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a9e673048f460b2d9e9311e46c1925a99">rgbImage</a>() const </td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a9112c15652b82597475a0ac76a8d213d">rgbProcessingPipeline</a>() const </td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a30156ad5622b82a8e9088cf07f393f1f">saveHeadHistograms</a>()</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a8c078a3e3be8c8fa4e4325bddb81afa8">sizeAnalyzer</a>() const </td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a6f9cb972baea06d835e0d74082f35997">skeletonAnalyzer</a>() const </td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a7a398cfcbff09e3e984f0e7a2def3244">skeletonData</a>() const </td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00021.html#a30669218ef47df5fd2b656a8ec5f87b8">takeScreenShot</a>()</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00021.html#a12782581efb7b51aa67c698f233725b3">~HighLevelProcessingPipeline</a>()</td><td class="entry"><a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

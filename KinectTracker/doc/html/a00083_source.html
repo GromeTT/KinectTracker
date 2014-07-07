@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Macros.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Dialogs/inc/KinectInitializeDialog.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,29 +102,47 @@ $(document).ready(function(){initNavTree('a00083_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Macros.h</div>  </div>
+<div class="title">KinectInitializeDialog.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00083.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MACROS_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MACROS_H</span></div>
+<a href="a00083.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef KINECTINITIALIZEDIALOG_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define KINECTINITIALIZEDIALOG_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="a00083.html#a4b8b2bed986c06c207ebac140ba65a7a">    4</a></span>&#160;<span class="preprocessor">#define SAFE_DELETE( x ) \</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">{                        \</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">    if ( x )             \</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">    {                    \</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">        delete x;        \</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">        x = nullptr;     \</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    }                    \</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">}                        \</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif // MACROS_H</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QDialog&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="a00028.html">Kinect</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>Ui {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="a00029.html">KinectInitializeDialog</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="a00029.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00029.html">KinectInitializeDialog</a> : <span class="keyword">public</span> QDialog</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00029.html#a5b562f825b336c713b878740963778ba">KinectInitializeDialog</a>( QSharedPointer&lt;Kinect&gt; kinect,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                     QWidget *parent = 0 );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="a00029.html#ad6728a188de665be594a4496da47f1cf">~KinectInitializeDialog</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a00029.html#a7cee097d014aa0ff801139ea013c1bb0">   21</a></span>&#160;    Ui::KinectInitializeDialog*     <a class="code" href="a00029.html#a7cee097d014aa0ff801139ea013c1bb0">ui</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00029.html#a0fa552efafad4fec8c1fd9a1ed68c71b">   22</a></span>&#160;    QSharedPointer&lt;Kinect&gt;          <a class="code" href="a00029.html#a0fa552efafad4fec8c1fd9a1ed68c71b">m_kinect</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif // KINECTINITIALIZEDIALOG_H</span></div>
+<div class="ttc" id="a00029_html_a0fa552efafad4fec8c1fd9a1ed68c71b"><div class="ttname"><a href="a00029.html#a0fa552efafad4fec8c1fd9a1ed68c71b">KinectInitializeDialog::m_kinect</a></div><div class="ttdeci">QSharedPointer&lt; Kinect &gt; m_kinect</div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.h:22</div></div>
+<div class="ttc" id="a00029_html_ad6728a188de665be594a4496da47f1cf"><div class="ttname"><a href="a00029.html#ad6728a188de665be594a4496da47f1cf">KinectInitializeDialog::~KinectInitializeDialog</a></div><div class="ttdeci">~KinectInitializeDialog()</div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.cpp:20</div></div>
+<div class="ttc" id="a00029_html"><div class="ttname"><a href="a00029.html">KinectInitializeDialog</a></div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.h:12</div></div>
+<div class="ttc" id="a00029_html_a7cee097d014aa0ff801139ea013c1bb0"><div class="ttname"><a href="a00029.html#a7cee097d014aa0ff801139ea013c1bb0">KinectInitializeDialog::ui</a></div><div class="ttdeci">Ui::KinectInitializeDialog * ui</div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.h:21</div></div>
+<div class="ttc" id="a00029_html_a5b562f825b336c713b878740963778ba"><div class="ttname"><a href="a00029.html#a5b562f825b336c713b878740963778ba">KinectInitializeDialog::KinectInitializeDialog</a></div><div class="ttdeci">KinectInitializeDialog(QSharedPointer&lt; Kinect &gt; kinect, QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.cpp:6</div></div>
+<div class="ttc" id="a00028_html"><div class="ttname"><a href="a00028.html">Kinect</a></div><div class="ttdoc">Kinect is a wrapper for the Microsoft kinect sensor. </div><div class="ttdef"><b>Definition:</b> Kinect.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00083.html">Macros.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_490510a59dc7b1be38fa795e8a4028e0.html">Dialogs</a></li><li class="navelem"><a class="el" href="dir_40f20fd327d29f33b0dd300a907140f2.html">inc</a></li><li class="navelem"><a class="el" href="a00083.html">KinectInitializeDialog.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

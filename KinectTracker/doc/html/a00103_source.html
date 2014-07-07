@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SkeletonRenderObject.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/OpenGL/inc/SkeletonRenderObject.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,17 +108,17 @@ $(document).ready(function(){initNavTree('a00103_source.html','');});
 <a href="a00103.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SKELETONRENDEROBJECT_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SKELETONRENDEROBJECT_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00093.html">RenderObjectInterface.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00102.html">SkeletonData.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00102.html">RenderObjectInterface.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../../Kinect/inc/SkeletonData.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QOpenGLVertexArrayObject&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QOpenGLBuffer&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00103.html#ab494067ab3de3d56c38a5a4288b44afb">    9</a></span>&#160;<span class="keyword">typedef</span> QVector&lt;unsigned int&gt; <a class="code" href="a00103.html#ab494067ab3de3d56c38a5a4288b44afb">Indices</a>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span>QOpenGLShaderProgram;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="a00057.html">Vertex</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="a00059.html">Vertex</a>;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00049.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00049.html">SkeletonRenderObject</a> : <span class="keyword">public</span> <a class="code" href="a00039.html">RenderObjectInterface</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00049.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00049.html">SkeletonRenderObject</a> : <span class="keyword">public</span> <a class="code" href="a00041.html">RenderObjectInterface</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="a00049.html#a9307014f07afff49cc316f2e927759e1">SkeletonRenderObject</a>();</div>
@@ -139,10 +139,10 @@ $(document).ready(function(){initNavTree('a00103_source.html','');});
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif // SKELETONRENDEROBJECT_H</span></div>
-<div class="ttc" id="a00093_html"><div class="ttname"><a href="a00093.html">RenderObjectInterface.h</a></div></div>
-<div class="ttc" id="a00039_html"><div class="ttname"><a href="a00039.html">RenderObjectInterface</a></div><div class="ttdef"><b>Definition:</b> RenderObjectInterface.h:8</div></div>
 <div class="ttc" id="a00049_html_afaa15b57644da827b3db1da34d6f3ee7"><div class="ttname"><a href="a00049.html#afaa15b57644da827b3db1da34d6f3ee7">SkeletonRenderObject::m_vao</a></div><div class="ttdeci">QOpenGLVertexArrayObject m_vao</div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.h:27</div></div>
 <div class="ttc" id="a00049_html_aa96f28fc0bfd9fa81c6f7b4b38fac788"><div class="ttname"><a href="a00049.html#aa96f28fc0bfd9fa81c6f7b4b38fac788">SkeletonRenderObject::m_lineIndexBuffer</a></div><div class="ttdeci">QOpenGLBuffer m_lineIndexBuffer</div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.h:30</div></div>
+<div class="ttc" id="a00059_html"><div class="ttname"><a href="a00059.html">Vertex</a></div><div class="ttdef"><b>Definition:</b> Vertex.h:6</div></div>
+<div class="ttc" id="a00041_html"><div class="ttname"><a href="a00041.html">RenderObjectInterface</a></div><div class="ttdef"><b>Definition:</b> RenderObjectInterface.h:8</div></div>
 <div class="ttc" id="a00049_html_a9307014f07afff49cc316f2e927759e1"><div class="ttname"><a href="a00049.html#a9307014f07afff49cc316f2e927759e1">SkeletonRenderObject::SkeletonRenderObject</a></div><div class="ttdeci">SkeletonRenderObject()</div><div class="ttdoc">SkeletonRenderObject::SkeletonRenderObject Constructs an SkeletonRenderObject with no vertex data...</div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.cpp:12</div></div>
 <div class="ttc" id="a00049_html_a415a0614316e53787f6687fcebbd72e0"><div class="ttname"><a href="a00049.html#a415a0614316e53787f6687fcebbd72e0">SkeletonRenderObject::updateData</a></div><div class="ttdeci">void updateData(const SkeletonData *data)</div><div class="ttdoc">SkeletonRenderObject::updateData Updates the vertex buffer with data. </div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.cpp:87</div></div>
 <div class="ttc" id="a00049_html_a13e41d2faded80144f7271db38245782"><div class="ttname"><a href="a00049.html#a13e41d2faded80144f7271db38245782">SkeletonRenderObject::setShaderProgramm</a></div><div class="ttdeci">void setShaderProgramm(QOpenGLShaderProgram *program)</div><div class="ttdoc">SkeletonRenderObject::setShaderProgramm Set the shaderprogram to program. </div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.cpp:99</div></div>
@@ -150,19 +150,18 @@ $(document).ready(function(){initNavTree('a00103_source.html','');});
 <div class="ttc" id="a00049_html"><div class="ttname"><a href="a00049.html">SkeletonRenderObject</a></div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.h:14</div></div>
 <div class="ttc" id="a00049_html_a2cd26bc06a703c4eea4c7d805c799903"><div class="ttname"><a href="a00049.html#a2cd26bc06a703c4eea4c7d805c799903">SkeletonRenderObject::~SkeletonRenderObject</a></div><div class="ttdeci">~SkeletonRenderObject()</div><div class="ttdoc">SkeletonRenderObject::~SkeletonRenderObject Destroyes the object. </div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.cpp:78</div></div>
 <div class="ttc" id="a00049_html_aa9155dc7affff14df61fa4377c41ef90"><div class="ttname"><a href="a00049.html#aa9155dc7affff14df61fa4377c41ef90">SkeletonRenderObject::renderV</a></div><div class="ttdeci">virtual void renderV(const QMatrix4x4 &amp;projection, const QMatrix4x4 &amp;view)</div><div class="ttdoc">SkeletonRenderObject::renderV Renders the object, if visible is set to true. </div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.cpp:117</div></div>
-<div class="ttc" id="a00057_html"><div class="ttname"><a href="a00057.html">Vertex</a></div><div class="ttdef"><b>Definition:</b> Vertex.h:6</div></div>
 <div class="ttc" id="a00049_html_adffa2d6df06a51c8f3434f627e0ffe38"><div class="ttname"><a href="a00049.html#adffa2d6df06a51c8f3434f627e0ffe38">SkeletonRenderObject::mp_shaderProgram</a></div><div class="ttdeci">QOpenGLShaderProgram * mp_shaderProgram</div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.h:28</div></div>
 <div class="ttc" id="a00103_html_ab494067ab3de3d56c38a5a4288b44afb"><div class="ttname"><a href="a00103.html#ab494067ab3de3d56c38a5a4288b44afb">Indices</a></div><div class="ttdeci">QVector&lt; unsigned int &gt; Indices</div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.h:9</div></div>
 <div class="ttc" id="a00049_html_aba847b861719a19e48513d48c34faf91"><div class="ttname"><a href="a00049.html#aba847b861719a19e48513d48c34faf91">SkeletonRenderObject::m_vertexBuffer</a></div><div class="ttdeci">QOpenGLBuffer m_vertexBuffer</div><div class="ttdef"><b>Definition:</b> SkeletonRenderObject.h:29</div></div>
-<div class="ttc" id="a00102_html"><div class="ttname"><a href="a00102.html">SkeletonData.h</a></div></div>
+<div class="ttc" id="a00102_html"><div class="ttname"><a href="a00102.html">RenderObjectInterface.h</a></div></div>
 <div class="ttc" id="a00048_html"><div class="ttname"><a href="a00048.html">SkeletonData</a></div><div class="ttdef"><b>Definition:</b> SkeletonData.h:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00103.html">SkeletonRenderObject.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_8c83c19a9b6a99c3d579766fba10a6da.html">OpenGL</a></li><li class="navelem"><a class="el" href="dir_422157eb8ded5070cf70eb32824fdbfa.html">inc</a></li><li class="navelem"><a class="el" href="a00103.html">SkeletonRenderObject.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

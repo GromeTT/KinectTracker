@@ -206,6 +206,7 @@ SkinColorExplicitDefinedSkinRegionDetectionPipeline::SkinColorExplicitDefinedSki
     : LowLevelProcessingPipeline( parent )
     , m_absoluteFrequency( 0 )
 {
+    setObjectName( "SkinColorExplicitDefinedSkinRegionDetectionPipeline" );
 }
 
 
@@ -246,9 +247,9 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
              r <= g ||
              g < b )
         {
-//            input.data[i]   = 0;
-//            input.data[i+1] = 0;
-//            input.data[i+2] = 0;
+            input.data[i]   = 0;
+            input.data[i+1] = 0;
+            input.data[i+2] = 0;
         }
         else
         {
@@ -284,7 +285,12 @@ int SkinColorExplicitDefinedSkinRegionDetectionPipeline::absoluteFrequency()
  */
 SkinColorHistogramDetectionPipeline::SkinColorHistogramDetectionPipeline( QObject* parent )
     : LowLevelProcessingPipeline( parent )
+    , m_initialized( false )
+    , m_threshold( 20 )
+    , m_nonZeroPixels( 0 )
+    , m_nonZeroRelativeFrequency( 0 )
 {
+    setObjectName( "SkinColorHistogramDetectionPipeline" );
     m_channels[0] = 0;
     m_channels[0] = 1;
     m_channels[0] = 2;
@@ -303,7 +309,6 @@ SkinColorHistogramDetectionPipeline::SkinColorHistogramDetectionPipeline( QObjec
  */
 SkinColorHistogramDetectionPipeline::~SkinColorHistogramDetectionPipeline()
 {
-
 }
 
 /*!
@@ -319,14 +324,130 @@ void SkinColorHistogramDetectionPipeline::process( cv::Mat& input )
     cv::imshow( "Backprojection", backprojection );
     cv::threshold( backprojection, backprojection, m_threshold, 255, cv::THRESH_BINARY );
     cv::imshow( "Threshold", backprojection );
+    m_nonZeroPixels = cv::countNonZero( backprojection );
+    emit nonZeroPixelsChanged();
+    m_nonZeroRelativeFrequency = (float) m_nonZeroPixels / (float)( input.rows + input.cols );
+    emit nonZeroRelativeFrequencyChanged();
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::setThreshold
+   Sets the threshold to \a threshold.
+ */
+void SkinColorHistogramDetectionPipeline::setThreshold( const float threshold )
+{
+    m_threshold = threshold;
+    emit thresholdChanged();
 }
 
 /*!
    \brief SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram
-   Computes a histogram of \a roi and saves it.
+   If \a rio is a valid cv::Mat, a histogram will be computed and stored in addtion to
+   a copy of \a roi. If this function succeeds the SkinColorHistogramDetectionPipeline
+   is \a initialized.
  */
-void SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram( cv::Mat& roi )
+bool SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram( const cv::Mat& roi )
 {
-    const float* range = { m_ranges };
-    cv::calcHist( &roi, 1, &m_channels[0], cv::Mat(), m_histogram, 1, &m_bins[0], &range, true, false );
+    if ( roi.rows == 0 || roi.cols == 0 )
+    {
+        return false;
+    }
+    else
+    {
+        roi.copyTo( m_roi );
+        const float* range = { m_ranges };
+        cv::calcHist( &roi, 1, &m_channels[0], cv::Mat(), m_histogram, 1, &m_bins[0], &range, true, false );
+        m_initialized = true;
+        cv::imshow( "Roi" , m_roi );
+        return true;
+    }
 }
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::channels
+   Returns a pointer to the first element of the channels array.
+ */
+int* SkinColorHistogramDetectionPipeline::channels() const
+{
+    return &m_channels[0];
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::bins
+   Returns a pointer to the first element of the bins array.
+ */
+int*SkinColorHistogramDetectionPipeline::bins() const
+{
+    return &m_bins[0];
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::ranges
+   Returns a pointer to the first element of the ranges array.
+ */
+float* SkinColorHistogramDetectionPipeline::ranges() const
+{
+    return m_ranges;
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::roi
+   Returns a cv::Mat with the region of interest.
+ */
+cv::Mat& SkinColorHistogramDetectionPipeline::roi() const
+{
+    return m_roi;
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::histogram
+    Returns the histogram of roi.
+ */
+cv::MatND&SkinColorHistogramDetectionPipeline::histogram() const
+{
+    return m_histogram;
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::initialized
+   Returns true, if the roi has been set.
+   Otherwise false.
+ */
+bool SkinColorHistogramDetectionPipeline::initialized() const
+{
+    return m_initialized;
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::threshold
+   Returns the threshold.
+ */
+double SkinColorHistogramDetectionPipeline::threshold() const
+{
+    return m_threshold;
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::nonZeroPixels
+   Returns the number of pixels which are not zero in the backprojection.
+ */
+int SkinColorHistogramDetectionPipeline::nonZeroPixels() const
+{
+    return m_nonZeroPixels;
+}
+
+/*!
+   \brief SkinColorHistogramDetectionPipeline::nonZeroRelativeFrequency
+   Returns the relative freuqency of non zero pixels in the backprojection.
+ */
+float SkinColorHistogramDetectionPipeline::nonZeroRelativeFrequency() const
+{
+    return m_nonZeroRelativeFrequency;
+}
+
+void SkinColorHistogramDetectionPipeline::reset()
+{
+    m_initialized = false;
+}
+
+

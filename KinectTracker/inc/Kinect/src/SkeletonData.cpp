@@ -150,11 +150,12 @@ int SkeletonData::numberOfTrackedPoints() const
    2. Spine
    3. ShoulderCenter
  */
-bool SkeletonData::areMajorPointsTracked() const
+bool SkeletonData::majorPointsTracked() const
 {
     if ( m_jointTrackState.at( static_cast<int>( Joints::Hip ) ) == TrackState::Tracked &&
          m_jointTrackState.at( static_cast<int>( Joints::Spine ) ) == TrackState::Tracked &&
-         m_jointTrackState.at( static_cast<int>( Joints::ShoulderCenter) ) == TrackState::Tracked )
+         m_jointTrackState.at( static_cast<int>( Joints::ShoulderCenter) ) == TrackState::Tracked &&
+         m_jointTrackState.at( static_cast<int>( Joints::Head ) ) == TrackState::Tracked )
     {
         return true;
     }
@@ -162,6 +163,23 @@ bool SkeletonData::areMajorPointsTracked() const
     {
         return false;
     }
+}
+
+/*!
+   \brief SkeletonData::allPointsTracked
+   Retruns true, if all joints are tracked.
+ */
+bool SkeletonData::allPointsTracked() const
+{
+    bool allPointsTracked = true;
+    for ( int i = 0; i < m_joints.count(); ++i )
+    {
+        if ( m_jointTrackState.at( i ) != TrackState::Tracked )
+        {
+            return false;
+        }
+    }
+    return allPointsTracked;
 }
 
 void SkeletonData::initialize()

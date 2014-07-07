@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/KinectInitializeDialog.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Dialogs/inc/ImageAnalysisDialog.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,47 +102,70 @@ $(document).ready(function(){initNavTree('a00082_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">KinectInitializeDialog.h</div>  </div>
+<div class="title">ImageAnalysisDialog.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00082.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef KINECTINITIALIZEDIALOG_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define KINECTINITIALIZEDIALOG_H</span></div>
+<a href="a00082.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IMAGEANALYSISDIALOG_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IMAGEANALYSISDIALOG_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QDialog&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="a00027.html">Kinect</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>Ui {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="a00028.html">KinectInitializeDialog</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="a00028.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00028.html">KinectInitializeDialog</a> : <span class="keyword">public</span> QDialog</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00028.html#a5b562f825b336c713b878740963778ba">KinectInitializeDialog</a>( QSharedPointer&lt;Kinect&gt; kinect,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                     QWidget *parent = 0 );</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="a00028.html#ad6728a188de665be594a4496da47f1cf">~KinectInitializeDialog</a>();</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../../ProcessingPipelines/inc/LowLevelProcessingPipeline.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QDialog&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDir&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00170.html">    9</a></span>&#160;<span class="keyword">namespace </span>Ui</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">class </span><a class="code" href="a00025.html">ImageAnalysisDialog</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00025.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00025.html">ImageAnalysisDialog</a> : <span class="keyword">public</span> QDialog</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="a00025.html#a3ba50c7963efa45d89341ee554a724de">ImageAnalysisDialog</a>( QWidget* parent = <span class="keyword">nullptr</span> );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="a00025.html#a7075e1d9831977a68a8686375772e349">~ImageAnalysisDialog</a>();</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a00028.html#a7cee097d014aa0ff801139ea013c1bb0">   21</a></span>&#160;    Ui::KinectInitializeDialog*     <a class="code" href="a00028.html#a7cee097d014aa0ff801139ea013c1bb0">ui</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00028.html#a0fa552efafad4fec8c1fd9a1ed68c71b">   22</a></span>&#160;    QSharedPointer&lt;Kinect&gt;          <a class="code" href="a00028.html#a0fa552efafad4fec8c1fd9a1ed68c71b">m_kinect</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif // KINECTINITIALIZEDIALOG_H</span></div>
-<div class="ttc" id="a00028_html_a0fa552efafad4fec8c1fd9a1ed68c71b"><div class="ttname"><a href="a00028.html#a0fa552efafad4fec8c1fd9a1ed68c71b">KinectInitializeDialog::m_kinect</a></div><div class="ttdeci">QSharedPointer&lt; Kinect &gt; m_kinect</div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.h:22</div></div>
-<div class="ttc" id="a00027_html"><div class="ttname"><a href="a00027.html">Kinect</a></div><div class="ttdoc">Kinect is a wrapper for the Microsoft kinect sensor. </div><div class="ttdef"><b>Definition:</b> Kinect.h:18</div></div>
-<div class="ttc" id="a00028_html_ad6728a188de665be594a4496da47f1cf"><div class="ttname"><a href="a00028.html#ad6728a188de665be594a4496da47f1cf">KinectInitializeDialog::~KinectInitializeDialog</a></div><div class="ttdeci">~KinectInitializeDialog()</div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.cpp:20</div></div>
-<div class="ttc" id="a00028_html_a5b562f825b336c713b878740963778ba"><div class="ttname"><a href="a00028.html#a5b562f825b336c713b878740963778ba">KinectInitializeDialog::KinectInitializeDialog</a></div><div class="ttdeci">KinectInitializeDialog(QSharedPointer&lt; Kinect &gt; kinect, QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.cpp:6</div></div>
-<div class="ttc" id="a00028_html_a7cee097d014aa0ff801139ea013c1bb0"><div class="ttname"><a href="a00028.html#a7cee097d014aa0ff801139ea013c1bb0">KinectInitializeDialog::ui</a></div><div class="ttdeci">Ui::KinectInitializeDialog * ui</div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.h:21</div></div>
-<div class="ttc" id="a00028_html"><div class="ttname"><a href="a00028.html">KinectInitializeDialog</a></div><div class="ttdef"><b>Definition:</b> KinectInitializeDialog.h:12</div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00025.html#a3655fe60386ae25cf68c3c0ea453ee9f">loadImage</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00025.html#aaf0786b6e952a4c30adf12adc4402769">saveROI</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00025.html#a8f161a413c177ff65f864ebbe2148b51">computeBackprojection</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00025.html#a941cc00509db0fa2e6e2ce8c54a6e3c5">showSkinColor</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    QString <a class="code" href="a00025.html#a2e3fd7ccd21b9ffb53eb7dfd314000b2">loadImageFromLastDirectory</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a00025.html#a9d2168b8f07feb17fc932314b9121627">   27</a></span>&#160;    Ui::ImageAnalysisDialog*                            <a class="code" href="a00025.html#a9d2168b8f07feb17fc932314b9121627">ui</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00025.html#a4a362ba4fc1983b6a3abd29686ead319">   28</a></span>&#160;    QDir                                                <a class="code" href="a00025.html#a4a362ba4fc1983b6a3abd29686ead319">m_lastDirectory</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00025.html#aa478409d18ae40b2f1d3a6ea8159950c">   29</a></span>&#160;    cv::Mat                                             <a class="code" href="a00025.html#aa478409d18ae40b2f1d3a6ea8159950c">m_imageBGR</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00025.html#af86030038ddae4317b6695b67b82233e">   30</a></span>&#160;    cv::Mat                                             <a class="code" href="a00025.html#af86030038ddae4317b6695b67b82233e">m_imageRGB</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00025.html#aff41155227b784d45187358f852082e6">   31</a></span>&#160;    cv::Mat                                             <a class="code" href="a00025.html#aff41155227b784d45187358f852082e6">m_skinColorImage</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00025.html#af1a1688e93960d86eaf48a3b300f1881">   32</a></span>&#160;    <a class="code" href="a00053.html">SkinColorHistogramDetectionPipeline</a>                 <a class="code" href="a00025.html#af1a1688e93960d86eaf48a3b300f1881">m_skinColorDetectionPipeline</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00025.html#a6775d38fd28bdc84956dc822ff420158">   33</a></span>&#160;    <a class="code" href="a00052.html">SkinColorExplicitDefinedSkinRegionDetectionPipeline</a> <a class="code" href="a00025.html#a6775d38fd28bdc84956dc822ff420158">m_skiColorDefinedRegions</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif // IMAGEANALYSISDIALOG_H</span></div>
+<div class="ttc" id="a00025_html_af86030038ddae4317b6695b67b82233e"><div class="ttname"><a href="a00025.html#af86030038ddae4317b6695b67b82233e">ImageAnalysisDialog::m_imageRGB</a></div><div class="ttdeci">cv::Mat m_imageRGB</div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.h:30</div></div>
+<div class="ttc" id="a00025_html_aa478409d18ae40b2f1d3a6ea8159950c"><div class="ttname"><a href="a00025.html#aa478409d18ae40b2f1d3a6ea8159950c">ImageAnalysisDialog::m_imageBGR</a></div><div class="ttdeci">cv::Mat m_imageBGR</div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.h:29</div></div>
+<div class="ttc" id="a00025_html_af1a1688e93960d86eaf48a3b300f1881"><div class="ttname"><a href="a00025.html#af1a1688e93960d86eaf48a3b300f1881">ImageAnalysisDialog::m_skinColorDetectionPipeline</a></div><div class="ttdeci">SkinColorHistogramDetectionPipeline m_skinColorDetectionPipeline</div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.h:32</div></div>
+<div class="ttc" id="a00025_html_a4a362ba4fc1983b6a3abd29686ead319"><div class="ttname"><a href="a00025.html#a4a362ba4fc1983b6a3abd29686ead319">ImageAnalysisDialog::m_lastDirectory</a></div><div class="ttdeci">QDir m_lastDirectory</div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.h:28</div></div>
+<div class="ttc" id="a00025_html_a9d2168b8f07feb17fc932314b9121627"><div class="ttname"><a href="a00025.html#a9d2168b8f07feb17fc932314b9121627">ImageAnalysisDialog::ui</a></div><div class="ttdeci">Ui::ImageAnalysisDialog * ui</div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.h:27</div></div>
+<div class="ttc" id="a00025_html_a8f161a413c177ff65f864ebbe2148b51"><div class="ttname"><a href="a00025.html#a8f161a413c177ff65f864ebbe2148b51">ImageAnalysisDialog::computeBackprojection</a></div><div class="ttdeci">void computeBackprojection()</div><div class="ttdoc">ImageAnalysisDialog::computeHistogram Computes the histogram of the rectangle drawn by the user if th...</div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.cpp:79</div></div>
+<div class="ttc" id="a00025_html_a2e3fd7ccd21b9ffb53eb7dfd314000b2"><div class="ttname"><a href="a00025.html#a2e3fd7ccd21b9ffb53eb7dfd314000b2">ImageAnalysisDialog::loadImageFromLastDirectory</a></div><div class="ttdeci">QString loadImageFromLastDirectory()</div><div class="ttdoc">ImageAnalysisDialog::loadImageFromLastDirectory Loads an image and saves the path to it...</div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.cpp:110</div></div>
+<div class="ttc" id="a00025_html_a6775d38fd28bdc84956dc822ff420158"><div class="ttname"><a href="a00025.html#a6775d38fd28bdc84956dc822ff420158">ImageAnalysisDialog::m_skiColorDefinedRegions</a></div><div class="ttdeci">SkinColorExplicitDefinedSkinRegionDetectionPipeline m_skiColorDefinedRegions</div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.h:33</div></div>
+<div class="ttc" id="a00025_html"><div class="ttname"><a href="a00025.html">ImageAnalysisDialog</a></div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.h:14</div></div>
+<div class="ttc" id="a00052_html"><div class="ttname"><a href="a00052.html">SkinColorExplicitDefinedSkinRegionDetectionPipeline</a></div><div class="ttdef"><b>Definition:</b> LowLevelProcessingPipeline.h:155</div></div>
+<div class="ttc" id="a00025_html_a3655fe60386ae25cf68c3c0ea453ee9f"><div class="ttname"><a href="a00025.html#a3655fe60386ae25cf68c3c0ea453ee9f">ImageAnalysisDialog::loadImage</a></div><div class="ttdeci">void loadImage()</div><div class="ttdoc">ImageAnalysisDialog::loadImage Opens an image. </div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.cpp:39</div></div>
+<div class="ttc" id="a00025_html_a3ba50c7963efa45d89341ee554a724de"><div class="ttname"><a href="a00025.html#a3ba50c7963efa45d89341ee554a724de">ImageAnalysisDialog::ImageAnalysisDialog</a></div><div class="ttdeci">ImageAnalysisDialog(QWidget *parent=nullptr)</div><div class="ttdoc">ImageAnalysisDialog::ImageAnalysisDialog Standardconstructor. </div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.cpp:14</div></div>
+<div class="ttc" id="a00025_html_a7075e1d9831977a68a8686375772e349"><div class="ttname"><a href="a00025.html#a7075e1d9831977a68a8686375772e349">ImageAnalysisDialog::~ImageAnalysisDialog</a></div><div class="ttdeci">~ImageAnalysisDialog()</div><div class="ttdoc">ImageAnalysisDialog::~ImageAnalysisDialog Destroyes the object. </div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.cpp:31</div></div>
+<div class="ttc" id="a00025_html_aaf0786b6e952a4c30adf12adc4402769"><div class="ttname"><a href="a00025.html#aaf0786b6e952a4c30adf12adc4402769">ImageAnalysisDialog::saveROI</a></div><div class="ttdeci">void saveROI()</div><div class="ttdoc">ImageAnalysisDialog::saveROI Saves the rectangular region made by the user. </div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.cpp:59</div></div>
+<div class="ttc" id="a00025_html_a941cc00509db0fa2e6e2ce8c54a6e3c5"><div class="ttname"><a href="a00025.html#a941cc00509db0fa2e6e2ce8c54a6e3c5">ImageAnalysisDialog::showSkinColor</a></div><div class="ttdeci">void showSkinColor()</div><div class="ttdoc">ImageAnalysisDialog::showSkinColor Takes a copy of the bgr image and shows the pixels which have skin...</div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.cpp:100</div></div>
+<div class="ttc" id="a00025_html_aff41155227b784d45187358f852082e6"><div class="ttname"><a href="a00025.html#aff41155227b784d45187358f852082e6">ImageAnalysisDialog::m_skinColorImage</a></div><div class="ttdeci">cv::Mat m_skinColorImage</div><div class="ttdef"><b>Definition:</b> ImageAnalysisDialog.h:31</div></div>
+<div class="ttc" id="a00053_html"><div class="ttname"><a href="a00053.html">SkinColorHistogramDetectionPipeline</a></div><div class="ttdef"><b>Definition:</b> LowLevelProcessingPipeline.h:177</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00082.html">KinectInitializeDialog.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_490510a59dc7b1be38fa795e8a4028e0.html">Dialogs</a></li><li class="navelem"><a class="el" href="dir_40f20fd327d29f33b0dd300a907140f2.html">inc</a></li><li class="navelem"><a class="el" href="a00082.html">ImageAnalysisDialog.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -89,3 +89,8 @@ void BBMovementAnalyzer::anaylzeV( const SkeletonDataPtr skeleton ,
         addBoundingGeometry( bb, timestamp );
     }
 }
+
+void BBMovementAnalyzer::resetV()
+{
+
+}

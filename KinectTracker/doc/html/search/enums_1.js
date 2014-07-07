@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['joints',['Joints',['../a00048.html#af34e460c0da2f42218294f80e7070b28',1,'SkeletonData']]]
+  ['error',['Error',['../a00028.html#a260ceef1571ff51ff8571b1951782390',1,'Kinect']]]
 ];

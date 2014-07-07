@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: ImageAnalyzer Class Reference</title>
+<title>KinectTracker: ImageAnalysisDialog Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,76 +104,59 @@ $(document).ready(function(){initNavTree('a00025.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00185.html">List of all members</a>  </div>
+<a href="a00195.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ImageAnalyzer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">ImageAnalysisDialog Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00078_source.html">ImageAnalyzer.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00082_source.html">ImageAnalysisDialog.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for ImageAnalyzer:</div>
+Inheritance diagram for ImageAnalysisDialog:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00025.png" usemap="#ImageAnalyzer_map" alt=""/>
-  <map id="ImageAnalyzer_map" name="ImageAnalyzer_map">
-<area href="a00040.html" alt="RGBAnalyzer" shape="rect" coords="0,112,96,136"/>
+  <img src="a00025.png" usemap="#ImageAnalysisDialog_map" alt=""/>
+  <map id="ImageAnalysisDialog_map" name="ImageAnalysisDialog_map">
 </map>
  </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad04ac23137412987314f1d1af0523a1b"></a>
+<a class="anchor" id="a3ba50c7963efa45d89341ee554a724de"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ImageAnalyzer::ImageAnalyzer </td>
+          <td class="memname">ImageAnalysisDialog::ImageAnalysisDialog </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00035.html">ProcessingPipeline</a> *&#160;</td>
-          <td class="paramname"><em>pipeline</em> = <code>nullptr</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
           <td></td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00025.html#a3ba50c7963efa45d89341ee554a724de" title="ImageAnalysisDialog::ImageAnalysisDialog Standardconstructor. ">ImageAnalysisDialog::ImageAnalysisDialog</a> Standardconstructor. </p>
+
 </div>
 </div>
-<a class="anchor" id="a55d69408e1ca725d957c3e8780d435ff"></a>
+<a class="anchor" id="a7075e1d9831977a68a8686375772e349"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ImageAnalyzer::~ImageAnalyzer </td>
+          <td class="memname">ImageAnalysisDialog::~ImageAnalysisDialog </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00025.html#a55d69408e1ca725d957c3e8780d435ff" title="ImageAnalyzer::~ImageAnalyzer. ">ImageAnalyzer::~ImageAnalyzer</a>. </p>
+<p><a class="el" href="a00025.html#a7075e1d9831977a68a8686375772e349" title="ImageAnalysisDialog::~ImageAnalysisDialog Destroyes the object. ">ImageAnalysisDialog::~ImageAnalysisDialog</a> Destroyes the object. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="afec5cb16c58b2825fe43bc574fc78595"></a>
+<a class="anchor" id="a8f161a413c177ff65f864ebbe2148b51"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -181,56 +164,24 @@ Inheritance diagram for ImageAnalyzer:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ImageAnalyzer::analyze </td>
-          <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00040.html#a7999eb93181fa90de573616ec26c0a30">RGBAnalyzer</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5d6e87f2e55923dcf0d22ea2aa5204f8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QObject * ImageAnalyzer::getObjectByName </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a382a963300a4c11694aa08d929f6f81a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00035.html">ProcessingPipeline</a> * ImageAnalyzer::getProcessingPipeline </td>
+          <td class="memname">void ImageAnalysisDialog::computeBackprojection </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>ImageAnalysisDialog::computeHistogram Computes the histogram of the rectangle drawn by the user if this area is valid. </p>
 
 </div>
 </div>
-<a class="anchor" id="a2cbc0a1747b4d7e757b6e7cd94391d70"></a>
+<a class="anchor" id="a3655fe60386ae25cf68c3c0ea453ee9f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -238,24 +189,100 @@ Inheritance diagram for ImageAnalyzer:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ImageAnalyzer::setProcessingPipeline </td>
+          <td class="memname">void ImageAnalysisDialog::loadImage </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00089.html#a075f0fdffe851c8f611423ed149b747c">ProcessingPipelinePtr</a> &amp;&#160;</td>
-          <td class="paramname"><em>pipeline</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="a00025.html#a3655fe60386ae25cf68c3c0ea453ee9f" title="ImageAnalysisDialog::loadImage Opens an image. ">ImageAnalysisDialog::loadImage</a> Opens an image. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2e3fd7ccd21b9ffb53eb7dfd314000b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ImageAnalysisDialog::loadImageFromLastDirectory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00025.html#a2e3fd7ccd21b9ffb53eb7dfd314000b2" title="ImageAnalysisDialog::loadImageFromLastDirectory Loads an image and saves the path to it...">ImageAnalysisDialog::loadImageFromLastDirectory</a> Loads an image and saves the path to it, if the user doesn't quit. </p>
+
+</div>
+</div>
+<a class="anchor" id="aaf0786b6e952a4c30adf12adc4402769"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageAnalysisDialog::saveROI </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00025.html#aaf0786b6e952a4c30adf12adc4402769" title="ImageAnalysisDialog::saveROI Saves the rectangular region made by the user. ">ImageAnalysisDialog::saveROI</a> Saves the rectangular region made by the user. </p>
+
+</div>
+</div>
+<a class="anchor" id="a941cc00509db0fa2e6e2ce8c54a6e3c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageAnalysisDialog::showSkinColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00025.html#a941cc00509db0fa2e6e2ce8c54a6e3c5" title="ImageAnalysisDialog::showSkinColor Takes a copy of the bgr image and shows the pixels which have skin...">ImageAnalysisDialog::showSkinColor</a> Takes a copy of the bgr image and shows the pixels which have skin color. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aea03d52a9ff62b3c0b7a5e3021f13112"></a>
+<a class="anchor" id="aa478409d18ae40b2f1d3a6ea8159950c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -263,12 +290,132 @@ Inheritance diagram for ImageAnalyzer:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00089.html#a075f0fdffe851c8f611423ed149b747c">ProcessingPipelinePtr</a> ImageAnalyzer::mp_processingPipeline</td>
+          <td class="memname">cv::Mat ImageAnalysisDialog::m_imageBGR</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af86030038ddae4317b6695b67b82233e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ImageAnalysisDialog::m_imageRGB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4a362ba4fc1983b6a3abd29686ead319"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDir ImageAnalysisDialog::m_lastDirectory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6775d38fd28bdc84956dc822ff420158"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00052.html">SkinColorExplicitDefinedSkinRegionDetectionPipeline</a> ImageAnalysisDialog::m_skiColorDefinedRegions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1a1688e93960d86eaf48a3b300f1881"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00053.html">SkinColorHistogramDetectionPipeline</a> ImageAnalysisDialog::m_skinColorDetectionPipeline</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aff41155227b784d45187358f852082e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ImageAnalysisDialog::m_skinColorImage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9d2168b8f07feb17fc932314b9121627"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::ImageAnalysisDialog* ImageAnalysisDialog::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -276,16 +423,16 @@ Inheritance diagram for ImageAnalyzer:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00078_source.html">ImageAnalyzer.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00127.html">ImageAnalyzer.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Dialogs/inc/<a class="el" href="a00082_source.html">ImageAnalysisDialog.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Dialogs/src/<a class="el" href="a00084.html">ImageAnalysisDialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00025.html">ImageAnalyzer</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00025.html">ImageAnalysisDialog</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

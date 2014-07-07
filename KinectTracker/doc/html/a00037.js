@@ -1,8 +1,12 @@
 var a00037 =
 [
-    [ "QObjectTreeWidgetItem", "a00037.html#ac2798079c14f1942f4b071a6a3b05ea8", null ],
-    [ "~QObjectTreeWidgetItem", "a00037.html#ab8f274dd8563892725f9a0c4900a8f39", null ],
-    [ "getObject", "a00037.html#a752af42241f98999cc9d0364e565c4e6", null ],
-    [ "setObject", "a00037.html#a5cba0f8725d950443cb6a41d0a0762fc", null ],
-    [ "m_object", "a00037.html#ac6894e7909f1ee4fe5d958fb46488779", null ]
+    [ "PropertyBrowser", "a00037.html#ac5b29e3843c35e38646192229879bf85", null ],
+    [ "~PropertyBrowser", "a00037.html#ace847506a7bfc425da58050695248589", null ],
+    [ "PropertyBrowser", "a00037.html#ac5b29e3843c35e38646192229879bf85", null ],
+    [ "~PropertyBrowser", "a00037.html#ace847506a7bfc425da58050695248589", null ],
+    [ "setObject", "a00037.html#a754084a7249df03c12f4b8ad116e0355", null ],
+    [ "setObject", "a00037.html#a754084a7249df03c12f4b8ad116e0355", null ],
+    [ "mp_styledDelegate", "a00037.html#a8bb011242a4055aaade12ce3f98558b5", null ],
+    [ "mp_treeModel", "a00037.html#aee25d096154f8374aa3c4e90d6f6866e", null ],
+    [ "ui", "a00037.html#a5456810e7988f47bc7fe5dc4e73fc7c1", null ]
 ];

@@ -160,9 +160,12 @@ public:
 
     virtual void process( cv::Mat& input );
     int    absoluteFrequency();
+
 private:
     int   m_absoluteFrequency;
 };
+
+typedef QSharedPointer<SkinColorExplicitDefinedSkinRegionDetectionPipeline> SkinColorExplicitDefinedSkinRegionDetectionPipelinePtr;
 
 /**************************************************************************************************************************
  **************************************************************************************************************************
@@ -175,22 +178,59 @@ private:
 
 class SkinColorHistogramDetectionPipeline : public LowLevelProcessingPipeline
 {
+    Q_OBJECT
+
 public:
     SkinColorHistogramDetectionPipeline( QObject* parent = nullptr );
     virtual ~SkinColorHistogramDetectionPipeline();
 
     virtual void process( cv::Mat& input );
-    void         computeAndSaveROIHistogram( cv::Mat& roi );
+    void         setThreshold( const float threshold );
+
+    bool         computeAndSaveROIHistogram( const cv::Mat& roi );
+    int*         channels() const;
+    int*         bins() const;
+    float*       ranges() const;
+    cv::Mat&     roi() const;
+    cv::MatND&   histogram() const;
+    bool         initialized() const;
+    double       threshold() const;
+    int          nonZeroPixels() const;
+    float        nonZeroRelativeFrequency() const;
+    void         reset();
+
+signals:
+    void thresholdChanged();
+    void nonZeroPixelsChanged();
+    void nonZeroRelativeFrequencyChanged();
 
 private:
-    int       m_channels [3];
-    int       m_bins[3];
-    float     m_ranges[2];
-    double    m_threshold;
-    cv::Mat   m_roi;
-    cv::MatND m_histogram;
+    mutable int       m_channels[3];
+    mutable int       m_bins[3];
+    mutable float     m_ranges[2];
+    double            m_threshold;
+    mutable cv::Mat   m_roi;
+    mutable cv::MatND m_histogram;
+    bool              m_initialized;
+    int               m_nonZeroPixels;
+    float             m_nonZeroRelativeFrequency;
+
+private:
+    Q_PROPERTY( double threshold MEMBER m_threshold
+                READ threshold
+                WRITE setThreshold
+                NOTIFY thresholdChanged )
+
+    Q_PROPERTY( int nonZeroPixels
+                READ nonZeroPixels
+                NOTIFY nonZeroPixelsChanged )
+
+    Q_PROPERTY( float nonZeroRelativeFrequency
+                READ nonZeroRelativeFrequency
+                NOTIFY nonZeroRelativeFrequencyChanged )
 };
 
+typedef QSharedPointer<SkinColorHistogramDetectionPipeline> SkinColorHistogramDetectionPipelinePtr;
 
 /**************************************************************************************************************************
  **************************************************************************************************************************
@@ -202,6 +242,6 @@ private:
  **************************************************************************************************************************/
 
 typedef QSharedPointer<LowLevelProcessingPipeline> LowLevelProcessingPipelinePtr;
-typedef QSharedPointer<SkinColorExplicitDefinedSkinRegionDetectionPipeline> SkinColorExplicitDefinedSkinRegionDetectionPipelinePtr;
+
 
 #endif // PROCESSINGPIPELINE_H

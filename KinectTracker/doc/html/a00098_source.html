@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/SceneGraphWidget.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/OpenGL/inc/OpenGLWindow.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,85 +102,74 @@ $(document).ready(function(){initNavTree('a00098_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">SceneGraphWidget.h</div>  </div>
+<div class="title">OpenGLWindow.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00098.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SCENEGRAPHWIDGET_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SCENEGRAPHWIDGET_H</span></div>
+<a href="a00098.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OPENGLWINDOW_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define OPENGLWINDOW_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="a00038.html">RenderObject</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span>QTreeWidgetItem;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="a00039.html">RenderObjectInterface</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00098.html#aa55256830fe9d68749225fa8387ceb47">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00034.html">ProcessingComponent</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">typedef</span> QVector&lt;RenderObjectInterface*&gt; <a class="code" href="a00098.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>Ui {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="a00044.html">SceneGraphWidget</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00044.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00044.html">SceneGraphWidget</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWindow&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00094.html">BasicUsageScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="a00098.html#a9c6c46b152fbf088399207c75fc07902">    7</a></span>&#160;<span class="keyword">class </span>QOpenGLContext;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">typedef</span> QSharedPointer&lt;QOpenGLContext&gt; <a class="code" href="a00098.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="a00035.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00035.html">OpenGLWindow</a> : <span class="keyword">public</span> QWindow</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00035.html#a81b042bc42f2e3057c5eb30edf8029c6">OpenGLWindow</a>( QScreen* screen = 0);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="a00035.html#aa220b192c71871aab9100f4058a8d62d">~OpenGLWindow</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00035.html#ad5f75b29b792f0d4a3ce32bd2dd3fad8">init</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00035.html#a47a2d281de563101f985de2465b9e45b">   19</a></span>&#160;    <a class="code" href="a00094.html#a0fbb001be3d5b82303c35004c69efa2b">ScenePtr</a> <a class="code" href="a00035.html#a47a2d281de563101f985de2465b9e45b">getScene</a>() { <span class="keywordflow">return</span> <a class="code" href="a00035.html#a423de24503a21bcfe9c05c6ce4581c45">m_scene</a>; }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="a00044.html#a98d3fbaea1309c64ef9bbdb33d4ce293">SceneGraphWidget</a>( QWidget *parent = 0 );</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="a00044.html#aabbd06a608f50171d1341c3779bd198a">~SceneGraphWidget</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//    void addObject( QObject* object );</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00044.html#ae6efae163f8076c356fbc92e0f4e3a8a">addObject</a>( <span class="keyword">const</span> QObject* <span class="keywordtype">object</span> );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00044.html#ac99579ae7333e3a448f2a8caeab2e524">addObjects</a>( <span class="keyword">const</span> QList&lt;QObject*&gt;&amp; objects );</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00044.html#ac99579ae7333e3a448f2a8caeab2e524">addObjects</a>( <span class="keyword">const</span> <a class="code" href="a00061.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a>&amp; objects );</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00044.html#ac99579ae7333e3a448f2a8caeab2e524">addObjects</a>( <span class="keyword">const</span> QVector&lt;QObject*&gt;&amp; objects );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00044.html#ac99579ae7333e3a448f2a8caeab2e524">addObjects</a>( <span class="keyword">const</span> QVector&lt;ProcessingComponent*&gt;&amp; objects );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    QObject* <a class="code" href="a00044.html#a809ff9fc424ae67f27ed7fd10ff950da">getCurrentObject</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00035.html#a09f27a6f1628dadbd3c7ca3c1651ec59">resizeGL</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00035.html#a7ae488627e37254bbe1863c928781d83">paintGL</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00035.html#ae42079d2df46e3aa913e0ddfce3de023">updateScene</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00035.html#a03229f68dac57be079e18b6ef135ab46">makeContextCurrent</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="a00094.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a>&amp; <a class="code" href="a00035.html#a0798f49b14a35aa4d2ea5bc1d82a1bd7">getOpenGLContext</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00035.html#a69f3cfa0a95ca91f57d90d9484bd6c54">initializeGL</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00035.html#aafa1fdd10232a09b77db2395519e9882">keyPressEvent</a>( QKeyEvent* event );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00035.html#ab7514c6f73755094d5670765ec47a71c">keyReleaseEvent</a>( QKeyEvent* event );</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00044.html#ad1930663b6bca13cecdb405decf64a45">clearTreeWidget</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00044.html#adc38275224167b31c3839fed3fc56532">selectionHasChanged</a>( QTreeWidgetItem* curr,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                              QTreeWidgetItem* prev );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    QTreeWidgetItem* <a class="code" href="a00044.html#a7bd48f214b7500aa1f00862f0430ae8d">createItemFromObject</a>( <span class="keyword">const</span> QObject* <span class="keywordtype">object</span> );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    QTreeWidgetItem* <a class="code" href="a00044.html#a7bd48f214b7500aa1f00862f0430ae8d">createItemFromObject</a>( <span class="keyword">const</span> QObject* <span class="keywordtype">object</span>,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                           QTreeWidgetItem* parent );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    QTreeWidgetItem* <a class="code" href="a00044.html#a7bd48f214b7500aa1f00862f0430ae8d">createItemFromObject</a>( QObject* <span class="keywordtype">object</span> );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    QTreeWidgetItem* <a class="code" href="a00044.html#a7bd48f214b7500aa1f00862f0430ae8d">createItemFromObject</a>( QObject* <span class="keywordtype">object</span>,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                           QTreeWidgetItem* parent );</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00044.html#ac99579ae7333e3a448f2a8caeab2e524">addObjects</a>( <span class="keyword">const</span> QVector&lt;ProcessingComponent*&gt;&amp; objects,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                     QTreeWidgetItem* parent );</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;signals:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00044.html#aabc2f7df1ed84720e9e5128bfb85de5c">selectionChanged</a>( <span class="keyword">const</span> QString&amp; text );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a00044.html#a66da606d103d5f31f14cb1cc66af8c9d">   50</a></span>&#160;    Ui::SceneGraphWidget *<a class="code" href="a00044.html#a66da606d103d5f31f14cb1cc66af8c9d">ui</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif // SCENEGRAPHWIDGET_H</span></div>
-<div class="ttc" id="a00039_html"><div class="ttname"><a href="a00039.html">RenderObjectInterface</a></div><div class="ttdef"><b>Definition:</b> RenderObjectInterface.h:8</div></div>
-<div class="ttc" id="a00098_html_aa55256830fe9d68749225fa8387ceb47"><div class="ttname"><a href="a00098.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a></div><div class="ttdeci">QVector&lt; RenderObjectInterface * &gt; RenderObjects</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.h:9</div></div>
-<div class="ttc" id="a00044_html"><div class="ttname"><a href="a00044.html">SceneGraphWidget</a></div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.h:17</div></div>
-<div class="ttc" id="a00044_html_aabc2f7df1ed84720e9e5128bfb85de5c"><div class="ttname"><a href="a00044.html#aabc2f7df1ed84720e9e5128bfb85de5c">SceneGraphWidget::selectionChanged</a></div><div class="ttdeci">void selectionChanged(const QString &amp;text)</div></div>
-<div class="ttc" id="a00044_html_ad1930663b6bca13cecdb405decf64a45"><div class="ttname"><a href="a00044.html#ad1930663b6bca13cecdb405decf64a45">SceneGraphWidget::clearTreeWidget</a></div><div class="ttdeci">void clearTreeWidget()</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:89</div></div>
-<div class="ttc" id="a00061_html_aa55256830fe9d68749225fa8387ceb47"><div class="ttname"><a href="a00061.html#aa55256830fe9d68749225fa8387ceb47">RenderObjects</a></div><div class="ttdeci">QVector&lt; RenderObjectInterface * &gt; RenderObjects</div><div class="ttdef"><b>Definition:</b> BasicUsageScene.h:23</div></div>
-<div class="ttc" id="a00038_html"><div class="ttname"><a href="a00038.html">RenderObject</a></div><div class="ttdef"><b>Definition:</b> RenderObject.h:21</div></div>
-<div class="ttc" id="a00044_html_aabbd06a608f50171d1341c3779bd198a"><div class="ttname"><a href="a00044.html#aabbd06a608f50171d1341c3779bd198a">SceneGraphWidget::~SceneGraphWidget</a></div><div class="ttdeci">~SceneGraphWidget()</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:17</div></div>
-<div class="ttc" id="a00044_html_adc38275224167b31c3839fed3fc56532"><div class="ttname"><a href="a00044.html#adc38275224167b31c3839fed3fc56532">SceneGraphWidget::selectionHasChanged</a></div><div class="ttdeci">void selectionHasChanged(QTreeWidgetItem *curr, QTreeWidgetItem *prev)</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:101</div></div>
-<div class="ttc" id="a00044_html_a7bd48f214b7500aa1f00862f0430ae8d"><div class="ttname"><a href="a00044.html#a7bd48f214b7500aa1f00862f0430ae8d">SceneGraphWidget::createItemFromObject</a></div><div class="ttdeci">QTreeWidgetItem * createItemFromObject(const QObject *object)</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:112</div></div>
-<div class="ttc" id="a00034_html"><div class="ttname"><a href="a00034.html">ProcessingComponent</a></div><div class="ttdef"><b>Definition:</b> ProcessingComponent.h:7</div></div>
-<div class="ttc" id="a00044_html_a809ff9fc424ae67f27ed7fd10ff950da"><div class="ttname"><a href="a00044.html#a809ff9fc424ae67f27ed7fd10ff950da">SceneGraphWidget::getCurrentObject</a></div><div class="ttdeci">QObject * getCurrentObject() const </div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:76</div></div>
-<div class="ttc" id="a00044_html_a66da606d103d5f31f14cb1cc66af8c9d"><div class="ttname"><a href="a00044.html#a66da606d103d5f31f14cb1cc66af8c9d">SceneGraphWidget::ui</a></div><div class="ttdeci">Ui::SceneGraphWidget * ui</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.h:50</div></div>
-<div class="ttc" id="a00044_html_ae6efae163f8076c356fbc92e0f4e3a8a"><div class="ttname"><a href="a00044.html#ae6efae163f8076c356fbc92e0f4e3a8a">SceneGraphWidget::addObject</a></div><div class="ttdeci">void addObject(const QObject *object)</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:32</div></div>
-<div class="ttc" id="a00044_html_a98d3fbaea1309c64ef9bbdb33d4ce293"><div class="ttname"><a href="a00044.html#a98d3fbaea1309c64ef9bbdb33d4ce293">SceneGraphWidget::SceneGraphWidget</a></div><div class="ttdeci">SceneGraphWidget(QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:7</div></div>
-<div class="ttc" id="a00044_html_ac99579ae7333e3a448f2a8caeab2e524"><div class="ttname"><a href="a00044.html#ac99579ae7333e3a448f2a8caeab2e524">SceneGraphWidget::addObjects</a></div><div class="ttdeci">void addObjects(const QList&lt; QObject * &gt; &amp;objects)</div><div class="ttdef"><b>Definition:</b> SceneGraphWidget.cpp:42</div></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00035.html#ab402508e5d28e6d005872fa6731507ee">   33</a></span>&#160;    <a class="code" href="a00094.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a>    <a class="code" href="a00035.html#ab402508e5d28e6d005872fa6731507ee">m_context</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00035.html#a423de24503a21bcfe9c05c6ce4581c45">   34</a></span>&#160;    <a class="code" href="a00094.html#a0fbb001be3d5b82303c35004c69efa2b">ScenePtr</a>         <a class="code" href="a00035.html#a423de24503a21bcfe9c05c6ce4581c45">m_scene</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00035.html#ad88460862bd55a441456b958a9563397">   35</a></span>&#160;    <span class="keywordtype">bool</span>             <a class="code" href="a00035.html#ad88460862bd55a441456b958a9563397">m_strgPressed</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif // OPENGLWINDOW_H</span></div>
+<div class="ttc" id="a00098_html_a9c6c46b152fbf088399207c75fc07902"><div class="ttname"><a href="a00098.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a></div><div class="ttdeci">QSharedPointer&lt; QOpenGLContext &gt; OpenGLContext</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.h:7</div></div>
+<div class="ttc" id="a00035_html_ab402508e5d28e6d005872fa6731507ee"><div class="ttname"><a href="a00035.html#ab402508e5d28e6d005872fa6731507ee">OpenGLWindow::m_context</a></div><div class="ttdeci">OpenGLContext m_context</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.h:33</div></div>
+<div class="ttc" id="a00035_html_aa220b192c71871aab9100f4058a8d62d"><div class="ttname"><a href="a00035.html#aa220b192c71871aab9100f4058a8d62d">OpenGLWindow::~OpenGLWindow</a></div><div class="ttdeci">~OpenGLWindow()</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.cpp:42</div></div>
+<div class="ttc" id="a00035_html_a09f27a6f1628dadbd3c7ca3c1651ec59"><div class="ttname"><a href="a00035.html#a09f27a6f1628dadbd3c7ca3c1651ec59">OpenGLWindow::resizeGL</a></div><div class="ttdeci">void resizeGL()</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.cpp:47</div></div>
+<div class="ttc" id="a00035_html_a69f3cfa0a95ca91f57d90d9484bd6c54"><div class="ttname"><a href="a00035.html#a69f3cfa0a95ca91f57d90d9484bd6c54">OpenGLWindow::initializeGL</a></div><div class="ttdeci">void initializeGL()</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.cpp:80</div></div>
+<div class="ttc" id="a00035_html"><div class="ttname"><a href="a00035.html">OpenGLWindow</a></div><div class="ttdef"><b>Definition:</b> OpenGLWindow.h:10</div></div>
+<div class="ttc" id="a00035_html_a423de24503a21bcfe9c05c6ce4581c45"><div class="ttname"><a href="a00035.html#a423de24503a21bcfe9c05c6ce4581c45">OpenGLWindow::m_scene</a></div><div class="ttdeci">ScenePtr m_scene</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.h:34</div></div>
+<div class="ttc" id="a00035_html_a47a2d281de563101f985de2465b9e45b"><div class="ttname"><a href="a00035.html#a47a2d281de563101f985de2465b9e45b">OpenGLWindow::getScene</a></div><div class="ttdeci">ScenePtr getScene()</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.h:19</div></div>
+<div class="ttc" id="a00035_html_a81b042bc42f2e3057c5eb30edf8029c6"><div class="ttname"><a href="a00035.html#a81b042bc42f2e3057c5eb30edf8029c6">OpenGLWindow::OpenGLWindow</a></div><div class="ttdeci">OpenGLWindow(QScreen *screen=0)</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.cpp:8</div></div>
+<div class="ttc" id="a00035_html_aafa1fdd10232a09b77db2395519e9882"><div class="ttname"><a href="a00035.html#aafa1fdd10232a09b77db2395519e9882">OpenGLWindow::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event)</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.cpp:85</div></div>
+<div class="ttc" id="a00035_html_a7ae488627e37254bbe1863c928781d83"><div class="ttname"><a href="a00035.html#a7ae488627e37254bbe1863c928781d83">OpenGLWindow::paintGL</a></div><div class="ttdeci">void paintGL()</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.cpp:53</div></div>
+<div class="ttc" id="a00035_html_a03229f68dac57be079e18b6ef135ab46"><div class="ttname"><a href="a00035.html#a03229f68dac57be079e18b6ef135ab46">OpenGLWindow::makeContextCurrent</a></div><div class="ttdeci">void makeContextCurrent()</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.cpp:70</div></div>
+<div class="ttc" id="a00035_html_ae42079d2df46e3aa913e0ddfce3de023"><div class="ttname"><a href="a00035.html#ae42079d2df46e3aa913e0ddfce3de023">OpenGLWindow::updateScene</a></div><div class="ttdeci">void updateScene()</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.cpp:64</div></div>
+<div class="ttc" id="a00035_html_ad88460862bd55a441456b958a9563397"><div class="ttname"><a href="a00035.html#ad88460862bd55a441456b958a9563397">OpenGLWindow::m_strgPressed</a></div><div class="ttdeci">bool m_strgPressed</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.h:35</div></div>
+<div class="ttc" id="a00035_html_ab7514c6f73755094d5670765ec47a71c"><div class="ttname"><a href="a00035.html#ab7514c6f73755094d5670765ec47a71c">OpenGLWindow::keyReleaseEvent</a></div><div class="ttdeci">void keyReleaseEvent(QKeyEvent *event)</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.cpp:188</div></div>
+<div class="ttc" id="a00094_html_a0fbb001be3d5b82303c35004c69efa2b"><div class="ttname"><a href="a00094.html#a0fbb001be3d5b82303c35004c69efa2b">ScenePtr</a></div><div class="ttdeci">QSharedPointer&lt; BasicUsageScene &gt; ScenePtr</div><div class="ttdef"><b>Definition:</b> BasicUsageScene.h:93</div></div>
+<div class="ttc" id="a00094_html"><div class="ttname"><a href="a00094.html">BasicUsageScene.h</a></div></div>
+<div class="ttc" id="a00035_html_a0798f49b14a35aa4d2ea5bc1d82a1bd7"><div class="ttname"><a href="a00035.html#a0798f49b14a35aa4d2ea5bc1d82a1bd7">OpenGLWindow::getOpenGLContext</a></div><div class="ttdeci">OpenGLContext &amp; getOpenGLContext()</div><div class="ttdef"><b>Definition:</b> OpenGLWindow.cpp:75</div></div>
+<div class="ttc" id="a00035_html_ad5f75b29b792f0d4a3ce32bd2dd3fad8"><div class="ttname"><a href="a00035.html#ad5f75b29b792f0d4a3ce32bd2dd3fad8">OpenGLWindow::init</a></div><div class="ttdeci">void init()</div></div>
+<div class="ttc" id="a00094_html_a9c6c46b152fbf088399207c75fc07902"><div class="ttname"><a href="a00094.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a></div><div class="ttdeci">QSharedPointer&lt; QOpenGLContext &gt; OpenGLContext</div><div class="ttdef"><b>Definition:</b> BasicUsageScene.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00098.html">SceneGraphWidget.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_8c83c19a9b6a99c3d579766fba10a6da.html">OpenGL</a></li><li class="navelem"><a class="el" href="dir_422157eb8ded5070cf70eb32824fdbfa.html">inc</a></li><li class="navelem"><a class="el" href="a00098.html">OpenGLWindow.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

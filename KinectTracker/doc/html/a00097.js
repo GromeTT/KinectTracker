@@ -1,5 +1,6 @@
 var a00097 =
 [
-    [ "Vertex", "a00051.html", "a00051" ],
-    [ "Vertices", "a00097.html#a259f4df67df3fce159eb227839d3c425", null ]
+    [ "LoaderObject", "a00030.html", "a00030" ],
+    [ "ObjectLoader", "a00034.html", "a00034" ],
+    [ "LoaderObjectPtr", "a00097.html#af2d2d934df351d4e2b38aab9daaf0e94", null ]
 ];

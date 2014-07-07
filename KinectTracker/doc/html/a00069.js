@@ -1,5 +1,5 @@
 var a00069 =
 [
-    [ "HOGFeatureDetector", "a00021.html", "a00021" ],
-    [ "HogFeatureDetectorPtr", "a00069.html#a6056454c387806d137c1d7b4cf0cda4d", null ]
+    [ "SizeAnalyzer", "a00046.html", "a00046" ],
+    [ "SizeAnalyzerPtr", "a00069.html#afff5f851b83adcc3fc64f8a9c2ad96a9", null ]
 ];

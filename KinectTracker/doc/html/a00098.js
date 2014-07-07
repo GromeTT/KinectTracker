@@ -1,5 +1,5 @@
 var a00098 =
 [
-    [ "SceneGraphWidget", "a00044.html", "a00044" ],
-    [ "RenderObjects", "a00098.html#aa55256830fe9d68749225fa8387ceb47", null ]
+    [ "OpenGLWindow", "a00035.html", "a00035" ],
+    [ "OpenGLContext", "a00098.html#a9c6c46b152fbf088399207c75fc07902", null ]
 ];

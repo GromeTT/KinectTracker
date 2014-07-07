@@ -66,7 +66,8 @@ public:
     const TrackState          jointTrackState( const Joints joint ) const;
     const Quality             quality() const;
     int                       numberOfTrackedPoints() const;
-    bool                      areMajorPointsTracked() const;
+    bool                      majorPointsTracked() const;
+    bool                      allPointsTracked() const;
 
 private:
     void initialize();

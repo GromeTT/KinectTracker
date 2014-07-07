@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/BBMovementAnalyzer.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/Defines.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,38 +102,34 @@ $(document).ready(function(){initNavTree('a00062_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">BBMovementAnalyzer.h</div>  </div>
+<div class="title">C:/Projekte/C++/Kinect_Tracker/KinectTracker/Defines.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00062.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BBMOVEMENTANALYZER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BBMOVEMENTANALYZER_H</span></div>
+<a href="a00062.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DEFINES_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DEFINES_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00085.html">MovementAnalyzer.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="a00005.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00005.html">BBMovementAnalyzer</a> : <span class="keyword">public</span> <a class="code" href="a00031.html">MovementAnalyzer</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="a00018.html">    6</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a00018.html">FixedPropertyVector</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="a00005.html#ac68f990d9d96ef4f338cc4802727ff82">BBMovementAnalyzer</a>( QObject* parent = <span class="keyword">nullptr</span> );</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00005.html#ac67f0e2bae42ad31d95aa1682191a5ea">~BBMovementAnalyzer</a>();</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="a00018.html#a9eade92d9e1c37aa3f2b59758a1ff1be">    8</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="a00018.html#a9eade92d9e1c37aa3f2b59758a1ff1be">channelCount</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00018.html#ad907fd3830ad9e5ef8f75bc6421468b8">    9</a></span>&#160;    std::vector&lt;float&gt; <a class="code" href="a00018.html#ad907fd3830ad9e5ef8f75bc6421468b8">vec</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;};</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00005.html#a81b6fadc280e39c2ef86b3d21e1c8101">anaylzeV</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif // BBMOVEMENTANALYZER_H</span></div>
-<div class="ttc" id="a00005_html_ac68f990d9d96ef4f338cc4802727ff82"><div class="ttname"><a href="a00005.html#ac68f990d9d96ef4f338cc4802727ff82">BBMovementAnalyzer::BBMovementAnalyzer</a></div><div class="ttdeci">BBMovementAnalyzer(QObject *parent=nullptr)</div><div class="ttdoc">BBMovementAnalyzer::BBMovementAnalyzer Standardconstructor. </div><div class="ttdef"><b>Definition:</b> BBMovementAnalyzer.cpp:8</div></div>
-<div class="ttc" id="a00005_html"><div class="ttname"><a href="a00005.html">BBMovementAnalyzer</a></div><div class="ttdef"><b>Definition:</b> BBMovementAnalyzer.h:6</div></div>
-<div class="ttc" id="a00005_html_a81b6fadc280e39c2ef86b3d21e1c8101"><div class="ttname"><a href="a00005.html#a81b6fadc280e39c2ef86b3d21e1c8101">BBMovementAnalyzer::anaylzeV</a></div><div class="ttdeci">virtual void anaylzeV()</div><div class="ttdoc">BBMovementAnalyzer::anaylzeV. </div><div class="ttdef"><b>Definition:</b> BBMovementAnalyzer.cpp:27</div></div>
-<div class="ttc" id="a00031_html"><div class="ttname"><a href="a00031.html">MovementAnalyzer</a></div><div class="ttdef"><b>Definition:</b> MovementAnalyzer.h:9</div></div>
-<div class="ttc" id="a00005_html_ac67f0e2bae42ad31d95aa1682191a5ea"><div class="ttname"><a href="a00005.html#ac67f0e2bae42ad31d95aa1682191a5ea">BBMovementAnalyzer::~BBMovementAnalyzer</a></div><div class="ttdeci">virtual ~BBMovementAnalyzer()</div><div class="ttdoc">BBMovementAnalyzer::~BBMovementAnalyzer Destroyes the object. </div><div class="ttdef"><b>Definition:</b> BBMovementAnalyzer.cpp:18</div></div>
-<div class="ttc" id="a00085_html"><div class="ttname"><a href="a00085.html">MovementAnalyzer.h</a></div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;Q_DECLARE_METATYPE( <a class="code" href="a00018.html">FixedPropertyVector</a> )</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif // DEFINES_H</span></div>
+<div class="ttc" id="a00018_html"><div class="ttname"><a href="a00018.html">FixedPropertyVector</a></div><div class="ttdef"><b>Definition:</b> Defines.h:6</div></div>
+<div class="ttc" id="a00018_html_a9eade92d9e1c37aa3f2b59758a1ff1be"><div class="ttname"><a href="a00018.html#a9eade92d9e1c37aa3f2b59758a1ff1be">FixedPropertyVector::channelCount</a></div><div class="ttdeci">unsigned int channelCount</div><div class="ttdef"><b>Definition:</b> Defines.h:8</div></div>
+<div class="ttc" id="a00018_html_ad907fd3830ad9e5ef8f75bc6421468b8"><div class="ttname"><a href="a00018.html#ad907fd3830ad9e5ef8f75bc6421468b8">FixedPropertyVector::vec</a></div><div class="ttdeci">std::vector&lt; float &gt; vec</div><div class="ttdef"><b>Definition:</b> Defines.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00062.html">BBMovementAnalyzer.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00062.html">Defines.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00037.html','');});
+$(document).ready(function(){initNavTree('a00027.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -104,23 +104,36 @@ $(document).ready(function(){initNavTree('a00037.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">QObjectTreeWidgetItem Member List</div>  </div>
+<div class="title">InRange Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00037.html">QObjectTreeWidgetItem</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00027.html">InRange</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00037.html#a752af42241f98999cc9d0364e565c4e6">getObject</a>()</td><td class="entry"><a class="el" href="a00037.html">QObjectTreeWidgetItem</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00037.html#ac6894e7909f1ee4fe5d958fb46488779">m_object</a></td><td class="entry"><a class="el" href="a00037.html">QObjectTreeWidgetItem</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00037.html#ac2798079c14f1942f4b071a6a3b05ea8">QObjectTreeWidgetItem</a>()</td><td class="entry"><a class="el" href="a00037.html">QObjectTreeWidgetItem</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00037.html#a5cba0f8725d950443cb6a41d0a0762fc">setObject</a>(QObject *object)</td><td class="entry"><a class="el" href="a00037.html">QObjectTreeWidgetItem</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00037.html#ab8f274dd8563892725f9a0c4900a8f39">~QObjectTreeWidgetItem</a>()</td><td class="entry"><a class="el" href="a00037.html">QObjectTreeWidgetItem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00036.html#ae3bf7f460db17ff7472e1d85b4b14f2f">addComponent</a>(ProcessingComponent *compnent)</td><td class="entry"><a class="el" href="a00036.html">ProcessingComponent</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00036.html#a321720770de558665249606e6928e737">getComponents</a>() const </td><td class="entry"><a class="el" href="a00036.html">ProcessingComponent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00036.html#a7ebc7811af8663c7cd1e3b3a1d776ae5">getProcessingComponent</a>(const int index) const </td><td class="entry"><a class="el" href="a00036.html">ProcessingComponent</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00027.html#a08bd54d161c27cb45b04a3eb1398bde2">InRange</a>(const int channelCount, QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00027.html#a5fd14775e1455ca9763d816a7561689d">lowerBounds</a></td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00027.html#aa28e29f169c7a391900c59e0ec7909f0">lowerBounds</a>() const </td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00027.html#af74baaabd57d95882bb504457f4888e3">lowerBoundsChanged</a>()</td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00027.html#abc294d75f0a5f1bf3a60e6bde17a0ba2">m_lowerBounds</a></td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00027.html#a6fab797cc5433fe1654cc26a34972637">m_upperBounds</a></td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00027.html#abfc5021c496f27d3d83397c6636611a6">process</a>(cv::InputArray &amp;input, cv::OutputArray &amp;output)</td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00036.html#a880fd2eeeef65f0a905127d5b1607c40">ProcessingComponent</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00036.html">ProcessingComponent</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00027.html#a951c8536b449b6e11a55858de70780e4">setLowerBounds</a>(const FixedPropertyVector &amp;lowerBounds)</td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00027.html#aef54a5b4d26152e4192d69cd5886f82c">setUpperBounds</a>(const FixedPropertyVector &amp;upperBounds)</td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00027.html#a4796196984828ab423dcf1dfbc2bab22">upperBounds</a></td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00027.html#a0fa19a232b908b993100a1b8ace3b331">upperBounds</a>() const </td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00027.html#a5ffd271d23993f89a9acf912f43380fb">upperBoundsChanged</a>()</td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00027.html#a10ae92ee4eeb774f2422f2a16dab760b">~InRange</a>()</td><td class="entry"><a class="el" href="a00027.html">InRange</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00036.html#ab491c8e7e4cbf4f225c5b5ec7b744822">~ProcessingComponent</a>()</td><td class="entry"><a class="el" href="a00036.html">ProcessingComponent</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

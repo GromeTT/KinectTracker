@@ -27,6 +27,7 @@ signals:
 private:
     virtual void anaylzeV( const SkeletonDataPtr skeleton,
                            const unsigned int timestamp );
+    virtual void resetV();
 
     float               m_deltaX;
     float               m_deltaY;

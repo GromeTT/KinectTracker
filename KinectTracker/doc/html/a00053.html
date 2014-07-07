@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Doxyfile.dox File Reference</title>
+<title>KinectTracker: SkinColorHistogramDetectionPipeline Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,8 +67,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -101,17 +103,379 @@ $(document).ready(function(){initNavTree('a00053.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a00222.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Doxyfile.dox File Reference</div>  </div>
+<div class="title">SkinColorHistogramDetectionPipeline Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="a00123_source.html">LowLevelProcessingPipeline.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SkinColorHistogramDetectionPipeline:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00053.png" usemap="#SkinColorHistogramDetectionPipeline_map" alt=""/>
+  <map id="SkinColorHistogramDetectionPipeline_map" name="SkinColorHistogramDetectionPipeline_map">
+<area href="a00031.html" alt="LowLevelProcessingPipeline" shape="rect" coords="0,56,221,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aad49064dfdcc473101ff6c079a5e61af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#aad49064dfdcc473101ff6c079a5e61af">computeAndSaveROIHistogram</a> (const cv::Mat &amp;<a class="el" href="a00053.html#a935801402c52bdc6310eeb275fa4a019">roi</a>)</td></tr>
+<tr class="separator:aad49064dfdcc473101ff6c079a5e61af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c1e60e28ab78e6a042f3bfc23724f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#a19c1e60e28ab78e6a042f3bfc23724f3">initialized</a> () const </td></tr>
+<tr class="separator:a19c1e60e28ab78e6a042f3bfc23724f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aac1ef2a6b61f01f95a412703d46db639"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SkinColorHistogramDetectionPipeline::SkinColorHistogramDetectionPipeline </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00053.html#aac1ef2a6b61f01f95a412703d46db639" title="SkinColorHistogramDetectionPipeline::SkinColorHistogramDetectionPipeline Standardconstructor. ">SkinColorHistogramDetectionPipeline::SkinColorHistogramDetectionPipeline</a> Standardconstructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a38b3b0599a2be0e2e6d6584729e1b715"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SkinColorHistogramDetectionPipeline::~SkinColorHistogramDetectionPipeline </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00053.html#a38b3b0599a2be0e2e6d6584729e1b715" title="SkinColorHistogramDetectionPipeline::~SkinColorHistogramDetectionPipeline Destroyes the object...">SkinColorHistogramDetectionPipeline::~SkinColorHistogramDetectionPipeline</a> Destroyes the object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="afd96da6723c716d6a4699023f8dbe7b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * SkinColorHistogramDetectionPipeline::bins </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00053.html#afd96da6723c716d6a4699023f8dbe7b5" title="SkinColorHistogramDetectionPipeline::bins Returns a pointer to the first element of the bins array...">SkinColorHistogramDetectionPipeline::bins</a> Returns a pointer to the first element of the bins array. </p>
+
+</div>
+</div>
+<a class="anchor" id="af216644582c289452888e291a20a8bb0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * SkinColorHistogramDetectionPipeline::channels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00053.html#af216644582c289452888e291a20a8bb0" title="SkinColorHistogramDetectionPipeline::channels Returns a pointer to the first element of the channels ...">SkinColorHistogramDetectionPipeline::channels</a> Returns a pointer to the first element of the channels array. </p>
+
+</div>
+</div>
+<a class="anchor" id="aad49064dfdcc473101ff6c079a5e61af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>roi</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00053.html#aad49064dfdcc473101ff6c079a5e61af" title="SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram If rio is a valid cv::Mat...">SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram</a> If <em>rio</em> is a valid cv::Mat, a histogram will be computed and stored in addtion to a copy of <em>roi</em>. </p>
+<p>If this function succeeds the <a class="el" href="a00053.html">SkinColorHistogramDetectionPipeline</a> is <em>initialized</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0e3d3c849cc0facaa39e7538f039c097"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::MatND &amp; SkinColorHistogramDetectionPipeline::histogram </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00053.html#a0e3d3c849cc0facaa39e7538f039c097" title="SkinColorHistogramDetectionPipeline::histogram Returns the histogram of roi. ">SkinColorHistogramDetectionPipeline::histogram</a> Returns the histogram of roi. </p>
+
+</div>
+</div>
+<a class="anchor" id="a19c1e60e28ab78e6a042f3bfc23724f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SkinColorHistogramDetectionPipeline::initialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00053.html#a19c1e60e28ab78e6a042f3bfc23724f3" title="SkinColorHistogramDetectionPipeline::initialized Returns true, if the roi has been set...">SkinColorHistogramDetectionPipeline::initialized</a> Returns true, if the roi has been set. </p>
+<p>Otherwise false. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa4e1f481940490e28b6112bd117e5a89"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkinColorHistogramDetectionPipeline::process </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00053.html#aa4e1f481940490e28b6112bd117e5a89" title="SkinColorHistogramDetectionPipeline::process Computes the backprojection of input and the histogram w...">SkinColorHistogramDetectionPipeline::process</a> Computes the backprojection of <em>input</em> and the histogram which will be computed by calling <a class="el" href="a00053.html#aad49064dfdcc473101ff6c079a5e61af" title="SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram If rio is a valid cv::Mat...">SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram</a>. </p>
+
+<p>Implements <a class="el" href="a00031.html#a5ee87a0ab5c911a7b237ee2835b06c9c">LowLevelProcessingPipeline</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ea26269f608f0ad467d331dbee78f8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float * SkinColorHistogramDetectionPipeline::ranges </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00053.html#a4ea26269f608f0ad467d331dbee78f8d" title="SkinColorHistogramDetectionPipeline::ranges Returns a pointer to the first element of the ranges arra...">SkinColorHistogramDetectionPipeline::ranges</a> Returns a pointer to the first element of the ranges array. </p>
+
+</div>
+</div>
+<a class="anchor" id="a935801402c52bdc6310eeb275fa4a019"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat &amp; SkinColorHistogramDetectionPipeline::roi </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00053.html#a935801402c52bdc6310eeb275fa4a019" title="SkinColorHistogramDetectionPipeline::roi Returns a cv::Mat with the region of interest. ">SkinColorHistogramDetectionPipeline::roi</a> Returns a cv::Mat with the region of interest. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="af05812214d08bcece9a1f858ac3c4b6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SkinColorHistogramDetectionPipeline::m_bins[3]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad76fd521a889cf350f144897400ee513"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SkinColorHistogramDetectionPipeline::m_channels[3]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6fc9b1e9483ed2633456667beeac9f46"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::MatND SkinColorHistogramDetectionPipeline::m_histogram</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0aaee228521d2a9ccbe2d458e82e2409"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SkinColorHistogramDetectionPipeline::m_initialized</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a94157e42eae2657cfa2ac29f1db7f8b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SkinColorHistogramDetectionPipeline::m_ranges[2]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1080aa1a527160d38752448354c03041"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat SkinColorHistogramDetectionPipeline::m_roi</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a270c69480572154136db2b57b2fc2e6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double SkinColorHistogramDetectionPipeline::m_threshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/inc/<a class="el" href="a00123_source.html">LowLevelProcessingPipeline.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/src/<a class="el" href="a00136.html">LowLevelProcessingPipeline.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00053.html">Doxyfile.dox</a></li>
-    <li class="footer">Generated on Sat Jun 21 2014 23:32:54 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00053.html">SkinColorHistogramDetectionPipeline</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:39 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

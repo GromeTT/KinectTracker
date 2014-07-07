@@ -1,10 +1,10 @@
 #include "../inc/ImageAnalysisDialog.h"
 #include "../../ImageWidget/inc/ImageWidget.h"
-#include "../../ProcessingPipelines/inc/LowLevelProcessingPipeline.h"
 #include "ui_ImageAnalysisDialog.h"
 #include <QFileDialog>
 #include <QObject>
 #include <QImage>
+#include <QDebug>
 #include <QDebug>
 
 /*!
@@ -19,9 +19,9 @@ ImageAnalysisDialog::ImageAnalysisDialog( QWidget* parent )
     ui->setupUi( this );
 
     connect( ui->loadButton, &QPushButton::pressed, this, &ImageAnalysisDialog::loadImage );
-    connect( ui->loadROIButton, &QPushButton::pressed, this, &ImageAnalysisDialog::loadROI );
-    connect( ui->computeHistogramButton, &QPushButton::pressed, this, &ImageAnalysisDialog::computeHistogram );
+    connect( ui->computeHistogramButton, &QPushButton::pressed, this, &ImageAnalysisDialog::computeBackprojection );
     connect( ui->calculateSkinRegionButton, &QPushButton::pressed, this, &ImageAnalysisDialog::showSkinColor );
+    connect( ui->saveRoiButton, &QPushButton::pressed, this, &ImageAnalysisDialog::saveROI );
 }
 
 /*!
@@ -38,42 +38,25 @@ ImageAnalysisDialog::~ImageAnalysisDialog()
  */
 void ImageAnalysisDialog::loadImage()
 {
-    QString filename = QFileDialog::getOpenFileName( this,
-                                                     QObject::tr( "Open"),
-                                                     m_lastDirectory.absolutePath(),
-                                                     QObject::tr( "Image files (*.png *.jpg *.bmp)") );
+    QString filename = loadImageFromLastDirectory();
     if ( filename.isEmpty() )
     {
+        qWarning( "Empty filename." );
         return;
     }
-    m_lastDirectory = QDir( filename );
     // Convert the image in a bgr color image.
     // http://docs.opencv.org/modules/highgui/doc/reading_and_writing_images_and_video.html
     m_imageBGR = cv::imread( filename.toStdString(), CV_LOAD_IMAGE_COLOR );
-    cv::cvtColor( m_imageBGR, m_image, CV_BGR2RGB ); // convert into RGB
-    QImage image( m_image.data, m_image.cols, m_image.rows, QImage::Format_RGB888 );
+    cv::cvtColor( m_imageBGR, m_imageRGB, CV_BGR2RGB ); // convert into RGB
+    QImage image( m_imageRGB.data, m_imageRGB.cols, m_imageRGB.rows, QImage::Format_RGB888 );
     ui->imageWidget->setImage( image );
 }
 
-void ImageAnalysisDialog::loadROI()
-{
-    QString filename = QFileDialog::getOpenFileName( this,
-                                                     QObject::tr( "Open"),
-                                                     m_lastDirectory.absolutePath(),
-                                                     QObject::tr( "Image files (*.png *.jpg *.bmp)") );
-    if ( filename.isEmpty() )
-    {
-        return;
-    }
-    m_roi = cv::imread( filename.toStdString(), CV_LOAD_IMAGE_COLOR );
-    cv::imshow( "ROI", m_roi );
-}
-
 /*!
-   \brief ImageAnalysisDialog::computeHistogram
-   Computes the histogram of the rectangle drawn by the user if this area is valid.
+   \brief ImageAnalysisDialog::saveROI
+   Saves the rectangular region made by the user.
  */
-void ImageAnalysisDialog::computeHistogram()
+void ImageAnalysisDialog::saveROI()
 {
     QRect rect = ui->imageWidget->rect();
     if ( rect.width() ==  0 )
@@ -82,28 +65,58 @@ void ImageAnalysisDialog::computeHistogram()
         //       This value is not valid, leave function.
         return;
     }
-    cv::imshow( "Original", m_imageBGR );
     cv::Mat roi = m_imageBGR( cv::Rect( rect.topLeft().x(),
                                         rect.topLeft().y(),
                                         rect.width(),
                                         rect.height() ) );
+    m_skinColorDetectionPipeline.computeAndSaveROIHistogram( roi );
+}
 
-    cv::imshow( "roi", roi);
-    int channels [] = { 0, 1, 2 };
-    int bins[] = { 256, 256, 256 };
-    float ranges [] = { 0, 256 };
-    const float* rangesPerChannel = { ranges };
-    cv::MatND roiHistogram;
-    cv::calcHist( &roi, 1, &channels[0], cv::Mat(), roiHistogram, 1, &bins[0], &rangesPerChannel, true, false );
+/*!
+   \brief ImageAnalysisDialog::computeHistogram
+   Computes the histogram of the rectangle drawn by the user if this area is valid.
+ */
+void ImageAnalysisDialog::computeBackprojection()
+{
+    if ( m_skinColorDetectionPipeline.roi().rows == 0 ||
+         m_skinColorDetectionPipeline.roi().cols == 0 )
+    {
+        qWarning( "With or height of the roi image equals zero" );
+        return;
+    }
+    cv::imshow( "roi", m_skinColorDetectionPipeline.roi() );
     cv::MatND backprojection;
-    cv::calcBackProject( &m_image, 1, &channels[0], roiHistogram, backprojection, &rangesPerChannel, 1, true );
+    const float* range = { m_skinColorDetectionPipeline.ranges() };
+    cv::calcBackProject( &m_imageBGR, 1, m_skinColorDetectionPipeline.channels(), m_skinColorDetectionPipeline.histogram(), backprojection, &range, 1, true );
     cv::imshow( "Backprojection", backprojection );
     cv::threshold( backprojection, backprojection, ui->thresholdSpinBox->value(), 255, cv::THRESH_BINARY );
     cv::imshow( "Threshold", backprojection );
 }
 
+/*!
+   \brief ImageAnalysisDialog::showSkinColor
+   Takes a copy of the bgr image and shows the pixels which have skin color.
+ */
 void ImageAnalysisDialog::showSkinColor()
 {
+    m_imageBGR.copyTo( m_skinColorImage );
+    m_skiColorDefinedRegions.process( m_skinColorImage );
+}
 
+/*!
+   \brief ImageAnalysisDialog::loadImageFromLastDirectory
+   Loads an image and saves the path to it, if the user doesn't quit.
+*/
+QString ImageAnalysisDialog::loadImageFromLastDirectory()
+{
+    QString filename = QFileDialog::getOpenFileName( this,
+                                                     QObject::tr( "Open"),
+                                                     m_lastDirectory.absolutePath(),
+                                                     QObject::tr( "Image files (*.png *.jpg *.bmp)") );
+    if ( !filename.isEmpty() )
+    {
+        m_lastDirectory = QDir( filename );
+    }
+    return filename;
 }
 

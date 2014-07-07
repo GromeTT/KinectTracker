@@ -23,6 +23,7 @@
 #include <QImage>
 #include <QFileInfo>
 #include <QDockWidget>
+#include <QVector4D>
 #include <QDebug>
 
 #include "ui_MainWindow.h"
@@ -57,6 +58,8 @@ MainWindow::MainWindow( QWidget *parent )
     , mp_depthViewObject( nullptr )
     , mp_skeletonRenderObject( nullptr )
     , m_lastTiming( 0 )
+    , m_floorInitialized( false )
+    , mp_floor( nullptr )
 {
     ui->setupUi(this);
 
@@ -113,6 +116,7 @@ MainWindow::MainWindow( QWidget *parent )
     connect( ui->actionSABSSDMode, &QAction::toggled, this, &MainWindow::activateSABSSDMode );
     connect( ui->actionStartCapturing, &QAction::toggled, this, &MainWindow::toggleCapturing );
     connect( ui->actionImageAnalysisTool, &QAction::triggered, this, &MainWindow::openImageAnalysisDialog );
+    connect( ui->actionReset, &QAction::triggered, this, &MainWindow::reset );
 
     ui->actionSASDMode->setChecked( true );
     ui->actionStartCapturing->setChecked( true );
@@ -149,15 +153,48 @@ void MainWindow::updateScenes()
     if ( m_kinect->isInitialized() &&
          !m_highLvlProcessingPipeline.isNull() )
     {
-        m_highLvlProcessingPipeline->process( timestamp );
-        SkeletonDataPtr data = m_highLvlProcessingPipeline->skeletonData();
-        if ( !data.isNull() )
+        bool processed = m_highLvlProcessingPipeline->process( timestamp );
+        if ( processed )
         {
+            SkeletonDataPtr data = m_highLvlProcessingPipeline->skeletonData();
+            if ( !data.isNull() )
+            {
+                // case: Skeleton data is available.
+                if ( m_highLvlProcessingPipeline->sizeAnalyzer()->floorInitialized() &&
+                     !m_floorInitialized )
+                {
+                    QVector4D floorEquation = m_highLvlProcessingPipeline->sizeAnalyzer()->planeCoefficients();
+                    if ( floorEquation.x() != 0 &&
+                         floorEquation.y() != 0 &&
+                         floorEquation.z() != 0 &&
+                         floorEquation.w() != 0 )
+                    {
+                        mp_floor = mp_openGLWindow->getScene()->createFloor( floorEquation.x(),
+                                                                             floorEquation.y(),
+                                                                             floorEquation.z(),
+                                                                             floorEquation.w() );
+                        qDebug() << QString( " %1 %2 %3 %4" )
+                                    .arg( floorEquation.x() )
+                                    .arg( floorEquation.y() )
+                                    .arg( floorEquation.z() )
+                                    .arg( floorEquation.w() );
+                        qDebug()<< "Floor has been initialized.";
+                        m_floorInitialized = true;
+                    }
+                }
+                mp_openGLWindow->makeContextCurrent();
+                mp_skeletonRenderObject->setVisible( true );
+                mp_skeletonRenderObject->updateData( data.data() );
+            }
+            else
+            {
+                // case: No skleton data availabe.
 
-            mp_openGLWindow->makeContextCurrent();
-            mp_skeletonRenderObject->setVisible( true );
-            mp_skeletonRenderObject->updateData( data.data() );
+                // No need to draw the skeleton.
+//                mp_skeletonRenderObject->setVisible( false );
+            }
         }
+        // Update rgb data.
         mp_rgbViewerWindow->makeContextCurrent();
         mp_rgbViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
                                          m_kinect->rgbStreamResolution().width(),
@@ -168,6 +205,7 @@ void MainWindow::updateScenes()
                                          m_highLvlProcessingPipeline->rgbImage(),
                                          QOpenGLTexture::Linear,
                                          QOpenGLTexture::Linear );
+        // Update depth data.
         mp_depthViewerWindow->makeContextCurrent();
         mp_depthViewObject->updateTexture( QOpenGLTexture::RGB8_UNorm,
                                            m_kinect->rgbStreamResolution().width(),
@@ -182,8 +220,9 @@ void MainWindow::updateScenes()
         {
             m_visualizer->render();
         }
-    }
 
+
+    }
     mp_openGLWindow->paintGL();
     mp_rgbViewerWindow->paintGL();
     mp_depthViewerWindow->paintGL();
@@ -395,7 +434,13 @@ void MainWindow::switchCatergoryOnSceneGraph( SceneGraphWidget::ActiveScene scen
         case SceneGraphWidget::ActiveScene::RGBProcessingPipeline:
         {
             // case: RGBProcessingPipeline
-            mp_sceneGraph->addObjects( m_highLvlProcessingPipeline->rgbProcessingPipeline()->getComponents() );
+            QList<QObject*> objectList;
+            QList<LowLevelProcessingPipelinePtr> tmp = m_highLvlProcessingPipeline->rgbProcessingPipelines();
+            for ( int i = 0; i < tmp.count(); ++i )
+            {
+                objectList.append( tmp.at( i ).data() );
+            }
+            mp_sceneGraph->addObjects( objectList );
             break;
         }
         case SceneGraphWidget::ActiveScene::DepthProcessingPipeline:
@@ -412,6 +457,14 @@ void MainWindow::switchCatergoryOnSceneGraph( SceneGraphWidget::ActiveScene scen
             break;
         }
     }
+}
+
+void MainWindow::reset()
+{
+//    mp_openGLWindow->getScene()->deleteObject( mp_floor );
+//    mp_floor = nullptr;
+//    m_highLvlProcessingPipeline->reset();
+      m_floorInitialized = false;
 }
 
 /*!

@@ -11,6 +11,7 @@
 #include <QSize>
 #include <QSharedPointer>
 #include <QOpenGLTexture>
+#include <QVector4D>
 
 class QImage;
 class QVector2D;
@@ -61,7 +62,7 @@ public:
     bool isInitialized() const;
     bool isRGBStreamOpen() const;
     bool isDepthStreamOpen() const;
-
+    QVector4D planeCoefficients() const;
 
 private:
     void setSize( QSize& size, NUI_IMAGE_RESOLUTION resolution );
@@ -75,9 +76,13 @@ private:
     bool        m_initialized;
     bool        m_rgbStreamOpen;
     bool        m_deptStreamOpen;
+    float       m_a;
+    float       m_b;
+    float       m_c;
+    float       m_d;
 };
 
-QVector2D transformFromSkeltonToRGB( const QVector3D& coordinates );
+QPoint transformFromSkeltonToRGB( const QVector3D& coordinates );
 
 typedef QSharedPointer<Kinect> KinectPtr;
 

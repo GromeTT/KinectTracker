@@ -11,9 +11,13 @@ public:
     virtual ~BBSizeAnalyzer();
 
     BoundingBoxPtr boundigBox() const;
+
 private:
-    void analyzeV( const SkeletonDataPtr& skeletonData );
+    virtual void analyzeV( const SkeletonDataPtr& skeletonData );
+    virtual void resetV();
+
     void estimatedBodySize( const SkeletonDataPtr& skeletonDat );
+
 
     BoundingBoxPtr m_boundingBox;
 };

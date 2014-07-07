@@ -1,6 +1,5 @@
 var a00066 =
 [
-    [ "FixedPropertyVector", "a00019.html", "a00019" ],
-    [ "factorRadianToDegree", "a00066.html#a06bcd4055a1710817731bdfad688c4e5", null ],
-    [ "PI", "a00066.html#aa08a577393243b86dfd2a97e61443673", null ]
+    [ "BBMovementAnalyzer", "a00003.html", "a00003" ],
+    [ "BBMovementAnalyzerPtr", "a00066.html#a4b4312f5242a4142f10a9afe8e0660c7", null ]
 ];

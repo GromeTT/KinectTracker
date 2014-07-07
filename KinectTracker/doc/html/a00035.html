@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: ProcessingPipeline Class Reference</title>
+<title>KinectTracker: OpenGLWindow Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,44 +104,23 @@ $(document).ready(function(){initNavTree('a00035.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00195.html">List of all members</a>  </div>
+<a href="a00205.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ProcessingPipeline Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">OpenGLWindow Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00089_source.html">ProcessingPipeline.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00098_source.html">OpenGLWindow.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for ProcessingPipeline:</div>
+Inheritance diagram for OpenGLWindow:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00035.png" usemap="#ProcessingPipeline_map" alt=""/>
-  <map id="ProcessingPipeline_map" name="ProcessingPipeline_map">
-<area href="a00003.html" alt="BackgroudSubtractionPipeline" shape="rect" coords="0,112,312,136"/>
-<area href="a00010.html" alt="BSPipeline" shape="rect" coords="322,112,634,136"/>
-<area href="a00023.html" alt="HOGDetectionPipeline" shape="rect" coords="644,112,956,136"/>
-<area href="a00050.html" alt="SkinColorDetectionPipeline" shape="rect" coords="966,112,1278,136"/>
-<area href="a00052.html" alt="SkinColorExplicitDefinedSkinRegionDetectionPipeline" shape="rect" coords="1288,112,1600,136"/>
+  <img src="a00035.png" usemap="#OpenGLWindow_map" alt=""/>
+  <map id="OpenGLWindow_map" name="OpenGLWindow_map">
 </map>
  </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac2b026f4efdfacca5a940f92a242fbce"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ProcessingPipeline::ProcessingPipeline </td>
-          <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae81c183fb5d32d3e611be54d6ebd64b4"></a>
+<a class="anchor" id="a81b042bc42f2e3057c5eb30edf8029c6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -149,46 +128,46 @@ Inheritance diagram for ProcessingPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ProcessingPipeline::~ProcessingPipeline </td>
+          <td class="memname">OpenGLWindow::OpenGLWindow </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">QScreen *&#160;</td>
+          <td class="paramname"><em>screen</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa220b192c71871aab9100f4058a8d62d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OpenGLWindow::~OpenGLWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa10bf9f7655d9ec0f3aa73f1c028492d"></a>
+<a class="anchor" id="a0798f49b14a35aa4d2ea5bc1d82a1bd7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const QVector&lt; <a class="el" href="a00034.html">ProcessingComponent</a> * &gt; &amp; ProcessingPipeline::getComponents </td>
+          <td class="memname"><a class="el" href="a00094.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a> &amp; OpenGLWindow::getOpenGLContext </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa144235383e86765ca78fa3c8a2ac8bc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QObject * ProcessingPipeline::getObjectByName </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -196,7 +175,7 @@ Inheritance diagram for ProcessingPipeline:</div>
 
 </div>
 </div>
-<a class="anchor" id="aac43bf94ad3e70b41b87f6016c4f0f7d"></a>
+<a class="anchor" id="a47a2d281de563101f985de2465b9e45b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -204,25 +183,37 @@ Inheritance diagram for ProcessingPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ProcessingPipeline::process </td>
+          <td class="memname"><a class="el" href="a00094.html#a0fbb001be3d5b82303c35004c69efa2b">ScenePtr</a> OpenGLWindow::getScene </td>
           <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="a00052.html#a4c0b068485ce4d82ab3ffb4e70d1ea2e">SkinColorExplicitDefinedSkinRegionDetectionPipeline</a>, <a class="el" href="a00050.html#ac3718f2b9bf5db8d8912ae3937ed1924">SkinColorDetectionPipeline</a>, <a class="el" href="a00023.html#a6a98b00bb1c0bce667985396149c4eb2">HOGDetectionPipeline</a>, <a class="el" href="a00010.html#a3fbdaca91842edbb77ac057317ef425e">BSPipeline</a>, and <a class="el" href="a00003.html#a63f510e00cfe29acd36a86733d30c282">BackgroudSubtractionPipeline</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ad5f75b29b792f0d4a3ce32bd2dd3fad8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aa7cc109a733fcb9e285498c8889035d8"></a>
+<a class="anchor" id="a69f3cfa0a95ca91f57d90d9484bd6c54"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -230,41 +221,122 @@ Inheritance diagram for ProcessingPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ProcessingPipeline::registerComponent </td>
+          <td class="memname">void OpenGLWindow::initializeGL </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00034.html">ProcessingComponent</a> *&#160;</td>
-          <td class="paramname"><em>component</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>recursive</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="abb2ce193fbdedd4a8aef5e1ed5886478"></a>
+<a class="anchor" id="aafa1fdd10232a09b77db2395519e9882"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab7514c6f73755094d5670765ec47a71c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::keyReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a03229f68dac57be079e18b6ef135ab46"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ProcessingPipeline::setScreenshot </td>
+          <td class="memname">void OpenGLWindow::makeContextCurrent </td>
           <td>(</td>
-          <td class="paramtype">cv::Mat *&#160;</td>
-          <td class="paramname"><em>screenshot</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7ae488627e37254bbe1863c928781d83"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::paintGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a09f27a6f1628dadbd3c7ca3c1651ec59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::resizeGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae42079d2df46e3aa913e0ddfce3de023"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenGLWindow::updateScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -273,7 +345,7 @@ Inheritance diagram for ProcessingPipeline:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ad927650114ae1c2fb62fa7b85f60d82a"></a>
+<a class="anchor" id="ab402508e5d28e6d005872fa6731507ee"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -281,19 +353,19 @@ Inheritance diagram for ProcessingPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QMap&lt;int, <a class="el" href="a00034.html">ProcessingComponent</a>*&gt; ProcessingPipeline::m_allComponents</td>
+          <td class="memname"><a class="el" href="a00094.html#a9c6c46b152fbf088399207c75fc07902">OpenGLContext</a> OpenGLWindow::m_context</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a55281d23d200e0c6eeafb1c023fbb12e"></a>
+<a class="anchor" id="a423de24503a21bcfe9c05c6ce4581c45"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -301,19 +373,19 @@ Inheritance diagram for ProcessingPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ProcessingPipeline::m_instanceCounter</td>
+          <td class="memname"><a class="el" href="a00094.html#a0fbb001be3d5b82303c35004c69efa2b">ScenePtr</a> OpenGLWindow::m_scene</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ae825c5e5e8f0acdc9f0338cbb63eb458"></a>
+<a class="anchor" id="ad88460862bd55a441456b958a9563397"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -321,32 +393,12 @@ Inheritance diagram for ProcessingPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt;<a class="el" href="a00034.html">ProcessingComponent</a>*&gt; ProcessingPipeline::m_processingComponents</td>
+          <td class="memname">bool OpenGLWindow::m_strgPressed</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8c4abc98b5702ab950d4199b638a525a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">cv::Mat* ProcessingPipeline::mp_screenshot</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -354,16 +406,16 @@ Inheritance diagram for ProcessingPipeline:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00089_source.html">ProcessingPipeline.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00138.html">ProcessingPipeline.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/OpenGL/inc/<a class="el" href="a00098_source.html">OpenGLWindow.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/OpenGL/src/<a class="el" href="a00110.html">OpenGLWindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00035.html">ProcessingPipeline</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00035.html">OpenGLWindow</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

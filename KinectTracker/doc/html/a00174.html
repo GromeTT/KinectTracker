@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00014.html','');});
+$(document).ready(function(){initNavTree('a00003.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -104,28 +104,70 @@ $(document).ready(function(){initNavTree('a00014.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">DepthProcessingPipeline Member List</div>  </div>
+<div class="title">BBMovementAnalyzer Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00014.html">DepthProcessingPipeline</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00003.html">BBMovementAnalyzer</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00014.html#abf397c04b8bb77dd0056eb743dca5dca">DepthProcessingPipeline</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00014.html">DepthProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00014.html#a6c1b5ded2663cd4b58e21535a03dcc9f">getComponents</a>()</td><td class="entry"><a class="el" href="a00014.html">DepthProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00014.html#a89c84f4bb2eb5b58ee2e4f2993af800d">m_processingComponents</a></td><td class="entry"><a class="el" href="a00014.html">DepthProcessingPipeline</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00014.html#a271923a829986da68841c8045a4ebed6">m_threshold</a></td><td class="entry"><a class="el" href="a00014.html">DepthProcessingPipeline</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00014.html#af6971f9b63d57a35c0798e777b0bed14">process</a>(std::vector&lt; ushort &gt; &amp;currentImage, std::vector&lt; ushort &gt; &amp;screenshot)</td><td class="entry"><a class="el" href="a00014.html">DepthProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00014.html#afc0708800c1b44a3c53861ebaecb055e">setThreshold</a>(const int threshold)</td><td class="entry"><a class="el" href="a00014.html">DepthProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00014.html#a7a6449261a10b67242818ad8bb7a87bc">threshold</a></td><td class="entry"><a class="el" href="a00014.html">DepthProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00014.html#a5945fbccc98ef266f5d2220af76be333">threshold</a>() const </td><td class="entry"><a class="el" href="a00014.html">DepthProcessingPipeline</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00014.html#a47fb0fcdfa80b5421a3ce5d5291fc8e0">thresholdChanged</a>()</td><td class="entry"><a class="el" href="a00014.html">DepthProcessingPipeline</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00014.html#a69e948baaef5695a908d50fc23c7543c">~DepthProcessingPipeline</a>()</td><td class="entry"><a class="el" href="a00014.html">DepthProcessingPipeline</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a08ed3ad06629ef6ac1f6ba715090187b">addBoundingGeometry</a>(BoundingGeometryPtr &amp;boundingGeometry, const unsigned int timestamp)</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#aeb259bd408c39666bcc12cf44f9be5b4">analyze</a>(const SkeletonDataPtr &amp;skeleton, const unsigned int timestamp)</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#ab3cc94cd31a0019d49e51ea16d5f3ed0">anaylzeV</a>(const SkeletonDataPtr skeleton, const unsigned int timestamp)</td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#ab9d159bcf00339f0a1eb3148a43a3620">arePointsInsideLatestBoudingGeomerty</a>(const QVector&lt; QVector3D &gt; &amp;points) const </td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#ac68f990d9d96ef4f338cc4802727ff82">BBMovementAnalyzer</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#a6bc2046d0c2fe3ad6bfc7fc10c7b2871">boundingGeometries</a>() const </td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#ab2e5fede5bf17fc6625ce98eb5fa0c7d">dataAvailable</a>() const </td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00003.html#a33e025e0c6b4f9d22b9e22a3226c2f2a">deltaX</a></td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#a3a5c1da43dc616b933553ff2f6a54806">deltaX</a>() const </td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00003.html#a7309f169698df86c6a285e2fed9f0601">deltaXChanged</a>()</td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#a5c06d851a906e83f7464f57d9e00b631">deltaY</a></td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00003.html#a1abb3c31a955783f40e81ff93bccfaa7">deltaY</a>() const </td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#a150251f2c59556e367bf6bf1a50adbc9">deltaYChanged</a>()</td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00003.html#a31bb050a3885f633004dfd0b9617d3fe">deltaZ</a></td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#abcae738d42f905431d2fd33e7ec385f8">deltaZ</a>() const </td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00003.html#a7679c4396b4b0e41080aeaa811a05721">deltaZChanged</a>()</td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a8567df352f7b9d3addca81024349efb2">getLatestBoudingGeomerty</a>() const </td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#aec2fd35b7788882e6fbbe997bd508cd2">m_boudingGeometries</a></td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#a8c1c79a68f73f9164b3add9a3a5d9731">m_deltaX</a></td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00003.html#acbb76aa66c606e8d166d59ca00e4b837">m_deltaY</a></td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#aced75a4c41ea59a5f5992afce2ec3440">m_deltaZ</a></td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#afa1233957658d3ac7aa31632ea397b90">m_maxBoudingGeometryCount</a></td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a950981be4142b22fc4e133d6ef3412d7">MovementAnalyzer</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#ad7d80b4fdfcd15612a2c82a5c18c4b0e">pitch</a></td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a65133ef4fb75009b82c7975f6fb26d6c">pitch</a>() const </td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#acbd619fac863258147a2abcc009ebb12">pitchChanged</a>()</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#ace5c54cafffdc11629a205ae7bbebdac">roll</a></td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#af03825f5c6df9167c4c3b49e6e77e301">roll</a>() const </td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#af9349cccf207d467dc8c2144de1ed542">rollChanged</a>()</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#a2298804955816e3f249d9df242857436">setDataAvailable</a>(const bool available)</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#a5777ef9182f763b610f9674c2d1c4c73">setDeltaX</a>(const float deltaX)</td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00003.html#a5b1b40ed51808a9d520d5275572d52d2">setDeltaY</a>(const float deltaY)</td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#aea5f178118df25be54c1eb0f9a380378">setDeltaZ</a>(const float deltaZ)</td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#a965a227db5b24d6fcda905175af260b0">setPitch</a>(const float pitch)</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#adfa1d6103aaaeee5e8064565f91394fa">setRoll</a>(const float roll)</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#a03497cf6ee35b2a76fcb6fe007c34aa8">setVelocityInterval</a>(const int intervall)</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#ace6ff636fdde11fa5c47a289a2588b3d">setViewingDirection</a>(const QString &amp;direction)</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#a4856ffbad80bdd4bf04cf49813956852">setYaw</a>(const float yaw)</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a4d66dcb8b892767f9509a20426e6adf1">velocity</a></td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#a9ea3ea54c4c1600fdac8a15fdfa739ba">velocity</a>() const </td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a059ce5c4cdec5c2ac9fc84b517984d05">velocityInterval</a>() const </td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#a3c910d5b7ebba8bd069d120373d9c7eb">velocityIntervalChanged</a>()</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#aae0cd6d6acabee35acd2093d8dfe8957">velocityIntervall</a></td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#a6dbc250a29e5a72cd9c8e081156fbbe6">veloctiyChanged</a>()</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a3ca9ce77df855f480097faaeecf25fcd">viewingDirection</a></td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#ad5ef9417f30003bb7eac8aea84e76316">viewingDirection</a>() const </td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#abdbf8f2a49a8509be07302c41f8bb228">viewingDirectionChanged</a>()</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#ab50f8c3c4a633e4cfc662e6ce0274282">yaw</a></td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00033.html#a4e4e5c49bcd4fe1e52924f403af1074b">yaw</a>() const </td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#a9623c58dae7c417ad459a654ef892dcb">yawChanged</a>()</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00003.html#ac67f0e2bae42ad31d95aa1682191a5ea">~BBMovementAnalyzer</a>()</td><td class="entry"><a class="el" href="a00003.html">BBMovementAnalyzer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00033.html#a30b01985f212cbe998c7d685e84ddf1c">~MovementAnalyzer</a>()</td><td class="entry"><a class="el" href="a00033.html">MovementAnalyzer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

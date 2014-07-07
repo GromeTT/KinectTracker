@@ -52,6 +52,7 @@
     <addaction name="separator"/>
     <addaction name="actionTakeScreenshot"/>
     <addaction name="separator"/>
+    <addaction name="actionReset"/>
    </widget>
    <widget class="QMenu" name="menuAnalysis">
     <property name="title">
@@ -137,6 +138,11 @@
   <action name="actionImageAnalysisTool">
    <property name="text">
     <string>Image Analysis Tool</string>
+   </property>
+  </action>
+  <action name="actionReset">
+   <property name="text">
+    <string>Reset </string>
    </property>
   </action>
  </widget>

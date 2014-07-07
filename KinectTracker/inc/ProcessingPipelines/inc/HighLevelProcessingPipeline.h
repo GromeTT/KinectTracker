@@ -5,6 +5,7 @@
 #include <vector>
 #include <opencv2/opencv.hpp>
 #include <QSharedPointer>
+#include <QList>
 #include "DepthProcessingPipeline.h"
 #include "LowLevelProcessingPipeline.h"
 #include "../../Kinect/inc/Kinect.h"
@@ -24,46 +25,56 @@ public:
                                  QObject* parent = nullptr );
     virtual ~HighLevelProcessingPipeline();
 
-    void process( const unsigned int timestamp );
+    bool process( const unsigned int timestamp );
     void takeScreenShot();
     void saveHeadHistograms();
-    void drawRegionOfInterest( const AMath::Rectangle3D& rect,
-                               cv::Mat& image,
-                               const cv::Scalar& color );
-    void drawRegionOfInterestWithAndHeightAsPixels( const QVector3D& center,
-                                                    const float width,
-                                                    const float height,
-                                                    cv::Mat& image,
-                                                    const cv::Scalar& color );
-    void drawRegionOfInterestWithAndHeightAsPixels( const AMath::Rectangle3D& rect,
-                                                    cv::Mat image,
-                                                    const cv::Scalar& color );
+    void drawRegionOfInterest( QRect& rect,
+                               cv::Mat image,
+                               cv::Scalar color );
+    void reset();
+    QRect crop( const AMath::Rectangle3D& rect,
+                cv::Mat& image );
+    QRect cropRegionWithWidthAndHeightAsPixels( const QRect& rect,
+                                                const cv::Mat& image );
+    QRect cropRegionWithWidthAndHeightAsPixels( const QPoint& center,
+                                                const float width,
+                                                const float height,
+                                                const cv::Mat& image );
 
-    uchar*                          rgbImage() const;
-    ushort*                         depthImage() const;
-    SkeletonDataPtr                 skeletonData() const;
-    LowLevelProcessingPipelinePtr   rgbProcessingPipeline() const;
-    DepthProcessingPipelinePtr      depthProcessingPipeline() const;
-    MovementAnalyzerPtr             movementAnalyzer() const;
-    SizeAnalyzerPtr                 sizeAnalyzer() const;
-    SkeletonAnalyzerPtr             skeletonAnalyzer() const;
+    uchar*                                rgbImage() const;
+    ushort*                               depthImage() const;
+    SkeletonDataPtr                       skeletonData() const;
+    QList<LowLevelProcessingPipelinePtr>& rgbProcessingPipelines();
+    DepthProcessingPipelinePtr            depthProcessingPipeline() const;
+    MovementAnalyzerPtr                   movementAnalyzer() const;
+    SizeAnalyzerPtr                       sizeAnalyzer() const;
+    SkeletonAnalyzerPtr                   skeletonAnalyzer() const;
+    bool                                  skeletonDataAvailable() const;
 
 protected:
     virtual void processV( const unsigned int timestamp ) = 0;
+    virtual void resetV() = 0;
+    void trackJoints(const SkeletonDataPtr skeleton , cv::Mat image);
+    void drawJoint( SkeletonData::Joints joint,
+                    const SkeletonDataPtr skeleton,
+                    cv::Mat image,
+                    const int width = 25,
+                    const int height = 25 );
 
-    SkeletonAnalyzerPtr           m_skeletonAnalyzer;
-    MovementAnalyzerPtr           m_movementAnalyzer;
-    SizeAnalyzerPtr               m_sizeAnalyzer;
-    DepthProcessingPipelinePtr    m_depthProcessingPipeline;
-    LowLevelProcessingPipelinePtr m_rgbProcessingPipeline;
-    KinectPtr                     m_kinect;
-    QList<SkeletonDataPtr>        m_skeletons;
-    ushort*                       mp_depthData;
-    uchar*                        mp_rgbData;
-    ushort*                       mp_depthScrennshot;
-    uchar*                        mp_rgbScreenshot;
-    int                           m_depthSize;
-    int                           m_rgbSize;
+    KinectPtr                            m_kinect;
+    SkeletonAnalyzerPtr                  m_skeletonAnalyzer;
+    MovementAnalyzerPtr                  m_movementAnalyzer;
+    SizeAnalyzerPtr                      m_sizeAnalyzer;
+    DepthProcessingPipelinePtr           m_depthProcessingPipeline;
+    QList<SkeletonDataPtr>               m_skeletons;
+    QList<LowLevelProcessingPipelinePtr> m_rgbProcessingPipelines;
+    ushort*                              mp_depthData;
+    uchar*                               mp_rgbData;
+    ushort*                              mp_depthScrennshot;
+    uchar*                               mp_rgbScreenshot;
+    int                                  m_depthSize;
+    int                                  m_rgbSize;
+    bool                                 m_skeletonDataAvailable;
 };
 
 typedef QSharedPointer<HighLevelProcessingPipeline> HighLevelProcessingPipelinePtr;

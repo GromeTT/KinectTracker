@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: DepthAnalyzer Class Reference</title>
+<title>KinectTracker: ConnectionHelper Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,92 +104,60 @@ $(document).ready(function(){initNavTree('a00013.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00173.html">List of all members</a>  </div>
+<a href="a00183.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">DepthAnalyzer Class Reference</div>  </div>
+<div class="title">ConnectionHelper Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00067_source.html">DepthAnalyzer.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for DepthAnalyzer:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00013.png" usemap="#DepthAnalyzer_map" alt=""/>
-  <map id="DepthAnalyzer_map" name="DepthAnalyzer_map">
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="a00151_source.html">ConnectionHelper.h</a>&gt;</code></p>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a029fd17ddc9694cd9fb8f60bd0675b07"></a>
+<a class="anchor" id="a6496a906a3665181309f63f2f6e74c70"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DepthAnalyzer::DepthAnalyzer </td>
+          <td class="memname">ConnectionHelper::ConnectionHelper </td>
           <td>(</td>
           <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td class="paramname"><em>signalObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">QMetaMethod &amp;&#160;</td>
+          <td class="paramname"><em>signal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>slotObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMetaMethod &amp;&#160;</td>
+          <td class="paramname"><em>slot</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a4b511bd978698d4ddbfc44aec0b2b6f4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">DepthAnalyzer::~DepthAnalyzer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p><a class="el" href="a00013.html#a6496a906a3665181309f63f2f6e74c70" title="ConnectionHelper::ConnectionHelper Disconnects the objects. ">ConnectionHelper::ConnectionHelper</a> Disconnects the objects. </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa2d58fa1227f8bce9cb1a99d7a3fbd63"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DepthAnalyzer::analyze </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; ushort &gt; &amp;&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a973583c7e36c9a2c83c46692808064a7"></a>
+<a class="anchor" id="a8b9140fb195ca81c27ac1751e6bd89f9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; ushort &gt; &amp; DepthAnalyzer::getDepthData </td>
+          <td class="memname">ConnectionHelper::~ConnectionHelper </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -197,25 +165,12 @@ Inheritance diagram for DepthAnalyzer:</div>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="ac02de08b9a9a7e88cb9b759280a58981"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00014.html">DepthProcessingPipeline</a> * DepthAnalyzer::getPipeline </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p><a class="el" href="a00013.html#a8b9140fb195ca81c27ac1751e6bd89f9" title="ConnectionHelper::~ConnectionHelper Connects the objects. ">ConnectionHelper::~ConnectionHelper</a> Connects the objects. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a442657c53d0f8fb650a9aee019d9fac8"></a>
+<a class="anchor" id="a64ea062b7055aeb0ad77a4202fbcfc16"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -223,7 +178,7 @@ Inheritance diagram for DepthAnalyzer:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;ushort&gt; DepthAnalyzer::m_depthData</td>
+          <td class="memname">QMetaMethod&amp; ConnectionHelper::m_signal</td>
         </tr>
       </table>
   </td>
@@ -235,7 +190,7 @@ Inheritance diagram for DepthAnalyzer:</div>
 
 </div>
 </div>
-<a class="anchor" id="afee0d8d0fda80d4d540ac493aff78157"></a>
+<a class="anchor" id="afb15f230a060b8677e3f243757c5072d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -243,7 +198,47 @@ Inheritance diagram for DepthAnalyzer:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00014.html">DepthProcessingPipeline</a>* DepthAnalyzer::mp_processingPipeline</td>
+          <td class="memname">QMetaMethod ConnectionHelper::m_slot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a164669cef7b194246967d78be76cc6e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QObject* ConnectionHelper::mp_signalObject</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a09663b940d2ca79a6915662c8fda877c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QObject* ConnectionHelper::mp_slotObject</td>
         </tr>
       </table>
   </td>
@@ -256,16 +251,16 @@ Inheritance diagram for DepthAnalyzer:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00067_source.html">DepthAnalyzer.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00116.html">DepthAnalyzer.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/QtHelper/inc/<a class="el" href="a00151_source.html">ConnectionHelper.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/QtHelper/src/<a class="el" href="a00153.html">ConnectionHelper.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00013.html">DepthAnalyzer</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00013.html">ConnectionHelper</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

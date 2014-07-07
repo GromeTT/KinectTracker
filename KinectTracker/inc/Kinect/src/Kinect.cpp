@@ -20,6 +20,10 @@ Kinect::Kinect()
     : m_initialized( false )
     , m_rgbStreamOpen( false )
     , m_deptStreamOpen( false )
+    , m_a( 0 )
+    , m_b( 0 )
+    , m_c( 0 )
+    , m_d( 0 )
 {
 }
 
@@ -452,6 +456,11 @@ HRESULT Kinect::getSkeleton( QList<SkeletonDataPtr>& skeletons )
     // Smooth skeleton data
     mp_sensor->NuiTransformSmooth( &skeletonFrame, nullptr );
 
+    m_a = skeletonFrame.vFloorClipPlane.x;
+    m_b = skeletonFrame.vFloorClipPlane.y;
+    m_c = skeletonFrame.vFloorClipPlane.z;
+    m_d = skeletonFrame.vFloorClipPlane.w;
+
     for ( int i = 0; i < NUI_SKELETON_COUNT; ++i )
     {
         switch ( skeletonFrame.SkeletonData[i].eTrackingState )
@@ -488,6 +497,14 @@ bool Kinect::isRGBStreamOpen() const
 bool Kinect::isDepthStreamOpen() const
 {
     return m_deptStreamOpen;
+}
+
+QVector4D Kinect::planeCoefficients() const
+{
+    return QVector4D( m_a,
+                      m_b,
+                      m_c,
+                      m_d );
 }
 
 void Kinect::setSize(QSize& size, NUI_IMAGE_RESOLUTION resolution)
@@ -530,7 +547,7 @@ void Kinect::setSize(QSize& size, NUI_IMAGE_RESOLUTION resolution)
    \param coordinates
    \return
  */
-QVector2D transformFromSkeltonToRGB( const QVector3D& coordinates )
+QPoint transformFromSkeltonToRGB( const QVector3D& coordinates )
 {
     Vector4 vec;
     vec.x = coordinates.x();
@@ -547,5 +564,5 @@ QVector2D transformFromSkeltonToRGB( const QVector3D& coordinates )
                                                     depth,
                                                     &x,
                                                     &y );
-    return QVector2D( x, y );
+    return QPoint( x, y );
 }

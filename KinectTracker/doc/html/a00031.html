@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: MovementAnalyzer Class Reference</title>
+<title>KinectTracker: LowLevelProcessingPipeline Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,29 +104,34 @@ $(document).ready(function(){initNavTree('a00031.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00191.html">List of all members</a>  </div>
+<a href="a00201.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MovementAnalyzer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">LowLevelProcessingPipeline Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00085_source.html">MovementAnalyzer.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00123_source.html">LowLevelProcessingPipeline.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for MovementAnalyzer:</div>
+Inheritance diagram for LowLevelProcessingPipeline:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00031.png" usemap="#MovementAnalyzer_map" alt=""/>
-  <map id="MovementAnalyzer_map" name="MovementAnalyzer_map">
-<area href="a00005.html" alt="BBMovementAnalyzer" shape="rect" coords="0,112,137,136"/>
+  <img src="a00031.png" usemap="#LowLevelProcessingPipeline_map" alt=""/>
+  <map id="LowLevelProcessingPipeline_map" name="LowLevelProcessingPipeline_map">
+<area href="a00001.html" alt="BackgroudSubtractionPipeline" shape="rect" coords="0,112,312,136"/>
+<area href="a00010.html" alt="BSPipeline" shape="rect" coords="322,112,634,136"/>
+<area href="a00023.html" alt="HOGDetectionPipeline" shape="rect" coords="644,112,956,136"/>
+<area href="a00050.html" alt="SkinColorDetectionPipeline" shape="rect" coords="966,112,1278,136"/>
+<area href="a00052.html" alt="SkinColorExplicitDefinedSkinRegionDetectionPipeline" shape="rect" coords="1288,112,1600,136"/>
+<area href="a00053.html" alt="SkinColorHistogramDetectionPipeline" shape="rect" coords="1610,112,1922,136"/>
 </map>
  </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a950981be4142b22fc4e133d6ef3412d7"></a>
+<a class="anchor" id="aba88576ff1e56b9969644fe35aab9f05"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MovementAnalyzer::MovementAnalyzer </td>
+          <td class="memname">LowLevelProcessingPipeline::LowLevelProcessingPipeline </td>
           <td>(</td>
           <td class="paramtype">QObject *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
@@ -135,11 +140,9 @@ Inheritance diagram for MovementAnalyzer:</div>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00031.html#a950981be4142b22fc4e133d6ef3412d7" title="MovementAnalyzer::MovementAnalyzer Standardconstructor. ">MovementAnalyzer::MovementAnalyzer</a> Standardconstructor. </p>
-
 </div>
 </div>
-<a class="anchor" id="a30b01985f212cbe998c7d685e84ddf1c"></a>
+<a class="anchor" id="a8451d67d65d13be58ba4091c8a2ca8a0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -147,7 +150,7 @@ Inheritance diagram for MovementAnalyzer:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">MovementAnalyzer::~MovementAnalyzer </td>
+          <td class="memname">LowLevelProcessingPipeline::~LowLevelProcessingPipeline </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -160,59 +163,15 @@ Inheritance diagram for MovementAnalyzer:</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00031.html#a30b01985f212cbe998c7d685e84ddf1c" title="MovementAnalyzer::~MovementAnalyzer Destroyes the object. ">MovementAnalyzer::~MovementAnalyzer</a> Destroyes the object. </p>
-
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ad65a6e9c98e84c2cee5f6a5262ee66ef"></a>
+<a class="anchor" id="a3d132d2f2875b6b875c8c6a4d852d8b2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void MovementAnalyzer::analyze </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00031.html#ad65a6e9c98e84c2cee5f6a5262ee66ef" title="MovementAnalyzer::analyze Analyzes the human&#39;s movement. ">MovementAnalyzer::analyze</a> Analyzes the human's movement. </p>
-
-</div>
-</div>
-<a class="anchor" id="a58a2a82237e19effd52ed934bd2b95f6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void MovementAnalyzer::anaylzeV </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00005.html#a81b6fadc280e39c2ef86b3d21e1c8101">BBMovementAnalyzer</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afc9a86154bca9345449b256ac3fbc588"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QList&lt; <a class="el" href="a00063.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a> &gt; &amp; MovementAnalyzer::boundingGeometries </td>
+          <td class="memname">const QVector&lt; <a class="el" href="a00036.html">ProcessingComponent</a> * &gt; &amp; LowLevelProcessingPipeline::getComponents </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -220,12 +179,25 @@ Inheritance diagram for MovementAnalyzer:</div>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00031.html#afc9a86154bca9345449b256ac3fbc588" title="MovementAnalyzer::boundingGeometries Returns a QList with all BoundingGeometries calculated within th...">MovementAnalyzer::boundingGeometries</a> Returns a QList with all BoundingGeometries calculated within this class. </p>
+</div>
+</div>
+<a class="anchor" id="a3abf43b291947100a3594528bb401f62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QObject * LowLevelProcessingPipeline::getObjectByName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ad0b66ec19da305b82c7c883c748d6ffc"></a>
+<a class="anchor" id="a5ee87a0ab5c911a7b237ee2835b06c9c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -233,12 +205,151 @@ Inheritance diagram for MovementAnalyzer:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QList&lt;<a class="el" href="a00063.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a>&gt; MovementAnalyzer::m_boundingGeomerties</td>
+          <td class="memname">virtual void LowLevelProcessingPipeline::process </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a00053.html#aa4e1f481940490e28b6112bd117e5a89">SkinColorHistogramDetectionPipeline</a>, <a class="el" href="a00052.html#a4c0b068485ce4d82ab3ffb4e70d1ea2e">SkinColorExplicitDefinedSkinRegionDetectionPipeline</a>, <a class="el" href="a00050.html#ac3718f2b9bf5db8d8912ae3937ed1924">SkinColorDetectionPipeline</a>, <a class="el" href="a00023.html#a6a98b00bb1c0bce667985396149c4eb2">HOGDetectionPipeline</a>, <a class="el" href="a00010.html#a3fbdaca91842edbb77ac057317ef425e">BSPipeline</a>, and <a class="el" href="a00001.html#a63f510e00cfe29acd36a86733d30c282">BackgroudSubtractionPipeline</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a32b461bc4563ecc77b06387d79826548"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LowLevelProcessingPipeline::registerComponent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00036.html">ProcessingComponent</a> *&#160;</td>
+          <td class="paramname"><em>component</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>recursive</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad1d35317ce15566d6eba83e89e73ebd6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LowLevelProcessingPipeline::setScreenshot </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>screenshot</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00031.html#ad1d35317ce15566d6eba83e89e73ebd6" title="LowLevelProcessingPipeline::setScreenshot Stores a pointer to screenshot but does not take controll o...">LowLevelProcessingPipeline::setScreenshot</a> Stores a pointer to <em>screenshot</em> but does not take controll over it. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a54f054c8a944ea6c9eecaa60caf4bef0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;int, <a class="el" href="a00036.html">ProcessingComponent</a>*&gt; LowLevelProcessingPipeline::m_allComponents</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a36c4f7f68af568346d63f356847dac4d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LowLevelProcessingPipeline::m_instanceCounter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac20543dc9ea8a4c00bca0f3acab9183d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;<a class="el" href="a00036.html">ProcessingComponent</a>*&gt; LowLevelProcessingPipeline::m_processingComponents</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3bea63f951ec26d9c860b82724284fb7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat* LowLevelProcessingPipeline::mp_screenshot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -246,16 +357,16 @@ Inheritance diagram for MovementAnalyzer:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00085_source.html">MovementAnalyzer.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00134.html">MovementAnalyzer.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/inc/<a class="el" href="a00123_source.html">LowLevelProcessingPipeline.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/src/<a class="el" href="a00136.html">LowLevelProcessingPipeline.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00031.html">MovementAnalyzer</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00031.html">LowLevelProcessingPipeline</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

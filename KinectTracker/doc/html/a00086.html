@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/ObjectLoader.h File Reference</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Geometries/inc/BoundingGeometry.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,30 +104,70 @@ $(document).ready(function(){initNavTree('a00086.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">ObjectLoader.h File Reference</div>  </div>
+<div class="title">BoundingGeometry.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;QVector&gt;</code><br />
-<code>#include &lt;QString&gt;</code><br />
 <code>#include &lt;QSharedPointer&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00108_source.html">Vertex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00105_source.html">../../OpenGL/inc/Vertex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00091_source.html">../../Kinect/inc/SkeletonData.h</a>&quot;</code><br />
 </div>
 <p><a href="a00086_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html">LoaderObject</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html">BoundingGeometry</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032.html">ObjectLoader</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00006.html">BoundingBox</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html">BoundingGeometryWithTimeStamp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00009.html">BoundingSphere</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="af2d2d934df351d4e2b38aab9daaf0e94"></a>
+<a class="anchor" id="a63be8cb12104dd2612c80c1defebd264"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef QSharedPointer&lt;<a class="el" href="a00029.html">LoaderObject</a>&gt; <a class="el" href="a00086.html#af2d2d934df351d4e2b38aab9daaf0e94">LoaderObjectPtr</a></td>
+          <td class="memname">typedef QSharedPointer&lt;<a class="el" href="a00006.html">BoundingBox</a>&gt; <a class="el" href="a00086.html#a63be8cb12104dd2612c80c1defebd264">BoundingBoxPtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a98382f9c2f98387986e0fd9434910ca2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QSharedPointer&lt;<a class="el" href="a00007.html">BoundingGeometry</a>&gt; <a class="el" href="a00086.html#a98382f9c2f98387986e0fd9434910ca2">BoundingGeometryPtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2cf6b652a4fccd40c0719bb68dfd26e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QSharedPointer&lt;<a class="el" href="a00008.html">BoundingGeometryWithTimeStamp</a>&gt; <a class="el" href="a00086.html#a2cf6b652a4fccd40c0719bb68dfd26e0">BoundingGeometryWithTimeStampPtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a259f4df67df3fce159eb227839d3c425"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QVector&lt;<a class="el" href="a00059.html">Vertex</a>&gt; <a class="el" href="a00086.html#a259f4df67df3fce159eb227839d3c425">Vertices</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -139,8 +179,8 @@ Classes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00086.html">ObjectLoader.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_88e9e836a41e9282cb9196ab4bc2ba83.html">Geometries</a></li><li class="navelem"><a class="el" href="dir_546064d51ed0b47dc09ccf9b3c58aa9a.html">inc</a></li><li class="navelem"><a class="el" href="a00086.html">BoundingGeometry.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

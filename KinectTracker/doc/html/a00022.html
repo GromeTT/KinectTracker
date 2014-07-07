@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: HighLevelProcessingPipeline Class Reference</title>
+<title>KinectTracker: Histogram Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,51 +104,39 @@ $(document).ready(function(){initNavTree('a00022.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00182.html">List of all members</a>  </div>
+<a href="a00192.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">HighLevelProcessingPipeline Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">Histogram Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00076_source.html">HighLevelProcessingPipeline.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00120_source.html">Histogram.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for HighLevelProcessingPipeline:</div>
+Inheritance diagram for Histogram:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00022.png" usemap="#HighLevelProcessingPipeline_map" alt=""/>
-  <map id="HighLevelProcessingPipeline_map" name="HighLevelProcessingPipeline_map">
-<area href="a00042.html" alt="SABSSDProcessingPipeline" shape="rect" coords="0,112,177,136"/>
-<area href="a00043.html" alt="SASDProcessingPipeline" shape="rect" coords="187,112,364,136"/>
+  <img src="a00022.png" usemap="#Histogram_map" alt=""/>
+  <map id="Histogram_map" name="Histogram_map">
+<area href="a00036.html" alt="ProcessingComponent" shape="rect" coords="0,56,138,80"/>
 </map>
  </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a122fd6142e474c9df429786249fa5a3c"></a>
+<a class="anchor" id="af681f293852ac145f867ecfcce3062a5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">HighLevelProcessingPipeline::HighLevelProcessingPipeline </td>
+          <td class="memname">Histogram::Histogram </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00081.html#affc3611a0f4ad546175a9cca2cfc53f1">KinectPtr</a> &amp;&#160;</td>
-          <td class="paramname"><em>kinect</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a12782581efb7b51aa67c698f233725b3"></a>
+<a class="anchor" id="afbd077244c19d184ab1c8931aa4f0d4b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -156,7 +144,7 @@ Inheritance diagram for HighLevelProcessingPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">HighLevelProcessingPipeline::~HighLevelProcessingPipeline </td>
+          <td class="memname">virtual Histogram::~Histogram </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -171,93 +159,8 @@ Inheritance diagram for HighLevelProcessingPipeline:</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2c82b17769ca24662aeaa8532513dfe6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uchar * HighLevelProcessingPipeline::getRGBImage </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="adb2161e70b63d10f68aa420d006c718f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00001.html">AnalysisResults</a> HighLevelProcessingPipeline::process </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>timestamp</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a00022.html#adb2161e70b63d10f68aa420d006c718f" title="HighLevelProcessingPipeline::process Process the RGB, depth and skeleton data. ">HighLevelProcessingPipeline::process</a> Process the RGB, depth and skeleton data. </p>
-
-</div>
-</div>
-<a class="anchor" id="a9e625299a658b482ef91f9298e1234fd"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="a00001.html">AnalysisResults</a> HighLevelProcessingPipeline::processV </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00001.html">AnalysisResults</a> &amp;&#160;</td>
-          <td class="paramname"><em>results</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>timestamp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00043.html#aa7ad9f057418a0871e207c34132f6f97">SASDProcessingPipeline</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a30669218ef47df5fd2b656a8ec5f87b8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void HighLevelProcessingPipeline::takeScreenShot </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a83f97f610aeec4364c55c2ef5c6d8662"></a>
+<a class="anchor" id="add11012416a3aa37bfd8a22412470d72"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -265,169 +168,28 @@ Inheritance diagram for HighLevelProcessingPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int HighLevelProcessingPipeline::m_depthSize</td>
+          <td class="memname">int Histogram::m_numberOfBins</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a536629a6d22b49827322449f21ffd2c0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00081.html#affc3611a0f4ad546175a9cca2cfc53f1">KinectPtr</a> HighLevelProcessingPipeline::m_kinect</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af6197cabcb6739b487e328e1ae658c75"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int HighLevelProcessingPipeline::m_rgbSize</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab02ef16b56729184d0f498007b1047c5"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QList&lt;<a class="el" href="a00102.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a>&gt; HighLevelProcessingPipeline::m_skeletons</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="afa9571c360ed5cd4aabaa676f47e8f99"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ushort* HighLevelProcessingPipeline::mp_depthData</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac8835768df7d8ed0e332afe299539a75"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ushort* HighLevelProcessingPipeline::mp_depthScrennshot</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9d9f79d84e76d8bc0cdcf307551ef2da"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uchar* HighLevelProcessingPipeline::mp_rgbData</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa38772cc6b8223338d127872ec79c85c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uchar* HighLevelProcessingPipeline::mp_rgbScreenshot</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00076_source.html">HighLevelProcessingPipeline.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00125.html">HighLevelProcessingPipeline.cpp</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/inc/<a class="el" href="a00120_source.html">Histogram.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00022.html">HighLevelProcessingPipeline</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00022.html">Histogram</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

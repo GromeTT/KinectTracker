@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['lowerbounds',['lowerBounds',['../a00026.html#a5fd14775e1455ca9763d816a7561689d',1,'InRange']]],
-  ['lyingthreshold',['lyingThreshold',['../a00047.html#acfe41a7d411d1f1e5f7b1895f88302ad',1,'SkeletonAnalyzer']]]
+  ['kernelcolumncount',['kernelColumnCount',['../a00016.html#ae0222fa088331077fdedfa5a8c563f35',1,'Dilate::kernelColumnCount()'],['../a00017.html#af3a054af884f12f059ad25e11b27a189',1,'Erode::kernelColumnCount()']]],
+  ['kernelrowcount',['kernelRowCount',['../a00016.html#a3a8271aa22bbe839a3552624c1f22e18',1,'Dilate::kernelRowCount()'],['../a00017.html#ad20b4f0f1517df8067fb8d8d96c95345',1,'Erode::kernelRowCount()']]],
+  ['kneelingthreshold',['kneelingThreshold',['../a00046.html#ac6d8a342b5435c17d684149c85db8193',1,'SizeAnalyzer']]]
 ];

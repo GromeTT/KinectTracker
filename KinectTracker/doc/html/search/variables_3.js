@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['faceclassifier',['faceClassifier',['../a00030.html#a9f84e5b655f386aeda69f3a8fbe4b05c',1,'MainWindow']]],
-  ['factorradiantodegree',['factorRadianToDegree',['../a00066.html#a06bcd4055a1710817731bdfad688c4e5',1,'Defines.h']]]
+  ['factorradiantodegree',['factorRadianToDegree',['../a00167.html#a4c6f488795fd3605d7206086df8002c1',1,'AMath']]]
 ];

@@ -104,39 +104,59 @@ $(document).ready(function(){initNavTree('a00042.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00202.html">List of all members</a>  </div>
+<a href="a00211.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">SABSSDProcessingPipeline Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00096_source.html">SABSSDProcessingPipeline.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00125_source.html">SABSSDProcessingPipeline.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SABSSDProcessingPipeline:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="a00042.png" usemap="#SABSSDProcessingPipeline_map" alt=""/>
   <map id="SABSSDProcessingPipeline_map" name="SABSSDProcessingPipeline_map">
-<area href="a00022.html" alt="HighLevelProcessingPipeline" shape="rect" coords="0,56,177,80"/>
+<area href="a00021.html" alt="HighLevelProcessingPipeline" shape="rect" coords="0,56,177,80"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_a00021"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00021')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00021.html">HighLevelProcessingPipeline</a></td></tr>
+<tr class="memitem:a3dbf6f7915f7447fcc0ada096621854d inherit pub_methods_a00021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00021.html#a3dbf6f7915f7447fcc0ada096621854d">drawRegionOfInterestWidthAndHeightAsPixels</a> (const QVector3D &amp;center, const float width, const float height, cv::Mat &amp;image, const cv::Scalar &amp;color)</td></tr>
+<tr class="separator:a3dbf6f7915f7447fcc0ada096621854d inherit pub_methods_a00021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40c8d559ab0e4e65bdcdc316c8684660 inherit pub_methods_a00021"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00021.html#a40c8d559ab0e4e65bdcdc316c8684660">cropRegionWithWidthAndHeightAsPixels</a> (QVector3D &amp;center, const float width, const float height, cv::Mat image)</td></tr>
+<tr class="separator:a40c8d559ab0e4e65bdcdc316c8684660 inherit pub_methods_a00021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a2139cd50d6a7967fb55309d566e54d19"></a>
+<a class="anchor" id="a0aa650a614997bb72d772eceb98bd373"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">SABSSDProcessingPipeline::SABSSDProcessingPipeline </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00090.html#affc3611a0f4ad546175a9cca2cfc53f1">KinectPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>kinect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="af874ed14038c7d031081f1f0126a8b5b"></a>
+<a class="anchor" id="a35b70cef1bb215eed6f64b38f282b625"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -144,7 +164,7 @@ Inheritance diagram for SABSSDProcessingPipeline:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual SABSSDProcessingPipeline::~SABSSDProcessingPipeline </td>
+          <td class="memname">SABSSDProcessingPipeline::~SABSSDProcessingPipeline </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -157,10 +177,89 @@ Inheritance diagram for SABSSDProcessingPipeline:</div>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00042.html#a35b70cef1bb215eed6f64b38f282b625" title="SABSSDProcessingPipeline::~SABSSDProcessingPipeline Destroyes the object. ">SABSSDProcessingPipeline::~SABSSDProcessingPipeline</a> Destroyes the object. </p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00096_source.html">SABSSDProcessingPipeline.h</a></li>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a755e2340c8ef67e555f577dbfb94629b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SABSSDProcessingPipeline::processDepthData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab675f908ee379b133bbfb0e727b7c87c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SABSSDProcessingPipeline::processSkeletonData </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a05fe251692d4546cb33f84926dfdae51"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SABSSDProcessingPipeline::processV </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timestamp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SABSSDProcessingPipeline::procesV. </p>
+
+<p>Implements <a class="el" href="a00021.html#a09db4fa46842d9c4ea55915e07250646">HighLevelProcessingPipeline</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/inc/<a class="el" href="a00125_source.html">SABSSDProcessingPipeline.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ProcessingPipelines/src/<a class="el" href="a00138.html">SABSSDProcessingPipeline.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -168,7 +267,7 @@ Inheritance diagram for SABSSDProcessingPipeline:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="a00042.html">SABSSDProcessingPipeline</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:39 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

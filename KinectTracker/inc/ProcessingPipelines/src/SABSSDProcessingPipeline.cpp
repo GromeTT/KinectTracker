@@ -33,7 +33,12 @@ void SABSSDProcessingPipeline::processV( const unsigned int timestamp )
     }
 }
 
-bool SABSSDProcessingPipeline::processSkeletonData(const unsigned int timestamp)
+void SABSSDProcessingPipeline::resetV()
+{
+
+}
+
+bool SABSSDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
 {
     if ( m_skeletons.count() <= 0 ||
          !m_skeletonAnalyzer->update( m_skeletons.at( 0 ), timestamp ) )
@@ -51,7 +56,7 @@ bool SABSSDProcessingPipeline::processSkeletonData(const unsigned int timestamp)
         // case: The data provided by the skeleton are of good quality.
         //       Perform the further analysis on the skeleton data.
         m_movementAnalyzer->analyze( m_skeletons.at( 0 ), timestamp );
-        m_sizeAnalyzer->analyze( m_skeletons.at( 0 ) );
+        m_sizeAnalyzer->analyze( m_kinect, m_skeletons.at( 0 ) );
 //        drawRegionOfInterest( m_skeletonAnalyzer->headRegion(), cv::Scalar( 255, 0, 0 ) );
         return true;
     }

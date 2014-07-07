@@ -2,6 +2,7 @@
 #include "../inc/QObjectTreeWidgetItem.h"
 #include "../../OpenGL/inc/RenderObject.h"
 #include "../../ProcessingPipelines/inc/ProcessingComponent.h"
+#include "../../ProcessingPipelines/inc/LowLevelProcessingPipeline.h"
 #include "ui_SceneGraphWidget.h"
 
 SceneGraphWidget::SceneGraphWidget(QWidget *parent)

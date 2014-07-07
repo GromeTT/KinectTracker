@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: Skeleton Class Reference</title>
+<title>KinectTracker: SizeAnalyzer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,15 +104,43 @@ $(document).ready(function(){initNavTree('a00046.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00206.html">List of all members</a>  </div>
+<a href="a00215.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Skeleton Class Reference</div>  </div>
+<div class="title">SizeAnalyzer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00100_source.html">Skeleton.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00069_source.html">SizeAnalyzer.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SizeAnalyzer:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00046.png" usemap="#SizeAnalyzer_map" alt=""/>
+  <map id="SizeAnalyzer_map" name="SizeAnalyzer_map">
+<area href="a00005.html" alt="BBSizeAnalyzer" shape="rect" coords="0,112,150,136"/>
+<area href="a00058.html" alt="UpperBodySizeAnalyzer" shape="rect" coords="160,112,310,136"/>
+</map>
+ </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af01a02f1ce9ae4c801cd6e66ccf7407f"></a>
+<a class="anchor" id="ab427c3268cb08064889e8c266c016a6e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SizeAnalyzer::SizeAnalyzer </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#ab427c3268cb08064889e8c266c016a6e" title="SizeAnalyzer::SizeAnalyzer Standardconstructor. ">SizeAnalyzer::SizeAnalyzer</a> Standardconstructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4a579beda4a49067273a87364b05181c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -120,7 +148,7 @@ $(document).ready(function(){initNavTree('a00046.html','');});
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Skeleton::Skeleton </td>
+          <td class="memname">SizeAnalyzer::~SizeAnalyzer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -128,16 +156,35 @@ $(document).ready(function(){initNavTree('a00046.html','');});
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00046.html#af01a02f1ce9ae4c801cd6e66ccf7407f" title="Skeleton::Skeleton Creates an skeleton with random coordinates. ">Skeleton::Skeleton</a> Creates an skeleton with random coordinates. </p>
+<p><a class="el" href="a00046.html#a4a579beda4a49067273a87364b05181c" title="SizeAnalyzer::~SizeAnalyzer Destroyes the object. ">SizeAnalyzer::~SizeAnalyzer</a> Destroyes the object. </p>
 
 </div>
 </div>
-<a class="anchor" id="a26c980674b2baebf3de32e87668c213f"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a564bf9f97315a8b9742e91953d2871dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::analyze </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>skeletonData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#a564bf9f97315a8b9742e91953d2871dc" title="SizeAnalyzer::analyze Perform analysis on skeletonData. ">SizeAnalyzer::analyze</a> Perform analysis on <em>skeletonData</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="afeafe74db5b4966c7777447943096238"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -145,28 +192,30 @@ $(document).ready(function(){initNavTree('a00046.html','');});
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Skeleton::Skeleton </td>
+          <td class="memname">virtual void SizeAnalyzer::analyzeV </td>
           <td>(</td>
-          <td class="paramtype">const NUI_SKELETON_DATA &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> &amp;&#160;</td>
           <td class="paramname"><em>skeletonData</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>Implemented in <a class="el" href="a00058.html#aa7220e337aef1fe9e37e5164a1c82596">UpperBodySizeAnalyzer</a>, and <a class="el" href="a00005.html#a0e0d735639be1f3c932af4ee441f06b8">BBSizeAnalyzer</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="aeece886a4e2f039128144f94f25efd10"></a>
+<a class="anchor" id="adaae64786f04e2e6352b19744d629189"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Skeleton::~Skeleton </td>
+          <td class="memname">float SizeAnalyzer::currentBodySize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -174,21 +223,618 @@ $(document).ready(function(){initNavTree('a00046.html','');});
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="a00046.html#aeece886a4e2f039128144f94f25efd10" title="Skeleton::~Skeleton Destructor. ">Skeleton::~Skeleton</a> Destructor. </p>
+</div>
+</div>
+<a class="anchor" id="ae8c29b8c47977da2e4932b9c30e2928e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::currentBodySizeChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adf0b55a113c6449e354cc2b6f867d912"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::distanceHeadLeftFood </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6038748efa61d39a8ddebfecce2ba9a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::distanceHeadLeftFoodChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9e2ae4ea0a16de5b810c86968f3ade68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::distanceHeadRightFood </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7e4347c7f2abd26ccd1ed96d07f33ad9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::distanceHeadRightFoodChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae8ca630dbf8d9ceaddd34f083ee74dc4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::estimatedBodySize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9e087b8c79f8b1aacdf0f74a539424c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::estimatedBodySizeChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2a64bd363f2f244782d7669ffbddd76a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::kneelingThreshold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa04db6f570bad592e192a61fcdde66fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::kneelingThresholdChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8c2d381ae1ce073d1892f583866437a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::lyingThreshold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad22c5f3f1cc42f501733d0e79700ab65"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::lyingThresholdChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab34ad2bdb7741e6a40de9564a7aea653"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::setKneelingThreshold </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#ab34ad2bdb7741e6a40de9564a7aea653" title="SizeAnalyzer::setKneelingThreshold Sets the kneelingThreshold. ">SizeAnalyzer::setKneelingThreshold</a> Sets the kneelingThreshold. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7fc5b2277e9037ae39fca6bf3e926574"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::setLyingThreshold </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#a7fc5b2277e9037ae39fca6bf3e926574" title="SizeAnalyzer::setLyingThreshold Sets the lyingThreshold. ">SizeAnalyzer::setLyingThreshold</a> Sets the lyingThreshold. </p>
+
+</div>
+</div>
+<a class="anchor" id="a75462c3e1804ac87c5262bb74f5d940f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::setWorkerStatus </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aabb32e55968613c55d0fd470eab66b2c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString SizeAnalyzer::workerStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac0f3db8c74f536f7ca03b5a05019f70d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SizeAnalyzer::workerStatusChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a6d0b84f8d3fb643e0eba1632930fe382"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::m_currentBodySize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab68bf0c8978bdeb2c3558ff81a267e13"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::m_distanceHeadLeftFood</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d714384f75b725ea54a0e5093b16454"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::m_distanceHeadRightFood</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7535ef129c3849c28e42cefef6bde73e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::m_estimatedBodySize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa3892681525820ec7b0577c0b340f951"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::m_kneelingThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad069684e4065b137c0e6702b20c8b016"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::m_lyingThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a75aa4c993eff4887c8a58671c3a6e8e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString SizeAnalyzer::m_workerStatus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="ab6a8ee924164580bc8b7a240fe5a41a2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::currentBodySize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#ab6a8ee924164580bc8b7a240fe5a41a2" title="SizeAnalyzer::currentBodySize Returns the current body size. ">SizeAnalyzer::currentBodySize</a> Returns the current body size. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ba0916cd5f2b992f4839b2b0abd49fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::distanceHeadLeftFood</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#a2ba0916cd5f2b992f4839b2b0abd49fa" title="SizeAnalyzer::distanceHeadLeftFood Returns the distance between the head and the left food...">SizeAnalyzer::distanceHeadLeftFood</a> Returns the distance between the head and the left food. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7ea72bc8fe7d8c36e13b17a565a920b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::distanceHeadRightFood</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#a7ea72bc8fe7d8c36e13b17a565a920b1" title="SizeAnalyzer::distanceHeadRightFood Returns the distance between the head and the right food...">SizeAnalyzer::distanceHeadRightFood</a> Returns the distance between the head and the right food. </p>
+
+</div>
+</div>
+<a class="anchor" id="afa85ba7f8c9d92627ca4bd27c2fc2221"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::estimatedBodySize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#afa85ba7f8c9d92627ca4bd27c2fc2221" title="SizeAnalyzer::estimatedBodySize Returns the estimated body size. ">SizeAnalyzer::estimatedBodySize</a> Returns the estimated body size. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac6d8a342b5435c17d684149c85db8193"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::kneelingThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#ac6d8a342b5435c17d684149c85db8193" title="SizeAnalyzer::kneelingThreshold Returns the threshold used to determine if the worker is kneeling...">SizeAnalyzer::kneelingThreshold</a> Returns the threshold used to determine if the worker is kneeling. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa1a46fd1b62465bcf7692e6d82c30245"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SizeAnalyzer::lyingThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#aa1a46fd1b62465bcf7692e6d82c30245" title="SizeAnalyzer::lyingThreshold Returns the threshold used to determine if the worker is lying...">SizeAnalyzer::lyingThreshold</a> Returns the threshold used to determine if the worker is lying. </p>
+
+</div>
+</div>
+<a class="anchor" id="a97f2612ec1029afc0af552998bd276fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString SizeAnalyzer::workerStatus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00046.html#a97f2612ec1029afc0af552998bd276fe" title="SizeAnalyzer::workerStatus Returns the status of the worker. ">SizeAnalyzer::workerStatus</a> Returns the status of the worker. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00100_source.html">Skeleton.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00149.html">Skeleton.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Analyzer/inc/<a class="el" href="a00069_source.html">SizeAnalyzer.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Analyzer/src/<a class="el" href="a00076.html">SizeAnalyzer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00046.html">Skeleton</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00046.html">SizeAnalyzer</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:39 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

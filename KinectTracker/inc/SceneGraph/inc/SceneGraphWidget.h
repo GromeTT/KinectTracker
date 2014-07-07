@@ -7,8 +7,10 @@ class RenderObject;
 class QTreeWidgetItem;
 class RenderObjectInterface;
 class ProcessingComponent;
+class LowLevelProcessingPipeline;
 
 typedef QVector<RenderObjectInterface*> RenderObjects;
+typedef QSharedPointer<LowLevelProcessingPipeline> LowLevelProcessingPipelinePtr;
 
 namespace Ui {
 class SceneGraphWidget;

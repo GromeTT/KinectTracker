@@ -14,6 +14,7 @@
 #include "inc/ProcessingPipelines/inc/HighLevelProcessingPipeline.h"
 #include "inc/Visualizer/inc/Visualizer.h"
 #include "inc/SceneGraph/inc/SceneGraphWidget.h"
+#include "inc/OpenGL/inc/Floor.h"
 
 class OpenGLWidget;
 class OpenGLWindow;
@@ -59,6 +60,7 @@ private:
     void activateSABSSDMode( bool checked );
     void setVisualizer();
     void switchCatergoryOnSceneGraph( SceneGraphWidget::ActiveScene scene );
+    void reset();
 
 
 signals:
@@ -104,6 +106,8 @@ private:
     HighLevelProcessingPipelinePtr m_highLvlProcessingPipeline;
     // Visualizer
     VisualizerPtr m_visualizer;
+    Floor*        mp_floor;
+    bool          m_floorInitialized;
 };
 
 void detect_blobs( cv::Mat& current );

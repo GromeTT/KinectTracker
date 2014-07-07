@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['x',['x',['../a00011.html#ae270fbd3b09b36f240a2d55b3b5b9cec',1,'Camera::x()'],['../a00055.html#ab7aed15fcdba46d5a7e7f711b7288b74',1,'TransformationObject::x()']]],
-  ['xscale',['xScale',['../a00055.html#a5e68ba8694ee8d10329bd7798c66ccf5',1,'TransformationObject']]]
+  ['winsigma',['winSigma',['../a00024.html#a6f255de46586e4064a92448c13b16463',1,'HOGFeatureDetector']]],
+  ['winsize',['winSize',['../a00024.html#a264c612ef4532b53a14c1b2b69f90a12',1,'HOGFeatureDetector']]],
+  ['wireframemode',['wireFrameMode',['../a00040.html#a47162ba98412b7351424202ceb0075d9',1,'RenderObject']]],
+  ['workerstatus',['workerStatus',['../a00046.html#a97f2612ec1029afc0af552998bd276fe',1,'SizeAnalyzer']]]
 ];

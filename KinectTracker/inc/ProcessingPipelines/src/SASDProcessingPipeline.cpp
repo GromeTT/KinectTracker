@@ -1,6 +1,7 @@
 #include "../inc/SASDProcessingPipeline.h"
 #include "../../Analyzer/inc/SkeletonAnalyzer.h"
 #include <QVector2D>
+#include <QDebug>
 
 using namespace std;
 using namespace cv;
@@ -23,7 +24,10 @@ SASDProcessingPipeline::SASDProcessingPipeline( KinectPtr& kinect,
                                    new DepthProcessingPipeline,
                                    parent )
     , m_skinPipeline( new SkinColorExplicitDefinedSkinRegionDetectionPipeline )
+    , m_skinColorHistogramDetectionPipeline( new SkinColorHistogramDetectionPipeline )
 {
+    setObjectName( "SASDProcessingPipeline" );
+    m_rgbProcessingPipelines.append( m_skinColorHistogramDetectionPipeline );
 }
 
 /*!
@@ -44,8 +48,15 @@ void SASDProcessingPipeline::processV( const unsigned int timestamp )
     {
         // case: Analysis of the skeleton data failed.
         //       Make use of the rgb data for the analysis.
-        processRGBData();
+
+        // Not necessary yet.
+//        processRGBData();
     }
+}
+
+void SASDProcessingPipeline::resetV()
+{
+    m_skinColorHistogramDetectionPipeline->reset();
 }
 
 /*!
@@ -66,7 +77,7 @@ bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
         //       so that the visualizer knows that it doesn't
         //       have to paint.
         m_movementAnalyzer->setDataAvailable( false );
-        m_sizeAnalyzer->setWorkerStatus( tr( "Nothing detected") );
+        m_sizeAnalyzer->setWorkerStatus( tr( "Nothing detected.") );
         drawRegionOfInterest( m_lastRegion,
                               currentImage,
                               cv::Scalar( 0, 255, 0 ) );
@@ -77,23 +88,39 @@ bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
         // case: The data provided by the skeleton are of good quality.
         //       Perform the further analysis on the skeleton data.
         m_movementAnalyzer->analyze( m_skeletons.at( 0 ), timestamp );
-        m_sizeAnalyzer->analyze( m_skeletons.at( 0 ) );
+        m_sizeAnalyzer->analyze( m_kinect,  m_skeletons.at( 0 ) );
 
-        m_lastRegion = m_skeletonAnalyzer->regionOfInterest();
+        m_lastRegion = crop( m_skeletonAnalyzer->regionOfInterest(), currentImage );
+
+        QVector3D tmpHeadCenter = m_skeletons.at( 0 )->getJoint( SkeletonData::Joints::Head );
+        QPoint headCenter = transformFromSkeltonToRGB( tmpHeadCenter ) ;
+        QRect cropedHead = cropRegionWithWidthAndHeightAsPixels( headCenter,
+                                                                 25,
+                                                                 25,
+                                                                 currentImage );
+
+        cv::Mat headRegion = currentImage( cv::Rect( cropedHead.topLeft().x(),
+                                                     cropedHead.topLeft().y(),
+                                                     cropedHead.width(),
+                                                     cropedHead.height() ) );
+        deriveViewingDirectionByHistogramHSV( headRegion );
+        // Draw the regions of interest.
         drawRegionOfInterest( m_lastRegion,
                               currentImage,
                               cv::Scalar( 0, 255, 0 ) );
-        // Draw the regions of interest.
-        QVector3D headCenter = m_skeletons.at( 0 )->getJoint( SkeletonData::Joints::Head );
-        QVector2D center = transformFromSkeltonToRGB( headCenter ) ;
-        drawRegionOfInterestWithAndHeightAsPixels( center,
-                                                   25,
-                                                   25,
-                                                   currentImage,
-                                                   cv::Scalar( 255, 0, 0 ) );
-        deriveViewingDirectionBySkinColor( currentImage,
-                                           center );
-
+        if ( m_skeletons.at( 0 )->jointTrackState( SkeletonData::Joints::Head ) == SkeletonData::TrackState::Tracked )
+        {
+            drawRegionOfInterest( cropedHead,
+                                  currentImage,
+                                  cv::Scalar( 255, 0, 0 ) );
+        }
+        else
+        {
+            drawRegionOfInterest( cropedHead,
+                                  currentImage,
+                                  cv::Scalar( 0, 0, 255 ) );
+        }
+        trackJoints( m_skeletons.at( 0 ), currentImage );
         return true;
     }
 }
@@ -108,7 +135,7 @@ void SASDProcessingPipeline::processRGBData()
                   m_kinect->rgbStreamResolution().width(),
                   CV_8UC3,
                   mp_rgbData );
-    m_rgbProcessingPipeline->process( rgb );
+//    m_rgbProcessingPipeline->process( rgb );
 }
 
 /*!
@@ -137,19 +164,52 @@ void SASDProcessingPipeline::deriveViewingDirectionBySkinColor( cv::Mat& current
         // case: Person is not looking towards the camera.
         m_movementAnalyzer->setViewingDirection( "Away from the camera" );
     }
-
 }
 
 /*!
    \brief SASDProcessingPipeline::deriveViewingDirectionByHistogram
+   Uses backprojection to determine whether the person is looking towards the camera or not.
    For informations see:
    http://docs.opencv.org/doc/tutorials/imgproc/histograms/histogram_calculation/histogram_calculation.html
  */
-void SASDProcessingPipeline::deriveViewingDirectionByHistogram( cv::Mat& currentImage,
-                                                                const QVector2D& center )
+void SASDProcessingPipeline::deriveViewingDirectionByHistogram( cv::Mat& headRegion )
 {
+    if ( !m_skinColorHistogramDetectionPipeline->initialized() )
+    {
+        if ( skeletonData()->allPointsTracked() )
+        {
+            // case: All joints are tracked and the processing pipeline is not initialized.
 
+            //  Intialize the processing pipeline.
+            m_skinColorHistogramDetectionPipeline->computeAndSaveROIHistogram( headRegion );
+            m_skeletonAnalyzer->setUserLooksTowardsCamera( false );
+        }
+    }
+    else
+    {
+        // case: The processing pipeline is initialized.
 
+        // Use backprojection to determine, if the person is looking towards the camera.
+        m_skinColorHistogramDetectionPipeline->process( headRegion );
+        if ( m_skinColorHistogramDetectionPipeline->nonZeroRelativeFrequency() > 8.0f )
+        {
+            m_skeletonAnalyzer->setUserLooksTowardsCamera( true );
+        }
+        else
+        {
+            m_skeletonAnalyzer->setUserLooksTowardsCamera( false );
+        }
+    }
 }
 
-
+/*!
+   \brief SASDProcessingPipeline::deriveViewingDirectionByHistogramHSV
+    Calculates the backprojection in the HSV-color space.
+ */
+void SASDProcessingPipeline::deriveViewingDirectionByHistogramHSV( cv::Mat& headRegion )
+{
+    cv::Mat headRegionHSV;
+    headRegion.copyTo( headRegionHSV );
+    cv::cvtColor( headRegionHSV, headRegionHSV, CV_BGR2HSV );
+    deriveViewingDirectionByHistogram( headRegionHSV );
+}

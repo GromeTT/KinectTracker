@@ -17,6 +17,7 @@ class SkeletonRenderObject;
 class QOpenGLTexture;
 class OpenGLWindow;
 class QOpenGLContext;
+class Floor;
 
 typedef QSharedPointer<QOpenGLContext> OpenGLContext;
 typedef QVector<QOpenGLShaderProgram*> ShaderPrograms;
@@ -48,7 +49,11 @@ public:
     void pitchCamera( const float angle );
     void setCameraYaw( const float angle );
     void yawCamera( const float angle );
-    void createFloor();
+    Floor* createFloor();
+    Floor* createFloor( const float a,
+                        const float b,
+                        const float c,
+                        const float d );
     void takeSnapshot();
 
     QOpenGLShaderProgram*        getShaderProgram( const unsigned short i ) const;

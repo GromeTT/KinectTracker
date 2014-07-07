@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: InRange Class Reference</title>
+<title>KinectTracker: ImageWidget Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,38 +104,81 @@ $(document).ready(function(){initNavTree('a00026.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00186.html">List of all members</a>  </div>
+<a href="a00196.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">InRange Class Reference</div>  </div>
+<div class="title">ImageWidget Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00079_source.html">InRange.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00088_source.html">ImageWidget.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for InRange:</div>
+Inheritance diagram for ImageWidget:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00026.png" usemap="#InRange_map" alt=""/>
-  <map id="InRange_map" name="InRange_map">
-<area href="a00034.html" alt="ProcessingComponent" shape="rect" coords="0,56,138,80"/>
+  <img src="a00026.png" usemap="#ImageWidget_map" alt=""/>
+  <map id="ImageWidget_map" name="ImageWidget_map">
 </map>
  </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a08bd54d161c27cb45b04a3eb1398bde2"></a>
+<a class="anchor" id="aee9964454921e094b3d67d62f5907e91"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">InRange::InRange </td>
+          <td class="memname">ImageWidget::ImageWidget </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>channelCount</em>, </td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00026.html#aee9964454921e094b3d67d62f5907e91" title="ImageWidget::ImageWidget Standardconstructor. ">ImageWidget::ImageWidget</a> Standardconstructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad7ce3e83b4756c1cadb25d27439eea9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImageWidget::~ImageWidget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00026.html#ad7ce3e83b4756c1cadb25d27439eea9b" title="ImageWidget::~ImageWidget Destroyes the object. ">ImageWidget::~ImageWidget</a> Destroyes the object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a7190cf05a77976a3fad6ecac44116329"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImageWidget::eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -145,40 +188,11 @@ Inheritance diagram for InRange:</div>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a10ae92ee4eeb774f2422f2a16dab760b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">InRange::~InRange </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p><a class="el" href="a00026.html#a7190cf05a77976a3fad6ecac44116329" title="ImageWidget::eventFilter Displayes informations in the statusbar. ">ImageWidget::eventFilter</a> Displayes informations in the statusbar. </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa28e29f169c7a391900c59e0ec7909f0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00019.html">FixedPropertyVector</a>&amp; InRange::lowerBounds </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af74baaabd57d95882bb504457f4888e3"></a>
+<a class="anchor" id="a7d998b289ec66ec964b48f1fb54cbb23"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -186,9 +200,10 @@ Inheritance diagram for InRange:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void InRange::lowerBoundsChanged </td>
+          <td class="memname">void ImageWidget::leftMousePressed </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -201,80 +216,7 @@ Inheritance diagram for InRange:</div>
 
 </div>
 </div>
-<a class="anchor" id="abfc5021c496f27d3d83397c6636611a6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void InRange::process </td>
-          <td>(</td>
-          <td class="paramtype">cv::InputArray &amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cv::OutputArray &amp;&#160;</td>
-          <td class="paramname"><em>output</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a951c8536b449b6e11a55858de70780e4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void InRange::setLowerBounds </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp;&#160;</td>
-          <td class="paramname"><em>lowerBounds</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aef54a5b4d26152e4192d69cd5886f82c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void InRange::setUpperBounds </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp;&#160;</td>
-          <td class="paramname"><em>upperBounds</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0fa19a232b908b993100a1b8ace3b331"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00019.html">FixedPropertyVector</a>&amp; InRange::upperBounds </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a5ffd271d23993f89a9acf912f43380fb"></a>
+<a class="anchor" id="a05dd77c9cb99cab5a02ae038454c6296"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -282,7 +224,90 @@ Inheritance diagram for InRange:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void InRange::upperBoundsChanged </td>
+          <td class="memname">void ImageWidget::leftMouseReleased </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a80a5cc4a556c94d9fcc6d8168a50c5a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageWidget::mouseMoved </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab528ea452769fbeb21fdb6968eb647e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRect ImageWidget::rect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00026.html#ab528ea452769fbeb21fdb6968eb647e3" title="ImageWidget::rect Returns the rectangle painted by the user. ">ImageWidget::rect</a> Returns the rectangle painted by the user. </p>
+
+</div>
+</div>
+<a class="anchor" id="a84c5e7fa559aec5c035ad364c2f0d48a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageWidget::setImage </td>
+          <td>(</td>
+          <td class="paramtype">const QImage &amp;&#160;</td>
+          <td class="paramname"><em>image</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00026.html#a84c5e7fa559aec5c035ad364c2f0d48a" title="ImageWidget::setImage Displays image. ">ImageWidget::setImage</a> Displays <em>image</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0ef052c72a039438da633de7eb9c321a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageWidget::updateStatusbar </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -290,7 +315,7 @@ Inheritance diagram for InRange:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -298,7 +323,7 @@ Inheritance diagram for InRange:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="abc294d75f0a5f1bf3a60e6bde17a0ba2"></a>
+<a class="anchor" id="a1abbcc95ff9df2ae8c1b9d124fc7c175"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -306,7 +331,7 @@ Inheritance diagram for InRange:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00019.html">FixedPropertyVector</a> InRange::m_lowerBounds</td>
+          <td class="memname">QPoint ImageWidget::m_endPoint</td>
         </tr>
       </table>
   </td>
@@ -318,7 +343,7 @@ Inheritance diagram for InRange:</div>
 
 </div>
 </div>
-<a class="anchor" id="a6fab797cc5433fe1654cc26a34972637"></a>
+<a class="anchor" id="ab12062541db9427b15ccd9251f74acfa"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -326,7 +351,7 @@ Inheritance diagram for InRange:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00019.html">FixedPropertyVector</a> InRange::m_upperBounds</td>
+          <td class="memname">QImage ImageWidget::m_image</td>
         </tr>
       </table>
   </td>
@@ -338,8 +363,7 @@ Inheritance diagram for InRange:</div>
 
 </div>
 </div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a5fd14775e1455ca9763d816a7561689d"></a>
+<a class="anchor" id="abde506575a901b4a4fb93013d16f7716"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -347,19 +371,19 @@ Inheritance diagram for InRange:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp; InRange::lowerBounds</td>
+          <td class="memname">bool ImageWidget::m_leftMousePressed</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a4796196984828ab423dcf1dfbc2bab22"></a>
+<a class="anchor" id="ab9f5c9144e4e2a6af506a32bfc6186ad"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -367,12 +391,32 @@ Inheritance diagram for InRange:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp; InRange::upperBounds</td>
+          <td class="memname">QPoint ImageWidget::m_startPoint</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a28de8752b2fd43bb3ccee8568a4858b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::ImageWidget* ImageWidget::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -380,16 +424,16 @@ Inheritance diagram for InRange:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00079_source.html">InRange.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00128.html">InRange.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ImageWidget/inc/<a class="el" href="a00088_source.html">ImageWidget.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/ImageWidget/src/<a class="el" href="a00089.html">ImageWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00026.html">InRange</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00026.html">ImageWidget</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

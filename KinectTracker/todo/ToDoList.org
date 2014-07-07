@@ -1,109 +1,61 @@
-ToDo List 
-  
-* Ziele für heute
-  + [ ] Auswertung, ob der Benutzer in die Kamera schaut oder nicht.
-    Klappt nicht so gut.
-  + [ ] Tracking aller Gelenke
-  + [ ] PCL einbinden
-    + Braucht Visual Studio 2010
-    + [ ] Extra Programm schreiben, dass die Schätzung des Bodens übernimmt.
-  + [ ] Meldung wenn der Benutzer zu nahe an der Kamera ist.
+#+STARTUP: showall
 
-* Neues Feature Histogram-Analyse
-  + Funktionen:
-    - [X] Bild laden
-    - [X] Region für das Histogram auswählen
-    - [ ] Histogram berechnen ( mittels LowLewevelProcessingPipeline )
-    - [ ] Histogram speichern in externe Datei / in Buffer
-    - [ ] Histogram vergleichen und Regionen einzeichnen
-  + Probleme:
-    + Resize-Verhalten ist scheiße
 * Gespräch
-  + [X] Frage nach einer BA-Arbeit, wo eine Schätzung der Körpergröße
-    über die Größe des Oberkörpers durchgeführt wurde.
-    *Antwort*: Gab es bisher nicht am Lehrstuhl.
-  + [X] Meiner Meinung nach ist ein Detektion auf Basis der Hautfarbe
-    nicht zielführend, da keine Hautfarbe detektiert wird, sobald:
-    1. sich die Person umdreht
-    2. die Person mit dem Geischt zum Boden liegt
-    Darüberhinaus werden nicht zum Körper gehörende Teile im Bild
-    erkannt.
-    *Antwort*: Dieses Verfahren soll nur benutzt werden, um die Blick-
-    richtung der Person zu identifizieren.
-    Sind genug Pixel hautfarben, schaut die Person in die Kamera, 
-    ansonsten nicht.
-    
-* Aufnahmeszenarien:
-  + [ ] Person vollführt alle Posen (stehen, knien, liegen )
-  + [ ] Person ist nahe an der Kamera
-  + [ ] Person ist weit entfernt
-  + [ ] Person schaut in die Kamera
-  + [ ] Person schaut nicht in die Kamera
-  + [ ] Person verlässt den Bildbereich und tritt:
-    1. ca an der selben Stelle in den Bereich wieder ein.
-    2. an einer anderen Stelle ein.
-  + [ ]  Objekt bewegt sich in der Szene
-    
-* Treffen
-  + Monatg: 7.7 17:00 Uhr
   
-* TODO [7/26][26%]
-  + [ ] Trackingstatus der einzelnen Joints anzeigen.
+        
+* Treffen
+  + [X] <2014-06-30 Mo 11:00>
+    + Ort :: Lehrstuhl
+    + Fragen
+      + [X] Frage nach einer BA-Arbeit, wo eine Schätzung der Körpergröße
+        über die Größe des Oberkörpers durchgeführt wurde.
+        *Antwort*: Gab es bisher nicht am Lehrstuhl.
+      + [X] Meiner Meinung nach ist ein Detektion auf Basis der Hautfarbe
+        nicht zielführend, da keine Hautfarbe detektiert wird, sobald:
+        1. sich die Person umdreht
+        2. die Person mit dem Geischt zum Boden liegt
+        Darüberhinaus werden nicht zum Körper gehörende Teile im Bild
+        erkannt.
+        *Antwort*: Dieses Verfahren soll nur benutzt werden, um die Blick-
+        richtung der Person zu identifizieren.
+        Sind genug Pixel hautfarben, schaut die Person in die Kamera, 
+        ansonsten nicht.
+  + [ ] <2014-07-07 Mo 17:00> 
+    + Ort :: Lehrstuhl
+    + Fragen
+      + Könnte Weichzeichnen die Ergebnisse der Rückprojektion verbessern?
+  
+* TODO [16/27][59%] Tasks
+  + [ ] Skalierung des getrackten Bereiches, wenn sich der Mensch der Kamera nähert.
+  + [-] [50%] Neues Feature Histogram-Analyse
+    + [X] [100%] Funktionen:
+      - [X] Bild laden
+      - [X] Region für das Histogram auswählen
+      - [X] Histogram berechnen ( mittels LowLewevelProcessingPipeline )
+      - [X] Histogram speichern in externe Datei / in Buffer
+      - [X] Histogram vergleichen und Regionen einzeichnen
+    + [ ] Probleme:
+      - [ ] Resize-Verhalten ist scheiße.
   + [ ] Kinect connect/disconnect Signal.
-  + [ ] Rechtecke, die in cv::Mat gezeichnet werden sollen, müssen abgeschnitten werden,
-    falls sie die Größe überschreiten.
-    [[http://msdn.microsoft.com/en-us/library/nuiapi.nuisetdevicestatuscallback.aspx]]
-  + [ ] Ebene für den Boden schätzen mittels PCL Lib.
-    Brauch nicht über die PCL Lib gemacht werden, da die Kinect selber eine 
-    Funktion dafür bereitstellt.
-    http://msdn.microsoft.com/en-us/library/hh973078.aspx
+    http://msdn.microsoft.com/en-us/library/nuiapi.nuisetdevicestatuscallback.aspx
   + [ ] Farbhistogramm für Gelenke und Gesicht berechnen.
-    + Für das Gesicht gibt es 3 Möglichkeiten:
-      1. Farbbereich aus dem Paper.
-      2. Histogramm aus den LiveDatan ableiten, wenn sicher ist
-      3. Gesichtserkennungsalgorithmus von opencv benutzen
+    Für das Gesicht gibt es 3 Möglichkeiten:
+      1. [X] Farbbereich aus dem Paper.
+      2. [ ] Histogramm aus den LiveDatan ableiten, wenn sicher ist, dass der Kopf getrackt wird.
+	 + [ ] Histogram vergleich
+	   1. [[http://docs.opencv.org/trunk/doc/py_tutorials/py_imgproc/py_histograms/py_histogram_backprojection/py_histogram_backprojection.html][opencv]]
+	   2. [[http://scien.stanford.edu/pages/labsite/2002/psych221/projects/02/sojeong/][Methodik]]
+      3. [ ] Gesichtserkennungsalgorithmus von opencv benutzen
      das der Mensch in die Kamera guckt.
-  + [ ] Histogram vergleich
-    1. [[http://docs.opencv.org/trunk/doc/py_tutorials/py_imgproc/py_histograms/py_histogram_backprojection/py_histogram_backprojection.html][opencv]]
-    2. [[http://scien.stanford.edu/pages/labsite/2002/psych221/projects/02/sojeong/][Methodik]]
-  + [-] Kopftracking: Schaut in die Kamera oder nicht.
-    + [X] Mittels Farbintervalle
-    + [ ] Mittels Gesichtserkennung
-    + [ ] Mittels Histogramme
   + [-] Zusätzliches Kriterium für liegend:
-    + [X] Abstand berechnen.
+    + [X] Abstand zwischen den Füßen und dem Kopf berechnen.
     + [ ] Threshold ermitteln.
-    + [ ] Herausfinden , wann die Füße nicht mehr getrackt werden.
+    + [ ] Herausfinden, wann die Füße nicht mehr getrackt werden.
     + [ ] Unterschied zu den Fußgelenken untersuchen.
-  + [ ] Nutze die Proportionen des Körpers aus, um die Größe der Person zu 
-    bestimmen, wenn sie nahe an der Kamera steht. Also ggfs. nur Knie in
-    die Berechnung mit einbeziehen und die Füße außen vor lassen. Dasselbe
-    gilt, für den Fall, dass keine Knie sichtbar sind.
   + [ ] Verschiebe das Zeichnen des Skelettes in die Visualizer Klasse.
-  + [X] Dateien entfernen
-    + [X] Explorer
-    + [X] ImageAnalyzer
-    + [X] RGBAnylzer
-    + [X] AnalysisResults
-  + [ ] Berechnung dafür, ob der Oberkörper aufrecht ist ( über Winkel )vs. Länge der Glieder.
-  + [X] Datei BoundingBoxes in BoundingGeometries umbennen.
-  + [X] Worker Status wird nicht mehr angezeigt.
-  + [ ] Im Farbbild wird die letzte Region in der sich der Arbeiter befunden hat noch
-    angezeigt, obwohl kein Bild vorhanden ist -> Abschaffen
-  + [ ] Führe eine Trainingsphase für das Tiefenbild ein. Führe für jeden 
-    Pixel Intervalle des Ablehnungsbereiches.
-  + [X] SceneGraph anpassen.
-  + [ ] Ersetze unsichere Array Kopierfunktion durch eine sichere.
-  + [X] Explorer-Klasse aus dem Projekt entfernen
-  + [ ] Erode anpassen
-  + [ ] Dilate anpassen
-  + [X] Signale gezielt unterbrechen und nicht in den Settern prüfen, ob die Werte gleich sind.
-    + [X] Führe eine Helper-Klasse ein, die die Verbindung kurz unterbricht und im Destruktor
-      wiederherstellt.
-  + [ ] Arbeiter - Zustand Beurteilung verbessern [0/3][0%]
-    + [ ] Größe des Arbeiters über die Höhe des Oberkörpers abschätzen
-    + [ ] In der bestehenden Größenschätzung die Arme aus der Berechnung ausschließen
-    + [ ] Für die Schätzung der aktuellen Größe die Anzahl der getrackten Punkte mit einbeziehen
+  + [ ] Berechnung dafür, ob der Oberkörper aufrecht ist ( über Winkel ) vs. Länge der Glieder.
+  + [ ] Infrarotdaten anschauen - IR anschauen ( Auflösung 640*480 )
+    http://msdn.microsoft.com/en-us/library/jj663865.aspx
   + [ ] Biete  Möglichkeit die Bewegungsrichtung und die Geschwindigkeit zu ermitteln durch Kugeln berechnen
     zu lassen
   + [-] Zusätzliche Feature [1/6][16%]
@@ -121,16 +73,51 @@ ToDo List
     + [X] Synchronisation der Ansicht durch Änderungen in den Daten implementieren
     + [X] Umbennnen TreeWidgetExplorer -> PropertyBrowser
     + [X] altes Eigenschaften-Widget durch das neue ersetzen
-  + [ ] Infrarotdaten anschauen - IR anschauen ( Auflösung 640*480 )
-    http://msdn.microsoft.com/en-us/library/jj663865.aspx
-  +[ ] Refactoring
-    + [ ] Kinect-Klasse aufräumen
+  + [X] Trackingstatus der einzelnen Joints anzeigen.
+  + [X] Arbeiter - Zustand Beurteilung verbessern [3/3][100%]
+    Hat sich größten Teils erledigt, dadurch dass die Größe durch den Abstand von Kopf zum Fußboden
+    ermittelt werden kann.
+    + [X] Größe des Arbeiters über die Höhe des Oberkörpers abschätzen
+    + [X] In der bestehenden Größenschätzung die Arme aus der Berechnung ausschließen
+    + [X] Für die Schätzung der aktuellen Größe die Anzahl der getrackten Punkte mit einbeziehen
+  + [X] Nutze die Proportionen des Körpers aus, um die Größe der Person zu 
+    bestimmen, wenn sie nahe an der Kamera steht. Also ggfs. nur Knie in
+    die Berechnung mit einbeziehen und die Füße außen vor lassen. Dasselbe
+    gilt, für den Fall, dass keine Knie sichtbar sind.
+    *Lösung*: Ist nicht mehr notwedig, da die Größe der Person jetzt über die Distanz vom Kopf 
+    zum Boden ermittelt wird.
+  + [X] Renderreihenfolge ist falsch, das Skelett wird vor der Ebene gezeichnet.
+    Grund: OpenGL Depth Testing war nicht aktiviert.
+  + [X] Rechtecke, die in cv::Mat gezeichnet werden sollen, müssen abgeschnitten werden,
+    falls sie die Größe überschreiten (Cropping).
+  + [X] Abastand von Boden zu Kopf kontinuierlich berechnen.
+    [[http://www.frustfrei-lernen.de/mathematik/abstand-punkt-zu-ebene.html][Gleichung: Abstand Punkt zur Ebene]]
+  + [X] Ebene für den Boden schätzen mittels PCL Lib.
+    Brauch nicht über die PCL Lib gemacht werden, da die Kinect selber eine 
+    Funktion dafür bereitstellt.
+    http://msdn.microsoft.com/en-us/library/hh973078.aspx
+  + [X] Ersetze unsichere Array Kopierfunktion durch eine sichere.
+  + [X] Meldung wenn der Benutzer zu nahe an der Kamera ist.
+  + [X] SceneGraph anpassen.
+  + [X] Worker Status wird nicht mehr angezeigt.
+  + [X] Explorer-Klasse aus dem Projekt entfernen
+  + [X] Signale gezielt unterbrechen und nicht in den Settern prüfen, ob die Werte gleich sind.
+    + [X] Führe eine Helper-Klasse ein, die die Verbindung kurz unterbricht und im Destruktor
+      wiederherstellt.
+  + [X] Datei BoundingBoxes in BoundingGeometries umbennen.
   + [X] Kommunikation zwischen SkeletonAnalyzer und AnalysisResults optimieren.
     Viele der Properties aus SkeletonAnalyzer müssen read only sein.
+  + [X] Dateien entfernen
+    + [X] Explorer
+    + [X] ImageAnalyzer
+    + [X] RGBAnylzer
+    + [X] AnalysisResults
+** Refactoring
+  + [ ] Erode anpassen
+  + [ ] Dilate anpassen 
 
 *** Anregungen
-    + ViolaJones
-      
+    + ViolaJones  
 
 **** Erkenntnisse
      + Nach http://malen-malerei.de/proportionsregel-menschen-zeichnen soll die Größe des
@@ -172,3 +159,4 @@ ToDo List
  
   + Floor determination / Schätzung des Fußbodens 
     [[http://msdn.microsoft.com/en-us/library/hh973078.aspx][SDK]]
+

@@ -1,7 +1,7 @@
 var a00041 =
 [
-    [ "RGBWidget", "a00041.html#a71b0775bb1e7f8d21cbca138276b5411", null ],
-    [ "~RGBWidget", "a00041.html#a3036a1e1d9854436a54b6504ff0d0ef9", null ],
-    [ "update", "a00041.html#a2b5e055d1afaf6b855934b4f78a4c33f", null ],
-    [ "ui", "a00041.html#a5d0229327ac7728cd72e2c43119bbb05", null ]
+    [ "RenderObjectInterface", "a00041.html#a1b8a966fbe84911ba1ea9adc62a0dfda", null ],
+    [ "~RenderObjectInterface", "a00041.html#a42033da5bfe194a6ed0c794994d50748", null ],
+    [ "render", "a00041.html#a5a9fc236a110660109d4bbd7bcf9c21b", null ],
+    [ "renderV", "a00041.html#a9b6fbb888f50e751887e36687fa7a6d4", null ]
 ];

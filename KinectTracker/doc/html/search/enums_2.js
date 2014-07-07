@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quality',['Quality',['../a00048.html#a6546984ae25a1d218c293eae231543fb',1,'SkeletonData']]]
+  ['joints',['Joints',['../a00048.html#af34e460c0da2f42218294f80e7070b28',1,'SkeletonData']]]
 ];

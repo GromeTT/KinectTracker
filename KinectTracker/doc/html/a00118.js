@@ -1,4 +1,5 @@
 var a00118 =
 [
-    [ "transformFromSkeltonToRGB", "a00118.html#a2a63e2b8bb4d59e9adb12cd113ade438", null ]
+    [ "Erode", "a00017.html", "a00017" ],
+    [ "ErodePtr", "a00118.html#ac5e9e35e34113deab9a06fcfdd46a7fc", null ]
 ];

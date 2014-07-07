@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: DepthProcessingPipeline Class Reference</title>
+<title>KinectTracker: CustomStyledDelegate Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,31 +104,31 @@ $(document).ready(function(){initNavTree('a00014.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00174.html">List of all members</a>  </div>
+<a href="a00184.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">DepthProcessingPipeline Class Reference</div>  </div>
+<div class="title">CustomStyledDelegate Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00068_source.html">DepthProcessingPipeline.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00142_source.html">CustomStyledDelegate.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for DepthProcessingPipeline:</div>
+Inheritance diagram for CustomStyledDelegate:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00014.png" usemap="#DepthProcessingPipeline_map" alt=""/>
-  <map id="DepthProcessingPipeline_map" name="DepthProcessingPipeline_map">
+  <img src="a00014.png" usemap="#CustomStyledDelegate_map" alt=""/>
+  <map id="CustomStyledDelegate_map" name="CustomStyledDelegate_map">
 </map>
  </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="abf397c04b8bb77dd0056eb743dca5dca"></a>
+<a class="anchor" id="a2fd599cbcc59614d3d1ea678ccdafb9c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DepthProcessingPipeline::DepthProcessingPipeline </td>
+          <td class="memname">CustomStyledDelegate::CustomStyledDelegate </td>
           <td>(</td>
           <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -136,190 +136,216 @@ Inheritance diagram for DepthProcessingPipeline:</div>
 
 </div>
 </div>
-<a class="anchor" id="a69e948baaef5695a908d50fc23c7543c"></a>
+<a class="anchor" id="a90c589d80818c897bbb818649990e2f5"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">DepthProcessingPipeline::~DepthProcessingPipeline </td>
+          <td class="memname">CustomStyledDelegate::~CustomStyledDelegate </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a6c1b5ded2663cd4b58e21535a03dcc9f"></a>
+<a class="anchor" id="a0ae8befef987cff672d1be2c08c22bb8"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt; <a class="el" href="a00034.html">ProcessingComponent</a> * &gt; &amp; DepthProcessingPipeline::getComponents </td>
+          <td class="memname">void CustomStyledDelegate::commit </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="af6971f9b63d57a35c0798e777b0bed14"></a>
+<a class="anchor" id="a4034e12e5d289fde5519a600d33063be"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DepthProcessingPipeline::process </td>
+          <td class="memname">QWidget * CustomStyledDelegate::createEditor </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; ushort &gt; &amp;&#160;</td>
-          <td class="paramname"><em>currentImage</em>, </td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; ushort &gt; &amp;&#160;</td>
-          <td class="paramname"><em>screenshot</em>&#160;</td>
+          <td class="paramtype">const QStyleOptionViewItem &amp;&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="a00014.html#a4034e12e5d289fde5519a600d33063be" title="CustomStyledDelegate::createEditor. ">CustomStyledDelegate::createEditor</a>. </p>
+
 </div>
 </div>
-<a class="anchor" id="afc0708800c1b44a3c53861ebaecb055e"></a>
+<a class="anchor" id="a1121c1c11c85bd6a534830c7f7af57d5"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void DepthProcessingPipeline::setThreshold </td>
+          <td class="memname">QString CustomStyledDelegate::displayText </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td class="paramtype">const QVariant &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QLocale &amp;&#160;</td>
+          <td class="paramname"><em>locale</em>&#160;</td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a5945fbccc98ef266f5d2220af76be333"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">int DepthProcessingPipeline::threshold </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a47fb0fcdfa80b5421a3ce5d5291fc8e0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DepthProcessingPipeline::thresholdChanged </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
           <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a89c84f4bb2eb5b58ee2e4f2993af800d"></a>
+<a class="anchor" id="a8557eba6802e88a8363584688261d1b2"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt;<a class="el" href="a00034.html">ProcessingComponent</a>*&gt; DepthProcessingPipeline::m_processingComponents</td>
+          <td class="memname">void CustomStyledDelegate::setEditorData </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>editor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a271923a829986da68841c8045a4ebed6"></a>
+<a class="anchor" id="a6d0e30599da9730136bf9213765fb067"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int DepthProcessingPipeline::m_threshold</td>
+          <td class="memname">void CustomStyledDelegate::setModelData </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>editor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QAbstractItemModel *&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a7a6449261a10b67242818ad8bb7a87bc"></a>
+<a class="anchor" id="a12020ec39c9bb394e46f082ab6afb03c"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int DepthProcessingPipeline::threshold</td>
+          <td class="memname">QSize CustomStyledDelegate::sizeHint </td>
+          <td>(</td>
+          <td class="paramtype">const QStyleOptionViewItem &amp;&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00068_source.html">DepthProcessingPipeline.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00117.html">DepthProcessingPipeline.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/PropertyBrowser/inc/<a class="el" href="a00142_source.html">CustomStyledDelegate.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/PropertyBrowser/src/<a class="el" href="a00146.html">CustomStyledDelegate.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00014.html">DepthProcessingPipeline</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:05 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00014.html">CustomStyledDelegate</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:37 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

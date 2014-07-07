@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: C:/Projekte/Kinect_Tracker/KinectTracker/inc/Threshold.h Source File</title>
+<title>KinectTracker: C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/OpenGL/inc/Vertex.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,107 +102,54 @@ $(document).ready(function(){initNavTree('a00105_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Threshold.h</div>  </div>
+<div class="title">Vertex.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00105.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef THRESHOLD_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define THRESHOLD_H</span></div>
+<a href="a00105.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VERTEX_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VERTEX_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QSharedPointer&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00088.html">ProcessingComponent.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00054.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00054.html">Threshold</a> : <span class="keyword">public</span> <a class="code" href="a00034.html">ProcessingComponent</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00054.html#ac6ab383d590ac973fe513219334d561f">   14</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00054.html#ac6ab383d590ac973fe513219334d561fa8948c833b6fc66bcff50479b88281cb3">   16</a></span>&#160;        <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561fa8948c833b6fc66bcff50479b88281cb3">Thresh_Binary</a> = cv::THRESH_BINARY,</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00054.html#ac6ab383d590ac973fe513219334d561fa62a8f48e1511dace93562cc70c5f9b23">   17</a></span>&#160;        <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561fa62a8f48e1511dace93562cc70c5f9b23">Thresh_Binary_Inv</a> = cv::THRESH_BINARY_INV,</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a00054.html#ac6ab383d590ac973fe513219334d561fadfb3f3a4b2c053ccfe6e1f436666b90b">   18</a></span>&#160;        <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561fadfb3f3a4b2c053ccfe6e1f436666b90b">Thresh_Trunc</a> = cv::THRESH_TRUNC,</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00054.html#ac6ab383d590ac973fe513219334d561fae6d119e2634d6968445f85b5b2a3ec98">   19</a></span>&#160;        <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561fae6d119e2634d6968445f85b5b2a3ec98">Thresh_ToZero</a> = cv::THRESH_TOZERO,</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a00054.html#ac6ab383d590ac973fe513219334d561fac86486a6eb7621b1bc221aa08bb8d23b">   20</a></span>&#160;        <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561fac86486a6eb7621b1bc221aa08bb8d23b">Thresh_ToZero_Inv</a> = cv::THRESH_TOZERO_INV</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    };</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    Q_ENUMS( <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a> )</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;public:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="a00054.html">Threshold</a>( QObject* parent = <span class="keywordtype">nullptr</span> );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    virtual ~<a class="code" href="a00054.html">Threshold</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00054.html#ac0e492803006dc4f32f3f113cf1bec3d">threshold</a>( cv::Mat&amp; input );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00054.html#ac0e492803006dc4f32f3f113cf1bec3d">threshold</a>( cv::Mat&amp; input, cv::Mat&amp; output );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00054.html#a7afb07c346eef63aef445b049718ec46">setMaxValue</a>( const <span class="keywordtype">float</span> <a class="code" href="a00054.html#a5367a49945393b0f1367310f677c88ce">maxValue</a> );</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00054.html#a747ecbd752a29d1f2158e05ed568d78a">setThreshold</a>( const <span class="keywordtype">float</span> <a class="code" href="a00054.html#ac0e492803006dc4f32f3f113cf1bec3d">threshold</a> );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00054.html#a7f98dba2c45fb8f04e88bb4efe057d67">setThresholdType</a>( const <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a> <a class="code" href="a00054.html#a2d23416e7525ec0223ebb8a65530ce73">thresholdType</a> );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">float</span>         maxValue() const;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">float</span>         threshold() const;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a> thresholdType() const;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;signals:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00054.html#a559a43ae2c6f94a9f348d74e0c93f426">maxValueChanged</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00054.html#a95e78d77660f0dabdb0ed073e83753c9">thresholdChanged</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00054.html#a84f2d972a1347fbb406b2eea1273f5a9">thresholdTypeChanged</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;private:</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a00054.html#a6be07bf8082e3bdd2575dd711e1ad47b">   46</a></span>&#160;    <span class="keywordtype">double</span>          <a class="code" href="a00054.html#a6be07bf8082e3bdd2575dd711e1ad47b">m_maxValue</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00054.html#a7e53ac80b2fe7cd0073951c0b481faa0">   47</a></span>&#160;    <span class="keywordtype">double</span>          <a class="code" href="a00054.html#a7e53ac80b2fe7cd0073951c0b481faa0">m_threshold</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00054.html#ac3573bcd8d9a70d9b6e5c40da545ee2d">   48</a></span>&#160;    <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a>   <a class="code" href="a00054.html#ac3573bcd8d9a70d9b6e5c40da545ee2d">m_thresholdType</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Q_PROPERTY( <span class="keywordtype">double</span> maxValue MEMBER m_maxValue</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                READ maxValue</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                WRITE <a class="code" href="a00054.html#a7afb07c346eef63aef445b049718ec46">setMaxValue</a></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00054.html#a6e9aec8892a8b8c16c8c0ffb8d293299">   53</a></span>&#160;                NOTIFY maxValueChanged )</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    Q_PROPERTY( <span class="keywordtype">double</span> threshold MEMBER m_threshold</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                READ threshold</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                WRITE <a class="code" href="a00054.html#a747ecbd752a29d1f2158e05ed568d78a">setThreshold</a></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="a00054.html#a4553c33cf0267aa206970186f29534a1">   58</a></span>&#160;                NOTIFY thresholdChanged )</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Q_PROPERTY( <a class="code" href="a00054.html#ac6ab383d590ac973fe513219334d561f">ThresholdType</a> thresholdType MEMBER m_thresholdType</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                READ thresholdType</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                WRITE <a class="code" href="a00054.html#a7f98dba2c45fb8f04e88bb4efe057d67">setThresholdType</a></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a00054.html#a1dd6b42c58c35809ba3664ad43b9f2a1">   63</a></span>&#160;                NOTIFY thresholdTypeChanged )</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00105.html#a3c8e90f8e3d2c03c67c9c037fd083cde">   67</a></span>&#160;typedef QSharedPointer&lt;Threshold&gt; <a class="code" href="a00105.html#a3c8e90f8e3d2c03c67c9c037fd083cde">ThresholdPtr</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif // THRESHOLD_H</span></div>
-<div class="ttc" id="a00054_html_ac6ab383d590ac973fe513219334d561fa62a8f48e1511dace93562cc70c5f9b23"><div class="ttname"><a href="a00054.html#ac6ab383d590ac973fe513219334d561fa62a8f48e1511dace93562cc70c5f9b23">Threshold::Thresh_Binary_Inv</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:17</div></div>
-<div class="ttc" id="a00054_html_ac6ab383d590ac973fe513219334d561fae6d119e2634d6968445f85b5b2a3ec98"><div class="ttname"><a href="a00054.html#ac6ab383d590ac973fe513219334d561fae6d119e2634d6968445f85b5b2a3ec98">Threshold::Thresh_ToZero</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:19</div></div>
-<div class="ttc" id="a00088_html"><div class="ttname"><a href="a00088.html">ProcessingComponent.h</a></div></div>
-<div class="ttc" id="a00105_html_a3c8e90f8e3d2c03c67c9c037fd083cde"><div class="ttname"><a href="a00105.html#a3c8e90f8e3d2c03c67c9c037fd083cde">ThresholdPtr</a></div><div class="ttdeci">QSharedPointer&lt; Threshold &gt; ThresholdPtr</div><div class="ttdef"><b>Definition:</b> Threshold.h:67</div></div>
-<div class="ttc" id="a00054_html_a6be07bf8082e3bdd2575dd711e1ad47b"><div class="ttname"><a href="a00054.html#a6be07bf8082e3bdd2575dd711e1ad47b">Threshold::m_maxValue</a></div><div class="ttdeci">double m_maxValue</div><div class="ttdef"><b>Definition:</b> Threshold.h:46</div></div>
-<div class="ttc" id="a00054_html_a7f98dba2c45fb8f04e88bb4efe057d67"><div class="ttname"><a href="a00054.html#a7f98dba2c45fb8f04e88bb4efe057d67">Threshold::setThresholdType</a></div><div class="ttdeci">void setThresholdType(const ThresholdType thresholdType)</div><div class="ttdef"><b>Definition:</b> Threshold.cpp:45</div></div>
-<div class="ttc" id="a00054_html_a7afb07c346eef63aef445b049718ec46"><div class="ttname"><a href="a00054.html#a7afb07c346eef63aef445b049718ec46">Threshold::setMaxValue</a></div><div class="ttdeci">void setMaxValue(const float maxValue)</div><div class="ttdef"><b>Definition:</b> Threshold.cpp:27</div></div>
-<div class="ttc" id="a00054_html_a559a43ae2c6f94a9f348d74e0c93f426"><div class="ttname"><a href="a00054.html#a559a43ae2c6f94a9f348d74e0c93f426">Threshold::maxValueChanged</a></div><div class="ttdeci">void maxValueChanged()</div></div>
-<div class="ttc" id="a00054_html_a5367a49945393b0f1367310f677c88ce"><div class="ttname"><a href="a00054.html#a5367a49945393b0f1367310f677c88ce">Threshold::maxValue</a></div><div class="ttdeci">float maxValue() const </div></div>
-<div class="ttc" id="a00054_html_a747ecbd752a29d1f2158e05ed568d78a"><div class="ttname"><a href="a00054.html#a747ecbd752a29d1f2158e05ed568d78a">Threshold::setThreshold</a></div><div class="ttdeci">void setThreshold(const float threshold)</div><div class="ttdef"><b>Definition:</b> Threshold.cpp:36</div></div>
-<div class="ttc" id="a00054_html_a2d23416e7525ec0223ebb8a65530ce73"><div class="ttname"><a href="a00054.html#a2d23416e7525ec0223ebb8a65530ce73">Threshold::thresholdType</a></div><div class="ttdeci">ThresholdType thresholdType() const </div></div>
-<div class="ttc" id="a00054_html_ac0e492803006dc4f32f3f113cf1bec3d"><div class="ttname"><a href="a00054.html#ac0e492803006dc4f32f3f113cf1bec3d">Threshold::threshold</a></div><div class="ttdeci">float threshold() const </div></div>
-<div class="ttc" id="a00054_html_a7e53ac80b2fe7cd0073951c0b481faa0"><div class="ttname"><a href="a00054.html#a7e53ac80b2fe7cd0073951c0b481faa0">Threshold::m_threshold</a></div><div class="ttdeci">double m_threshold</div><div class="ttdef"><b>Definition:</b> Threshold.h:47</div></div>
-<div class="ttc" id="a00054_html_a84f2d972a1347fbb406b2eea1273f5a9"><div class="ttname"><a href="a00054.html#a84f2d972a1347fbb406b2eea1273f5a9">Threshold::thresholdTypeChanged</a></div><div class="ttdeci">void thresholdTypeChanged()</div></div>
-<div class="ttc" id="a00034_html"><div class="ttname"><a href="a00034.html">ProcessingComponent</a></div><div class="ttdef"><b>Definition:</b> ProcessingComponent.h:7</div></div>
-<div class="ttc" id="a00054_html_ac6ab383d590ac973fe513219334d561fadfb3f3a4b2c053ccfe6e1f436666b90b"><div class="ttname"><a href="a00054.html#ac6ab383d590ac973fe513219334d561fadfb3f3a4b2c053ccfe6e1f436666b90b">Threshold::Thresh_Trunc</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:18</div></div>
-<div class="ttc" id="a00054_html"><div class="ttname"><a href="a00054.html">Threshold</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:9</div></div>
-<div class="ttc" id="a00054_html_ac6ab383d590ac973fe513219334d561fa8948c833b6fc66bcff50479b88281cb3"><div class="ttname"><a href="a00054.html#ac6ab383d590ac973fe513219334d561fa8948c833b6fc66bcff50479b88281cb3">Threshold::Thresh_Binary</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:16</div></div>
-<div class="ttc" id="a00054_html_a95e78d77660f0dabdb0ed073e83753c9"><div class="ttname"><a href="a00054.html#a95e78d77660f0dabdb0ed073e83753c9">Threshold::thresholdChanged</a></div><div class="ttdeci">void thresholdChanged()</div></div>
-<div class="ttc" id="a00054_html_ac6ab383d590ac973fe513219334d561f"><div class="ttname"><a href="a00054.html#ac6ab383d590ac973fe513219334d561f">Threshold::ThresholdType</a></div><div class="ttdeci">ThresholdType</div><div class="ttdef"><b>Definition:</b> Threshold.h:14</div></div>
-<div class="ttc" id="a00054_html_ac6ab383d590ac973fe513219334d561fac86486a6eb7621b1bc221aa08bb8d23b"><div class="ttname"><a href="a00054.html#ac6ab383d590ac973fe513219334d561fac86486a6eb7621b1bc221aa08bb8d23b">Threshold::Thresh_ToZero_Inv</a></div><div class="ttdef"><b>Definition:</b> Threshold.h:20</div></div>
-<div class="ttc" id="a00054_html_ac3573bcd8d9a70d9b6e5c40da545ee2d"><div class="ttname"><a href="a00054.html#ac3573bcd8d9a70d9b6e5c40da545ee2d">Threshold::m_thresholdType</a></div><div class="ttdeci">ThresholdType m_thresholdType</div><div class="ttdef"><b>Definition:</b> Threshold.h:48</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="a00059.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00059.html">Vertex</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="a00059.html#a97488994a2482d70da74e1b91d40e169">Vertex</a>();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="a00059.html#a97488994a2482d70da74e1b91d40e169">Vertex</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00059.html#aa592e1564aa3b226ff629b824b240310">x</a>, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00059.html#a448817068556fe43e81dc0a3e7d1fa43">y</a>, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00059.html#af5d14cd74cd842c01f9a8a8d92325339">z</a> );</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="a00059.html#a97488994a2482d70da74e1b91d40e169">Vertex</a>( <span class="keyword">const</span> <span class="keywordtype">float</span> x, <span class="keyword">const</span> <span class="keywordtype">float</span> y, <span class="keyword">const</span> <span class="keywordtype">float</span> z,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00059.html#a8c22b31da489e22d5d58ea667eda65b9">r</a>, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00059.html#a4da5050c518fc2657e34f51bf61ae0e4">g</a>, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00059.html#a270be8167fe744b56cae25215c7d52be">b</a>, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00059.html#a91493b1de792faae6bf96329bed6d06a">a</a> = 1.0f,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00059.html#afa8e01935fde5cb9702075d25346e135">u</a> = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="a00059.html#a6ef8693374fd8c435715b32fbbdc4e41">v</a> = 0);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="a00059.html#ad7a0ce588b7f688dc4488a0f567d9155">~Vertex</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00059.html#af5d14cd74cd842c01f9a8a8d92325339">   16</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00059.html#aa592e1564aa3b226ff629b824b240310">x</a>, <a class="code" href="a00059.html#a448817068556fe43e81dc0a3e7d1fa43">y</a>, <a class="code" href="a00059.html#af5d14cd74cd842c01f9a8a8d92325339">z</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00059.html#a8c22b31da489e22d5d58ea667eda65b9">   17</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00059.html#a8c22b31da489e22d5d58ea667eda65b9">r</a>, <a class="code" href="a00059.html#a4da5050c518fc2657e34f51bf61ae0e4">g</a>, <a class="code" href="a00059.html#a270be8167fe744b56cae25215c7d52be">b</a>, <a class="code" href="a00059.html#a91493b1de792faae6bf96329bed6d06a">a</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a00059.html#a6ef8693374fd8c435715b32fbbdc4e41">   18</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00059.html#afa8e01935fde5cb9702075d25346e135">u</a>, <a class="code" href="a00059.html#a6ef8693374fd8c435715b32fbbdc4e41">v</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00059.html#a088ea2f6ac59b1a5bee2d02da11ea50f">   19</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="a00059.html#a088ea2f6ac59b1a5bee2d02da11ea50f">pointSize</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00105.html#a259f4df67df3fce159eb227839d3c425">   22</a></span>&#160;<span class="keyword">typedef</span> QVector&lt;Vertex&gt;<a class="code" href="a00105.html#a259f4df67df3fce159eb227839d3c425">Vertices</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // VERTEX_H</span></div>
+<div class="ttc" id="a00105_html_a259f4df67df3fce159eb227839d3c425"><div class="ttname"><a href="a00105.html#a259f4df67df3fce159eb227839d3c425">Vertices</a></div><div class="ttdeci">QVector&lt; Vertex &gt; Vertices</div><div class="ttdef"><b>Definition:</b> Vertex.h:22</div></div>
+<div class="ttc" id="a00059_html"><div class="ttname"><a href="a00059.html">Vertex</a></div><div class="ttdef"><b>Definition:</b> Vertex.h:6</div></div>
+<div class="ttc" id="a00059_html_a448817068556fe43e81dc0a3e7d1fa43"><div class="ttname"><a href="a00059.html#a448817068556fe43e81dc0a3e7d1fa43">Vertex::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> Vertex.h:16</div></div>
+<div class="ttc" id="a00059_html_a6ef8693374fd8c435715b32fbbdc4e41"><div class="ttname"><a href="a00059.html#a6ef8693374fd8c435715b32fbbdc4e41">Vertex::v</a></div><div class="ttdeci">float v</div><div class="ttdef"><b>Definition:</b> Vertex.h:18</div></div>
+<div class="ttc" id="a00059_html_a97488994a2482d70da74e1b91d40e169"><div class="ttname"><a href="a00059.html#a97488994a2482d70da74e1b91d40e169">Vertex::Vertex</a></div><div class="ttdeci">Vertex()</div><div class="ttdef"><b>Definition:</b> Vertex.cpp:3</div></div>
+<div class="ttc" id="a00059_html_a8c22b31da489e22d5d58ea667eda65b9"><div class="ttname"><a href="a00059.html#a8c22b31da489e22d5d58ea667eda65b9">Vertex::r</a></div><div class="ttdeci">float r</div><div class="ttdef"><b>Definition:</b> Vertex.h:17</div></div>
+<div class="ttc" id="a00059_html_ad7a0ce588b7f688dc4488a0f567d9155"><div class="ttname"><a href="a00059.html#ad7a0ce588b7f688dc4488a0f567d9155">Vertex::~Vertex</a></div><div class="ttdeci">~Vertex()</div><div class="ttdef"><b>Definition:</b> Vertex.cpp:30</div></div>
+<div class="ttc" id="a00059_html_a91493b1de792faae6bf96329bed6d06a"><div class="ttname"><a href="a00059.html#a91493b1de792faae6bf96329bed6d06a">Vertex::a</a></div><div class="ttdeci">float a</div><div class="ttdef"><b>Definition:</b> Vertex.h:17</div></div>
+<div class="ttc" id="a00059_html_afa8e01935fde5cb9702075d25346e135"><div class="ttname"><a href="a00059.html#afa8e01935fde5cb9702075d25346e135">Vertex::u</a></div><div class="ttdeci">float u</div><div class="ttdef"><b>Definition:</b> Vertex.h:18</div></div>
+<div class="ttc" id="a00059_html_aa592e1564aa3b226ff629b824b240310"><div class="ttname"><a href="a00059.html#aa592e1564aa3b226ff629b824b240310">Vertex::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> Vertex.h:16</div></div>
+<div class="ttc" id="a00059_html_af5d14cd74cd842c01f9a8a8d92325339"><div class="ttname"><a href="a00059.html#af5d14cd74cd842c01f9a8a8d92325339">Vertex::z</a></div><div class="ttdeci">float z</div><div class="ttdef"><b>Definition:</b> Vertex.h:16</div></div>
+<div class="ttc" id="a00059_html_a4da5050c518fc2657e34f51bf61ae0e4"><div class="ttname"><a href="a00059.html#a4da5050c518fc2657e34f51bf61ae0e4">Vertex::g</a></div><div class="ttdeci">float g</div><div class="ttdef"><b>Definition:</b> Vertex.h:17</div></div>
+<div class="ttc" id="a00059_html_a088ea2f6ac59b1a5bee2d02da11ea50f"><div class="ttname"><a href="a00059.html#a088ea2f6ac59b1a5bee2d02da11ea50f">Vertex::pointSize</a></div><div class="ttdeci">float pointSize</div><div class="ttdef"><b>Definition:</b> Vertex.h:19</div></div>
+<div class="ttc" id="a00059_html_a270be8167fe744b56cae25215c7d52be"><div class="ttname"><a href="a00059.html#a270be8167fe744b56cae25215c7d52be">Vertex::b</a></div><div class="ttdeci">float b</div><div class="ttdef"><b>Definition:</b> Vertex.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="a00105.html">Threshold.h</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:04 for KinectTracker by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_8c83c19a9b6a99c3d579766fba10a6da.html">OpenGL</a></li><li class="navelem"><a class="el" href="dir_422157eb8ded5070cf70eb32824fdbfa.html">inc</a></li><li class="navelem"><a class="el" href="a00105.html">Vertex.h</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:36 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

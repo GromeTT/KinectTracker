@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: ProcessingComponent Class Reference</title>
+<title>KinectTracker: ObjectLoader Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,37 +104,22 @@ $(document).ready(function(){initNavTree('a00034.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00194.html">List of all members</a>  </div>
+<a href="a00204.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ProcessingComponent Class Reference</div>  </div>
+<div class="title">ObjectLoader Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00088_source.html">ProcessingComponent.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for ProcessingComponent:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00034.png" usemap="#ProcessingComponent_map" alt=""/>
-  <map id="ProcessingComponent_map" name="ProcessingComponent_map">
-<area href="a00016.html" alt="Dilate" shape="rect" coords="0,112,138,136"/>
-<area href="a00017.html" alt="Erode" shape="rect" coords="148,112,286,136"/>
-<area href="a00024.html" alt="HOGFeatureDetector" shape="rect" coords="296,112,434,136"/>
-<area href="a00026.html" alt="InRange" shape="rect" coords="444,112,582,136"/>
-<area href="a00051.html" alt="SkinColorDetector" shape="rect" coords="592,112,730,136"/>
-<area href="a00054.html" alt="Threshold" shape="rect" coords="740,112,878,136"/>
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="a00097_source.html">ObjectLoader.h</a>&gt;</code></p>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a880fd2eeeef65f0a905127d5b1607c40"></a>
+<a class="anchor" id="af9ecb6be20590e95539db718aaa74096"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ProcessingComponent::ProcessingComponent </td>
+          <td class="memname">ObjectLoader::ObjectLoader </td>
           <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -142,52 +127,44 @@ Inheritance diagram for ProcessingComponent:</div>
 
 </div>
 </div>
-<a class="anchor" id="ab491c8e7e4cbf4f225c5b5ec7b744822"></a>
+<a class="anchor" id="a060ab333dd50dea5ae6eb3833062d4a7"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ProcessingComponent::~ProcessingComponent </td>
+          <td class="memname">ObjectLoader::ObjectLoader </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abe35e670f22d62f56a95e28b67b43c93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectLoader::~ObjectLoader </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae3bf7f460db17ff7472e1d85b4b14f2f"></a>
+<a class="anchor" id="a44d2471ac19507310b4011b12b5c76de"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ProcessingComponent::addComponent </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00034.html">ProcessingComponent</a> *&#160;</td>
-          <td class="paramname"><em>compnent</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a321720770de558665249606e6928e737"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const QVector&lt; <a class="el" href="a00034.html">ProcessingComponent</a> * &gt; &amp; ProcessingComponent::getComponents </td>
+          <td class="memname">QString ObjectLoader::getFilename </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -197,16 +174,31 @@ Inheritance diagram for ProcessingComponent:</div>
 
 </div>
 </div>
-<a class="anchor" id="a7ebc7811af8663c7cd1e3b3a1d776ae5"></a>
+<a class="anchor" id="a2d7bda5977707e5b1b4ec5bcde039ff5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00034.html">ProcessingComponent</a> * ProcessingComponent::getProcessingComponent </td>
+          <td class="memname"><a class="el" href="a00097.html#af2d2d934df351d4e2b38aab9daaf0e94">LoaderObjectPtr</a> ObjectLoader::load </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab0c747b6f0fee84f51236cfe3e7ae4e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectLoader::setFilename </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -214,7 +206,7 @@ Inheritance diagram for ProcessingComponent:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa0f3cdca75ddc21a3945daae06968b1f"></a>
+<a class="anchor" id="aa4485753ec65569c72620226717f1e18"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -222,7 +214,7 @@ Inheritance diagram for ProcessingComponent:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt;<a class="el" href="a00034.html">ProcessingComponent</a>*&gt; ProcessingComponent::m_components</td>
+          <td class="memname">QString ObjectLoader::m_filename</td>
         </tr>
       </table>
   </td>
@@ -235,16 +227,16 @@ Inheritance diagram for ProcessingComponent:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00088_source.html">ProcessingComponent.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00137.html">ProcessingComponent.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/OpenGL/inc/<a class="el" href="a00097_source.html">ObjectLoader.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/OpenGL/src/<a class="el" href="a00109.html">ObjectLoader.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00034.html">ProcessingComponent</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:07 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00034.html">ObjectLoader</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

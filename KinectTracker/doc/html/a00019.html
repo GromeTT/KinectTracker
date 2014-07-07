@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: FixedPropertyVector Class Reference</title>
+<title>KinectTracker: FloatEditor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,22 +104,31 @@ $(document).ready(function(){initNavTree('a00019.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00179.html">List of all members</a>  </div>
+<a href="a00189.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">FixedPropertyVector Class Reference</div>  </div>
+<div class="title">FloatEditor Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00066_source.html">Defines.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00144_source.html">FloatEditor.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for FloatEditor:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00019.png" usemap="#FloatEditor_map" alt=""/>
+  <map id="FloatEditor_map" name="FloatEditor_map">
+</map>
+ </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a4d8fdeba3cedb540692b58357d923611"></a>
+<a class="anchor" id="adae55d332f7b88cd78b0ca74a6d0eadc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">FixedPropertyVector::FixedPropertyVector </td>
+          <td class="memname">FloatEditor::FloatEditor </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -127,44 +136,12 @@ $(document).ready(function(){initNavTree('a00019.html','');});
 
 </div>
 </div>
-<a class="anchor" id="a02dc9c9d37712ad936bc257237c4b18f"></a>
+<a class="anchor" id="a97720d6f6f6e918c699e46b0c642038c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">FixedPropertyVector::FixedPropertyVector </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9d1571f30bf5147e849cc41fa5aedd0d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">FixedPropertyVector::FixedPropertyVector </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6874e41c4693c2cff0c0eb11e57952a9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">FixedPropertyVector::~FixedPropertyVector </td>
+          <td class="memname">FloatEditor::~FloatEditor </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -175,28 +152,12 @@ $(document).ready(function(){initNavTree('a00019.html','');});
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="afa85a0006e87fe8629f1831ea1206637"></a>
+<a class="anchor" id="a653b871c59f6898465a31b9387311afb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float FixedPropertyVector::at </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a2667c22ea9b5e654a58440598a49e802"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt; float &gt; &amp; FixedPropertyVector::data </td>
+          <td class="memname">float FloatEditor::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -206,124 +167,24 @@ $(document).ready(function(){initNavTree('a00019.html','');});
 
 </div>
 </div>
-<a class="anchor" id="af9dc43efb450e3c03bc081d6a7d866c1"></a>
+<a class="anchor" id="a5b522354ffa86bca95e0964b74730e8a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float FixedPropertyVector::last </td>
+          <td class="memname">void FloatEditor::setData </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad8f3e2a02bbb88bae18c4dd3c3dd60de"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool FixedPropertyVector::operator!= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad8559e344284597624e58b14a4560769"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void FixedPropertyVector::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a58c7fd0958fe997c38e36adc4aaa6df1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool FixedPropertyVector::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00019.html">FixedPropertyVector</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6c696b3eed0f6dc6d6caa76d77672da3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void FixedPropertyVector::setData </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>number</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a9ac7c743b29482da86c5601939654075"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int FixedPropertyVector::size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a9eade92d9e1c37aa3f2b59758a1ff1be"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int FixedPropertyVector::channelCount</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="adeaa2012c2d4b06e8913fe12c0304615"></a>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a5c301bf73cae8e9fa11268a24cba6083"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -331,42 +192,29 @@ $(document).ready(function(){initNavTree('a00019.html','');});
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;float&gt; FixedPropertyVector::m_data</td>
+          <td class="memname">float FloatEditor::data</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ad907fd3830ad9e5ef8f75bc6421468b8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;float&gt; FixedPropertyVector::vec</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00066_source.html">Defines.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00073_source.html">FixedPropertyVector.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00122.html">FixedPropertyVector.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/PropertyBrowser/inc/<a class="el" href="a00144_source.html">FloatEditor.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/PropertyBrowser/src/<a class="el" href="a00148.html">FloatEditor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00019.html">FixedPropertyVector</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00019.html">FloatEditor</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -12,6 +12,8 @@ public:
 
 private:
     virtual void processV( const unsigned int timestamp );
+    virtual void resetV();
+
     bool processSkeletonData( const unsigned int timestamp );
     void processDepthData();
 };

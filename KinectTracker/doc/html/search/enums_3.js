@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['thresholdtype',['ThresholdType',['../a00054.html#ac6ab383d590ac973fe513219334d561f',1,'Threshold']]],
-  ['trackstate',['TrackState',['../a00048.html#a409fd29c2f9be0581397b13a1ef58dc9',1,'SkeletonData']]]
+  ['quality',['Quality',['../a00048.html#a6546984ae25a1d218c293eae231543fb',1,'SkeletonData']]]
 ];

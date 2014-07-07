@@ -20,7 +20,6 @@ SOURCES += inc/AMath/src/AMath.cpp \
     inc/Analyzer/src/SizeAnalyzer.cpp \
     inc/Analyzer/src/SkeletonAnalyzer.cpp \
     inc/Analyzer/src/UpperBodySizeAnalyzer.cpp \
-    inc/Analyzer/src/ViewingDirectionAnalyzer.cpp \
     inc/Collision/src/Intersection.cpp \
     inc/Dialogs/src/KinectInitializeDialog.cpp \
     inc/Geometries/src/BoundingGeometry.cpp \
@@ -72,7 +71,6 @@ HEADERS  += inc/AMath/inc/AMath.h \
     inc/Analyzer/inc/SizeAnalyzer.h \
     inc/Analyzer/inc/SkeletonAnalyzer.h \
     inc/Analyzer/inc/UpperBodySizeAnalyzer.h \
-    inc/Analyzer/inc/ViewingDirectionAnalyzer.h \
     inc/Collision/inc/Intersection.h \
     inc/Dialogs/inc/KinectInitializeDialog.h \
     inc/Geometries/inc/BoundingGeometry.h \
@@ -121,9 +119,9 @@ HEADERS  += inc/AMath/inc/AMath.h \
 
 FORMS    += MainWindow.ui \
     inc/Dialogs/ui/KinectInitializeDialog.ui \
+    inc/Dialogs/ui/ImageAnalysisDialog.ui \
     inc/SceneGraph/ui/SceneGraphWidget.ui \
     inc/PropertyBrowser/ui/PropertyBrowser.ui \
-    inc/SceneGraph/ui/ImageAnalysisDialog.ui \
     inc/ImageWidget/ui/ImageWidget.ui
 
 

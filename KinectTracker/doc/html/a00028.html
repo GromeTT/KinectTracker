@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>KinectTracker: KinectInitializeDialog Class Reference</title>
+<title>KinectTracker: Kinect Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,62 +104,93 @@ $(document).ready(function(){initNavTree('a00028.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="a00188.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a00198.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">KinectInitializeDialog Class Reference</div>  </div>
+<div class="title">Kinect Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00082_source.html">KinectInitializeDialog.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for KinectInitializeDialog:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00028.png" usemap="#KinectInitializeDialog_map" alt=""/>
-  <map id="KinectInitializeDialog_map" name="KinectInitializeDialog_map">
-</map>
- </div></div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a5b562f825b336c713b878740963778ba"></a>
+<p><code>#include &lt;<a class="el" href="a00090_source.html">Kinect.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aa141d262b4b5777eae142dae55f15dc2"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00028.html#aa141d262b4b5777eae142dae55f15dc2">initialize</a> (const DWORD flag)</td></tr>
+<tr class="separator:aa141d262b4b5777eae142dae55f15dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d60fbfe183e9e55eb2fc3fbc97185c"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00028.html#a30d60fbfe183e9e55eb2fc3fbc97185c">openDepthStream</a> (NUI_IMAGE_RESOLUTION resolution, DWORD frameFlag, DWORD frameLimit, HANDLE nextFrame)</td></tr>
+<tr class="separator:a30d60fbfe183e9e55eb2fc3fbc97185c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb80028edfb709d23e39ca96c00f4e6"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00028.html#a3bb80028edfb709d23e39ca96c00f4e6">getRGBImage</a> (uchar *img)</td></tr>
+<tr class="separator:a3bb80028edfb709d23e39ca96c00f4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bbf3bce1faa38fe566ee2a000d7b45e"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00028.html#a1bbf3bce1faa38fe566ee2a000d7b45e">getSkeleton</a> (QList&lt; <a class="el" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> &gt; &amp;skeletons)</td></tr>
+<tr class="separator:a1bbf3bce1faa38fe566ee2a000d7b45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a260ceef1571ff51ff8571b1951782390"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">KinectInitializeDialog::KinectInitializeDialog </td>
-          <td>(</td>
-          <td class="paramtype">QSharedPointer&lt; <a class="el" href="a00027.html">Kinect</a> &gt;&#160;</td>
-          <td class="paramname"><em>kinect</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">enum <a class="el" href="a00028.html#a260ceef1571ff51ff8571b1951782390">Kinect::Error</a></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a71905f7f617133ae9dcc5a7f60fe5e3a"></a>OK&#160;</td><td class="fielddoc">
+<p>OK <br />
+ basdasa. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a2416cb754692f4d74e8fa2ec14116c0b"></a>FAIL&#160;</td><td class="fielddoc">
+<p>OK. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390aea8d6d14120d2456356af47489e9548e"></a>DEVICE_NOT_READY&#160;</td><td class="fielddoc">
+<p>OK. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390ab34743ee923b6c4e3562d180cabcae7e"></a>OUT_OF_MEMORY&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a5639c3eef90d1eb8cc1c6159853fee5e"></a>POINTER&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a6733a7127f4734ab4c774e11f7fc0db9"></a>INVALIDARG&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390aaf317b58295141b7e9b5204516f96617"></a>INVALID_OPERATION&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390ae2312652bd828deeb1330c3e14759f12"></a>NO_SENSOR&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a5c8a6b1f5525ab61a3ec081c40c0e69a"></a>NO_FRAME_AVAILABLE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a5ee6222883adcc743ebfee91f3a96473"></a>INTERNAL_ERROR&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390a2933fb7dbf002b59c3b1162c899051dc"></a>NO_INTERFACE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a260ceef1571ff51ff8571b1951782390af5e00d094d8888abd87b80afdf1ab6b9"></a>WRONG_VECTOR_SIZE&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
 
 </div>
 </div>
-<a class="anchor" id="ad6728a188de665be594a4496da47f1cf"></a>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab05389f710b912abff1d001edd77d847"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">KinectInitializeDialog::~KinectInitializeDialog </td>
+          <td class="memname">Kinect::Kinect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an uninitialized <a class="el" href="a00028.html" title="Kinect is a wrapper for the Microsoft kinect sensor. ">Kinect</a> object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3f417dc4deed8106a97f217c26326e12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Kinect::~Kinect </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -169,8 +200,337 @@ Inheritance diagram for KinectInitializeDialog:</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a0fa552efafad4fec8c1fd9a1ed68c71b"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab4565c33f97cf20a0e9d80ab9df230cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize Kinect::depthStreamResolution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4c853e60a6f038e240dc5fb3d9f8cc33"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getDepthImage </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; ushort &gt; &amp;&#160;</td>
+          <td class="paramname"><em>depthData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace879cb309adc13146cdc3350bc90e17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getDepthImage </td>
+          <td>(</td>
+          <td class="paramtype">ushort *&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a092766b57cc36215e781f30eca8993af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getDepthImageAsGreyImage </td>
+          <td>(</td>
+          <td class="paramtype">QImage *&amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0a1bb8599bb173295254b9ef749980ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getDepthImageAsGreyImage </td>
+          <td>(</td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af87d93505eeb457ec5ba7d899cded170"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getRGBImage </td>
+          <td>(</td>
+          <td class="paramtype">QImage *&amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3bb80028edfb709d23e39ca96c00f4e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getRGBImage </td>
+          <td>(</td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00028.html#a4c853e60a6f038e240dc5fb3d9f8cc33">Kinect::getDepthImage</a> If a rgb image is available it will be copied to <em>img</em> in BGRA format and the function returns S_OK. </p>
+<p>Otherwise <em>img</em> will not be touched and an error will be returned. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad964c079f06425da51dffb6c0ae86599"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Kinect::getSensorCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns how many kinect sensors are plugged in. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1bbf3bce1faa38fe566ee2a000d7b45e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::getSkeleton </td>
+          <td>(</td>
+          <td class="paramtype">QList&lt; <a class="el" href="a00091.html#a3ff4896d315d1270ac7622ce28abee47">SkeletonDataPtr</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>skeletons</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00028.html#a1bbf3bce1faa38fe566ee2a000d7b45e" title="Kinect::getSkeleton. ">Kinect::getSkeleton</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">skeletons</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa141d262b4b5777eae142dae55f15dc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const DWORD&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the <a class="el" href="a00028.html" title="Kinect is a wrapper for the Microsoft kinect sensor. ">Kinect</a> with <em>flag</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a693565751dc489be7b7aa351ebdaa6e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Kinect::isDepthStreamOpen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a82e6d6e1b8e034ebc9a816e170718d16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Kinect::isInitialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1900c431b5dd5fff70529842dda23110"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Kinect::isRGBStreamOpen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a30d60fbfe183e9e55eb2fc3fbc97185c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::openDepthStream </td>
+          <td>(</td>
+          <td class="paramtype">NUI_IMAGE_RESOLUTION&#160;</td>
+          <td class="paramname"><em>resolution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>frameFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>frameLimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>nextFrame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resolution</td><td></td></tr>
+    <tr><td class="paramname">frameFlag</td><td></td></tr>
+    <tr><td class="paramname">frameLimit</td><td></td></tr>
+    <tr><td class="paramname">nextFrame</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae30aa93a19d11719a392faaee29bf5af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Kinect::openRGBStream </td>
+          <td>(</td>
+          <td class="paramtype">NUI_IMAGE_RESOLUTION&#160;</td>
+          <td class="paramname"><em>resolution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>frameFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>frameLimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>nextFrame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00028.html#ae30aa93a19d11719a392faaee29bf5af" title="Kinect::openRGBStream Das ist ein Test und soll da bitte nicht erscheinen. ">Kinect::openRGBStream</a> Das ist ein Test und soll da bitte nicht erscheinen. </p>
+
+</div>
+</div>
+<a class="anchor" id="a337e08ea00f2a721a34e7502d186887c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize Kinect::rgbStreamResolution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab28e82e1656f4a570c5c42782fa12602"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -178,7 +538,21 @@ Inheritance diagram for KinectInitializeDialog:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QSharedPointer&lt;<a class="el" href="a00027.html">Kinect</a>&gt; KinectInitializeDialog::m_kinect</td>
+          <td class="memname">void Kinect::setSize </td>
+          <td>(</td>
+          <td class="paramtype">QSize &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NUI_IMAGE_RESOLUTION&#160;</td>
+          <td class="paramname"><em>resolution</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -190,7 +564,8 @@ Inheritance diagram for KinectInitializeDialog:</div>
 
 </div>
 </div>
-<a class="anchor" id="a7cee097d014aa0ff801139ea013c1bb0"></a>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a9c832a9139b215b8b0cba8de4c2984e0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -198,7 +573,167 @@ Inheritance diagram for KinectInitializeDialog:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Ui::KinectInitializeDialog* KinectInitializeDialog::ui</td>
+          <td class="memname">HANDLE Kinect::m_depthHandle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adb04c032923d36d7b3bdd49519287237"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize Kinect::m_depthStreamResolution</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a07d0fdf96ed5594dd649feb94bd5dea5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Kinect::m_deptStreamOpen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a34a99c1886de3bffb4ee624d2ddeabe1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Kinect::m_initialized</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08ea043a506761fc779b37bade79befe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE Kinect::m_rgbHandle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5d28ad4c6fd530d2e0d3e984d883e0cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Kinect::m_rgbStreamOpen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae1f39c5fbac1c56388d9793b0acbff55"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize Kinect::m_rgbStreamResolution</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a89345cee1b4aac5d3fb80149aa73e3a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE Kinect::m_skeletonHandle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1ba3f64fa8e801b769ba8be8e50ae4d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">INuiSensor* Kinect::mp_sensor</td>
         </tr>
       </table>
   </td>
@@ -211,16 +746,16 @@ Inheritance diagram for KinectInitializeDialog:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/inc/<a class="el" href="a00082_source.html">KinectInitializeDialog.h</a></li>
-<li>C:/Projekte/Kinect_Tracker/KinectTracker/src/<a class="el" href="a00131.html">KinectInitializeDialog.cpp</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Kinect/inc/<a class="el" href="a00090_source.html">Kinect.h</a></li>
+<li>C:/Projekte/C++/Kinect_Tracker/KinectTracker/inc/Kinect/src/<a class="el" href="a00092.html">Kinect.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00028.html">KinectInitializeDialog</a></li>
-    <li class="footer">Generated on Mon Jun 23 2014 16:33:06 for KinectTracker by
+    <li class="navelem"><a class="el" href="a00028.html">Kinect</a></li>
+    <li class="footer">Generated on Sat Jul 5 2014 23:58:38 for KinectTracker by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

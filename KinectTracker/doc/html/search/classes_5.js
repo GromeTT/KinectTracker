@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['fixedpropertyvector',['FixedPropertyVector',['../a00019.html',1,'']]],
-  ['floateditor',['FloatEditor',['../a00020.html',1,'']]],
-  ['floor',['Floor',['../a00021.html',1,'']]]
+  ['highlevelprocessingpipeline',['HighLevelProcessingPipeline',['../a00021.html',1,'']]],
+  ['histogram',['Histogram',['../a00022.html',1,'']]],
+  ['hogdetectionpipeline',['HOGDetectionPipeline',['../a00023.html',1,'']]],
+  ['hogfeaturedetector',['HOGFeatureDetector',['../a00024.html',1,'']]]
 ];
