@@ -1,7 +1,4 @@
 #+STARTUP: showall
-
-* Gespräch
-  
         
 * Treffen
   + [X] <2014-06-30 Mo 11:00>

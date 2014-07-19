@@ -103,7 +103,7 @@ bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
                                                      cropedHead.topLeft().y(),
                                                      cropedHead.width(),
                                                      cropedHead.height() ) );
-        deriveViewingDirectionByHistogramHSV( headRegion );
+        deriveViewingDirectionBySkinColor( headRegion );
         // Draw the regions of interest.
         drawRegionOfInterest( m_lastRegion,
                               currentImage,
@@ -143,15 +143,8 @@ void SASDProcessingPipeline::processRGBData()
    Uses the SkinColorExplicitDefinedSkinRegionDetectionPipeline to determine if the tracked person
    is lookin torwards the camera.
  */
-void SASDProcessingPipeline::deriveViewingDirectionBySkinColor( cv::Mat& currentImage ,
-                                                                const QVector2D& center )
+void SASDProcessingPipeline::deriveViewingDirectionBySkinColor( cv::Mat& head )
 {
-    // Extract the region of the head.
-    cv::Mat head = currentImage( cv::Rect( center.x() - 25,
-                                           center.y() - 25,
-                                           50,
-                                           50 ) );
-
     m_skinPipeline->process( head );
     if ( m_skinPipeline->absoluteFrequency() >= 20 )
     {

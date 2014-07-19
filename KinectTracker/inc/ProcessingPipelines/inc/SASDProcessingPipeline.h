@@ -22,8 +22,7 @@ private:
    bool processSkeletonData( const unsigned int timestamp );
    void processRGBData();
    void processDepthData();
-   void deriveViewingDirectionBySkinColor( cv::Mat& currentImage,
-                                           const QVector2D& center );
+   void deriveViewingDirectionBySkinColor( cv::Mat& head );
    void deriveViewingDirectionByHistogram( cv::Mat& headRegion );
    void deriveViewingDirectionByHistogramHSV( cv::Mat& headRegion );
 

@@ -230,32 +230,38 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
 
     // Reset counters
     m_absoluteFrequency = 0;
-
-    int pixelCount = input.rows*input.cols;
-    int i = 0;
-    while ( i <  input.channels()*pixelCount )
+    cv::imshow( "Original", input );
+    qDebug() << "Rows " << input.rows;
+    qDebug() << "Cols " << input.cols;
+    qDebug() << "Total " << input.total();
+    for ( int i = 0; i < input.rows; ++i )
     {
-        uchar b = input.data[i];
-        uchar g = input.data[i+1];
-        uchar r = input.data[i+2];
-        int diff = MAX( MAX( r, g ), b ) - MIN( MIN( r, g ), b );
-        if ( r <= 95 ||
-             g <= 40 ||
-             b <= 20 ||
-             diff <= 15 ||
-             abs( r-g ) <= 15 ||
-             r <= g ||
-             g < b )
+        for ( int j = 0; j < input.cols * input.channels(); j += 3 )
         {
-            input.data[i]   = 0;
-            input.data[i+1] = 0;
-            input.data[i+2] = 0;
+            uchar b = input.at<uchar>( i, j );   // blue channel of the pixel
+            uchar g = input.at<uchar>( i, j+1 ); // green channel of the pixel
+            uchar r = input.at<uchar>( i, j+2 ); // red channel of the pixel
+            int diff = MAX( MAX( r, g ), b ) - MIN( MIN( r, g ), b );
+            if ( r <= 95 ||
+                 g <= 40 ||
+                 b <= 20 ||
+                 diff <= 15 ||
+                 abs( r-g ) <= 15 ||
+                 r <= g ||
+                 g < b )
+            {
+                input.at<uchar>( i, j )   = 0;
+                input.at<uchar>( i, j+1 ) = 0;
+                input.at<uchar>( i, j+2 ) = 0;
+            }
+            else
+            {
+                input.at<uchar>( i, j )   = 255;
+                input.at<uchar>( i, j+1 ) = 255;
+                input.at<uchar>( i, j+2 ) = 255;
+                ++m_absoluteFrequency;
+            }
         }
-        else
-        {
-            ++m_absoluteFrequency;
-        }
-        i+=3;
     }
     cv::imshow( "Skin", input );
 }
