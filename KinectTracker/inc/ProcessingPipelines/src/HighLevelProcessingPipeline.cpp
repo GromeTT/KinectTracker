@@ -3,6 +3,8 @@
 #include "../../Analyzer/inc/UpperBodySizeAnalyzer.h"
 #include "../../Analyzer/inc/BBSizeAnalyzer.h"
 #include <QVector2D>
+#include <QColor>
+#include <QDebug>
 #include <opencv2/opencv.hpp>
 
 HighLevelProcessingPipeline::HighLevelProcessingPipeline( KinectPtr& kinect,
@@ -149,56 +151,6 @@ bool HighLevelProcessingPipeline::skeletonDataAvailable() const
 }
 
 /*!
-   \brief HighLevelProcessingPipeline::trackJoints
-   \param skeleton
- */
-void HighLevelProcessingPipeline::trackJoints( const SkeletonDataPtr skeleton, cv::Mat image )
-{
-    drawJoint( SkeletonData::Joints::Hip, skeleton, image );
-    drawJoint( SkeletonData::Joints::Spine, skeleton, image );
-    drawJoint( SkeletonData::Joints::ShoulderCenter, skeleton, image );
-    drawJoint( SkeletonData::Joints::ShoulderLeft, skeleton, image );
-    drawJoint( SkeletonData::Joints::ElbowLeft, skeleton, image );
-    drawJoint( SkeletonData::Joints::WristLeft, skeleton, image );
-    drawJoint( SkeletonData::Joints::HandLeft, skeleton, image );
-    drawJoint( SkeletonData::Joints::ShoulderRight, skeleton, image );
-    drawJoint( SkeletonData::Joints::ElbowRight, skeleton, image );
-    drawJoint( SkeletonData::Joints::WristRight, skeleton, image );
-    drawJoint( SkeletonData::Joints::HandRight, skeleton, image );
-    drawJoint( SkeletonData::Joints::HipLeft, skeleton, image );
-    drawJoint( SkeletonData::Joints::KneeLeft, skeleton, image );
-    drawJoint( SkeletonData::Joints::AnkleLeft, skeleton, image );
-    drawJoint( SkeletonData::Joints::FootLeft, skeleton, image );
-    drawJoint( SkeletonData::Joints::HipRight, skeleton, image );
-    drawJoint( SkeletonData::Joints::KneeRight, skeleton, image );
-    drawJoint( SkeletonData::Joints::AnkleRight, skeleton, image );
-    drawJoint( SkeletonData::Joints::FootRight, skeleton, image );
-}
-
-void HighLevelProcessingPipeline::drawJoint( SkeletonData::Joints joint,
-                                             const SkeletonDataPtr skeleton,
-                                             cv::Mat image,
-                                             const int width,
-                                             const int height )
-{
-    QPoint p;
-    QRect r;
-    p = transformFromSkeltonToRGB( skeleton->getJoint( joint ) );
-    r = cropRegionWithWidthAndHeightAsPixels( p,
-                                              width,
-                                              height,
-                                              image );
-    if ( skeleton->jointTrackState( joint ) == SkeletonData::TrackState::Tracked )
-    {
-        drawRegionOfInterest( r, image, cv::Scalar( 0, 255, 0) );
-    }
-    else
-    {
-        drawRegionOfInterest( r, image, cv::Scalar( 0, 0, 255 ) );
-    }
-}
-
-/*!
    \brief HighLevelProcessingPipeline::takeScreenShot
    Makes a copy of the current depth and rgb Data.
  */
@@ -221,9 +173,9 @@ void HighLevelProcessingPipeline::saveHeadHistograms()
    Draws \a rect into \a image with \a color.
    Note that the region has to be croped.
  */
-void HighLevelProcessingPipeline::drawRegionOfInterest( QRect& rect,
+void HighLevelProcessingPipeline::drawRegionOfInterest( const QRect& rect,
                                                         cv::Mat image,
-                                                        cv::Scalar color )
+                                                        const QColor& color )
 {
     // Draw the reactangle only if the it's width and height
     // is greater then 0.
@@ -232,8 +184,8 @@ void HighLevelProcessingPipeline::drawRegionOfInterest( QRect& rect,
         rectangle( image,
                    cv::Point( rect.bottomRight().x(), rect.bottomRight().y() ),
                    cv::Point( rect.topLeft().x(), rect.topLeft().y() ),
-                   color,
-                   5 );
+                   cv::Scalar( color.blue(), color.green(), color.red() ),
+                   1 );
     }
 }
 
@@ -298,26 +250,56 @@ QRect HighLevelProcessingPipeline::cropRegionWithWidthAndHeightAsPixels( const Q
                                                                          const float height,
                                                                          const cv::Mat& image )
 {
-    QPoint bottomRight ( center.x() + width,
-                         center.y() + height );
-    QPoint topLeft (center.x() - width,
-                    center.y() - height );
-
-    if ( bottomRight.x() >= image.cols )
-    {
-        bottomRight.setX( image.cols - 1 );
-    }
-    if ( bottomRight.y() >= image.rows )
-    {
-        bottomRight.setY( image.rows - 1  );
-    }
+    // Compute top left point.
+    QPoint topLeft ( center.x() - width + 1 ,
+                     center.y() - height + 1 );
     if ( topLeft.x() < 0  )
     {
         topLeft.setX( 0 );
+    }
+    if ( topLeft.x() > image.cols )
+    {
+        topLeft.setX( image.cols -1 );
     }
     if ( topLeft.y() < 0 )
     {
         topLeft.setY( 0 );
     }
+    if ( topLeft.y() > image.rows )
+    {
+        topLeft.setY( image.rows-1 );
+    }
+
+    // Compute bottom right point.
+    QPoint bottomRight ( center.x() + width,
+                         center.y() + height );
+
+    if ( bottomRight.x() > image.cols )
+    {
+        bottomRight.setX( image.cols - 1 );
+        if ( bottomRight.x() < topLeft.x() )
+        {
+            bottomRight.setX( topLeft.x() );
+        }
+    }
+    if ( bottomRight.x() < 0 )
+    {
+        bottomRight.setX( 0 );
+    }
+
+    if ( bottomRight.y() > image.rows )
+    {
+        bottomRight.setY( image.rows - 1 );
+        if ( bottomRight.y() < topLeft.y() )
+        {
+            bottomRight.setY( topLeft.y() );
+        }
+    }
+    if ( bottomRight.y() < 0 )
+    {
+        bottomRight.setY( 0 );
+    }
+
+    // Return rect.
     return QRect( topLeft, bottomRight );
 }

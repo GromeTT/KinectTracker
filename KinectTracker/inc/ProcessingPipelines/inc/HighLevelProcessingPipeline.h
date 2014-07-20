@@ -28,9 +28,9 @@ public:
     bool process( const unsigned int timestamp );
     void takeScreenShot();
     void saveHeadHistograms();
-    void drawRegionOfInterest( QRect& rect,
+    void drawRegionOfInterest( const QRect& rect,
                                cv::Mat image,
-                               cv::Scalar color );
+                               const QColor& color );
     void reset();
     QRect crop( const AMath::Rectangle3D& rect,
                 cv::Mat& image );
@@ -54,7 +54,6 @@ public:
 protected:
     virtual void processV( const unsigned int timestamp ) = 0;
     virtual void resetV() = 0;
-    void trackJoints(const SkeletonDataPtr skeleton , cv::Mat image);
     void drawJoint( SkeletonData::Joints joint,
                     const SkeletonDataPtr skeleton,
                     cv::Mat image,

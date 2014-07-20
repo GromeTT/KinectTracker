@@ -4,9 +4,33 @@
 #include "HighLevelProcessingPipeline.h"
 #include "LowLevelProcessingPipeline.h"
 #include <QVector4D>
+#include <QColor>
 
 class AnalysisResults;
 class SkeletonAnalyzer;
+class SASDProcessingPipeline;
+
+typedef bool (SASDProcessingPipeline::*Func)( cv::Mat& region );
+
+struct JointSummary
+{
+    JointSummary() {}
+    JointSummary( cv::Mat& subMatrix,
+                  const QRect& cropedRegion,
+                  const SkeletonData::Joints joint,
+                  const QColor& color )
+        : m_subMatrix( subMatrix )
+        , m_cropedRegion( cropedRegion )
+        , m_joint( joint )
+        , m_color( color )
+    {
+    }
+
+    cv::Mat              m_subMatrix;
+    QRect                m_cropedRegion;
+    SkeletonData::Joints m_joint;
+    QColor               m_color;
+};
 
 class SASDProcessingPipeline : public HighLevelProcessingPipeline
 {
@@ -22,15 +46,22 @@ private:
    bool processSkeletonData( const unsigned int timestamp );
    void processRGBData();
    void processDepthData();
-   void deriveViewingDirectionBySkinColor( cv::Mat& head );
-   void deriveViewingDirectionByHistogram( cv::Mat& headRegion );
-   void deriveViewingDirectionByHistogramHSV( cv::Mat& headRegion );
+   void extractAllRegions( cv::Mat& image );
+   void extractRegion( cv::Mat& image, SkeletonData::Joints joint );
+   void deriveViewingDirection( cv::Mat& image );
+   bool deriveViewingDirectionBySkinColor( cv::Mat& head );
+   bool deriveViewingDirectionByHistogram( cv::Mat& headRegion );
+   bool deriveViewingDirectionByHistogramHSV( cv::Mat& headRegion );
+   void drawRegionsOfInterest( cv::Mat& image );
 
    QRect                                                  m_lastRegion;
    QVector4D                                              m_planeCoefficient;
    SkinColorDetectionPipeline                             m_skinColorDetectionPipeline;
    SkinColorHistogramDetectionPipelinePtr                 m_skinColorHistogramDetectionPipeline;
    SkinColorExplicitDefinedSkinRegionDetectionPipelinePtr m_skinPipeline;
+   QVector<JointSummary>                                  m_regions;
+   Func                                                   mp_deriveViewingDirectionFunc;
+
 };
 
 #endif // SASDPROCESSINGPIPELINE_H

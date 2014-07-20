@@ -134,16 +134,6 @@ private:
     BoundingBox m_boundingBox;
 
 private:
-    Q_PROPERTY( float phi1
-                READ phi1
-                WRITE setPhi1
-                NOTIFY phi1Changed )
-
-    Q_PROPERTY( float phi2
-                READ phi2
-                WRITE setPhi2
-                NOTIFY phi1Changed )
-
     Q_PROPERTY( SkeletonData::Joints joint
                 WRITE setJoint
                 READ joint
@@ -236,6 +226,16 @@ private:
     Q_PROPERTY( bool footRightTracked
                 READ footRightTracked
                 NOTIFY footRightTrackedChanged )
+
+    Q_PROPERTY( float phi1
+                READ phi1
+                WRITE setPhi1
+                NOTIFY phi1Changed )
+
+    Q_PROPERTY( float phi2
+                READ phi2
+                WRITE setPhi2
+                NOTIFY phi1Changed )
 };
 
 typedef QSharedPointer<SkeletonAnalyzer> SkeletonAnalyzerPtr;

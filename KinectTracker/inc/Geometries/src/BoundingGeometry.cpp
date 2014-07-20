@@ -168,7 +168,7 @@ float BoundingBox::height() const
 QVector3D BoundingBox::frontFaceTopLeftCorner()
 {
     return QVector3D( m_x - m_width / 2,
-                      m_y + m_height / 2,
+                      m_y - m_height / 2,
                       m_z + m_depth / 2 );
 }
 
@@ -179,7 +179,7 @@ QVector3D BoundingBox::frontFaceTopLeftCorner()
 QVector3D BoundingBox::frontFaceBottomRightCorner()
 {
     return QVector3D( m_x + m_width / 2,
-                      m_y - m_height / 2,
+                      m_y + m_height / 2,
                       m_z + m_depth / 2 );
 }
 

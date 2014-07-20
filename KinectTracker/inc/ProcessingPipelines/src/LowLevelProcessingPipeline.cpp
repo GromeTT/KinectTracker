@@ -231,9 +231,6 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
     // Reset counters
     m_absoluteFrequency = 0;
     cv::imshow( "Original", input );
-    qDebug() << "Rows " << input.rows;
-    qDebug() << "Cols " << input.cols;
-    qDebug() << "Total " << input.total();
     for ( int i = 0; i < input.rows; ++i )
     {
         for ( int j = 0; j < input.cols * input.channels(); j += 3 )
