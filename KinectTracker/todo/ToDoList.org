@@ -1,8 +1,5 @@
 #+STARTUP: showall
 
-* Gespräch
-  
-        
 * Treffen
   + [X] <2014-06-30 Mo 11:00>
     + Ort :: Lehrstuhl
@@ -20,12 +17,19 @@
         richtung der Person zu identifizieren.
         Sind genug Pixel hautfarben, schaut die Person in die Kamera, 
         ansonsten nicht.
-  + [ ] <2014-07-07 Mo 17:00> 
+  + [X] <2014-07-07 Mo 17:00> 
     + Ort :: Lehrstuhl
     + Fragen
-      + Könnte Weichzeichnen die Ergebnisse der Rückprojektion verbessern?
+      + [ ] Könnte Weichzeichnen die Ergebnisse der Rückprojektion verbessern?
+  + [ ] <2014-07-21 Mo 15:00>
   
 * TODO [16/27][59%] Tasks
+  + [ ] Kopfhistogram-Backprojection über alle Gelenke ausführen, wenn die Person liegt, um das
+    Gesicht zu finden. 
+  + [ ] Backprojection für alle Gelenke, wenn die Person liegt (evtl. hat die Person markante 
+    Kleidung an, was die ermöglicht).
+  + [ ] Bugfix für fixed skin region detection. Einschränkung auf den Bildbereich und nicht 
+    auf das gesamte Bild.
   + [ ] Skalierung des getrackten Bereiches, wenn sich der Mensch der Kamera nähert.
   + [-] [50%] Neues Feature Histogram-Analyse
     + [X] [100%] Funktionen:
