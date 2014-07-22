@@ -23,13 +23,23 @@
       + [ ] Könnte Weichzeichnen die Ergebnisse der Rückprojektion verbessern?
   + [ ] <2014-07-21 Mo 15:00>
   
-* TODO [17/30][56%] Tasks
+* TODO [18/31][58%] Tasks
+  + [ ] Pfeil für die Bewegungsrichtung wieder einschalten.
+  + [-] Detektion des Bodens.
+    + [ ] Mittels PCL
+    + [ ] Manuelle Einstellung, falls die anderen Methoden versagen.
+    + [X] Kinect 
   + [ ] Kopfhistogram-Backprojection über alle Gelenke ausführen, wenn die Person liegt, um das
-    Gesicht zu finden. 
+    Gesicht zu finden.
   + [ ] Backprojection für alle Gelenke, wenn die Person liegt (evtl. hat die Person markante 
     Kleidung an, was die ermöglicht).
+  + [-] Zusätzliches Kriterium für liegend:
+    + [X] Abstand zwischen den Füßen und dem Kopf berechnen.
+    + [ ] Threshold ermitteln.
+    + [ ] Herausfinden, wann die Füße nicht mehr getrackt werden.
+    + [ ] Unterschied zu den Fußgelenken untersuchen.
   + [ ] Skalierung des getrackten Bereiches, wenn sich der Mensch der Kamera nähert.
-  + [-] [50%] Neues Feature Histogram-Analyse
+  + [-] [50%] Features für den Analysedialog
     + [X] [100%] Funktionen:
       - [X] Bild laden
       - [X] Region für das Histogram auswählen
@@ -40,20 +50,6 @@
       - [ ] Resize-Verhalten ist scheiße.
   + [ ] Kinect connect/disconnect Signal.
     http://msdn.microsoft.com/en-us/library/nuiapi.nuisetdevicestatuscallback.aspx
-  + [-] Farbhistogramm für Gelenke und Gesicht berechnen.
-    Für das Gesicht gibt es 3 Möglichkeiten:
-    1. [X] Farbbereich aus dem Paper.
-    2. [ ] Histogramm aus den LiveDatan ableiten, wenn sicher ist, dass der Kopf getrackt wird.
-       + [ ] Histogram vergleich
-	 1. [[http://docs.opencv.org/trunk/doc/py_tutorials/py_imgproc/py_histograms/py_histogram_backprojection/py_histogram_backprojection.html][opencv]]
-	 2. [[http://scien.stanford.edu/pages/labsite/2002/psych221/projects/02/sojeong/][Methodik]]
-    3. [ ] Gesichtserkennungsalgorithmus von opencv benutzen
-     das der Mensch in die Kamera guckt.
-  + [-] Zusätzliches Kriterium für liegend:
-    + [X] Abstand zwischen den Füßen und dem Kopf berechnen.
-    + [ ] Threshold ermitteln.
-    + [ ] Herausfinden, wann die Füße nicht mehr getrackt werden.
-    + [ ] Unterschied zu den Fußgelenken untersuchen.
   + [ ] Verschiebe das Zeichnen des Skelettes in die Visualizer Klasse.
   + [ ] Berechnung dafür, ob der Oberkörper aufrecht ist ( über Winkel ) vs. Länge der Glieder.
   + [ ] Infrarotdaten anschauen - IR anschauen ( Auflösung 640*480 )
@@ -67,10 +63,19 @@
     + [ ] Verbindungsdialog zu Kinect / USB-Kamera fertig stellen
     + [ ] Affine Transformation ausbessern
     + [ ] Skelett Merkmalsvektor berechnen
+  + [X] Farbhistogramm für Gelenke und Gesicht berechnen.
+    Für das Gesicht gibt es 3 Möglichkeiten:
+    1. [X] Farbbereich aus dem Paper.
+    2. [X] Histogramm aus den LiveDatan ableiten, wenn sicher ist, dass der Kopf getrackt wird.
+       + [X] Histogram vergleich
+	 1. [[http://docs.opencv.org/trunk/doc/py_tutorials/py_imgproc/py_histograms/py_histogram_backprojection/py_histogram_backprojection.html][opencv]]
+	 2. [[http://scien.stanford.edu/pages/labsite/2002/psych221/projects/02/sojeong/][Methodik]]
+    3. [X] Gesichtserkennungsalgorithmus von opencv benutzen
+     das der Mensch in die Kamera guckt.
   + [-] Umstellen auf das neue Eigenschaften-Widget [3/4][75%]
     + [-] Verbleibende Datentypen einfügen
       + [X] Vector<float>
-      + [ ] Enumeration
+      + [ ] Enumeration : Funktioniert leider nicht so einfach.
       + [ ] Vector<QColor>
     + [X] Synchronisation der Ansicht durch Änderungen in den Daten implementieren
     + [X] Umbennnen TreeWidgetExplorer -> PropertyBrowser
@@ -143,22 +148,40 @@
 	   - 0% keine Helligkeit
 	   - 100% volle Helligkeit
 * Ausarbeitung
+  + Vorraussetzung für das Funktionieren:
+    + Kamera ist vernünftig positioniert:
+      - Parallel zum Boden
+      - Positive y-Richtung des Kinect-Sensors zeigt von Fuß zu Kopf.
+    + Person ist vollständig sichtbar.
   + Kinect Sensor erklären
     + Verschiedene Sensoren und ihre Räume erläutern.
       + RGB
       + Tiefenbild in mm ( [[http://msdn.microsoft.com/en-us/library/hh973078.aspx][KinectSDK]] )
       + Skelettdaten in meter / Kooordinaten System zeiegn
   + Skelettgliederung
-    + Bild
+    + Bild: [[http://www.codeproject.com/KB/dotnet/KinectGettingStarted/7.png][Kinect-Skelett]]
   + Verschiedene [[http://docs.opencv.org/modules/imgproc/doc/histograms.html][Funktionen]] für den Vergleich von Histogrammen
     erklären, mit Formeln.
     + Korrelation
     + Chi-Quadrat
     + Intersect
-    + Bhattacharyya 
+    + Bhattacharyya
+   Wurde nicht benutzt, stattdessen *backprojection*.
   + [[http://www.brinkmann-du.de/mathe/gost/bstat_01_03.htm][Histogramm]]
     + Häufigkeitsdichte = (relative Häufigkeit)/(Intervallbreite)
     + Summe alle Intervalle = 1
   + Floor determination / Schätzung des Fußbodens 
-   [[http://msdn.microsoft.com/en-us/library/hh973078.aspx][SDK]]
+    + [[http://msdn.microsoft.com/en-us/library/hh973078.aspx][SDK]]
+    + Alternative: RANSAC Algorithmus aus der PCL Bibliothek
+    Die Erkennung der Bodens mittels der Tiefendaten funktioniert nicht so gut,
+    an dieser Stelle ist eine manuelle Eingabe von nöten. Ist im Anwendungsfall 
+    auch nicht weiter schlimm, da sich die Position des Sensor eigentlich nicht
+    ändert.
+  + BoundingBox-Algorithmus erläutern
+    + Zweck: Eingrenzung des Suchbereichs.
+    + Grenzen: Verlassen des Bildbereiches.
+  + Falls die Person liegt, kann sie sich durch kriechen "rausschleichen", d.h.
+    das Programm nimmt an, der Arbeiter liegt, obwohl er gar nicht 
+    mehr in der Szene ist.
+  + SizeAnalyzer: 
 
