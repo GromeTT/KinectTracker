@@ -64,6 +64,11 @@ BoundingBoxPtr BBSizeAnalyzer::boundigBox() const
  */
 void BBSizeAnalyzer::analyzeV( const SkeletonDataPtr& skeletonData )
 {
+    if ( skeletonData.isNull() )
+    {
+        return;
+    }
+
     QVector<QVector3D> joints;
     joints.append( skeletonData->getJoint( SkeletonData::Joints::Head ) );
     joints.append( skeletonData->getJoint( SkeletonData::Joints::ShoulderCenter ) );

@@ -49,8 +49,13 @@
      <string>Edit</string>
     </property>
     <addaction name="actionStartCapturing"/>
+    <addaction name="actionProcessingEnabled"/>
     <addaction name="separator"/>
     <addaction name="actionTakeScreenshot"/>
+    <addaction name="separator"/>
+    <addaction name="actionSaveAsPointCloud"/>
+    <addaction name="actionLoadPointCloud"/>
+    <addaction name="actionInitializeFloor"/>
     <addaction name="separator"/>
     <addaction name="actionReset"/>
    </widget>
@@ -143,6 +148,35 @@
   <action name="actionReset">
    <property name="text">
     <string>Reset </string>
+   </property>
+  </action>
+  <action name="actionSaveAsPointCloud">
+   <property name="text">
+    <string>Save as PointCloud</string>
+   </property>
+  </action>
+  <action name="actionInitializeFloor">
+   <property name="text">
+    <string>Initialize Floor</string>
+   </property>
+  </action>
+  <action name="actionLoadPointCloud">
+   <property name="text">
+    <string>Load Point Cloud</string>
+   </property>
+  </action>
+  <action name="actionProcessingEnabled">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Processing enabled</string>
+   </property>
+   <property name="toolTip">
+    <string>Processing enabled</string>
    </property>
   </action>
  </widget>

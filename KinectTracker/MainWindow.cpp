@@ -63,10 +63,6 @@ MainWindow::MainWindow( QWidget *parent )
 {
     ui->setupUi(this);
 
-//    if( ! faceClassifier.load( "../KinectTracker/Resources/haarcascade_frontalface_alt.xml" ) )
-//    {
-//        qDebug() << tr( "Couldn't find classifier file. " );
-//    }
     // Construct explorer and it's dockWidget.
     mp_explorerDockWidget = new QDockWidget( "Explorer", this );
     mp_explorerDockWidget->setMinimumWidth( 350 );
@@ -117,6 +113,10 @@ MainWindow::MainWindow( QWidget *parent )
     connect( ui->actionStartCapturing, &QAction::toggled, this, &MainWindow::toggleCapturing );
     connect( ui->actionImageAnalysisTool, &QAction::triggered, this, &MainWindow::openImageAnalysisDialog );
     connect( ui->actionReset, &QAction::triggered, this, &MainWindow::reset );
+    connect( ui->actionSaveAsPointCloud, &QAction::triggered, this, &MainWindow::savePointCloud );
+    connect( ui->actionInitializeFloor, &QAction::triggered, this, &MainWindow::initializeFloor );
+    connect( ui->actionLoadPointCloud, &QAction::triggered, this, &MainWindow::loadPointCloud );
+    connect( ui->actionProcessingEnabled, &QAction::toggled, this, &MainWindow::enableProcessing );
 
     ui->actionSASDMode->setChecked( true );
     ui->actionStartCapturing->setChecked( true );
@@ -191,7 +191,8 @@ void MainWindow::updateScenes()
                 // case: No skleton data availabe.
 
                 // No need to draw the skeleton.
-//                mp_skeletonRenderObject->setVisible( false );
+                mp_skeletonRenderObject->setVisible( false );
+                return;
             }
         }
         // Update rgb data.
@@ -220,12 +221,12 @@ void MainWindow::updateScenes()
         {
             m_visualizer->render();
         }
-
-
     }
-    mp_openGLWindow->paintGL();
-    mp_rgbViewerWindow->paintGL();
-    mp_depthViewerWindow->paintGL();
+
+    for ( int i = 0; i < m_renderWindows.count(); ++i )
+    {
+        m_renderWindows.at( i )->paintGL();
+    }
 
     ui->statusBar->showMessage( QStringLiteral( "Update Time: %1 ms Framerat: %2")
                                 .arg(dt_ms)
@@ -258,7 +259,7 @@ void MainWindow::processSkeletonData( const unsigned int timestamp )
 //        SkeletonDataPtr skeleton ( skeletons.at( 0 ) );
 //        mp_skeletonRenderObject->updateData( skeleton );
 
-        // Perfomr analysis
+        // Perform analysis
 //         m_skeletonAnalyzer.update( skeleton,
 //                                    timestamp );
 
@@ -369,6 +370,18 @@ void MainWindow::toggleCapturing( bool checked )
 }
 
 /*!
+   \brief MainWindow::enableProcessing
+    Starts and stops the data processing by the HighLevelProcessingPipline.
+ */
+void MainWindow::enableProcessing( bool checked )
+{
+    if ( !m_highLvlProcessingPipeline.isNull() )
+    {
+        m_highLvlProcessingPipeline->enableProcessing( checked );
+    }
+}
+
+/*!
    \brief MainWindow::activateSASDMode
    Construct all relvant objects for working in SASDMode.
  */
@@ -464,7 +477,74 @@ void MainWindow::reset()
 //    mp_openGLWindow->getScene()->deleteObject( mp_floor );
 //    mp_floor = nullptr;
 //    m_highLvlProcessingPipeline->reset();
-      m_floorInitialized = false;
+    m_floorInitialized = false;
+}
+
+/*!
+   \brief MainWindow::savePointCloud
+    Saves the current frame as point cloud.
+ */
+void MainWindow::savePointCloud()
+{
+    m_highLvlProcessingPipeline->savePointCloud();
+}
+
+/*!
+   \brief MainWindow::initializeFloor
+   If the floor has not been initialized yet it is
+   done now.
+ */
+void MainWindow::initializeFloor()
+{
+    if ( !m_floorInitialized )
+    {
+        mp_floor = mp_openGLWindow->getScene()->createFloor( 0,
+                                                             0,
+                                                             1,
+                                                             0 );
+        m_floorInitialized = true;
+    }
+}
+
+/*!
+   \brief MainWindow::loadPointCloud
+ */
+void MainWindow::loadPointCloud()
+{
+    OpenGLWindow* pointCloudWindow = new OpenGLWindow;
+    pointCloudWindow->setTitle( "PointCloud" );
+    pointCloudWindow->setObjectName( "PointCloudWindow" );
+    m_renderWindows.append( pointCloudWindow );
+    RenderObject* o  =
+            pointCloudWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
+    RenderObject* o1 = pointCloudWindow->getScene()->loadObjectFromFile( "PointCloud.txt" );
+    if ( !o )
+    {
+        qDebug() << "Could not create an object for the point cloud";
+    }
+    else
+    {
+        qDebug() << "Loading point cloud was successful.";
+    }
+    pointCloudWindow->getScene()->moveCamera( 0.0f, 0.0f , -4.0f );
+    pointCloudWindow->show();
+    connect( pointCloudWindow, &OpenGLWindow::visibleChanged, this, &MainWindow::removeRenderWindowFromRenderList );
+}
+
+/*!
+   \brief MainWindow::removeRenderWindowFromRenderList
+   If the sender is an OpenGLWindow it will be removed from
+   the lists of OpenGLWindow whose paintGL function is called
+   during the update routine.
+ */
+void MainWindow::removeRenderWindowFromRenderList()
+{
+    OpenGLWindow* window = qobject_cast<OpenGLWindow*>( sender() );
+    if ( window )
+    {
+        qDebug() << QStringLiteral( " %1 was closed." ).arg( window->objectName() );
+        m_renderWindows.removeAll( window );
+    }
 }
 
 /*!
@@ -595,16 +675,20 @@ void MainWindow::constructOpenGLRenderWidget()
 {
     // Construct OpenGLRenderWidget.
     mp_openGLWindow = new OpenGLWindow();
+    m_renderWindows.append( mp_openGLWindow );
     mp_openGLWindow->setObjectName( "OpenGLView" );
     mp_openGLRenderWidget = QWidget::createWindowContainer( mp_openGLWindow, this );
+    QMdiSubWindow* subWindow = new QMdiSubWindow( this );
+    subWindow->setWidget( mp_openGLRenderWidget );
     mp_openGLRenderWidget->setWindowTitle( "OpenGLRender" );
-    mp_openGLWindow->getScene()->moveCamera( 0, 0, -8 );
-    ui->mdiArea->addSubWindow( mp_openGLRenderWidget );
+    ui->mdiArea->addSubWindow( subWindow );
     mp_openGLWindow->setVisible( true );
 
     // Initialize scene.
+    mp_openGLWindow->getScene()->moveCamera( 0, 0, -8 );
 
     // Skeleton
+    mp_openGLWindow->getScene()->createAxis();
     mp_skeletonRenderObject = mp_openGLWindow->getScene()->createSkeletonRenderObject();
     // BoundingBoxWholeBody
 
@@ -618,6 +702,7 @@ void MainWindow::constructOpenGLRenderWidget()
 void MainWindow::constructRGBViewer()
 {
     mp_rgbViewerWindow  = new OpenGLWindow();
+    m_renderWindows.append( mp_rgbViewerWindow );
     mp_rgbViewerWindow->setObjectName( "RGBView" );
     mp_rgbViewerWidget = QWidget::createWindowContainer( mp_rgbViewerWindow, this );
     mp_rgbViewerWidget->setWindowTitle( "RGBViewer" );
@@ -633,6 +718,7 @@ void MainWindow::constructRGBViewer()
 void MainWindow::constructDepthViewer()
 {
     mp_depthViewerWindow = new OpenGLWindow();
+    m_renderWindows.append( mp_depthViewerWindow );
     mp_depthViewerWindow->setObjectName( "DeptViewer");
     mp_depthViewerWidget = QWidget::createWindowContainer( mp_depthViewerWindow, this );
     mp_depthViewerWidget->setWindowTitle( "DepthViewer" );

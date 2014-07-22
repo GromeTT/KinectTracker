@@ -51,22 +51,25 @@ private:
     void updateScenes();
     void processSkeletonData( const unsigned int timestamp) ;
     void actionOpenGLRenderWidgetChecked( bool checked );
-
     void takeScreenshot();
     void openImageAnalysisDialog();
-
     void toggleCapturing( bool checked );
+    void enableProcessing( bool checked );
     void activateSASDMode( bool checked );
     void activateSABSSDMode( bool checked );
     void setVisualizer();
     void switchCatergoryOnSceneGraph( SceneGraphWidget::ActiveScene scene );
     void reset();
+    void savePointCloud();
+    void initializeFloor();
+    void loadPointCloud();
+    void removeRenderWindowFromRenderList();
 
 
-signals:
-    void updateSkeletonDataChanged();
-    void updateRGBDataChanged();
-    void updateDepthDataChanged();
+//signals:
+//    void updateSkeletonDataChanged();
+//    void updateRGBDataChanged();
+//    void updateDepthDataChanged();
 
 private:
     Ui::MainWindow*         ui;
@@ -108,6 +111,7 @@ private:
     VisualizerPtr m_visualizer;
     Floor*        mp_floor;
     bool          m_floorInitialized;
+    QList<OpenGLWindow*> m_renderWindows;
 };
 
 void detect_blobs( cv::Mat& current );

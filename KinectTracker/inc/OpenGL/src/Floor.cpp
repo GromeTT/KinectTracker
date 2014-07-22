@@ -96,10 +96,9 @@ void Floor::calculateFloor( const float a,
                             const float c,
                             const float d )
 {
-
     QVector3D stuetzvec ( 0, 0, -d/c );
-    QVector3D dirvec1 ( 1, 0, -a/c );
-    QVector3D dirvec2 ( 0, 1, -b/c );
+    QVector3D dirvec1 ( 1, 0,   -a/c );
+    QVector3D dirvec2 ( 0, 1,   -b/c );
     dirvec1.normalize();
     dirvec2.normalize();
     Vertices vertices;

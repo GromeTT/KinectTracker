@@ -65,7 +65,6 @@ void BasicUsageScene::render()
     glEnable( GL_BLEND );
     glEnable( GL_DEPTH_TEST );
 
-    int c = m_renderObjects.count();
     for ( int i = 0; i < m_renderObjects.count(); ++i )
     {
         RenderObjectInterface* object = m_renderObjects.at( i );
@@ -191,20 +190,46 @@ QOpenGLShaderProgram* BasicUsageScene::getShaderProgram( const unsigned short i 
  * Constructs an RenderObject from the file specified by \a filename.
  * If the procedure went wrong because of an invalid file or filename,
  * nullptr will be returned.
+ * The loaded object must have at least one valid point otherwise a nullpointer
+ * will be returned.
+ * If no indices are specified within the file, there are added some, so
+ * that the object can be rendered with the mode GL_POINTS.
  */
 RenderObject* BasicUsageScene::loadObjectFromFile( const QString filename )
 {
     ObjectLoader objectLoader( filename );
     LoaderObjectPtr tmp ( objectLoader.load() );
-    if ( tmp.isNull() )
+    if ( tmp.isNull() || tmp->getVertices().count() == 0)
     {
         return nullptr;
     }
     mp_window->makeContextCurrent();
     RenderObject* object = new RenderObject();
     object->setVertices( tmp->getVertices() );
-    object->setIndices( tmp->getIndices() );
-    object->setRenderMode( GL_TRIANGLES );
+
+    if ( tmp->getIndices().count() == 0 )
+    {
+        // case: No indices found.
+
+        // Add some indices so that the object can be painted in
+        // GL_POINTS mode.
+        Indices indices;
+        for ( int i = 0; i < tmp->getVertices().count(); ++i )
+        {
+            indices.append( i );
+        }
+        object->setIndices( indices );
+        object->setRenderMode( GL_POINTS );
+
+    }
+    else
+    {
+        // case:  Indices found.
+
+        // Set RenderMode to GL_TRIANGLES.
+        object->setIndices( tmp->getIndices() );
+        object->setRenderMode( GL_TRIANGLES );
+    }
     object->setVisible( true );
     object->setShaderProgram( m_shaderPrograms.at( 0 ) );
 
@@ -218,11 +243,6 @@ RenderObject* BasicUsageScene::createPlane()
     mp_window->makeContextCurrent();
 
     Vertices vertices;
-//    vertices.append( Vertex( -1,  1, 0, ) );
-//    vertices.append( Vertex(  1,  1, 0 ) );
-//    vertices.append( Vertex(  1, -1, 0 ) );
-//    vertices.append( Vertex( -1, -1, 0 ) );
-
     vertices.append( Vertex( -1,  1, 0,
                               1,  1, 1, 1,
                               0,  0) );

@@ -48,11 +48,12 @@ private:
    void processDepthData();
    void extractAllRegions( cv::Mat& image );
    void extractRegion( cv::Mat& image, SkeletonData::Joints joint );
-   void deriveViewingDirection( cv::Mat& image );
+   void deriveViewingDirection();
    bool deriveViewingDirectionBySkinColor( cv::Mat& head );
    bool deriveViewingDirectionByHistogram( cv::Mat& headRegion );
    bool deriveViewingDirectionByHistogramHSV( cv::Mat& headRegion );
    void drawRegionsOfInterest( cv::Mat& image );
+   void useHairClassifier( cv::Mat& currentImage );
 
    QRect                                                  m_lastRegion;
    QVector4D                                              m_planeCoefficient;
@@ -61,7 +62,8 @@ private:
    SkinColorExplicitDefinedSkinRegionDetectionPipelinePtr m_skinPipeline;
    QVector<JointSummary>                                  m_regions;
    Func                                                   mp_deriveViewingDirectionFunc;
-
+   cv::CascadeClassifier                                  m_hairFaceClassifier;
+   std::vector<cv::Rect>                                  faces;
 };
 
 #endif // SASDPROCESSINGPIPELINE_H

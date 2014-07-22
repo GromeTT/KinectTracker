@@ -62,7 +62,9 @@ SOURCES += inc/AMath/src/AMath.cpp \
     inc/ProcessingPipelines/src/SkinColorDetector.cpp \
     inc/Dialogs/src/ImageAnalysisDialog.cpp \
     inc/ImageWidget/src/ImageWidget.cpp \
-    inc/ProcessingPipelines/src/Histogram.cpp
+    inc/ProcessingPipelines/src/Histogram.cpp \
+    inc/Analyzer/src/SphereMovementAnalyzer.cpp \
+    inc/Visualizer/src/SphereMovementAnalyzer.cpp
 
 HEADERS  += inc/AMath/inc/AMath.h \
     inc/Analyzer/inc/BBMovementAnalyzer.h \
@@ -115,14 +117,17 @@ HEADERS  += inc/AMath/inc/AMath.h \
     inc/PropertyBrowser/inc/PropertyBrowser.h \
     inc/Dialogs/inc/ImageAnalysisDialog.h \\
     inc/ImageWidget/inc/ImageWidget.h \
-    inc/ProcessingPipelines/inc/Histogram.h
+    inc/ProcessingPipelines/inc/Histogram.h \
+    inc/Analyzer/inc/SphereMovementAnalyzer.h \
+    inc/Visualizer/inc/SphereMovementAnalyzer.h
 
 FORMS    += MainWindow.ui \
     inc/Dialogs/ui/KinectInitializeDialog.ui \
     inc/Dialogs/ui/ImageAnalysisDialog.ui \
     inc/SceneGraph/ui/SceneGraphWidget.ui \
     inc/PropertyBrowser/ui/PropertyBrowser.ui \
-    inc/ImageWidget/ui/ImageWidget.ui
+    inc/ImageWidget/ui/ImageWidget.ui \
+    inc/Dialogs/ui/AdjustFloorDialog.ui
 
 
 TRANSLATIONS = trans/trans_de.ts
@@ -143,42 +148,21 @@ INCLUDEPATH += C:\\opencv\\build\\include
 
 LIBS += "../ThirdParty/Kinect/lib/amd64/Kinect10.lib"
 
-CONFIG( debug, debug|release )
-{
-    LIBS += -LC:\\opencv\\build\\x64\\vc12\\lib\
-            -lopencv_calib3d249d \
-            -lopencv_contrib249d \
-            -lopencv_core249d\
-            -lopencv_features2d249d \
-            -lopencv_flann249d \
-            -lopencv_gpu249d \
-            -lopencv_imgproc249d \
-            -lopencv_legacy249d \
-            -lopencv_ml249d \
-            -lopencv_objdetect249d \
-            -lopencv_ts249d \
-            -lopencv_video249d \
-            -lopencv_highgui249d \
-            -lopencv_photo249d \
-}
-
-CONFIG( release, debug|release )
-{
-    LIBS += -LC:\\opencv\\build\\x64\\vc12\\lib\
-            -lopencv_calib3d249 \
-            -lopencv_contrib249 \
-            -lopencv_core249\
-            -lopencv_features2d249 \
-            -lopencv_flann249 \
-            -lopencv_gpu249 \
-            -lopencv_imgproc249 \
-            -lopencv_legacy249 \
-            -lopencv_ml249 \
-            -lopencv_objdetect249 \
-            -lopencv_ts249 \
-            -lopencv_video249 \
-            -lopencv_highgui249 \
-}
+LIBS += -LC:\\opencv\\build\\x64\\vc11\\lib\
+        -lopencv_calib3d249d \
+        -lopencv_contrib249d \
+        -lopencv_core249d\
+        -lopencv_features2d249d \
+        -lopencv_flann249d \
+        -lopencv_gpu249d \
+        -lopencv_imgproc249d \
+        -lopencv_legacy249d \
+        -lopencv_ml249d \
+        -lopencv_objdetect249d \
+        -lopencv_ts249d \
+        -lopencv_video249d \
+        -lopencv_highgui249d \
+        -lopencv_photo249d \
 
 RESOURCES += \
     Resources.qrc

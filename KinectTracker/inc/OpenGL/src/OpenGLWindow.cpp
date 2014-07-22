@@ -84,7 +84,7 @@ void OpenGLWindow::initializeGL()
 
 void OpenGLWindow::keyPressEvent(QKeyEvent* event)
 {
-    const float stepSize = 0.2f;
+    const float stepSize = 0.02f;
     const float angle = 2.0f;
 
     if ( event->key() == Qt::Key_Right )

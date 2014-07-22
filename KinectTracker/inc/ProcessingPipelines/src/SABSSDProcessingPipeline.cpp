@@ -48,7 +48,7 @@ bool SABSSDProcessingPipeline::processSkeletonData( const unsigned int timestamp
         //       so that the visualizer knows that it doesn't
         //       have to paint.
         m_movementAnalyzer->setDataAvailable( false );
-        m_sizeAnalyzer->setWorkerStatus( tr( "Nothing detected") );
+        m_sizeAnalyzer->setWorkerStatus( SizeAnalyzer::WorkerStatus::NotPossible );
         return false;
     }
     else

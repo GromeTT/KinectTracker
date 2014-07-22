@@ -1,8 +1,5 @@
 #+STARTUP: showall
 
-* Gespräch
-  
-        
 * Treffen
   + [X] <2014-06-30 Mo 11:00>
     + Ort :: Lehrstuhl
@@ -26,13 +23,11 @@
       + [ ] Könnte Weichzeichnen die Ergebnisse der Rückprojektion verbessern?
   + [ ] <2014-07-21 Mo 15:00>
   
-* TODO [16/27][59%] Tasks
+* TODO [17/30][56%] Tasks
   + [ ] Kopfhistogram-Backprojection über alle Gelenke ausführen, wenn die Person liegt, um das
     Gesicht zu finden. 
   + [ ] Backprojection für alle Gelenke, wenn die Person liegt (evtl. hat die Person markante 
     Kleidung an, was die ermöglicht).
-  + [ ] Bugfix für fixed skin region detection. Einschränkung auf den Bildbereich und nicht 
-    auf das gesamte Bild.
   + [ ] Skalierung des getrackten Bereiches, wenn sich der Mensch der Kamera nähert.
   + [-] [50%] Neues Feature Histogram-Analyse
     + [X] [100%] Funktionen:
@@ -45,14 +40,14 @@
       - [ ] Resize-Verhalten ist scheiße.
   + [ ] Kinect connect/disconnect Signal.
     http://msdn.microsoft.com/en-us/library/nuiapi.nuisetdevicestatuscallback.aspx
-  + [ ] Farbhistogramm für Gelenke und Gesicht berechnen.
+  + [-] Farbhistogramm für Gelenke und Gesicht berechnen.
     Für das Gesicht gibt es 3 Möglichkeiten:
-      1. [X] Farbbereich aus dem Paper.
-      2. [ ] Histogramm aus den LiveDatan ableiten, wenn sicher ist, dass der Kopf getrackt wird.
-	 + [ ] Histogram vergleich
-	   1. [[http://docs.opencv.org/trunk/doc/py_tutorials/py_imgproc/py_histograms/py_histogram_backprojection/py_histogram_backprojection.html][opencv]]
-	   2. [[http://scien.stanford.edu/pages/labsite/2002/psych221/projects/02/sojeong/][Methodik]]
-      3. [ ] Gesichtserkennungsalgorithmus von opencv benutzen
+    1. [X] Farbbereich aus dem Paper.
+    2. [ ] Histogramm aus den LiveDatan ableiten, wenn sicher ist, dass der Kopf getrackt wird.
+       + [ ] Histogram vergleich
+	 1. [[http://docs.opencv.org/trunk/doc/py_tutorials/py_imgproc/py_histograms/py_histogram_backprojection/py_histogram_backprojection.html][opencv]]
+	 2. [[http://scien.stanford.edu/pages/labsite/2002/psych221/projects/02/sojeong/][Methodik]]
+    3. [ ] Gesichtserkennungsalgorithmus von opencv benutzen
      das der Mensch in die Kamera guckt.
   + [-] Zusätzliches Kriterium für liegend:
     + [X] Abstand zwischen den Füßen und dem Kopf berechnen.
@@ -80,6 +75,8 @@
     + [X] Synchronisation der Ansicht durch Änderungen in den Daten implementieren
     + [X] Umbennnen TreeWidgetExplorer -> PropertyBrowser
     + [X] altes Eigenschaften-Widget durch das neue ersetzen
+  + [X] Bugfix für fixed skin region detection. Einschränkung auf den Bildbereich und nicht 
+    auf das gesamte Bild.
   + [X] Trackingstatus der einzelnen Joints anzeigen.
   + [X] Arbeiter - Zustand Beurteilung verbessern [3/3][100%]
     Hat sich größten Teils erledigt, dadurch dass die Größe durch den Abstand von Kopf zum Fußboden
@@ -160,10 +157,8 @@
     + Intersect
     + Bhattacharyya 
   + [[http://www.brinkmann-du.de/mathe/gost/bstat_01_03.htm][Histogramm]]
-   + Häufigkeitsdichte = (relative Häufigkeit)/(Intervallbreite)
-   + Summe alle Intervalle = 1
-
- 
+    + Häufigkeitsdichte = (relative Häufigkeit)/(Intervallbreite)
+    + Summe alle Intervalle = 1
   + Floor determination / Schätzung des Fußbodens 
-    [[http://msdn.microsoft.com/en-us/library/hh973078.aspx][SDK]]
+   [[http://msdn.microsoft.com/en-us/library/hh973078.aspx][SDK]]
 

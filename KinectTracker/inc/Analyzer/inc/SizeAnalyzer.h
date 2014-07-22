@@ -7,9 +7,18 @@
 #include <QSharedPointer>
 #include <QVector4D>
 
+
 class SizeAnalyzer : public QObject
 {
     Q_OBJECT
+public:
+    enum class WorkerStatus
+        {
+            Standing,
+            Kneeling,
+            Lying,
+            NotPossible
+        };
 
 public:
     SizeAnalyzer( QObject* parent = nullptr );
@@ -19,29 +28,30 @@ public:
                   const SkeletonDataPtr& skeletonData );
     void setKneelingThreshold( const float threshold );
     void setLyingThreshold( const float threshold );
-    void setWorkerStatus( const QString& status );
+    void setWorkerStatus( const WorkerStatus status );
     void reset();
 
-    float     estimatedBodySize() const;
-    float     currentBodySize() const;
-    float     kneelingThreshold() const;
-    float     lyingThreshold() const;
-    float     distanceHeadRightFood() const;
-    float     distanceHeadLeftFood() const;
-    float     distanceFloorHead() const;
-    QString   workerStatus() const;
-    bool      floorInitialized() const;
-    QVector4D planeCoefficients() const;
+    float        estimatedBodySize() const;
+    float        currentBodySize() const;
+    float        kneelingThreshold() const;
+    float        lyingThreshold() const;
+    float        distanceHeadRightFood() const;
+    float        distanceHeadLeftFood() const;
+    float        distanceFloorHead() const;
+    QString      workerStatusToString() const;
+    WorkerStatus workerStatus() const;
+    bool         floorInitialized() const;
+    QVector4D    planeCoefficients() const;
 
 protected:
-    float   m_kneelingThreshold;
-    float   m_lyingThreshold;
-    float   m_estimatedBodySize;
-    float   m_currentBodySize;
-    float   m_distanceHeadRightFood;
-    float   m_distanceHeadLeftFood;
-    float   m_distanceFloorHead;
-    QString m_workerStatus;
+    float                              m_kneelingThreshold;
+    float                              m_lyingThreshold;
+    float                              m_estimatedBodySize;
+    float                              m_currentBodySize;
+    float                              m_distanceHeadRightFood;
+    float                              m_distanceHeadLeftFood;
+    float                              m_distanceFloorHead;
+    WorkerStatus                       m_workerStatus;
 
 private:
     virtual void analyzeV( const SkeletonDataPtr& skeletonData ) = 0;
@@ -59,6 +69,7 @@ signals:
     void distanceHeadRightFoodChanged();
     void distanceHeadLeftFoodChanged();
     void distanceFloorHeadChanged();
+    void assumptionChanged();
 
 private:
     Q_PROPERTY( float estimatedBodySize
@@ -70,7 +81,7 @@ private:
                 NOTIFY currentBodySizeChanged )
 
     Q_PROPERTY( QString workerStatus
-                READ workerStatus
+                READ workerStatusToString
                 NOTIFY workerStatusChanged )
 
     Q_PROPERTY( float kneelingThreshold MEMBER m_kneelingThreshold

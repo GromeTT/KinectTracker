@@ -1,4 +1,5 @@
 #include "../inc/SizeAnalyzer.h"
+#include <QDebug>
 
 /*!
    \brief SizeAnalyzer::SizeAnalyzer
@@ -10,10 +11,11 @@ SizeAnalyzer::SizeAnalyzer( QObject* parent )
     , m_lyingThreshold( 0.4f )
     , m_estimatedBodySize( 0.0f )
     , m_currentBodySize( 0.0f )
-    , m_workerStatus( "Not tracked" )
+    , m_workerStatus( WorkerStatus::NotPossible )
     , m_distanceHeadRightFood( 0.0f )
     , m_distanceHeadLeftFood( 0.0f )
     , m_distanceFloorHead( 0.0f )
+    , m_floorInitialized( false )
 {
 }
 
@@ -33,6 +35,20 @@ SizeAnalyzer::~SizeAnalyzer()
 void SizeAnalyzer::analyze( const KinectPtr kinect,
                             const SkeletonDataPtr& skeletonData )
 {
+    // Estimate the body height of the user and update the current body height.
+    analyzeV( skeletonData );
+
+    if ( skeletonData.isNull() )
+    {
+        if ( m_workerStatus != WorkerStatus::Lying )
+        {
+            // The worker was not lying in the last frame, assume, that he left
+            // the ara or hidden.
+            setWorkerStatus( WorkerStatus::NotPossible );
+        }
+        return;
+    }
+
     // Compute the distance between the head and the feets.
     // It's going to be used to determine, if the person is lying.
     m_distanceHeadLeftFood = ( skeletonData->getJoint( SkeletonData::Joints::Head ) - skeletonData->getJoint( SkeletonData::Joints::FootLeft ) ).length();
@@ -40,35 +56,36 @@ void SizeAnalyzer::analyze( const KinectPtr kinect,
     m_distanceHeadRightFood = ( skeletonData->getJoint( SkeletonData::Joints::Head ) - skeletonData->getJoint( SkeletonData::Joints::FootRight) ).length();
     emit distanceHeadRightFoodChanged();
 
-    // Estimate the body height of the user and update the current body height.
-    analyzeV( skeletonData );
-
     // Compare the current body height with the estiamed body height
     // and classify the pose.
     if ( m_currentBodySize >= m_kneelingThreshold * m_estimatedBodySize )
     {
-        m_workerStatus = tr( "Staying" );
+        setWorkerStatus( WorkerStatus::Standing );
     }
     else
     {
         if ( m_currentBodySize < m_lyingThreshold * m_estimatedBodySize )
         {
-            m_workerStatus = tr( "Lying" );
+            setWorkerStatus( WorkerStatus::Lying );
         }
         else
         {
-            m_workerStatus = tr( "Kneeling" );
+            setWorkerStatus( WorkerStatus::Kneeling );
         }
     }
 
     // Compute the distance from the head to the floor.
-    if ( skeletonData->allPointsTracked() )
+    if ( skeletonData->majorPointsTracked() && !floorInitialized() )
     {
         // All joints are tracked and the floor coefficients haven't
         // been stored yet.
         // Do it now.
-        m_planeCoefficients = kinect->planeCoefficients();
-        m_floorInitialized = true;
+        if ( kinect->planeCoefficients() != QVector4D( 0, 0, 0, 0 ) )
+        {
+            m_planeCoefficients = kinect->planeCoefficients();
+            m_floorInitialized = true;
+            qDebug() << "Floor initialized";
+        }
     }
     if ( skeletonData->jointTrackState( SkeletonData::Joints::Head ) == SkeletonData::TrackState::Tracked &&
          m_floorInitialized )
@@ -110,7 +127,7 @@ void SizeAnalyzer::setLyingThreshold( const float threshold )
     emit lyingThresholdChanged();
 }
 
-void SizeAnalyzer::setWorkerStatus( const QString& status )
+void SizeAnalyzer::setWorkerStatus( const WorkerStatus status )
 {
     m_workerStatus = status;
     emit workerStatusChanged();
@@ -185,7 +202,22 @@ float SizeAnalyzer::distanceFloorHead() const
    \brief SizeAnalyzer::workerStatus
    Returns the status of the worker.
  */
-QString SizeAnalyzer::workerStatus() const
+QString SizeAnalyzer::workerStatusToString() const
+{
+    switch ( m_workerStatus )
+    {
+        case WorkerStatus::Standing:
+            return "Standing";
+        case WorkerStatus::Kneeling:
+            return "Kneeling";
+        case WorkerStatus::Lying:
+            return "Lying";
+        default:
+            return "No prediction possible";
+    }
+}
+
+SizeAnalyzer::WorkerStatus SizeAnalyzer::workerStatus() const
 {
     return m_workerStatus;
 }
@@ -214,5 +246,6 @@ void SizeAnalyzer::reset()
 {
     m_floorInitialized = false;
     m_estimatedBodySize = 0;
+    estimatedBodySizeChanged();
     resetV();
 }

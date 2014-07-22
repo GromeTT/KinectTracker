@@ -2,10 +2,14 @@
 #include "../../Analyzer/inc/BBMovementAnalyzer.h"
 #include "../../Analyzer/inc/UpperBodySizeAnalyzer.h"
 #include "../../Analyzer/inc/BBSizeAnalyzer.h"
+#include "../../OpenGL/inc/ObjectLoader.h"
+#include <vector>
 #include <QVector2D>
 #include <QColor>
 #include <QDebug>
 #include <opencv2/opencv.hpp>
+#include <QFile>
+
 
 HighLevelProcessingPipeline::HighLevelProcessingPipeline( KinectPtr& kinect,
                                                           LowLevelProcessingPipeline* rbgProcessingPipeline,
@@ -17,6 +21,8 @@ HighLevelProcessingPipeline::HighLevelProcessingPipeline( KinectPtr& kinect,
     , m_movementAnalyzer( new BBMovementAnalyzer )
     , m_sizeAnalyzer( new BBSizeAnalyzer )
     , m_skeletonAnalyzer( new SkeletonAnalyzer )
+    , m_unableToTrackInARowCount( 0 )
+    , m_processingEnabled( true )
 {
     setObjectName( "MovementAnalyzer" );
     // Initialize depth  arrays.
@@ -49,20 +55,26 @@ bool HighLevelProcessingPipeline::process( const unsigned int timestamp )
     res = m_kinect->getDepthImage( mp_depthData );
     if ( res != S_OK )
     {
+        // No data available.
         return false;
     }
     res = m_kinect->getRGBImage( mp_rgbData );
     if ( res != S_OK )
     {
+        // No data available.
         return false;
     }
     res = m_kinect->getSkeleton( m_skeletons );
     if ( res != S_OK )
     {
+        // No data available.
         return false;
     }
-    // Process the data.
-    processV( timestamp );
+    if ( m_processingEnabled )
+    {
+        // Process the data.
+        processV( timestamp );
+    }
     return true;
 }
 
@@ -151,6 +163,16 @@ bool HighLevelProcessingPipeline::skeletonDataAvailable() const
 }
 
 /*!
+   \brief HighLevelProcessingPipeline::isProcessingEnabled
+   Returns true, if the data are going to be processed.
+   False, otherwise.
+ */
+bool HighLevelProcessingPipeline::isProcessingEnabled() const
+{
+    return m_processingEnabled;
+}
+
+/*!
    \brief HighLevelProcessingPipeline::takeScreenShot
    Makes a copy of the current depth and rgb Data.
  */
@@ -158,6 +180,34 @@ void HighLevelProcessingPipeline::takeScreenShot()
 {
     std::memcpy( mp_depthScrennshot, mp_depthData, m_depthSize * sizeof( ushort ) );
     std::memcpy( mp_rgbScreenshot, mp_rgbData, m_rgbSize * sizeof( uchar ) );
+}
+
+/*!
+   \brief HighLevelProcessingPipeline::savePointCloud
+    Saves the current image as a point clound to PointCloud.txt.
+ */
+void HighLevelProcessingPipeline::savePointCloud()
+{
+    std::vector<Vertex> vertices;
+    cv::Mat currentImage( m_kinect->depthStreamResolution().height(),
+                          m_kinect->depthStreamResolution().width(),
+                          CV_8UC1,
+                          mp_depthData );
+    for ( int i = 0; i < currentImage.cols; ++i )
+    {
+        for ( int j = 0; j < currentImage.rows; ++j )
+        {
+            ushort depth = mp_depthData[ i+j ];
+            Vector4 vec = NuiTransformDepthImageToSkeleton( i, j, depth );
+            vertices.push_back( Vertex( vec.x,
+                                        vec.y,
+                                        vec.z ) );
+        }
+    }
+    std::string filename( "PointCloud.txt" );
+    ObjectLoader loader;
+    loader.write( filename, vertices );
+    qDebug() << "Point cloud was sucessfully saved.";
 }
 
 /*!
@@ -190,6 +240,16 @@ void HighLevelProcessingPipeline::drawRegionOfInterest( const QRect& rect,
 }
 
 /*!
+   \brief HighLevelProcessingPipeline::enableProcessing
+   Enables and disables the data processing.
+ */
+void HighLevelProcessingPipeline::enableProcessing( const bool arg )
+{
+    qDebug() << QString( "Set m_processingData %1 " ).arg( arg );
+    m_processingEnabled = arg;
+}
+
+/*!
    \brief HighLevelProcessingPipeline::reset
  */
 void HighLevelProcessingPipeline::reset()
@@ -207,23 +267,9 @@ QRect HighLevelProcessingPipeline::crop( const AMath::Rectangle3D& rect,
                                          cv::Mat& image )
 {
     QPoint topLeft = transformFromSkeltonToRGB( rect.topLeftCorner() );
-    if ( topLeft.x() < 0 )
-    {
-        topLeft.setX( 0 );
-    }
-    if ( topLeft.y() < 0 )
-    {
-        topLeft.setY( 0 );
-    }
+    cropPointTopLeft( topLeft, image );
     QPoint bottomRight = transformFromSkeltonToRGB( rect.bottomRightCorner() );
-    if ( bottomRight.x() >= image.cols )
-    {
-        bottomRight.setX( image.cols - 1 );
-    }
-    if ( bottomRight.y() >= image.rows )
-    {
-        bottomRight.setY( image.rows - 1 );
-    }
+    cropPointBottomRight( bottomRight, image );
     return QRect( topLeft, bottomRight );
 }
 
@@ -253,6 +299,19 @@ QRect HighLevelProcessingPipeline::cropRegionWithWidthAndHeightAsPixels( const Q
     // Compute top left point.
     QPoint topLeft ( center.x() - width + 1 ,
                      center.y() - height + 1 );
+    cropPointTopLeft( topLeft, image );
+    // Compute bottom right point.
+    QPoint bottomRight ( center.x() + width,
+                         center.y() + height );
+    cropPointBottomRight( bottomRight, image );
+
+       // Return rect.
+    return QRect( topLeft, bottomRight );
+}
+
+void HighLevelProcessingPipeline::cropPointTopLeft( QPoint& topLeft,
+                                                    const cv::Mat& image )
+{
     if ( topLeft.x() < 0  )
     {
         topLeft.setX( 0 );
@@ -269,37 +328,25 @@ QRect HighLevelProcessingPipeline::cropRegionWithWidthAndHeightAsPixels( const Q
     {
         topLeft.setY( image.rows-1 );
     }
+}
 
-    // Compute bottom right point.
-    QPoint bottomRight ( center.x() + width,
-                         center.y() + height );
-
+void HighLevelProcessingPipeline::cropPointBottomRight( QPoint& bottomRight,
+                                                        const cv::Mat& image )
+{
     if ( bottomRight.x() > image.cols )
     {
         bottomRight.setX( image.cols - 1 );
-        if ( bottomRight.x() < topLeft.x() )
-        {
-            bottomRight.setX( topLeft.x() );
-        }
     }
     if ( bottomRight.x() < 0 )
     {
         bottomRight.setX( 0 );
     }
-
     if ( bottomRight.y() > image.rows )
     {
         bottomRight.setY( image.rows - 1 );
-        if ( bottomRight.y() < topLeft.y() )
-        {
-            bottomRight.setY( topLeft.y() );
-        }
     }
     if ( bottomRight.y() < 0 )
     {
         bottomRight.setY( 0 );
     }
-
-    // Return rect.
-    return QRect( topLeft, bottomRight );
 }

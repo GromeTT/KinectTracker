@@ -68,7 +68,7 @@ bool SkeletonAnalyzer::update( const SkeletonDataPtr skeleton,
     updateJointTrackingState( skeleton );
     // Compute the BoundingBox which encloses the whole body with no
     // extra space.
-    m_boundingBox.calculateBoundingBox( skeleton->getJoints() );
+    m_boundingBox.calculateBoundingBox( skeleton->getJoints(), 0.2f, 0.2f, 0.3f );
 
     // Calculate a region of interest.
 

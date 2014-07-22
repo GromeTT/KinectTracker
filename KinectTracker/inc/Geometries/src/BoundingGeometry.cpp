@@ -168,7 +168,7 @@ float BoundingBox::height() const
 QVector3D BoundingBox::frontFaceTopLeftCorner()
 {
     return QVector3D( m_x - m_width / 2,
-                      m_y - m_height / 2,
+                      m_y + m_height / 2,
                       m_z + m_depth / 2 );
 }
 
@@ -179,7 +179,7 @@ QVector3D BoundingBox::frontFaceTopLeftCorner()
 QVector3D BoundingBox::frontFaceBottomRightCorner()
 {
     return QVector3D( m_x + m_width / 2,
-                      m_y + m_height / 2,
+                      m_y - m_height / 2,
                       m_z + m_depth / 2 );
 }
 
@@ -224,9 +224,9 @@ void BoundingBox::calculateBoundingBox( const QVector<QVector3D>& points,
     float maxH, minH;
 
     // Initialize values with first point
-    maxW = minW = points.at( 0 ).x();
-    maxD = minD = points.at( 0 ).z();
-    maxH = minH = points.at( 0 ).y();
+    maxW = minW = points.at( 0 ).x(); // width
+    maxH = minH = points.at( 0 ).y(); // height
+    maxD = minD = points.at( 0 ).z(); // depth
 
     for ( int i = 1; i < points.count(); ++i )
     {
@@ -269,9 +269,9 @@ void BoundingBox::calculateBoundingBox( const QVector<QVector3D>& points,
     minD -= deltaD;
 
     // Calculate dimensions
-    m_width =  maxW - minW;
-    m_depth = maxD - minD;
+    m_width  = maxW - minW;
     m_height = maxH - minH;
+    m_depth  = maxD - minD;
 
     // Calculate position
     m_x =  maxW - ( 0.5f * m_width );

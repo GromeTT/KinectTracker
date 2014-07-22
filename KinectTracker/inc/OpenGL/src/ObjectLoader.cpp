@@ -1,4 +1,6 @@
 #include "../inc/ObjectLoader.h"
+#include <stdio.h>
+#include <iostream>
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
@@ -98,6 +100,33 @@ LoaderObjectPtr ObjectLoader::load()
     file.close();
     return obj;
 }
+
+/*!
+   \brief ObjectLoader::write
+   Writes the vertices to \a outputfile.
+   Formated like this.
+   'v' x y z
+   'v' x y z
+ */
+void ObjectLoader::write( std::string& outputfile,
+                          std::vector<Vertex> vertices )
+{
+    std::FILE* file;
+    errno_t  error = fopen_s( &file, outputfile.c_str(), "w" );
+    if ( error != 0 )
+    {
+        std::cout << "Could not open file " << outputfile;
+    }
+    for ( size_t i = 0; i < vertices.size(); ++i )
+    {
+        std::fprintf( file, "v %.6f %.6f %.6f\n", vertices.at( i ).x,
+                                                  vertices.at( i ).y,
+                                                  vertices.at( i ).z );
+    }
+    fclose( file );
+}
+
+
 
 QString ObjectLoader::getFilename() const
 {

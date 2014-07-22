@@ -18,6 +18,7 @@ class AnlysisResults;
 
 class HighLevelProcessingPipeline : public QObject
 {
+
 public:
     HighLevelProcessingPipeline( KinectPtr& kinect,
                                  LowLevelProcessingPipeline* rbgProcessingPipeline,
@@ -27,10 +28,12 @@ public:
 
     bool process( const unsigned int timestamp );
     void takeScreenShot();
+    void savePointCloud();
     void saveHeadHistograms();
     void drawRegionOfInterest( const QRect& rect,
                                cv::Mat image,
                                const QColor& color );
+    void enableProcessing( const bool arg );
     void reset();
     QRect crop( const AMath::Rectangle3D& rect,
                 cv::Mat& image );
@@ -40,7 +43,6 @@ public:
                                                 const float width,
                                                 const float height,
                                                 const cv::Mat& image );
-
     uchar*                                rgbImage() const;
     ushort*                               depthImage() const;
     SkeletonDataPtr                       skeletonData() const;
@@ -50,15 +52,15 @@ public:
     SizeAnalyzerPtr                       sizeAnalyzer() const;
     SkeletonAnalyzerPtr                   skeletonAnalyzer() const;
     bool                                  skeletonDataAvailable() const;
+    bool                                  isProcessingEnabled() const;
 
 protected:
     virtual void processV( const unsigned int timestamp ) = 0;
     virtual void resetV() = 0;
-    void drawJoint( SkeletonData::Joints joint,
-                    const SkeletonDataPtr skeleton,
-                    cv::Mat image,
-                    const int width = 25,
-                    const int height = 25 );
+    void         cropPointTopLeft( QPoint& topLeft,
+                                   const cv::Mat& image );
+    void         cropPointBottomRight( QPoint& bottomRight,
+                                       const cv::Mat& image );
 
     KinectPtr                            m_kinect;
     SkeletonAnalyzerPtr                  m_skeletonAnalyzer;
@@ -73,7 +75,12 @@ protected:
     uchar*                               mp_rgbScreenshot;
     int                                  m_depthSize;
     int                                  m_rgbSize;
+    int                                  m_unableToTrackInARowCount;
     bool                                 m_skeletonDataAvailable;
+
+private:
+    bool m_processingEnabled;
+
 };
 
 typedef QSharedPointer<HighLevelProcessingPipeline> HighLevelProcessingPipelinePtr;

@@ -199,11 +199,15 @@ const QMatrix4x4& TransformationObject::getModelMatrix() const
     if ( m_recalculateMatrix )
     {
         m_modelMatrix.setToIdentity();
-        m_modelMatrix.translate( m_x, m_y, m_z );
-        m_modelMatrix.rotate( m_roll, 0.0f, 0.0f, 1.0f );      // Rotation arround local z-axis
-        m_modelMatrix.rotate( m_pitch, 1.0f, 0.0f, 0.0f );     // Rotation arround local x-axis
-        m_modelMatrix.rotate( m_yaw, 0.0f, 1.0f, 0.0f ); // Rotation arround local y-axis
-        m_modelMatrix.scale( m_xScale, m_yScale, m_zScale );
+        QMatrix4x4 trans;
+        trans.translate( m_x, m_y, m_z );
+        QMatrix4x4 rot;
+        rot.rotate( m_roll, 0.0f, 0.0f, 1.0f );
+        rot.rotate( m_pitch, 1.0f, 0.0f, 0.0f );
+        rot.rotate( m_yaw, 0.0f, 1.0f, 0.0f );
+        QMatrix4x4 scale;
+        scale.scale( m_xScale, m_yScale, m_zScale );
+        m_modelMatrix = trans*rot*scale;
         m_recalculateMatrix = false;
     }
     return m_modelMatrix;

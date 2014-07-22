@@ -85,8 +85,7 @@ void UpperBodySizeAnalyzer::estimateBodySize( const SkeletonDataPtr& skeletonDat
         m_estimatedBodySize += ( skeletonData->getJoint( SkeletonData::Joints::ShoulderCenter) - skeletonData->getJoint( SkeletonData::Joints::Spine) ).length();
         qDebug() <<  m_estimatedBodySize;
         m_estimatedBodySize = m_bodyPropotionFactor * m_estimatedBodySize;
-        m_workerStatus = "Standing";
-        emit workerStatusChanged();
+        setWorkerStatus( WorkerStatus::Standing );
         emit estimatedBodySizeChanged();
     }
 }

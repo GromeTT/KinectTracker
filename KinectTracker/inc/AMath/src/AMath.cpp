@@ -143,7 +143,7 @@ void AMath::Rectangle3D::setByTopLeftAndBottomRight( const QVector3D& topLeftCor
                                                      const QVector3D& bottomRightCorner )
 {
     m_width  = fabs( topLeftCorner.x() - bottomRightCorner.x() );
-    m_height = fabs( topLeftCorner.y() - bottomRightCorner.y() );
+    m_height = fabs( bottomRightCorner.y() - topLeftCorner.y() );
     m_x = topLeftCorner.x() + m_width / 2;
     m_y = topLeftCorner.y() - m_height / 2;
     m_z = topLeftCorner.z();
@@ -225,7 +225,7 @@ QVector3D AMath::Rectangle3D::center() const
 QVector3D AMath::Rectangle3D::topLeftCorner() const
 {
     return QVector3D( m_x - m_width/2,
-                      m_y - m_height/2,
+                      m_y + m_height/2,
                       m_z );
 }
 
@@ -236,6 +236,6 @@ QVector3D AMath::Rectangle3D::topLeftCorner() const
 QVector3D AMath::Rectangle3D::bottomRightCorner() const
 {
     return QVector3D( m_x + m_width/2,
-                      m_y + m_height/2,
+                      m_y - m_height/2,
                       m_z );
 }

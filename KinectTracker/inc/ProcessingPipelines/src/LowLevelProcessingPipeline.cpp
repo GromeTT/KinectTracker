@@ -230,7 +230,7 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
 
     // Reset counters
     m_absoluteFrequency = 0;
-    cv::imshow( "Original", input );
+//    cv::imshow( "Original", input );
     for ( int i = 0; i < input.rows; ++i )
     {
         for ( int j = 0; j < input.cols * input.channels(); j += 3 )
@@ -260,7 +260,7 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
             }
         }
     }
-    cv::imshow( "Skin", input );
+//    cv::imshow( "Skin", input );
 }
 
 /*!
