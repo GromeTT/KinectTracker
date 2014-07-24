@@ -40,16 +40,17 @@ void SizeAnalyzer::analyze( const KinectPtr kinect,
 
     if ( skeletonData.isNull() )
     {
-        if ( m_workerStatus == WorkerStatus::Standing )
-        {
-            // The worker was not lying in the last frame, assume, that he left
-            // the ara or hidden.
-            setWorkerStatus( WorkerStatus::NotPossible );
-        }
-        else if ( m_workerStatus == WorkerStatus::Kneeling )
-        {
-            setWorkerStatus( WorkerStatus::Lying );
-        }
+//        if ( m_workerStatus == WorkerStatus::Standing )
+//        {
+//            // The worker was not lying in the last frame, assume, that he left
+//            // the ara or hidden.
+//            setWorkerStatus( WorkerStatus::NotPossible );
+//        }
+//        else if ( m_workerStatus == WorkerStatus::Kneeling )
+//        {
+//            setWorkerStatus( WorkerStatus::Lying );
+//        }
+        setWorkerStatus( WorkerStatus::NotPossible );
         return;
     }
 

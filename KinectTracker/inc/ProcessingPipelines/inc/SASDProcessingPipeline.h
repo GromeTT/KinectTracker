@@ -80,7 +80,7 @@ private:
    bool deriveViewingDirectionByHistogram( cv::Mat& region );
    bool deriveViewingDirectionByHistogramHSV( cv::Mat& region );
    void drawRegionsOfInterest( cv::Mat& image );
-   void useHaarClassifier( cv::Mat& currentImage );
+   bool useHaarClassifier( cv::Mat& currentImage );
    bool analyseLastRegion(cv::Mat& image, QVector3D& head );
 
    QRect                                                  m_lastRegion;

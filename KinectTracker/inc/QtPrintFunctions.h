@@ -1,4 +1,0 @@
-#ifndef PRINTFUNCTIONS_H
-#define PRINTFUNCTIONS_H
-
-#endif // PRINTFUNCTIONS_H

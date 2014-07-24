@@ -149,10 +149,16 @@ void SASDProcessingPipeline::resetV()
  */
 bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
 {
+    if ( m_unableToTrackInARowCount > 500 )
+    {
+        qDebug() << "Resetting estimated size.";
+        m_sizeAnalyzer.reset();
+    }
     cv::Mat currentImage ( m_kinect->rgbStreamResolution().height(),
                            m_kinect->rgbStreamResolution().width(),
                            CV_8UC3,
                            mp_rgbData );
+    bool lookingTowardsCamera;
     if ( m_skeletons.count() <= 0 ||
          !m_skeletonAnalyzer->update( m_skeletons.at( 0 ), timestamp ) )
     {
@@ -162,31 +168,44 @@ bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
         //       have to paint.
         m_movementAnalyzer->setDataAvailable( false );
         m_sizeAnalyzer->analyze( m_kinect, SkeletonDataPtr( nullptr ) );
+
         // Explore the last skeleton.
         if ( m_lastRegion.width() > 0 &&
              m_lastRegion.height() > 0 )
         {
-            if ( !deriveViewingDirection() )
+            lookingTowardsCamera = deriveViewingDirection();
+            if ( !lookingTowardsCamera ) // Perform on the last regions from last frame.
             {
                 QVector3D headPosition;
                 // Explore the last region.
-                if( !analyseLastRegion( currentImage, headPosition ) )
+                lookingTowardsCamera = analyseLastRegion( currentImage, headPosition );
+                if( !lookingTowardsCamera )
                 {
                     // Use cascade haar classifier as last possibility
                     // if enabled.
                     if ( m_useHaarClassifier )
                     {
                          qDebug() << "Using hair classifier.";
-                         useHaarClassifier( currentImage );
+                         lookingTowardsCamera = useHaarClassifier( currentImage );
                     }
                 }
             }
+        }
+        if ( !lookingTowardsCamera )
+        {
+            m_skeletonAnalyzer->setUserLooksTowardsCamera( false );
+            ++m_unableToTrackInARowCount;
+        }
+        else
+        {
+            m_skeletonAnalyzer->setUserLooksTowardsCamera( true );
         }
         // Draw the region where the person has been found
         // the at last.
         drawRegionOfInterest( m_lastRegion,
                               currentImage,
                               Qt::red );
+
         return false;
     }
     else
@@ -197,17 +216,24 @@ bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
         m_unableToTrackInARowCount = 0;
         m_movementAnalyzer->analyze( m_skeletons.at( 0 ), timestamp );
         m_sizeAnalyzer->analyze( m_kinect,  m_skeletons.at( 0 ) );
-
         m_lastRegion = crop( m_skeletonAnalyzer->regionOfInterest(), currentImage );
         extractAllRegions( currentImage );
         // Derive the viewing direction.
-        deriveViewingDirection();
+        if ( !deriveViewingDirection() )
+        {
+            m_skeletonAnalyzer->setUserLooksTowardsCamera( false );
+        }
+        else
+        {
+            m_skeletonAnalyzer->setUserLooksTowardsCamera( true );
+        }
         // Draw the regions of interest.
         drawRegionsOfInterest( currentImage );
         drawRegionOfInterest( m_lastRegion,
                               currentImage,
                               Qt::red );
         m_lastSkeleton = SkeletonDataPtr( m_skeletons.at( 0 ) );
+
         return true;
     }
 }
@@ -297,7 +323,6 @@ bool SASDProcessingPipeline::deriveViewingDirection()
     {
         // case: From the analysis of the head region it follows
         //       that the user is looking towards the camera.
-        m_skeletonAnalyzer->setUserLooksTowardsCamera( true );
         return true;
     }
     else
@@ -325,7 +350,6 @@ bool SASDProcessingPipeline::deriveViewingDirection()
         {
             // case: No region contains enough non zero pixels, it follows that the
             //       user isn't looking towards the camera.
-            m_skeletonAnalyzer->setUserLooksTowardsCamera( false );
             return false;
         }
         else
@@ -423,7 +447,7 @@ void SASDProcessingPipeline::drawRegionsOfInterest( cv::Mat& image )
    http://docs.opencv.org/modules/objdetect/doc/cascade_classification.html?highlight=detectmultiscale#cascadeclassifier-detectmultiscale
 
  */
-void SASDProcessingPipeline::useHaarClassifier( cv::Mat& currentImage )
+bool SASDProcessingPipeline::useHaarClassifier( cv::Mat& currentImage )
 {
     faces.clear();
     cv::Mat lastRegion = currentImage( cv::Rect( cv::Point( m_lastRegion.topLeft().x(),
@@ -432,7 +456,7 @@ void SASDProcessingPipeline::useHaarClassifier( cv::Mat& currentImage )
                                                             m_lastRegion.bottomRight().y() )) );
     if ( lastRegion.rows < 0 || lastRegion.cols < 0 )
     {
-        return;
+        return false;
     }
     cv::Mat greyRegion;
     lastRegion.copyTo( greyRegion );
@@ -445,6 +469,11 @@ void SASDProcessingPipeline::useHaarClassifier( cv::Mat& currentImage )
         rectangle( currentImage, faces.at( i ), Scalar( 0, 0, 255 ), 5 );
         cv::imshow(  "Face", currentImage );
     }
+    if ( faces.size() > 0 )
+    {
+        return true;
+    }
+    return false;
 }
 
 /*!
@@ -452,7 +481,7 @@ void SASDProcessingPipeline::useHaarClassifier( cv::Mat& currentImage )
    Analysis the last region and checks if there is a 50x50 region
    which could be potentially the face.
  */
-bool SASDProcessingPipeline::analyseLastRegion(cv::Mat& image , QVector3D& head )
+bool SASDProcessingPipeline::analyseLastRegion( cv::Mat& image , QVector3D& head )
 {
     qDebug() << "Analysing last region";
     QSize patchSize ( 50, 50 );
@@ -490,12 +519,12 @@ bool SASDProcessingPipeline::analyseLastRegion(cv::Mat& image , QVector3D& head 
     {
         cv::Mat res = (*filteredCopy)( cv::Rect( cv::Point( i_x, i_y ),
                                                  cv::Point( i_x + patchSize.width(),  i_y + patchSize.height() ) ) );
+        cv::imshow( "Result", res );
         if (  m_kinect->transformFromRGBToSkeleton( QPoint( i_x + res.cols/2,
                                                             i_y + res.rows/2 ),
                                                     head ) )
         {
-            cv::imshow( "Result", res );
-            return true;
+            // TODO Check if the point is inside the last boundingBox if so, update the SizeAnalyser.
         }
         return true;
     }
