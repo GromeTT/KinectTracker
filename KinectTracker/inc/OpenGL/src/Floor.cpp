@@ -1,5 +1,6 @@
-#include "../Inc/Floor.h"
-#include "../Inc/Vertex.h"
+#include "../inc/Floor.h"
+#include "../inc/Vertex.h"
+#include "../../AMath/inc/AMath.h"
 #include <QOpenGLContext>
 #include <QVector3D>
 
@@ -7,6 +8,7 @@ Floor::Floor( RenderObject* parent )
     : RenderObject( parent )
     , m_size( 10 )
     , m_lineCount( 9 )
+    , m_normalVector( 0, 1, 0 )
 {
     setObjectName( "Floor");
     calculateFloor();
@@ -21,10 +23,23 @@ Floor::Floor( const float a,
     : RenderObject( parent )
     , m_size( 10 )
     , m_lineCount( 9 )
+    , m_normalVector( a, b, c )
 {
     setObjectName( "Floor" );
     calculateFloor( a, b, c, d );
     setRenderMode( GL_QUADS );
+}
+
+Floor::Floor( const float x,
+              const float y,
+              const float z,
+              RenderObject* parent )
+    : RenderObject( parent )
+    , m_normalVector( 1, 0, 0 )
+{
+    setObjectName( "Floor" );
+    calculateFloor( x, y, z );
+    setRenderMode( GL_LINES );
 }
 
 Floor::~Floor()
@@ -51,6 +66,27 @@ float Floor::getSize() const
 float Floor::getLineCount() const
 {
     return m_lineCount;
+}
+
+QVector3D Floor::normalVector() const
+{
+    QMatrix4x4 rot;
+    rot.rotate( 90, 0.0f, 0.0f, 1.0f );
+    rot.rotate( 0, 1.0f, 0.0f, 0.0f );
+    rot.rotate( 0,  0.0f, 1.0f, 0.0f );
+    QVector3D n = rot * m_normalVector;
+    n.normalize();
+    return n;
+}
+
+QVector4D Floor::planeCoefficients() const
+{
+    QVector3D n = normalVector();
+    float d = -n.x() * x() - n.y() * y() - n.z() * z();
+    return QVector4D( n.x(),
+                      n.y(),
+                      n.z(),
+                      d );
 }
 
 void Floor::calculateFloor()
@@ -122,4 +158,57 @@ void Floor::calculateFloor( const float a,
 
     setVertices( vertices );
     setIndices( indices );
+}
+
+void Floor::calculateFloor( const float a,
+                            const float b,
+                            const float c )
+{
+    Vertices vertices;
+    int cuts = 3;
+    float offset = 2.0f / float( cuts + 1 );
+    for ( float i = 1; i >= -1; i = i - offset )
+    {
+        for ( float j = 1; j >= -1; j = j - offset )
+        {
+            vertices.append( Vertex( 0, i, j ) );
+        }
+    }
+    Indices indices;
+    int i = 0;
+    int size = ( cuts + 2 );
+    size = size*size-1;
+
+    // Make horizontal lines.
+    while ( i < size )
+    {
+        int res = ( i+1 ) % ( cuts+2 );
+        if ( res != 0 )
+        {
+            indices.append( i );
+            indices.append( i+1 );
+        }
+        ++i;
+    }
+    // Make vertical lines.
+    i = 0;
+    size = (cuts+2)*cuts + (cuts+1);
+    while ( i <= size )
+    {
+               indices.append( i );
+        indices.append( i + cuts+2 );
+        ++i;
+    }
+    // Set vertices.
+    setVertices( vertices );
+    // Set indices.
+    setIndices( indices );
+
+    // Derive the rotation from the normal vector n = (x, y, z).
+    float roll;
+    float pitch;
+    AMath::anglesFromSphericalCoordinates( roll, pitch, QVector3D( a, b, c ) );
+//    setYaw( roll );
+//    setPitch( pitch );
+    setRoll( 90 );
 }

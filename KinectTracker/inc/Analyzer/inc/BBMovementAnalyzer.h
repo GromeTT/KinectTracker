@@ -25,7 +25,7 @@ signals:
     void deltaZChanged();
 
 private:
-    virtual void anaylzeV( const SkeletonDataPtr skeleton,
+    virtual void analyzeV( const SkeletonDataPtr skeleton,
                            const unsigned int timestamp );
     virtual void resetV();
 

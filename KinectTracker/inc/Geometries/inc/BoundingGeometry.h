@@ -17,27 +17,25 @@ public:
     BoundingGeometry( const float x,
                       const float y,
                       const float z );
+    BoundingGeometry( const QVector3D& position );
     virtual ~BoundingGeometry();
 
-    float x() const;
-    float y() const;
-    float z() const;
+    float     x() const;
+    float     y() const;
+    float     z() const;
+    QVector3D position() const;
+    bool      arePointsInsideGeometry( const QVector<QVector3D>& points );
 
     void setX( const float x );
     void setY( const float y );
     void setZ( const float z );
-
-    bool arePointsInsideGeometry( const QVector<QVector3D>& points );
-    QVector3D frontFaceTopLeftCorner();
-    QVector3D frontFaceBottomRightCorner();
+    void setPosition( const QVector3D& position );
 
 private:
     virtual bool arePointsInsideGeometryV( const QVector<QVector3D>& points ) = 0;
 
 protected:
-    float m_x;
-    float m_y;
-    float m_z;
+    QVector3D m_position;
 };
 
 
@@ -78,6 +76,7 @@ public:
                                const float deltaH = 0);
 private:
     bool arePointsInsideGeometryV( const QVector<QVector3D>& points );
+
 
     float m_width;
     float m_height;
@@ -127,17 +126,18 @@ public:
     BoundingSphere( const float x,
                     const float y,
                     const float z,
-                    const float r );
+                    const float radius );
+    BoundingSphere( const QVector3D& position,
+                    const float radius );
     virtual ~BoundingSphere();
+
+    void  setRadius( const float radius );
+    float radius()       const;
 
 private:
     virtual bool arePointsInsideGeometryV( const QVector<QVector3D>& points );
 
-    float m_x;
-    float m_y;
-    float m_z;
-
-    float m_r;
+    float m_radius;
 };
 
 #endif // BOUNDINGGEOMETRY_H

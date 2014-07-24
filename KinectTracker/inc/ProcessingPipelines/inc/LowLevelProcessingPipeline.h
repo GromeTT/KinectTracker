@@ -37,6 +37,7 @@ public:
 
     const QVector<ProcessingComponent*>& getComponents() const;
     QObject*                             getObjectByName( const QString& name );
+    virtual cv::Mat*                     getProcessedImage();
 
 protected:
     void registerComponent( ProcessingComponent* component,
@@ -159,10 +160,12 @@ public:
     virtual ~SkinColorExplicitDefinedSkinRegionDetectionPipeline();
 
     virtual void process( cv::Mat& input );
-    int    absoluteFrequency();
+    int          absoluteFrequency();
+    cv::Mat*     getProcessedImage();
 
 private:
-    int   m_absoluteFrequency;
+    int     m_absoluteFrequency;
+    cv::Mat m_processedImage;
 };
 
 typedef QSharedPointer<SkinColorExplicitDefinedSkinRegionDetectionPipeline> SkinColorExplicitDefinedSkinRegionDetectionPipelinePtr;
@@ -187,17 +190,18 @@ public:
     virtual void process( cv::Mat& input );
     void         setThreshold( const float threshold );
 
-    bool         computeAndSaveROIHistogram( const cv::Mat& roi );
-    int*         channels() const;
-    int*         bins() const;
-    float*       ranges() const;
-    cv::Mat&     roi() const;
-    cv::MatND&   histogram() const;
-    bool         initialized() const;
-    double       threshold() const;
-    int          nonZeroPixels() const;
-    float        nonZeroRelativeFrequency() const;
-    void         reset();
+    bool             computeAndSaveROIHistogram( const cv::Mat& roi );
+    int*             channels() const;
+    int*             bins() const;
+    float*           ranges() const;
+    cv::Mat&         roi() const;
+    cv::MatND&       histogram() const;
+    bool             initialized() const;
+    double           threshold() const;
+    int              nonZeroPixels() const;
+    float            nonZeroRelativeFrequency() const;
+    void             reset();
+    virtual cv::Mat* getProcessedImage();
 
 signals:
     void thresholdChanged();
@@ -205,6 +209,7 @@ signals:
     void nonZeroRelativeFrequencyChanged();
 
 private:
+    cv::MatND         m_backprojection;
     mutable int       m_channels[3];
     mutable int       m_bins[3];
     mutable float     m_ranges[2];

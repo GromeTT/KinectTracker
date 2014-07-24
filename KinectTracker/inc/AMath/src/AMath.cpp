@@ -239,3 +239,16 @@ QVector3D AMath::Rectangle3D::bottomRightCorner() const
                       m_y - m_height/2,
                       m_z );
 }
+
+
+/*!
+   \brief AMath::anglesFromSphericalCoordinates
+  Computes the angles of \a direction in spherical coordinates and saves them
+  into \a phi and \a theta.
+ */
+void AMath::anglesFromSphericalCoordinates( float& phi, float& theta, const QVector3D& direction )
+{
+    // http://de.wikipedia.org/wiki/Polarkoordinaten
+    phi  = AMath::radToDegF( atan2( direction.z(), direction.x() ) );
+    theta = AMath::radToDegF( asinf( direction.y() / direction.length() ) );
+}

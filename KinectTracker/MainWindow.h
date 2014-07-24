@@ -49,7 +49,6 @@ private:
     void constructRGBViewer();
     void constructDepthViewer();
     void updateScenes();
-    void processSkeletonData( const unsigned int timestamp) ;
     void actionOpenGLRenderWidgetChecked( bool checked );
     void takeScreenshot();
     void openImageAnalysisDialog();
@@ -64,12 +63,6 @@ private:
     void initializeFloor();
     void loadPointCloud();
     void removeRenderWindowFromRenderList();
-
-
-//signals:
-//    void updateSkeletonDataChanged();
-//    void updateRGBDataChanged();
-//    void updateDepthDataChanged();
 
 private:
     Ui::MainWindow*         ui;
@@ -108,12 +101,10 @@ private:
     // Analysis
     HighLevelProcessingPipelinePtr m_highLvlProcessingPipeline;
     // Visualizer
-    VisualizerPtr m_visualizer;
-    Floor*        mp_floor;
-    bool          m_floorInitialized;
+    VisualizerPtr        m_visualizer;
+    Floor*               mp_floor;
+    bool                 m_floorInitialized;
     QList<OpenGLWindow*> m_renderWindows;
 };
-
-void detect_blobs( cv::Mat& current );
 
 #endif // MAINWINDOW_H

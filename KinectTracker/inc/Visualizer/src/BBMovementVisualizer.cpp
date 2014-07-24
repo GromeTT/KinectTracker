@@ -15,6 +15,7 @@ BBMovementVisualizer::BBMovementVisualizer( BBMovementAnalyzerPtr& movementAnaly
     mp_boundingBoxLowerBody = window->getScene()->createCube();
     mp_boundingBoxLowerBody->setObjectName( "BoundingBoxLowerBody" );
     mp_boundingBoxLowerBody->setWireFrameMode( true );
+    mp_boundingBoxLowerBody->setVisible( false );
 }
 
 /*!
@@ -33,7 +34,6 @@ void BBMovementVisualizer::renderV()
 {
     if ( m_movementAnalyzer->dataAvailable() )
     {
-
         mp_window->makeContextCurrent();
         mp_boundingBoxLowerBody->setVisible( true );
         BoundingBox* boundingBox = dynamic_cast<BoundingBox*>( m_movementAnalyzer->getLatestBoudingGeomerty().data() );

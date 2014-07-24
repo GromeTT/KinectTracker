@@ -2,7 +2,7 @@
 
 SphereMovementAnalyzer::SphereMovementAnalyzer( QObject* parent )
     : MovementAnalyzer( parent )
-    , m_radius( 0.3f )
+    , m_radius( 0.2f )
 {
 
 }
@@ -23,8 +23,13 @@ float SphereMovementAnalyzer::radius() const
     return m_radius;
 }
 
-void SphereMovementAnalyzer::analyzerV( const SkeletonDataPtr skeleton,
-                                        const unsigned int timestamp )
+QVector3D SphereMovementAnalyzer::position() const
+{
+    return m_position;
+}
+
+void SphereMovementAnalyzer::analyzeV( const SkeletonDataPtr skeleton,
+                                       const unsigned int timestamp )
 {
     QVector<QVector3D> vec;
     vec.append( skeleton->getJoint(SkeletonData::Joints::Hip ) );
@@ -34,7 +39,7 @@ void SphereMovementAnalyzer::analyzerV( const SkeletonDataPtr skeleton,
     {
         // Compute the BoundingBox if the vector of BoundingBoxes is empty
         // or if the person has left the previous one.
-        BoundingGeometryPtr bb ( new BoundingSphere ( vec, m_radius ) );
+        BoundingGeometryPtr bb ( new BoundingSphere ( vec.at( 0 ), m_radius ) );
         addBoundingGeometry( bb, timestamp );
     }
     else

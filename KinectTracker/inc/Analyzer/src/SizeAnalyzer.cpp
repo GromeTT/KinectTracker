@@ -40,11 +40,15 @@ void SizeAnalyzer::analyze( const KinectPtr kinect,
 
     if ( skeletonData.isNull() )
     {
-        if ( m_workerStatus != WorkerStatus::Lying )
+        if ( m_workerStatus == WorkerStatus::Standing )
         {
             // The worker was not lying in the last frame, assume, that he left
             // the ara or hidden.
             setWorkerStatus( WorkerStatus::NotPossible );
+        }
+        else if ( m_workerStatus == WorkerStatus::Kneeling )
+        {
+            setWorkerStatus( WorkerStatus::Lying );
         }
         return;
     }
@@ -80,29 +84,15 @@ void SizeAnalyzer::analyze( const KinectPtr kinect,
         // All joints are tracked and the floor coefficients haven't
         // been stored yet.
         // Do it now.
-        if ( kinect->planeCoefficients() != QVector4D( 0, 0, 0, 0 ) )
-        {
-            m_planeCoefficients = kinect->planeCoefficients();
-            m_floorInitialized = true;
-            qDebug() << "Floor initialized";
-        }
+        setPlaneCoefficients( kinect->planeCoefficients() );
     }
-    if ( skeletonData->jointTrackState( SkeletonData::Joints::Head ) == SkeletonData::TrackState::Tracked &&
-         m_floorInitialized )
+    if ( skeletonData->jointTrackState( SkeletonData::Joints::Head ) == SkeletonData::TrackState::Tracked )
     {
         // The head is tracked and the plane coefficients have been stored.
         // Now compute the distance between the head and the floor by formula:
         // http://www.frustfrei-lernen.de/mathematik/abstand-punkt-zu-ebene.html
-        QVector3D normalVector ( m_planeCoefficients.x(),
-                                 m_planeCoefficients.y(),
-                                 m_planeCoefficients.z() );
-        QVector3D pointInPlane( 0,
-                                -m_planeCoefficients.w() / m_planeCoefficients.y() ,
-                                0 );
-        normalVector.normalize();
         QVector3D head = skeletonData->getJoint( SkeletonData::Joints::Head );
-        m_distanceFloorHead = head.distanceToPlane( pointInPlane, normalVector );
-        emit distanceFloorHeadChanged();
+
     }
     emit workerStatusChanged();
 }
@@ -131,6 +121,45 @@ void SizeAnalyzer::setWorkerStatus( const WorkerStatus status )
 {
     m_workerStatus = status;
     emit workerStatusChanged();
+}
+
+/*!
+   \brief SizeAnalyzer::setPlaneCoefficients
+   Sets the plane coefficients to \a coefficients.
+   The plane is used to calculate the current height of the user's body.
+ */
+bool SizeAnalyzer::setPlaneCoefficients( const QVector4D& coefficients )
+{
+    if ( coefficients.x() == 0,
+         coefficients.y() == 0,
+         coefficients.z() == 0,
+         coefficients.w() == 0 )
+    {
+        return false;
+    }
+    m_planeCoefficients = coefficients;
+    m_planeNormalVector = QVector3D ( m_planeCoefficients.x(),
+                                      m_planeCoefficients.y(),
+                                      m_planeCoefficients.z() );
+    m_planeNormalVector.normalize();
+    m_pointInPlane = QVector3D( 0,
+                                -m_planeCoefficients.w() / m_planeCoefficients.y() ,
+                                0 );
+    m_floorInitialized = true;
+    return true;
+}
+
+/*!
+   \brief SizeAnalyzer::calculateDistanceFromFloorToHead
+   \param headCoordinates
+ */
+void SizeAnalyzer::calculateDistanceFromFloorToHead( const QVector3D& headCoordinates )
+{
+    if ( m_floorInitialized )
+    {
+        m_distanceFloorHead = headCoordinates.distanceToPlane( m_pointInPlane, m_planeNormalVector );
+        emit distanceFloorHeadChanged();
+    }
 }
 
 /*!

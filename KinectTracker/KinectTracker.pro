@@ -64,7 +64,8 @@ SOURCES += inc/AMath/src/AMath.cpp \
     inc/ImageWidget/src/ImageWidget.cpp \
     inc/ProcessingPipelines/src/Histogram.cpp \
     inc/Analyzer/src/SphereMovementAnalyzer.cpp \
-    inc/Visualizer/src/SphereMovementAnalyzer.cpp
+    inc/Visualizer/src/SphereMovementVisualizer.cpp \
+    QtPrintFunctions.cpp
 
 HEADERS  += inc/AMath/inc/AMath.h \
     inc/Analyzer/inc/BBMovementAnalyzer.h \
@@ -119,7 +120,8 @@ HEADERS  += inc/AMath/inc/AMath.h \
     inc/ImageWidget/inc/ImageWidget.h \
     inc/ProcessingPipelines/inc/Histogram.h \
     inc/Analyzer/inc/SphereMovementAnalyzer.h \
-    inc/Visualizer/inc/SphereMovementAnalyzer.h
+    inc/Visualizer/inc/SphereMovementVisualizer.h \
+    QtPrintFunctions.h
 
 FORMS    += MainWindow.ui \
     inc/Dialogs/ui/KinectInitializeDialog.ui \

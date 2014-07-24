@@ -1,6 +1,8 @@
 #include "../inc/SkeletonData.h"
 #include <math.h>
+#include <QString>
 #include <QDebug>
+
 
 
 /*!
@@ -199,4 +201,57 @@ void copy( const Vector4& source, QVector3D& target )
     target.setX( source.x );
     target.setY( source.y );
     target.setZ( source.z );
+}
+
+/*!
+   \brief jointToString
+   Returns a String with the name of \a joint.
+ */
+QString jointToString( const SkeletonData::Joints joint )
+{
+    switch ( joint )
+    {
+        case SkeletonData::Joints::Hip:
+            return "Hip";
+        case SkeletonData::Joints::Spine:
+            return "Spine";
+        case SkeletonData::Joints::ShoulderCenter:
+            return "ShoulderCenter";
+        case SkeletonData::Joints::Head:
+            return "Head";
+        case SkeletonData::Joints::ShoulderLeft:
+            return "ShoulderLeft";
+        case SkeletonData::Joints::ElbowLeft:
+            return "ElbowLeft";
+        case SkeletonData::Joints::WristLeft:
+            return "WristLeft";
+        case SkeletonData::Joints::HandLeft:
+            return "HandLeft";
+        case SkeletonData::Joints::ShoulderRight:
+            return "ShoulderRight";
+        case SkeletonData::Joints::ElbowRight:
+            return "ElbowRight";
+        case SkeletonData::Joints::WristRight:
+            return "WristRight";
+        case SkeletonData::Joints::HandRight:
+            return "HandRight";
+        case SkeletonData::Joints::HipLeft:
+            return "HipLeft";
+        case SkeletonData::Joints::KneeLeft:
+            return "KneeLeft";
+        case SkeletonData::Joints::AnkleLeft:
+            return "AnkleLeft";
+        case SkeletonData::Joints::FootLeft:
+            return "FootLeft";
+        case SkeletonData::Joints::HipRight:
+            return "HipRight";
+        case SkeletonData::Joints::KneeRight:
+            return "KneeRight";
+        case SkeletonData::Joints::AnkleRight:
+            return "AnkleRight";
+        case SkeletonData::Joints::FootRight:
+            return "FootRight";
+        default:
+            return "Nothing";
+    }
 }

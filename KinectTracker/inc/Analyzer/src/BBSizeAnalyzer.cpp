@@ -1,4 +1,5 @@
 #include "../inc/BBSizeAnalyzer.h"
+#include <QDebug>
 
 /*!
    \brief BBSizeAnalyzer::BBSizeAnalyzer
@@ -94,6 +95,7 @@ void BBSizeAnalyzer::analyzeV( const SkeletonDataPtr& skeletonData )
         // and lower the 2.3 meters, update the value of the estimated body
         // size.
         m_estimatedBodySize = m_boundingBox->height();
+        qDebug() << "Changed estiamted body size.";
         emit estimatedBodySizeChanged();
     }
 
@@ -101,7 +103,6 @@ void BBSizeAnalyzer::analyzeV( const SkeletonDataPtr& skeletonData )
     emit currentBodySizeChanged();
 
     // This crap is for another method.
-
 //    if ( skeletonData->jointTrackState( SkeletonData::Joints::Head ) == SkeletonData::TrackState::Tracked &&
 //         skeletonData->jointTrackState( SkeletonData::Joints::ShoulderCenter ) == SkeletonData::TrackState::Tracked  &&
 //         skeletonData->jointTrackState( SkeletonData::Joints::Spine ) == SkeletonData::TrackState::Tracked  &&
@@ -135,5 +136,4 @@ void BBSizeAnalyzer::analyzeV( const SkeletonDataPtr& skeletonData )
 
 void BBSizeAnalyzer::resetV()
 {
-
 }

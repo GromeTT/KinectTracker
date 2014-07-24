@@ -8,6 +8,8 @@
 #include <QVector>
 #include <QSharedPointer>
 
+class QString;
+
 class SkeletonData : public QObject
 {
     Q_OBJECT
@@ -78,7 +80,8 @@ private:
     short               m_numberOfTrackedPoints;
 };
 
-void copy( const Vector4& source, QVector3D& target );
+void    copy( const Vector4& source, QVector3D& target );
+QString jointToString( const SkeletonData::Joints joint );
 
 typedef QSharedPointer<SkeletonData> SkeletonDataPtr;
 

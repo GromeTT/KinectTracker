@@ -63,23 +63,29 @@ public:
     bool isRGBStreamOpen() const;
     bool isDepthStreamOpen() const;
     QVector4D planeCoefficients() const;
+    bool transformFromRGBToSkeleton( const QPoint& rgbCoordinates,
+                                     QVector3D& skeletonCoordinates );
+    bool transformFromRGBToSkeleton( const int x,
+                                     const int y,
+                                     QVector3D& skeletonCoordinates );
 
 private:
     void setSize( QSize& size, NUI_IMAGE_RESOLUTION resolution );
 
-    INuiSensor* mp_sensor;
-    HANDLE      m_depthHandle;
-    HANDLE      m_rgbHandle;
-    HANDLE      m_skeletonHandle;
-    QSize       m_rgbStreamResolution;
-    QSize       m_depthStreamResolution;
-    bool        m_initialized;
-    bool        m_rgbStreamOpen;
-    bool        m_deptStreamOpen;
-    float       m_a;
-    float       m_b;
-    float       m_c;
-    float       m_d;
+    INuiSensor*                 mp_sensor;
+    HANDLE                      m_depthHandle;
+    HANDLE                      m_rgbHandle;
+    HANDLE                      m_skeletonHandle;
+    QSize                       m_rgbStreamResolution;
+    QSize                       m_depthStreamResolution;
+    bool                        m_initialized;
+    bool                        m_rgbStreamOpen;
+    bool                        m_deptStreamOpen;
+    float                       m_a;
+    float                       m_b;
+    float                       m_c;
+    float                       m_d;
+    NUI_DEPTH_IMAGE_PIXEL*      mp_lastDepthPixelImage;
 };
 
 QPoint transformFromSkeltonToRGB( const QVector3D& coordinates );

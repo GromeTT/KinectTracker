@@ -12,9 +12,7 @@
    Sets the position to the origin.
  */
 BoundingGeometry::BoundingGeometry()
-    : m_x( 0 )
-    , m_y( 0 )
-    , m_z( 0 )
+    : m_position ( 0, 0, 0 )
 {
 }
 
@@ -25,10 +23,14 @@ BoundingGeometry::BoundingGeometry()
 BoundingGeometry::BoundingGeometry( const float x,
                                     const float y,
                                     const float z )
-    : m_x( x )
-    , m_y( y )
-    , m_z( z )
+    : m_position ( x, y, z )
 {
+}
+
+BoundingGeometry::BoundingGeometry( const QVector3D& position )
+    : m_position( position )
+{
+
 }
 
 /*!
@@ -46,7 +48,7 @@ BoundingGeometry::~BoundingGeometry()
  */
 float BoundingGeometry::x() const
 {
-    return m_x;
+    return m_position.x();
 }
 
 /*!
@@ -55,7 +57,7 @@ float BoundingGeometry::x() const
  */
 float BoundingGeometry::y() const
 {
-    return m_y;
+    return m_position.y();
 }
 
 /*!
@@ -64,7 +66,12 @@ float BoundingGeometry::y() const
  */
 float BoundingGeometry::z() const
 {
-    return m_z;
+    return m_position.z();
+}
+
+QVector3D BoundingGeometry::position() const
+{
+    return m_position;
 }
 
 /*!
@@ -73,7 +80,7 @@ float BoundingGeometry::z() const
  */
 void BoundingGeometry::setX( const float x )
 {
-    m_x = x;
+    m_position.setX( x );
 }
 
 /*!
@@ -82,7 +89,7 @@ void BoundingGeometry::setX( const float x )
  */
 void BoundingGeometry::setY( const float y )
 {
-    m_y = y;
+    m_position.setY( y );
 }
 
 /*!
@@ -91,7 +98,12 @@ void BoundingGeometry::setY( const float y )
  */
 void BoundingGeometry::setZ( const float z )
 {
-    m_z = z;
+    m_position.setZ( z );
+}
+
+void BoundingGeometry::setPosition( const QVector3D& position )
+{
+    m_position = position;
 }
 
 /*!
@@ -137,9 +149,7 @@ BoundingBox::BoundingBox( const BoundingBox& other )
     , m_height( other.m_height )
     , m_depth( other.m_depth )
 {
-    m_x = other.x();
-    m_y = other.y();
-    m_z = other.z();
+    setPosition( other.position() );
 }
 
 BoundingBox::~BoundingBox()
@@ -167,9 +177,9 @@ float BoundingBox::height() const
  */
 QVector3D BoundingBox::frontFaceTopLeftCorner()
 {
-    return QVector3D( m_x - m_width / 2,
-                      m_y + m_height / 2,
-                      m_z + m_depth / 2 );
+    return QVector3D( m_position.x() - m_width / 2,
+                      m_position.y() + m_height / 2,
+                      m_position.z() + m_depth / 2 );
 }
 
 /*!
@@ -178,9 +188,9 @@ QVector3D BoundingBox::frontFaceTopLeftCorner()
  */
 QVector3D BoundingBox::frontFaceBottomRightCorner()
 {
-    return QVector3D( m_x + m_width / 2,
-                      m_y - m_height / 2,
-                      m_z + m_depth / 2 );
+    return QVector3D( m_position.x() + m_width / 2,
+                      m_position.y() - m_height / 2,
+                      m_position.z() + m_depth / 2 );
 }
 
 void BoundingBox::setDepth( const float depth )
@@ -211,9 +221,9 @@ void BoundingBox::calculateBoundingBox( const QVector<QVector3D>& points,
 {
     if ( points.count() == 0 )
     {
-        m_x = 0;
-        m_y = 0;
-        m_z = 0;
+        m_position.setX( 0 );
+        m_position.setY( 0 );
+        m_position.setZ( 0 );
         m_width = 0;
         m_height = 0;
         m_depth = 0;
@@ -274,9 +284,9 @@ void BoundingBox::calculateBoundingBox( const QVector<QVector3D>& points,
     m_depth  = maxD - minD;
 
     // Calculate position
-    m_x =  maxW - ( 0.5f * m_width );
-    m_y =  maxH - ( 0.5f * m_height );
-    m_z =  maxD - ( 0.5f * m_depth );
+    m_position.setX( maxW - ( 0.5f * m_width ) );
+    m_position.setY( maxH - ( 0.5f * m_height ) );
+    m_position.setZ( maxD - ( 0.5f * m_depth ) );
 }
 
 /*!
@@ -290,9 +300,9 @@ bool BoundingBox::arePointsInsideGeometryV( const QVector<QVector3D>& points )
         if ( !pointInCube( points[i].x(),
                            points[i].y(),
                            points[i].z(),
-                           m_x,
-                           m_y,
-                           m_z,
+                           m_position.x(),
+                           m_position.y(),
+                           m_position.z(),
                            m_width,
                            m_height,
                            m_depth ) )
@@ -362,6 +372,7 @@ BoundingGeometryWithTimeStamp::BoundingGeometryWithTimeStamp( BoundingGeometryPt
 // TODO: Implement a bounding sphere algoritm.
 BoundingSphere::BoundingSphere( const QVector<QVector3D>& points,
                                 const float delta )
+    : BoundingGeometry( )
 {
     Q_UNUSED( points );
     Q_UNUSED( delta );
@@ -374,12 +385,18 @@ BoundingSphere::BoundingSphere( const QVector<QVector3D>& points,
 BoundingSphere::BoundingSphere( const float x,
                                 const float y,
                                 const float z,
-                                const float r )
-    : m_x( x )
-    , m_y( y )
-    , m_z( z )
-    , m_r( r )
+                                const float radius )
+    : BoundingGeometry( x, y, z )
+    , m_radius( radius )
 {
+}
+
+BoundingSphere::BoundingSphere( const QVector3D& position,
+                                const float radius )
+    : BoundingGeometry( position )
+    , m_radius( radius )
+{
+
 }
 
 /*!
@@ -389,6 +406,16 @@ BoundingSphere::BoundingSphere( const float x,
 BoundingSphere::~BoundingSphere()
 {
 
+}
+
+void BoundingSphere::setRadius( const float radius )
+{
+    m_radius = radius;
+}
+
+float BoundingSphere::radius() const
+{
+    return m_radius;
 }
 
 /*!
@@ -402,10 +429,10 @@ bool BoundingSphere::arePointsInsideGeometryV( const QVector<QVector3D>& points 
         if ( pointInSphere( points.at( i ).x(),
                             points.at( i ).y(),
                             points.at( i ).z(),
-                            m_x,
-                            m_y,
-                            m_z,
-                            m_r ) )
+                            m_position.x(),
+                            m_position.y(),
+                            m_position.z(),
+                            m_radius ) )
         {
              return true;
 

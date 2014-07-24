@@ -11,6 +11,7 @@
 #include "inc/ProcessingPipelines/inc/SASDProcessingPipeline.h"
 #include "inc/ProcessingPipelines/inc/SABSSDProcessingPipeline.h"
 #include "inc/Visualizer/inc/BBMovementVisualizer.h"
+#include "inc/Visualizer/inc/SphereMovementVisualizer.h"
 #include "inc/Analyzer/inc/BBMovementAnalyzer.h"
 #include "inc/Dialogs/inc/ImageAnalysisDialog.h"
 #include <QMdiSubWindow>
@@ -173,11 +174,6 @@ void MainWindow::updateScenes()
                                                                              floorEquation.y(),
                                                                              floorEquation.z(),
                                                                              floorEquation.w() );
-                        qDebug() << QString( " %1 %2 %3 %4" )
-                                    .arg( floorEquation.x() )
-                                    .arg( floorEquation.y() )
-                                    .arg( floorEquation.z() )
-                                    .arg( floorEquation.w() );
                         qDebug()<< "Floor has been initialized.";
                         m_floorInitialized = true;
                     }
@@ -231,92 +227,6 @@ void MainWindow::updateScenes()
     ui->statusBar->showMessage( QStringLiteral( "Update Time: %1 ms Framerat: %2")
                                 .arg(dt_ms)
                                 .arg(fps));
-}
-
-/*!
-   \fn MainWindow::processSkeletonData
-   Gets skeleton data from the kinect sensor and perfoms it's analysis.
- */
-void MainWindow::processSkeletonData( const unsigned int timestamp )
-{
-    Q_UNUSED( timestamp );
-    QList<SkeletonDataPtr> skeletons;
-//    HRESULT res = m_kinect->getSkeleton( skeletons );
-
-//    if ( res != S_OK )
-//    {
-//        return;
-//    }
-
-    if ( skeletons.count() > 0 )
-    {
-        // Skeleton detected.
-        mp_openGLWindow->makeContextCurrent();
-
-        // Update the skeleton render.
-        mp_skeletonRenderObject->setVisible( true );
-
-//        SkeletonDataPtr skeleton ( skeletons.at( 0 ) );
-//        mp_skeletonRenderObject->updateData( skeleton );
-
-        // Perform analysis
-//         m_skeletonAnalyzer.update( skeleton,
-//                                    timestamp );
-
-         // Update BoundingBox for the lower body.
-//         mp_boundingBoxLowerBody->setVisible( true );
-//         const BoundingBox* boundingBox = m_skeletonAnalyzer.getLastBoundingBox();
-//         if ( boundingBox )
-//         {
-//             mp_boundingBoxLowerBody->setPosition( QVector3D( boundingBox->x(),
-//                                                              boundingBox->y(),
-//                                                              boundingBox->z() ) );
-//             mp_boundingBoxLowerBody->setScale( QVector3D( boundingBox->width(),
-//                                                           boundingBox->height(),
-//                                                           boundingBox->depth() ) );
-
-//             mp_arrowObject->setPosition( boundingBox->x(),
-//                                          boundingBox->y() + 2.0f,
-//                                          boundingBox->z() );
-//         }
-//         m_analysisResults.setValuesByVetcor( m_skeletonAnalyzer.getVelocity( timestamp, 10 ) );
-//         if ( m_analysisResults.yaw() == 0 )
-//         {
-            // Case: Person is not moving.
-
-            // Indicates standing person by making the arrow pointing up.
-//            mp_arrowObject->setYaw( 0 );
-//            mp_arrowObject->setRoll( 90 );
-//         }
-//         else
-//         {
-             // Case: Person is moving.
-
-             // Let the arrow point in the direction of the movement.
-//             mp_arrowObject->setYaw( m_analysisResults.yaw() );
-//             mp_arrowObject->setRoll( 0 );
-//         }
-
-         // Update BoundingBox for the whole body.
-//         mp_boundingBoxWholeBody->setVisible( true );
-//         boundingBox = m_skeletonAnalyzer.getBoundingBoxWholeBody();
-//         if ( boundingBox )
-//         {
-//             mp_boundingBoxWholeBody->setPosition( QVector3D( boundingBox->x(),
-//                                                              boundingBox->y(),
-//                                                              boundingBox->z() ) );
-//             mp_boundingBoxWholeBody->setScale( QVector3D( boundingBox->width(),
-//                                                           boundingBox->height(),
-//                                                           boundingBox->depth() ) );
-//         }
-    }
-    else
-    {
-        // Case: Recived Skeletonframe, but no skeleton detected.
-
-        // Turn all objects invisible.
-//        mp_boundingBoxLowerBody->setVisible( false );
-    }
 }
 
 void MainWindow::actionOpenGLRenderWidgetChecked( bool checked )
@@ -428,11 +338,17 @@ void MainWindow::activateSABSSDMode( bool checked )
  */
 void MainWindow::setVisualizer()
 {
-    BBMovementAnalyzerPtr analyzer( m_highLvlProcessingPipeline->movementAnalyzer().dynamicCast<BBMovementAnalyzer>() );
-    if ( !analyzer.isNull() )
+    BBMovementAnalyzerPtr bb_analyzer( m_highLvlProcessingPipeline->movementAnalyzer().dynamicCast<BBMovementAnalyzer>() );
+    if ( !bb_analyzer.isNull() )
     {
-         m_visualizer = VisualizerPtr( new BBMovementVisualizer( analyzer, mp_openGLWindow ) );
+         m_visualizer = VisualizerPtr( new BBMovementVisualizer( bb_analyzer, mp_openGLWindow ) );
     }
+    SphereMovementAnalyzerPtr sp_analyzer ( m_highLvlProcessingPipeline->movementAnalyzer().dynamicCast<SphereMovementAnalyzer>() );
+    if ( !sp_analyzer.isNull() )
+    {
+        m_visualizer = VisualizerPtr( new SphereMovementVisualizer( sp_analyzer, mp_openGLWindow ) );
+    }
+
 }
 
 /*!
@@ -449,6 +365,7 @@ void MainWindow::switchCatergoryOnSceneGraph( SceneGraphWidget::ActiveScene scen
             // case: RGBProcessingPipeline
             QList<QObject*> objectList;
             QList<LowLevelProcessingPipelinePtr> tmp = m_highLvlProcessingPipeline->rgbProcessingPipelines();
+            objectList.append( m_highLvlProcessingPipeline.data() );
             for ( int i = 0; i < tmp.count(); ++i )
             {
                 objectList.append( tmp.at( i ).data() );
@@ -498,11 +415,10 @@ void MainWindow::initializeFloor()
 {
     if ( !m_floorInitialized )
     {
-        mp_floor = mp_openGLWindow->getScene()->createFloor( 0,
-                                                             0,
-                                                             1,
-                                                             0 );
+        mp_floor = mp_openGLWindow->getScene()->createFloor( 0, 1, 0 );
         m_floorInitialized = true;
+        // Update the plane cofficient in the SizeAnalyzer.
+        m_highLvlProcessingPipeline->sizeAnalyzer()->setPlaneCoefficients( QVector4D( 1, 0, 0, 0 ) );
     }
 }
 
@@ -515,9 +431,7 @@ void MainWindow::loadPointCloud()
     pointCloudWindow->setTitle( "PointCloud" );
     pointCloudWindow->setObjectName( "PointCloudWindow" );
     m_renderWindows.append( pointCloudWindow );
-    RenderObject* o  =
-            pointCloudWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
-    RenderObject* o1 = pointCloudWindow->getScene()->loadObjectFromFile( "PointCloud.txt" );
+    RenderObject* o = pointCloudWindow->getScene()->loadObjectFromFile( "PointCloud.txt" );
     if ( !o )
     {
         qDebug() << "Could not create an object for the point cloud";
@@ -526,7 +440,7 @@ void MainWindow::loadPointCloud()
     {
         qDebug() << "Loading point cloud was successful.";
     }
-    pointCloudWindow->getScene()->moveCamera( 0.0f, 0.0f , -4.0f );
+    pointCloudWindow->getScene()->moveCameraForward( -4.0f );
     pointCloudWindow->show();
     connect( pointCloudWindow, &OpenGLWindow::visibleChanged, this, &MainWindow::removeRenderWindowFromRenderList );
 }
@@ -657,7 +571,6 @@ void MainWindow::openKinectStream()
 
 /*!
    \brief MainWindow::selectObject
-
  */
 void MainWindow::selectObject( const QString& text )
 {
@@ -683,20 +596,10 @@ void MainWindow::constructOpenGLRenderWidget()
     mp_openGLRenderWidget->setWindowTitle( "OpenGLRender" );
     ui->mdiArea->addSubWindow( subWindow );
     mp_openGLWindow->setVisible( true );
-
     // Initialize scene.
-    mp_openGLWindow->getScene()->moveCamera( 0, 0, -8 );
-
+    mp_openGLWindow->getScene()->moveCameraForward( -10.0f );
     // Skeleton
-    mp_openGLWindow->getScene()->createAxis();
     mp_skeletonRenderObject = mp_openGLWindow->getScene()->createSkeletonRenderObject();
-    // BoundingBoxWholeBody
-
-    // Arrow
-//    mp_arrowObject = mp_openGLWindow->getScene()->loadObjectFromFile( "../KinectTracker/res/Arrow/arrow.obj" );
-//    mp_arrowObject->setObjectName( "Arrow" );
-//    mp_arrowObject->setVisible( true );
-//    mp_arrowObject->setScale( QVector3D( 0.2f, 0.2f, 0.2f ) );
 }
 
 void MainWindow::constructRGBViewer()
@@ -706,7 +609,7 @@ void MainWindow::constructRGBViewer()
     mp_rgbViewerWindow->setObjectName( "RGBView" );
     mp_rgbViewerWidget = QWidget::createWindowContainer( mp_rgbViewerWindow, this );
     mp_rgbViewerWidget->setWindowTitle( "RGBViewer" );
-    mp_rgbViewerWindow->getScene()->moveCamera( 0, 0, -4 );
+    mp_rgbViewerWindow->getScene()->moveCameraForward( -4.0f );
     ui->mdiArea->addSubWindow( mp_rgbViewerWidget );
     mp_rgbViewerWindow->setVisible( true );
 
@@ -722,7 +625,7 @@ void MainWindow::constructDepthViewer()
     mp_depthViewerWindow->setObjectName( "DeptViewer");
     mp_depthViewerWidget = QWidget::createWindowContainer( mp_depthViewerWindow, this );
     mp_depthViewerWidget->setWindowTitle( "DepthViewer" );
-    mp_depthViewerWindow->getScene()->moveCamera( 0, 0, -4 );
+    mp_depthViewerWindow->getScene()->moveCameraForward( -4.0f );
     ui->mdiArea->addSubWindow( mp_depthViewerWidget );
     mp_depthViewerWindow->setVisible( true );
 
@@ -730,12 +633,3 @@ void MainWindow::constructDepthViewer()
     mp_depthViewObject->setUseTexture( true );
     mp_depthViewObject->setTextureActive( 0, true );
 }
-
-void detect_blobs(Mat& current)
-{
-    cv::Mat grayFrame;
-    cv::cvtColor( current, grayFrame, COLOR_BGR2GRAY );
-    cv::SimpleBlobDetector detector;
-    //    detector.create( )
-}
-

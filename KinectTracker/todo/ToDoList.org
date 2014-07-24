@@ -23,21 +23,34 @@
       + [ ] Könnte Weichzeichnen die Ergebnisse der Rückprojektion verbessern?
   + [ ] <2014-07-21 Mo 15:00>
   
-* TODO [18/31][58%] Tasks
+* TODO [18/35][51%] Tasks
+  + [ ] Maussteuerung.
+  + [ ] Kinect Klasse aufräumen.
+  + [ ] UpperBoddySizeAnalyzer: Faktor bestimmen.
+  + [-] Falls keine Skelettinformationen vorhanden:
+    + [X] Untersuche die Joints des letztens Skeletts.
+    + [X] Untersuche die ganze letzte Region.
+    um den Kopf zu finden.
+    + [ ] Koordinaten des gefundenen Bereichs in den Skelettraum transformieren
+      und an den SizeAnalyser übergeben, um die Pose zu klassifizieren. Checke ob 
+      die gefundenen Koordinaten in der letzten BoundingBox liegen.
   + [ ] Pfeil für die Bewegungsrichtung wieder einschalten.
   + [-] Detektion des Bodens.
     + [ ] Mittels PCL
     + [ ] Manuelle Einstellung, falls die anderen Methoden versagen.
-    + [X] Kinect 
-  + [ ] Kopfhistogram-Backprojection über alle Gelenke ausführen, wenn die Person liegt, um das
-    Gesicht zu finden.
+      Problem: Gimbal-Lock mit Roll/Pitch/Yaw wenn die Ebene nach dem Normalenvektor ausgerichtet
+      werden soll -> Quartanionen.
+    + [X] Mittels Kinect SDK  http://msdn.microsoft.com/en-us/library/hh973078.aspx
   + [ ] Backprojection für alle Gelenke, wenn die Person liegt (evtl. hat die Person markante 
-    Kleidung an, was die ermöglicht).
+   Kleidung an, was die ermöglicht).
   + [-] Zusätzliches Kriterium für liegend:
     + [X] Abstand zwischen den Füßen und dem Kopf berechnen.
     + [ ] Threshold ermitteln.
-    + [ ] Herausfinden, wann die Füße nicht mehr getrackt werden.
-    + [ ] Unterschied zu den Fußgelenken untersuchen.
+  + [ ] Umbenennung:
+    + [ ] BoundingGeometry -> Geometry
+    + [ ] BoudingBox -> Cube
+    + [ ] BoundingSphere -> Sphere
+    + [ ] BoundingGeometryWithTimestamp -> GeometryWithTimestamp
   + [ ] Skalierung des getrackten Bereiches, wenn sich der Mensch der Kamera nähert.
   + [-] [50%] Features für den Analysedialog
     + [X] [100%] Funktionen:
@@ -54,14 +67,14 @@
   + [ ] Berechnung dafür, ob der Oberkörper aufrecht ist ( über Winkel ) vs. Länge der Glieder.
   + [ ] Infrarotdaten anschauen - IR anschauen ( Auflösung 640*480 )
     http://msdn.microsoft.com/en-us/library/jj663865.aspx
-  + [ ] Biete  Möglichkeit die Bewegungsrichtung und die Geschwindigkeit zu ermitteln durch Kugeln berechnen
+  + [X] Biete  Möglichkeit die Bewegungsrichtung und die Geschwindigkeit zu ermitteln durch Kugeln berechnen
     zu lassen
-  + [-] Zusätzliche Feature [1/6][16%]
+  + [-] Zusätzliche Feature [2/6][33%]
     + [ ] Speichernfunktion für ProcessingComponents und ProcessingPipeline
     + [X] Pause/Wiedergabe des Streams.
     + [ ] Schließen der Windows ermöglichen
     + [ ] Verbindungsdialog zu Kinect / USB-Kamera fertig stellen
-    + [ ] Affine Transformation ausbessern
+    + [X] Affine Transformation ausbessern
     + [ ] Skelett Merkmalsvektor berechnen
   + [X] Farbhistogramm für Gelenke und Gesicht berechnen.
     Für das Gesicht gibt es 3 Möglichkeiten:
@@ -101,10 +114,6 @@
     falls sie die Größe überschreiten (Cropping).
   + [X] Abastand von Boden zu Kopf kontinuierlich berechnen.
     [[http://www.frustfrei-lernen.de/mathematik/abstand-punkt-zu-ebene.html][Gleichung: Abstand Punkt zur Ebene]]
-  + [X] Ebene für den Boden schätzen mittels PCL Lib.
-    Brauch nicht über die PCL Lib gemacht werden, da die Kinect selber eine 
-    Funktion dafür bereitstellt.
-    http://msdn.microsoft.com/en-us/library/hh973078.aspx
   + [X] Ersetze unsichere Array Kopierfunktion durch eine sichere.
   + [X] Meldung wenn der Benutzer zu nahe an der Kamera ist.
   + [X] SceneGraph anpassen.

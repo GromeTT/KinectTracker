@@ -1,6 +1,8 @@
 #include "../inc/Kinect.h"
 #include "../inc/SkeletonData.h"
+#include "../../../QtPrintFunctions.h"
 #include <QSize>
+#include <QPoint>
 #include <QImage>
 #include <QColor>
 #include <QDebug>
@@ -24,6 +26,7 @@ Kinect::Kinect()
     , m_b( 0 )
     , m_c( 0 )
     , m_d( 0 )
+    , mp_lastDepthPixelImage( nullptr )
 {
 }
 
@@ -150,6 +153,8 @@ HRESULT Kinect::openDepthStream( NUI_IMAGE_RESOLUTION resolution,
             m_deptStreamOpen = true;
             setSize( m_depthStreamResolution, resolution );
         }
+        const int size = depthStreamResolution().width() * depthStreamResolution().height() ;
+        mp_lastDepthPixelImage = new NUI_DEPTH_IMAGE_PIXEL[size];
         return res;
 
     }
@@ -206,7 +211,7 @@ HRESULT Kinect::getRGBImage( QImage*& img )
         }
     }
     texture->UnlockRect( 0 );
-    res = mp_sensor->NuiImageStreamReleaseFrame( m_rgbHandle, &imageFrame ); // Deletes the frame data
+    res = mp_sensor->NuiImageStreamReleaseFrame( m_rgbHandle, &imageFrame ); // Delete frame data
 
     return res;
 }
@@ -241,14 +246,11 @@ HRESULT Kinect::getRGBImage( uchar* img )
         uchar* end  =  curr + ( m_rgbStreamResolution.width()*m_rgbStreamResolution.height()*4);
         while ( curr < end )
         {
-//            *curr++;
             *img++ = *curr++;
             *img++ = *curr++;
             *img++ = *curr++;
             curr++;
-
         }
-//        std::copy( curr, end, img ); // Fastes method
     }
     texture->UnlockRect( 0 );
     res = mp_sensor->NuiImageStreamReleaseFrame( m_rgbHandle, &imageFrame ); // Deletes the frame data
@@ -379,6 +381,7 @@ HRESULT Kinect::getDepthImageAsGreyImage( uchar* img )
 
 HRESULT Kinect::getDepthImage( std::vector<ushort>& depthData )
 {
+    delete [] mp_lastDepthPixelImage;
     NUI_IMAGE_FRAME imageFrame;
     NUI_LOCKED_RECT LockedRect;
     HRESULT res;
@@ -411,7 +414,7 @@ HRESULT Kinect::getDepthImage( std::vector<ushort>& depthData )
 }
 
 
-HRESULT Kinect::getDepthImage(ushort* img )
+HRESULT Kinect::getDepthImage( ushort* img )
 {
     NUI_IMAGE_FRAME imageFrame;
     NUI_LOCKED_RECT LockedRect;
@@ -424,9 +427,11 @@ HRESULT Kinect::getDepthImage(ushort* img )
     texture->LockRect(0, &LockedRect, NULL, 0);
     if ( LockedRect.Pitch != 0 )
     {
+        const int size = m_depthStreamResolution.width() * m_depthStreamResolution.height();
 
+        memcpy( mp_lastDepthPixelImage, LockedRect.pBits, size );
         const USHORT* curr = ( const USHORT* ) LockedRect.pBits;
-        const USHORT* dataEnd = curr + ( m_depthStreamResolution.width() * m_depthStreamResolution.height() );
+        const USHORT* dataEnd = curr + ( size );
         int i = -1;
         while ( curr < dataEnd )
         {
@@ -507,6 +512,57 @@ QVector4D Kinect::planeCoefficients() const
                       m_d );
 }
 
+/*!
+   \brief Kinect::transformFromRGBToSkeleton
+   Transforms the coordinates in the rgb image defined by \a rgbCoordinates into skeleton space
+   and saves them into \a skeltenCoordinates.
+ */
+bool Kinect::transformFromRGBToSkeleton( const QPoint& rgbCoordinates, QVector3D& skeletonCoordinates )
+{
+    qDebug() << "RGB to Skeleton";
+    if ( !mp_lastDepthPixelImage )
+    {
+        return false;
+    }
+    const int size = 640*480;
+    INuiCoordinateMapper* mapper;
+    if  ( mp_sensor->NuiGetCoordinateMapper( &mapper ) != S_OK )
+    {
+        return false;
+    }
+    Vector4* points = new Vector4[size];
+    // http://msdn.microsoft.com/en-us/library/jj883689.aspx
+    mapper->MapColorFrameToSkeletonFrame( NUI_IMAGE_TYPE_COLOR,         // color encoding scheme of color frame
+                                          NUI_IMAGE_RESOLUTION_640x480, // resolution color image
+                                          NUI_IMAGE_RESOLUTION_640x480, // resolution depth image
+                                          size,                         // number of elements in the array of depth pixels
+                                          mp_lastDepthPixelImage,       // depth frame pixel data
+                                          size,                         // number of depth points
+                                          points );                     // output: depth pixels
+    int index = rgbCoordinates.y() * 640 + rgbCoordinates.x();
+    Q_ASSERT( index < size );
+    Vector4 vec = points[index];
+    skeletonCoordinates.setX( vec.x );
+    skeletonCoordinates.setY( vec.y );
+    skeletonCoordinates.setZ( vec.z );
+    mapper->Release();
+    printVector3D( skeletonCoordinates, "Mapped head" );
+    delete [] points;
+    return true;
+}
+
+/*!
+   \brief Kinect::transformFromRGBToSkeleton
+   \overload inect::transformFromRGBToSkeleton( const QPoint& rgbCoordinates, QVector3D& skeletonCoordinates )
+{
+ */
+bool Kinect::transformFromRGBToSkeleton( const int x,
+                                         const int y,
+                                         QVector3D& skeletonCoordinates )
+{
+    return transformFromRGBToSkeleton( QPoint( x , y ), skeletonCoordinates );
+}
+
 void Kinect::setSize(QSize& size, NUI_IMAGE_RESOLUTION resolution)
 {
     switch ( resolution )
@@ -566,3 +622,4 @@ QPoint transformFromSkeltonToRGB( const QVector3D& coordinates )
                                                     &y );
     return QPoint( x, y );
 }
+

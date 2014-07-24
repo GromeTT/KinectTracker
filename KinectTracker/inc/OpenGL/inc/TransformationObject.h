@@ -28,6 +28,9 @@ public:
     void setScaleZ( const float zScale );
     void setScale( const float x, const float y, const float z );
     void setVisible( const bool visible );
+    void setForward( const QVector3D& lookAt );
+    void setUp( const QVector3D& up );
+    void updateOrientation();
 
     float             x() const;
     float             y() const;
@@ -40,9 +43,13 @@ public:
     float             scaleZ() const;
     bool              visible() const;
     const QMatrix4x4& getModelMatrix() const;
+    QVector3D         forward() const;
+    QVector3D         up() const;
+    QVector3D         right() const;
 
 private:
     mutable QMatrix4x4    m_modelMatrix;
+    QMatrix4x4            m_rot;
     TransformationObject* mp_parent;
     mutable bool          m_recalculateMatrix;
     bool                  m_visible;
@@ -55,6 +62,9 @@ private:
     float                 m_xScale;
     float                 m_yScale;
     float                 m_zScale;
+    QVector3D             m_forward;
+    QVector3D             m_up;
+    QVector3D             m_right;
 
 signals:
     void xChanged();

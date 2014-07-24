@@ -10,7 +10,7 @@ namespace AMath
 
     float radToDegF( const float rad );
     double radToDegD( const double rad );
-
+    void anglesFromSphericalCoordinates( float& phi, float& theta, const QVector3D& direction );
 
     /**************************************************************************************************************************
      **************************************************************************************************************************

@@ -32,7 +32,7 @@ MovementAnalyzer::~MovementAnalyzer()
 void MovementAnalyzer::analyze( const SkeletonDataPtr& skeleton,
                                 const unsigned int timestamp )
 {
-    anaylzeV( skeleton, timestamp );
+    analyzeV( skeleton, timestamp );
     calculateOriantationAndVelocity( timestamp );
     m_dataAvaibale = true;
 }
@@ -205,8 +205,8 @@ void MovementAnalyzer::calculateOriantationAndVelocity( const int timestamp )
                              m_boudingGeometries.first()->m_geometry->z() - m_boudingGeometries.at( i )->m_geometry->z() );
             m_velocity =  diff.length();
             emit veloctiyChanged();
-            // http://de.wikipedia.org/wiki/Polarkoordinaten
-            m_yaw = AMath::radToDegF( atan2( diff.z(), diff.x() ) );
+
+            AMath::anglesFromSphericalCoordinates( m_yaw, m_pitch, diff );
             emit yawChanged();
         }
     }

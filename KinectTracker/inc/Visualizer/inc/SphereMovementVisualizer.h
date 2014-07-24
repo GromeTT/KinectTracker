@@ -1,14 +1,16 @@
-#ifndef SPHEREMOVEMENTANALYZER_H
-#define SPHEREMOVEMENTANALYZER_H
+#ifndef SPHEREMOVEMENTVISUALIZER_H
+#define SPHEREMOVEMENTVISUALIZER_H
 
 #include "Visualizer.h"
 #include "../../Analyzer/inc/SphereMovementAnalyzer.h"
 
-class SphereMovementVisualizer : public Visualizer
+class RenderObject;
+
+class SphereMovementVisualizer: public Visualizer
 {
 public:
     SphereMovementVisualizer( SphereMovementAnalyzerPtr& movementAnalyzer,
-                              QOpenGLWindow* window );
+                              OpenGLWindow* window );
     virtual ~SphereMovementVisualizer();
 
 private:
@@ -18,4 +20,4 @@ private:
     SphereMovementAnalyzerPtr m_sphereMovementAnalyzer;
 };
 
-#endif // SPHEREMOVEMENTANALYZER_H
+#endif // SPHEREMOVEMENTVISUALIZER_H

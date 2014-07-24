@@ -93,7 +93,7 @@ void TransformationObject::setRoll( const float roll )
 void TransformationObject::setPitch( const float pitch )
 {
     m_recalculateMatrix = true;
-    m_pitch += pitch;
+    m_pitch = pitch;
 }
 
 void TransformationObject::setYaw( const float yaw )
@@ -136,6 +136,12 @@ void TransformationObject::setVisible( const bool visible )
     {
         m_visible = visible;
     }
+}
+
+void TransformationObject::updateOrientation()
+{
+    m_rot.setToIdentity();
+    m_rot.rotate( m_roll, m_forward );
 }
 
 float TransformationObject::x() const
@@ -211,5 +217,20 @@ const QMatrix4x4& TransformationObject::getModelMatrix() const
         m_recalculateMatrix = false;
     }
     return m_modelMatrix;
+}
+
+QVector3D TransformationObject::forward() const
+{
+    return m_forward;
+}
+
+QVector3D TransformationObject::up() const
+{
+    return m_up;
+}
+
+QVector3D TransformationObject::right() const
+{
+    return m_right;
 }
 

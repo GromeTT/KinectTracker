@@ -48,7 +48,6 @@ void SkinColorDetector::detect( cv::Mat& img )
     {
         rectangle( histImg, cv::Point( i*bin_w, h ), cv::Point( (i+1)*bin_w, h - cvRound( hist.at<float>(i)*h/255.0 ) ), cv::Scalar( 0, 0, 255 ), -1 );
     }
-
 //    imshow( "Histogram", histImg );
 }
 

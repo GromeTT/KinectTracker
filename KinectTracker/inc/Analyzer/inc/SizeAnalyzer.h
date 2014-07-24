@@ -29,8 +29,10 @@ public:
     void setKneelingThreshold( const float threshold );
     void setLyingThreshold( const float threshold );
     void setWorkerStatus( const WorkerStatus status );
+    void calculateDistanceFromFloorToHead( const QVector3D& headCoordinates );
     void reset();
 
+    bool         setPlaneCoefficients( const QVector4D& coefficients );
     float        estimatedBodySize() const;
     float        currentBodySize() const;
     float        kneelingThreshold() const;
@@ -58,6 +60,8 @@ private:
     virtual void resetV() = 0;
 
     QVector4D m_planeCoefficients;
+    QVector3D m_planeNormalVector;
+    QVector3D m_pointInPlane;
     bool      m_floorInitialized;
 
 signals:

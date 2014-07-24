@@ -4,6 +4,7 @@
 #include <QSharedPointer>
 
 class OpenGLWindow;
+class RenderObject;
 
 class Visualizer
 {
@@ -18,6 +19,7 @@ private:
 
 protected:
     OpenGLWindow* mp_window;
+    RenderObject* mp_arrow;
 };
 
 typedef QSharedPointer<Visualizer> VisualizerPtr;

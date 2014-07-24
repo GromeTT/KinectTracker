@@ -53,12 +53,6 @@ void UpperBodySizeAnalyzer::analyzeV( const SkeletonDataPtr& skeletonData )
         // case: The body size of the worker hasn't been estimated yet.
         estimateBodySize( skeletonData );
     }
-    else
-    {
-        // case: Classify worker pose.
-
-        // TODO: Implement
-    }
 }
 
 /*!
@@ -81,9 +75,7 @@ void UpperBodySizeAnalyzer::estimateBodySize( const SkeletonDataPtr& skeletonDat
 
         m_estimatedBodySize = 0;
         m_estimatedBodySize += ( skeletonData->getJoint( SkeletonData::Joints::Hip) - skeletonData->getJoint( SkeletonData::Joints::Spine) ).length();
-        qDebug() <<  m_estimatedBodySize;
         m_estimatedBodySize += ( skeletonData->getJoint( SkeletonData::Joints::ShoulderCenter) - skeletonData->getJoint( SkeletonData::Joints::Spine) ).length();
-        qDebug() <<  m_estimatedBodySize;
         m_estimatedBodySize = m_bodyPropotionFactor * m_estimatedBodySize;
         setWorkerStatus( WorkerStatus::Standing );
         emit estimatedBodySizeChanged();

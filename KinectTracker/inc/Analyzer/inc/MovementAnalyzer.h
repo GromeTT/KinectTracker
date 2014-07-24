@@ -35,7 +35,7 @@ public:
     QString                                          viewingDirection() const;
 
 private:
-    virtual void anaylzeV( const SkeletonDataPtr skeleton,
+    virtual void analyzeV( const SkeletonDataPtr skeleton,
                            const unsigned int timestamp ) = 0;
     virtual void resetV() = 0;
     void calculateOriantationAndVelocity( const int timestamp );

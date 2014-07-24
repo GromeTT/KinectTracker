@@ -57,7 +57,7 @@ float BBMovementAnalyzer::deltaZ() const
    \brief BBMovementAnalyzer::anaylzeV
    \see MovementAnalyzer::analyze
  */
-void BBMovementAnalyzer::anaylzeV( const SkeletonDataPtr skeleton ,
+void BBMovementAnalyzer::analyzeV( const SkeletonDataPtr skeleton ,
                                    const unsigned int timestamp )
 {
     // Store the lower body parts into a vector.

@@ -1,8 +1,9 @@
-#ifndef CAMERA_H
+ #ifndef CAMERA_H
 #define CAMERA_H
 
 #include <QObject>
 #include <QMatrix4x4>
+#include <QVector3D>
 
 class Camera : public QObject
 {
@@ -14,21 +15,18 @@ public:
     void setX( const float x );
     void setY( const float y );
     void setZ( const float z );
-    void moveX( const float x );
-    void moveY( const float y );
-    void moveZ( const float z );
+    void moveForward( const float distance );
+    void stride( const float distance );
+    void moveToPosition( const float x,
+                         const float y,
+                         const float z );
+    void moveUp( const float distance );
     void setRoll( const float roll );
     void setPitch( const float pitch );
     void setYaw( const float yaw );
     void roll( const float angle );
     void pitch( const float angle );
     void yaw( const float angle );
-    void move( const float x,
-               const float y,
-               const float z );
-    void moveToPosition( const float x,
-                         const float y,
-                         const float z );
 
     float x() const;
     float y() const;
@@ -47,6 +45,8 @@ signals:
     void yawChanged();
 
 private:
+    void updateOrientation();
+
     float m_x;
     float m_y;
     float m_z;
@@ -54,7 +54,12 @@ private:
     float m_pitch;
     float m_yaw;
     mutable QMatrix4x4 m_cameraMatrix;
+    QMatrix4x4 m_rotationMatrix;
     mutable bool m_recalculateMatrix;
+    QVector3D m_position;
+    QVector3D m_forward;
+    QVector3D m_up;
+    QVector3D m_right;
 
 
     Q_PROPERTY( float x MEMBER m_x

@@ -42,6 +42,11 @@ QObject* LowLevelProcessingPipeline::getObjectByName( const QString& name )
     return nullptr;
 }
 
+cv::Mat* LowLevelProcessingPipeline::getProcessedImage()
+{
+    return nullptr;
+}
+
 void LowLevelProcessingPipeline::registerComponent( ProcessingComponent* component,
                                                     const bool recursive )
 {
@@ -227,12 +232,12 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
         qWarning() << QStringLiteral( "SkinColorExplicitDefinedSkinRegionDetctionPipeline only supports CV_8UC3 as cv:: Mat type." );
         return;
     }
-
+    m_processedImage = cv::Mat( input.rows, input.cols, CV_8UC1 );
     // Reset counters
     m_absoluteFrequency = 0;
-//    cv::imshow( "Original", input );
     for ( int i = 0; i < input.rows; ++i )
     {
+        int k = 0;
         for ( int j = 0; j < input.cols * input.channels(); j += 3 )
         {
             uchar b = input.at<uchar>( i, j );   // blue channel of the pixel
@@ -247,20 +252,16 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
                  r <= g ||
                  g < b )
             {
-                input.at<uchar>( i, j )   = 0;
-                input.at<uchar>( i, j+1 ) = 0;
-                input.at<uchar>( i, j+2 ) = 0;
+                m_processedImage.at<uchar>( i, k ) = 0;
             }
             else
             {
-                input.at<uchar>( i, j )   = 255;
-                input.at<uchar>( i, j+1 ) = 255;
-                input.at<uchar>( i, j+2 ) = 255;
+                m_processedImage.at<uchar>( i, k ) = 255;
                 ++m_absoluteFrequency;
             }
+            ++k;
         }
     }
-//    cv::imshow( "Skin", input );
 }
 
 /*!
@@ -270,6 +271,15 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
 int SkinColorExplicitDefinedSkinRegionDetectionPipeline::absoluteFrequency()
 {
     return m_absoluteFrequency;
+}
+
+/*!
+   \brief SkinColorExplicitDefinedSkinRegionDetectionPipeline::getProcessedImage
+   Returns the filtered image.
+ */
+cv::Mat* SkinColorExplicitDefinedSkinRegionDetectionPipeline::getProcessedImage()
+{
+    return& m_processedImage;
 }
 
 /**************************************************************************************************************************
@@ -321,13 +331,12 @@ SkinColorHistogramDetectionPipeline::~SkinColorHistogramDetectionPipeline()
  */
 void SkinColorHistogramDetectionPipeline::process( cv::Mat& input )
 {
-    cv::MatND backprojection;
     const float* range = { m_ranges };
-    cv::calcBackProject( &input, 1, &m_channels[0], m_histogram, backprojection, &range, 1, true );
-    cv::imshow( "Backprojection", backprojection );
-    cv::threshold( backprojection, backprojection, m_threshold, 255, cv::THRESH_BINARY );
-    cv::imshow( "Threshold", backprojection );
-    m_nonZeroPixels = cv::countNonZero( backprojection );
+    cv::calcBackProject( &input, 1, &m_channels[0], m_histogram, m_backprojection, &range, 1, true );
+//    cv::imshow( "Backprojection", m_backprojection );
+    cv::threshold( m_backprojection, m_backprojection, m_threshold, 255, cv::THRESH_BINARY );
+//    cv::imshow( "Threshold", backprojection );
+    m_nonZeroPixels = cv::countNonZero( m_backprojection );
     emit nonZeroPixelsChanged();
     m_nonZeroRelativeFrequency = (float) m_nonZeroPixels / (float)( input.rows + input.cols );
     emit nonZeroRelativeFrequencyChanged();
@@ -451,6 +460,11 @@ float SkinColorHistogramDetectionPipeline::nonZeroRelativeFrequency() const
 void SkinColorHistogramDetectionPipeline::reset()
 {
     m_initialized = false;
+}
+
+cv::Mat*SkinColorHistogramDetectionPipeline::getProcessedImage()
+{
+    return &m_backprojection;
 }
 
 

@@ -40,9 +40,9 @@ public:
     void moveCameraToPosition( const float x,
                                const float y,
                                const float z );
-    void moveCamera( const float x,
-                     const float y,
-                     const float z );
+    void moveCameraForward( const float distance );
+    void strideCamera( const float distance );
+    void moveCameraUp( const float distance );
     void setCameraRoll( const float angle );
     void rollCamera( const float angle );
     void setCameraPitch( const float angle );
@@ -54,6 +54,7 @@ public:
                         const float b,
                         const float c,
                         const float d );
+    Floor* createFloor( const float x, const float y, const float z );
     void takeSnapshot();
 
     QOpenGLShaderProgram*        getShaderProgram( const unsigned short i ) const;

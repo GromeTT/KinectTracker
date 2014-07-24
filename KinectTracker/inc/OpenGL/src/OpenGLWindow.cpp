@@ -89,35 +89,35 @@ void OpenGLWindow::keyPressEvent(QKeyEvent* event)
 
     if ( event->key() == Qt::Key_Right )
     {
-        m_scene->moveCamera( -stepSize, 0, 0 );
+        m_scene->strideCamera( stepSize );
     }
     if ( event->key() == Qt::Key_Left)
     {
-        m_scene->moveCamera( stepSize, 0, 0 );
+        m_scene->strideCamera( -stepSize );
     }
     if ( event->key() == Qt::Key_Up )
     {
-        m_scene->moveCamera( 0, -stepSize, 0 );
+        m_scene->moveCameraForward( stepSize );
     }
     if ( event->key() == Qt::Key_Down )
     {
-        m_scene->moveCamera( 0, stepSize, 0 );
+        m_scene->moveCameraForward( -stepSize );
     }
     if ( event->key() == Qt::Key_Minus )
     {
-        m_scene->moveCamera( 0, 0, -stepSize );
+        m_scene->moveCameraUp( -stepSize );
     }
     if ( event->key() == Qt::Key_Plus )
     {
-        m_scene->moveCamera( 0, 0, stepSize );
+        m_scene->moveCameraUp( stepSize );
     }
     if ( event->key() == Qt::Key_Q )
     {
-        m_scene->yawCamera( -angle );
+        m_scene->yawCamera( angle );
     }
     if ( event->key() == Qt::Key_R )
     {
-        m_scene->yawCamera( angle );
+        m_scene->yawCamera( -angle );
     }
     if ( event->key() == Qt::Key_W)
     {

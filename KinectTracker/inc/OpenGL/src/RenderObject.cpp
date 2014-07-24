@@ -242,8 +242,8 @@ void RenderObject::renderV( const QMatrix4x4& projection,
         glPolygonMode( GL_BACK, GL_FILL );
     }
 
-    mp_shaderProgram->setUniformValue( "viewMatrix", view );
     mp_shaderProgram->setUniformValue( "projectionMatrix", projection );
+    mp_shaderProgram->setUniformValue( "viewMatrix", view );
     mp_shaderProgram->setUniformValue( "modelMatrix", getModelMatrix() );
     mp_shaderProgram->setUniformValue( "useTexture", m_activeTextures.at( 0 ) );
     mp_shaderProgram->setUniformValue( "useSecondTexture", m_activeTextures.at( 1 ) );

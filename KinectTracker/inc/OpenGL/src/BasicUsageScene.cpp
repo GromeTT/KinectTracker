@@ -70,6 +70,11 @@ void BasicUsageScene::render()
         RenderObjectInterface* object = m_renderObjects.at( i );
         object->render( m_projectionMatrix,
                         m_camera.cameraMatrix() );
+        Floor* f = dynamic_cast<Floor*>( object );
+        if ( f )
+        {
+            f->planeCoefficients();
+        }
     }
 }
 
@@ -94,20 +99,20 @@ void BasicUsageScene::moveCameraToPosition( const float x,
     m_camera.moveToPosition( x, y, z );
 }
 
-/**
- * @brief BasicUsageScene::moveCamera
- * Moves the camera by \a x, \a y, \a z units.
- * @param x
- * @param y
- * @param z
- */
-void BasicUsageScene::moveCamera( const float x,
-                                  const float y,
-                                  const float z )
+void BasicUsageScene::moveCameraForward( const float distance )
 {
-    m_camera.moveX( x );
-    m_camera.moveY( y );
-    m_camera.moveZ( z );
+    m_camera.moveForward( distance );
+}
+
+void BasicUsageScene::strideCamera( const float distance )
+{
+    m_camera.stride( distance );
+
+}
+
+void BasicUsageScene::moveCameraUp( const float distance )
+{
+    m_camera.moveUp( distance );
 }
 
 void BasicUsageScene::setCameraRoll( const float angle )
@@ -388,6 +393,19 @@ Floor* BasicUsageScene::createFloor( const float a,
     floor->setShaderProgram( m_shaderPrograms.at( 0 ) );
     m_renderObjects << floor;
     return floor;
+}
+
+Floor* BasicUsageScene::createFloor( const float x, const float y, const float z )
+{
+    if ( x == 0 && y == 0 && z == 0 )
+    {
+        return nullptr;
+    }
+    mp_window->makeContextCurrent();
+    Floor* f = new Floor( x, y, z );
+    f->setShaderProgram( m_shaderPrograms.at( 0 ) );
+    m_renderObjects << f;
+    return f;
 }
 
 void BasicUsageScene::takeSnapshot()

@@ -1,5 +1,5 @@
 #include "../inc/Camera.h"
-
+#include <QDebug>
 
 Camera::Camera()
     : m_x( 0.0f )
@@ -9,6 +9,10 @@ Camera::Camera()
     , m_pitch( 0.0f )
     , m_yaw( 0.0f )
     , m_recalculateMatrix( true )
+    , m_position( 0.0f, 0.0f, 0.0f )
+    , m_forward( 0.0f, 0.0f, -1.0f  ) // Looks
+    , m_right( 1.0f, 0.0f, 0.0f  )
+    , m_up( 0.0f, 1.0f, 0.0f )
 
 {
     setObjectName( "Camera" );
@@ -22,88 +26,63 @@ Camera::~Camera()
 
 void Camera::setX( const float x )
 {
-    if ( m_x != x )
-    {
-        m_x = x;
-        m_recalculateMatrix = true;
-        emit xChanged();
-    }
-}
-
-void Camera::setY( const float y )
-{
-    if ( m_y != y )
-    {
-        m_y = y;
-        m_recalculateMatrix = true;
-        emit yChanged();
-    }
-}
-
-void Camera::setZ( const float z )
-{
-    if ( m_z != z )
-    {
-        m_z = z;
-        m_recalculateMatrix = true;
-        emit zChanged();
-    }
-}
-
-void Camera::moveX( const float x )
-{
-    m_x += x;
+    m_x = x;
     m_recalculateMatrix = true;
     emit xChanged();
 }
 
-void Camera::moveY( const float y )
+void Camera::setY( const float y )
 {
-    m_y += y;
+    m_y = y;
     m_recalculateMatrix = true;
     emit yChanged();
 }
 
-void Camera::moveZ( const float z )
+void Camera::setZ( const float z )
 {
-    m_z += z;
+    m_z = z;
     m_recalculateMatrix = true;
     emit zChanged();
 }
 
+/*!
+   \brief Camera::moveForward
+   Moves the camerea by \a distance into the looking direction.
+ */
+void Camera::moveForward( const float distance )
+{
+    m_position += m_forward * distance;
+    m_recalculateMatrix = true;
+}
+
 void Camera::setRoll( const float roll )
 {
-    if ( m_roll != roll )
-    {
-        m_roll = roll;
-        m_recalculateMatrix = true;
-        emit rollChanged();
-    }
+    m_roll = roll;
+    updateOrientation();
+    m_recalculateMatrix = true;
+    emit rollChanged();
 }
 
 void Camera::setPitch( const float pitch )
 {
-    if ( m_pitch != pitch )
-    {
-        m_pitch = pitch;
-        m_recalculateMatrix = true;
-        emit pitchChanged();
-    }
+    m_pitch = pitch;
+    updateOrientation();
+    m_recalculateMatrix = true;
+    emit pitchChanged();
 }
 
 void Camera::setYaw( const float yaw )
 {
-    if ( m_yaw != yaw)
-    {
-        m_yaw = yaw;
-        m_recalculateMatrix = true;
-        emit yawChanged();
-    }
+    m_yaw = yaw;
+    updateOrientation();
+    m_recalculateMatrix = true;
+    emit yawChanged();
 }
 
 void Camera::roll( const float angle )
 {
     m_roll += angle ;
+    updateOrientation();
     m_recalculateMatrix = true;
     emit rollChanged();
 }
@@ -111,6 +90,7 @@ void Camera::roll( const float angle )
 void Camera::pitch( const float angle )
 {
     m_pitch += angle ;
+    updateOrientation();
     m_recalculateMatrix = true;
     emit pitchChanged();
 }
@@ -118,17 +98,9 @@ void Camera::pitch( const float angle )
 void Camera::yaw( const float angle )
 {
     m_yaw += angle ;
+    updateOrientation();
     m_recalculateMatrix = true;
     emit yawChanged();
-}
-
-void Camera::move( const float x,
-                   const float y,
-                   const float z )
-{
-    moveX( x );
-    moveY( y );
-    moveZ( z );
 }
 
 void Camera::moveToPosition( const float x,
@@ -138,6 +110,18 @@ void Camera::moveToPosition( const float x,
     setX( x );
     setY( y );
     setZ( z );
+}
+
+void Camera::moveUp( const float distance )
+{
+    m_position += m_up * distance;
+    m_recalculateMatrix = true;
+}
+
+void Camera::stride( const float distance )
+{
+    m_position += m_right * distance;
+    m_recalculateMatrix = true;
 }
 
 float Camera::x() const
@@ -175,13 +159,27 @@ const QMatrix4x4& Camera::cameraMatrix() const
     if ( m_recalculateMatrix )
     {
         m_cameraMatrix.setToIdentity();
-        m_cameraMatrix.rotate( m_roll, 0.0f, 0.0f, 1.0f );
-        m_cameraMatrix.rotate( m_yaw, 0.0f, 1.0f, 0.0f );
-        m_cameraMatrix.rotate( m_pitch, 1.0f, 0.0f, 0.0f );
-        QMatrix4x4 translation;
-        translation.translate( m_x, m_y, m_z );
-        m_cameraMatrix = m_cameraMatrix * translation;
+        m_cameraMatrix.translate( m_position );
+        m_cameraMatrix = m_cameraMatrix * m_rotationMatrix;
+        m_cameraMatrix = m_cameraMatrix.inverted();  // From camera matrix to view matrix.
         m_recalculateMatrix = false;
     }
     return m_cameraMatrix;
+}
+
+void Camera::updateOrientation()
+{
+    m_rotationMatrix.setToIdentity();
+    m_rotationMatrix.rotate( m_roll, 0, 0, 1 );
+    m_rotationMatrix.rotate( m_pitch, 1, 0, 0 );
+    m_rotationMatrix.rotate( m_yaw, 0, 1, 0 );
+
+    // TODO: Optimize this.
+    m_forward = m_rotationMatrix * QVector3D( 0, 0, -1 );
+    m_up      = m_rotationMatrix * QVector3D( 0, 1, 0 );
+    m_right   = m_rotationMatrix * QVector3D( 1, 0, 0 );
+
+    m_forward.normalize();
+    m_up.normalize();
+    m_right.normalize();
 }

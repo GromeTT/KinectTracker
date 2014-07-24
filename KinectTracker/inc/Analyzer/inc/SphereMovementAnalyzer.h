@@ -2,6 +2,7 @@
 #define SPHEREMOVEMENTANALYZER_H
 
 #include "MovementAnalyzer.h"
+#include <QVector3D>
 
 class SphereMovementAnalyzer : public MovementAnalyzer
 {
@@ -12,18 +13,19 @@ public:
     virtual ~SphereMovementAnalyzer();
 
     void  setRadius( const float radius );
-    float radius() const;
+    float      radius() const;
+    QVector3D  position() const;
 
 signals:
     void radiusChanged();
 
 private:
-    virtual void analyzerV( const SkeletonDataPtr skeleton,
-                            const unsigned int timestamp );
+    virtual void analyzeV( const SkeletonDataPtr skeleton,
+                           const unsigned int timestamp );
     virtual void resetV();
 
-    float m_radius;
-    float m_radiusDelta;
+    float       m_radius;
+    QVector3D   m_position;
 
 private:
     Q_PROPERTY( float radius MEMBER m_radius

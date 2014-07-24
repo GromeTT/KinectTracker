@@ -1,5 +1,6 @@
 #include "../inc/HighLevelProcessingPipeline.h"
 #include "../../Analyzer/inc/BBMovementAnalyzer.h"
+#include "../../Analyzer/inc/SphereMovementAnalyzer.h"
 #include "../../Analyzer/inc/UpperBodySizeAnalyzer.h"
 #include "../../Analyzer/inc/BBSizeAnalyzer.h"
 #include "../../OpenGL/inc/ObjectLoader.h"
@@ -18,7 +19,7 @@ HighLevelProcessingPipeline::HighLevelProcessingPipeline( KinectPtr& kinect,
     : QObject( parent )
     , m_kinect( kinect )
     , m_depthProcessingPipeline( depthProcessingPipeline )
-    , m_movementAnalyzer( new BBMovementAnalyzer )
+    , m_movementAnalyzer( new SphereMovementAnalyzer )
     , m_sizeAnalyzer( new BBSizeAnalyzer )
     , m_skeletonAnalyzer( new SkeletonAnalyzer )
     , m_unableToTrackInARowCount( 0 )
@@ -245,7 +246,6 @@ void HighLevelProcessingPipeline::drawRegionOfInterest( const QRect& rect,
  */
 void HighLevelProcessingPipeline::enableProcessing( const bool arg )
 {
-    qDebug() << QString( "Set m_processingData %1 " ).arg( arg );
     m_processingEnabled = arg;
 }
 
