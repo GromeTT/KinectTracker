@@ -1,7 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.5)  31 JUL 2014 23:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.5)  2 AUG 2014 19:08
 entering extended mode
 **LS7-Abschlussarbeit.tex
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\LS7-Abschlussarbeit.tex
+
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\LS7-A
+bschlussarbeit.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -993,13 +995,20 @@ Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\LS7-Abschlussarbeit.aux
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/titelseite.aux)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/notation.aux)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/einleitung.aux)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/kapitel2.aux)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/kapitel3.aux)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/anhang.aux))
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\LS7-A
+bschlussarbeit.aux
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/titelseite.aux)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/notation.aux)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/einleitung.aux)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/kapitel2.aux)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/kapitel3.aux)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/anhang.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 225.
 LaTeX Font Info:    ... okay on input line 225.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 225.
@@ -1045,8 +1054,10 @@ LaTeX Info: Redefining \ref on input line 225.
 LaTeX Info: Redefining \pageref on input line 225.
 LaTeX Info: Redefining \nameref on input line 225.
 
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\LS7-Abschlussarbeit.out)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\LS7-Abschlussarbeit.out)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\LS7-A
+bschlussarbeit.out)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\LS7-A
+bschlussarbeit.out)
 \@outlinefile=\write3
 
 
@@ -1095,8 +1106,8 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count159
 Package scrhack Info: undefining \float@addtolists on input line 225.
 
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/titelseite.tex
-<bilder/tud_logo_cmyk.pdf, id=59, 338.90414pt x 54.59576pt>
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/titelseite.tex <bilder/tud_logo_cmyk.pdf, id=90, 338.90414pt x 54.59576pt>
 File: bilder/tud_logo_cmyk.pdf Graphic file (type pdf)
 
 <use bilder/tud_logo_cmyk.pdf>
@@ -1121,7 +1132,7 @@ LaTeX Font Info:    Try loading font information for T1+aess on input line 13.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aess.fd"
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
-<bilder/fi_text.pdf, id=60, 255.95625pt x 18.0675pt>
+<bilder/fi_text.pdf, id=91, 255.95625pt x 18.0675pt>
 File: bilder/fi_text.pdf Graphic file (type pdf)
  <use bilder/fi_text.pdf>
 Package pdftex.def Info: bilder/fi_text.pdf used on input line 19.
@@ -1227,9 +1238,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 
 
-{C:/Users/c3p0/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/c3p
-0/Desktop/Abschlussarbeit_Vorlage_LS7/bilder/tud_logo_cmyk.pdf> <C:/Users/c3p0/
-Desktop/Abschlussarbeit_Vorlage_LS7/bilder/fi_text.pdf>])
+{C:/Users/c3p0/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Projekte/
+C++/Kinect_Tracker/KinectTracker/Abschlussarbeit_Vorlage_LS7/bilder/tud_logo_cm
+yk.pdf> <C:/Projekte/C++/Kinect_Tracker/KinectTracker/Abschlussarbeit_Vorlage_L
+S7/bilder/fi_text.pdf>])
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\@alpha' on input line 230.
@@ -1256,16 +1268,18 @@ l.230 \pagestyle{empty} \cleardoublepage
 
 
 ]
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\LS7-Abschlussarbeit.toc)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\LS7-A
+bschlussarbeit.toc)
 \tf@toc=\write4
-
-[1
+ [1
 
 
 ] [2
 
 
-] (C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/notation.tex) [1
+]
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/notation.tex) [1
 
 
 
@@ -1274,19 +1288,14 @@ l.230 \pagestyle{empty} \cleardoublepage
 
 
 ]
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/einleitung.tex
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/einleitung.tex
 Kapitel 1.
 
-Package natbib Warning: Citation `Abramowski:1991' on page 3 undefined on input
- line 11.
+LaTeX Warning: Reference `Kapitel 2' on page 3 undefined on input line 12.
 
 
-Package natbib Warning: Citation `Abramowski:1991' on page 3 undefined on input
- line 11.
-
-
-Package natbib Warning: Citation `Muller:2011' on page 3 undefined on input lin
-e 11.
+LaTeX Warning: Reference `Kapitel 2' on page 3 undefined on input line 12.
 
 [3
 
@@ -1300,52 +1309,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-] (C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/kapitel2.tex
+]
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/kapitel2.tex
 Kapitel 2.
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 33.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\omsaer.fd"
-File: omsaer.fd 1999/12/27
-)
-LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
-
-
-Package natbib Warning: Citation `Abramowski:1991' on page 7 undefined on input
- line 48.
-
-[7
+) [7
 
 
 
-] <bilder/testbild.pdf, id=143, 179.03186pt x 126.69131pt>
-File: bilder/testbild.pdf Graphic file (type pdf)
+] [8
 
-<use bilder/testbild.pdf>
-Package pdftex.def Info: bilder/testbild.pdf used on input line 56.
-(pdftex.def)             Requested size: 143.22568pt x 101.35318pt.
-File: bilder/testbild.pdf Graphic file (type pdf)
- <use bilder/testbild.pdf>
-Package pdftex.def Info: bilder/testbild.pdf used on input line 60.
-(pdftex.def)             Requested size: 143.22568pt x 101.35318pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8]
-[9 <C:/Users/c3p0/Desktop/Abschlussarbeit_Vorlage_LS7/bilder/testbild.pdf>])
-[10] (C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/kapitel3.tex
+]
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/kapitel3.tex
 Kapitel 3.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 21.
-[11
-
-
-
+[9
 
 
 
 ] (C:\Users\c3p0\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
-) (C:\Users\c3p0\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+)
+(C:\Users\c3p0\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
 (C:\Users\c3p0\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
@@ -1502,9 +1491,10 @@ Class scrbook Warning: Usage of deprecated font command `\tt'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\tt'
 (scrbook)              by `\normalfont \ttfamily ' on input line 96.
 
-[12]
+[10] <bilder/testbild.pdf, id=223, 179.03186pt x 126.69131pt>
 File: bilder/testbild.pdf Graphic file (type pdf)
- <use bilder/testbild.pdf>
+
+<use bilder/testbild.pdf>
 Package pdftex.def Info: bilder/testbild.pdf used on input line 147.
 (pdftex.def)             Requested size: 143.22568pt x 101.35318pt.
 File: bilder/testbild.pdf Graphic file (type pdf)
@@ -1512,118 +1502,132 @@ File: bilder/testbild.pdf Graphic file (type pdf)
 Package pdftex.def Info: bilder/testbild.pdf used on input line 151.
 (pdftex.def)             Requested size: 143.22568pt x 101.35318pt.
 File: bilder/testbild.pdf Graphic file (type pdf)
-
-<use bilder/testbild.pdf>
+ <use bilder/testbild.pdf>
 Package pdftex.def Info: bilder/testbild.pdf used on input line 154.
 (pdftex.def)             Requested size: 143.22568pt x 101.35318pt.
 File: bilder/testbild.pdf Graphic file (type pdf)
- <use bilder/testbild.pdf>
+
+<use bilder/testbild.pdf>
 Package pdftex.def Info: bilder/testbild.pdf used on input line 158.
 (pdftex.def)             Requested size: 143.22568pt x 101.35318pt.
 
 Underfull \vbox (badness 3049) has occurred while \output is active []
 
- [13]
-[14]) [15] [16
+ [11]
+[12 <C:/Projekte/C++/Kinect_Tracker/KinectTracker/Abschlussarbeit_Vorlage_LS7/b
+ilder/testbild.pdf>]) [13] [14
 
 
 
 ]
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/anhang.tex
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/anhang.tex
 Anhang A.
-) [17
+) [15
 
 
 
-] [18
+] [16
 
 
 
 ]
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\LS7-Abschlussarbeit.lof)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\LS7-A
+bschlussarbeit.lof)
 \tf@lof=\write5
-
-[19] [20
+ [17] [18
 
 
 ]
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\LS7-Abschlussarbeit.loa)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\LS7-A
+bschlussarbeit.loa)
 \tf@loa=\write6
+ [19
 
-[21
+
+] [20
+
+
+]
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\LS7-A
+bschlussarbeit.lol)
+\tf@lol=\write7
+ [21
 
 
 ] [22
 
 
 ]
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\LS7-Abschlussarbeit.lol)
-\tf@lol=\write7
-
-[23
-
-
-] [24
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\LS7-A
+bschlussarbeit.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 286.
+ [23
 
 
 ]
-No file LS7-Abschlussarbeit.bbl.
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 286.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 286.
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\LS7-Abschlussarbeit.aux
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/titelseite.aux)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/notation.aux)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/einleitung.aux)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/kapitel2.aux)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/kapitel3.aux)
-(C:\Users\c3p0\Desktop\Abschlussarbeit_Vorlage_LS7\kapitel/anhang.aux))
+
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\LS7-A
+bschlussarbeit.aux
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/titelseite.aux)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/notation.aux)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/einleitung.aux)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/kapitel2.aux)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/kapitel3.aux)
+(C:\Projekte\C++\Kinect_Tracker\KinectTracker\Abschlussarbeit_Vorlage_LS7\kapit
+el/anhang.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 286.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 286.
 Package rerunfilecheck Info: File `LS7-Abschlussarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 28FE168E883BDD3417F046A9115ABB39;864.
+(rerunfilecheck)             Checksum: 99EDE6F586E57F111A6126A40C776515;1410.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 286.
  ) 
 Here is how much of TeX's memory you used:
- 15467 strings out of 493921
- 233345 string characters out of 3144880
- 403992 words of memory out of 3000000
- 18278 multiletter control sequences out of 15000+200000
- 68059 words of font info for 137 fonts, out of 3000000 for 9000
+ 15463 strings out of 493921
+ 234735 string characters out of 3144880
+ 403571 words of memory out of 3000000
+ 18268 multiletter control sequences out of 15000+200000
+ 71859 words of font info for 145 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 45i,12n,69p,924b,1497s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,11n,69p,924b,1497s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/eurosym/feymr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/symbols/msbm10.pfb>
-Output written on LS7-Abschlussarbeit.pdf (28 pages, 286526 bytes).
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/eurosym/feymr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb>
+Output written on LS7-Abschlussarbeit.pdf (27 pages, 282565 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 380 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 192 words of extra memory for PDF output out of 10000 (max. 10000000)
 

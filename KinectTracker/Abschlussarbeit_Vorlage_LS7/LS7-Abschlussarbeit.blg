@@ -1,5 +1,9 @@
-[0] Config.pm:318> INFO - This is Biber 1.8
-[0] Config.pm:321> INFO - Logfile is 'LS7-Abschlussarbeit.blg'
-[95] biber-MSWIN:272> INFO - === %a %b %e, %Y, %H:%M:%S
-[199] Utils.pm:185> ERROR - Cannot find control file 'LS7-Abschlussarbeit.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
-[199] Biber.pm:109> INFO - ERRORS: 1
+This is BibTeX, Version 0.99dThe top-level auxiliary file: LS7-Abschlussarbeit.aux
+A level-1 auxiliary file: kapitel/titelseite.aux
+A level-1 auxiliary file: kapitel/notation.aux
+A level-1 auxiliary file: kapitel/einleitung.aux
+A level-1 auxiliary file: kapitel/kapitel2.aux
+A level-1 auxiliary file: kapitel/kapitel3.aux
+A level-1 auxiliary file: kapitel/anhang.aux
+The style file: dinatls7.bst
+Database file #1: Literatur.bib
