@@ -151,8 +151,8 @@ bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
 {
     if ( m_unableToTrackInARowCount > 500 )
     {
-        qDebug() << "Resetting estimated size.";
-        m_sizeAnalyzer.reset();
+//       qDebug() << "Resetting estimated size.";
+        m_sizeAnalyzer->reset();
     }
     cv::Mat currentImage ( m_kinect->rgbStreamResolution().height(),
                            m_kinect->rgbStreamResolution().width(),

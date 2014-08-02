@@ -26,7 +26,7 @@ HighLevelProcessingPipeline::HighLevelProcessingPipeline( KinectPtr& kinect,
     , m_processingEnabled( true )
 {
     setObjectName( "MovementAnalyzer" );
-    // Initialize depth  arrays.
+    // Initialize depth arrays.
     m_depthSize = kinect->depthStreamResolution().width() * kinect->depthStreamResolution().height();
     mp_depthData = new ushort[m_depthSize];
     mp_depthScrennshot = new ushort[m_depthSize];
