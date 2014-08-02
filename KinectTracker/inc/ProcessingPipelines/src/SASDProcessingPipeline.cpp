@@ -149,11 +149,11 @@ void SASDProcessingPipeline::resetV()
  */
 bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
 {
-    if ( m_unableToTrackInARowCount > 500 )
-    {
-//       qDebug() << "Resetting estimated size.";
-        m_sizeAnalyzer->reset();
-    }
+    // If neccessary reset the sizeAnalyzer to recompute the size of the person.
+    // This might be the case if the person in the scene changes.
+    // Currently disabled!
+//    resetSizeAnalyzer();
+
     cv::Mat currentImage ( m_kinect->rgbStreamResolution().height(),
                            m_kinect->rgbStreamResolution().width(),
                            CV_8UC3,
@@ -529,4 +529,18 @@ bool SASDProcessingPipeline::analyseLastRegion( cv::Mat& image , QVector3D& head
         return true;
     }
     return false;
+}
+
+/*!
+   \brief SASDProcessingPipeline::resetSizeAnalyzer
+   Resets the SizeAnalyzer, if there is no person detected in the scene
+   within the last couple of frames.
+ */
+void SASDProcessingPipeline::resetSizeAnalyzer()
+{
+    if ( m_unableToTrackInARowCount > 500 )
+    {
+//       qDebug() << "Resetting estimated size.";
+        m_sizeAnalyzer->reset();
+    }
 }

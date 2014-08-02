@@ -82,6 +82,7 @@ private:
    void drawRegionsOfInterest( cv::Mat& image );
    bool useHaarClassifier( cv::Mat& currentImage );
    bool analyseLastRegion(cv::Mat& image, QVector3D& head );
+   void resetSizeAnalyzer();
 
    QRect                                                  m_lastRegion;
    QVector4D                                              m_planeCoefficient;
