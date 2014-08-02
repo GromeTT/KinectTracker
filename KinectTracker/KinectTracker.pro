@@ -64,8 +64,7 @@ SOURCES += inc/AMath/src/AMath.cpp \
     inc/ImageWidget/src/ImageWidget.cpp \
     inc/ProcessingPipelines/src/Histogram.cpp \
     inc/Analyzer/src/SphereMovementAnalyzer.cpp \
-    inc/Visualizer/src/SphereMovementVisualizer.cpp \
-    QtPrintFunctions.cpp
+    inc/Visualizer/src/SphereMovementVisualizer.cpp
 
 HEADERS  += inc/AMath/inc/AMath.h \
     inc/Analyzer/inc/BBMovementAnalyzer.h \
