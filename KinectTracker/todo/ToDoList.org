@@ -19,11 +19,74 @@
         ansonsten nicht.
   + [X] <2014-07-07 Mo 17:00> 
     + Ort :: Lehrstuhl
-    + Fragen
+    + *Fragen*
       + [ ] Könnte Weichzeichnen die Ergebnisse der Rückprojektion verbessern?
-  + [ ] <2014-07-21 Mo 15:00>
+  + [X] <2014-07-21 Mo 15:00> verschoben auf <2014-07-24 Do 16:00>
+  + [ ] <2014-08-04 Mo 09:00>
+    + Lauffähige, stabile Version
+      + Nur eine Person, die auch nicht wechselt.
+    + Inhaltsverzeichnis
+  + [ ] <2015-08-17 Mo 15:00>
+    + *Fragen*
+      + [ ] Was genau kommt in das Algorithmenverzeichnis und was in
+	das Quellcodeverzeichnis.
+
+* Fähigkeiten der aktuellen Version
+  + Tracking einer einzelen Person, nach dem die initialisierten Parameter 
+    bestätigt wurden.
+  + Klassifizierung des Zustands des Arbeiters in eine der folgenden Klassen
+    + Stehend
+    + Kniend
+    + Liegend
+    + Keine Klassifizierung möglich
+  + Ableitung der Bewegungsrichtung und Geschwindigkeit.
+  + Beurteilung, ob die Person in die Kamera schaut oder nicht.
+
+* Schlachtplan
+  1) [X] Stabile Version.
+  2) [X] Reset ausschalten.
+  3) [ ] Inhaltsangabe (1. Entwurf liegt vor)
+  4) [ ] Initialisierungsphase.
+     Falls die Koordinaten der Ebene und das Histogramm nicht bekannt 
+     sind, sollen nur die von der Kinect empfangenen Skelett-, RGB-, Tiefendaten
+     angezeigt werden.
+     
+     Sobald die Initialisierung beginnt, wird nur die Ebenengleichung 
+     und das Histogramm bestimmt und die Bild- bzw. Skelettdaten
+     die von der Kinect aufgenommenen Daten angezeigt.
+
+     Nach Abschluss der Initialisierung werden dann die Analyse Ergebnisse 
+     eingeblendet und aktuallisiert.
+
+     + [ ] Ebenennormale alternativ bestimmen.
+     + *Auslöser*: MainWindow::StartProcessing()
+     + *Workflow*: 
+       + Zeige die bestimmten Werte an.
+	 + Werte
+	 + Grafisch (Ausschnitt vom Kopf)
+       + Biete Möglichkeit zum Abbruch.
+	 + *Fall* Keine Ebenengleichung kein Histogramm vom Kopf.
+	   + Hinweis: Verarbeitung ist unmöglich.
+	 + *Fall* Kein Histogramm vom Kopf.
+	   + 1. Möglichkeit: Hinweis: Verarbeitung nicht möglich.
+	   + 2. Möglichkeit: Standardhistogramm laden.
+	 + *Fall* Keine Ebenengleichung
+	   + Standardebene initialisieren (falls nicht vorhanden).
+	   + Hinweis: Ebene muss manuell eingestellt werden.
+  5) [ ] Einfaches austauschen der Sizeanalyzer bzw. Movementanlayzer.
+  6) [ ] Es ist extrem dumm, die zusätzlichen Daten, die beim kopieren der
+     Tiefen- bzw. RGB-Daten vorhanden sind fortzuwerfen. Besser gemeinsam in einer
+     Datenstruktur speichern.
+  7) [X] RGB- und Tiefenbild permanent updaten.
+     *Problem*: Sobald das ganze Bild untersucht wird, wird zu vile Zeit 
+                beansprucht, sodass das Bild nicht mehr gerendert wird.
+     *Lösung*: cv::imshow() scheint richtig zu funktionieren, evtl. 
+               sollte auf die Texturen verzichtet werden und stattdessen
+               cv::imshow() verwendet werden.
+               Ggfs. lässt sich ein solches Fenster in Qt einbetten.
   
 * TODO [18/35][51%] Tasks
+  + [ ] RGB Bild wird nicht aktuallisiert, wenn der Bereich untersucht wird.
   + [ ] Maussteuerung.
   + [ ] Kinect Klasse aufräumen.
   + [ ] UpperBoddySizeAnalyzer: Faktor bestimmen.
@@ -186,11 +249,15 @@
     an dieser Stelle ist eine manuelle Eingabe von nöten. Ist im Anwendungsfall 
     auch nicht weiter schlimm, da sich die Position des Sensor eigentlich nicht
     ändert.
-  + BoundingBox-Algorithmus erläutern
+  + BoundingBox-Algorithmus erläutern.
     + Zweck: Eingrenzung des Suchbereichs.
     + Grenzen: Verlassen des Bildbereiches.
   + Falls die Person liegt, kann sie sich durch kriechen "rausschleichen", d.h.
     das Programm nimmt an, der Arbeiter liegt, obwohl er gar nicht 
     mehr in der Szene ist.
-  + SizeAnalyzer: 
+  + SizeAnalyzer:
+    Die Klassifizierung der Bewegungszustände funktioniert nur unter der Annahme,
+    das die Person keinen Kopfstand macht.
+    + *Frage* :  Macht das BoundingBox-Verfahren Sinn?
+      + *Antwort* :
 
