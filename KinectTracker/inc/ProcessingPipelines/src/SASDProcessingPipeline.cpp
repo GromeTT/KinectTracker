@@ -26,12 +26,9 @@ SASDProcessingPipeline::SASDProcessingPipeline( KinectPtr& kinect,
                                    parent )
     , m_skinPipeline( new SkinColorExplicitDefinedSkinRegionDetectionPipeline )
     , m_skinColorHistogramDetectionPipeline( new SkinColorHistogramDetectionPipeline )
-    , mp_deriveViewingDirectionFunc( &SASDProcessingPipeline::deriveViewingDirectionBySkinColorFixedRegion )
+    , mp_deriveViewingDirectionFunc( &SASDProcessingPipeline::deriveViewingDirectionByHistogram )
     , m_useHaarClassifier( false )
-    , m_currentThreshold ( 200 )
-    , m_skinColorFixedRegionThreshold( 200 )
-    , m_histogramThreshold ( 8 )
-    , m_histogramHSVThreshold ( 8 )
+    , m_threshold( 400 )
 {
     setObjectName( "SASDProcessingPipeline" );
     m_rgbProcessingPipelines.append( m_skinColorHistogramDetectionPipeline );
@@ -63,35 +60,12 @@ void SASDProcessingPipeline::setUseHaarClassifier( const bool arg )
     emit useHaarClassifierChanged();
 }
 
-/*!
-   \brief SASDProcessingPipeline::setSkinColorFixedRegionThreshold
-   Sets the threshold for the SkinColorFixedRegion-method.
- */
-void SASDProcessingPipeline::setSkinColorFixedRegionThreshold( const int threshold )
+void SASDProcessingPipeline::setThreshold( const int threshold )
 {
-    m_skinColorFixedRegionThreshold = threshold;
-    emit skinColorFixedRegionThresholdChanged();
+    m_threshold = threshold;
+    emit thresholdChanged();
 }
 
-/*!
-   \brief SASDProcessingPipeline::setHistogramThreshold
-   Sets the threshold for the SkinColorHistogram-method.
- */
-void SASDProcessingPipeline::setHistogramThreshold( const int threshold )
-{
-    m_histogramThreshold = threshold;
-    emit histogramHSVThresholdChanged();
-}
-
-/*!
-   \brief SASDProcessingPipeline::setHistogramHSVThreshold
-    Sets the threshold for the SkinColorHistogramHSV-method.
- */
-void SASDProcessingPipeline::setHistogramHSVThreshold(const int threshold)
-{
-    m_histogramHSVThreshold = threshold;
-    emit histogramHSVThresholdChanged();
-}
 
 /*!
    \brief SASDProcessingPipeline::useHaarClassifier
@@ -103,30 +77,12 @@ bool SASDProcessingPipeline::useHaarClassifier() const
 }
 
 /*!
-   \brief SASDProcessingPipeline::skinColorFixedRegionThreshold
-   Returns the threshold used by the SkinColorFixedRegion-method.
+   \brief SASDProcessingPipeline::threshold
+   Returns the threshold used to decided wether the person is looking towards the camera.
  */
-int SASDProcessingPipeline::skinColorFixedRegionThreshold() const
+int SASDProcessingPipeline::threshold() const
 {
-    return m_skinColorFixedRegionThreshold;
-}
-
-/*!
-   \brief SASDProcessingPipeline::histogramThreshold
-   Returns the threshold used by the SkinColorHistogram-method.
- */
-int SASDProcessingPipeline::histogramThreshold() const
-{
-    return m_histogramThreshold;
-}
-
-/*!
-   \brief SASDProcessingPipeline::histogramHSVThreshold
-   Returns the threshold used by the SkinColorHistogram-method.
- */
-int SASDProcessingPipeline::histogramHSVThreshold() const
-{
-    return m_histogramHSVThreshold;
+    return m_threshold;
 }
 
 /*!
@@ -176,9 +132,8 @@ bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
             lookingTowardsCamera = deriveViewingDirection();
             if ( !lookingTowardsCamera ) // Perform on the last regions from last frame.
             {
-                QVector3D headPosition;
                 // Explore the last region.
-                lookingTowardsCamera = analyseLastRegion( currentImage, headPosition );
+//                lookingTowardsCamera = analyseLastRegion( currentImage, headPosition );
                 if( !lookingTowardsCamera )
                 {
                     // Use cascade haar classifier as last possibility
@@ -210,6 +165,8 @@ bool SASDProcessingPipeline::processSkeletonData( const unsigned int timestamp )
     }
     else
     {
+        QVector3D pos = m_skeletons.at( 0 )->getJoint( SkeletonData::Joints::Head );
+        qDebug() << QString ( "pos: %1 %2 %3" ).arg( pos.x() ).arg( pos.y() ).arg( pos.z() );
         m_regions.clear();
         // case: The data provided by the skeleton are of good quality.
         //       Perform the further analysis on the skeleton data.
@@ -278,6 +235,8 @@ void SASDProcessingPipeline::extractRegion( Mat& image, SkeletonData::Joints joi
                                                                25,
                                                                25,
                                                                image );
+//    qDebug() << QString( "height: %1 width: %2").arg( cropedRegion.height() )
+//                                                .arg( cropedRegion.width() );
     QColor color;
     if ( skeletonData()->jointTrackState( joint ) == SkeletonData::TrackState::Tracked )
     {
@@ -318,11 +277,13 @@ bool SASDProcessingPipeline::deriveViewingDirection()
     {
         return false;
     }
+    int absoulteCount = 0;
     cv::Mat head = m_regions.at( static_cast<int>(SkeletonData::Joints::Head) ).m_subMatrix;
-    if ( (this->*mp_deriveViewingDirectionFunc)( head ) )
+    if ( (this->*mp_deriveViewingDirectionFunc)( head, absoulteCount ) )
     {
         // case: From the analysis of the head region it follows
         //       that the user is looking towards the camera.
+        qDebug() << "Detected at head";
         return true;
     }
     else
@@ -330,6 +291,11 @@ bool SASDProcessingPipeline::deriveViewingDirection()
         // case: From the analysis of the head region it doesn't
         //       follow, that the user is looking towards the camera.
 
+        if ( m_sizeAnalyzer->workerStatus() != SizeAnalyzer::WorkerStatus::Lying )
+        {
+            qDebug() << "Not further processing.";
+            return false;
+        }
         // Check the remaining regions.
         int index = -1;
         int count = 0;
@@ -337,29 +303,30 @@ bool SASDProcessingPipeline::deriveViewingDirection()
         for ( int i = 0; i < m_regions.count(); ++i )
         {
             cv::Mat region = m_regions.at( i ).m_subMatrix;
-            int c = 0;
-            if ( (this->*mp_deriveViewingDirectionFunc)( region ) &&
-                 c > count )
+            absoulteCount = 0;
+            (this->*mp_deriveViewingDirectionFunc)( region, absoulteCount );
+
+            if ( absoulteCount > m_threshold &&
+                 absoulteCount > count )
             {
                 found = true;
                 index = i;
-                count = c;
+                count = absoulteCount;
             }
         }
         if ( !found )
         {
             // case: No region contains enough non zero pixels, it follows that the
             //       user isn't looking towards the camera.
+            qDebug() << "Not found";
             return false;
         }
         else
         {
-            qDebug() << QString( "Found at joint: %1" ).arg( jointToString( static_cast<SkeletonData::Joints>( index ) ) );
-            // Get xyz - coordinates of the found head and pass them to the size analyzer.
-            QVector3D headPos = skeletonData()->getJoint( static_cast<SkeletonData::Joints>( index ) );
             return true;
         }
     }
+    return false;
 }
 
 /*!
@@ -367,11 +334,12 @@ bool SASDProcessingPipeline::deriveViewingDirection()
    Uses the SkinColorExplicitDefinedSkinRegionDetectionPipeline to determine if the tracked person
    is lookin torwards the camera.
  */
-bool SASDProcessingPipeline::deriveViewingDirectionBySkinColorFixedRegion( cv::Mat& region )
+bool SASDProcessingPipeline::deriveViewingDirectionBySkinColorFixedRegion( cv::Mat& region, int& absoulteCount )
 {
+//    qDebug() << "Fixed region";
     m_skinPipeline->process( region );
-    int absoluteCount = m_skinPipeline->absoluteFrequency();
-    if ( absoluteCount >= 200 )
+    absoulteCount = m_skinPipeline->absoluteFrequency();
+    if ( absoulteCount >= m_threshold )
     {
         // case: Enough pixels with skincolor, the person is looking
         //       towards the camera.
@@ -390,26 +358,30 @@ bool SASDProcessingPipeline::deriveViewingDirectionBySkinColorFixedRegion( cv::M
    For informations see:
    http://docs.opencv.org/doc/tutorials/imgproc/histograms/histogram_calculation/histogram_calculation.html
  */
-bool SASDProcessingPipeline::deriveViewingDirectionByHistogram( cv::Mat& region )
+bool SASDProcessingPipeline::deriveViewingDirectionByHistogram( cv::Mat& region, int& absoulteCount )
 {
+//    qDebug() << "by histogramm";
     if ( !m_skinColorHistogramDetectionPipeline->initialized() )
     {
         // case: ProcessingPipeline is not initialized yet.
-        if ( skeletonData()->allPointsTracked() )
+        if ( !skeletonData().isNull() && skeletonData()->allPointsTracked() )
         {
             // case: All joints are tracked and the processing pipeline is not initialized.
 
             //  Intialize the processing pipeline.
             m_skinColorHistogramDetectionPipeline->computeAndSaveROIHistogram( region );
+            absoulteCount = 0;
             return false;
         }
     }
     else
     {
+//        qDebug() << "is initialized";
         // case: ProcessingPipeline is already initialized.
         // Use backprojection to determine, if the person is looking towards the camera.
         m_skinColorHistogramDetectionPipeline->process( region );
-        if ( m_skinColorHistogramDetectionPipeline->nonZeroRelativeFrequency() > m_histogramThreshold )
+        absoulteCount = m_skinColorHistogramDetectionPipeline->nonZeroPixels();
+        if ( absoulteCount > m_threshold )
         {
             return true;
         }
@@ -421,12 +393,12 @@ bool SASDProcessingPipeline::deriveViewingDirectionByHistogram( cv::Mat& region 
    \brief SASDProcessingPipeline::deriveViewingDirectionByHistogramHSV
     Calculates the backprojection in the HSV-color space.
  */
-bool SASDProcessingPipeline::deriveViewingDirectionByHistogramHSV( cv::Mat& region )
+bool SASDProcessingPipeline::deriveViewingDirectionByHistogramHSV( cv::Mat& region, int& absoulteCount )
 {
     cv::Mat regionHSV;
     region.copyTo( regionHSV );
     cv::cvtColor( regionHSV, regionHSV, CV_BGR2HSV );
-    return deriveViewingDirectionByHistogram( regionHSV ); // call existing algorithm.
+    return deriveViewingDirectionByHistogram( regionHSV, absoulteCount ); // call existing algorithm.
 }
 
 /*!
@@ -478,7 +450,7 @@ bool SASDProcessingPipeline::useHaarClassifier( cv::Mat& currentImage )
 
 /*!
    \brief SASDProcessingPipeline::analyseLastRegion
-   Analysis the last region and checks if there is a 50x50 region
+   Analyzes the last region and checks if there is a 50x50 region
    which could be potentially the face.
  */
 bool SASDProcessingPipeline::analyseLastRegion( cv::Mat& image , QVector3D& head )
@@ -515,7 +487,7 @@ bool SASDProcessingPipeline::analyseLastRegion( cv::Mat& image , QVector3D& head
             }
         }
     }
-    if ( absoluteCount > m_currentThreshold )
+    if ( absoluteCount > m_threshold )
     {
         cv::Mat res = (*filteredCopy)( cv::Rect( cv::Point( i_x, i_y ),
                                                  cv::Point( i_x + patchSize.width(),  i_y + patchSize.height() ) ) );

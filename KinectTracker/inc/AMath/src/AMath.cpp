@@ -1,11 +1,13 @@
 #include "../inc/AMath.h"
+#include <QString>
+#include <QDebug>
 
-float AMath::radToDegF(const float rad)
+float AMath::radToDegF( const float rad )
 {
     return rad*factorRadianToDegree;
 }
 
-double AMath::radToDegD(const double rad)
+double AMath::radToDegD( const double rad )
 {
     return rad*factorRadianToDegree;
 }
@@ -249,6 +251,16 @@ QVector3D AMath::Rectangle3D::bottomRightCorner() const
 void AMath::anglesFromSphericalCoordinates( float& phi, float& theta, const QVector3D& direction )
 {
     // http://de.wikipedia.org/wiki/Polarkoordinaten
-    phi  = AMath::radToDegF( atan2( direction.z(), direction.x() ) );
-    theta = AMath::radToDegF( asinf( direction.y() / direction.length() ) );
+    phi   = AMath::radToDegF( atan2f( direction.x(), direction.z() ) );
+//    qDebug() << QString("phi: %1" ).arg( phi );
+    float z = direction.length();
+//    qDebug() << QString( "Magnitude: %1" ).arg( z );
+    if ( z == 0 )
+    {
+        theta = 0;
+    }
+    else
+    {
+        theta = AMath::radToDegF( acosf( direction.y() / direction.length() ) );
+    }
 }

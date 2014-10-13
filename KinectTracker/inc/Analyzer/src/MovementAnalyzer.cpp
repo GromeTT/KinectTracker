@@ -1,5 +1,6 @@
 #include "../inc/MovementAnalyzer.h"
 #include "../../AMath/inc/AMath.h"
+#include <QDebug>
 
 /*!
    \brief MovementAnalyzer::MovementAnalyzer
@@ -194,22 +195,41 @@ QString MovementAnalyzer::viewingDirection() const
 void MovementAnalyzer::calculateOriantationAndVelocity( const int timestamp )
 {
     unsigned int d = timestamp - m_velocityInterval;
-    for ( int i = 0; i < m_maxBoudingGeometryCount; ++i )
+    if( m_boudingGeometries.at( 0 ) && m_boudingGeometries.at( 1 ) )
     {
-        if ( m_boudingGeometries.at( i ) &&
-             m_boudingGeometries.at( i )->m_timestamp < d )
-        {
-            // Calculate the catersian norm.
-            QVector3D diff ( m_boudingGeometries.first()->m_geometry->x() - m_boudingGeometries.at( i )->m_geometry->x(),
-                             m_boudingGeometries.first()->m_geometry->y() - m_boudingGeometries.at( i )->m_geometry->y(),
-                             m_boudingGeometries.first()->m_geometry->z() - m_boudingGeometries.at( i )->m_geometry->z() );
-            m_velocity =  diff.length();
-            emit veloctiyChanged();
+        QVector3D diff ( m_boudingGeometries.first()->m_geometry->x() - m_boudingGeometries.at( 1 )->m_geometry->x(),
+                         m_boudingGeometries.first()->m_geometry->y() - m_boudingGeometries.at( 1 )->m_geometry->y(),
+                         m_boudingGeometries.first()->m_geometry->z() - m_boudingGeometries.at( 1 )->m_geometry->z() );
 
-            AMath::anglesFromSphericalCoordinates( m_yaw, m_pitch, diff );
-            emit yawChanged();
-        }
+        m_velocity =  diff.length();
+//        qDebug()<< QString( "diff: %1, %2, %3" ).arg( diff.x() )
+//                                                .arg( diff.y() )
+//                                                .arg( diff.z() );
+        emit veloctiyChanged();
+        AMath::anglesFromSphericalCoordinates( m_yaw, m_pitch, diff );
+        emit yawChanged();
+        emit rollChanged();
+        emit pitchChanged();
     }
+
+//    for ( int i = 0; i < m_maxBoudingGeometryCount; ++i )
+//    {
+//        if ( m_boudingGeometries.at( i ) &&
+//             m_boudingGeometries.at( i )->m_timestamp < d )
+//        {
+//            // Calculate the catersian norm.
+//            QVector3D diff ( m_boudingGeometries.first()->m_geometry->x() - m_boudingGeometries.at( i )->m_geometry->x(),
+//                             m_boudingGeometries.first()->m_geometry->y() - m_boudingGeometries.at( i )->m_geometry->y(),
+//                             m_boudingGeometries.first()->m_geometry->z() - m_boudingGeometries.at( i )->m_geometry->z() );
+//            m_velocity =  diff.length();
+//            emit veloctiyChanged();
+
+//            AMath::anglesFromSphericalCoordinates( m_yaw, m_pitch, diff );
+//            emit yawChanged();
+//            emit rollChanged();
+//            emit pitchChanged();
+//        }
+//    }
 }
 
 /*!

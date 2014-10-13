@@ -262,6 +262,10 @@ void SkinColorExplicitDefinedSkinRegionDetectionPipeline::process( cv::Mat& inpu
             ++k;
         }
     }
+    if ( m_processedImage.rows > 0 && m_processedImage.cols > 0 )
+    {
+        cv::imshow("FixedRegoin Processed", m_processedImage );
+    }
 }
 
 /*!
@@ -313,7 +317,7 @@ SkinColorHistogramDetectionPipeline::SkinColorHistogramDetectionPipeline( QObjec
     m_bins[2] = 256;
 
     m_ranges[0] = 0;
-    m_ranges[1] = 256;
+    m_ranges[1] = 255;
 }
 
 /*!
@@ -337,8 +341,25 @@ void SkinColorHistogramDetectionPipeline::process( cv::Mat& input )
     cv::threshold( m_backprojection, m_backprojection, m_threshold, 255, cv::THRESH_BINARY );
 //    cv::imshow( "Threshold", backprojection );
     m_nonZeroPixels = cv::countNonZero( m_backprojection );
+
+    if ( m_backprojection.rows == 49 && m_backprojection.cols == 49 )
+    {
+//        qDebug() << "rows: " << m_backprojection.rows;
+//        qDebug() << "cols: " << m_backprojection.cols;
+        input.at<uchar>( 10, 10 );
+    }
+    qDebug() << QString( "Non zero %1" ).arg( m_nonZeroPixels );
+    if ( input.rows > 0 && input.cols > 0 )
+    {
+        cv::imshow( "input", input );
+    }
+    if ( m_backprojection.rows > 0 && m_backprojection.cols > 0 )
+    {
+        cv::imshow( "Backprojection", m_backprojection );
+    }
+
     emit nonZeroPixelsChanged();
-    m_nonZeroRelativeFrequency = (float) m_nonZeroPixels / (float)( input.rows + input.cols );
+    m_nonZeroRelativeFrequency = (float) ( m_nonZeroPixels ) / (float)( input.rows + input.cols );
     emit nonZeroRelativeFrequencyChanged();
 }
 
@@ -366,9 +387,10 @@ bool SkinColorHistogramDetectionPipeline::computeAndSaveROIHistogram( const cv::
     }
     else
     {
+        qDebug() << "roi initilaized.";
         roi.copyTo( m_roi );
         const float* range = { m_ranges };
-        cv::calcHist( &roi, 1, &m_channels[0], cv::Mat(), m_histogram, 1, &m_bins[0], &range, true, false );
+        cv::calcHist( &m_roi, 1, &m_channels[0], cv::Mat(), m_histogram, 1, &m_bins[0], &range, true, false );
         m_initialized = true;
         cv::imshow( "Roi" , m_roi );
         return true;

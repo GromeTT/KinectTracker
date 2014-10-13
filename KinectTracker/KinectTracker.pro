@@ -33,7 +33,6 @@ SOURCES += inc/AMath/src/AMath.cpp \
     inc/ProcessingPipelines/src/InRange.cpp \
     inc/ProcessingPipelines/src/LowLevelProcessingPipeline.cpp \
     inc/ProcessingPipelines/src/ProcessingComponent.cpp \
-    inc/ProcessingPipelines/src/SABSSDProcessingPipeline.cpp \
     inc/ProcessingPipelines/src/SASDProcessingPipeline.cpp \
     inc/ProcessingPipelines/src/Threshold.cpp \
     inc/PropertyBrowser/src/CustomStyledDelegate.cpp \
@@ -86,7 +85,6 @@ HEADERS  += inc/AMath/inc/AMath.h \
     inc/ProcessingPipelines/inc/InRange.h \
     inc/ProcessingPipelines/inc/LowLevelProcessingPipeline.h \
     inc/ProcessingPipelines/inc/ProcessingComponent.h \
-    inc/ProcessingPipelines/inc/SABSSDProcessingPipeline.h \
     inc/ProcessingPipelines/inc/SASDProcessingPipeline.h \
     inc/ProcessingPipelines/inc/Threshold.h \
     inc/PropertyBrowser/inc/CustomStyledDelegate.h \

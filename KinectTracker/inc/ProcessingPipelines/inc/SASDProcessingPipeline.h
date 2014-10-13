@@ -10,7 +10,7 @@ class AnalysisResults;
 class SkeletonAnalyzer;
 class SASDProcessingPipeline;
 
-typedef bool (SASDProcessingPipeline::*Func)( cv::Mat& region );
+typedef bool (SASDProcessingPipeline::*Func)( cv::Mat& region, int& absoluteCount );
 
 struct JointSummary
 {
@@ -50,14 +50,10 @@ public:
     virtual ~SASDProcessingPipeline();
 
     void setUseHaarClassifier( const bool arg );
-    void setSkinColorFixedRegionThreshold( const int threshold );
-    void setHistogramThreshold( const int threshold );
-    void setHistogramHSVThreshold( const int threshold );
+    void setThreshold( const int threshold );
 
     bool useHaarClassifier() const;
-    int  skinColorFixedRegionThreshold() const;
-    int  histogramThreshold() const;
-    int  histogramHSVThreshold() const;
+    int  threshold() const;
 
 protected:
    void processV( const unsigned int timestamp );
@@ -65,9 +61,7 @@ protected:
 
 signals:
    void useHaarClassifierChanged();
-   void skinColorFixedRegionThresholdChanged();
-   void histogramThresholdChanged();
-   void histogramHSVThresholdChanged();
+   void thresholdChanged();
 
 private:
    bool processSkeletonData( const unsigned int timestamp );
@@ -76,14 +70,15 @@ private:
    void extractAllRegions( cv::Mat& image );
    void extractRegion( cv::Mat& image, SkeletonData::Joints joint );
    bool deriveViewingDirection();
-   bool deriveViewingDirectionBySkinColorFixedRegion( cv::Mat& region );
-   bool deriveViewingDirectionByHistogram( cv::Mat& region );
-   bool deriveViewingDirectionByHistogramHSV( cv::Mat& region );
+   bool deriveViewingDirectionBySkinColorFixedRegion( cv::Mat& region, int& absoulteCount );
+   bool deriveViewingDirectionByHistogram( cv::Mat& region, int& absoulteCount );
+   bool deriveViewingDirectionByHistogramHSV( cv::Mat& region, int& absoulteCount );
    void drawRegionsOfInterest( cv::Mat& image );
    bool useHaarClassifier( cv::Mat& currentImage );
    bool analyseLastRegion(cv::Mat& image, QVector3D& head );
    void resetSizeAnalyzer();
 
+private:
    QRect                                                  m_lastRegion;
    QVector4D                                              m_planeCoefficient;
    SkinColorHistogramDetectionPipelinePtr                 m_skinColorHistogramDetectionPipeline;
@@ -94,10 +89,7 @@ private:
    std::vector<cv::Rect>                                  faces;
    SkeletonDataPtr                                        m_lastSkeleton;
    bool                                                   m_useHaarClassifier;
-   int                                                    m_currentThreshold;
-   int                                                    m_skinColorFixedRegionThreshold;
-   int                                                    m_histogramThreshold;
-   int                                                    m_histogramHSVThreshold;
+   int                                                    m_threshold;
 
 private:
    Q_PROPERTY( bool useHaarClassifier MEMBER m_useHaarClassifier
@@ -105,10 +97,10 @@ private:
                WRITE setUseHaarClassifier
                NOTIFY useHaarClassifierChanged )
 
-   Q_PROPERTY( int skinColorFixedRegionThreshold MEMBER m_skinColorFixedRegionThreshold
-               READ skinColorFixedRegionThreshold
-               WRITE setSkinColorFixedRegionThreshold
-               NOTIFY skinColorFixedRegionThresholdChanged )
+   Q_PROPERTY( int threshold MEMBER threshold
+               READ threshold
+               WRITE setThreshold
+               NOTIFY thresholdChanged )
 };
 
 #endif // SASDPROCESSINGPIPELINE_H

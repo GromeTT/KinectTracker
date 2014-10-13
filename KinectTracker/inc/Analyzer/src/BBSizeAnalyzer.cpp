@@ -95,7 +95,7 @@ void BBSizeAnalyzer::analyzeV( const SkeletonDataPtr& skeletonData )
         // and lower the 2.3 meters, update the value of the estimated body
         // size.
         m_estimatedBodySize = m_boundingBox->height();
-        qDebug() << "Changed estiamted body size.";
+//        qDebug() << "Changed estiamted body size.";
         emit estimatedBodySizeChanged();
     }
 

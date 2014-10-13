@@ -40,17 +40,10 @@ void SizeAnalyzer::analyze( const KinectPtr kinect,
 
     if ( skeletonData.isNull() )
     {
-//        if ( m_workerStatus == WorkerStatus::Standing )
-//        {
-//            // The worker was not lying in the last frame, assume, that he left
-//            // the ara or hidden.
-//            setWorkerStatus( WorkerStatus::NotPossible );
-//        }
-//        else if ( m_workerStatus == WorkerStatus::Kneeling )
-//        {
-//            setWorkerStatus( WorkerStatus::Lying );
-//        }
         setWorkerStatus( WorkerStatus::NotPossible );
+        m_workerStatusFromDistance = WorkerStatus::NotPossible;
+        emit workerStatusFromDistanceChanged();
+
         return;
     }
 
@@ -59,25 +52,10 @@ void SizeAnalyzer::analyze( const KinectPtr kinect,
     m_distanceHeadLeftFood = ( skeletonData->getJoint( SkeletonData::Joints::Head ) - skeletonData->getJoint( SkeletonData::Joints::FootLeft ) ).length();
     emit distanceHeadLeftFoodChanged();
     m_distanceHeadRightFood = ( skeletonData->getJoint( SkeletonData::Joints::Head ) - skeletonData->getJoint( SkeletonData::Joints::FootRight) ).length();
-    emit distanceHeadRightFoodChanged();
 
     // Compare the current body height with the estiamed body height
     // and classify the pose.
-    if ( m_currentBodySize >= m_kneelingThreshold * m_estimatedBodySize )
-    {
-        setWorkerStatus( WorkerStatus::Standing );
-    }
-    else
-    {
-        if ( m_currentBodySize < m_lyingThreshold * m_estimatedBodySize )
-        {
-            setWorkerStatus( WorkerStatus::Lying );
-        }
-        else
-        {
-            setWorkerStatus( WorkerStatus::Kneeling );
-        }
-    }
+    classifyPose( m_currentBodySize, m_workerStatus );
 
     // Compute the distance from the head to the floor.
     if ( skeletonData->majorPointsTracked() && !floorInitialized() )
@@ -85,17 +63,23 @@ void SizeAnalyzer::analyze( const KinectPtr kinect,
         // All joints are tracked and the floor coefficients haven't
         // been stored yet.
         // Do it now.
-        setPlaneCoefficients( kinect->planeCoefficients() );
+        if ( setPlaneCoefficients( kinect->planeCoefficients() ) )
+        {
+            qDebug() << "plane initialized";
+        }
     }
     if ( skeletonData->jointTrackState( SkeletonData::Joints::Head ) == SkeletonData::TrackState::Tracked )
     {
         // The head is tracked and the plane coefficients have been stored.
         // Now compute the distance between the head and the floor by formula:
         // http://www.frustfrei-lernen.de/mathematik/abstand-punkt-zu-ebene.html
-        QVector3D head = skeletonData->getJoint( SkeletonData::Joints::Head );
+        calculateDistanceFromFloorToHead( skeletonData->getJoint( SkeletonData::Joints::Head ) );
+        classifyPose( m_distanceFloorHead, m_workerStatusFromDistance );
+        emit distanceFloorHeadChanged();
 
     }
     emit workerStatusChanged();
+    emit workerStatusFromDistanceChanged();
 }
 
 /*!
@@ -247,6 +231,21 @@ QString SizeAnalyzer::workerStatusToString() const
     }
 }
 
+QString SizeAnalyzer::workerStatusFromDistanceToString() const
+{
+    switch ( m_workerStatusFromDistance )
+    {
+        case WorkerStatus::Standing:
+            return "Standing";
+        case WorkerStatus::Kneeling:
+            return "Kneeling";
+        case WorkerStatus::Lying:
+            return "Lying";
+        default:
+            return "No prediction possible";
+    }
+}
+
 SizeAnalyzer::WorkerStatus SizeAnalyzer::workerStatus() const
 {
     return m_workerStatus;
@@ -267,6 +266,25 @@ bool SizeAnalyzer::floorInitialized() const
 QVector4D SizeAnalyzer::planeCoefficients() const
 {
     return m_planeCoefficients;
+}
+
+void SizeAnalyzer::classifyPose(const float size, WorkerStatus& status )
+{
+    if ( size >= m_kneelingThreshold * m_estimatedBodySize )
+    {
+        status = WorkerStatus::Standing;
+    }
+    else
+    {
+        if ( size < m_lyingThreshold * m_estimatedBodySize )
+        {
+            status = WorkerStatus::Lying;
+        }
+        else
+        {
+            status = WorkerStatus::Kneeling;
+        }
+    }
 }
 
 /*!

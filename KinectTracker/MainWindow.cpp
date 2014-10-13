@@ -9,7 +9,6 @@
 #include "inc/ProcessingPipelines/inc/DepthProcessingPipeline.h"
 #include "inc/ProcessingPipelines/inc/HighLevelProcessingPipeline.h"
 #include "inc/ProcessingPipelines/inc/SASDProcessingPipeline.h"
-#include "inc/ProcessingPipelines/inc/SABSSDProcessingPipeline.h"
 #include "inc/Visualizer/inc/BBMovementVisualizer.h"
 #include "inc/Visualizer/inc/SphereMovementVisualizer.h"
 #include "inc/Analyzer/inc/BBMovementAnalyzer.h"
@@ -70,24 +69,33 @@ MainWindow::MainWindow( QWidget *parent )
     addDockWidget( Qt::LeftDockWidgetArea, mp_explorerDockWidget );
     mp_explorer = new PropertyBrowser( mp_explorerDockWidget );
     mp_explorerDockWidget->setWidget( mp_explorer );
+    mp_explorerDockWidget->setVisible( false );
 
     // Construct skeleton analyser
     mp_analyserDockWidget = new QDockWidget( "SkeletonAnlyser" );
     addDockWidget(Qt::LeftDockWidgetArea, mp_analyserDockWidget );
     mp_analyzerBrowser = new PropertyBrowser( mp_analyserDockWidget );
     mp_analyserDockWidget->setWidget( mp_analyzerBrowser );
+    mp_analyserDockWidget->setVisible( false );
 
     // Construct SizeAnalyzer
     mp_sizeAnalyzerDockWidget = new QDockWidget( "SizeAnalyzer" );
     addDockWidget(Qt::LeftDockWidgetArea, mp_sizeAnalyzerDockWidget );
     mp_sizeAnalyzerBrowser = new PropertyBrowser( mp_sizeAnalyzerDockWidget );
     mp_sizeAnalyzerDockWidget->setWidget( mp_sizeAnalyzerBrowser );
+    mp_sizeAnalyzerDockWidget->setVisible( false );
 
     // Construct scenegraph ant it's dockWidget.
     mp_sceneDockWidget = new QDockWidget( "Scenegraph", this );
     addDockWidget( Qt::LeftDockWidgetArea, mp_sceneDockWidget );
     mp_sceneGraph = new SceneGraphWidget( mp_sceneDockWidget );
     mp_sceneDockWidget->setWidget( mp_sceneGraph );
+    mp_sceneDockWidget->setVisible( false );
+
+    mp_movementAnalyzerDockWidget = new QDockWidget( "Movementanalyzer", this );
+    addDockWidget( Qt::LeftDockWidgetArea, mp_movementAnalyzerDockWidget );
+    mp_movementExplorer = new PropertyBrowser( mp_movementAnalyzerDockWidget );
+    mp_movementAnalyzerDockWidget->setWidget( mp_movementExplorer );
 
     openKinectStream();
 
@@ -176,6 +184,7 @@ void MainWindow::updateScenes()
                                                                              floorEquation.w() );
                         qDebug()<< "Floor has been initialized.";
                         m_floorInitialized = true;
+                        mp_floor->setVisible( false );
                     }
                 }
                 mp_openGLWindow->makeContextCurrent();
@@ -306,6 +315,7 @@ void MainWindow::activateSASDMode( bool checked )
         setVisualizer();
         mp_analyzerBrowser->setObject( m_highLvlProcessingPipeline->skeletonAnalyzer().data() );
         mp_sizeAnalyzerBrowser->setObject( m_highLvlProcessingPipeline->sizeAnalyzer().data() );
+        mp_movementExplorer->setObject( m_highLvlProcessingPipeline->movementAnalyzer().data() );
         switchCatergoryOnSceneGraph( mp_sceneGraph->activeScene() );
         ui->actionSABSSDMode->setChecked( false );
     }
@@ -323,7 +333,7 @@ void MainWindow::activateSABSSDMode( bool checked )
     {
         mp_analyzerBrowser->setObject( nullptr );
         mp_sizeAnalyzerBrowser->setObject( nullptr );
-        m_highLvlProcessingPipeline = HighLevelProcessingPipelinePtr( new SABSSDProcessingPipeline( m_kinect ) );
+//        m_highLvlProcessingPipeline = HighLevelProcessingPipelinePtr( new SABSSDProcessingPipeline( m_kinect ) );
         setVisualizer();
         mp_analyzerBrowser->setObject( m_highLvlProcessingPipeline->skeletonAnalyzer().data() );
         mp_sizeAnalyzerBrowser->setObject( m_highLvlProcessingPipeline->sizeAnalyzer().data() );
@@ -594,6 +604,7 @@ void MainWindow::constructOpenGLRenderWidget()
     QMdiSubWindow* subWindow = new QMdiSubWindow( this );
     subWindow->setWidget( mp_openGLRenderWidget );
     mp_openGLRenderWidget->setWindowTitle( "OpenGLRender" );
+    mp_openGLWindow->getScene()->createAxis();
     ui->mdiArea->addSubWindow( subWindow );
     mp_openGLWindow->setVisible( true );
     // Initialize scene.

@@ -66,6 +66,8 @@ private:
 
 private:
     Ui::MainWindow*         ui;
+    QDockWidget*            mp_movementAnalyzerDockWidget;
+    PropertyBrowser*        mp_movementExplorer;
     // Explorer
     QDockWidget*            mp_explorerDockWidget;
     PropertyBrowser*        mp_explorer;

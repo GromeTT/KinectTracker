@@ -41,6 +41,7 @@ public:
     float        distanceHeadLeftFood() const;
     float        distanceFloorHead() const;
     QString      workerStatusToString() const;
+    QString      workerStatusFromDistanceToString() const;
     WorkerStatus workerStatus() const;
     bool         floorInitialized() const;
     QVector4D    planeCoefficients() const;
@@ -54,10 +55,12 @@ protected:
     float                              m_distanceHeadLeftFood;
     float                              m_distanceFloorHead;
     WorkerStatus                       m_workerStatus;
+    WorkerStatus                       m_workerStatusFromDistance;
 
 private:
     virtual void analyzeV( const SkeletonDataPtr& skeletonData ) = 0;
     virtual void resetV() = 0;
+    void classifyPose( const float size,  WorkerStatus& status );
 
     QVector4D m_planeCoefficients;
     QVector3D m_planeNormalVector;
@@ -74,6 +77,7 @@ signals:
     void distanceHeadLeftFoodChanged();
     void distanceFloorHeadChanged();
     void assumptionChanged();
+    void workerStatusFromDistanceChanged();
 
 private:
     Q_PROPERTY( float estimatedBodySize
@@ -84,9 +88,17 @@ private:
                 READ currentBodySize
                 NOTIFY currentBodySizeChanged )
 
+    Q_PROPERTY( float distanceFloorHead
+                READ distanceFloorHead
+                NOTIFY distanceFloorHeadChanged )
+
     Q_PROPERTY( QString workerStatus
                 READ workerStatusToString
                 NOTIFY workerStatusChanged )
+
+    Q_PROPERTY( QString workerStatusFromDistance
+                READ workerStatusFromDistanceToString
+                NOTIFY workerStatusFromDistanceChanged )
 
     Q_PROPERTY( float kneelingThreshold MEMBER m_kneelingThreshold
                 READ kneelingThreshold
@@ -106,9 +118,6 @@ private:
                 READ distanceHeadLeftFood
                 NOTIFY distanceHeadLeftFoodChanged )
 
-    Q_PROPERTY( float distanceFloorHead
-                READ distanceFloorHead
-                NOTIFY distanceFloorHeadChanged )
 };
 
 typedef QSharedPointer<SizeAnalyzer> SizeAnalyzerPtr;

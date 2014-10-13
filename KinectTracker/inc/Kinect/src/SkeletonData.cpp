@@ -173,7 +173,6 @@ bool SkeletonData::majorPointsTracked() const
  */
 bool SkeletonData::allPointsTracked() const
 {
-    bool allPointsTracked = true;
     for ( int i = 0; i < m_joints.count(); ++i )
     {
         if ( m_jointTrackState.at( i ) != TrackState::Tracked )
@@ -181,7 +180,7 @@ bool SkeletonData::allPointsTracked() const
             return false;
         }
     }
-    return allPointsTracked;
+    return true;
 }
 
 void SkeletonData::initialize()

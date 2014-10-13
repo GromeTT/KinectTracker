@@ -228,7 +228,7 @@ void HighLevelProcessingPipeline::drawRegionOfInterest( const QRect& rect,
                                                         cv::Mat image,
                                                         const QColor& color )
 {
-    // Draw the reactangle only if the it's width and height
+    // Draw the reactangle only if it's width and height
     // is greater then 0.
     if ( rect.width() > 0 && rect.height() > 0 )
     {
@@ -305,7 +305,8 @@ QRect HighLevelProcessingPipeline::cropRegionWithWidthAndHeightAsPixels( const Q
                          center.y() + height );
     cropPointBottomRight( bottomRight, image );
 
-       // Return rect.
+
+    // Return rect.
     return QRect( topLeft, bottomRight );
 }
 

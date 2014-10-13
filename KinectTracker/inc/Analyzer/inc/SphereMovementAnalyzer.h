@@ -12,7 +12,7 @@ public:
     SphereMovementAnalyzer( QObject* parent = nullptr );
     virtual ~SphereMovementAnalyzer();
 
-    void  setRadius( const float radius );
+    void       setRadius( const float radius );
     float      radius() const;
     QVector3D  position() const;
 
